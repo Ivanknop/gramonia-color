@@ -58,7 +58,7 @@ lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos;
                          v3: + género) y
                          "Mis obras"
 lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
-lib/ui/pantallas/        inicio (portada), principal (pestañas: galería,
+lib/ui/pantallas/        inicio (portada), genero, creditos, principal (pestañas: galería,
                          mis obras, mapa), pintar, historia
 assets/cuadros/          <id>.json + <id>.svg + <id>.webp de cada cuadro
 assets/mapa/             gramonia.webp (mapa provisorio, de arte/fondo-caminatas)

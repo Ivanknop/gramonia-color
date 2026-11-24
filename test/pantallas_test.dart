@@ -274,4 +274,24 @@ void main() {
     );
     expect(find.text('0 de 2 partes recuperadas'), findsOneWidget);
   });
+
+  testWidgets('créditos desde la portada y desde el menú', (tester) async {
+    usarTelefono(tester);
+    final progreso = await progresoNuevo();
+    await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Créditos'));
+    await tester.pumpAndSettle();
+    expect(find.text('Iván y Regi (Regina Knopoff)'), findsOneWidget);
+    expect(find.text('Hecha con Gemini Lyria'), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Pintar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('menu')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Créditos'));
+    await tester.pumpAndSettle();
+    expect(find.text('Con ayuda de Claude'), findsOneWidget);
+  });
 }

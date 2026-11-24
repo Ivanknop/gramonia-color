@@ -3,7 +3,9 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../datos/textos.dart';
 import '../comun.dart';
+import 'creditos.dart';
 import 'galeria.dart';
 import 'mapa.dart';
 import 'mis_obras.dart';
@@ -31,7 +33,21 @@ class _PrincipalState extends State<Principal> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_titulos[_pestana]),
-        actions: const [ContadorPlumas(), SizedBox(width: 12)],
+        actions: [
+          const ContadorPlumas(),
+          PopupMenuButton<VoidCallback>(
+            key: const Key('menu'),
+            onSelected: (accion) => accion(),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: () =>
+                    Navigator.of(context)
+                        .push(MaterialPageRoute<void>(builder: (_) => const Creditos())),
+                child: const Text(Textos.creditos),
+              ),
+            ],
+          ),
+        ],
       ),
       body: IndexedStack(
         index: _pestana,

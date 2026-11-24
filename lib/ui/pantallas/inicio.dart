@@ -6,7 +6,9 @@ library;
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/historia.dart';
+import '../../datos/textos.dart';
 import '../comun.dart';
+import 'creditos.dart';
 import 'genero.dart';
 import 'historia.dart';
 import 'principal.dart';
@@ -109,6 +111,12 @@ class _InicioState extends State<Inicio> {
                     ),
                     const SizedBox(height: 12),
                     _Boton(texto: 'La historia', alTocar: () => _abrir(const IndiceHistoria())),
+                    const SizedBox(height: 4),
+                    TextButton(
+                      style: TextButton.styleFrom(foregroundColor: Tema.morado),
+                      onPressed: () => _abrir(const Creditos()),
+                      child: const Text(Textos.creditos),
+                    ),
                   ],
                 ),
               ),

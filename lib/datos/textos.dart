@@ -16,4 +16,20 @@ abstract final class Textos {
   static String nivel(int n) => 'Nivel $n';
   static String paraElNivel(int hechas, int necesarias, int siguiente) =>
       '$hechas de $necesarias obras para llegar al nivel $siguiente';
+
+  // ---- Créditos ----
+  static const creditos = 'Créditos';
+  static const creditosIntro =
+      'Estas son las personas (y las ayudas mágicas) que hicieron Gramonia Color.';
+
+  /// Quién hizo qué, en el orden en que se muestra.
+  static const realizadores = <(String, String)>[
+    ('Cuentos de Gramonia', 'Iván y Regi (Regina Knopoff)'),
+    ('Idea y desarrollo', 'Iván'),
+    ('Dibujos', 'Hechos con Gemini, a partir de los cuentos'),
+    ('Música', 'Hecha con Gemini Lyria'),
+    ('Programación', 'Con ayuda de Claude'),
+  ];
+  static const creditosCuentos = 'Los cuentos se leen en cuentosdegramonia.substack.com';
+  static const creditosGobi = '¡Gracias por devolverle los colores a Gramonia!';
 }
