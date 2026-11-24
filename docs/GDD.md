@@ -67,12 +67,16 @@ Espuma_ (4 celdas, 1 pieza asignada por ahora).
 
 ## 5. Pantallas
 
-| Pantalla | Ruta           | Contenido                                           |
-| -------- | -------------- | --------------------------------------------------- |
-| Inicio   | `/`            | Título, frase de historia, botones a galería y mapa |
-| Galería  | `/galeria`     | Lista de cuadros con avance (%) o "¡Con color!"     |
-| Pintar   | `/pintar/[id]` | Lienzo, paleta, avance; panel final al completar    |
-| Mapa     | `/mapa`        | Biomas con sus piezas destapadas / ocultas          |
+| Pantalla  | Ruta           | Contenido                                                    |
+| --------- | -------------- | ------------------------------------------------------------ |
+| Inicio    | `/`            | Título, frase de historia, botones a galería y mapa          |
+| Galería   | `/galeria`     | Lista de cuadros con avance (%) o "¡Con color!"              |
+| Mis obras | `/mis-obras`   | Cuadros empezados (para retomar) y terminados, con miniatura |
+| Pintar    | `/pintar/[id]` | Lienzo, paleta, avance; panel final al completar             |
+| Mapa      | `/mapa`        | Biomas con sus piezas destapadas / ocultas                   |
+
+Galería, Mis obras y Mapa son pestañas; Inicio es la portada y Pintar se abre
+encima de las pestañas.
 
 ## 6. Ideas para más adelante (fuera del alcance inicial)
 

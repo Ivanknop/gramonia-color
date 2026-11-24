@@ -12,6 +12,8 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 export type ProgresoCuadro = {
   /** Ids de regiones pintadas, en el orden en que se pintaron. */
   pintadas: string[];
+  /** Momento (ms) de la última región pintada (para ordenar "Mis obras"). */
+  actualizadoEn?: number;
   /** Momento (ms) en que se completó; ausente si no se terminó. */
   completadoEn?: number;
 };
@@ -38,7 +40,11 @@ export const useProgreso = create<EstadoProgreso>()(
           return {
             cuadros: {
               ...s.cuadros,
-              [cuadroId]: { ...actual, pintadas: [...actual.pintadas, regionId] },
+              [cuadroId]: {
+                ...actual,
+                pintadas: [...actual.pintadas, regionId],
+                actualizadoEn: Date.now(),
+              },
             },
           };
         }),

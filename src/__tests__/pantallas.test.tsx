@@ -4,18 +4,22 @@
  */
 import { fireEvent, renderRouter, screen } from 'expo-router/testing-library';
 
-import Galeria from '../../app/galeria';
+import LayoutPestanas from '../../app/(tabs)/_layout';
+import Galeria from '../../app/(tabs)/galeria';
+import Mapa from '../../app/(tabs)/mapa';
+import MisObras from '../../app/(tabs)/mis-obras';
 import Inicio from '../../app/index';
-import Mapa from '../../app/mapa';
 import Pintar from '../../app/pintar/[id]';
 import { obtenerCuadro } from '@/data/cuadros';
 import { useProgreso } from '@/store/progreso';
 
 const RUTAS = {
   index: Inicio,
-  galeria: Galeria,
+  '(tabs)/_layout': LayoutPestanas,
+  '(tabs)/galeria': Galeria,
+  '(tabs)/mis-obras': MisObras,
+  '(tabs)/mapa': Mapa,
   'pintar/[id]': Pintar,
-  mapa: Mapa,
 };
 
 beforeEach(() => useProgreso.getState().reiniciarTodo());
@@ -61,4 +65,29 @@ test('pintar todo un cuadro muestra el mensaje y destapa la pieza del bioma', as
 
   await fireEvent.press(screen.getByText('Ver el mapa'));
   expect(await screen.findByText('1 de 4 piezas destapadas')).toBeTruthy();
+});
+
+describe('Mis obras', () => {
+  test('sin obras muestra el mensaje vacío', async () => {
+    await renderRouter(RUTAS, { initialUrl: '/mis-obras' });
+    expect(await screen.findByText('Todavía no hay obras')).toBeTruthy();
+  });
+
+  test('separa obras en progreso y terminadas, y permite retomarlas', async () => {
+    const s = useProgreso.getState();
+    s.pintarRegion('taza-de-te', 'pared');
+    const pez = obtenerCuadro('pez-naranja')!;
+    for (const r of pez.regiones) s.pintarRegion(pez.id, r.id);
+    s.marcarCompletado(pez.id);
+
+    await renderRouter(RUTAS, { initialUrl: '/mis-obras' });
+    expect(await screen.findByText('En progreso (1)')).toBeTruthy();
+    expect(screen.getByText('Terminadas (1)')).toBeTruthy();
+    expect(screen.getByLabelText('Taza de té, 11%')).toBeTruthy();
+    expect(screen.getByLabelText('Pez naranja, terminada')).toBeTruthy();
+    expect(screen.queryByText('Atardecer en el lago')).toBeNull();
+
+    await fireEvent.press(screen.getByLabelText('Taza de té, 11%'));
+    expect(await screen.findByText('11% con color')).toBeTruthy();
+  });
 });

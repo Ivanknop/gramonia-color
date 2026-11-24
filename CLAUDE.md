@@ -38,15 +38,17 @@ Expo cambia mucho entre SDKs: antes de usar una API de Expo/RN, leer
 ## Estructura
 
 ```
-app/                     Pantallas (expo-router): index, galeria, pintar/[id], mapa
+app/                     Pantallas (expo-router): index (portada), pintar/[id]
+app/(tabs)/              Pestañas: galeria, mis-obras, mapa
 src/engine/              Motor puro (sin React): geometría de paths SVG, lectura
                          del SVG, ubicación de números, reglas de pintar,
                          colores, progresión de biomas. Todo testeado.
-src/components/          Lienzo (SVG del cuadro) y Paleta
+src/components/          Lienzo (SVG del cuadro), Paleta, Miniatura, íconos de pestañas
 src/data/cuadros/<id>/   cuadro.json + cuadro.svg de cada cuadro
 src/data/cuadros/indice.generado.ts   GENERADO (npm run cuadros), no editar
 src/data/biomas/         Biomas, piezas y qué cuadro destapa cada pieza
-src/store/               Progreso del jugador (zustand persistido)
+src/store/               Progreso del jugador (zustand persistido) y clasificación
+                         de "Mis obras"
 scripts/                 compilar-cuadros.mjs, imagen_a_cuadro.py,
                          generar-tipos-rutas.mjs
 docs/                    GDD y formato de cuadros

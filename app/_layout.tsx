@@ -8,9 +8,9 @@ export default function RootLayout() {
       <StatusBar style="dark" />
       <Stack screenOptions={{ headerBackTitle: 'Volver' }}>
         <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="galeria" options={{ title: 'Galería' }} />
+        {/* Pestañas: Galería, Mis obras y Mapa (app/(tabs)/). */}
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="pintar/[id]" options={{ title: 'Pintar' }} />
-        <Stack.Screen name="mapa" options={{ title: 'Mapa de Gramonia' }} />
       </Stack>
     </GestureHandlerRootView>
   );
