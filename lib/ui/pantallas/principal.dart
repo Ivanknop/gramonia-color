@@ -1,4 +1,4 @@
-/// Pestañas: Galería, Mis obras y Mapa.
+/// Pestañas: Galería, Mis obras, Mapa y Tienda.
 library;
 
 import 'package:material_ui/material_ui.dart';
@@ -9,6 +9,7 @@ import 'creditos.dart';
 import 'galeria.dart';
 import 'mapa.dart';
 import 'mis_obras.dart';
+import 'tienda.dart';
 
 class Principal extends StatefulWidget {
   const Principal({super.key, this.pestanaInicial = galeria});
@@ -16,6 +17,7 @@ class Principal extends StatefulWidget {
   static const galeria = 0;
   static const misObras = 1;
   static const mapa = 2;
+  static const tienda = 3;
 
   final int pestanaInicial;
 
@@ -26,7 +28,7 @@ class Principal extends StatefulWidget {
 class _PrincipalState extends State<Principal> {
   late int _pestana = widget.pestanaInicial;
 
-  static const _titulos = ['Galería', 'Mis obras', 'Mapa de Gramonia'];
+  static const _titulos = ['Galería', 'Mis obras', 'Mapa de Gramonia', Textos.tienda];
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +57,7 @@ class _PrincipalState extends State<Principal> {
           const Galeria(),
           MisObras(onIrAGaleria: () => setState(() => _pestana = Principal.galeria)),
           const Mapa(),
+          const Tienda(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
@@ -64,6 +67,7 @@ class _PrincipalState extends State<Principal> {
           NavigationDestination(icon: Icon(Icons.photo_library_outlined), label: 'Galería'),
           NavigationDestination(icon: Icon(Icons.palette_outlined), label: 'Mis obras'),
           NavigationDestination(icon: Icon(Icons.map_outlined), label: 'Mapa'),
+          NavigationDestination(icon: Icon(Icons.storefront_outlined), label: Textos.tienda),
         ],
       ),
     );

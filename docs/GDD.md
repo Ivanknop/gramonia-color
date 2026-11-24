@@ -52,12 +52,15 @@ recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
 
 No hay derrota ni tiempo límite. El progreso se guarda en todo momento.
 
-## 2b. Plumas del Rocanón (moneda)
+## 2b. Plumas del Rocanón (moneda) y tienda
 
-- Se ganan: **5 por día** al entrar, **10 por obra** terminada y **30 por lugar**
-  completo (valores en `lib/engine/plumas.dart`).
-- Se gastan en la lupa (1) y la bomba (5). **Por ahora las herramientas son
-  gratis** (`ReglasPlumas.herramientasGratis`); el saldo igual se acumula.
+- Se ganan: **5 por día** al entrar, **3 por cuadro** terminado (historia, modo
+  libre u obra rehecha) y **10 por nivel** que se sube en la historia (valores
+  en `lib/engine/plumas.dart`).
+- Se gastan en la **Tienda** (pestaña con ícono de tienda, la atiende el Lobo
+  de la tienda: "No explico mucho. Vendo."): **lupa 5 plumas, bomba 10**.
+- Usar la lupa o la bomba gasta una del inventario. Sin ninguna, se avisa que
+  se consiguen en la Tienda.
 
 ## 3. Progresión
 

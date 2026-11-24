@@ -24,6 +24,7 @@ import '../../datos/historia.dart';
 import '../../datos/textos.dart';
 import '../../engine/dificultad.dart';
 import '../../engine/motor.dart';
+import '../../engine/niveles.dart';
 import '../../estado/musica.dart';
 import '../comun.dart';
 import '../festejo.dart';
@@ -67,6 +68,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
 
   /// Plumas ganadas al terminar (para el panel final).
   int _plumasGanadas = 0;
+
+  /// Nivel al que se llegó al terminar (null si no se subió).
+  int? _nivelNuevo;
+
+  /// Al terminar se destapó una pieza (obra nueva de la historia).
+  bool _destapo = false;
 
   /// Confeti en pantalla (al terminar el cuadro).
   bool _festejando = false;
@@ -168,8 +175,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     final alcanzadas = regionesDeBomba(cuadro, pintadas, p, radio);
     setState(() => _bombaArmada = false);
     if (alcanzadas.isEmpty) return;
-    if (!progreso.gastarPlumas(ReglasPlumas.costoBomba)) {
-      _avisar('Te faltan plumas para la bomba.');
+    if (!progreso.usar(Herramienta.bomba)) {
+      _avisar(Textos.sinBombas);
       return;
     }
     HapticFeedback.heavyImpact();
@@ -185,18 +192,26 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
 
     if (estaCompleto(cuadro, despues)) {
       if (!progreso.marcarCompletado(_clave)) return;
-      // Modo libre u obra rehecha (ya desbloqueada): festejo, sin plumas ni piezas.
-      if (_libre || completadosAntes.contains(_clave)) {
-        _festejar();
-        return;
-      }
-      var ganadas = ReglasPlumas.porObra;
-      final completos = biomasQueSeCompletan(biomas, completadosAntes, _clave);
-      ganadas += ReglasPlumas.porBioma * completos.length;
+      // Plumas en cualquier modo; los niveles, solo con obras nuevas de la historia.
+      final recorrido = cuadrosDelRecorrido(biomas);
+      int enHistoria(Set<String> ids) => recorrido.where(ids.contains).length;
+      final subidos = nivelesSubidos(
+        enHistoria(completadosAntes),
+        enHistoria(progreso.completados),
+      );
+      final ganadas = plumasPorTerminar(nivelesSubidos: subidos);
       progreso.sumarPlumas(ganadas);
       _festejar();
-      setState(() => _plumasGanadas = ganadas);
-      _capitulosPendientes.addAll(completos);
+      // Modo libre u obra rehecha (ya desbloqueada): sin pieza ni capítulo.
+      final nueva = !_libre && !completadosAntes.contains(_clave);
+      setState(() {
+        _plumasGanadas = ganadas;
+        _nivelNuevo = subidos > 0 ? nivelActual(enHistoria(progreso.completados)).nivel : null;
+        _destapo = nueva;
+      });
+      if (nueva) {
+        _capitulosPendientes.addAll(biomasQueSeCompletan(biomas, completadosAntes, _clave));
+      }
       return;
     }
     // Si se terminó el color elegido, pasar al siguiente que tenga pendientes.
@@ -253,8 +268,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     final progreso = Dependencias.of(context).progreso;
     final lista = pendientesParaLupa(cuadro, _pintadas(cuadro), _elegido);
     if (lista.isEmpty) return;
-    if (!progreso.gastarPlumas(ReglasPlumas.costoLupa)) {
-      _avisar('Te faltan plumas para la lupa.');
+    if (!progreso.usar(Herramienta.lupa)) {
+      _avisar(Textos.sinLupas);
       return;
     }
     final region = lista[_indiceLupa % lista.length];
@@ -355,8 +370,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                   cuadro: cuadro,
                   clave: _clave,
                   libre: _libre,
-                  // Rehecha: la pieza ya estaba destapada.
-                  destapo: !_libre && _plumasGanadas > 0,
+                  destapo: _destapo,
+                  nivelNuevo: _nivelNuevo,
                   plumasGanadas: _plumasGanadas,
                 )
               else
@@ -368,8 +383,16 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                       _BarraHerramientas(
                         porcentaje: pct,
                         bombaArmada: _bombaArmada,
+                        lupas: progreso.cantidad(Herramienta.lupa),
+                        bombas: progreso.cantidad(Herramienta.bomba),
                         alUsarLupa: () => _usarLupa(cuadro),
-                        alArmarBomba: () => setState(() => _bombaArmada = !_bombaArmada),
+                        alArmarBomba: () {
+                          if (!_bombaArmada && progreso.cantidad(Herramienta.bomba) == 0) {
+                            _avisar(Textos.sinBombas);
+                            return;
+                          }
+                          setState(() => _bombaArmada = !_bombaArmada);
+                        },
                       ),
                       Paleta(
                         paleta: cuadro.paleta,
@@ -456,17 +479,19 @@ class _BarraHerramientas extends StatelessWidget {
   const _BarraHerramientas({
     required this.porcentaje,
     required this.bombaArmada,
+    required this.lupas,
+    required this.bombas,
     required this.alUsarLupa,
     required this.alArmarBomba,
   });
 
   final int porcentaje;
   final bool bombaArmada;
+
+  /// Cuántas quedan de cada una (se compran en la tienda).
+  final int lupas, bombas;
   final VoidCallback alUsarLupa;
   final VoidCallback alArmarBomba;
-
-  /// Mientras las herramientas sean gratis no se muestra el costo.
-  int? _costo(int plumas) => ReglasPlumas.herramientasGratis ? null : plumas;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -477,7 +502,7 @@ class _BarraHerramientas extends StatelessWidget {
           clave: const Key('lupa'),
           icono: Icons.search,
           texto: 'Lupa',
-          costo: _costo(ReglasPlumas.costoLupa),
+          cantidad: lupas,
           alTocar: alUsarLupa,
         ),
         const SizedBox(width: 8),
@@ -485,7 +510,7 @@ class _BarraHerramientas extends StatelessWidget {
           clave: const Key('bomba'),
           icono: Icons.auto_awesome,
           texto: bombaArmada ? 'Cancelar' : 'Bomba',
-          costo: _costo(ReglasPlumas.costoBomba),
+          cantidad: bombaArmada ? null : bombas,
           activa: bombaArmada,
           alTocar: alArmarBomba,
         ),
@@ -508,7 +533,7 @@ class _Herramienta extends StatelessWidget {
     required this.clave,
     required this.icono,
     required this.texto,
-    required this.costo,
+    required this.cantidad,
     required this.alTocar,
     this.activa = false,
   });
@@ -516,7 +541,9 @@ class _Herramienta extends StatelessWidget {
   final Key clave;
   final IconData icono;
   final String texto;
-  final int? costo;
+
+  /// Cuántas quedan (null = no mostrar).
+  final int? cantidad;
   final VoidCallback alTocar;
   final bool activa;
 
@@ -530,15 +557,14 @@ class _Herramienta extends StatelessWidget {
     ),
     onPressed: alTocar,
     icon: Icon(icono, size: 18),
-    label: costo == null
+    label: cantidad == null
         ? Text(texto)
         : Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(texto),
               const SizedBox(width: 6),
-              const IconoPluma(tamano: 12),
-              Text(' $costo', style: const TextStyle(fontSize: 11)),
+              Text('×$cantidad', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800)),
             ],
           ),
   );
@@ -550,6 +576,7 @@ class _PanelFinal extends StatelessWidget {
     required this.clave,
     required this.libre,
     required this.destapo,
+    required this.nivelNuevo,
     required this.plumasGanadas,
   });
   final Cuadro cuadro;
@@ -560,6 +587,7 @@ class _PanelFinal extends StatelessWidget {
 
   /// Esta vez se destapó una pieza (no al reabrir una terminada ni al rehacer).
   final bool destapo;
+  final int? nivelNuevo;
   final int plumasGanadas;
 
   @override
@@ -588,6 +616,18 @@ class _PanelFinal extends StatelessWidget {
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: Tema.verde,
+                ),
+              ),
+            ],
+            if (nivelNuevo case final n?) ...[
+              const SizedBox(height: 6),
+              Text(
+                Textos.subisteDeNivel(n),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w800,
+                  color: Tema.morado,
                 ),
               ),
             ],

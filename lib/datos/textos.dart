@@ -63,4 +63,21 @@ abstract final class Textos {
   static const rehacerAviso =
       'Se borra lo pintado y empezás de nuevo. Lo que destapaste en Gramonia queda destapado.';
   static String etiquetaRehecha(String dificultad) => 'Rehecha · $dificultad';
+
+  // ---- Tienda y herramientas ----
+  static const tienda = 'Tienda';
+  static const tiendaLobo = 'El Lobo de la tienda';
+  static const tiendaFrase = 'No explico mucho. Vendo.';
+  static const tiendaComprar = 'Comprar';
+  static const tiendaPlumas = 'Tus plumas';
+  static const lupa = 'Lupa';
+  static const bomba = 'Bomba de color';
+  static const lupaDetalle = 'Te lleva a una parte que falta pintar.';
+  static const bombaDetalle = 'Pinta un montón de partes de una vez.';
+  static String tenes(int n) => 'Tenés $n';
+  static String compraste(String que, int n) => '¡Listo! Ahora tenés $n ($que).';
+  static const faltanPlumas = 'Te faltan plumas. Terminá cuadros para juntar más.';
+  static const sinLupas = 'No te quedan lupas. Conseguí más en la Tienda.';
+  static const sinBombas = 'No te quedan bombas. Conseguí más en la Tienda.';
+  static String subisteDeNivel(int n) => '¡Llegaste al nivel $n!';
 }

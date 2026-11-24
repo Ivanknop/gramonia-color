@@ -56,11 +56,11 @@ lib/datos/historia.dart  Historia narrada por Gobi (borrador editable)
 lib/datos/textos.dart    Textos nuevos de la UI, con variantes {chico|chica|neutro}
 lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos;
                          v3: + género; v4: + desbloqueadas y dificultad de las
-                         obras rehechas) y
+                         obras rehechas; v5: + lupas y bombas) y
                          "Mis obras"
 lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
 lib/ui/pantallas/        inicio (portada), genero, creditos, modo_libre, principal (pestañas: galería,
-                         mis obras, mapa), pintar, historia
+                         mis obras, mapa, tienda), pintar, historia
 assets/cuadros/          <id>.json + <id>.svg + <id>.webp de cada cuadro
 assets/variantes/        <id>--<dificultad>.json/.svg (modo libre; usan la webp)
 assets/dificultades.json Tabla de dificultades (colores y regiones), a mano
@@ -105,8 +105,9 @@ el devcontainer la restaura desde `.devcontainer/android-keys/` si existe).
 - Cada cuadro destapa exactamente una pieza (lo valida `test/datos_test.dart`,
   que también verifica que cada número caiga dentro de su región, que la
   dificultad no baje en el recorrido y que cada lugar tenga zona y capítulo).
-- Las herramientas (lupa, bomba) son gratis mientras
-  `ReglasPlumas.herramientasGratis` sea true; las plumas igual se acumulan.
+- Plumas (`lib/engine/plumas.dart`): 5 por día, 3 por cuadro terminado (en
+  cualquier modo) y 10 por nivel subido. Lupas (5) y bombas (10) se compran en
+  la pestaña Tienda; usarlas gasta una del inventario.
 - Si se cambia el formato de lo guardado, subir `Progreso.version` y migrar
   (hay test de migración desde v1).
 - Los cuadros de `arte/` se generan: no editar su SVG a mano; cambiar

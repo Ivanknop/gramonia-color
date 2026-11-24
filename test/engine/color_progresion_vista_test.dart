@@ -119,9 +119,17 @@ void main() {
       expect(tocaRecompensaDiaria('2026-11-24', DateTime(2026, 11, 25, 0, 1)), isTrue);
     });
 
-    test('por ahora las herramientas son gratis', () {
-      expect(ReglasPlumas.herramientasGratis, isTrue);
-      expect(puedePagar(0, ReglasPlumas.costoBomba), isTrue);
+    test('reglas: 5 por día, 3 por cuadro, 10 por nivel', () {
+      expect((ReglasPlumas.porDia, ReglasPlumas.porObra, ReglasPlumas.porNivel), (5, 3, 10));
+      expect(plumasPorTerminar(), 3);
+      expect(plumasPorTerminar(nivelesSubidos: 1), 13);
+    });
+
+    test('tienda: lupa 5 plumas, bomba 10', () {
+      expect((Herramienta.lupa.precio, Herramienta.bomba.precio), (5, 10));
+      expect(puedeComprar(4, Herramienta.lupa), isFalse);
+      expect(puedeComprar(5, Herramienta.lupa), isTrue);
+      expect(puedeComprar(9, Herramienta.bomba), isFalse);
     });
   });
 

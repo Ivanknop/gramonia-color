@@ -42,6 +42,10 @@ int nivelDeObra(int indice) {
   return nivel;
 }
 
+/// Cuántos niveles se suben al pasar de [antes] a [despues] obras de la
+/// historia completadas.
+int nivelesSubidos(int antes, int despues) => nivelActual(despues).nivel - nivelActual(antes).nivel;
+
 /// En qué nivel va quien juega: [hechas] de las [necesarias] obras del nivel.
 typedef EstadoNivel = ({int nivel, int hechas, int necesarias});
 

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:colores_de_gramonia/engine/genero.dart';
+import 'package:colores_de_gramonia/engine/plumas.dart';
 import 'package:colores_de_gramonia/estado/obras.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -35,7 +36,7 @@ void main() {
     p.marcarCompletado('c2');
     await p.guardado;
     final guardado = jsonDecode(almacen.datos!) as Map<String, dynamic>;
-    expect(guardado['version'], 4);
+    expect(guardado['version'], 5);
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.de('c2')!.pintadas, ['x']);
     expect(otra.completados, {'c2'});
@@ -67,11 +68,20 @@ void main() {
     expect(otra.plumas, 10);
   });
 
-  test('plumas: sumar y gastar (gratis mientras herramientasGratis)', () async {
-    final (p, _) = await nuevo();
-    p.sumarPlumas(30);
-    expect(p.gastarPlumas(5), isTrue);
-    expect(p.plumas, 30); // por ahora las herramientas no cobran
+  test('tienda: comprar con plumas y usar del inventario', () async {
+    final (p, almacen) = await nuevo();
+    p.sumarPlumas(14);
+    expect(p.comprar(Herramienta.bomba), isTrue);
+    expect(p.comprar(Herramienta.bomba), isFalse); // quedan 4
+    expect(p.comprar(Herramienta.lupa), isFalse);
+    p.sumarPlumas(1);
+    expect(p.comprar(Herramienta.lupa), isTrue);
+    expect((p.plumas, p.cantidad(Herramienta.lupa), p.cantidad(Herramienta.bomba)), (0, 1, 1));
+    expect(p.usar(Herramienta.lupa), isTrue);
+    expect(p.usar(Herramienta.lupa), isFalse);
+    await p.guardado;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect((otra.cantidad(Herramienta.lupa), otra.cantidad(Herramienta.bomba)), (0, 1));
   });
 
   test('historia: intro y capítulos vistos se guardan', () async {
@@ -155,6 +165,13 @@ void main() {
     expect(p.rehacer('c1--facil', 'divino'), 'c1--divino');
     expect(p.de('c1--facil'), isNull);
     expect(p.de('c1--divino'), isNull);
+  });
+
+  test('migra un guardado v4: sin lupas ni bombas, con sus plumas', () async {
+    const v4 = '{"version":4,"cuadros":{},"plumas":40,"desbloqueadas":["c1"]}';
+    final (p, _) = await nuevo(v4);
+    expect((p.plumas, p.cantidad(Herramienta.lupa), p.cantidad(Herramienta.bomba)), (40, 0, 0));
+    expect(p.completados, {'c1'});
   });
 
   test('datos corruptos no impiden jugar', () async {

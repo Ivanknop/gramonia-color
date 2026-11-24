@@ -53,8 +53,9 @@ const introduccion = <Escena>[
   ),
   Escena(
     'El Rocanón nos va a dar una mano desde allá arriba: cada día nos regala '
-    'plumas. Con ellas podés usar la lupa cuando te perdés, o tirar una bomba de '
-    'color que pinta un montón de partes a la vez.',
+    'plumas, y más cuando terminás un cuadro. En la tienda las cambiás por lupas, '
+    'para cuando te perdés, o por bombas de color, que pintan un montón de partes '
+    'a la vez.',
   ),
   Escena(
     'Todos los caminos conducen al Árbol Mágico, así que empecemos por ahí. '

@@ -30,6 +30,13 @@ void main() {
     expect(nivelDeObra(24), 6);
   });
 
+  test('niveles subidos al completar obras', () {
+    expect(nivelesSubidos(0, 1), 0);
+    expect(nivelesSubidos(1, 2), 1); // 2 obras: del nivel 1 al 2
+    expect(nivelesSubidos(4, 5), 1); // 5 obras: del nivel 2 al 3
+    expect(nivelesSubidos(5, 6), 0);
+  });
+
   test('nivel actual según las obras completadas', () {
     expect(nivelActual(0), (nivel: 1, hechas: 0, necesarias: 2));
     expect(nivelActual(1), (nivel: 1, hechas: 1, necesarias: 2));

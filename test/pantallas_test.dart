@@ -179,10 +179,13 @@ void main() {
     expect(pintadas, isNot(contains(r.id)));
   });
 
-  testWidgets('la bomba pinta varias regiones de una vez con su color', (tester) async {
+  testWidgets('la bomba pinta varias regiones de una vez con su color y gasta una', (tester) async {
     final progreso = await progresoNuevo();
+    progreso.sumarPlumas(Herramienta.bomba.precio);
+    progreso.comprar(Herramienta.bomba);
     await abrirPintar(tester, progreso, 'nido-de-rocanon');
     final cuadro = catalogo.obtener('nido-de-rocanon')!;
+    expect(find.text('×1'), findsWidgets);
     await tester.tap(find.byKey(const Key('bomba')));
     await tester.pump();
     expect(find.textContaining('tirar la bomba'), findsOneWidget);
@@ -190,10 +193,18 @@ void main() {
     await tester.pump();
     expect(progreso.de(cuadro.id)!.pintadas.length, greaterThan(1));
     expect(find.textContaining('tirar la bomba'), findsNothing);
+    expect(progreso.cantidad(Herramienta.bomba), 0);
+    // Sin bombas no se arma: avisa que se consiguen en la tienda.
+    await tester.tap(find.byKey(const Key('bomba')));
+    await tester.pump();
+    expect(find.textContaining('tirar la bomba'), findsNothing);
+    expect(find.text('No te quedan bombas. Conseguí más en la Tienda.'), findsOneWidget);
   });
 
-  testWidgets('la lupa acerca la vista a una región pendiente', (tester) async {
+  testWidgets('la lupa acerca la vista a una región pendiente y gasta una', (tester) async {
     final progreso = await progresoNuevo();
+    progreso.sumarPlumas(Herramienta.lupa.precio);
+    progreso.comprar(Herramienta.lupa);
     await abrirPintar(tester, progreso, 'nido-de-rocanon');
     final antes = tester.getRect(find.byKey(const Key('lienzo')));
     await tester.tap(find.byKey(const Key('lupa')));
@@ -201,6 +212,7 @@ void main() {
     final despues = tester.getRect(find.byKey(const Key('lienzo')));
     expect(despues.width, greaterThan(antes.width)); // hizo zoom
     expect(find.text('Encuadrar'), findsOneWidget);
+    expect(progreso.cantidad(Herramienta.lupa), 0);
     await tester.pump(const Duration(seconds: 4)); // se apaga el destacado
   });
 
@@ -230,7 +242,8 @@ void main() {
     await tester.pump();
 
     expect(progreso.de(nido.id)!.terminado, isTrue);
-    const ganadas = ReglasPlumas.porObra + ReglasPlumas.porBioma;
+    // Tercera obra de la historia: sigue en el nivel 2, solo las plumas del cuadro.
+    const ganadas = ReglasPlumas.porObra;
     expect(progreso.plumas, ganadas);
     expect(find.text(' +$ganadas plumas del Rocanón'), findsOneWidget);
     expect(find.text('Destapaste una parte de Árbol Mágico.'), findsOneWidget);
@@ -373,7 +386,8 @@ void main() {
     await tester.pump();
     expect(progreso.de(clave)!.terminado, isTrue);
     expect(find.byType(Festejo), findsOneWidget);
-    expect(progreso.plumas, ReglasPlumas.porDia); // solo las del día: el modo libre no da plumas
+    // El modo libre también da plumas por cuadro (pero no niveles).
+    expect(progreso.plumas, ReglasPlumas.porDia + ReglasPlumas.porObra);
     expect(progreso.completados.contains('nido-de-rocanon'), isFalse); // la historia no avanza
     expect(find.text('¡Obra terminada! Quedó hermosa.'), findsOneWidget);
     await tester.pump(const Duration(seconds: 4));
@@ -453,7 +467,7 @@ void main() {
     await tester.pump();
     expect(progreso.de('nido-de-rocanon')!.terminado, isTrue);
     expect(find.byType(Festejo), findsOneWidget);
-    expect(progreso.plumas, plumas);
+    expect(progreso.plumas, plumas + ReglasPlumas.porObra); // plumas sí; pieza no
     expect(find.textContaining('Destapaste'), findsNothing);
     await tester.pump(const Duration(seconds: 4));
     await tester.tap(find.byKey(const Key('saltear')));
@@ -467,5 +481,63 @@ void main() {
       scrollable: find.byType(Scrollable).last,
     );
     expect(find.text('Rehecha · Fácil'), findsOneWidget);
+  });
+
+  testWidgets('tienda: comprar lupas y bombas con plumas', (tester) async {
+    usarTelefono(tester);
+    final progreso = await progresoNuevo();
+    progreso.reclamarRecompensaDiaria();
+    progreso.sumarPlumas(10); // 15 en total
+    await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Pintar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Tienda').last);
+    await tester.pumpAndSettle();
+    expect(find.text('«No explico mucho. Vendo.»'), findsOneWidget);
+    expect(tester.widget<Text>(find.byKey(const Key('saldo-tienda'))).data, '15');
+
+    await tester.tap(find.byKey(const Key('comprar-bomba')));
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('comprar-lupa')));
+    await tester.pump();
+    expect(
+      (progreso.plumas, progreso.cantidad(Herramienta.bomba), progreso.cantidad(Herramienta.lupa)),
+      (0, 1, 1),
+    );
+    expect(find.text('Tenés 1'), findsNWidgets(2));
+
+    // Sin plumas no compra.
+    await tester.tap(find.byKey(const Key('comprar-lupa')));
+    await tester.pump();
+    expect(progreso.cantidad(Herramienta.lupa), 1);
+    expect(find.text('Te faltan plumas. Terminá cuadros para juntar más.'), findsOneWidget);
+  });
+
+  testWidgets('subir de nivel da 10 plumas extra y se avisa', (tester) async {
+    final progreso = await progresoNuevo();
+    // Con la primera obra hecha, la segunda completa el nivel 1.
+    final primera = cuadrosDelRecorrido(biomas).first;
+    final c1 = catalogo.obtener(primera)!;
+    progreso.pintarRegiones(primera, [for (final r in c1.regiones) r.id]);
+    progreso.marcarCompletado(primera);
+    final segunda = cuadrosDelRecorrido(biomas)[1];
+    await abrirPintar(tester, progreso, segunda);
+    final c2 = catalogo.obtener(segunda)!;
+    final ultima = regionVisible(tester, c2);
+    progreso.pintarRegiones(segunda, [
+      for (final r in c2.regiones)
+        if (r.id != ultima.id) r.id,
+    ]);
+    await tester.pump();
+    await tester.tap(find.byKey(Key('color-${ultima.numero}')));
+    await tester.pump();
+    await tester.tapAt(enPantalla(tester, c2, ultima.etiqueta));
+    await tester.pump();
+    expect(progreso.plumas, ReglasPlumas.porObra + ReglasPlumas.porNivel);
+    expect(find.text('¡Llegaste al nivel 2!'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 4)); // termina el festejo
+    await tester.tap(find.byKey(const Key('saltear')));
+    await tester.pumpAndSettle();
   });
 }

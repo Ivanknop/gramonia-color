@@ -94,7 +94,8 @@ class Progreso extends ChangeNotifier {
   /// v2 → v3: se agrega el género elegido (en un guardado viejo queda sin elegir).
   /// v3 → v4: obras desbloqueadas aparte (rehacer una obra no la vuelve a tapar)
   /// y dificultad de las obras rehechas. Las terminadas pasan a desbloqueadas.
-  static const version = 4;
+  /// v4 → v5: lupas y bombas compradas (en un guardado viejo, ninguna).
+  static const version = 5;
 
   static Future<Progreso> cargar(AlmacenProgreso almacen, {int Function()? reloj}) async {
     final p = Progreso._(almacen, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
@@ -112,6 +113,10 @@ class Progreso extends ChangeNotifier {
         p._musicaSilenciada = (j['musicaSilenciada'] as bool?) ?? false;
         // Campo de v3.
         p._genero = Genero.values.asNameMap()[j['genero']];
+        // Campos de v5.
+        for (final h in Herramienta.values) {
+          p._herramientas[h] = (j[h.name] as int?) ?? 0;
+        }
         // Campo de v4 (en un guardado viejo, las terminadas).
         p._desbloqueadas.addAll([
           for (final c in (j['desbloqueadas'] as List?) ?? const []) c as String,
@@ -139,6 +144,7 @@ class Progreso extends ChangeNotifier {
   bool _musicaSilenciada = false;
   Genero? _genero;
   final Set<String> _desbloqueadas = {};
+  final Map<Herramienta, int> _herramientas = {};
 
   Map<String, ProgresoCuadro> get cuadros => Map.unmodifiable(_cuadros);
 
@@ -213,6 +219,7 @@ class Progreso extends ChangeNotifier {
     _capitulosVistos.clear();
     _genero = null;
     _desbloqueadas.clear();
+    _herramientas.clear();
     _cambio();
   }
 
@@ -226,12 +233,24 @@ class Progreso extends ChangeNotifier {
     _cambio();
   }
 
-  /// Cobra una herramienta. Con [ReglasPlumas.herramientasGratis] no descuenta
-  /// nada. Devuelve false si no alcanza.
-  bool gastarPlumas(int costo) {
-    if (ReglasPlumas.herramientasGratis) return true;
-    if (_plumas < costo) return false;
-    _plumas -= costo;
+  // ---- Tienda ---------------------------------------------------------------
+
+  /// Lupas o bombas que tiene quien juega.
+  int cantidad(Herramienta h) => _herramientas[h] ?? 0;
+
+  /// Compra una herramienta con plumas. Devuelve false si no alcanzan.
+  bool comprar(Herramienta h) {
+    if (!puedeComprar(_plumas, h)) return false;
+    _plumas -= h.precio;
+    _herramientas[h] = cantidad(h) + 1;
+    _cambio();
+    return true;
+  }
+
+  /// Usa una herramienta del inventario. Devuelve false si no queda ninguna.
+  bool usar(Herramienta h) {
+    if (cantidad(h) == 0) return false;
+    _herramientas[h] = cantidad(h) - 1;
     _cambio();
     return true;
   }
@@ -305,6 +324,7 @@ class Progreso extends ChangeNotifier {
       'musicaSilenciada': _musicaSilenciada,
       'genero': ?_genero?.name,
       'desbloqueadas': _desbloqueadas.toList(),
+      for (final h in Herramienta.values) h.name: cantidad(h),
     });
     // Se encadenan para que nunca una escritura vieja pise a una nueva.
     guardado = guardado.then((_) => _almacen.escribir(datos));
