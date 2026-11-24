@@ -35,4 +35,9 @@ abstract final class Textos {
 
   // ---- Festejo ----
   static const festejo = '¡Terminaste!';
+
+  // ---- Timelapse ----
+  static const timelapse = 'Así lo pintaste';
+  static const saltear = 'Saltear';
+  static const verComoLoPinte = 'Ver cómo lo pinté';
 }

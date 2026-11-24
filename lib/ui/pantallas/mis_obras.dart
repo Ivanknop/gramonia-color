@@ -3,10 +3,12 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../datos/textos.dart';
 import '../../engine/motor.dart';
 import '../../estado/obras.dart';
 import '../comun.dart';
 import '../miniatura.dart';
+import '../timelapse.dart';
 import 'pintar.dart';
 
 class MisObras extends StatelessWidget {
@@ -73,66 +75,94 @@ class _TarjetaObra extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: Semantics(
-        button: true,
-        label: '${cuadro.meta.titulo}, ${terminada ? 'terminada' : '$pct%'}',
-        excludeSemantics: true,
-        child: Card(
-          color: Colors.white,
-          clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: () =>
-                Navigator.of(context)
-                    .push(MaterialPageRoute<void>(builder: (_) => Pintar(cuadroId: cuadro.id))),
-            child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Row(
-                children: [
-                  Miniatura(cuadro: cuadro, pintadas: pintadas),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          cuadro.meta.titulo,
-                          style: const TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w700,
-                            color: Tema.morado,
-                          ),
+      child: Card(
+        color: Colors.white,
+        clipBehavior: Clip.antiAlias,
+        child: Column(
+          children: [
+            Semantics(
+              button: true,
+              label: '${cuadro.meta.titulo}, ${terminada ? 'terminada' : '$pct%'}',
+              excludeSemantics: true,
+              child: InkWell(
+                onTap: () =>
+                    Navigator.of(context)
+                        .push(MaterialPageRoute<void>(builder: (_) => Pintar(cuadroId: cuadro.id))),
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Row(
+                    children: [
+                      Miniatura(cuadro: cuadro, pintadas: pintadas),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              cuadro.meta.titulo,
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w700,
+                                color: Tema.morado,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(detalle, style: const TextStyle(fontSize: 13, color: Tema.gris)),
+                            if (!terminada) ...[
+                              const SizedBox(height: 6),
+                              LinearProgressIndicator(
+                                value: pct / 100,
+                                minHeight: 6,
+                                borderRadius: BorderRadius.circular(3),
+                                color: const Color(0xFF8E7CC3),
+                                backgroundColor: const Color(0xFFEEEEEE),
+                              ),
+                            ],
+                          ],
                         ),
-                        const SizedBox(height: 4),
-                        Text(detalle, style: const TextStyle(fontSize: 13, color: Tema.gris)),
-                        if (!terminada) ...[
-                          const SizedBox(height: 6),
-                          LinearProgressIndicator(
-                            value: pct / 100,
-                            minHeight: 6,
-                            borderRadius: BorderRadius.circular(3),
-                            color: const Color(0xFF8E7CC3),
-                            backgroundColor: const Color(0xFFEEEEEE),
-                          ),
-                        ],
-                      ],
-                    ),
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        terminada ? '¡Con color!' : '$pct%',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: terminada ? Tema.verde : const Color(0xFF999999),
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 12),
-                  Text(
-                    terminada ? '¡Con color!' : '$pct%',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      color: terminada ? Tema.verde : const Color(0xFF999999),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
+            if (terminada) _Acciones(cuadroId: cuadro.id),
+          ],
         ),
       ),
     );
   }
+}
+
+/// Lo que se puede hacer con una obra terminada.
+class _Acciones extends StatelessWidget {
+  const _Acciones({required this.cuadroId});
+  final String cuadroId;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.fromLTRB(8, 0, 8, 4),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        TextButton.icon(
+          style: TextButton.styleFrom(foregroundColor: Tema.morado),
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: cuadroId))),
+          icon: const Icon(Icons.slow_motion_video, size: 18),
+          label: const Text(Textos.verComoLoPinte),
+        ),
+      ],
+    ),
+  );
 }
 
 class _Vacio extends StatelessWidget {

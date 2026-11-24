@@ -6,6 +6,7 @@ library;
 import 'package:colores_de_gramonia/datos/catalogo.dart';
 import 'package:colores_de_gramonia/engine/genero.dart';
 import 'package:colores_de_gramonia/engine/motor.dart';
+import 'package:colores_de_gramonia/engine/timelapse.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:colores_de_gramonia/main.dart';
 import 'package:colores_de_gramonia/ui/comun.dart';
@@ -236,8 +237,13 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     expect(find.text('El Árbol Mágico'), findsNothing);
     await tester.pump(const Duration(seconds: 3));
-    await tester.pumpAndSettle();
+    await tester.pump();
     expect(find.byType(Festejo), findsNothing);
+    // Después, el timelapse de cómo se pintó; se saltea.
+    expect(find.text('Así lo pintaste'), findsOneWidget);
+    expect(find.text('El Árbol Mágico'), findsNothing);
+    await tester.tap(find.byKey(const Key('saltear')));
+    await tester.pumpAndSettle();
     expect(find.text('El Árbol Mágico'), findsOneWidget); // capítulo de la historia
     expect(progreso.capitulosVistos, {'arbol-magico'});
   });
@@ -263,6 +269,7 @@ void main() {
     final pct = porcentaje(1, nido.regiones.length);
     expect(find.bySemanticsLabel('${nido.meta.titulo}, $pct%'), findsOneWidget);
     expect(find.bySemanticsLabel('${hormiguero.meta.titulo}, terminada'), findsOneWidget);
+    expect(find.text('Ver cómo lo pinté'), findsOneWidget); // solo en la terminada
 
     await tester.tap(find.bySemanticsLabel('${nido.meta.titulo}, $pct%'));
     await tester.pumpAndSettle();
@@ -302,5 +309,23 @@ void main() {
     await tester.tap(find.text('Créditos'));
     await tester.pumpAndSettle();
     expect(find.text('Con ayuda de Claude'), findsOneWidget);
+  });
+
+  testWidgets('timelapse: termina solo y se puede volver a ver desde el panel final', (
+    tester,
+  ) async {
+    final progreso = await progresoNuevo();
+    final nido = catalogo.obtener('nido-de-rocanon')!;
+    progreso.pintarRegiones(nido.id, [for (final r in nido.regiones.reversed) r.id]);
+    progreso.marcarCompletado(nido.id);
+    await abrirPintar(tester, progreso, nido.id);
+    await tester.tap(find.text('Ver cómo lo pinté'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.text('Así lo pintaste'), findsOneWidget);
+    await tester.pump(Timelapse.maximo);
+    await tester.pumpAndSettle();
+    expect(find.text('Así lo pintaste'), findsNothing); // volvió solo
+    expect(find.byType(Pintar), findsOneWidget);
   });
 }

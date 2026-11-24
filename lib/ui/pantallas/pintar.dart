@@ -7,7 +7,7 @@
 ///   cercanas, cada una con su color correcto.
 /// - Al terminar: festejo (confeti, sonido y vibración), plumas por la obra y,
 ///   si se completa un bioma, plumas extra y el capítulo de la historia que
-///   cuenta Gobi (después del festejo).
+///   cuenta Gobi (después del festejo y del timelapse, que se puede saltear).
 /// - Música: un tema al azar en cada dibujo, con botones para cambiarla y
 ///   silenciarla; se pausa si la app pasa a segundo plano.
 library;
@@ -21,10 +21,12 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
 import '../../datos/historia.dart';
+import '../../datos/textos.dart';
 import '../../engine/motor.dart';
 import '../../estado/musica.dart';
 import '../comun.dart';
 import '../festejo.dart';
+import '../timelapse.dart';
 import '../lienzo.dart';
 import '../paleta.dart';
 import 'historia.dart';
@@ -58,7 +60,10 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   /// Confeti en pantalla (al terminar el cuadro).
   bool _festejando = false;
 
-  /// Capítulos de la historia que se cuentan cuando termina el festejo.
+  /// Repetición acelerada de cómo se pintó (después del festejo).
+  bool _repitiendo = false;
+
+  /// Capítulos de la historia que se cuentan después del festejo y el timelapse.
   final List<Bioma> _capitulosPendientes = [];
   Musica? _musica;
 
@@ -185,7 +190,15 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
 
   void _alTerminarFestejo() {
     if (!mounted) return;
-    setState(() => _festejando = false);
+    setState(() {
+      _festejando = false;
+      _repitiendo = true;
+    });
+  }
+
+  void _alTerminarTimelapse() {
+    if (!mounted) return;
+    setState(() => _repitiendo = false);
     for (final b in _capitulosPendientes) {
       _contarCapitulo(b);
     }
@@ -274,6 +287,15 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                         numeroElegido: terminado || _bombaArmada ? null : _elegido,
                         regionDestacada: _destacada,
                         onToque: _alTocar,
+                      ),
+                    if (_repitiendo)
+                      Positioned.fill(
+                        child: VistaTimelapse(
+                          cuadro: cuadro,
+                          orden: progreso.de(cuadro.id)?.pintadas ?? const [],
+                          imagen: _imagen,
+                          alTerminar: _alTerminarTimelapse,
+                        ),
                       ),
                     if (_festejando)
                       Positioned.fill(child: Festejo(alTerminar: _alTerminarFestejo)),
@@ -524,16 +546,29 @@ class _PanelFinal extends StatelessWidget {
               ),
             ],
             const SizedBox(height: 10),
-            FilledButton(
-              style: FilledButton.styleFrom(backgroundColor: Tema.morado),
-              // Vuelve a las pestañas (sobre la portada) mostrando el mapa.
-              onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute<void>(
-                  builder: (_) => const Principal(pestanaInicial: Principal.mapa),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8,
+              children: [
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(foregroundColor: Tema.morado),
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: cuadro.id)),
+                  ),
+                  child: const Text(Textos.verComoLoPinte),
                 ),
-                (ruta) => ruta.isFirst,
-              ),
-              child: const Text('Ver el mapa'),
+                FilledButton(
+                  style: FilledButton.styleFrom(backgroundColor: Tema.morado),
+                  // Vuelve a las pestañas (sobre la portada) mostrando el mapa.
+                  onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute<void>(
+                      builder: (_) => const Principal(pestanaInicial: Principal.mapa),
+                    ),
+                    (ruta) => ruta.isFirst,
+                  ),
+                  child: const Text('Ver el mapa'),
+                ),
+              ],
             ),
           ],
         ),

@@ -42,7 +42,10 @@ recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
    regiones cercanas, cada una con su color, en una onda desde donde cae.
 8. Al terminar el cuadro: **festejo** (confeti arcoíris, cartel "¡Terminaste!",
    campanitas y tres vibraciones), mensaje, parte del mapa recuperada y plumas.
-   El capítulo de Gobi, si lo hay, llega después del festejo.
+   Después, un **timelapse**: la repetición acelerada (2,5 a 6 s) de cómo se
+   pintó, región por región en el orden guardado; se puede saltear y volver a
+   ver desde el panel final o desde Mis obras. El capítulo de Gobi, si lo hay,
+   llega al final.
 
 9. **Música**: en cada dibujo suena un tema al azar (de `arte/musica`); al
    terminar sigue otro. Botones "Cambiar música" y "Silenciar".
