@@ -3,8 +3,8 @@
 Convierte todas las imágenes de arte/ listadas en scripts/catalogo-arte.json
 en cuadros (assets/cuadros/<id>.svg + <id>.json).
 
-Uso: python3 scripts/convertir_arte.py          (todas, y el mapa)
-     python3 scripts/convertir_arte.py <id> ... (solo esas; "mapa" para el mapa)
+Uso: python3 scripts/convertir_arte.py          (todas, el mapa y la música)
+     python3 scripts/convertir_arte.py <id> ... (solo esas; "mapa" o "musica")
 """
 
 import json
@@ -41,12 +41,33 @@ def convertir_mapa(catalogo: dict) -> None:
     print(f"Mapa → {DIR_MAPA / 'gramonia.webp'} ({img.width}x{img.height})")
 
 
+DIR_MUSICA = RAIZ / "assets" / "musica"
+
+
+def convertir_musica() -> None:
+    """Comprime arte/musica/*.mp3 a AAC 80 kbps (assets/musica/<nombre>.m4a)."""
+    import subprocess
+
+    DIR_MUSICA.mkdir(parents=True, exist_ok=True)
+    for mp3 in sorted((RAIZ / "arte" / "musica").glob("*.mp3")):
+        nombre = mp3.stem.lower().replace("_", "-").replace(" ", "-")
+        destino = DIR_MUSICA / f"{nombre}.m4a"
+        subprocess.run(
+            ["ffmpeg", "-v", "error", "-y", "-i", str(mp3), "-vn", "-c:a", "aac", "-b:a", "80k",
+             "-ar", "44100", str(destino)],
+            check=True,
+        )
+        print(f"Música → {destino} ({destino.stat().st_size // 1024} KB)")
+
+
 def main() -> int:
     catalogo = json.loads(CATALOGO.read_text(encoding="utf-8"))
     base = catalogo["por_defecto"]
     pedidos = set(sys.argv[1:])
     if not pedidos or "mapa" in pedidos:
         convertir_mapa(catalogo)
+    if not pedidos or "musica" in pedidos:
+        convertir_musica()
     for orden, c in enumerate(catalogo["cuadros"], start=1):
         if pedidos and c["id"] not in pedidos:
             continue

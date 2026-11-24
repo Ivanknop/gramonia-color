@@ -85,6 +85,7 @@ class Progreso extends ChangeNotifier {
         p._plumas = (j['plumas'] as int?) ?? 0;
         p._ultimoDiaPlumas = j['ultimoDiaPlumas'] as String?;
         p._introVista = (j['introVista'] as bool?) ?? false;
+        p._musicaSilenciada = (j['musicaSilenciada'] as bool?) ?? false;
         p._capitulosVistos.addAll([
           for (final c in (j['capitulosVistos'] as List?) ?? []) c as String,
         ]);
@@ -103,6 +104,7 @@ class Progreso extends ChangeNotifier {
   String? _ultimoDiaPlumas;
   bool _introVista = false;
   final Set<String> _capitulosVistos = {};
+  bool _musicaSilenciada = false;
 
   Map<String, ProgresoCuadro> get cuadros => Map.unmodifiable(_cuadros);
 
@@ -211,6 +213,16 @@ class Progreso extends ChangeNotifier {
     if (_capitulosVistos.add(id)) _cambio();
   }
 
+  // ---- Música -------------------------------------------------------------
+
+  bool get musicaSilenciada => _musicaSilenciada;
+
+  void silenciarMusica(bool silenciada) {
+    if (_musicaSilenciada == silenciada) return;
+    _musicaSilenciada = silenciada;
+    _cambio();
+  }
+
   // ---- Guardado -----------------------------------------------------------
 
   /// Escritura en curso (los tests la esperan).
@@ -225,6 +237,7 @@ class Progreso extends ChangeNotifier {
       'ultimoDiaPlumas': ?_ultimoDiaPlumas,
       'introVista': _introVista,
       'capitulosVistos': _capitulosVistos.toList(),
+      'musicaSilenciada': _musicaSilenciada,
     });
     // Se encadenan para que nunca una escritura vieja pise a una nueva.
     guardado = guardado.then((_) => _almacen.escribir(datos));

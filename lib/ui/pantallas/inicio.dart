@@ -74,7 +74,7 @@ class _InicioState extends State<Inicio> {
                     const AvatarGobi(tamano: 72),
                     const SizedBox(height: 16),
                     const Text(
-                      'Colores de Gramonia',
+                      'Gramonia Color',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 32,

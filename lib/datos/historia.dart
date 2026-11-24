@@ -29,7 +29,7 @@ const introduccion = <Escena>[
     'En Gramonia todo nace del Árbol Mágico: sus raíces son el suelo de la isla '
     'y su copa es el mismísimo cielo. Y la memoria de Gramonia vive en sus cuadros: '
     'pinturas de cada rincón, de cada ser y de cada historia.',
-    titulo: 'Colores de Gramonia',
+    titulo: 'Gramonia Color',
   ),
   Escena(
     'Pero una mañana los cuadros amanecieron en blanco y negro. Alguien se había '

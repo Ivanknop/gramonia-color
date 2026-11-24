@@ -1,4 +1,4 @@
-# Colores de Gramonia
+# Gramonia Color
 
 Juego de pintar por números para Android. Mututu le robó los colores a un
 montón de cuadros: devolvéselos y destapá el mapa de Gramonia.

@@ -7,6 +7,8 @@
 ///   cercanas, cada una con su color correcto.
 /// - Al terminar: plumas por la obra y, si se completa un bioma, plumas extra y
 ///   el capítulo de la historia que cuenta Gobi.
+/// - Música: un tema al azar en cada dibujo, con botones para cambiarla y
+///   silenciarla; se pausa si la app pasa a segundo plano.
 library;
 
 import 'dart:async';
@@ -19,6 +21,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../datos/biomas.dart';
 import '../../datos/historia.dart';
 import '../../engine/motor.dart';
+import '../../estado/musica.dart';
 import '../comun.dart';
 import '../lienzo.dart';
 import '../paleta.dart';
@@ -36,7 +39,7 @@ class Pintar extends StatefulWidget {
   State<Pintar> createState() => _PintarState();
 }
 
-class _PintarState extends State<Pintar> {
+class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   final _lienzo = GlobalKey<LienzoState>();
   Cuadro? _cuadro;
   ui.Image? _imagen;
@@ -49,12 +52,16 @@ class _PintarState extends State<Pintar> {
 
   /// Plumas ganadas al terminar (para el panel final).
   int _plumasGanadas = 0;
+  Musica? _musica;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (_cuadro != null) return;
     final catalogo = Dependencias.of(context).catalogo;
+    _musica = Dependencias.of(context).musica;
+    unawaited(_musica?.empezar());
+    WidgetsBinding.instance.addObserver(this);
     _cuadro = catalogo.obtener(widget.cuadroId);
     _elegido = _cuadro?.paleta.first.numero;
     catalogo.imagen(widget.cuadroId).then((img) {
@@ -69,8 +76,22 @@ class _PintarState extends State<Pintar> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    unawaited(_musica?.detener());
     _apagarDestacada?.cancel();
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState estado) {
+    switch (estado) {
+      case AppLifecycleState.paused || AppLifecycleState.hidden:
+        unawaited(_musica?.pausarPorSegundoPlano());
+      case AppLifecycleState.resumed:
+        unawaited(_musica?.reanudarDesdeSegundoPlano());
+      default:
+        break;
+    }
   }
 
   Set<String> _pintadas(Cuadro c) =>
@@ -205,8 +226,16 @@ class _PintarState extends State<Pintar> {
         return Scaffold(
           appBar: AppBar(
             toolbarHeight: 48,
-            title: Text(cuadro.meta.titulo, style: const TextStyle(fontSize: 18)),
-            actions: const [ContadorPlumas(), SizedBox(width: 12)],
+            title: Text(
+              cuadro.meta.titulo,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 18),
+            ),
+            actions: [
+              if (_musica case final musica?) _BotonesMusica(musica: musica),
+              const ContadorPlumas(),
+              const SizedBox(width: 12),
+            ],
           ),
           body: Column(
             children: [
@@ -268,6 +297,47 @@ class _PintarState extends State<Pintar> {
       },
     );
   }
+}
+
+/// "Cambiar música" y "Silenciar" / "Activar sonido".
+class _BotonesMusica extends StatelessWidget {
+  const _BotonesMusica({required this.musica});
+  final Musica musica;
+
+  @override
+  Widget build(BuildContext context) => ListenableBuilder(
+    listenable: musica,
+    builder: (context, _) => Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          key: const Key('cambiar-musica'),
+          tooltip: 'Cambiar música',
+          icon: const Icon(Icons.queue_music),
+          onPressed: () {
+            unawaited(musica.cambiar());
+            final tema = musica.actual;
+            if (tema != null && !musica.silenciada) {
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text('Sonando: ${nombreDeTema(tema)}'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+            }
+          },
+        ),
+        IconButton(
+          key: const Key('silenciar'),
+          tooltip: musica.silenciada ? 'Activar sonido' : 'Silenciar',
+          icon: Icon(musica.silenciada ? Icons.volume_off : Icons.volume_up),
+          onPressed: () => unawaited(musica.alternarSilencio()),
+        ),
+      ],
+    ),
+  );
 }
 
 class _Aviso extends StatelessWidget {

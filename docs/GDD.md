@@ -1,6 +1,6 @@
-# Colores de Gramonia — Documento de diseño (GDD corto)
+# Gramonia Color — Documento de diseño (GDD corto)
 
-> Nombre provisorio. Juego para teléfonos Android de pintar por números.
+> Juego para teléfonos Android de pintar por números.
 
 ## 1. Historia
 
@@ -41,6 +41,9 @@ recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
 7. **Bomba de color**: se arma con el botón y el próximo toque pinta todas las
    regiones cercanas, cada una con su color, en una onda desde donde cae.
 8. Al terminar el cuadro: mensaje, parte del mapa recuperada y plumas.
+
+9. **Música**: en cada dibujo suena un tema al azar (de `arte/musica`); al
+   terminar sigue otro. Botones "Cambiar música" y "Silenciar".
 
 No hay derrota ni tiempo límite. El progreso se guarda en todo momento.
 

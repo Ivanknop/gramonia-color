@@ -1,6 +1,6 @@
-# Colores de Gramonia
+# Gramonia Color
 
-Juego de **pintar por números** para **teléfonos Android** (nombre provisorio).
+Juego de **pintar por números** para **teléfonos Android**.
 Mututu le robó los colores a un montón de cuadros (paisajes, animales, objetos,
 personas, arte); el jugador se los devuelve pintando cada región según su
 número. Cada cuadro completado destapa una pieza del mapa de un bioma de
@@ -29,8 +29,11 @@ paleta, bioma, pieza…), textos de la UI y commits. La UI usa voseo rioplatense
   expande animado desde el toque (`RellenoAnimado`, ticker en `LienzoState`).
 - Zoom/paneo: `InteractiveViewer`; el toque se resuelve con la geometría del
   motor (`regionEnPunto`), no con hit-testing de widgets.
-- Progreso: `shared_preferences` (JSON). Es la única dependencia externa:
-  antes de sumar otra, justificar el peso (objetivo: APK liviano).
+- Progreso: `shared_preferences` (JSON). Música: `audioplayers` (reproductor
+  nativo). Son las únicas dependencias externas: antes de sumar otra,
+  justificar el peso (objetivo: APK liviano).
+- Música de fondo (`lib/estado/musica.dart`): tema al azar en cada dibujo,
+  botones "Cambiar música" y "Silenciar" (se recuerda); pausa en segundo plano.
 - Tests: `flutter_test`. Conversor de imágenes: Python 3 + Pillow/numpy/scipy.
 - Hasta el tag `react-native-final` el proyecto fue Expo/React Native; se migró
   a Flutter para achicar la app (el APK de RN pesaba ~100 MB con 4 ABIs).
@@ -54,6 +57,7 @@ lib/ui/pantallas/        inicio (portada), principal (pestañas: galería,
                          mis obras, mapa), pintar, historia
 assets/cuadros/          <id>.json + <id>.svg + <id>.webp de cada cuadro
 assets/mapa/             gramonia.webp (mapa provisorio, de arte/fondo-caminatas)
+assets/musica/           temas en AAC 80 kbps (de arte/musica/*.mp3)
 arte/                    Ilustraciones originales (fuente de los cuadros)
 scripts/                 imagen_a_cuadro.py, convertir_arte.py,
                          catalogo-arte.json (títulos y parámetros de arte/)
@@ -71,7 +75,8 @@ dart format lib test                 # formato (ancho 100, ver analysis_options.
 flutter build apk --release --target-platform android-arm64
                                      # → build/app/outputs/flutter-apk/app-release.apk
 flutter run                          # con un teléfono conectado por adb
-python3 scripts/convertir_arte.py [id...]   # arte/ → assets/cuadros (según el catálogo)
+python3 scripts/convertir_arte.py [id...]   # arte/ → assets (cuadros, mapa, musica)
+python3 scripts/generar_icono.py            # arte/icono.jpeg → ícono de la app (android/res)
 python3 scripts/imagen_a_cuadro.py foto.jpg --id mi-cuadro --titulo "Mi cuadro"
 python3 -m unittest discover -s scripts -p "test_*.py"   # tests del conversor
 ```

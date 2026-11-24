@@ -4,6 +4,7 @@ library;
 import 'package:material_ui/material_ui.dart';
 
 import '../datos/catalogo.dart';
+import '../estado/musica.dart';
 import '../estado/progreso.dart';
 
 abstract final class Tema {
@@ -19,23 +20,28 @@ abstract final class Tema {
   );
 }
 
-/// Catálogo y progreso disponibles para toda la app.
+/// Catálogo, progreso y música disponibles para toda la app.
 class Dependencias extends InheritedWidget {
   const Dependencias({
     super.key,
     required this.catalogo,
     required this.progreso,
+    this.musica,
     required super.child,
   });
 
   final Catalogo catalogo;
   final Progreso progreso;
 
+  /// Música de fondo (null = sin música, por ejemplo en algunos tests).
+  final Musica? musica;
+
   static Dependencias of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<Dependencias>()!;
 
   @override
-  bool updateShouldNotify(Dependencias old) => catalogo != old.catalogo || progreso != old.progreso;
+  bool updateShouldNotify(Dependencias old) =>
+      catalogo != old.catalogo || progreso != old.progreso || musica != old.musica;
 }
 
 /// Formato de fecha corto (dd/mm/aaaa) sin depender de paquetes de i18n.
