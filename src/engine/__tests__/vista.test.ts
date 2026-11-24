@@ -72,14 +72,15 @@ describe('limitarVista', () => {
   });
 });
 
-test('escalaMaxima permite leer el número más chico, entre 4x y 16x', () => {
-  expect(escalaMaxima([18, 10], 1)).toBe(4); // ya se leen: mínimo 4x
-  expect(escalaMaxima([4], 0.5, 14)).toBe(7); // 4 * 0.5 = 2 pt → 7x
-  expect(escalaMaxima([4], 0.1, 14)).toBe(16); // tope
+test('escalaMaxima permite leer el número y tocar la región más chicos, entre 4x y 16x', () => {
+  expect(escalaMaxima([18, 10], [20, 30], 1)).toBe(4); // ya se leen: mínimo 4x
+  expect(escalaMaxima([4], [20], 0.5)).toBe(7); // número: 4 * 0.5 = 2 pt → 7x
+  expect(escalaMaxima([18], [0.8], 2)).toBeCloseTo(6.25); // región: 0.8 * 2 = 1.6 pt → 6.25x
+  expect(escalaMaxima([4], [1], 0.1)).toBe(16); // tope
 });
 
-test('tamanoNumero se acota entre 4 y 18', () => {
-  expect(tamanoNumero(1)).toBe(4);
+test('tamanoNumero se acota entre 1.2 y 18', () => {
+  expect(tamanoNumero(0.5)).toBe(1.2);
   expect(tamanoNumero(10)).toBeCloseTo(11);
   expect(tamanoNumero(100)).toBe(18);
 });

@@ -29,6 +29,19 @@ export function construirCuadro(meta: MetaCuadro, svgTexto: string): Cuadro {
   });
 
   const regiones: Region[] = svg.paths.map((p, i) => {
+    // Etiqueta precalculada (cuadros generados por el conversor): no hace falta
+    // buscarla, que es lo más costoso de cargar un cuadro con muchas regiones.
+    if (p.etiqueta && p.radio !== undefined) {
+      return {
+        id: p.id,
+        numero: p.numero,
+        d: p.d,
+        poligonos: formas[i].poligonos,
+        caja: formas[i].caja,
+        etiqueta: p.etiqueta,
+        radioEtiqueta: p.radio,
+      };
+    }
     const calculada = calcularEtiqueta(formas, i);
     if (!calculada) throw error(`la región "${p.id}" queda totalmente tapada por otras`);
     return {

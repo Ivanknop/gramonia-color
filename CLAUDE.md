@@ -52,6 +52,8 @@ src/store/               Progreso del jugador (zustand persistido) y clasificaci
 scripts/                 compilar-cuadros.mjs, imagen_a_cuadro.py,
                          generar-tipos-rutas.mjs
 docs/                    GDD y formato de cuadros
+arte/                    Ilustraciones originales del usuario (fuente de los cuadros;
+                         títulos y parámetros en scripts/catalogo-arte.json)
 ```
 
 Import alias: `@/` → `src/`.
@@ -67,6 +69,7 @@ npm run typecheck         # genera tipos de rutas y corre tsc
 npm run lint              # expo lint (ESLint + Prettier)
 npm run format            # prettier --write
 npm run cuadros           # regenera el índice de cuadros tras editar src/data/cuadros
+npm run arte              # convierte arte/ según scripts/catalogo-arte.json (+ índice)
 npm run imagen-a-cuadro -- foto.jpg --id mi-cuadro --titulo "Mi cuadro"
 npm run test:scripts      # tests del conversor (Python)
 npx expo install <pkg>    # SIEMPRE para agregar dependencias (versiones del SDK)
@@ -84,6 +87,8 @@ npx expo-doctor           # diagnóstico de dependencias
 - Al tocar `src/data/cuadros/`, correr `npm run cuadros`; un test falla si el
   índice generado está desactualizado.
 - Cada cuadro destapa exactamente una pieza (lo validan los tests de datos).
+- Los cuadros de `arte/` se generan: no editar su SVG a mano; cambiar el
+  catálogo o los parámetros y correr `npm run arte`.
 - Gestos del lienzo (`src/components/Lienzo.tsx`): pellizco y arrastre corren
   como worklets en el hilo de UI y usan las cuentas de `src/engine/vista.ts`
   (funciones con `'worklet'`). El tap usa `runOnJS: true`: solo convierte

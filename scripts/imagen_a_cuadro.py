@@ -12,15 +12,17 @@ Pasos:
   3. Suavizar con un filtro de moda para quitar ruido.
   4. Separar regiones conexas por color (4-conectividad).
   5. Fusionar regiones chicas (--area-minima px) con su vecina de mayor borde.
-  6. Trazar el contorno de cada región sobre la grilla de píxeles y
-     simplificarlo (Douglas-Peucker, --tolerancia).
+  6. Trazar el contorno de cada región sobre la grilla de píxeles, partirlo
+     en bordes compartidos y simplificar/suavizar cada borde una sola vez
+     (Douglas-Peucker con --tolerancia y Chaikin con --curvas).
   7. Ubicar el número en el píxel más alejado del borde (transformada de
      distancia) y escribirlo como data-etiqueta.
 
-Limitaciones conocidas (v1):
-  - Los bordes se simplifican por región, así que entre regiones vecinas
-    puede haber diferencias de fracciones de píxel (las tapa el trazo).
-  - Los contornos son poligonales (sin curvas).
+Los bordes compartidos entre dos regiones se simplifican y suavizan una sola
+vez y los usan ambas, así no quedan huecos entre regiones vecinas.
+
+Limitaciones conocidas:
+  - Los contornos son polilíneas suavizadas (sin curvas Bézier).
   - Los nombres de los colores son genéricos ("Color 3"): conviene editarlos.
 
 Uso:
@@ -228,9 +230,105 @@ def simplificar_lazo(lazo: list[tuple[int, int]], tolerancia: float) -> list[tup
     return simplificado if len(simplificado) >= 3 else pts
 
 
+def chaikin(puntos: list[tuple[float, float]], iteraciones: int, cerrado: bool) -> list[tuple[float, float]]:
+    """Suaviza cortando esquinas (Chaikin). En cadenas abiertas conserva los extremos."""
+    pts = puntos
+    for _ in range(iteraciones):
+        if len(pts) < 3:
+            return pts  # una recta no tiene esquinas que cortar
+        pares = zip(pts, pts[1:] + pts[:1]) if cerrado else zip(pts, pts[1:])
+        cortes: list[tuple[float, float]] = []
+        for (ax, ay), (bx, by) in pares:
+            cortes.append((0.75 * ax + 0.25 * bx, 0.75 * ay + 0.25 * by))
+            cortes.append((0.25 * ax + 0.75 * bx, 0.25 * ay + 0.75 * by))
+        pts = cortes if cerrado else [pts[0]] + cortes + [pts[-1]]
+    return pts
+
+
+def nodos_topologicos(etiquetas: np.ndarray) -> set[tuple[int, int]]:
+    """
+    Vértices de la grilla donde se juntan 3 o más regiones (contando el
+    exterior), o donde dos regiones se tocan en diagonal, más las 4 esquinas
+    de la imagen. Entre dos nodos, un borde es compartido por exactamente dos
+    regiones: se simplifica una sola vez y lo usan las dos (sin huecos).
+    """
+    p = np.pad(etiquetas, 1, constant_values=-1)
+    a, b, c, d = p[:-1, :-1], p[:-1, 1:], p[1:, :-1], p[1:, 1:]
+    distintos = 1 + (b != a) + ((c != a) & (c != b)) + ((d != a) & (d != b) & (d != c))
+    diagonal = (a == d) & (b == c) & (a != b)
+    ys, xs = np.nonzero((distintos >= 3) | diagonal)
+    alto, ancho = etiquetas.shape
+    nodos = set(zip(xs.tolist(), ys.tolist()))
+    nodos.update({(0, 0), (ancho, 0), (0, alto), (ancho, alto)})
+    return nodos
+
+
+# Tras suavizar, se quitan puntos casi alineados (en px de la grilla): achica
+# mucho el archivo sin cambiar la forma a la vista.
+TOLERANCIA_FINAL = 0.08
+
+
+def simplificar_lazo_flotante(pts: list[tuple[float, float]], tolerancia: float) -> list[tuple[float, float]]:
+    """Douglas-Peucker sobre un lazo cerrado de puntos con decimales."""
+    if len(pts) <= 4:
+        return pts
+    lejano = max(range(len(pts)), key=lambda i: (pts[i][0] - pts[0][0]) ** 2 + (pts[i][1] - pts[0][1]) ** 2)
+    mitad1 = douglas_peucker(pts[: lejano + 1], tolerancia)
+    mitad2 = douglas_peucker(pts[lejano:] + [pts[0]], tolerancia)
+    res = mitad1[:-1] + mitad2[:-1]
+    return res if len(res) >= 3 else pts
+
+
+class SimplificadorCompartido:
+    """Simplifica y suaviza bordes, reutilizando el resultado de cada borde compartido."""
+
+    def __init__(self, nodos: set[tuple[int, int]], tolerancia: float, curvas: int):
+        self.nodos = nodos
+        self.tolerancia = tolerancia
+        self.curvas = curvas
+        self.cache: dict[tuple, list[tuple[float, float]]] = {}
+
+    def _cadena(self, cadena: list[tuple[int, int]]) -> list[tuple[float, float]]:
+        directa = tuple(cadena)
+        invertida = directa[::-1]
+        clave = min(directa, invertida)
+        if clave not in self.cache:
+            pts = [(float(x), float(y)) for x, y in clave]
+            pts = douglas_peucker(pts, self.tolerancia) if self.tolerancia > 0 else pts
+            self.cache[clave] = douglas_peucker(chaikin(pts, self.curvas, cerrado=False), TOLERANCIA_FINAL)
+        res = self.cache[clave]
+        return res if clave == directa else res[::-1]
+
+    def _cerrado(self, lazo: list[tuple[int, int]]) -> list[tuple[float, float]]:
+        # Forma canónica: empieza en el menor punto, en el sentido "menor".
+        k = lazo.index(min(lazo))
+        rot = lazo[k:] + lazo[:k]
+        rev = [rot[0]] + rot[1:][::-1]
+        clave = ("cerrado", tuple(min(rot, rev)))
+        if clave not in self.cache:
+            simple = simplificar_lazo(list(clave[1]), self.tolerancia)
+            suave = chaikin(simple, self.curvas, cerrado=True)
+            self.cache[clave] = simplificar_lazo_flotante(suave, TOLERANCIA_FINAL)
+        res = self.cache[clave]
+        return res if min(rot, rev) == rot else res[::-1]
+
+    def lazo(self, lazo: list[tuple[int, int]]) -> list[tuple[float, float]]:
+        indices = [i for i, p in enumerate(lazo) if p in self.nodos]
+        if not indices:
+            return self._cerrado(lazo)
+        rot = lazo[indices[0] :] + lazo[: indices[0]]
+        cortes = [i for i, p in enumerate(rot) if p in self.nodos] + [len(rot)]
+        resultado: list[tuple[float, float]] = []
+        for i0, i1 in zip(cortes, cortes[1:]):
+            cadena = rot[i0 : i1 + 1] if i1 < len(rot) else rot[i0:] + [rot[0]]
+            resultado.extend(self._cadena(cadena)[:-1])
+        return resultado
+
+
 def path_d(lazos: list[list[tuple[float, float]]], escala: float) -> str:
     def f(v: float) -> str:
-        return f"{v * escala:.2f}".rstrip("0").rstrip(".")
+        # 1 decimal sobra (viewBox de ~300 unidades) y achica mucho el archivo.
+        return f"{v * escala:.1f}".rstrip("0").rstrip(".")
 
     partes = []
     for lazo in lazos:
@@ -265,16 +363,19 @@ def convertir(args: argparse.Namespace) -> Path:
     orden_colores = sorted(area_por_color, key=area_por_color.get, reverse=True)
     numero_de = {c: n + 1 for n, c in enumerate(orden_colores)}
 
+    simplificador = SimplificadorCompartido(nodos_topologicos(etiquetas), args.tolerancia, args.curvas)
     paths = []
     for k, (region, _area) in enumerate(sorted(zip(ids.tolist(), areas.tolist()), key=lambda t: -t[1])):
         mascara = etiquetas == region
-        lazos = [simplificar_lazo(l, args.tolerancia) for l in trazar_contornos(mascara)]
+        lazos = [simplificador.lazo(l) for l in trazar_contornos(mascara)]
         distancia = ndimage.distance_transform_edt(np.pad(mascara, 1))[1:-1, 1:-1]
         ey, ex = np.unravel_index(int(np.argmax(distancia)), distancia.shape)
         etiqueta = f"{(ex + 0.5) * escala:.1f} {(ey + 0.5) * escala:.1f}"
+        # Distancia al borde desde el centro del píxel (≈ radio libre del número).
+        radio = max(0.5, float(distancia[ey, ex]) - 0.5) * escala
         paths.append(
             f'  <path id="r{k + 1}" data-numero="{numero_de[color_de[region]]}" '
-            f'data-etiqueta="{etiqueta}" d="{path_d(lazos, escala)}" />'
+            f'data-etiqueta="{etiqueta}" data-radio="{radio:.1f}" d="{path_d(lazos, escala)}" />'
         )
 
     destino = DIR_CUADROS / args.id
@@ -298,6 +399,8 @@ def convertir(args: argparse.Namespace) -> Path:
         ],
         "mensajeMututu": args.mensaje,
     }
+    if args.orden is not None:
+        meta["orden"] = args.orden
     (destino / "cuadro.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Cuadro '{args.id}': {cantidad} regiones, {len(orden_colores)} colores → {destino.relative_to(RAIZ)}")
     print("Siguiente paso: `npm run cuadros` y asignarle una pieza en src/data/biomas/index.ts.")
@@ -315,6 +418,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--area-minima", type=int, default=12, help="área mínima de una región (px de la grilla)")
     ap.add_argument("--suavizado", type=int, default=2, help="pasadas del filtro de moda")
     ap.add_argument("--tolerancia", type=float, default=0.6, help="tolerancia de simplificación (px)")
+    ap.add_argument("--curvas", type=int, default=2, help="pasadas de suavizado de bordes (0 = escalonado)")
+    ap.add_argument("--orden", type=int, help="posición en la galería (menor primero)")
     ap.add_argument(
         "--mensaje",
         default="¡Los colores volvieron! Mututu tendrá que buscar otro cuadro para esconderse.",

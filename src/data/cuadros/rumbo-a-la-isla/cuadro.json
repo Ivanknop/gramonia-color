@@ -1,0 +1,100 @@
+{
+  "id": "rumbo-a-la-isla",
+  "titulo": "Rumbo a la isla",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#251C19"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#402F28"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#8E6E72"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#463731"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#30251F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#625A6C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C48F73"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#474655"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#413F4A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#7A5F61"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#524E5E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#36353E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#544543"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#615052"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#1D1613"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#272222"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#342A26"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#342E2F"
+    }
+  ],
+  "mensajeMututu": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?",
+  "orden": 8
+}

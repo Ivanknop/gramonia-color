@@ -44,7 +44,10 @@ Cada cuadro vive en su carpeta: `src/data/cuadros/<id>/`, con dos archivos.
 - Comandos de path: `M L H V C S Q T Z` (absolutos y relativos). Evitar arcos
   (`A`): se aproximan con una recta. En Inkscape/Illustrator, convertir objetos
   a trayecto (_Object to Path_) resuelve esto.
-- `data-etiqueta="x y"` (opcional) fija dónde va el número. Si no está, el motor
+- `data-etiqueta="x y"` y `data-radio="r"` (opcionales; los escribe el
+  conversor): posición del número y espacio libre a su alrededor. Con los dos,
+  el motor no calcula nada al cargar (importante en cuadros de cientos de
+  regiones). Solo `data-etiqueta` fija dónde va el número. Si no está, el motor
   lo calcula: busca el punto de la parte visible de la región más alejado de
   los bordes.
 - Los demás atributos (`fill`, `stroke`, estilos) se ignoran: sirven para
@@ -56,6 +59,15 @@ Cada cuadro vive en su carpeta: `src/data/cuadros/<id>/`, con dos archivos.
 2. Asignarle una pieza en `src/data/biomas/index.ts`.
 3. `npm test` — los tests de datos validan que el cuadro se construya, que cada
    número quede sobre su región y que los biomas sean consistentes.
+
+## Desde las ilustraciones de `arte/`
+
+Cada imagen de `arte/` tiene su entrada en `scripts/catalogo-arte.json` (id,
+título, categoría, mensaje de Mututu y, si hace falta, parámetros propios).
+`npm run arte` las convierte todas y regenera el índice (`npm run arte -- <id>`
+para una sola). Las imágenes muy oscuras o con mucho detalle quedan más
+abstractas: se pueden afinar con `colores`, `ancho` o `area_minima` en su
+entrada del catálogo.
 
 ## Desde una imagen
 

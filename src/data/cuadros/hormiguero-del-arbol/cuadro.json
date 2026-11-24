@@ -1,0 +1,100 @@
+{
+  "id": "hormiguero-del-arbol",
+  "titulo": "El hormiguero del árbol",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#55563E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#536D50"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#797147"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#524435"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3B322D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#6D573C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#2C4440"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#3C433A"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#3B4D41"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#423A32"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3F5949"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#262F31"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#95A063"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#20272B"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#293837"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#7C8656"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2B3E3C"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#B9C281"
+    }
+  ],
+  "mensajeMututu": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
+  "orden": 3
+}

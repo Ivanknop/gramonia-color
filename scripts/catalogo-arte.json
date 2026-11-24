@@ -1,0 +1,83 @@
+{
+  "_comentario": "Cuadros generados desde las imágenes de arte/. Editar acá y correr `npm run arte`. Los parámetros por defecto se pueden pisar en cada cuadro (colores, ancho, area_minima, suavizado, tolerancia, curvas).",
+  "por_defecto": {
+    "colores": 18,
+    "ancho": 200,
+    "area_minima": 12,
+    "suavizado": 2,
+    "tolerancia": 0.6,
+    "curvas": 2
+  },
+  "cuadros": [
+    {
+      "imagen": "etapa1-abuelita.jpeg",
+      "id": "casa-de-la-abuelita",
+      "titulo": "La casa de la abuelita",
+      "categoria": "paisaje",
+      "mensaje": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea."
+    },
+    {
+      "imagen": "etapa2-rocanon.jpeg",
+      "id": "nido-de-rocanon",
+      "titulo": "El nido de Rocanon",
+      "categoria": "paisaje",
+      "mensaje": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor."
+    },
+    {
+      "imagen": "etapa3-hormigas.jpeg",
+      "id": "hormiguero-del-arbol",
+      "titulo": "El hormiguero del árbol",
+      "categoria": "paisaje",
+      "mensaje": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!"
+    },
+    {
+      "imagen": "etapa4-tormenta.jpeg",
+      "id": "puerto-en-la-tormenta",
+      "titulo": "Puerto en la tormenta",
+      "categoria": "paisaje",
+      "mensaje": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas."
+    },
+    {
+      "imagen": "etapa5-dragones.jpeg",
+      "id": "montana-de-los-dragones",
+      "titulo": "La montaña de los dragones",
+      "categoria": "paisaje",
+      "mensaje": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar."
+    },
+    {
+      "imagen": "etapa6-papa.jpeg",
+      "id": "refugio-de-papa",
+      "titulo": "El refugio de papá",
+      "categoria": "arte",
+      "mensaje": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas."
+    },
+    {
+      "imagen": "etapa7-barco.jpeg",
+      "id": "barco-en-el-muelle",
+      "titulo": "El barco en el muelle",
+      "categoria": "objeto",
+      "mensaje": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo."
+    },
+    {
+      "imagen": "final.jpeg",
+      "id": "rumbo-a-la-isla",
+      "titulo": "Rumbo a la isla",
+      "categoria": "paisaje",
+      "mensaje": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?"
+    },
+    {
+      "imagen": "tienda.jpeg",
+      "id": "la-tienda",
+      "titulo": "La tienda",
+      "categoria": "arte",
+      "mensaje": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender."
+    },
+    {
+      "imagen": "fondo-caminatas.jpeg",
+      "id": "mapa-de-las-caminatas",
+      "titulo": "El mapa de las caminatas",
+      "categoria": "arte",
+      "mensaje": "¡El mapa recuperó sus colores! Ahora se ve clarito por dónde anduvo Mututu."
+    }
+  ]
+}

@@ -53,7 +53,8 @@
     "verificar": "npm run cuadros:check && npm run typecheck && npm run lint && npm test && npm run test:scripts",
     "tipos-rutas": "node scripts/generar-tipos-rutas.mjs",
     "test:scripts": "python3 -m unittest discover -s scripts -p \"test_*.py\"",
-    "imagen-a-cuadro": "python3 scripts/imagen_a_cuadro.py"
+    "imagen-a-cuadro": "python3 scripts/imagen_a_cuadro.py",
+    "arte": "python3 scripts/convertir_arte.py"
   },
   "private": true,
   "allowScripts": {

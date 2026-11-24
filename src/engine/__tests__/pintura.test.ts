@@ -102,6 +102,15 @@ describe('construirCuadro', () => {
     expect(c.regiones[2].etiqueta).toEqual({ x: 61, y: 62 });
   });
 
+  test('con etiqueta y radio precalculados no recalcula', () => {
+    const c = construirCuadro(
+      META,
+      SVG.replace('id="otro"', 'id="otro" data-etiqueta="61 62" data-radio="1.5"'),
+    );
+    expect(c.regiones[2].etiqueta).toEqual({ x: 61, y: 62 });
+    expect(c.regiones[2].radioEtiqueta).toBe(1.5);
+  });
+
   test('falla si una región usa un número fuera de la paleta', () => {
     expect(() => construirCuadro(META, SVG.replace('data-numero="2"', 'data-numero="9"'))).toThrow(
       /no está en la paleta/,

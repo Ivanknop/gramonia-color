@@ -27,14 +27,16 @@ function MiniaturaBase({ cuadro, pintadas, tamano }: Props) {
     >
       {cuadro.regiones.map((r) => {
         const hex = colores.get(r.numero) ?? '#000000';
+        const pintada = pintadas.has(r.id);
         return (
           <Path
             key={r.id}
             d={r.d}
-            fill={pintadas.has(r.id) ? hex : grisSinColor(hex)}
+            fill={pintada ? hex : grisSinColor(hex)}
             fillRule="evenodd"
-            stroke="#555555"
-            strokeWidth={1 / escala}
+            // Bordes finos (medio punto) y del color de la región si está pintada.
+            stroke={pintada ? hex : '#777777'}
+            strokeWidth={0.5 / escala}
           />
         );
       })}

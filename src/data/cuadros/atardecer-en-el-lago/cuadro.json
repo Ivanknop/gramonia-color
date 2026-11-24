@@ -4,12 +4,37 @@
   "categoria": "paisaje",
   "dificultad": 1,
   "paleta": [
-    { "numero": 1, "nombre": "Durazno", "hex": "#F6B26B" },
-    { "numero": 2, "nombre": "Amarillo sol", "hex": "#FFD966" },
-    { "numero": 3, "nombre": "Lavanda", "hex": "#8E7CC3" },
-    { "numero": 4, "nombre": "Violeta", "hex": "#674EA7" },
-    { "numero": 5, "nombre": "Azul lago", "hex": "#6FA8DC" },
-    { "numero": 6, "nombre": "Verde pasto", "hex": "#93C47D" }
+    {
+      "numero": 1,
+      "nombre": "Durazno",
+      "hex": "#F6B26B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Amarillo sol",
+      "hex": "#FFD966"
+    },
+    {
+      "numero": 3,
+      "nombre": "Lavanda",
+      "hex": "#8E7CC3"
+    },
+    {
+      "numero": 4,
+      "nombre": "Violeta",
+      "hex": "#674EA7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Azul lago",
+      "hex": "#6FA8DC"
+    },
+    {
+      "numero": 6,
+      "nombre": "Verde pasto",
+      "hex": "#93C47D"
+    }
   ],
-  "mensajeMututu": "¡El sol vuelve a encender el lago! Mututu se llevó el atardecer, pero no pudo esconderlo para siempre."
+  "mensajeMututu": "¡El sol vuelve a encender el lago! Mututu se llevó el atardecer, pero no pudo esconderlo para siempre.",
+  "orden": 100
 }

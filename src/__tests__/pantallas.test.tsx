@@ -51,8 +51,9 @@ test('inicio → galería muestra los cuadros', async () => {
   await renderRouter(RUTAS, { initialUrl: '/' });
   expect(screen.getByText('Colores de Gramonia')).toBeTruthy();
   await fireEvent.press(screen.getByText('Pintar'));
-  expect(await screen.findByText('Atardecer en el lago')).toBeTruthy();
-  expect(screen.getByText('Taza de té')).toBeTruthy();
+  // Los cuadros de arte/ van primero en la galería.
+  expect(await screen.findByText('La casa de la abuelita')).toBeTruthy();
+  expect(screen.getByText('El barco en el muelle')).toBeTruthy();
 });
 
 test('un color equivocado no pinta', async () => {

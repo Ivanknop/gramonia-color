@@ -23,6 +23,8 @@ export type MetaCuadro = {
   paleta: ColorPaleta[];
   /** Frase que se muestra al devolverle los colores al cuadro. */
   mensajeMututu: string;
+  /** Posición en la galería (menor primero; opcional). */
+  orden?: number;
 };
 
 /** Una región pintable, ya procesada y lista para el motor. */

@@ -3,8 +3,7 @@
  * cuadro indicado en `cuadroId`. Un cuadro destapa como máximo una pieza
  * (lo verifica src/__tests__/datos.test.ts).
  *
- * Con 3 cuadros de ejemplo: el Bosque tiene 2 piezas (se puede desbloquear
- * entero) y la Costa 1 pieza destapable de 4 (muestra un bioma a medias).
+ * Asignación provisoria de los cuadros de prueba (arte/ + ejemplos).
  */
 import type { Bioma } from '@/engine';
 
@@ -15,11 +14,15 @@ export const BIOMAS: Bioma[] = [
     descripcion:
       'Árboles altísimos que se cuentan secretos con el viento. Mututu empezó su robo por acá.',
     color: '#6AA84F',
-    filas: 1,
-    columnas: 2,
+    filas: 2,
+    columnas: 3,
     piezas: [
-      { id: 'claro', cuadroId: 'atardecer-en-el-lago', fila: 0, columna: 0 },
-      { id: 'casa-del-arbol', cuadroId: 'taza-de-te', fila: 0, columna: 1 },
+      { id: 'casa-de-la-abuelita', cuadroId: 'casa-de-la-abuelita', fila: 0, columna: 0 },
+      { id: 'nido', cuadroId: 'nido-de-rocanon', fila: 0, columna: 1 },
+      { id: 'hormiguero', cuadroId: 'hormiguero-del-arbol', fila: 0, columna: 2 },
+      { id: 'refugio', cuadroId: 'refugio-de-papa', fila: 1, columna: 0 },
+      { id: 'claro', cuadroId: 'atardecer-en-el-lago', fila: 1, columna: 1 },
+      { id: 'casa-del-arbol', cuadroId: 'taza-de-te', fila: 1, columna: 2 },
     ],
   },
   {
@@ -30,8 +33,23 @@ export const BIOMAS: Bioma[] = [
     filas: 2,
     columnas: 2,
     piezas: [
-      { id: 'arrecife', cuadroId: 'pez-naranja', fila: 0, columna: 0 },
-      // Las demás piezas se asignarán cuando haya más cuadros.
+      { id: 'puerto', cuadroId: 'puerto-en-la-tormenta', fila: 0, columna: 0 },
+      { id: 'muelle', cuadroId: 'barco-en-el-muelle', fila: 0, columna: 1 },
+      { id: 'horizonte', cuadroId: 'rumbo-a-la-isla', fila: 1, columna: 0 },
+      { id: 'arrecife', cuadroId: 'pez-naranja', fila: 1, columna: 1 },
+    ],
+  },
+  {
+    id: 'montanas-de-cristal',
+    nombre: 'Montañas de Cristal',
+    descripcion: 'Picos llenos de gemas donde anidan los dragones y los viajeros hacen noche.',
+    color: '#8E7CC3',
+    filas: 1,
+    columnas: 3,
+    piezas: [
+      { id: 'cumbre', cuadroId: 'montana-de-los-dragones', fila: 0, columna: 0 },
+      { id: 'tienda', cuadroId: 'la-tienda', fila: 0, columna: 1 },
+      { id: 'mapa', cuadroId: 'mapa-de-las-caminatas', fila: 0, columna: 2 },
     ],
   },
 ];

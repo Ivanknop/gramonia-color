@@ -52,6 +52,9 @@ type Props = {
 };
 
 const RESALTE = '#9a9a9a';
+const BORDE = '#555555';
+/** Ancho del contorno en unidades del viewBox (~300 de lado mayor). */
+const ANCHO_BORDE = 0.4;
 const DURACION_ENCUADRE = 250;
 
 function LienzoBase({ cuadro, pintadas, numeroElegido, onToque }: Props) {
@@ -63,6 +66,7 @@ function LienzoBase({ cuadro, pintadas, numeroElegido, onToque }: Props) {
     () =>
       escalaMaxima(
         cuadro.regiones.map((r) => tamanoNumero(r.radioEtiqueta)),
+        cuadro.regiones.map((r) => r.radioEtiqueta),
         factor,
       ),
     [cuadro, factor],
@@ -185,6 +189,10 @@ function LienzoBase({ cuadro, pintadas, numeroElegido, onToque }: Props) {
     () => new Map(cuadro.paleta.map((c) => [c.numero, c.hex] as const)),
     [cuadro],
   );
+  const grisesPorColor = useMemo(
+    () => new Map(cuadro.paleta.map((c) => [c.hex, grisSinColor(c.hex)] as const)),
+    [cuadro],
+  );
   const anchoBase = cuadro.ancho * factor;
   const altoBase = cuadro.alto * factor;
 
@@ -206,31 +214,27 @@ function LienzoBase({ cuadro, pintadas, numeroElegido, onToque }: Props) {
                   const pintada = pintadas.has(r.id);
                   const resaltada = !pintada && r.numero === numeroElegido;
                   return (
-                    <Path
+                    <RegionDibujo
                       key={r.id}
                       d={r.d}
-                      fill={pintada ? hex : resaltada ? RESALTE : grisSinColor(hex)}
-                      fillRule="evenodd"
-                      stroke="#444444"
-                      strokeWidth={0.8}
+                      relleno={pintada ? hex : resaltada ? RESALTE : grisesPorColor.get(hex)!}
+                      // Pintada: el borde toma su color y el cuadro terminado no
+                      // queda cuadriculado.
+                      borde={pintada ? hex : BORDE}
                     />
                   );
                 })}
-                {cuadro.regiones
-                  .filter((r) => !pintadas.has(r.id))
-                  .map((r) => (
-                    <SvgText
+                {cuadro.regiones.map((r) =>
+                  pintadas.has(r.id) ? null : (
+                    <Numero
                       key={`n-${r.id}`}
                       x={r.etiqueta.x}
                       y={r.etiqueta.y}
-                      fontSize={tamanoNumero(r.radioEtiqueta)}
-                      fill="#333333"
-                      textAnchor="middle"
-                      alignmentBaseline="central"
-                    >
-                      {r.numero}
-                    </SvgText>
-                  ))}
+                      tamano={tamanoNumero(r.radioEtiqueta)}
+                      numero={r.numero}
+                    />
+                  ),
+                )}
               </Svg>
             </Animated.View>
           )}
@@ -251,6 +255,47 @@ function LienzoBase({ cuadro, pintadas, numeroElegido, onToque }: Props) {
 }
 
 export const Lienzo = memo(LienzoBase);
+
+/*
+ * Región y número memorizados: con cuadros de cientos de regiones, cada toque
+ * solo vuelve a dibujar lo que cambió (la región pintada y el resaltado).
+ */
+const RegionDibujo = memo(function RegionDibujo({
+  d,
+  relleno,
+  borde,
+}: {
+  d: string;
+  relleno: string;
+  borde: string;
+}) {
+  return <Path d={d} fill={relleno} fillRule="evenodd" stroke={borde} strokeWidth={ANCHO_BORDE} />;
+});
+
+const Numero = memo(function Numero({
+  x,
+  y,
+  tamano,
+  numero,
+}: {
+  x: number;
+  y: number;
+  tamano: number;
+  numero: number;
+}) {
+  return (
+    <SvgText
+      x={x}
+      y={y}
+      fontSize={tamano}
+      fill="#333333"
+      textAnchor="middle"
+      alignmentBaseline="central"
+    >
+      {numero}
+    </SvgText>
+  );
+});
 
 const styles = StyleSheet.create({
   contenedor: { flex: 1, overflow: 'hidden', backgroundColor: '#F4F1EA' },

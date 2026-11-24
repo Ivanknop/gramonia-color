@@ -1,0 +1,100 @@
+{
+  "id": "montana-de-los-dragones",
+  "titulo": "La montaña de los dragones",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#313A46"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4F4D5B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3E434F"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#595B6B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#8B808E"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#78707E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#313140"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#646171"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#433C47"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#262D3B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#1B212E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#212835"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#393947"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#5D5055"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#283540"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#414A54"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#C3A4A1"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#746264"
+    }
+  ],
+  "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",
+  "orden": 5
+}

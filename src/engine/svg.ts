@@ -17,6 +17,11 @@ export type PathCrudo = {
   d: string;
   /** Posición del número fijada a mano o por el conversor (opcional). */
   etiqueta?: { x: number; y: number };
+  /**
+   * Radio libre alrededor de la etiqueta (opcional, lo escribe el conversor).
+   * Si vienen etiqueta y radio, el motor no recalcula nada al cargar.
+   */
+  radio?: number;
 };
 
 export type SvgCrudo = {
@@ -60,7 +65,8 @@ export function leerSvg(texto: string): SvgCrudo {
       const [x, y] = a['data-etiqueta'].split(/[\s,]+/).map(Number);
       etiqueta = { x, y };
     }
-    paths.push({ id: a.id, numero, d: a.d, etiqueta });
+    const radio = a['data-radio'] ? Number(a['data-radio']) : undefined;
+    paths.push({ id: a.id, numero, d: a.d, etiqueta, radio });
   }
   return { ancho, alto, paths };
 }
