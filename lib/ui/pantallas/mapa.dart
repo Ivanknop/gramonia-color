@@ -1,91 +1,194 @@
-/// Mapa de biomas. Versión provisoria: cada bioma es una grilla de piezas; las
-/// destapadas se ven con el color del bioma. El arte de cada pieza llega en la
-/// etapa del mapa.
+/// Mapa de Gramonia (provisorio): la ilustración en gris que se va coloreando.
+/// Cada obra terminada colorea una mancha de la zona de su bioma; con el
+/// bioma completo, se colorea la zona entera. Debajo, la lista de lugares.
 library;
+
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
+import '../../datos/mapa.dart';
 import '../../engine/motor.dart';
 import '../comun.dart';
+
+const assetMapa = 'assets/mapa/gramonia.webp';
 
 class Mapa extends StatelessWidget {
   const Mapa({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final progreso = Dependencias.of(context).progreso;
+    final dep = Dependencias.of(context);
     return ListenableBuilder(
-      listenable: progreso,
+      listenable: dep.progreso,
       builder: (context, _) {
-        final completados = progreso.completados;
+        final estados = estadoBiomas(biomas, dep.progreso.completados);
         return ListView(
           padding: const EdgeInsets.all(16),
-          children: [for (final b in biomas) _VistaBioma(estado: estadoBioma(b, completados))],
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: AspectRatio(
+                aspectRatio: anchoMapa / altoMapa,
+                child: FutureBuilder<ui.Image?>(
+                  future: dep.catalogo.imagenAsset(assetMapa),
+                  builder: (context, foto) => CustomPaint(
+                    painter: PintorMapa(imagen: foto.data, estados: estados),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            for (final e in estados) _FilaBioma(estado: e),
+          ],
         );
       },
     );
   }
 }
 
-class _VistaBioma extends StatelessWidget {
-  const _VistaBioma({required this.estado});
+/// Dibuja el mapa en gris y colorea las partes recuperadas.
+class PintorMapa extends CustomPainter {
+  PintorMapa({required this.imagen, required this.estados});
+
+  final ui.Image? imagen;
+  final List<EstadoBioma> estados;
+
+  static const _gris = ColorFilter.matrix(<double>[
+    0.2126, 0.7152, 0.0722, 0, 10, //
+    0.2126, 0.7152, 0.0722, 0, 10,
+    0.2126, 0.7152, 0.0722, 0, 10,
+    0, 0, 0, 1, 0,
+  ]);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.save();
+    canvas.scale(size.width / anchoMapa, size.height / altoMapa);
+    final img = imagen;
+    final todo = const Rect.fromLTWH(0, 0, anchoMapa, altoMapa);
+    final Paint color;
+    if (img != null) {
+      canvas.drawImageRect(
+        img,
+        Rect.fromLTWH(0, 0, img.width.toDouble(), img.height.toDouble()),
+        todo,
+        Paint()
+          ..colorFilter = _gris
+          ..filterQuality = FilterQuality.medium,
+      );
+      color = Paint()
+        ..shader = ui.ImageShader(
+          img,
+          TileMode.clamp,
+          TileMode.clamp,
+          Float64List.fromList([
+            anchoMapa / img.width, 0, 0, 0, //
+            0, altoMapa / img.height, 0, 0,
+            0, 0, 1, 0,
+            0, 0, 0, 1,
+          ]),
+        );
+    } else {
+      canvas.drawRect(todo, Paint()..color = const Color(0xFFBDBDBD));
+      color = Paint()..color = const Color(0xFF9CCC65);
+    }
+
+    for (final e in estados) {
+      final zona = zonasMapa[e.bioma.id];
+      if (zona == null) continue;
+      final path = _pathDe(zona);
+      final esIsla = e.bioma.tipo == TipoBioma.isla;
+      if (e.completo) {
+        // Bioma entero recuperado (las islas, con su propio color).
+        canvas.drawPath(path, esIsla ? (Paint()..color = Color(e.bioma.color)) : color);
+      } else if (e.reveladas.isNotEmpty) {
+        canvas.save();
+        canvas.clipPath(path);
+        final manchas = manchasDeZona(zona, e.total);
+        final radio = radioDeMancha(zona, e.total);
+        final pinta = esIsla ? (Paint()..color = Color(e.bioma.color)) : color;
+        for (var i = 0; i < e.bioma.piezas.length; i++) {
+          if (!e.reveladas.contains(e.bioma.piezas[i].id)) continue;
+          canvas.drawCircle(Offset(manchas[i].x, manchas[i].y), radio, pinta);
+        }
+        canvas.restore();
+      }
+      if (esIsla && !e.completo) {
+        canvas.drawPath(
+          path,
+          Paint()
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 2
+            ..color = Color(e.bioma.color).withValues(alpha: 0.6),
+        );
+      }
+      if (e.accesible && !e.completoDisponible) {
+        // "Estás acá": el lugar que toca recuperar ahora.
+        canvas.drawPath(
+          path,
+          Paint()
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 4
+            ..color = const Color(0xCCFFB300),
+        );
+      }
+    }
+    canvas.restore();
+  }
+
+  static ui.Path _pathDe(ZonaMapa zona) {
+    final path = ui.Path()..fillType = ui.PathFillType.evenOdd;
+    for (final pol in zona.poligonos) {
+      path.addPolygon([for (final p in pol) Offset(p.x, p.y)], true);
+    }
+    return path;
+  }
+
+  @override
+  bool shouldRepaint(PintorMapa old) => old.imagen != imagen || old.estados != estados;
+}
+
+class _FilaBioma extends StatelessWidget {
+  const _FilaBioma({required this.estado});
   final EstadoBioma estado;
 
   @override
   Widget build(BuildContext context) {
     final b = estado.bioma;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            '${b.nombre}${estado.desbloqueado ? ' ★' : ''}',
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Tema.morado),
+    final conObra = b.cuadroIds.length;
+    final String detalle;
+    if (!estado.accesible) {
+      detalle = 'Bloqueado: primero recuperá el lugar anterior';
+    } else if (estado.completo) {
+      detalle = b.descripcion;
+    } else {
+      detalle =
+          '${estado.reveladas.length} de ${estado.total} partes recuperadas'
+          '${conObra < estado.total ? ' (${estado.total - conObra} próximamente)' : ''}';
+    }
+    return Card(
+      color: Colors.white,
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: estado.accesible ? Color(b.color) : const Color(0xFFD0D0D0),
+          child: Icon(
+            estado.completo
+                ? Icons.star
+                : estado.accesible
+                ? Icons.palette_outlined
+                : Icons.lock_outline,
+            color: Colors.white,
           ),
-          const SizedBox(height: 4),
-          Text(
-            estado.desbloqueado
-                ? b.descripcion
-                : '${estado.reveladas.length} de ${estado.total} piezas destapadas',
-            style: const TextStyle(fontSize: 14, color: Color(0xFF666666)),
-          ),
-          const SizedBox(height: 8),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: GridView.count(
-              crossAxisCount: b.columnas,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              mainAxisSpacing: 2,
-              crossAxisSpacing: 2,
-              children: [for (var i = 0; i < b.filas * b.columnas; i++) _celda(b, i)],
-            ),
-          ),
-        ],
+        ),
+        title: Text(
+          b.nombre,
+          style: const TextStyle(fontWeight: FontWeight.w700, color: Tema.morado),
+        ),
+        subtitle: Text(detalle),
       ),
-    );
-  }
-
-  Widget _celda(Bioma b, int i) {
-    final fila = i ~/ b.columnas, columna = i % b.columnas;
-    final pieza = b.piezas.where((p) => p.fila == fila && p.columna == columna).firstOrNull;
-    final revelada = pieza != null && estado.reveladas.contains(pieza.id);
-    return ColoredBox(
-      color: revelada ? Color(b.color) : const Color(0xFFD9D9D9),
-      child: revelada
-          ? null
-          : const Center(
-              child: Text(
-                '?',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xFF999999),
-                ),
-              ),
-            ),
     );
   }
 }

@@ -1,6 +1,8 @@
 # Formato de los cuadros
 
-Cada cuadro son dos archivos en `assets/cuadros/`: `<id>.json` y `<id>.svg`.
+Cada cuadro son tres archivos en `assets/cuadros/`: `<id>.json`, `<id>.svg` y
+`<id>.webp` (la ilustración, con la misma proporción que el viewBox: se muestra
+en blanco y negro y se revela a color al pintar; sin webp, colores planos).
 La app encuentra sola todos los cuadros de esa carpeta.
 
 ## `<id>.json` — metadatos y paleta
@@ -56,18 +58,21 @@ La app encuentra sola todos los cuadros de esa carpeta.
 
 ## Después de agregar o editar un cuadro
 
-1. Asignarle una pieza en `lib/datos/biomas.dart`.
+1. Asignarle una pieza en `lib/datos/biomas.dart` (en orden de dificultad:
+   los tests verifican que las regiones no bajen a lo largo del recorrido).
 2. `flutter test`: los tests de datos validan que el cuadro se construya, que
    cada número quede sobre su región y que los biomas sean consistentes.
 
 ## Desde las ilustraciones de `arte/`
 
 Cada imagen de `arte/` tiene su entrada en `scripts/catalogo-arte.json` (id,
-título, categoría, mensaje de Mututu y, si hace falta, parámetros propios).
+título, categoría, mensaje de Mututu, **`regiones`** —la dificultad: cuántas
+regiones pintar— y `colores`).
 `python3 scripts/convertir_arte.py` las convierte todas
 (`python3 scripts/convertir_arte.py <id>` para una sola). Las imágenes muy oscuras o con mucho detalle quedan más
 abstractas: se pueden afinar con `colores`, `ancho` o `area_minima` en su
-entrada del catálogo.
+entrada del catálogo. Si una imagen no da para tantas regiones, el conversor
+genera las que puede (avisa la cantidad real).
 
 ## Desde una imagen
 

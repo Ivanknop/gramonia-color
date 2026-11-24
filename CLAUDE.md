@@ -23,7 +23,9 @@ paleta, bioma, pieza…), textos de la UI y commits. La UI usa voseo rioplatense
   (`import 'package:material_ui/material_ui.dart';`), no de
   `package:flutter/material.dart`.
 - Dibujo: `CustomPainter` (`lib/ui/pintor_cuadro.dart`) con `dart:ui` Path
-  armado desde los comandos SVG (curvas reales → nítido con zoom).
+  armado desde los comandos SVG. Con ilustración: fondo en blanco y negro
+  (ColorFilter) y cada región pintada con `ImageShader` de la ilustración a
+  color (se revelan luces y sombras, no colores planos).
 - Zoom/paneo: `InteractiveViewer`; el toque se resuelve con la geometría del
   motor (`regionEnPunto`), no con hit-testing de widgets.
 - Progreso: `shared_preferences` (JSON). Es la única dependencia externa:
@@ -38,14 +40,19 @@ paleta, bioma, pieza…), textos de la UI y commits. La UI usa voseo rioplatense
 lib/main.dart            Arranque: carga catálogo y progreso, App
 lib/engine/              Motor puro (sin widgets), con tests: geometría de paths
                          SVG, lectura del SVG, ubicación de números, reglas de
-                         pintar, colores, progresión de biomas, zoom máximo
+                         pintar (toque tolerante, lupa, bomba), colores,
+                         progresión secuencial de biomas, plumas, zoom máximo
 lib/datos/catalogo.dart  Carga assets/cuadros (AssetManifest) y arma cuadros
-lib/datos/biomas.dart    Biomas, piezas y qué cuadro destapa cada pieza
-lib/estado/              Progreso persistido (ChangeNotifier) y "Mis obras"
+lib/datos/biomas.dart    Lugares en orden (9 + 7 Islas Arcoíris), piezas y obras
+lib/datos/mapa.dart      Zonas de cada lugar sobre el mapa provisorio
+lib/datos/historia.dart  Historia narrada por Gobi (borrador editable)
+lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos) y
+                         "Mis obras"
 lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
 lib/ui/pantallas/        inicio (portada), principal (pestañas: galería,
-                         mis obras, mapa), pintar
-assets/cuadros/          <id>.json + <id>.svg de cada cuadro
+                         mis obras, mapa), pintar, historia
+assets/cuadros/          <id>.json + <id>.svg + <id>.webp de cada cuadro
+assets/mapa/             gramonia.webp (mapa provisorio, de arte/fondo-caminatas)
 arte/                    Ilustraciones originales (fuente de los cuadros)
 scripts/                 imagen_a_cuadro.py, convertir_arte.py,
                          catalogo-arte.json (títulos y parámetros de arte/)
@@ -79,7 +86,12 @@ el devcontainer la restaura desde `.devcontainer/android-keys/` si existe).
 - El progreso guarda lo mínimo (regiones pintadas y fechas); lo derivado
   (porcentaje, piezas, biomas) se calcula con el motor.
 - Cada cuadro destapa exactamente una pieza (lo valida `test/datos_test.dart`,
-  que también verifica que cada número caiga dentro de su región).
+  que también verifica que cada número caiga dentro de su región, que la
+  dificultad no baje en el recorrido y que cada lugar tenga zona y capítulo).
+- Las herramientas (lupa, bomba) son gratis mientras
+  `ReglasPlumas.herramientasGratis` sea true; las plumas igual se acumulan.
+- Si se cambia el formato de lo guardado, subir `Progreso.version` y migrar
+  (hay test de migración desde v1).
 - Los cuadros de `arte/` se generan: no editar su SVG a mano; cambiar
   `scripts/catalogo-arte.json` y volver a convertir.
 - Antes de dar algo por terminado: `flutter analyze` sin issues y `flutter test`

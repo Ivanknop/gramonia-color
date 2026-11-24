@@ -4,76 +4,90 @@
 
 ## 1. Historia
 
-**Gramonia** es un mundo de biomas muy distintos entre sí: bosques que susurran,
-costas de espuma, montañas de cristal… Su memoria vive en los **cuadros**: miles de
-pinturas de todo tipo (paisajes, animales, objetos, personas, obras de arte) que
-la gente de Gramonia fue juntando de todas partes, no solo de su propio mundo.
+Basada en el material de Gramonia (`docs/Cuentos.pdf` y `docs/Universo Gramonia.pdf`).
+El texto completo, en borrador para revisar, está en `lib/datos/historia.dart`.
 
-**Mututu** es una criatura traviesa (no malvada) que se _robó los colores_ de un
-montón de cuadros, que quedaron en blanco y negro. Sin sus cuadros, los biomas de
-Gramonia empiezan a desdibujarse en el mapa.
+**Gramonia** es una isla enorme que se sostiene sobre las raíces del **Árbol
+Mágico**, cuya copa es el cielo. Allá arriba vive el **Rocanón**, el ave-sol; de
+noche, sus plumas caídas son las estrellas. La memoria de Gramonia vive en sus
+**cuadros**.
 
-El jugador devuelve el color a cada cuadro pintando región por región. Cada
-cuadro recuperado destapa una pieza del mapa de Gramonia; al destapar todas las
-piezas de un bioma, ese bioma vuelve a la vida por completo.
+**Mututu** —el ser misterioso de la Isla Negra, más allá de las Islas Arcoíris—
+se llevó los colores de los cuadros, y sin ellos Gramonia se fue apagando.
 
-**Tono:** amable, colorido, con humor suave. Mututu aparece con frases cortas al
-completar cada cuadro (por ejemplo: _"Hasta el vapor había perdido su color por
-culpa de Mututu"_). Más adelante podría tener un arco propio: ¿por qué roba
-colores? (ideas: los colecciona porque él es gris; los guarda para un bioma
-secreto).
+El guía es **Gobi, el Lobito Guardián**: el más chiquito de los Lobos, nacido de
+un huevo carmesí con mariposas bordadas, que no tenía bioma para cuidar… hasta
+ahora. Gobi narra la historia: una introducción la primera vez que se juega
+(con una imagen inicial todavía no definida) y un capítulo cada vez que se
+recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
+(Gobi es el coleccionista de abrazos).
 
 ## 2. Mecánica principal
 
-1. El cuadro se muestra en **grises claros** con un **número** en cada región.
-2. Abajo hay una **paleta** con los colores numerados.
-3. El jugador elige un color; las regiones de ese número que faltan se
-   **resaltan**.
-4. Al tocar una región:
-   - número correcto → se pinta con su color (y feedback leve: vibración/sonido);
-   - número incorrecto → no se pinta (feedback suave, sin castigo);
-   - ya pintada → no pasa nada.
-5. Al completar todas las regiones de un color, la paleta lo marca con ✓ y se
-   pasa al siguiente color pendiente.
-6. **Zoom y paneo** con gestos (pellizcar / arrastrar) para regiones chicas.
-7. Al completar el cuadro: **animación de devolución del color**, mensaje de
-   Mututu y **revelado de la pieza** del bioma.
+1. El cuadro se muestra como la **ilustración en blanco y negro** (aclarada), con
+   el contorno y el **número** de cada región.
+2. Abajo hay una **paleta** con los colores numerados; al abrir un cuadro ya
+   está elegido el **color 1**, y sus regiones pendientes se marcan con un tinte.
+3. Al tocar una región del número correcto, se **revela la ilustración a color**
+   en esa región: con sus luces, sombras y brillos (no un color plano).
+   - Toque tolerante: si el dedo cae un poco al costado (~14 puntos) de una
+     región pendiente del color elegido, se pinta igual.
+   - Número incorrecto: no pinta (vibración suave). Correcto: vibración leve.
+4. Al completar un color, la paleta lo marca con ✓ y se pasa al siguiente.
+5. **Zoom y paneo** con gestos. El cuadro arranca llenando toda la pantalla.
+6. **Lupa**: lleva la vista a la próxima región pendiente del color elegido
+   (cada toque, la siguiente) y la señala.
+7. **Bomba de color**: se arma con el botón y el próximo toque pinta todas las
+   regiones cercanas, cada una con su color.
+8. Al terminar el cuadro: mensaje, parte del mapa recuperada y plumas.
 
-No hay derrota ni tiempo límite: es un juego relajante. El progreso de cada
-cuadro se guarda en todo momento.
+No hay derrota ni tiempo límite. El progreso se guarda en todo momento.
+
+## 2b. Plumas del Rocanón (moneda)
+
+- Se ganan: **5 por día** al entrar, **10 por obra** terminada y **30 por lugar**
+  completo (valores en `lib/engine/plumas.dart`).
+- Se gastan en la lupa (1) y la bomba (5). **Por ahora las herramientas son
+  gratis** (`ReglasPlumas.herramientasGratis`); el saldo igual se acumula.
 
 ## 3. Progresión
 
-- **Biomas**: cada uno es una grilla de piezas (por ejemplo 2x2, 3x3).
-- **Piezas**: cada pieza está asociada a **un cuadro**. Completar ese cuadro la
-  destapa.
-- **Bioma desbloqueado**: cuando todas las celdas de su grilla están destapadas.
-  Recompensa: ilustración completa del bioma, descripción y (a futuro) música
-  ambiente, nuevos cuadros o una escena animada.
-- Los cuadros no tienen por qué tener relación temática con el bioma que
-  destapan (un cuadro de una taza de té puede destapar una parte del bosque).
-- Dificultad de un cuadro: 1 a 5, según cantidad y tamaño de regiones.
+Gramonia se recorre lugar por lugar, con **dificultad creciente**: cada lugar
+tiene más obras que el anterior y cada obra más regiones para pintar.
 
-Ejemplo actual (datos de prueba): _Bosque Susurrante_ (2 piezas) y _Costa de
-Espuma_ (4 celdas, 1 pieza asignada por ahora).
+1. Árbol Mágico (2 obras) → 2. Bosque Mágico (3) → 3. La Ciudad (3) →
+4. Reino Animal (4) → 5. Montaña Dragón (4) → 6. Prado de las Hadas (5) →
+7. Tierra de las Caperucitas (5) → 8. Reino Helado (6) → 9. La Costa (6) →
+10–16. Las siete **Islas Arcoíris**, una por color (roja, naranja, amarilla,
+verde, azul, añil y morada), de 6 a 9 obras cada una.
+
+- Un lugar se puede jugar cuando el anterior está recuperado en todo lo que
+  tiene disponible. Las piezas **"próximamente"** (todavía sin obra) no traban.
+- Cada obra terminada colorea una parte del **mapa**; con el lugar completo se
+  colorea entero y Gobi cuenta su capítulo.
+- Las regiones por obra hoy van de 70 (Árbol) a ~340 (Costa).
 
 ## 4. Contenido
 
 - **Cuadros**: SVG con regiones numeradas + JSON con paleta y metadatos
   (ver [formato-cuadros.md](formato-cuadros.md)). Se pueden hacer a mano en un
   editor vectorial o generar desde una imagen con `scripts/imagen_a_cuadro.py`.
-- **Biomas**: definidos en `lib/datos/biomas.dart`.
+- **Lugares (biomas)**: `lib/datos/biomas.dart`. Zonas del mapa provisorio:
+  `lib/datos/mapa.dart` (sobre `fondo-caminatas`, que después volverá a ser obra).
+- **Historia**: `lib/datos/historia.dart`.
 - **Mensajes de Mututu**: uno por cuadro (campo `mensajeMututu`).
 
 ## 5. Pantallas
 
-- **Inicio** (portada): título, frase de historia, botones a la galería y al mapa.
+- **Inicio** (portada): Gobi, plumas, botones a pintar, mapa e historia. La
+  primera vez muestra la introducción.
 - Pestañas:
-  - **Galería**: lista de cuadros con su avance (%) o "¡Con color!".
+  - **Galería**: obras agrupadas por lugar, en orden; lugares bloqueados con
+    candado y piezas "próximamente".
   - **Mis obras**: cuadros empezados (para retomar) y terminados, con miniatura.
-  - **Mapa**: biomas con sus piezas destapadas u ocultas.
-- **Pintar** (se abre encima de las pestañas): lienzo con zoom, paleta y
-  avance; panel final al completar.
+  - **Mapa**: Gramonia en gris que se va coloreando; lista de lugares.
+- **Pintar**: lienzo grande con zoom, lupa, bomba, avance y paleta.
+- **Historia**: escenas narradas por Gobi (introducción y capítulos).
 
 ## 6. Ideas para más adelante (fuera del alcance inicial)
 

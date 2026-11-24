@@ -2,99 +2,59 @@
   "id": "hormiguero-del-arbol",
   "titulo": "El hormiguero del árbol",
   "categoria": "paisaje",
-  "dificultad": 5,
+  "dificultad": 3,
   "paleta": [
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#55563E"
+      "hex": "#3D5345"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#536D50"
+      "hex": "#61563D"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#797147"
+      "hex": "#3F3630"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#524435"
+      "hex": "#2B3E3B"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#3B322D"
+      "hex": "#656D4B"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#6D573C"
+      "hex": "#242D30"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#2C4440"
+      "hex": "#798554"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#3C433A"
+      "hex": "#534435"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#3B4D41"
+      "hex": "#A5AF70"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#423A32"
-    },
-    {
-      "numero": 11,
-      "nombre": "Color 11",
-      "hex": "#3F5949"
-    },
-    {
-      "numero": 12,
-      "nombre": "Color 12",
-      "hex": "#262F31"
-    },
-    {
-      "numero": 13,
-      "nombre": "Color 13",
-      "hex": "#95A063"
-    },
-    {
-      "numero": 14,
-      "nombre": "Color 14",
-      "hex": "#20272B"
-    },
-    {
-      "numero": 15,
-      "nombre": "Color 15",
-      "hex": "#293837"
-    },
-    {
-      "numero": 16,
-      "nombre": "Color 16",
-      "hex": "#7C8656"
-    },
-    {
-      "numero": 17,
-      "nombre": "Color 17",
-      "hex": "#2B3E3C"
-    },
-    {
-      "numero": 18,
-      "nombre": "Color 18",
-      "hex": "#B9C281"
+      "hex": "#3D433A"
     }
   ],
   "mensajeMututu": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
-  "orden": 3
+  "orden": 2
 }

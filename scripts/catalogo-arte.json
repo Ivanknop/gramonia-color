@@ -1,83 +1,97 @@
 {
-  "_comentario": "Cuadros generados desde las imágenes de arte/. Editar acá y correr `python3 scripts/convertir_arte.py`. Los parámetros por defecto se pueden pisar en cada cuadro (colores, ancho, area_minima, suavizado, tolerancia, curvas).",
+  "_comentario": "Cuadros generados desde las imágenes de arte/. Editar acá y correr `python3 scripts/convertir_arte.py`. El orden es la progresión del juego. `regiones` define la dificultad (cuántas regiones pintar); `colores` el tamaño de la paleta. Se pueden pisar los demás parámetros por cuadro (ancho, area_minima, suavizado, tolerancia, curvas).",
   "por_defecto": {
-    "colores": 18,
-    "ancho": 200,
-    "area_minima": 12,
+    "colores": 12,
+    "area_minima": 8,
     "suavizado": 2,
     "tolerancia": 0.6,
     "curvas": 2
   },
   "cuadros": [
     {
-      "imagen": "etapa1-abuelita.jpeg",
-      "id": "casa-de-la-abuelita",
-      "titulo": "La casa de la abuelita",
-      "categoria": "paisaje",
-      "mensaje": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea."
-    },
-    {
       "imagen": "etapa2-rocanon.jpeg",
       "id": "nido-de-rocanon",
       "titulo": "El nido de Rocanon",
       "categoria": "paisaje",
-      "mensaje": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor."
+      "mensaje": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor.",
+      "regiones": 70,
+      "colores": 10
     },
     {
       "imagen": "etapa3-hormigas.jpeg",
       "id": "hormiguero-del-arbol",
       "titulo": "El hormiguero del árbol",
       "categoria": "paisaje",
-      "mensaje": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!"
+      "mensaje": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
+      "regiones": 90,
+      "colores": 10
     },
     {
-      "imagen": "etapa4-tormenta.jpeg",
-      "id": "puerto-en-la-tormenta",
-      "titulo": "Puerto en la tormenta",
+      "imagen": "etapa1-abuelita.jpeg",
+      "id": "casa-de-la-abuelita",
+      "titulo": "La casa de la abuelita",
       "categoria": "paisaje",
-      "mensaje": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas."
-    },
-    {
-      "imagen": "etapa5-dragones.jpeg",
-      "id": "montana-de-los-dragones",
-      "titulo": "La montaña de los dragones",
-      "categoria": "paisaje",
-      "mensaje": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar."
+      "mensaje": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea.",
+      "regiones": 110,
+      "colores": 12
     },
     {
       "imagen": "etapa6-papa.jpeg",
       "id": "refugio-de-papa",
       "titulo": "El refugio de papá",
       "categoria": "arte",
-      "mensaje": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas."
-    },
-    {
-      "imagen": "etapa7-barco.jpeg",
-      "id": "barco-en-el-muelle",
-      "titulo": "El barco en el muelle",
-      "categoria": "objeto",
-      "mensaje": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo."
-    },
-    {
-      "imagen": "final.jpeg",
-      "id": "rumbo-a-la-isla",
-      "titulo": "Rumbo a la isla",
-      "categoria": "paisaje",
-      "mensaje": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?"
+      "mensaje": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas.",
+      "regiones": 130,
+      "colores": 12
     },
     {
       "imagen": "tienda.jpeg",
       "id": "la-tienda",
       "titulo": "La tienda",
       "categoria": "arte",
-      "mensaje": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender."
+      "mensaje": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender.",
+      "regiones": 160,
+      "colores": 12
     },
     {
-      "imagen": "fondo-caminatas.jpeg",
-      "id": "mapa-de-las-caminatas",
-      "titulo": "El mapa de las caminatas",
-      "categoria": "arte",
-      "mensaje": "¡El mapa recuperó sus colores! Ahora se ve clarito por dónde anduvo Mututu."
+      "imagen": "etapa5-dragones.jpeg",
+      "id": "montana-de-los-dragones",
+      "titulo": "La montaña de los dragones",
+      "categoria": "paisaje",
+      "mensaje": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",
+      "regiones": 220,
+      "colores": 14
+    },
+    {
+      "imagen": "etapa4-tormenta.jpeg",
+      "id": "puerto-en-la-tormenta",
+      "titulo": "Puerto en la tormenta",
+      "categoria": "paisaje",
+      "mensaje": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas.",
+      "regiones": 300,
+      "colores": 16
+    },
+    {
+      "imagen": "etapa7-barco.jpeg",
+      "id": "barco-en-el-muelle",
+      "titulo": "El barco en el muelle",
+      "categoria": "objeto",
+      "mensaje": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo.",
+      "regiones": 330,
+      "colores": 16
+    },
+    {
+      "imagen": "final.jpeg",
+      "id": "rumbo-a-la-isla",
+      "titulo": "Rumbo a la isla",
+      "categoria": "paisaje",
+      "mensaje": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?",
+      "regiones": 360,
+      "colores": 16
     }
-  ]
+  ],
+  "mapa": {
+    "imagen": "fondo-caminatas.jpeg",
+    "_comentario": "Mapa provisorio de Gramonia (assets/mapa/gramonia.webp). Cuando haya un mapa mejor, pasa a ser una obra."
+  }
 }

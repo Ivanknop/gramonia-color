@@ -1,55 +1,120 @@
-/// Biomas de Gramonia y sus piezas. Cada pieza se destapa al completar el
-/// cuadro indicado en `cuadroId`; un cuadro destapa como máximo una pieza
-/// (lo verifica test/datos_test.dart).
+/// Biomas de Gramonia en orden de progresión (dificultad creciente: más obras
+/// y más regiones por obra). Cada pieza se destapa al completar su obra; las
+/// piezas sin `cuadroId` son "próximamente" (falta la obra) y no traban el
+/// avance. Un cuadro destapa como máximo una pieza (test/datos_test.dart).
 ///
-/// Asignación provisoria de los cuadros de prueba (arte/ + ejemplos).
+/// Las obras de cada bioma van de menos a más regiones.
 library;
 
 import '../engine/progresion.dart';
 
-const biomas = <Bioma>[
+/// Piezas "próximamente" numeradas: `_proximamente('ciudad', 2, desde: 2)` → ciudad-2, ciudad-3.
+List<Pieza> _proximamente(String bioma, int cantidad, {int desde = 1}) => [
+  for (var i = 0; i < cantidad; i++) Pieza(id: '$bioma-${desde + i}'),
+];
+
+final biomas = <Bioma>[
   Bioma(
-    id: 'bosque-susurrante',
-    nombre: 'Bosque Susurrante',
+    id: 'arbol-magico',
+    nombre: 'Árbol Mágico',
     descripcion:
-        'Árboles altísimos que se cuentan secretos con el viento. Mututu empezó su robo por acá.',
-    color: 0xFF6AA84F,
-    filas: 2,
-    columnas: 3,
-    piezas: [
-      Pieza(id: 'casa-de-la-abuelita', cuadroId: 'casa-de-la-abuelita', fila: 0, columna: 0),
-      Pieza(id: 'nido', cuadroId: 'nido-de-rocanon', fila: 0, columna: 1),
-      Pieza(id: 'hormiguero', cuadroId: 'hormiguero-del-arbol', fila: 0, columna: 2),
-      Pieza(id: 'refugio', cuadroId: 'refugio-de-papa', fila: 1, columna: 0),
-      Pieza(id: 'claro', cuadroId: 'atardecer-en-el-lago', fila: 1, columna: 1),
-      Pieza(id: 'casa-del-arbol', cuadroId: 'taza-de-te', fila: 1, columna: 2),
+        'El corazón de Gramonia: sus raíces son el suelo de la isla y su copa es el cielo.',
+    color: 0xFF7FB8D9,
+    piezas: const [
+      Pieza(id: 'nido', cuadroId: 'nido-de-rocanon'),
+      Pieza(id: 'hormiguero', cuadroId: 'hormiguero-del-arbol'),
     ],
   ),
   Bioma(
-    id: 'costa-de-espuma',
-    nombre: 'Costa de Espuma',
-    descripcion: 'Playas de arena rosada donde las olas traen botellas con mensajes.',
-    color: 0xFF45818E,
-    filas: 2,
-    columnas: 2,
+    id: 'bosque-magico',
+    nombre: 'Bosque Mágico',
+    descripcion:
+        'Rodea al Árbol y parece igual mires hacia donde mires. Lo cuidan las Hormiguitas.',
+    color: 0xFF2E7D32,
     piezas: [
-      Pieza(id: 'puerto', cuadroId: 'puerto-en-la-tormenta', fila: 0, columna: 0),
-      Pieza(id: 'muelle', cuadroId: 'barco-en-el-muelle', fila: 0, columna: 1),
-      Pieza(id: 'horizonte', cuadroId: 'rumbo-a-la-isla', fila: 1, columna: 0),
-      Pieza(id: 'arrecife', cuadroId: 'pez-naranja', fila: 1, columna: 1),
+      const Pieza(id: 'casa-de-la-abuelita', cuadroId: 'casa-de-la-abuelita'),
+      const Pieza(id: 'refugio', cuadroId: 'refugio-de-papa'),
+      ..._proximamente('bosque-magico', 1, desde: 3),
     ],
   ),
   Bioma(
-    id: 'montanas-de-cristal',
-    nombre: 'Montañas de Cristal',
-    descripcion: 'Picos llenos de gemas donde anidan los dragones y los viajeros hacen noche.',
-    color: 0xFF8E7CC3,
-    filas: 1,
-    columnas: 3,
+    id: 'ciudad',
+    nombre: 'La Ciudad',
+    descripcion: 'Edificios brillantes, trenes velocísimos y dos mil personas yendo y viniendo.',
+    color: 0xFFB0855A,
     piezas: [
-      Pieza(id: 'cumbre', cuadroId: 'montana-de-los-dragones', fila: 0, columna: 0),
-      Pieza(id: 'tienda', cuadroId: 'la-tienda', fila: 0, columna: 1),
-      Pieza(id: 'mapa', cuadroId: 'mapa-de-las-caminatas', fila: 0, columna: 2),
+      const Pieza(id: 'tienda', cuadroId: 'la-tienda'),
+      ..._proximamente('ciudad', 2, desde: 2),
     ],
   ),
+  Bioma(
+    id: 'reino-animal',
+    nombre: 'Reino Animal',
+    descripcion:
+        'La gran ciudad de los animales: el correo de León, la tienda de Vaca y mucho queso.',
+    color: 0xFFE0A13B,
+    piezas: _proximamente('reino-animal', 4),
+  ),
+  Bioma(
+    id: 'montana-dragon',
+    nombre: 'Montaña Dragón',
+    descripcion: 'La más alta de Gramonia después del Árbol: cuevas tibias, gemas y dragones.',
+    color: 0xFF7E57C2,
+    piezas: [
+      const Pieza(id: 'cumbre', cuadroId: 'montana-de-los-dragones'),
+      ..._proximamente('montana-dragon', 3, desde: 2),
+    ],
+  ),
+  Bioma(
+    id: 'prado-de-las-hadas',
+    nombre: 'Prado de las Hadas',
+    descripcion: 'Flores, capullos y mariposas: acá las Hadas practican sus poderes.',
+    color: 0xFFF48FB1,
+    piezas: _proximamente('prado-de-las-hadas', 5),
+  ),
+  Bioma(
+    id: 'tierra-de-las-caperucitas',
+    nombre: 'Tierra de las Caperucitas',
+    descripcion:
+        'Caperuzas de todos los colores, a rayas, con lunares… y una que cambia con "panqueque".',
+    color: 0xFFE53935,
+    piezas: _proximamente('tierra-de-las-caperucitas', 5),
+  ),
+  Bioma(
+    id: 'reino-helado',
+    nombre: 'Reino Helado',
+    descripcion: 'Nieve, frío y el mejor helado de menta granizada de toda la isla.',
+    color: 0xFF81D4FA,
+    piezas: _proximamente('reino-helado', 6),
+  ),
+  Bioma(
+    id: 'costa',
+    nombre: 'La Costa',
+    descripcion: 'Playas, muelles y SirenHadas que juntan caracolas. Más allá, el mar.',
+    color: 0xFF1E88E5,
+    piezas: [
+      const Pieza(id: 'muelle', cuadroId: 'barco-en-el-muelle'),
+      const Pieza(id: 'puerto', cuadroId: 'puerto-en-la-tormenta'),
+      const Pieza(id: 'horizonte', cuadroId: 'rumbo-a-la-isla'),
+      ..._proximamente('costa', 3, desde: 4),
+    ],
+  ),
+  for (final (i, (id, nombre, color)) in const [
+    ('isla-roja', 'Isla Roja', 0xFFE53935),
+    ('isla-naranja', 'Isla Naranja', 0xFFFB8C00),
+    ('isla-amarilla', 'Isla Amarilla', 0xFFFDD835),
+    ('isla-verde', 'Isla Verde', 0xFF43A047),
+    ('isla-azul', 'Isla Azul', 0xFF1E88E5),
+    ('isla-anil', 'Isla Añil', 0xFF3949AB),
+    ('isla-morada', 'Isla Morada', 0xFF8E24AA),
+  ].indexed)
+    Bioma(
+      id: id,
+      nombre: nombre,
+      descripcion: 'Una de las siete Islas Arcoíris, hogar de duendecitos de su mismo color.',
+      color: color,
+      tipo: TipoBioma.isla,
+      // De 6 a 9 obras: la dificultad sigue creciendo isla por isla.
+      piezas: _proximamente(id, 6 + i ~/ 2),
+    ),
 ];

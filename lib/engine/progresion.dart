@@ -1,21 +1,21 @@
-/// Progresión: cada cuadro terminado destapa una pieza de un bioma; con todas
-/// las celdas de su grilla destapadas, el bioma se desbloquea entero.
+/// Progresión: Gramonia se recorre bioma por bioma, con dificultad creciente
+/// (más obras y más regiones por obra). Cada obra terminada destapa una pieza
+/// de su bioma; con todas las piezas destapadas, el bioma queda completo.
+///
+/// Un bioma se puede jugar cuando el anterior está completo en todo lo que
+/// tiene disponible: las piezas "próximamente" (sin obra asignada todavía) no
+/// traban el avance.
 library;
 
-/// Una pieza del mapa de un bioma, ubicada en su grilla.
+enum TipoBioma { region, isla }
+
+/// Una pieza de un bioma. [cuadroId] null = "próximamente" (falta la obra).
 class Pieza {
-  const Pieza({
-    required this.id,
-    required this.cuadroId,
-    required this.fila,
-    required this.columna,
-  });
+  const Pieza({required this.id, this.cuadroId});
   final String id;
 
-  /// Cuadro que hay que completar para destaparla.
-  final String cuadroId;
-  final int fila;
-  final int columna;
+  /// Obra que hay que completar para destaparla.
+  final String? cuadroId;
 }
 
 class Bioma {
@@ -24,39 +24,57 @@ class Bioma {
     required this.nombre,
     required this.descripcion,
     required this.color,
-    required this.filas,
-    required this.columnas,
     required this.piezas,
+    this.tipo = TipoBioma.region,
   });
 
   final String id;
   final String nombre;
   final String descripcion;
 
-  /// Color dominante (ARGB), para la vista provisoria del mapa.
+  /// Color representativo (ARGB): fichas, islas del mapa, etc.
   final int color;
-  final int filas;
-  final int columnas;
   final List<Pieza> piezas;
+  final TipoBioma tipo;
+
+  Iterable<String> get cuadroIds => piezas.map((p) => p.cuadroId).whereType<String>();
 }
 
 class EstadoBioma {
-  const EstadoBioma(this.bioma, this.reveladas, this.total, this.desbloqueado);
+  const EstadoBioma({required this.bioma, required this.reveladas, required this.accesible});
+
   final Bioma bioma;
+
+  /// Ids de piezas destapadas.
   final Set<String> reveladas;
-  final int total;
-  final bool desbloqueado;
+
+  /// Se puede jugar (el anterior está completo en lo disponible).
+  final bool accesible;
+
+  int get total => bioma.piezas.length;
+
+  /// Todas las piezas destapadas (requiere que todas tengan obra).
+  bool get completo => total > 0 && reveladas.length == total;
+
+  /// Todas las obras que existen hoy están terminadas.
+  bool get completoDisponible =>
+      bioma.piezas.every((p) => p.cuadroId == null || reveladas.contains(p.id));
 }
 
-EstadoBioma estadoBioma(Bioma bioma, Set<String> completados) {
-  final reveladas = {
-    for (final p in bioma.piezas)
-      if (completados.contains(p.cuadroId)) p.id,
-  };
-  // El total son las celdas de la grilla: si faltan piezas por asignar,
-  // el bioma no puede desbloquearse todavía.
-  final total = bioma.filas * bioma.columnas;
-  return EstadoBioma(bioma, reveladas, total, total > 0 && reveladas.length == total);
+/// Estado de todos los biomas, en orden de progresión.
+List<EstadoBioma> estadoBiomas(List<Bioma> biomas, Set<String> completados) {
+  final estados = <EstadoBioma>[];
+  var anteriorListo = true;
+  for (final b in biomas) {
+    final reveladas = {
+      for (final p in b.piezas)
+        if (p.cuadroId != null && completados.contains(p.cuadroId)) p.id,
+    };
+    final e = EstadoBioma(bioma: b, reveladas: reveladas, accesible: anteriorListo);
+    estados.add(e);
+    anteriorListo = anteriorListo && e.completoDisponible;
+  }
+  return estados;
 }
 
 /// Qué pieza destapa un cuadro (o null si no destapa ninguna).
@@ -69,6 +87,20 @@ EstadoBioma estadoBioma(Bioma bioma, Set<String> completados) {
   return null;
 }
 
+/// Biomas que pasan a estar completos (todas sus obras disponibles
+/// terminadas) al sumar [cuadroId] a los completados.
+List<Bioma> biomasQueSeCompletan(List<Bioma> biomas, Set<String> antes, String cuadroId) {
+  final previos = estadoBiomas(biomas, antes);
+  final nuevos = estadoBiomas(biomas, {...antes, cuadroId});
+  return [
+    for (var i = 0; i < biomas.length; i++)
+      if (!previos[i].completoDisponible &&
+          nuevos[i].completoDisponible &&
+          biomas[i].cuadroIds.isNotEmpty)
+        biomas[i],
+  ];
+}
+
 /// Revisa que los datos de biomas sean consistentes. Devuelve los problemas
 /// encontrados (vacío si está todo bien). Lo usan los tests de datos.
 List<String> validarBiomas(List<Bioma> biomas, Iterable<String> cuadroIds) {
@@ -78,25 +110,17 @@ List<String> validarBiomas(List<Bioma> biomas, Iterable<String> cuadroIds) {
   final idsBioma = <String>{};
   for (final b in biomas) {
     if (!idsBioma.add(b.id)) problemas.add('Bioma repetido: ${b.id}');
-    final celdas = <String>{};
+    if (b.piezas.isEmpty) problemas.add('${b.id} no tiene piezas');
     final idsPieza = <String>{};
     for (final p in b.piezas) {
       final donde = '${b.id}/${p.id}';
       if (!idsPieza.add(p.id)) problemas.add('Pieza repetida: $donde');
-      if (!existentes.contains(p.cuadroId)) {
-        problemas.add('$donde usa un cuadro inexistente: ${p.cuadroId}');
-      }
-      final previo = cuadrosUsados[p.cuadroId];
-      if (previo != null) {
-        problemas.add('El cuadro ${p.cuadroId} destapa dos piezas: $previo y $donde');
-      }
-      cuadrosUsados[p.cuadroId] = donde;
-      if (p.fila < 0 || p.fila >= b.filas || p.columna < 0 || p.columna >= b.columnas) {
-        problemas.add('$donde está fuera de la grilla ${b.filas}x${b.columnas}');
-      }
-      if (!celdas.add('${p.fila},${p.columna}')) {
-        problemas.add('$donde ocupa una celda ya usada (${p.fila},${p.columna})');
-      }
+      final c = p.cuadroId;
+      if (c == null) continue;
+      if (!existentes.contains(c)) problemas.add('$donde usa un cuadro inexistente: $c');
+      final previo = cuadrosUsados[c];
+      if (previo != null) problemas.add('El cuadro $c destapa dos piezas: $previo y $donde');
+      cuadrosUsados[c] = donde;
     }
   }
   return problemas;

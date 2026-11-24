@@ -1,4 +1,4 @@
-"""Tests del conversor. Correr con: python3 -m unittest discover -s scripts -p "test_*.py""""
+"""Tests del conversor. Correr con: python3 -m unittest discover -s scripts -p 'test_*.py'"""
 
 import sys
 import unittest
@@ -7,7 +7,13 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from imagen_a_cuadro import quitar_colineales, simplificar_lazo, trazar_contornos  # noqa: E402
+from imagen_a_cuadro import (  # noqa: E402
+    etiquetar_regiones,
+    fusionar_chicas,
+    quitar_colineales,
+    simplificar_lazo,
+    trazar_contornos,
+)
 
 
 def area(lazo):
@@ -44,6 +50,24 @@ class TestContornos(unittest.TestCase):
         self.assertLess(len(simple), len(lazo))
         self.assertGreaterEqual(len(simple), 3)
         self.assertAlmostEqual(area(simple), area(lazo), delta=25)
+
+
+class TestFusion(unittest.TestCase):
+    def setUp(self):
+        rng = np.random.default_rng(7)
+        self.indices = rng.integers(0, 4, (40, 40))  # ruido: muchas regiones chicas
+
+    def test_fusiona_hasta_el_objetivo(self):
+        etiquetas, color_de = etiquetar_regiones(self.indices)
+        fusionar_chicas(etiquetas, color_de, area_minima=1, objetivo=25)
+        self.assertEqual(len(np.unique(etiquetas)), 25)
+        self.assertEqual(set(np.unique(etiquetas).tolist()), set(color_de))
+
+    def test_respeta_el_area_minima(self):
+        etiquetas, color_de = etiquetar_regiones(self.indices)
+        fusionar_chicas(etiquetas, color_de, area_minima=30)
+        _, areas = np.unique(etiquetas, return_counts=True)
+        self.assertGreaterEqual(areas.min(), 30)
 
 
 if __name__ == "__main__":

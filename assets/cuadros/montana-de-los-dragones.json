@@ -7,94 +7,74 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#313A46"
+      "hex": "#78707E"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#4F4D5B"
+      "hex": "#1F2532"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#3E434F"
+      "hex": "#595B6B"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#595B6B"
+      "hex": "#313644"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#8B808E"
+      "hex": "#38464F"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#78707E"
+      "hex": "#262D3B"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#313140"
+      "hex": "#433C47"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#646171"
+      "hex": "#5D4F55"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#433C47"
+      "hex": "#4F4D5A"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#262D3B"
+      "hex": "#A89398"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#1B212E"
+      "hex": "#383947"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#212835"
+      "hex": "#464754"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#393947"
+      "hex": "#283540"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#5D5055"
-    },
-    {
-      "numero": 15,
-      "nombre": "Color 15",
-      "hex": "#283540"
-    },
-    {
-      "numero": 16,
-      "nombre": "Color 16",
-      "hex": "#414A54"
-    },
-    {
-      "numero": 17,
-      "nombre": "Color 17",
-      "hex": "#C3A4A1"
-    },
-    {
-      "numero": 18,
-      "nombre": "Color 18",
-      "hex": "#746264"
+      "hex": "#6D6169"
     }
   ],
   "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",
-  "orden": 5
+  "orden": 6
 }

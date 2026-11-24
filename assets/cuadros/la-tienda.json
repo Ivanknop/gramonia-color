@@ -7,94 +7,64 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#5B3D2F"
+      "hex": "#7E5D49"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#745B4D"
+      "hex": "#332521"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#4A3228"
+      "hex": "#5B3D2F"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#936E53"
+      "hex": "#6A4A39"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#B28A65"
+      "hex": "#946E53"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#382721"
+      "hex": "#5D463B"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#58453D"
+      "hex": "#533A2E"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#896045"
+      "hex": "#3F2C25"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#533A2E"
+      "hex": "#473027"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#634738"
+      "hex": "#754E39"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#77513C"
+      "hex": "#B28A66"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#2E221E"
-    },
-    {
-      "numero": 13,
-      "nombre": "Color 13",
-      "hex": "#6A4A39"
-    },
-    {
-      "numero": 14,
-      "nombre": "Color 14",
-      "hex": "#724B35"
-    },
-    {
-      "numero": 15,
-      "nombre": "Color 15",
-      "hex": "#42332D"
-    },
-    {
-      "numero": 16,
-      "nombre": "Color 16",
-      "hex": "#3E2C24"
-    },
-    {
-      "numero": 17,
-      "nombre": "Color 17",
-      "hex": "#4D382F"
-    },
-    {
-      "numero": 18,
-      "nombre": "Color 18",
-      "hex": "#412E27"
+      "hex": "#4A372E"
     }
   ],
   "mensajeMututu": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender.",
-  "orden": 9
+  "orden": 5
 }

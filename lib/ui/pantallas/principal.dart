@@ -3,6 +3,7 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../comun.dart';
 import 'galeria.dart';
 import 'mapa.dart';
 import 'mis_obras.dart';
@@ -28,7 +29,10 @@ class _PrincipalState extends State<Principal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_titulos[_pestana])),
+      appBar: AppBar(
+        title: Text(_titulos[_pestana]),
+        actions: const [ContadorPlumas(), SizedBox(width: 12)],
+      ),
       body: IndexedStack(
         index: _pestana,
         children: [

@@ -121,4 +121,39 @@ void main() {
       );
     });
   });
+
+  group('toque tolerante', () {
+    test('sin tolerancia, el punto manda', () {
+      final r = regionParaToque(cuadro, {}, const Punto(42, 20), 2);
+      expect(r?.id, 'fondo');
+    });
+
+    test('con tolerancia, toma la región pendiente del color elegido más cercana', () {
+      // A 2 unidades del borde del cuadrado (que es del color 2).
+      expect(regionParaToque(cuadro, {}, const Punto(42, 20), 2, tolerancia: 3)?.id, 'cuadrado');
+      final r = intentarPintar(cuadro, {}, const Punto(42, 20), 2, tolerancia: 3);
+      expect(r, isA<Correcto>());
+    });
+
+    test('no se pasa de la tolerancia ni elige regiones ya pintadas', () {
+      expect(regionParaToque(cuadro, {}, const Punto(48, 20), 2, tolerancia: 3)?.id, 'fondo');
+      expect(
+        regionParaToque(cuadro, {'cuadrado'}, const Punto(42, 20), 2, tolerancia: 3)?.id,
+        'fondo',
+      );
+    });
+  });
+
+  test('bomba: pinta las pendientes cercanas, sin importar el color', () {
+    final ids = regionesDeBomba(cuadro, {}, const Punto(25, 25), 30).map((r) => r.id).toSet();
+    expect(ids, containsAll(['cuadrado']));
+    expect(ids, isNot(contains('otro'))); // queda lejos
+    expect(regionesDeBomba(cuadro, {'cuadrado', 'fondo'}, const Punto(25, 25), 30), isEmpty);
+  });
+
+  test('lupa: pendientes del color elegido, o todas si ese color terminó', () {
+    expect(pendientesParaLupa(cuadro, {}, 2).map((r) => r.id), ['cuadrado', 'otro']);
+    expect(pendientesParaLupa(cuadro, {'cuadrado', 'otro'}, 2).map((r) => r.id), ['fondo']);
+    expect(pendientesParaLupa(cuadro, {'fondo', 'cuadrado', 'otro'}, 1), isEmpty);
+  });
 }

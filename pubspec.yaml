@@ -58,9 +58,11 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # Cuadros: <id>.json (metadatos y paleta) + <id>.svg (regiones numeradas).
+  # Cuadros: <id>.json (metadatos y paleta) + <id>.svg (regiones numeradas)
+  # + <id>.webp (ilustración que se revela al pintar). Mapa provisorio.
   assets:
     - assets/cuadros/
+    - assets/mapa/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -2,99 +2,69 @@
   "id": "casa-de-la-abuelita",
   "titulo": "La casa de la abuelita",
   "categoria": "paisaje",
-  "dificultad": 5,
+  "dificultad": 4,
   "paleta": [
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#B38651"
+      "hex": "#BE9263"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#E4AC9D"
+      "hex": "#708456"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#858C50"
+      "hex": "#26393B"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#4F6548"
+      "hex": "#E5AB9C"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#8CB2C4"
+      "hex": "#304A41"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#85664A"
+      "hex": "#836548"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#573F44"
+      "hex": "#506448"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#283E3B"
+      "hex": "#5D4944"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#223137"
+      "hex": "#8DB2C1"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#5E7E5B"
+      "hex": "#35594D"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#365F53"
+      "hex": "#EAC794"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#335247"
-    },
-    {
-      "numero": 13,
-      "nombre": "Color 13",
-      "hex": "#2E4941"
-    },
-    {
-      "numero": 14,
-      "nombre": "Color 14",
-      "hex": "#645243"
-    },
-    {
-      "numero": 15,
-      "nombre": "Color 15",
-      "hex": "#D2A27E"
-    },
-    {
-      "numero": 16,
-      "nombre": "Color 16",
-      "hex": "#EFD496"
-    },
-    {
-      "numero": 17,
-      "nombre": "Color 17",
-      "hex": "#B5B28D"
-    },
-    {
-      "numero": 18,
-      "nombre": "Color 18",
-      "hex": "#E5BD8A"
+      "hex": "#B5B28C"
     }
   ],
   "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea.",
-  "orden": 1
+  "orden": 3
 }

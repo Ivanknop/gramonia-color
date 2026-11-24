@@ -1,9 +1,13 @@
-/// Vista chica de un cuadro tal como lo dejó el jugador (sin números).
+/// Vista chica de un cuadro tal como lo dejó el jugador (sin números): lo
+/// pintado a color y el resto en blanco y negro.
 library;
+
+import 'dart:ui' as ui;
 
 import 'package:material_ui/material_ui.dart';
 
 import '../engine/motor.dart';
+import 'comun.dart';
 import 'pintor_cuadro.dart';
 
 class Miniatura extends StatelessWidget {
@@ -22,15 +26,19 @@ class Miniatura extends StatelessWidget {
       width: tamano,
       height: tamano,
       child: Center(
-        child: CustomPaint(
-          size: Size(cuadro.ancho * factor, cuadro.alto * factor),
-          painter: PintorCuadro(
-            cuadro: cuadro,
-            pintadas: pintadas,
-            factor: factor,
-            mostrarNumeros: false,
-            // Medio punto de pantalla, en unidades del viewBox.
-            anchoBorde: 0.5 / factor,
+        child: FutureBuilder<ui.Image?>(
+          future: Dependencias.of(context).catalogo.imagen(cuadro.id),
+          builder: (context, imagen) => CustomPaint(
+            size: Size(cuadro.ancho * factor, cuadro.alto * factor),
+            painter: PintorCuadro(
+              cuadro: cuadro,
+              pintadas: pintadas,
+              factor: factor,
+              imagen: imagen.data,
+              mostrarNumeros: false,
+              // Medio punto de pantalla, en unidades del viewBox.
+              anchoBorde: 0.5 / factor,
+            ),
           ),
         ),
       ),

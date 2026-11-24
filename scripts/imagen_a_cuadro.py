@@ -9,9 +9,11 @@ lib/datos/biomas.dart (los tests de datos lo verifican).
 Pasos:
   1. Reducir la imagen a una grilla chica (--ancho px de lado mayor).
   2. Cuantizar a N colores (--colores) con median cut.
+     Además se guarda la ilustración como <id>.webp (la app la revela al pintar).
   3. Suavizar con un filtro de moda para quitar ruido.
   4. Separar regiones conexas por color (4-conectividad).
-  5. Fusionar regiones chicas (--area-minima px) con su vecina de mayor borde.
+  5. Fusionar regiones chicas (--area-minima px) con su vecina de mayor borde,
+     y seguir fusionando hasta --regiones si se pide (dificultad).
   6. Trazar el contorno de cada región sobre la grilla de píxeles, partirlo
      en bordes compartidos y simplificar/suavizar cada borde una sola vez
      (Douglas-Peucker con --tolerancia y Chaikin con --curvas).
@@ -88,15 +90,15 @@ def etiquetar_regiones(indices: np.ndarray) -> tuple[np.ndarray, dict[int, int]]
     return etiquetas, color_de
 
 
-def vecinos_por_borde(etiquetas: np.ndarray, region: int) -> dict[int, int]:
-    """Cuenta cuántos lados de píxel comparte la región con cada vecina."""
-    m = etiquetas == region
+def vecinos_por_borde(sub: np.ndarray, region: int) -> dict[int, int]:
+    """Cuenta cuántos lados de píxel comparte la región con cada vecina (en un recorte)."""
+    m = sub == region
     conteo: dict[int, int] = {}
     for desplazado, mascara_borde in (
-        (etiquetas[1:, :], m[:-1, :]),
-        (etiquetas[:-1, :], m[1:, :]),
-        (etiquetas[:, 1:], m[:, :-1]),
-        (etiquetas[:, :-1], m[:, 1:]),
+        (sub[1:, :], m[:-1, :]),
+        (sub[:-1, :], m[1:, :]),
+        (sub[:, 1:], m[:, :-1]),
+        (sub[:, :-1], m[:, 1:]),
     ):
         vals = desplazado[mascara_borde]
         for v, k in zip(*np.unique(vals[vals != region], return_counts=True)):
@@ -104,20 +106,53 @@ def vecinos_por_borde(etiquetas: np.ndarray, region: int) -> dict[int, int]:
     return conteo
 
 
-def fusionar_chicas(etiquetas: np.ndarray, color_de: dict[int, int], area_minima: int) -> None:
-    """Absorbe cada región menor a area_minima en la vecina con más borde compartido."""
-    while True:
-        ids, areas = np.unique(etiquetas, return_counts=True)
-        chicas = [(a, i) for i, a in zip(ids, areas) if a < area_minima]
-        if not chicas:
+def fusionar_chicas(
+    etiquetas: np.ndarray,
+    color_de: dict[int, int],
+    area_minima: int,
+    objetivo: int | None = None,
+) -> None:
+    """
+    Absorbe la región más chica en la vecina con la que comparte más borde,
+    mientras haya regiones menores a `area_minima` o, si se pide `objetivo`,
+    mientras haya más regiones que ese objetivo.
+
+    Trabaja sobre el recuadro de cada región (no sobre la imagen entera), así
+    que reducir miles de regiones a unas decenas tarda segundos.
+    """
+    import heapq
+
+    alto, ancho = etiquetas.shape
+    ids, cuentas = np.unique(etiquetas, return_counts=True)
+    areas = {int(i): int(a) for i, a in zip(ids, cuentas)}
+    cajas: dict[int, list[int]] = {}
+    for i, s in enumerate(ndimage.find_objects(etiquetas), start=1):
+        if s is not None:
+            cajas[i] = [s[0].start, s[0].stop, s[1].start, s[1].stop]
+    monticulo = [(a, i) for i, a in areas.items()]
+    heapq.heapify(monticulo)
+
+    while monticulo:
+        area, region = heapq.heappop(monticulo)
+        if areas.get(region) != area:
+            continue  # entrada vieja: la región ya se fusionó o creció
+        if area >= area_minima and (objetivo is None or len(areas) <= objetivo):
             return
-        _, region = min(chicas)
-        vecinos = vecinos_por_borde(etiquetas, int(region))
+        y0, y1, x0, x1 = cajas[region]
+        y0, x0 = max(0, y0 - 1), max(0, x0 - 1)
+        y1, x1 = min(alto, y1 + 1), min(ancho, x1 + 1)
+        sub = etiquetas[y0:y1, x0:x1]
+        vecinos = vecinos_por_borde(sub, region)
         if not vecinos:  # la imagen entera es una sola región
             return
         destino = max(vecinos, key=vecinos.get)
-        etiquetas[etiquetas == region] = destino
-        del color_de[int(region)]
+        sub[sub == region] = destino
+        areas[destino] += area
+        del areas[region]
+        del color_de[region]
+        cd, cr = cajas[destino], cajas.pop(region)
+        cajas[destino] = [min(cd[0], cr[0]), max(cd[1], cr[1]), min(cd[2], cr[2]), max(cd[3], cr[3])]
+        heapq.heappush(monticulo, (areas[destino], destino))
 
 
 # --------------------------------------------------------------------------
@@ -347,10 +382,25 @@ def a_hex(rgb: np.ndarray) -> str:
     return "#{:02X}{:02X}{:02X}".format(*[int(v) for v in rgb])
 
 
+LADO_MAXIMO_IMAGEN = 1400
+
+
+def guardar_imagen(origen: Path, ancho_grilla: int, alto_grilla: int, destino: Path) -> None:
+    """
+    Guarda la ilustración (webp) con exactamente la proporción de la grilla,
+    para que al dibujarla sobre el viewBox coincida con las regiones. La app
+    la muestra en blanco y negro donde falta pintar y a color donde ya se pintó.
+    """
+    img = Image.open(origen).convert("RGB")
+    k = max(1, round(min(max(img.size), LADO_MAXIMO_IMAGEN) / max(ancho_grilla, alto_grilla)))
+    img = img.resize((ancho_grilla * k, alto_grilla * k), Image.Resampling.LANCZOS)
+    img.save(destino, "WEBP", quality=80, method=6)
+
+
 def convertir(args: argparse.Namespace) -> Path:
     indices, paleta = cuantizar(args.imagen, args.ancho, args.colores, args.suavizado)
     etiquetas, color_de = etiquetar_regiones(indices)
-    fusionar_chicas(etiquetas, color_de, args.area_minima)
+    fusionar_chicas(etiquetas, color_de, args.area_minima, objetivo=args.regiones)
 
     alto, ancho = etiquetas.shape
     escala = LADO_VIEWBOX / max(alto, ancho)
@@ -388,6 +438,8 @@ def convertir(args: argparse.Namespace) -> Path:
         encoding="utf-8",
     )
 
+    guardar_imagen(args.imagen, ancho, alto, DIR_CUADROS / f"{args.id}.webp")
+
     cantidad = len(paths)
     meta = {
         "id": args.id,
@@ -403,7 +455,7 @@ def convertir(args: argparse.Namespace) -> Path:
     if args.orden is not None:
         meta["orden"] = args.orden
     destino_json.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Cuadro '{args.id}': {cantidad} regiones, {len(orden_colores)} colores → {destino_svg.relative_to(RAIZ)}")
+    print(f"Cuadro '{args.id}': {cantidad} regiones, {len(orden_colores)} colores → {destino_svg}")
     return destino_svg
 
 
@@ -416,6 +468,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--colores", type=int, default=8, help="cantidad de colores de la paleta")
     ap.add_argument("--ancho", type=int, default=96, help="lado mayor de la grilla de trabajo (px)")
     ap.add_argument("--area-minima", type=int, default=12, help="área mínima de una región (px de la grilla)")
+    ap.add_argument(
+        "--regiones",
+        type=int,
+        help="cantidad de regiones buscada: fusiona las más chicas hasta llegar (define la dificultad)",
+    )
     ap.add_argument("--suavizado", type=int, default=2, help="pasadas del filtro de moda")
     ap.add_argument("--tolerancia", type=float, default=0.6, help="tolerancia de simplificación (px)")
     ap.add_argument("--curvas", type=int, default=2, help="pasadas de suavizado de bordes (0 = escalonado)")

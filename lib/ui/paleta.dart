@@ -24,10 +24,10 @@ class Paleta extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 64,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         itemCount: paleta.length,
         separatorBuilder: (_, _) => const SizedBox(width: 10),
         itemBuilder: (context, i) {
@@ -48,8 +48,8 @@ class Paleta extends StatelessWidget {
                   scale: esElegido ? 1.1 : 1,
                   duration: const Duration(milliseconds: 120),
                   child: Container(
-                    width: 52,
-                    height: 52,
+                    width: 44,
+                    height: 44,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: Color(argbDeHex(c.hex)),
@@ -62,7 +62,7 @@ class Paleta extends StatelessWidget {
                     child: Text(
                       completo ? '✓' : '${c.numero}',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: Color(textoSobre(c.hex)),
                       ),

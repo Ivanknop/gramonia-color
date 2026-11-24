@@ -7,94 +7,84 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#6C4739"
+      "hex": "#FBDDB0"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#7C5643"
+      "hex": "#7C5642"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#80BAE2"
+      "hex": "#6C4739"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#4E5051"
+      "hex": "#80BAE2"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#503733"
+      "hex": "#4F5051"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#EDC5B7"
+      "hex": "#94C0E0"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#C7C3D1"
+      "hex": "#D2C1C8"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#412C2B"
+      "hex": "#5B4139"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#A77D5E"
+      "hex": "#A67D5D"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#F9D8A8"
+      "hex": "#523533"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#97C1DF"
+      "hex": "#402B2B"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#5B4139"
+      "hex": "#C0AD99"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#C0AC97"
+      "hex": "#463635"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#463535"
+      "hex": "#583C35"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#5B3D35"
+      "hex": "#727C78"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#737C78"
-    },
-    {
-      "numero": 17,
-      "nombre": "Color 17",
-      "hex": "#FCECB9"
-    },
-    {
-      "numero": 18,
-      "nombre": "Color 18",
-      "hex": "#593836"
+      "hex": "#D2C7C8"
     }
   ],
   "mensajeMututu": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo.",
-  "orden": 7
+  "orden": 8
 }

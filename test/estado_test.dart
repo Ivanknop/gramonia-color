@@ -36,10 +36,60 @@ void main() {
     p.marcarCompletado('c2');
     await p.guardado;
     final guardado = jsonDecode(almacen.datos!) as Map<String, dynamic>;
-    expect(guardado['version'], 1);
+    expect(guardado['version'], 2);
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.de('c2')!.pintadas, ['x']);
     expect(otra.completados, {'c2'});
+  });
+
+  test('pintar varias regiones de una vez (bomba)', () async {
+    final (p, _) = await nuevo();
+    p.pintarRegiones('c1', ['a', 'b', 'a']);
+    p.pintarRegiones('c1', ['b', 'c']);
+    expect(p.de('c1')!.pintadas, ['a', 'b', 'c']);
+  });
+
+  test('marcarCompletado avisa si ya estaba terminado', () async {
+    final (p, _) = await nuevo();
+    expect(p.marcarCompletado('c1'), isTrue);
+    expect(p.marcarCompletado('c1'), isFalse);
+  });
+
+  test('plumas: recompensa diaria una sola vez por día', () async {
+    ahora = DateTime(2026, 11, 24, 10).millisecondsSinceEpoch;
+    final (p, almacen) = await nuevo();
+    expect(p.reclamarRecompensaDiaria(), 5);
+    expect(p.reclamarRecompensaDiaria(), 0);
+    expect(p.plumas, 5);
+    await p.guardado;
+    ahora = DateTime(2026, 11, 25, 8).millisecondsSinceEpoch;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect(otra.reclamarRecompensaDiaria(), 5);
+    expect(otra.plumas, 10);
+  });
+
+  test('plumas: sumar y gastar (gratis mientras herramientasGratis)', () async {
+    final (p, _) = await nuevo();
+    p.sumarPlumas(30);
+    expect(p.gastarPlumas(5), isTrue);
+    expect(p.plumas, 30); // por ahora las herramientas no cobran
+  });
+
+  test('historia: intro y capítulos vistos se guardan', () async {
+    final (p, almacen) = await nuevo();
+    p.marcarIntroVista();
+    p.marcarCapituloVisto('arbol-magico');
+    await p.guardado;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect(otra.introVista, isTrue);
+    expect(otra.capitulosVistos, {'arbol-magico'});
+  });
+
+  test('migra un guardado v1 (sin plumas ni historia)', () async {
+    const v1 = '{"version":1,"cuadros":{"c1":{"pintadas":["a"],"actualizadoEn":3}}}';
+    final (p, _) = await nuevo(v1);
+    expect(p.de('c1')!.pintadas, ['a']);
+    expect((p.plumas, p.introVista), (0, false));
   });
 
   test('datos corruptos no impiden jugar', () async {

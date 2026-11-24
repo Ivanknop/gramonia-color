@@ -9,6 +9,8 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../engine/plumas.dart';
+
 class ProgresoCuadro {
   const ProgresoCuadro({this.pintadas = const [], this.actualizadoEn, this.completadoEn});
 
@@ -65,30 +67,42 @@ class AlmacenEnMemoria implements AlmacenProgreso {
 }
 
 class Progreso extends ChangeNotifier {
-  Progreso._(this._almacen, this._cuadros, this._reloj);
+  Progreso._(this._almacen, this._reloj);
 
-  static const version = 1;
+  /// Versión del formato guardado. v1 → v2: se agregan plumas e historia.
+  static const version = 2;
 
   static Future<Progreso> cargar(AlmacenProgreso almacen, {int Function()? reloj}) async {
-    final cuadros = <String, ProgresoCuadro>{};
+    final p = Progreso._(almacen, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
     final texto = await almacen.leer();
     if (texto != null) {
       try {
         final j = jsonDecode(texto) as Map<String, dynamic>;
         for (final e in (j['cuadros'] as Map<String, dynamic>).entries) {
-          cuadros[e.key] = ProgresoCuadro.desdeJson(e.value as Map<String, dynamic>);
+          p._cuadros[e.key] = ProgresoCuadro.desdeJson(e.value as Map<String, dynamic>);
         }
+        // Campos de v2 (en un guardado v1 no existen y quedan en su valor inicial).
+        p._plumas = (j['plumas'] as int?) ?? 0;
+        p._ultimoDiaPlumas = j['ultimoDiaPlumas'] as String?;
+        p._introVista = (j['introVista'] as bool?) ?? false;
+        p._capitulosVistos.addAll([
+          for (final c in (j['capitulosVistos'] as List?) ?? []) c as String,
+        ]);
       } on Object catch (e) {
         // Datos corruptos: se empieza de cero antes que no poder jugar.
         debugPrint('No se pudo leer el progreso guardado: $e');
       }
     }
-    return Progreso._(almacen, cuadros, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
+    return p;
   }
 
   final AlmacenProgreso _almacen;
-  final Map<String, ProgresoCuadro> _cuadros;
   final int Function() _reloj;
+  final Map<String, ProgresoCuadro> _cuadros = {};
+  int _plumas = 0;
+  String? _ultimoDiaPlumas;
+  bool _introVista = false;
+  final Set<String> _capitulosVistos = {};
 
   Map<String, ProgresoCuadro> get cuadros => Map.unmodifiable(_cuadros);
 
@@ -100,27 +114,41 @@ class Progreso extends ChangeNotifier {
       if (e.value.terminado) e.key,
   };
 
-  /// Registra una región pintada. Idempotente.
-  void pintarRegion(String cuadroId, String regionId) {
+  // ---- Pintura ----------------------------------------------------------
+
+  /// Registra regiones pintadas (una o varias, por ejemplo con la bomba).
+  void pintarRegiones(String cuadroId, Iterable<String> regionIds) {
     final actual = _cuadros[cuadroId] ?? const ProgresoCuadro();
-    if (actual.pintadas.contains(regionId)) return;
+    final nuevas = [
+      for (final id in regionIds)
+        if (!actual.pintadas.contains(id)) id,
+    ];
+    if (nuevas.isEmpty) return;
     _cuadros[cuadroId] = ProgresoCuadro(
-      pintadas: [...actual.pintadas, regionId],
+      pintadas: [
+        ...actual.pintadas,
+        ...{...nuevas},
+      ],
       actualizadoEn: _reloj(),
       completadoEn: actual.completadoEn,
     );
     _cambio();
   }
 
-  void marcarCompletado(String cuadroId) {
+  /// Registra una región pintada. Idempotente.
+  void pintarRegion(String cuadroId, String regionId) => pintarRegiones(cuadroId, [regionId]);
+
+  /// Marca la obra como terminada. Devuelve false si ya lo estaba.
+  bool marcarCompletado(String cuadroId) {
     final actual = _cuadros[cuadroId] ?? const ProgresoCuadro();
-    if (actual.terminado) return;
+    if (actual.terminado) return false;
     _cuadros[cuadroId] = ProgresoCuadro(
       pintadas: actual.pintadas,
       actualizadoEn: actual.actualizadoEn,
       completadoEn: _reloj(),
     );
     _cambio();
+    return true;
   }
 
   void reiniciarCuadro(String cuadroId) {
@@ -129,8 +157,61 @@ class Progreso extends ChangeNotifier {
 
   void reiniciarTodo() {
     _cuadros.clear();
+    _plumas = 0;
+    _ultimoDiaPlumas = null;
+    _introVista = false;
+    _capitulosVistos.clear();
     _cambio();
   }
+
+  // ---- Plumas del Rocanón -----------------------------------------------
+
+  int get plumas => _plumas;
+
+  void sumarPlumas(int cantidad) {
+    if (cantidad == 0) return;
+    _plumas += cantidad;
+    _cambio();
+  }
+
+  /// Cobra una herramienta. Con [ReglasPlumas.herramientasGratis] no descuenta
+  /// nada. Devuelve false si no alcanza.
+  bool gastarPlumas(int costo) {
+    if (ReglasPlumas.herramientasGratis) return true;
+    if (_plumas < costo) return false;
+    _plumas -= costo;
+    _cambio();
+    return true;
+  }
+
+  /// Da la recompensa del día si todavía no se dio hoy. Devuelve lo sumado.
+  int reclamarRecompensaDiaria() {
+    final ahora = DateTime.fromMillisecondsSinceEpoch(_reloj());
+    if (!tocaRecompensaDiaria(_ultimoDiaPlumas, ahora)) return 0;
+    _ultimoDiaPlumas = diaDe(ahora);
+    _plumas += ReglasPlumas.porDia;
+    _cambio();
+    return ReglasPlumas.porDia;
+  }
+
+  // ---- Historia -----------------------------------------------------------
+
+  bool get introVista => _introVista;
+
+  void marcarIntroVista() {
+    if (_introVista) return;
+    _introVista = true;
+    _cambio();
+  }
+
+  /// Capítulos de la historia ya mostrados (uno por bioma completado).
+  Set<String> get capitulosVistos => Set.unmodifiable(_capitulosVistos);
+
+  void marcarCapituloVisto(String id) {
+    if (_capitulosVistos.add(id)) _cambio();
+  }
+
+  // ---- Guardado -----------------------------------------------------------
 
   /// Escritura en curso (los tests la esperan).
   Future<void> guardado = Future.value();
@@ -140,6 +221,10 @@ class Progreso extends ChangeNotifier {
     final datos = jsonEncode({
       'version': version,
       'cuadros': {for (final e in _cuadros.entries) e.key: e.value.aJson()},
+      'plumas': _plumas,
+      'ultimoDiaPlumas': ?_ultimoDiaPlumas,
+      'introVista': _introVista,
+      'capitulosVistos': _capitulosVistos.toList(),
     });
     // Se encadenan para que nunca una escritura vieja pise a una nueva.
     guardado = guardado.then((_) => _almacen.escribir(datos));
