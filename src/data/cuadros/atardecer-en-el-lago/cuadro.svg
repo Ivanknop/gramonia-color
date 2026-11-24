@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="#eeeeee" fill-rule="evenodd" stroke="#333333" stroke-width="1.5">
+  <path id="cielo" data-numero="1" d="M0 0 H300 V160 H0 Z" />
+  <path id="sol" data-numero="2" d="M256 50 C256 64.36 244.36 76 230 76 C215.64 76 204 64.36 204 50 C204 35.64 215.64 24 230 24 C244.36 24 256 35.64 256 50 Z" />
+  <path id="montana-fondo" data-numero="3" d="M0 160 L0 140 L40 110 L70 130 L130 70 L200 160 Z" />
+  <path id="montana-frente" data-numero="4" d="M150 160 L240 85 L300 140 L300 160 Z" />
+  <path id="lago" data-numero="5" d="M0 160 H300 V250 H0 Z" />
+  <path id="reflejo-1" data-numero="2" d="M200 174 H260 V186 H200 Z" />
+  <path id="reflejo-2" data-numero="2" d="M212 194 H248 V204 H212 Z" />
+  <path id="pasto" data-numero="6" d="M0 230 Q75 220 150 230 T300 230 V300 H0 Z" />
+</svg>

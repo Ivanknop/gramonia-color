@@ -26,6 +26,7 @@
   "devDependencies": {
     "@testing-library/react-native": "^14.1.0",
     "@types/jest": "30.0.0",
+    "@types/node": "^26.6.6",
     "@types/react": "~19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-expo": "~58.0.4",
@@ -43,10 +44,16 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "npm run tipos-rutas && tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "doctor": "expo-doctor"
+    "doctor": "expo-doctor",
+    "cuadros": "node scripts/compilar-cuadros.mjs",
+    "cuadros:check": "node scripts/compilar-cuadros.mjs --check",
+    "verificar": "npm run cuadros:check && npm run typecheck && npm run lint && npm test && npm run test:scripts",
+    "tipos-rutas": "node scripts/generar-tipos-rutas.mjs",
+    "test:scripts": "python3 -m unittest discover -s scripts -p \"test_*.py\"",
+    "imagen-a-cuadro": "python3 scripts/imagen_a_cuadro.py"
   },
   "private": true,
   "allowScripts": {
@@ -54,8 +61,8 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|react-native-svg|react-native-reanimated|react-native-worklets|react-native-gesture-handler)"
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
     ]
   }
 }

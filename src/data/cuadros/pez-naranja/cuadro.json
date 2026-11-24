@@ -1,0 +1,15 @@
+{
+  "id": "pez-naranja",
+  "titulo": "Pez naranja",
+  "categoria": "animal",
+  "dificultad": 1,
+  "paleta": [
+    { "numero": 1, "nombre": "Agua", "hex": "#9FC5E8" },
+    { "numero": 2, "nombre": "Naranja", "hex": "#F6A04D" },
+    { "numero": 3, "nombre": "Blanco", "hex": "#FFFFFF" },
+    { "numero": 4, "nombre": "Negro", "hex": "#222222" },
+    { "numero": 5, "nombre": "Celeste burbuja", "hex": "#D0E7F7" },
+    { "numero": 6, "nombre": "Naranja oscuro", "hex": "#D2691E" }
+  ],
+  "mensajeMututu": "El pez vuelve a nadar a todo color. Mututu lo había dejado gris como una piedra de río."
+}
