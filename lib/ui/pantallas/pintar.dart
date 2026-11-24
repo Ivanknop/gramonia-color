@@ -22,6 +22,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../datos/biomas.dart';
 import '../../datos/historia.dart';
 import '../../datos/textos.dart';
+import '../../engine/dificultad.dart';
 import '../../engine/motor.dart';
 import '../../estado/musica.dart';
 import '../comun.dart';
@@ -37,6 +38,9 @@ const fraccionRadioBomba = 0.1;
 
 class Pintar extends StatefulWidget {
   const Pintar({super.key, required this.cuadroId});
+
+  /// Clave del progreso: el id de un cuadro de la historia o el de una
+  /// variante de dificultad (`<cuadro>--<dificultad>`, modo libre).
   final String cuadroId;
 
   @override
@@ -48,6 +52,13 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   Cuadro? _cuadro;
   ui.Image? _imagen;
   bool _cargandoImagen = true;
+  bool _cargandoCuadro = false;
+
+  /// Clave del progreso (ver [Pintar.cuadroId]).
+  String get _clave => widget.cuadroId;
+
+  /// Modo libre: sin historia, piezas, plumas ni capítulos.
+  bool get _libre => dificultadDe(_clave) != null;
   int? _elegido;
   bool _bombaArmada = false;
   String? _destacada;
@@ -75,9 +86,22 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     _musica = Dependencias.of(context).musica;
     unawaited(_musica?.empezar());
     WidgetsBinding.instance.addObserver(this);
-    _cuadro = catalogo.obtener(widget.cuadroId);
+    _cuadro = catalogo.obtener(_clave);
     _elegido = _cuadro?.paleta.first.numero;
-    catalogo.imagen(widget.cuadroId).then((img) {
+    final dificultad = dificultadDe(_clave);
+    if (_cuadro == null && dificultad != null) {
+      // Variante de dificultad todavía no leída.
+      _cargandoCuadro = true;
+      catalogo.cargarVariante(cuadroBase(_clave), dificultad).then((c) {
+        if (!mounted) return;
+        setState(() {
+          _cuadro = c;
+          _elegido = c?.paleta.first.numero;
+          _cargandoCuadro = false;
+        });
+      });
+    }
+    catalogo.imagen(_clave).then((img) {
       if (mounted) {
         setState(() {
           _imagen = img;
@@ -108,7 +132,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   }
 
   Set<String> _pintadas(Cuadro c) =>
-      sanearPintadas(c, Dependencias.of(context).progreso.de(c.id)?.pintadas ?? const []);
+      sanearPintadas(c, Dependencias.of(context).progreso.de(_clave)?.pintadas ?? const []);
 
   void _avisar(String texto) {
     ScaffoldMessenger.of(context)
@@ -155,13 +179,17 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   void _registrar(Cuadro cuadro, Set<String> antes, List<String> nuevas) {
     final progreso = Dependencias.of(context).progreso;
     final completadosAntes = progreso.completados;
-    progreso.pintarRegiones(cuadro.id, nuevas);
+    progreso.pintarRegiones(_clave, nuevas);
     final despues = {...antes, ...nuevas};
 
     if (estaCompleto(cuadro, despues)) {
-      if (!progreso.marcarCompletado(cuadro.id)) return;
+      if (!progreso.marcarCompletado(_clave)) return;
+      if (_libre) {
+        _festejar();
+        return;
+      }
       var ganadas = ReglasPlumas.porObra;
-      final completos = biomasQueSeCompletan(biomas, completadosAntes, cuadro.id);
+      final completos = biomasQueSeCompletan(biomas, completadosAntes, _clave);
       ganadas += ReglasPlumas.porBioma * completos.length;
       progreso.sumarPlumas(ganadas);
       _festejar();
@@ -240,6 +268,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     final cuadro = _cuadro;
+    if (_cargandoCuadro) {
+      return Scaffold(
+        appBar: AppBar(),
+        body: const Center(child: CircularProgressIndicator()),
+      );
+    }
     if (cuadro == null) {
       return Scaffold(
         appBar: AppBar(),
@@ -251,7 +285,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
       listenable: progreso,
       builder: (context, _) {
         final pintadas = _pintadas(cuadro);
-        final terminado = progreso.de(cuadro.id)?.terminado ?? false;
+        final terminado = progreso.de(_clave)?.terminado ?? false;
+        final dificultad = Dependencias.of(context).catalogo.dificultad(dificultadDe(_clave) ?? '');
         final completos = {
           for (final c in cuadro.paleta)
             if (faltantesDeColor(cuadro, pintadas, c.numero) == 0) c.numero,
@@ -261,7 +296,9 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
           appBar: AppBar(
             toolbarHeight: 48,
             title: Text(
-              cuadro.meta.titulo,
+              dificultad == null
+                  ? cuadro.meta.titulo
+                  : '${cuadro.meta.titulo} · ${dificultad.nombre}',
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(fontSize: 18),
             ),
@@ -292,7 +329,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                       Positioned.fill(
                         child: VistaTimelapse(
                           cuadro: cuadro,
-                          orden: progreso.de(cuadro.id)?.pintadas ?? const [],
+                          orden: progreso.de(_clave)?.pintadas ?? const [],
                           imagen: _imagen,
                           alTerminar: _alTerminarTimelapse,
                         ),
@@ -310,7 +347,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                 ),
               ),
               if (terminado)
-                _PanelFinal(cuadro: cuadro, plumasGanadas: _plumasGanadas)
+                _PanelFinal(
+                  cuadro: cuadro,
+                  clave: _clave,
+                  libre: _libre,
+                  plumasGanadas: _plumasGanadas,
+                )
               else
                 SafeArea(
                   top: false,
@@ -497,13 +539,22 @@ class _Herramienta extends StatelessWidget {
 }
 
 class _PanelFinal extends StatelessWidget {
-  const _PanelFinal({required this.cuadro, required this.plumasGanadas});
+  const _PanelFinal({
+    required this.cuadro,
+    required this.clave,
+    required this.libre,
+    required this.plumasGanadas,
+  });
   final Cuadro cuadro;
+
+  /// Clave del progreso (cuadro de la historia o variante del modo libre).
+  final String clave;
+  final bool libre;
   final int plumasGanadas;
 
   @override
   Widget build(BuildContext context) {
-    final destapa = piezaDeCuadro(biomas, cuadro.id);
+    final destapa = libre ? null : piezaDeCuadro(biomas, clave);
     return SafeArea(
       top: false,
       child: Container(
@@ -514,7 +565,7 @@ class _PanelFinal extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              cuadro.meta.mensajeMututu,
+              libre ? Textos.libreTerminado : cuadro.meta.mensajeMututu,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 16, color: Tema.morado),
             ),
@@ -553,21 +604,28 @@ class _PanelFinal extends StatelessWidget {
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(foregroundColor: Tema.morado),
                   onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: cuadro.id)),
+                    MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: clave)),
                   ),
                   child: const Text(Textos.verComoLoPinte),
                 ),
-                FilledButton(
-                  style: FilledButton.styleFrom(backgroundColor: Tema.morado),
-                  // Vuelve a las pestañas (sobre la portada) mostrando el mapa.
-                  onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute<void>(
-                      builder: (_) => const Principal(pestanaInicial: Principal.mapa),
+                if (libre)
+                  FilledButton(
+                    style: FilledButton.styleFrom(backgroundColor: Tema.morado),
+                    onPressed: () => Navigator.of(context).maybePop(),
+                    child: const Text(Textos.libreOtro),
+                  )
+                else
+                  FilledButton(
+                    style: FilledButton.styleFrom(backgroundColor: Tema.morado),
+                    // Vuelve a las pestañas (sobre la portada) mostrando el mapa.
+                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const Principal(pestanaInicial: Principal.mapa),
+                      ),
+                      (ruta) => ruta.isFirst,
                     ),
-                    (ruta) => ruta.isFirst,
+                    child: const Text('Ver el mapa'),
                   ),
-                  child: const Text('Ver el mapa'),
-                ),
               ],
             ),
           ],

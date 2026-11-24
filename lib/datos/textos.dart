@@ -44,4 +44,16 @@ abstract final class Textos {
   // ---- Dificultades ----
   static String detalleDificultad(int colores, int regiones) =>
       '$colores colores · unas $regiones partes para pintar';
+
+  // ---- Modo libre ----
+  static const modoLibre = 'Modo libre';
+  static const libreIntro =
+      'Acá no hay historia ni mapa: elegí un dibujo y pintalo como quieras, '
+      'tan fácil o tan difícil como te guste.';
+  static const libreElegir = '¿Qué tan difícil lo querés?';
+  static const libreTerminado = '¡Obra terminada! Quedó hermosa.';
+  static const libreOtro = 'Elegir otro dibujo';
+  static const libreVacio =
+      'Todavía no hay dibujos para el modo libre. Recuperá lugares en la historia y aparecen acá.';
+  static String etiquetaLibre(String dificultad) => 'Modo libre · $dificultad';
 }

@@ -11,6 +11,7 @@ import '../comun.dart';
 import 'creditos.dart';
 import 'genero.dart';
 import 'historia.dart';
+import 'modo_libre.dart';
 import 'principal.dart';
 
 class Inicio extends StatefulWidget {
@@ -74,6 +75,16 @@ class _InicioState extends State<Inicio> {
         child: Stack(
           children: [
             const Positioned(top: 12, right: 16, child: ContadorPlumas()),
+            Positioned(
+              top: 0,
+              left: 4,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(foregroundColor: Tema.morado),
+                onPressed: () => _abrir(const Creditos()),
+                icon: const Icon(Icons.info_outline, size: 18),
+                label: const Text(Textos.creditos),
+              ),
+            ),
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(24),
@@ -105,18 +116,14 @@ class _InicioState extends State<Inicio> {
                       alTocar: () => _abrir(const Principal(pestanaInicial: Principal.galeria)),
                     ),
                     const SizedBox(height: 12),
+                    _Boton(texto: Textos.modoLibre, alTocar: () => _abrir(const ModoLibre())),
+                    const SizedBox(height: 12),
                     _Boton(
                       texto: 'Mapa de Gramonia',
                       alTocar: () => _abrir(const Principal(pestanaInicial: Principal.mapa)),
                     ),
                     const SizedBox(height: 12),
                     _Boton(texto: 'La historia', alTocar: () => _abrir(const IndiceHistoria())),
-                    const SizedBox(height: 4),
-                    TextButton(
-                      style: TextButton.styleFrom(foregroundColor: Tema.morado),
-                      onPressed: () => _abrir(const Creditos()),
-                      child: const Text(Textos.creditos),
-                    ),
                   ],
                 ),
               ),

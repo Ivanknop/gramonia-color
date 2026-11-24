@@ -1,6 +1,8 @@
-/// "Mis obras": cuadros empezados o terminados por el jugador.
+/// "Mis obras": cuadros empezados o terminados por el jugador (de la historia
+/// y del modo libre, cuya clave es la de la variante de dificultad).
 library;
 
+import '../engine/dificultad.dart';
 import 'progreso.dart';
 
 typedef Obra = ({String cuadroId, ProgresoCuadro progreso});
@@ -15,7 +17,7 @@ typedef Obra = ({String cuadroId, ProgresoCuadro progreso});
   final enProgreso = <Obra>[];
   final terminadas = <Obra>[];
   for (final e in cuadros.entries) {
-    if (!idsExistentes.contains(e.key)) continue;
+    if (!idsExistentes.contains(cuadroBase(e.key))) continue;
     final obra = (cuadroId: e.key, progreso: e.value);
     if (e.value.terminado) {
       terminadas.add(obra);

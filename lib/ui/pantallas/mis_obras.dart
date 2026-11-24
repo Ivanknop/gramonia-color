@@ -4,6 +4,7 @@ library;
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/textos.dart';
+import '../../engine/dificultad.dart';
 import '../../engine/motor.dart';
 import '../../estado/obras.dart';
 import '../comun.dart';
@@ -64,8 +65,27 @@ class _TarjetaObra extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cuadro = Dependencias.of(context).catalogo.obtener(obra.cuadroId);
-    if (cuadro == null) return const SizedBox.shrink();
+    final catalogo = Dependencias.of(context).catalogo;
+    // Las variantes del modo libre se leen recién al mostrarlas.
+    final enMemoria = catalogo.obtener(obra.cuadroId);
+    if (enMemoria != null) return _Tarjeta(obra: obra, cuadro: enMemoria);
+    return FutureBuilder<Cuadro?>(
+      future: catalogo.cuadroDeClave(obra.cuadroId),
+      builder: (context, c) =>
+          c.data == null ? const SizedBox.shrink() : _Tarjeta(obra: obra, cuadro: c.data!),
+    );
+  }
+}
+
+class _Tarjeta extends StatelessWidget {
+  const _Tarjeta({required this.obra, required this.cuadro});
+  final Obra obra;
+  final Cuadro cuadro;
+
+  @override
+  Widget build(BuildContext context) {
+    final dificultad = Dependencias.of(context).catalogo
+        .dificultad(dificultadDe(obra.cuadroId) ?? '');
     final pintadas = sanearPintadas(cuadro, obra.progreso.pintadas);
     final terminada = obra.progreso.terminado;
     final pct = porcentajeCompletado(cuadro, pintadas);
@@ -85,9 +105,8 @@ class _TarjetaObra extends StatelessWidget {
               label: '${cuadro.meta.titulo}, ${terminada ? 'terminada' : '$pct%'}',
               excludeSemantics: true,
               child: InkWell(
-                onTap: () =>
-                    Navigator.of(context)
-                        .push(MaterialPageRoute<void>(builder: (_) => Pintar(cuadroId: cuadro.id))),
+                onTap: () => Navigator.of(context)
+                    .push(MaterialPageRoute<void>(builder: (_) => Pintar(cuadroId: obra.cuadroId))),
                 child: Padding(
                   padding: const EdgeInsets.all(12),
                   child: Row(
@@ -106,6 +125,11 @@ class _TarjetaObra extends StatelessWidget {
                                 color: Tema.morado,
                               ),
                             ),
+                            if (dificultad != null)
+                              Text(
+                                Textos.etiquetaLibre(dificultad.nombre),
+                                style: const TextStyle(fontSize: 12, color: Color(0xFF8E7CC3)),
+                              ),
                             const SizedBox(height: 4),
                             Text(detalle, style: const TextStyle(fontSize: 13, color: Tema.gris)),
                             if (!terminada) ...[
@@ -134,7 +158,7 @@ class _TarjetaObra extends StatelessWidget {
                 ),
               ),
             ),
-            if (terminada) _Acciones(cuadroId: cuadro.id),
+            if (terminada) _Acciones(cuadroId: obra.cuadroId),
           ],
         ),
       ),

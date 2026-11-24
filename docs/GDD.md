@@ -77,6 +77,13 @@ de 10 colores): 2/10, 3/15, 4/22, 6/33, 9/49… El nivel de una obra sale de su
 lugar en el recorrido; el conversor la genera con los colores de su nivel. La
 galería muestra el nivel actual y cuántas obras faltan para el siguiente.
 
+**Modo libre** (botón en la portada): pintar sin la historia de Mututu ni el
+revelado de lugares. Entran los cuadros de lugares ya desbloqueados en la
+historia y los que no son de la historia. Al elegir un dibujo se elige la
+dificultad; la partida se guarda aparte (clave `<cuadro>--<dificultad>`), no da
+plumas ni destapa piezas, y aparece en Mis obras con su dificultad. Al terminar
+hay festejo y timelapse igual.
+
 **Dificultades** (modo libre y "rehacer obra"): súper fácil, fácil, normal,
 mediano, difícil, muy difícil, extremo, imposible, insano y divino. Cada una
 tiene colores fijos y un objetivo de regiones, a mano en

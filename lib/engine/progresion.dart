@@ -80,6 +80,21 @@ List<EstadoBioma> estadoBiomas(List<Bioma> biomas, Set<String> completados) {
 /// Obras de la historia en el orden del recorrido (bioma por bioma).
 List<String> cuadrosDelRecorrido(List<Bioma> biomas) => [for (final b in biomas) ...b.cuadroIds];
 
+/// Cuadros del modo libre, en el orden de [todos]: los de lugares ya
+/// desbloqueados en la historia y los que no están en la historia.
+List<String> cuadrosLibres(List<Bioma> biomas, Set<String> completados, Iterable<String> todos) {
+  final enLaHistoria = <String>{};
+  final desbloqueados = <String>{};
+  for (final e in estadoBiomas(biomas, completados)) {
+    enLaHistoria.addAll(e.bioma.cuadroIds);
+    if (e.accesible) desbloqueados.addAll(e.bioma.cuadroIds);
+  }
+  return [
+    for (final id in todos)
+      if (desbloqueados.contains(id) || !enLaHistoria.contains(id)) id,
+  ];
+}
+
 /// Qué pieza destapa un cuadro (o null si no destapa ninguna).
 ({Bioma bioma, Pieza pieza})? piezaDeCuadro(List<Bioma> biomas, String cuadroId) {
   for (final b in biomas) {

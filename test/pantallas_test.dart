@@ -328,4 +328,63 @@ void main() {
     expect(find.text('Así lo pintaste'), findsNothing); // volvió solo
     expect(find.byType(Pintar), findsOneWidget);
   });
+
+  testWidgets('modo libre: elegir dibujo y dificultad, pintar sin plumas ni piezas', (
+    tester,
+  ) async {
+    usarTelefono(tester);
+    final progreso = await progresoNuevo();
+    await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Modo libre'));
+    await tester.pumpAndSettle();
+    // Solo los del lugar desbloqueado (el Árbol Mágico).
+    expect(find.bySemanticsLabel('El nido de Rocanon'), findsOneWidget);
+    expect(find.bySemanticsLabel('La casa de la abuelita'), findsNothing);
+
+    await tester.tap(find.bySemanticsLabel('El nido de Rocanon'));
+    await tester.pumpAndSettle();
+    expect(find.text('¿Qué tan difícil lo querés?'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('dificultad-super-facil')));
+    await tester.pumpAndSettle();
+    expect(find.text('El nido de Rocanon · Súper fácil'), findsOneWidget);
+    const clave = 'nido-de-rocanon--super-facil';
+    final v = catalogo.obtener(clave)!;
+    expect(v.paleta, hasLength(4));
+    for (var n = 1; n <= 4; n++) {
+      expect(find.byKey(Key('color-$n')), findsOneWidget);
+    }
+    expect(find.byKey(const Key('color-5')), findsNothing);
+
+    // Terminar: todo pintado menos una región visible, que se toca.
+    final ultima = regionVisible(tester, v);
+    progreso.pintarRegiones(clave, [
+      for (final r in v.regiones)
+        if (r.id != ultima.id) r.id,
+    ]);
+    await tester.pump();
+    await tester.tap(find.byKey(Key('color-${ultima.numero}')));
+    await tester.pump();
+    await tester.tapAt(enPantalla(tester, v, ultima.etiqueta));
+    await tester.pump();
+    expect(progreso.de(clave)!.terminado, isTrue);
+    expect(find.byType(Festejo), findsOneWidget);
+    expect(progreso.plumas, ReglasPlumas.porDia); // solo las del día: el modo libre no da plumas
+    expect(progreso.completados.contains('nido-de-rocanon'), isFalse); // la historia no avanza
+    expect(find.text('¡Obra terminada! Quedó hermosa.'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 4));
+    await tester.tap(find.byKey(const Key('saltear')));
+    await tester.pumpAndSettle();
+
+    // Vuelve a elegir otro y la obra queda en Mis obras con su dificultad.
+    await tester.tap(find.text('Elegir otro dibujo'));
+    await tester.pumpAndSettle();
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Pintar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Mis obras').last);
+    await tester.pumpAndSettle();
+    expect(find.text('Modo libre · Súper fácil'), findsOneWidget);
+  });
 }

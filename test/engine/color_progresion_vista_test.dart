@@ -79,6 +79,12 @@ void main() {
       expect(biomasQueSeCompletan(todos, {'c1', 'c2'}, 'c3').map((b) => b.id), ['bosque']);
     });
 
+    test('modo libre: lugares desbloqueados y cuadros que no están en la historia', () {
+      const catalogo = ['c1', 'c2', 'c3', 'c4', 'suelto'];
+      expect(cuadrosLibres(todos, {}, catalogo), ['c1', 'c2', 'suelto']);
+      expect(cuadrosLibres(todos, {'c1', 'c2'}, catalogo), ['c1', 'c2', 'c3', 'suelto']);
+    });
+
     test('piezaDeCuadro', () {
       expect(piezaDeCuadro(todos, 'c3')?.bioma.id, 'bosque');
       expect(piezaDeCuadro(todos, 'nada'), isNull);

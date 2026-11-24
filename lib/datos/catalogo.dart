@@ -163,6 +163,15 @@ class Catalogo {
     }
   }
 
+  /// Cuadro de una clave de progreso: un cuadro de la historia o una variante
+  /// (que se lee si todavía no estaba en memoria).
+  Future<Cuadro?> cuadroDeClave(String clave) async {
+    final enMemoria = obtener(clave);
+    if (enMemoria != null) return enMemoria;
+    final dificultad = dificultadDe(clave);
+    return dificultad == null ? null : cargarVariante(cuadroBase(clave), dificultad);
+  }
+
   /// Cuadro listo para jugar (la geometría se arma una sola vez). Las
   /// variantes, solo después de [cargarVariante].
   Cuadro? obtener(String id) {
