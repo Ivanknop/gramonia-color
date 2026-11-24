@@ -1,53 +1,40 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
-node_modules/
-
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
-
-# Native
-.kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
-*.tsbuildinfo
-
-# generated native folders
-/ios
-/android
-
-# tests
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
 coverage/
 
-# python (scripts/)
+# Android (generados o locales)
+android/.gradle/
+android/.kotlin/
+android/local.properties
+android/key.properties
+android/**/GeneratedPluginRegistrant.java
+android/app/debug/
+android/app/profile/
+android/app/release/
+*.jks
+*.keystore
+!.devcontainer/android-keys/*.keystore
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# APKs copiados para instalar
+dist/
+
+# Python (scripts/)
 __pycache__/
 *.pyc
 .venv/
 
-# claude code (config local)
-.claude/settings.local.json
+# Sistema
+.DS_Store
 
+# Claude Code (config local)
+.claude/settings.local.json

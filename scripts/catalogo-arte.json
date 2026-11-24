@@ -1,5 +1,5 @@
 {
-  "_comentario": "Cuadros generados desde las imágenes de arte/. Editar acá y correr `npm run arte`. Los parámetros por defecto se pueden pisar en cada cuadro (colores, ancho, area_minima, suavizado, tolerancia, curvas).",
+  "_comentario": "Cuadros generados desde las imágenes de arte/. Editar acá y correr `python3 scripts/convertir_arte.py`. Los parámetros por defecto se pueden pisar en cada cuadro (colores, ancho, area_minima, suavizado, tolerancia, curvas).",
   "por_defecto": {
     "colores": 18,
     "ancho": 200,

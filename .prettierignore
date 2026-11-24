@@ -1,8 +1,0 @@
-node_modules/
-.expo/
-dist/
-package-lock.json
-src/data/cuadros/**/*.svg
-src/data/cuadros/indice.generado.ts
-__pycache__/
-.devcontainer/

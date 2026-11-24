@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
 Convierte todas las imágenes de arte/ listadas en scripts/catalogo-arte.json
-en cuadros (src/data/cuadros/<id>/) y regenera el índice de cuadros.
+en cuadros (assets/cuadros/<id>.svg + <id>.json).
 
-Uso: npm run arte            (todas)
-     npm run arte -- <id>    (solo esas)
+Uso: python3 scripts/convertir_arte.py          (todas)
+     python3 scripts/convertir_arte.py <id> ... (solo esas)
 """
 
 import json
-import subprocess
 import sys
 from pathlib import Path
 
@@ -43,7 +42,7 @@ def main() -> int:
                 "--curvas", str(p["curvas"]),
             ]
         )
-    subprocess.run(["node", str(RAIZ / "scripts" / "compilar-cuadros.mjs")], check=True)
+    print("Listo. Si hay cuadros nuevos, asignales una pieza en lib/datos/biomas.dart.")
     return 0
 
 

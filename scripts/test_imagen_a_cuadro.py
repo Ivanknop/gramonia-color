@@ -1,4 +1,4 @@
-"""Tests del conversor. Correr con: npm run test:scripts"""
+"""Tests del conversor. Correr con: python3 -m unittest discover -s scripts -p "test_*.py""""
 
 import sys
 import unittest

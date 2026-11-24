@@ -1,0 +1,31 @@
+/// "Mis obras": cuadros empezados o terminados por el jugador.
+library;
+
+import 'progreso.dart';
+
+typedef Obra = ({String cuadroId, ProgresoCuadro progreso});
+
+/// Clasifica el progreso en obras en progreso (la más reciente primero) y
+/// terminadas (la terminada más recientemente primero). Ignora cuadros sin
+/// pintar y cuadros que ya no existen en el catálogo.
+({List<Obra> enProgreso, List<Obra> terminadas}) clasificarObras(
+  Map<String, ProgresoCuadro> cuadros,
+  Set<String> idsExistentes,
+) {
+  final enProgreso = <Obra>[];
+  final terminadas = <Obra>[];
+  for (final e in cuadros.entries) {
+    if (!idsExistentes.contains(e.key)) continue;
+    final obra = (cuadroId: e.key, progreso: e.value);
+    if (e.value.terminado) {
+      terminadas.add(obra);
+    } else if (e.value.pintadas.isNotEmpty) {
+      enProgreso.add(obra);
+    }
+  }
+  enProgreso.sort(
+    (a, b) => (b.progreso.actualizadoEn ?? 0).compareTo(a.progreso.actualizadoEn ?? 0),
+  );
+  terminadas.sort((a, b) => (b.progreso.completadoEn ?? 0).compareTo(a.progreso.completadoEn ?? 0));
+  return (enProgreso: enProgreso, terminadas: terminadas);
+}

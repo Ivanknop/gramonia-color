@@ -1,8 +1,9 @@
 # Formato de los cuadros
 
-Cada cuadro vive en su carpeta: `src/data/cuadros/<id>/`, con dos archivos.
+Cada cuadro son dos archivos en `assets/cuadros/`: `<id>.json` y `<id>.svg`.
+La app encuentra sola todos los cuadros de esa carpeta.
 
-## cuadro.json — metadatos y paleta
+## `<id>.json` — metadatos y paleta
 
 ```json
 {
@@ -19,12 +20,12 @@ Cada cuadro vive en su carpeta: `src/data/cuadros/<id>/`, con dos archivos.
 }
 ```
 
-- `id` debe coincidir con el nombre de la carpeta.
+- `id` debe coincidir con el nombre de los archivos.
 - `categoria`: `paisaje`, `animal`, `objeto`, `persona` o `arte`.
 - `hex` en formato `#RRGGBB`. Todos los colores de la paleta deben usarse.
 - `orden` (opcional) ordena la galería (menor primero; empate → por id).
 
-## cuadro.svg — regiones
+## `<id>.svg` — regiones
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
@@ -55,24 +56,23 @@ Cada cuadro vive en su carpeta: `src/data/cuadros/<id>/`, con dos archivos.
 
 ## Después de agregar o editar un cuadro
 
-1. `npm run cuadros` — regenera `src/data/cuadros/indice.generado.ts`.
-2. Asignarle una pieza en `src/data/biomas/index.ts`.
-3. `npm test` — los tests de datos validan que el cuadro se construya, que cada
-   número quede sobre su región y que los biomas sean consistentes.
+1. Asignarle una pieza en `lib/datos/biomas.dart`.
+2. `flutter test`: los tests de datos validan que el cuadro se construya, que
+   cada número quede sobre su región y que los biomas sean consistentes.
 
 ## Desde las ilustraciones de `arte/`
 
 Cada imagen de `arte/` tiene su entrada en `scripts/catalogo-arte.json` (id,
 título, categoría, mensaje de Mututu y, si hace falta, parámetros propios).
-`npm run arte` las convierte todas y regenera el índice (`npm run arte -- <id>`
-para una sola). Las imágenes muy oscuras o con mucho detalle quedan más
+`python3 scripts/convertir_arte.py` las convierte todas
+(`python3 scripts/convertir_arte.py <id>` para una sola). Las imágenes muy oscuras o con mucho detalle quedan más
 abstractas: se pueden afinar con `colores`, `ancho` o `area_minima` en su
 entrada del catálogo.
 
 ## Desde una imagen
 
 ```bash
-npm run imagen-a-cuadro -- foto.jpg --id gato-en-la-ventana --titulo "Gato en la ventana" \
+python3 scripts/imagen_a_cuadro.py foto.jpg --id gato-en-la-ventana --titulo "Gato en la ventana" \
   --categoria animal --colores 10
 ```
 

@@ -7,8 +7,6 @@ ARG ANDROID_CMDLINE_TOOLS=13114758
 ARG ANDROID_PLATFORMS="platforms;android-37.0 platforms;android-36"
 ARG ANDROID_BUILD_TOOLS=36.0.0
 ARG ANDROID_NDK=28.2.13676358
-# Colores de Gramonia (Expo SDK 58 / React Native 0.88) pide build-tools 37 y NDK 27.1.
-ARG ANDROID_EXTRA="build-tools;37.0.0 ndk;27.1.12297006"
 ARG ANDROID_CMAKE=3.22.1
 
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -33,8 +31,7 @@ RUN mkdir -p ${ANDROID_HOME}/cmdline-tools \
     && rm /tmp/cmdtools.zip \
     && yes | sdkmanager --licenses > /dev/null \
     && sdkmanager --install "platform-tools" ${ANDROID_PLATFORMS} \
-       "build-tools;${ANDROID_BUILD_TOOLS}" "ndk;${ANDROID_NDK}" "cmake;${ANDROID_CMAKE}" \
-       ${ANDROID_EXTRA}
+       "build-tools;${ANDROID_BUILD_TOOLS}" "ndk;${ANDROID_NDK}" "cmake;${ANDROID_CMAKE}"
 
 RUN git clone --depth 1 -b ${FLUTTER_CHANNEL} https://github.com/flutter/flutter.git ${FLUTTER_HOME}
 

@@ -1,6 +1,6 @@
 # Colores de Gramonia — Documento de diseño (GDD corto)
 
-> Nombre provisorio. Juego para celular (Android / iOS) de pintar por números.
+> Nombre provisorio. Juego para teléfonos Android de pintar por números.
 
 ## 1. Historia
 
@@ -62,21 +62,18 @@ Espuma_ (4 celdas, 1 pieza asignada por ahora).
 - **Cuadros**: SVG con regiones numeradas + JSON con paleta y metadatos
   (ver [formato-cuadros.md](formato-cuadros.md)). Se pueden hacer a mano en un
   editor vectorial o generar desde una imagen con `scripts/imagen_a_cuadro.py`.
-- **Biomas**: definidos en `src/data/biomas/index.ts`.
+- **Biomas**: definidos en `lib/datos/biomas.dart`.
 - **Mensajes de Mututu**: uno por cuadro (campo `mensajeMututu`).
 
 ## 5. Pantallas
 
-| Pantalla  | Ruta           | Contenido                                                    |
-| --------- | -------------- | ------------------------------------------------------------ |
-| Inicio    | `/`            | Título, frase de historia, botones a galería y mapa          |
-| Galería   | `/galeria`     | Lista de cuadros con avance (%) o "¡Con color!"              |
-| Mis obras | `/mis-obras`   | Cuadros empezados (para retomar) y terminados, con miniatura |
-| Pintar    | `/pintar/[id]` | Lienzo, paleta, avance; panel final al completar             |
-| Mapa      | `/mapa`        | Biomas con sus piezas destapadas / ocultas                   |
-
-Galería, Mis obras y Mapa son pestañas; Inicio es la portada y Pintar se abre
-encima de las pestañas.
+- **Inicio** (portada): título, frase de historia, botones a la galería y al mapa.
+- Pestañas:
+  - **Galería**: lista de cuadros con su avance (%) o "¡Con color!".
+  - **Mis obras**: cuadros empezados (para retomar) y terminados, con miniatura.
+  - **Mapa**: biomas con sus piezas destapadas u ocultas.
+- **Pintar** (se abre encima de las pestañas): lienzo con zoom, paleta y
+  avance; panel final al completar.
 
 ## 6. Ideas para más adelante (fuera del alcance inicial)
 

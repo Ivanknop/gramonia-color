@@ -1,12 +1,12 @@
 # Colores de Gramonia
 
-Juego para celular de pintar por números. Mututu le robó los colores a un montón
-de cuadros: devolvéselos y destapá el mapa de Gramonia.
+Juego de pintar por números para Android. Mututu le robó los colores a un
+montón de cuadros: devolvéselos y destapá el mapa de Gramonia.
 
 ```bash
-npm install
-npx expo start        # escaneá el QR con Expo Go (o usá --tunnel)
-npm run verificar     # typecheck + lint + tests
+flutter test
+flutter build apk --release --target-platform android-arm64
+# → build/app/outputs/flutter-apk/app-release.apk (instalar en el teléfono)
 ```
 
 - Diseño del juego: [docs/GDD.md](docs/GDD.md)

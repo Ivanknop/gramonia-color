@@ -1,105 +1,86 @@
 # Colores de Gramonia
 
-Juego para celular de **pintar por números** (nombre provisorio). Mututu le robó
-los colores a un montón de cuadros (de toda índole: paisajes, animales, objetos,
+Juego de **pintar por números** para **teléfonos Android** (nombre provisorio).
+Mututu le robó los colores a un montón de cuadros (paisajes, animales, objetos,
 personas, arte); el jugador se los devuelve pintando cada región según su
 número. Cada cuadro completado destapa una pieza del mapa de un bioma de
 Gramonia; con todas sus piezas destapadas, el bioma se desbloquea entero.
 
-Diseño completo: [docs/GDD.md](docs/GDD.md). Formato de cuadros:
+Diseño: [docs/GDD.md](docs/GDD.md). Formato de cuadros:
 [docs/formato-cuadros.md](docs/formato-cuadros.md).
 
 ## Idioma
 
 Todo en **español**: comentarios, docs, nombres de dominio (cuadro, región,
-paleta, bioma, pieza…), textos de la UI y mensajes de commit. Los textos de la
-UI usan voseo rioplatense ("Pintalos", "devolvéselos").
+paleta, bioma, pieza…), textos de la UI y commits. La UI usa voseo rioplatense
+("Pintalos", "devolvéselos").
 
-## Stack
+## Plataforma y stack
 
-- **Expo SDK 58** (React Native 0.88, React 19.3) + TypeScript estricto.
-- **expo-router** (rutas en `app/`, typed routes activadas).
-- **react-native-svg** para dibujar cuadros.
-- **react-native-gesture-handler 3** + **react-native-reanimated 4** (con
-  `react-native-worklets`) para zoom/paneo. Ojo: RNGH 3 tiene API de hooks
-  nueva (`usePinchGesture`, etc.); revisar `node_modules` antes de usarla.
-- **zustand 5** + **AsyncStorage** para el progreso persistido.
-- **expo-haptics** y **expo-audio** para feedback. `expo-av` NO: quedó
-  congelado en SDK 54 y no es compatible con SDK 58.
-- Jest (`jest-expo`) + `@testing-library/react-native` 14 (**`render` y
-  `fireEvent` son asíncronos: siempre `await`**). `expo-router/testing-library`
-  para pantallas.
-- ESLint (flat config de Expo) + Prettier.
-- Python 3 + Pillow/numpy/scipy para el conversor de imágenes.
-
-Expo cambia mucho entre SDKs: antes de usar una API de Expo/RN, leer
-`AGENTS.md` y consultar la documentación de la versión instalada.
+- **Solo Android.** No hay iOS, web ni escritorio: no agregarlos.
+- **Flutter 3.50 / Dart 3.14** (el devcontainer lo trae en /opt/flutter).
+  Material viene del paquete **`material_ui`**
+  (`import 'package:material_ui/material_ui.dart';`), no de
+  `package:flutter/material.dart`.
+- Dibujo: `CustomPainter` (`lib/ui/pintor_cuadro.dart`) con `dart:ui` Path
+  armado desde los comandos SVG (curvas reales → nítido con zoom).
+- Zoom/paneo: `InteractiveViewer`; el toque se resuelve con la geometría del
+  motor (`regionEnPunto`), no con hit-testing de widgets.
+- Progreso: `shared_preferences` (JSON). Es la única dependencia externa:
+  antes de sumar otra, justificar el peso (objetivo: APK liviano).
+- Tests: `flutter_test`. Conversor de imágenes: Python 3 + Pillow/numpy/scipy.
+- Hasta el tag `react-native-final` el proyecto fue Expo/React Native; se migró
+  a Flutter para achicar la app (el APK de RN pesaba ~100 MB con 4 ABIs).
 
 ## Estructura
 
 ```
-app/                     Pantallas (expo-router): index (portada), pintar/[id]
-app/(tabs)/              Pestañas: galeria, mis-obras, mapa
-src/engine/              Motor puro (sin React): geometría de paths SVG, lectura
-                         del SVG, ubicación de números, reglas de pintar,
-                         colores, progresión de biomas. Todo testeado.
-src/components/          Lienzo (SVG del cuadro), Paleta, Miniatura, íconos de pestañas
-src/data/cuadros/<id>/   cuadro.json + cuadro.svg de cada cuadro
-src/data/cuadros/indice.generado.ts   GENERADO (npm run cuadros), no editar
-src/data/biomas/         Biomas, piezas y qué cuadro destapa cada pieza
-src/store/               Progreso del jugador (zustand persistido) y clasificación
-                         de "Mis obras"
-scripts/                 compilar-cuadros.mjs, imagen_a_cuadro.py,
-                         generar-tipos-rutas.mjs
+lib/main.dart            Arranque: carga catálogo y progreso, App
+lib/engine/              Motor puro (sin widgets), con tests: geometría de paths
+                         SVG, lectura del SVG, ubicación de números, reglas de
+                         pintar, colores, progresión de biomas, zoom máximo
+lib/datos/catalogo.dart  Carga assets/cuadros (AssetManifest) y arma cuadros
+lib/datos/biomas.dart    Biomas, piezas y qué cuadro destapa cada pieza
+lib/estado/              Progreso persistido (ChangeNotifier) y "Mis obras"
+lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
+lib/ui/pantallas/        inicio (portada), principal (pestañas: galería,
+                         mis obras, mapa), pintar
+assets/cuadros/          <id>.json + <id>.svg de cada cuadro
+arte/                    Ilustraciones originales (fuente de los cuadros)
+scripts/                 imagen_a_cuadro.py, convertir_arte.py,
+                         catalogo-arte.json (títulos y parámetros de arte/)
+test/                    Tests del motor, estado, datos y pantallas
+android/                 Proyecto Android (applicationId com.coloresdegramonia.app)
 docs/                    GDD y formato de cuadros
-arte/                    Ilustraciones originales del usuario (fuente de los cuadros;
-                         títulos y parámetros en scripts/catalogo-arte.json)
 ```
-
-Import alias: `@/` → `src/`.
 
 ## Comandos
 
 ```bash
-npm run celular           # Expo Go en el teléfono vía túnel ngrok (sin cuenta Expo)
-npx expo start            # servidor de desarrollo (Expo Go); --tunnel si el
-                          # celular no llega a la red del contenedor
-npm run verificar         # todo: índice al día + typecheck + lint + tests JS y Python
-npm test                  # Jest
-npm run typecheck         # genera tipos de rutas y corre tsc
-npm run lint              # expo lint (ESLint + Prettier)
-npm run format            # prettier --write
-npm run cuadros           # regenera el índice de cuadros tras editar src/data/cuadros
-npm run arte              # convierte arte/ según scripts/catalogo-arte.json (+ índice)
-npm run imagen-a-cuadro -- foto.jpg --id mi-cuadro --titulo "Mi cuadro"
-npm run test:scripts      # tests del conversor (Python)
-npx expo install <pkg>    # SIEMPRE para agregar dependencias (versiones del SDK)
-npx expo-doctor           # diagnóstico de dependencias
+flutter test                         # todos los tests
+flutter analyze                      # análisis estático (debe dar 0 issues)
+dart format lib test                 # formato (ancho 100, ver analysis_options.yaml)
+flutter build apk --release --target-platform android-arm64
+                                     # → build/app/outputs/flutter-apk/app-release.apk
+flutter run                          # con un teléfono conectado por adb
+python3 scripts/convertir_arte.py [id...]   # arte/ → assets/cuadros (según el catálogo)
+python3 scripts/imagen_a_cuadro.py foto.jpg --id mi-cuadro --titulo "Mi cuadro"
+python3 -m unittest discover -s scripts -p "test_*.py"   # tests del conversor
 ```
+
+El usuario instala el APK directo en el teléfono (no usa tiendas ni Expo Go).
+La variante release se firma con la clave de debug (`~/.android/debug.keystore`;
+el devcontainer la restaura desde `.devcontainer/android-keys/` si existe).
 
 ## Reglas del proyecto
 
-- La lógica de juego va en `src/engine/` como funciones puras con tests; las
+- La lógica de juego va en `lib/engine/` como funciones puras con tests; las
   pantallas solo orquestan.
-- El store guarda lo mínimo (regiones pintadas y fecha de completado); lo
-  derivado (porcentaje, piezas, biomas) se calcula con el motor.
-- La detección de toques usa la geometría del motor (`regionEnPunto`), no los
-  eventos de toque de react-native-svg, para que funcione con zoom/paneo.
-- Al tocar `src/data/cuadros/`, correr `npm run cuadros`; un test falla si el
-  índice generado está desactualizado.
-- Cada cuadro destapa exactamente una pieza (lo validan los tests de datos).
-- Los cuadros de `arte/` se generan: no editar su SVG a mano; cambiar el
-  catálogo o los parámetros y correr `npm run arte`.
-- Gestos del lienzo (`src/components/Lienzo.tsx`): pellizco y arrastre corren
-  como worklets en el hilo de UI y usan las cuentas de `src/engine/vista.ts`
-  (funciones con `'worklet'`). El tap usa `runOnJS: true`: solo convierte
-  coordenadas y llama al motor.
-- Valores compartidos de Reanimated: desde JS usar `.get()` / `.set()` (la regla
-  del React Compiler en ESLint rechaza `sv.value = …` fuera de worklets).
-- Tests con gestos: `jest.resolver.js` combina los resolvers de Reanimated y
-  React Native; `jest.setup-after-env.js` llama a `setUpTests()` (timers
-  falsos). Para tocar el lienzo: evento `layout` sobre `testID="lienzo"` y
-  `createGestureController('lienzo-toque')` de `react-native-gesture-handler/jest-utils`.
-- Antes de dar algo por terminado: `npm run verificar`.
-- El devcontainer trae además Flutter/Android SDK de un proyecto anterior; no
-  se usan en este proyecto.
+- El progreso guarda lo mínimo (regiones pintadas y fechas); lo derivado
+  (porcentaje, piezas, biomas) se calcula con el motor.
+- Cada cuadro destapa exactamente una pieza (lo valida `test/datos_test.dart`,
+  que también verifica que cada número caiga dentro de su región).
+- Los cuadros de `arte/` se generan: no editar su SVG a mano; cambiar
+  `scripts/catalogo-arte.json` y volver a convertir.
+- Antes de dar algo por terminado: `flutter analyze` sin issues y `flutter test`
+  en verde (y los tests de Python si se tocó el conversor).

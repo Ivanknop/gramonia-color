@@ -2,9 +2,9 @@
 """
 Convierte una imagen en un cuadro pintable por números (primera versión).
 
-Genera src/data/cuadros/<id>/cuadro.svg y cuadro.json con el formato que
-espera el motor (ver docs/formato-cuadros.md). Después hay que correr
-`npm run cuadros` y asignar el cuadro a una pieza en src/data/biomas.
+Genera assets/cuadros/<id>.svg y <id>.json con el formato que espera el motor
+(ver docs/formato-cuadros.md). Después hay que asignarle una pieza de bioma en
+lib/datos/biomas.dart (los tests de datos lo verifican).
 
 Pasos:
   1. Reducir la imagen a una grilla chica (--ancho px de lado mayor).
@@ -44,7 +44,7 @@ from PIL import Image, ImageFilter
 from scipy import ndimage
 
 RAIZ = Path(__file__).resolve().parent.parent
-DIR_CUADROS = RAIZ / "src" / "data" / "cuadros"
+DIR_CUADROS = RAIZ / "assets" / "cuadros"
 LADO_VIEWBOX = 300  # lado mayor del viewBox, igual que los cuadros hechos a mano
 CATEGORIAS = ["paisaje", "animal", "objeto", "persona", "arte"]
 
@@ -378,10 +378,11 @@ def convertir(args: argparse.Namespace) -> Path:
             f'data-etiqueta="{etiqueta}" data-radio="{radio:.1f}" d="{path_d(lazos, escala)}" />'
         )
 
-    destino = DIR_CUADROS / args.id
-    destino.mkdir(parents=True, exist_ok=True)
+    DIR_CUADROS.mkdir(parents=True, exist_ok=True)
+    destino_svg = DIR_CUADROS / f"{args.id}.svg"
+    destino_json = DIR_CUADROS / f"{args.id}.json"
     vb = f"0 0 {ancho * escala:.0f} {alto * escala:.0f}"
-    (destino / "cuadro.svg").write_text(
+    destino_svg.write_text(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" fill="#eeeeee" '
         f'fill-rule="evenodd" stroke="#333333" stroke-width="0.8">\n' + "\n".join(paths) + "\n</svg>\n",
         encoding="utf-8",
@@ -401,10 +402,9 @@ def convertir(args: argparse.Namespace) -> Path:
     }
     if args.orden is not None:
         meta["orden"] = args.orden
-    (destino / "cuadro.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Cuadro '{args.id}': {cantidad} regiones, {len(orden_colores)} colores → {destino.relative_to(RAIZ)}")
-    print("Siguiente paso: `npm run cuadros` y asignarle una pieza en src/data/biomas/index.ts.")
-    return destino
+    destino_json.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Cuadro '{args.id}': {cantidad} regiones, {len(orden_colores)} colores → {destino_svg.relative_to(RAIZ)}")
+    return destino_svg
 
 
 def main(argv: list[str] | None = None) -> int:
