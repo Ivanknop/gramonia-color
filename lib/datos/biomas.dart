@@ -72,7 +72,7 @@ final biomas = <Bioma>[
     color: 0xFF7E57C2,
     piezas: [
       const Pieza(id: 'cumbre', cuadroId: 'montana-de-los-dragones'),
-      // Alma en la Montaña Dragón: (a confirmar) en el canon.
+      // Alma vive en la Montaña Dragón ("Reino Dragón").
       const Pieza(id: 'alma', cuadroId: 'alma-y-sus-alas'),
       ..._proximamente('montana-dragon', 3, desde: 3),
     ],
