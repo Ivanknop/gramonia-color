@@ -25,6 +25,23 @@ Future<(Musica, ReproductorDePrueba, Progreso)> nueva() async {
 }
 
 void main() {
+  test('el festejo suena aparte de la música y respeta el silencio', () async {
+    final progreso = await Progreso.cargar(AlmacenEnMemoria());
+    final efectos = ReproductorDePrueba();
+    final musica = Musica(
+      temas: temas,
+      reproductor: ReproductorDePrueba(),
+      efectos: efectos,
+      progreso: progreso,
+    );
+    await musica.festejar();
+    expect(efectos.llamadas, ['reproducir ${Musica.sonidoFestejo}']);
+    await musica.alternarSilencio();
+    await musica.festejar();
+    expect(efectos.llamadas, hasLength(1));
+    expect(File(Musica.sonidoFestejo).existsSync(), isTrue);
+  });
+
   test('elegirTema nunca repite el actual (si hay más de uno)', () {
     final azar = math.Random(3);
     for (var i = 0; i < 50; i++) {

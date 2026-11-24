@@ -5,8 +5,9 @@
 ///   (cada toque, la siguiente).
 /// - Bomba: se arma con el botón y el próximo toque pinta todas las regiones
 ///   cercanas, cada una con su color correcto.
-/// - Al terminar: plumas por la obra y, si se completa un bioma, plumas extra y
-///   el capítulo de la historia que cuenta Gobi.
+/// - Al terminar: festejo (confeti, sonido y vibración), plumas por la obra y,
+///   si se completa un bioma, plumas extra y el capítulo de la historia que
+///   cuenta Gobi (después del festejo).
 /// - Música: un tema al azar en cada dibujo, con botones para cambiarla y
 ///   silenciarla; se pausa si la app pasa a segundo plano.
 library;
@@ -23,6 +24,7 @@ import '../../datos/historia.dart';
 import '../../engine/motor.dart';
 import '../../estado/musica.dart';
 import '../comun.dart';
+import '../festejo.dart';
 import '../lienzo.dart';
 import '../paleta.dart';
 import 'historia.dart';
@@ -52,6 +54,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
 
   /// Plumas ganadas al terminar (para el panel final).
   int _plumasGanadas = 0;
+
+  /// Confeti en pantalla (al terminar el cuadro).
+  bool _festejando = false;
+
+  /// Capítulos de la historia que se cuentan cuando termina el festejo.
+  final List<Bioma> _capitulosPendientes = [];
   Musica? _musica;
 
   @override
@@ -151,11 +159,9 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
       final completos = biomasQueSeCompletan(biomas, completadosAntes, cuadro.id);
       ganadas += ReglasPlumas.porBioma * completos.length;
       progreso.sumarPlumas(ganadas);
-      HapticFeedback.heavyImpact();
+      _festejar();
       setState(() => _plumasGanadas = ganadas);
-      for (final b in completos) {
-        _contarCapitulo(b);
-      }
+      _capitulosPendientes.addAll(completos);
       return;
     }
     // Si se terminó el color elegido, pasar al siguiente que tenga pendientes.
@@ -168,21 +174,36 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     }
   }
 
+  /// Confeti, sonido y vibración: tres golpes que se van suavizando.
+  void _festejar() {
+    setState(() => _festejando = true);
+    unawaited(_musica?.festejar());
+    HapticFeedback.heavyImpact();
+    Future<void>.delayed(const Duration(milliseconds: 180), HapticFeedback.mediumImpact);
+    Future<void>.delayed(const Duration(milliseconds: 360), HapticFeedback.lightImpact);
+  }
+
+  void _alTerminarFestejo() {
+    if (!mounted) return;
+    setState(() => _festejando = false);
+    for (final b in _capitulosPendientes) {
+      _contarCapitulo(b);
+    }
+    _capitulosPendientes.clear();
+  }
+
   void _contarCapitulo(Bioma bioma) {
     final escena = capitulos[bioma.id];
     final progreso = Dependencias.of(context).progreso;
     if (escena == null || progreso.capitulosVistos.contains(bioma.id)) return;
     progreso.marcarCapituloVisto(bioma.id);
     final escenas = [escena, if (bioma.id == 'isla-morada') ...finalIslas];
-    // Después del panel de "¡Terminaste!", Gobi cuenta el capítulo.
-    Future<void>.delayed(const Duration(milliseconds: 900), () {
-      if (!mounted) return;
-      Navigator.of(context).push(
-        MaterialPageRoute<void>(
-          builder: (_) => PantallaHistoria(escenas: escenas, textoFinal: 'Seguir'),
-        ),
-      );
-    });
+    // Después del festejo, Gobi cuenta el capítulo.
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => PantallaHistoria(escenas: escenas, textoFinal: 'Seguir'),
+      ),
+    );
   }
 
   void _usarLupa(Cuadro cuadro) {
@@ -254,6 +275,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                         regionDestacada: _destacada,
                         onToque: _alTocar,
                       ),
+                    if (_festejando)
+                      Positioned.fill(child: Festejo(alTerminar: _alTerminarFestejo)),
                     if (_bombaArmada)
                       const Positioned(
                         left: 12,

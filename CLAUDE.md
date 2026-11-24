@@ -63,6 +63,7 @@ lib/ui/pantallas/        inicio (portada), genero, creditos, principal (pestaña
 assets/cuadros/          <id>.json + <id>.svg + <id>.webp de cada cuadro
 assets/mapa/             gramonia.webp (mapa provisorio, de arte/fondo-caminatas)
 assets/musica/           temas en AAC 80 kbps (de arte/musica/*.mp3)
+assets/sonidos/          efectos (festejo.m4a, sintetizado por script)
 arte/                    Ilustraciones originales (fuente de los cuadros)
 scripts/                 imagen_a_cuadro.py, convertir_arte.py,
                          catalogo-arte.json (títulos y parámetros de arte/)
@@ -82,6 +83,7 @@ flutter build apk --release --target-platform android-arm64
 flutter run                          # con un teléfono conectado por adb
 python3 scripts/convertir_arte.py [id...]   # arte/ → assets (cuadros, mapa, musica)
 python3 scripts/generar_icono.py            # arte/icono.jpeg → ícono de la app (android/res)
+python3 scripts/generar_festejo.py          # sintetiza assets/sonidos/festejo.m4a
 python3 scripts/imagen_a_cuadro.py foto.jpg --id mi-cuadro --titulo "Mi cuadro"
 python3 -m unittest discover -s scripts -p "test_*.py"   # tests del conversor
 ```

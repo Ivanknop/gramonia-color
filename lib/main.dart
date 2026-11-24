@@ -18,6 +18,7 @@ Future<void> main() async {
   final musica = Musica(
     temas: manifiesto.listAssets().where((a) => a.startsWith('assets/musica/')).toList(),
     reproductor: ReproductorAudioplayers(),
+    efectos: ReproductorAudioplayers(volumen: 1),
     progreso: progreso,
   );
   runApp(App(catalogo: catalogo, progreso: progreso, musica: musica));

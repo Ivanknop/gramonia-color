@@ -9,6 +9,7 @@ import 'package:colores_de_gramonia/engine/motor.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:colores_de_gramonia/main.dart';
 import 'package:colores_de_gramonia/ui/comun.dart';
+import 'package:colores_de_gramonia/ui/festejo.dart';
 import 'package:colores_de_gramonia/ui/pantallas/pintar.dart';
 import 'package:colores_de_gramonia/ui/pintor_cuadro.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -201,7 +202,9 @@ void main() {
     await tester.pump(const Duration(seconds: 4)); // se apaga el destacado
   });
 
-  testWidgets('terminar la última obra del Árbol: plumas y capítulo de Gobi', (tester) async {
+  testWidgets('terminar la última obra del Árbol: festejo, plumas y capítulo de Gobi', (
+    tester,
+  ) async {
     final progreso = await progresoNuevo();
     final hormiguero = catalogo.obtener('hormiguero-del-arbol')!;
     progreso.pintarRegiones(hormiguero.id, [for (final r in hormiguero.regiones) r.id]);
@@ -227,8 +230,14 @@ void main() {
     expect(find.text(' +$ganadas plumas del Rocanón'), findsOneWidget);
     expect(find.text('Destapaste una parte de Árbol Mágico.'), findsOneWidget);
 
+    // Festejo con confeti; el capítulo espera a que termine.
+    expect(find.byType(Festejo), findsOneWidget);
+    expect(find.text('¡Terminaste!'), findsOneWidget);
     await tester.pump(const Duration(seconds: 1));
+    expect(find.text('El Árbol Mágico'), findsNothing);
+    await tester.pump(const Duration(seconds: 3));
     await tester.pumpAndSettle();
+    expect(find.byType(Festejo), findsNothing);
     expect(find.text('El Árbol Mágico'), findsOneWidget); // capítulo de la historia
     expect(progreso.capitulosVistos, {'arbol-magico'});
   });

@@ -28,19 +28,20 @@ abstract class Reproductor {
 
 /// Reproductor real (audioplayers: usa el reproductor nativo de Android).
 class ReproductorAudioplayers implements Reproductor {
-  ReproductorAudioplayers() {
-    // Música de fondo: volumen medio, sin repetir (al terminar se elige otra).
+  /// [volumen]: la música de fondo va a volumen medio; los efectos, más fuerte.
+  ReproductorAudioplayers({this.volumen = 0.6}) {
+    // Sin repetir (al terminar un tema se elige otro).
     unawaited(_player.setReleaseMode(ReleaseMode.stop));
   }
 
   final _player = AudioPlayer();
-  static const _volumen = 0.6;
+  final double volumen;
 
   @override
   Future<void> reproducir(String asset) => _player.play(
     // AssetSource agrega el prefijo "assets/".
     AssetSource(asset.replaceFirst(RegExp('^assets/'), '')),
-    volume: _volumen,
+    volume: volumen,
   );
 
   @override
@@ -78,6 +79,7 @@ class Musica extends ChangeNotifier {
     required this.temas,
     required this.reproductor,
     required this.progreso,
+    this.efectos,
     math.Random? azar,
   }) : _azar = azar ?? math.Random() {
     _suscripcion = reproductor.alTerminar.listen((_) {
@@ -89,6 +91,9 @@ class Musica extends ChangeNotifier {
   final List<String> temas;
   final Reproductor reproductor;
   final Progreso progreso;
+
+  /// Reproductor aparte para los efectos (así no cortan la música).
+  final Reproductor? efectos;
   final math.Random _azar;
   StreamSubscription<void>? _suscripcion;
 
@@ -129,6 +134,13 @@ class Musica extends ChangeNotifier {
       await reproductor.reproducir(actual!);
     }
   }
+
+  /// Sonido del festejo al terminar un cuadro. "Silenciar" también lo calla.
+  Future<void> festejar() async {
+    if (!silenciada) await efectos?.reproducir(sonidoFestejo);
+  }
+
+  static const sonidoFestejo = 'assets/sonidos/festejo.m4a';
 
   /// Al salir del dibujo.
   Future<void> detener() async {

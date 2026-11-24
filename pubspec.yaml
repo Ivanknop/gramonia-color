@@ -66,6 +66,8 @@ flutter:
     - assets/mapa/
     # Música de fondo (AAC 80 kbps, comprimida desde arte/musica).
     - assets/musica/
+    # Efectos de sonido (scripts/generar_festejo.py).
+    - assets/sonidos/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

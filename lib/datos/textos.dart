@@ -32,4 +32,7 @@ abstract final class Textos {
   ];
   static const creditosCuentos = 'Los cuentos se leen en cuentosdegramonia.substack.com';
   static const creditosGobi = '¡Gracias por devolverle los colores a Gramonia!';
+
+  // ---- Festejo ----
+  static const festejo = '¡Terminaste!';
 }
