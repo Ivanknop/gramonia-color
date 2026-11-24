@@ -202,6 +202,18 @@ void main() {
       expect(obras.enProgreso.map((o) => o.cuadroId), ['b', 'a--facil']);
     });
 
+    test('obraParaContinuar: la empezada más reciente, o ninguna', () {
+      expect(
+        obraParaContinuar({
+          'a': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 1),
+          'b': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 5),
+          'c': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 9, completadoEn: 9),
+        }, existentes),
+        'b',
+      );
+      expect(obraParaContinuar({}, existentes), isNull);
+    });
+
     test('ignora cuadros sin pintar y cuadros que ya no existen', () {
       final obras = clasificarObras({
         'a': const ProgresoCuadro(),

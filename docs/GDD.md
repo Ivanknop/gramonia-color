@@ -22,6 +22,16 @@ ahora. Gobi narra la historia: una introducción la primera vez que se juega
 recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
 (Gobi es el coleccionista de abrazos).
 
+## 1b. Portada
+
+El mapa de Gramonia arranca a todo color y en unos 2,5 segundos se apaga hasta
+el blanco y negro (Mututu robando los colores). Ya en gris aparece el título en
+dos tiempos, "Gramonia…" y después "Color", en Luckiest Guy con degradado de
+lilas (#C8A2C8 → #9B6FBF, en `Tema`) y contorno oscuro. Debajo, el botón:
+"¡Empezar!" la primera vez (historia de Gobi, elección de género y galería) o
+"Continuar pintando" (la obra empezada más reciente, o la galería). Tocar la
+pantalla saltea la animación. Línea de tiempo en `lib/engine/intro.dart`.
+
 ## 2. Mecánica principal
 
 1. El cuadro se muestra en **blanco y negro puro**, como un libro para

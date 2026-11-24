@@ -7,6 +7,11 @@ import 'progreso.dart';
 
 typedef Obra = ({String cuadroId, ProgresoCuadro progreso});
 
+/// Obra para "Continuar pintando": la empezada más recientemente (null si no
+/// hay ninguna a medio pintar).
+String? obraParaContinuar(Map<String, ProgresoCuadro> cuadros, Set<String> idsExistentes) =>
+    clasificarObras(cuadros, idsExistentes).enProgreso.firstOrNull?.cuadroId;
+
 /// Clasifica el progreso en obras en progreso (la más reciente primero) y
 /// terminadas (la terminada más recientemente primero). Ignora cuadros sin
 /// pintar (salvo los rehechos) y cuadros que ya no existen en el catálogo.

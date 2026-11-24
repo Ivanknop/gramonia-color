@@ -67,6 +67,7 @@ assets/dificultades.json Tabla de dificultades (colores y regiones), a mano
 assets/mapa/             gramonia.webp (mapa provisorio, de arte/fondo-caminatas)
 assets/musica/           temas en AAC 80 kbps (de arte/musica/*.mp3)
 assets/sonidos/          efectos (festejo.m4a, sintetizado por script)
+assets/fuentes/          Luckiest Guy (del canon): títulos y logo
 arte/                    Ilustraciones originales (fuente de los cuadros)
 scripts/                 imagen_a_cuadro.py, convertir_arte.py,
                          catalogo-arte.json (títulos y parámetros de arte/)

@@ -6,6 +6,7 @@ library;
 import 'package:colores_de_gramonia/datos/biomas.dart';
 import 'package:colores_de_gramonia/datos/catalogo.dart';
 import 'package:colores_de_gramonia/engine/genero.dart';
+import 'package:colores_de_gramonia/engine/intro.dart';
 import 'package:colores_de_gramonia/engine/motor.dart';
 import 'package:colores_de_gramonia/engine/timelapse.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
@@ -76,25 +77,85 @@ Region regionVisible(
 }
 
 void main() {
-  testWidgets('la primera vez, Gobi cuenta la introducción y después regala plumas', (
+  testWidgets('intro: el mapa se apaga y aparece el título en dos tiempos', (tester) async {
+    usarTelefono(tester);
+    final progreso = await progresoNuevo(introVista: false);
+    await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    double opacidad(String texto) => tester
+        .widget<Opacity>(
+          find.ancestor(of: find.text(texto).last, matching: find.byType(Opacity)).first,
+        )
+        .opacity;
+    // Al principio, a color y sin título.
+    expect(opacidad('Gramonia...'), 0);
+    await tester.pump(
+      Duration(milliseconds: ((Intro.inicioGramonia + Intro.aparicion) * 1000).round()),
+    );
+    // Ya en gris: "Gramonia…" sí, "Color" todavía no.
+    expect(opacidad('Gramonia...'), closeTo(1, 1e-6));
+    expect(opacidad('Color'), 0);
+    await tester.pumpAndSettle();
+    expect(opacidad('Color'), closeTo(1, 1e-6));
+    expect(find.text('¡Empezar!'), findsOneWidget);
+  });
+
+  testWidgets('primera vez: ¡Empezar! cuenta la historia, pregunta el género y abre la galería', (
     tester,
   ) async {
     usarTelefono(tester);
     final progreso = await progresoNuevo(introVista: false);
     await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    await tester.pump(const Duration(milliseconds: 500));
+    // Tocar durante la animación la saltea: título y botón de una.
+    await tester.tapAt(const Offset(180, 700));
+    await tester.pump();
+    expect(find.text('¡Empezar!'), findsOneWidget);
+    expect(find.text('Continuar pintando'), findsNothing);
+    await tester.tap(find.text('¡Empezar!'));
     await tester.pumpAndSettle();
-    expect(find.text('Gobi, el Lobito Guardián'), findsNothing); // escena 1 primero
-    expect(find.text('Saltar'), findsOneWidget);
+    expect(find.text('Saltar'), findsOneWidget); // la historia de Gobi
     await tester.tap(find.text('Saltar'));
     await tester.pumpAndSettle();
     expect(progreso.introVista, isTrue);
-    // Gobi pregunta cómo hablarle.
     await tester.tap(find.text('Chica'));
     await tester.pumpAndSettle();
     expect(progreso.genero, Genero.chica);
+    expect(find.text('Nivel 1'), findsOneWidget); // la galería
     expect(progreso.plumas, ReglasPlumas.porDia);
-    expect(find.textContaining('plumas del Rocanón'), findsOneWidget);
-    expect(find.text('La historia'), findsOneWidget);
+  });
+
+  testWidgets('con progreso: "Continuar pintando" abre la obra empezada más reciente', (
+    tester,
+  ) async {
+    usarTelefono(tester);
+    var ahora = 1;
+    final progreso = await Progreso.cargar(AlmacenEnMemoria(), reloj: () => ahora);
+    progreso.marcarIntroVista();
+    progreso.elegirGenero(Genero.neutro);
+    final nido = catalogo.obtener('nido-de-rocanon')!;
+    progreso.pintarRegion(nido.id, nido.regiones.first.id);
+    ahora = 2;
+    final copa = catalogo.obtener('arbol-magico-de-noche')!;
+    progreso.pintarRegion(copa.id, copa.regiones.first.id);
+    await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    await tester.pumpAndSettle();
+    expect(find.text('¡Empezar!'), findsNothing);
+    await tester.tap(find.text('Continuar pintando'));
+    await tester.pumpAndSettle();
+    expect(find.byType(Pintar), findsOneWidget);
+    expect(find.text(copa.meta.titulo), findsOneWidget);
+  });
+
+  testWidgets('con progreso pero nada a medio pintar: "Continuar pintando" abre la galería', (
+    tester,
+  ) async {
+    usarTelefono(tester);
+    final progreso = await progresoNuevo();
+    await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Continuar pintando'));
+    await tester.pumpAndSettle();
+    expect(find.text('Nivel 1'), findsOneWidget);
   });
 
   testWidgets('galería por lugares: el primero abierto, el siguiente bloqueado', (tester) async {
@@ -102,7 +163,7 @@ void main() {
     final progreso = await progresoNuevo();
     await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Pintar'));
+    await tester.tap(find.text('Galería'));
     await tester.pumpAndSettle();
     expect(find.text('Árbol Mágico'), findsOneWidget);
     expect(find.text('Nivel 1'), findsOneWidget);
@@ -276,7 +337,7 @@ void main() {
 
     await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Pintar'));
+    await tester.tap(find.text('Galería'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Mis obras').last);
     await tester.pumpAndSettle();
@@ -319,7 +380,7 @@ void main() {
     expect(find.text('Hecha con Gemini Lyria'), findsOneWidget);
     await tester.pageBack();
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Pintar'));
+    await tester.tap(find.text('Galería'));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('menu')));
     await tester.pumpAndSettle();
@@ -399,7 +460,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.pageBack();
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Pintar'));
+    await tester.tap(find.text('Galería'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Mis obras').last);
     await tester.pumpAndSettle();
@@ -420,7 +481,7 @@ void main() {
     }
     await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Pintar'));
+    await tester.tap(find.text('Galería'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Mis obras').last);
     await tester.pumpAndSettle();
@@ -490,7 +551,7 @@ void main() {
     progreso.sumarPlumas(10); // 15 en total
     await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Pintar'));
+    await tester.tap(find.text('Galería'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Tienda').last);
     await tester.pumpAndSettle();

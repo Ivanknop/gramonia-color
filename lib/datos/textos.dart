@@ -80,4 +80,14 @@ abstract final class Textos {
   static const sinLupas = 'No te quedan lupas. Conseguí más en la Tienda.';
   static const sinBombas = 'No te quedan bombas. Conseguí más en la Tienda.';
   static String subisteDeNivel(int n) => '¡Llegaste al nivel $n!';
+
+  // ---- Portada ----
+  static const tituloGramonia = 'Gramonia...';
+  static const tituloColor = 'Color';
+  static const empezar = '¡Empezar!';
+  static const continuar = 'Continuar pintando';
+  static const galeria = 'Galería';
+  static const mapa = 'Mapa de Gramonia';
+  static const laHistoria = 'La historia';
+  static String plumasDelDia(int n) => 'Gobi te trae $n plumas del Rocanón. ¡Buen día!';
 }

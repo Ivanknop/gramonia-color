@@ -14,6 +14,15 @@ abstract final class Tema {
   static const verde = Color(0xFF38761D);
   static const gris = Color(0xFF777777);
 
+  /// Lilas del título "Gramonia… Color" (degradado de arriba hacia abajo) y
+  /// su contorno oscuro, para que se lea sobre el mapa en gris.
+  static const lilaClaro = Color(0xFFC8A2C8);
+  static const lilaOscuro = Color(0xFF9B6FBF);
+  static const contornoTitulo = Color(0xFF2E1F47);
+
+  /// Tipografía del canon para títulos y logo (un solo peso: sin negrita).
+  static const fuenteTitulos = 'LuckiestGuy';
+
   static ThemeData get datos => ThemeData(
     colorScheme: ColorScheme.fromSeed(seedColor: morado),
     scaffoldBackgroundColor: crema,
@@ -42,6 +51,42 @@ class Dependencias extends InheritedWidget {
   @override
   bool updateShouldNotify(Dependencias old) =>
       catalogo != old.catalogo || progreso != old.progreso || musica != old.musica;
+}
+
+/// Título con la tipografía del canon, relleno con el degradado de lilas y
+/// contorno oscuro.
+class TituloLila extends StatelessWidget {
+  const TituloLila(this.texto, {super.key, this.tamano = 48});
+  final String texto;
+  final double tamano;
+
+  @override
+  Widget build(BuildContext context) {
+    final base = TextStyle(fontFamily: Tema.fuenteTitulos, fontSize: tamano, height: 1.1);
+    return Stack(
+      children: [
+        Text(
+          texto,
+          style: base.copyWith(
+            foreground: Paint()
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = tamano / 7
+              ..strokeJoin = StrokeJoin.round
+              ..color = Tema.contornoTitulo,
+          ),
+        ),
+        ShaderMask(
+          blendMode: BlendMode.srcIn,
+          shaderCallback: (r) => const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Tema.lilaClaro, Tema.lilaOscuro],
+          ).createShader(r),
+          child: Text(texto, style: base.copyWith(color: Colors.white)),
+        ),
+      ],
+    );
+  }
 }
 
 /// Formato de fecha corto (dd/mm/aaaa) sin depender de paquetes de i18n.
