@@ -61,6 +61,7 @@ Import alias: `@/` → `src/`.
 ## Comandos
 
 ```bash
+npm run celular           # Expo Go en el teléfono vía túnel ngrok (sin cuenta Expo)
 npx expo start            # servidor de desarrollo (Expo Go); --tunnel si el
                           # celular no llega a la red del contenedor
 npm run verificar         # todo: índice al día + typecheck + lint + tests JS y Python
