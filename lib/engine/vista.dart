@@ -4,6 +4,8 @@ library;
 
 import 'dart:math' as math;
 
+import 'geometria.dart';
+
 /// Tamaño de fuente (unidades del viewBox) del número de una región:
 /// proporcional al espacio libre para que entre, entre 1.2 y 18.
 /// Los números chicos se leen con zoom (ver [escalaMaxima]).
@@ -25,4 +27,25 @@ double escalaMaxima(
   final porNumero = tamanoLegible / (tamanoNumero(menorRadio) * factor);
   final porRadio = menorRadio > 0 ? radioTocable / (menorRadio * factor) : 0.0;
   return math.max(4.0, math.max(porNumero, porRadio)).clamp(4.0, 16.0);
+}
+
+/// Radio que tiene que alcanzar un círculo que crece desde [origen] para
+/// cubrir toda la caja de una región (distancia a la esquina más lejana).
+double radioParaCubrir(Caja caja, Punto origen) {
+  double d(double x, double y) =>
+      math.sqrt((x - origen.x) * (x - origen.x) + (y - origen.y) * (y - origen.y));
+  return [
+    d(caja.minX, caja.minY),
+    d(caja.maxX, caja.minY),
+    d(caja.minX, caja.maxY),
+    d(caja.maxX, caja.maxY),
+  ].reduce(math.max);
+}
+
+/// Avance (0 a 1) de una animación que empieza en [inicio] y dura [duracion],
+/// con salida suave (ease-out): arranca rápido y frena al llenar.
+double avanceAnimacion(Duration ahora, Duration inicio, Duration duracion) {
+  if (ahora <= inicio) return 0;
+  final t = ((ahora - inicio).inMicroseconds / duracion.inMicroseconds).clamp(0.0, 1.0);
+  return 1 - (1 - t) * (1 - t) * (1 - t);
 }

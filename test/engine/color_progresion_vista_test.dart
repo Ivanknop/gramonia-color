@@ -132,4 +132,19 @@ void main() {
       expect(escalaMaxima([0.5], 0.1), 16); // tope
     });
   });
+
+  group('animación del relleno', () {
+    test('radioParaCubrir llega a la esquina más lejana', () {
+      expect(radioParaCubrir(const Caja(0, 0, 3, 4), const Punto(0, 0)), closeTo(5, 1e-9));
+      expect(radioParaCubrir(const Caja(0, 0, 10, 10), const Punto(5, 5)), closeTo(7.0711, 1e-4));
+    });
+
+    test('avanceAnimacion va de 0 a 1 con salida suave', () {
+      const d = Duration(milliseconds: 100);
+      expect(avanceAnimacion(Duration.zero, const Duration(milliseconds: 10), d), 0);
+      final mitad = avanceAnimacion(const Duration(milliseconds: 50), Duration.zero, d);
+      expect(mitad, greaterThan(0.5)); // ease-out: a mitad de tiempo ya pasó la mitad
+      expect(avanceAnimacion(const Duration(milliseconds: 200), Duration.zero, d), 1);
+    });
+  });
 }

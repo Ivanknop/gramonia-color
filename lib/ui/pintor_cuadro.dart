@@ -1,37 +1,44 @@
 /// Dibuja un cuadro con CustomPainter.
 ///
 /// Con ilustración (cuadros de arte/):
-///  - de fondo, la ilustración en blanco y negro aclarado: así se ve lo que
-///    todavía no tiene color, con sus formas pero sin tapar los números;
+///  - lo que falta pintar es blanco con contornos negros y su número, como un
+///    libro para colorear (blanco y negro puro, sin grises);
 ///  - cada región pintada se rellena con la ilustración a color (luces,
 ///    sombras y brillos originales, no un color plano);
-///  - las regiones pendientes del color elegido se marcan con un tinte.
-/// Sin ilustración (cuadros hechos a mano): colores planos y grises.
+///  - al pintar, el color se expande desde donde se tocó hasta llenar la
+///    región ([animaciones], que avanzan con [reloj]);
+///  - las regiones pendientes del color elegido se marcan con un tinte suave.
+/// Sin ilustración: colores planos y grises.
 ///
 /// Se dibuja en coordenadas del viewBox escaladas por [factor]; el zoom de
 /// InteractiveViewer transforma el dibujo vectorial, así que se ve nítido.
 library;
 
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../engine/motor.dart';
 
-const _resalte = Color(0x803D2C5E); // tinte para el color elegido (con ilustración)
+const _resalte = Color(0x333D2C5E); // tinte suave para el color elegido
 const _resaltePlano = Color(0xFF9A9A9A);
-const _borde = Color(0xB3404040);
+const _borde = Color(0xFF000000);
+const _bordePlano = Color(0xB3404040);
 const _colorNumero = Color(0xFF222222);
 const _destacado = Color(0xFFFFB300);
 
-/// Blanco y negro aclarado: luminancia * 0.55 + 45% de blanco.
-const _blancoYNegro = ColorFilter.matrix(<double>[
-  0.2126 * 0.55, 0.7152 * 0.55, 0.0722 * 0.55, 0, 115, //
-  0.2126 * 0.55, 0.7152 * 0.55, 0.0722 * 0.55, 0, 115,
-  0.2126 * 0.55, 0.7152 * 0.55, 0.0722 * 0.55, 0, 115,
-  0, 0, 0, 1, 0,
-]);
+/// Relleno en curso de una región: el color crece desde [origen].
+class RellenoAnimado {
+  const RellenoAnimado({required this.origen, required this.inicio, required this.duracion});
+
+  /// Punto (viewBox) desde donde se expande el color.
+  final Punto origen;
+
+  /// Momento de inicio, medido en el [PintorCuadro.reloj].
+  final Duration inicio;
+  final Duration duracion;
+}
 
 class PintorCuadro extends CustomPainter {
   PintorCuadro({
@@ -43,7 +50,9 @@ class PintorCuadro extends CustomPainter {
     this.mostrarNumeros = true,
     this.anchoBorde = 0.35,
     this.regionDestacada,
-  });
+    this.animaciones = const {},
+    this.reloj,
+  }) : super(repaint: reloj);
 
   final Cuadro cuadro;
   final Set<String> pintadas;
@@ -61,6 +70,12 @@ class PintorCuadro extends CustomPainter {
 
   /// Región señalada por la lupa (se dibuja con un anillo).
   final String? regionDestacada;
+
+  /// Regiones pintadas cuyo color todavía se está expandiendo.
+  final Map<String, RellenoAnimado> animaciones;
+
+  /// Tiempo de las animaciones; cada tic vuelve a dibujar.
+  final ValueListenable<Duration>? reloj;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -91,15 +106,9 @@ class PintorCuadro extends CustomPainter {
   }
 
   void _pintarConIlustracion(Canvas canvas, _Recursos recursos, ui.Image img) {
-    final destino = Rect.fromLTWH(0, 0, cuadro.ancho, cuadro.alto);
-    final origen = Rect.fromLTWH(0, 0, img.width.toDouble(), img.height.toDouble());
-    canvas.drawImageRect(
-      img,
-      origen,
-      destino,
-      Paint()
-        ..colorFilter = _blancoYNegro
-        ..filterQuality = FilterQuality.medium,
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, cuadro.ancho, cuadro.alto),
+      Paint()..color = const Color(0xFFFFFFFF),
     );
 
     final matriz = Float64List.fromList([
@@ -127,17 +136,38 @@ class PintorCuadro extends CustomPainter {
       ..strokeWidth = anchoBorde
       ..color = _borde
       ..strokeJoin = StrokeJoin.round;
+    final ahora = reloj?.value ?? Duration.zero;
 
+    // 1) Color: regiones pintadas (las recién tocadas, a medio llenar).
     for (var i = 0; i < cuadro.regiones.length; i++) {
       final r = cuadro.regiones[i];
+      if (!pintadas.contains(r.id)) continue;
       final path = recursos.paths[i];
-      if (pintadas.contains(r.id)) {
+      final anim = animaciones[r.id];
+      final avance = anim == null ? 1.0 : avanceAnimacion(ahora, anim.inicio, anim.duracion);
+      if (avance >= 1) {
         canvas.drawPath(path, color);
         canvas.drawPath(path, costura);
-      } else {
-        if (r.numero == numeroElegido) canvas.drawPath(path, tinte);
-        canvas.drawPath(path, contorno);
+      } else if (avance > 0) {
+        final o = anim!.origen;
+        canvas.save();
+        canvas.clipPath(path);
+        canvas.drawCircle(Offset(o.x, o.y), radioParaCubrir(r.caja, o) * avance, color);
+        canvas.restore();
       }
+    }
+    // 2) Pendientes: tinte del color elegido y contorno negro (también en las
+    //    que se están llenando, hasta que terminan).
+    for (var i = 0; i < cuadro.regiones.length; i++) {
+      final r = cuadro.regiones[i];
+      final pintada = pintadas.contains(r.id);
+      final animando =
+          pintada &&
+          animaciones[r.id] != null &&
+          avanceAnimacion(ahora, animaciones[r.id]!.inicio, animaciones[r.id]!.duracion) < 1;
+      if (pintada && !animando) continue;
+      if (!pintada && r.numero == numeroElegido) canvas.drawPath(recursos.paths[i], tinte);
+      canvas.drawPath(recursos.paths[i], contorno);
     }
   }
 
@@ -156,7 +186,7 @@ class PintorCuadro extends CustomPainter {
           : r.numero == numeroElegido
           ? _resaltePlano
           : recursos.grises[r.numero]!;
-      contorno.color = pintada ? color : _borde;
+      contorno.color = pintada ? color : _bordePlano;
       canvas.drawPath(recursos.paths[i], relleno);
       canvas.drawPath(recursos.paths[i], contorno);
     }
@@ -182,6 +212,7 @@ class PintorCuadro extends CustomPainter {
       old.factor != factor ||
       old.imagen != imagen ||
       old.regionDestacada != regionDestacada ||
+      old.animaciones != animaciones ||
       old.mostrarNumeros != mostrarNumeros;
 }
 

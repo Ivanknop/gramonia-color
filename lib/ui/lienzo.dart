@@ -7,11 +7,14 @@
 ///   de ~[toleranciaDedo] puntos de pantalla, para que el motor perdone un
 ///   dedo que cae un poco al costado de una región chica.
 /// - [LienzoState.enfocar] acerca la vista a una región (lo usa la lupa).
+/// - Cuando aparecen regiones nuevas en [Lienzo.pintadas], su color se expande
+///   desde el último toque (con la bomba, en onda desde donde cayó).
 library;
 
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
+import 'package:flutter/scheduler.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../engine/motor.dart';
@@ -20,6 +23,16 @@ import 'pintor_cuadro.dart';
 
 /// Tolerancia del toque, en puntos de pantalla.
 const toleranciaDedo = 14.0;
+
+/// Cuánto tarda el color en llenar una región.
+const duracionRelleno = Duration(milliseconds: 650);
+
+/// Demora máxima de la onda de la bomba (las regiones más lejanas, al final).
+const demoraOndaBomba = Duration(milliseconds: 450);
+
+/// Con más regiones nuevas de golpe que esto no se anima (por ejemplo, al
+/// cargar progreso guardado): se muestran pintadas directamente.
+const maximoAnimadas = 80;
 
 class Lienzo extends StatefulWidget {
   const Lienzo({
@@ -45,7 +58,7 @@ class Lienzo extends StatefulWidget {
   State<Lienzo> createState() => LienzoState();
 }
 
-class LienzoState extends State<Lienzo> with SingleTickerProviderStateMixin {
+class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
   final _transformacion = TransformationController();
   late final _animacion = AnimationController(
     vsync: this,
@@ -57,6 +70,12 @@ class LienzoState extends State<Lienzo> with SingleTickerProviderStateMixin {
   double _maximo = 4;
   bool _alejado = false;
   bool _ajustandoEnBuild = false;
+
+  // Relleno animado: un ticker que corre solo mientras haya regiones llenándose.
+  late final Ticker _ticker = createTicker(_alTic);
+  final _reloj = ValueNotifier<Duration>(Duration.zero);
+  final _animaciones = <String, RellenoAnimado>{};
+  Punto? _ultimoToque;
 
   @override
   void initState() {
@@ -70,9 +89,78 @@ class LienzoState extends State<Lienzo> with SingleTickerProviderStateMixin {
 
   @override
   void dispose() {
+    _ticker.dispose();
+    _reloj.dispose();
     _transformacion.dispose();
     _animacion.dispose();
     super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(Lienzo oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.cuadro != widget.cuadro) return;
+    final nuevas = widget.pintadas.difference(oldWidget.pintadas);
+    if (nuevas.isEmpty || nuevas.length > maximoAnimadas) return;
+    _animar(nuevas);
+  }
+
+  void _animar(Set<String> nuevas) {
+    if (!_ticker.isActive) {
+      _reloj.value = Duration.zero;
+      _ticker.start();
+    }
+    final ahora = _reloj.value;
+    final toque = _ultimoToque;
+    final regiones = [
+      for (final r in widget.cuadro.regiones)
+        if (nuevas.contains(r.id)) r,
+    ];
+    final esOnda = regiones.length > 1 && toque != null;
+    final alcance = esOnda
+        ? regiones
+              .map((r) => _distancia(r.etiqueta, toque))
+              .reduce(math.max)
+              .clamp(1e-6, double.infinity)
+        : 1.0;
+    for (final r in regiones) {
+      // Desde el dedo si tocó dentro (o cerca) de la región; si no, desde el número.
+      final Punto origen;
+      if (esOnda) {
+        origen = toque;
+      } else if (toque != null && _cerca(r, toque)) {
+        origen = toque;
+      } else {
+        origen = r.etiqueta;
+      }
+      final demora = esOnda
+          ? demoraOndaBomba * (_distancia(r.etiqueta, toque) / alcance)
+          : Duration.zero;
+      _animaciones[r.id] = RellenoAnimado(
+        origen: origen,
+        inicio: ahora + demora,
+        duracion: duracionRelleno,
+      );
+    }
+  }
+
+  static double _distancia(Punto a, Punto b) =>
+      math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
+
+  static bool _cerca(Region r, Punto p) {
+    final c = r.caja;
+    final m = math.max(c.maxX - c.minX, c.maxY - c.minY) * 0.25;
+    return p.x >= c.minX - m && p.x <= c.maxX + m && p.y >= c.minY - m && p.y <= c.maxY + m;
+  }
+
+  void _alTic(Duration transcurrido) {
+    _reloj.value = transcurrido;
+    _animaciones.removeWhere((_, a) => transcurrido >= a.inicio + a.duracion);
+    if (_animaciones.isEmpty) {
+      _ticker.stop();
+      // Un último dibujado ya sin animaciones (contornos finales).
+      setState(() {});
+    }
   }
 
   double get _escala => _transformacion.value.getMaxScaleOnAxis();
@@ -172,10 +260,11 @@ class LienzoState extends State<Lienzo> with SingleTickerProviderStateMixin {
                   height: area.height,
                   child: Center(
                     child: GestureDetector(
-                      onTapUp: (d) => widget.onToque(
-                        Punto(d.localPosition.dx / _factor, d.localPosition.dy / _factor),
-                        toleranciaDedo / (_factor * _escala),
-                      ),
+                      onTapUp: (d) {
+                        final p = Punto(d.localPosition.dx / _factor, d.localPosition.dy / _factor);
+                        _ultimoToque = p;
+                        widget.onToque(p, toleranciaDedo / (_factor * _escala));
+                      },
                       child: RepaintBoundary(
                         child: CustomPaint(
                           key: const Key('lienzo'),
@@ -187,6 +276,8 @@ class LienzoState extends State<Lienzo> with SingleTickerProviderStateMixin {
                             factor: _factor,
                             imagen: widget.imagen,
                             regionDestacada: widget.regionDestacada,
+                            animaciones: _animaciones,
+                            reloj: _reloj,
                           ),
                         ),
                       ),

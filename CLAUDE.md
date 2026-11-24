@@ -23,9 +23,10 @@ paleta, bioma, pieza…), textos de la UI y commits. La UI usa voseo rioplatense
   (`import 'package:material_ui/material_ui.dart';`), no de
   `package:flutter/material.dart`.
 - Dibujo: `CustomPainter` (`lib/ui/pintor_cuadro.dart`) con `dart:ui` Path
-  armado desde los comandos SVG. Con ilustración: fondo en blanco y negro
-  (ColorFilter) y cada región pintada con `ImageShader` de la ilustración a
-  color (se revelan luces y sombras, no colores planos).
+  armado desde los comandos SVG. Con ilustración: lo pendiente es blanco con
+  contorno negro (libro para colorear) y cada región pintada usa `ImageShader`
+  de la ilustración a color (luces y sombras, no colores planos). El color se
+  expande animado desde el toque (`RellenoAnimado`, ticker en `LienzoState`).
 - Zoom/paneo: `InteractiveViewer`; el toque se resuelve con la geometría del
   motor (`regionEnPunto`), no con hit-testing de widgets.
 - Progreso: `shared_preferences` (JSON). Es la única dependencia externa:

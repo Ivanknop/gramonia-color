@@ -24,11 +24,12 @@ recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
 
 ## 2. Mecánica principal
 
-1. El cuadro se muestra como la **ilustración en blanco y negro** (aclarada), con
-   el contorno y el **número** de cada región.
+1. El cuadro se muestra en **blanco y negro puro**, como un libro para
+   colorear: regiones blancas con contorno negro y su **número**.
 2. Abajo hay una **paleta** con los colores numerados; al abrir un cuadro ya
    está elegido el **color 1**, y sus regiones pendientes se marcan con un tinte.
-3. Al tocar una región del número correcto, se **revela la ilustración a color**
+3. Al tocar una región del número correcto, el color **se expande con
+   movimiento desde el dedo** hasta llenarla, mostrando la ilustración a color
    en esa región: con sus luces, sombras y brillos (no un color plano).
    - Toque tolerante: si el dedo cae un poco al costado (~14 puntos) de una
      región pendiente del color elegido, se pinta igual.
@@ -38,7 +39,7 @@ recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
 6. **Lupa**: lleva la vista a la próxima región pendiente del color elegido
    (cada toque, la siguiente) y la señala.
 7. **Bomba de color**: se arma con el botón y el próximo toque pinta todas las
-   regiones cercanas, cada una con su color.
+   regiones cercanas, cada una con su color, en una onda desde donde cae.
 8. Al terminar el cuadro: mensaje, parte del mapa recuperada y plumas.
 
 No hay derrota ni tiempo límite. El progreso se guarda en todo momento.

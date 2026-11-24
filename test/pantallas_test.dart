@@ -9,6 +9,7 @@ import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:colores_de_gramonia/main.dart';
 import 'package:colores_de_gramonia/ui/comun.dart';
 import 'package:colores_de_gramonia/ui/pantallas/pintar.dart';
+import 'package:colores_de_gramonia/ui/pintor_cuadro.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -126,6 +127,31 @@ void main() {
     // importante es que pintó una del color elegido.
     expect(pintadas, hasLength(1));
     expect(cuadro.regiones.firstWhere((x) => x.id == pintadas.single).numero, 1);
+  });
+
+  testWidgets('el color se expande con movimiento desde el toque', (tester) async {
+    final progreso = await progresoNuevo();
+    await abrirPintar(tester, progreso, 'nido-de-rocanon');
+    final cuadro = catalogo.obtener('nido-de-rocanon')!;
+    final r = regionVisible(tester, cuadro, numero: 1);
+    PintorCuadro pintor() =>
+        tester.widget<CustomPaint>(find.byKey(const Key('lienzo'))).painter! as PintorCuadro;
+
+    await tester.tapAt(enPantalla(tester, cuadro, r.etiqueta));
+    await tester.pump(); // registra el toque
+    await tester.pump(const Duration(milliseconds: 100));
+    // A mitad de camino: pintada en el progreso, pero todavía llenándose.
+    expect(progreso.de(cuadro.id)!.pintadas, [r.id]);
+    final anim = pintor().animaciones[r.id];
+    expect(anim, isNotNull);
+    expect(anim!.origen.x, closeTo(r.etiqueta.x, 0.5)); // nace donde se tocó
+    expect(
+      avanceAnimacion(pintor().reloj!.value, anim.inicio, anim.duracion),
+      inExclusiveRange(0, 1),
+    );
+
+    await tester.pumpAndSettle();
+    expect(pintor().animaciones, isEmpty); // terminó de llenarse
   });
 
   testWidgets('un color equivocado no pinta', (tester) async {
