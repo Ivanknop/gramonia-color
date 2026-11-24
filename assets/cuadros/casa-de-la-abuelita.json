@@ -7,79 +7,114 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#E5AB9C"
+      "hex": "#B29F5E"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#26393B"
+      "hex": "#E4AC9D"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#304A41"
+      "hex": "#584045"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#828A51"
+      "hex": "#8CB2C4"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#8DB2C1"
+      "hex": "#848B52"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#836548"
+      "hex": "#365A4D"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#AE8350"
+      "hex": "#956749"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#CC9F76"
+      "hex": "#31413B"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#573F45"
+      "hex": "#52633A"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#35594D"
+      "hex": "#314B41"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#5D7D5B"
+      "hex": "#B08550"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#506448"
+      "hex": "#233339"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#EAC794"
+      "hex": "#213F3D"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#635144"
+      "hex": "#EFD29A"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#B5B28C"
+      "hex": "#506757"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#5F7E5B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#726647"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#645244"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#E5BB8C"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#E9A393"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#B4AC97"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#B5B785"
     }
   ],
   "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea.",
-  "orden": 5
+  "orden": 6
 }

@@ -7,142 +7,142 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#60692E"
+      "hex": "#60692D"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#CFB048"
+      "hex": "#CFB149"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#FCF9DD"
+      "hex": "#304129"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#30412A"
+      "hex": "#FCFADD"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#DFF2E5"
+      "hex": "#E1F3E5"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#B0A644"
+      "hex": "#626A48"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#636A49"
+      "hex": "#D8AE76"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#9A6B4E"
+      "hex": "#B1A745"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#D8AD75"
+      "hex": "#5A5D38"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#5A5E37"
+      "hex": "#9A6B4E"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#484D2F"
+      "hex": "#484D2E"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#5B4C37"
+      "hex": "#837946"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#C79259"
+      "hex": "#41432C"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#3B4B2E"
+      "hex": "#5B4C36"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#41432C"
+      "hex": "#3B4C2D"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#827947"
+      "hex": "#7D5C43"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#7D5C44"
+      "hex": "#BF9957"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#4A5937"
+      "hex": "#A0954E"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#333127"
+      "hex": "#7B6B43"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#9F7D51"
+      "hex": "#A07D51"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#878F50"
+      "hex": "#4A5936"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#ADAA71"
+      "hex": "#AEAB71"
     },
     {
       "numero": 23,
       "nombre": "Color 23",
-      "hex": "#8C4531"
+      "hex": "#8D4530"
     },
     {
       "numero": 24,
       "nombre": "Color 24",
-      "hex": "#E9D27C"
+      "hex": "#B98756"
     },
     {
       "numero": 25,
       "nombre": "Color 25",
-      "hex": "#9E944E"
+      "hex": "#889051"
     },
     {
       "numero": 26,
       "nombre": "Color 26",
-      "hex": "#7E824A"
+      "hex": "#333126"
     },
     {
       "numero": 27,
       "nombre": "Color 27",
-      "hex": "#7B6B43"
+      "hex": "#7F834A"
     },
     {
       "numero": 28,
       "nombre": "Color 28",
-      "hex": "#6B7843"
+      "hex": "#E9D37F"
     },
     {
       "numero": 29,
@@ -152,24 +152,24 @@
     {
       "numero": 30,
       "nombre": "Color 30",
-      "hex": "#B08D53"
+      "hex": "#6B7843"
     },
     {
       "numero": 31,
       "nombre": "Color 31",
-      "hex": "#475433"
+      "hex": "#4E6037"
     },
     {
       "numero": 32,
       "nombre": "Color 32",
-      "hex": "#4D6038"
+      "hex": "#475433"
     },
     {
       "numero": 33,
       "nombre": "Color 33",
-      "hex": "#CBD4AD"
+      "hex": "#CBD6B2"
     }
   ],
   "mensajeMututu": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida.",
-  "orden": 12
+  "orden": 15
 }

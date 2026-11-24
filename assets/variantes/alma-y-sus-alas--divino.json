@@ -1,0 +1,259 @@
+{
+  "id": "alma-y-sus-alas--divino",
+  "titulo": "Alma y sus alas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FDFEFE"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FFFFFE"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B403FB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F88C66"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#BEBCB9"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#48C5C3"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#880CB7"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D371F5"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#CCCDC4"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#7300A5"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#EAC4EB"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#0C0A0D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#CBDDC5"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#7D00B1"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#D795E9"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#670096"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#E8ADE4"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#CB4DD3"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#E2DDD4"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#9530B8"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#AE03F5"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A1BABA"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#99999E"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#7A03AD"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#9310C7"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#5C097E"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#458187"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#78797E"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#343338"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#D384EA"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#4B5256"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#D370B6"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#7B0CA7"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#895298"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#FEFFFF"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#ED9ABC"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#F9FBFB"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#EFEEE5"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#FDF7F6"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#FCFCFC"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#9302D0"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#8D8691"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#FEFEFD"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#FFFEFE"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#FEFEFF"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#FEFFFE"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#FFFFFC"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#C006EB"
+    }
+  ],
+  "mensajeMututu": "¡Las alas de Alma vuelven a brillar de violeta! Ahora sí, a volar sobre la Montaña Dragón."
+}

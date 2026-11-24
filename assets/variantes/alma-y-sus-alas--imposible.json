@@ -1,0 +1,169 @@
+{
+  "id": "alma-y-sus-alas--imposible",
+  "titulo": "Alma y sus alas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FFFFFE"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AE04F4"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7B01AF"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C8D2C2"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#3D4144"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FEFEFD"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#74BBBB"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#B9B6B6"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#D188E4"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#7D0AAB"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#9118BF"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#918E95"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#FFFFFC"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#E5C7E3"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#8F04C8"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#D06DDA"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#E8A7DB"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#C54BD3"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#5F7C80"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#FDFEFD"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#E8E7D9"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#470B60"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#F9F9F9"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#7E4B8D"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#BC07EF"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#FDF7F6"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#FEFEFF"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#F18F95"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#FEFFFE"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#FFFEFE"
+    }
+  ],
+  "mensajeMututu": "¡Las alas de Alma vuelven a brillar de violeta! Ahora sí, a volar sobre la Montaña Dragón."
+}

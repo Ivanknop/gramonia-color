@@ -1,0 +1,79 @@
+{
+  "id": "leon-y-kiribiki--dificil",
+  "titulo": "León y Kiribiki",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#7E5936"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C19F57"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C3AD65"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#615A40"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#956E40"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3D5A71"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#33353D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#959C6B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#AC8E53"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#967E50"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#836D47"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#E4CA85"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A2834D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#758065"
+    }
+  ],
+  "mensajeMututu": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!"
+}

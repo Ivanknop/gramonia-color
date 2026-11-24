@@ -1,0 +1,39 @@
+{
+  "id": "alma-y-sus-alas--facil",
+  "titulo": "Alma y sus alas",
+  "categoria": "persona",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#9844B1"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B8C0C7"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FFFFFE"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#FCF7F7"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FDFFFD"
+    }
+  ],
+  "mensajeMututu": "¡Las alas de Alma vuelven a brillar de violeta! Ahora sí, a volar sobre la Montaña Dragón."
+}

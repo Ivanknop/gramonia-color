@@ -209,7 +209,7 @@ void main() {
   ) async {
     final progreso = await progresoNuevo();
     // Las otras obras del Árbol, ya terminadas.
-    for (final id in ['hormiguero-del-arbol', 'arbol-magico-de-noche', 'cumple-del-rocanon']) {
+    for (final id in biomas.first.cuadroIds.where((id) => id != 'nido-de-rocanon')) {
       final c = catalogo.obtener(id)!;
       progreso.pintarRegiones(id, [for (final r in c.regiones) r.id]);
       progreso.marcarCompletado(id);
@@ -288,11 +288,11 @@ void main() {
     await tester.tap(find.text('Mapa de Gramonia'));
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
-      find.text('0 de 4 partes recuperadas'),
+      find.text('0 de ${biomas.first.piezas.length} partes recuperadas'),
       300,
       scrollable: find.byType(Scrollable).last,
     );
-    expect(find.text('0 de 4 partes recuperadas'), findsOneWidget);
+    expect(find.text('0 de ${biomas.first.piezas.length} partes recuperadas'), findsOneWidget);
   });
 
   testWidgets('créditos desde la portada y desde el menú', (tester) async {
@@ -397,6 +397,7 @@ void main() {
   ) async {
     usarTelefono(tester);
     final progreso = await progresoNuevo();
+    progreso.reclamarRecompensaDiaria(); // sin el aviso de plumas tapando botones
     final arbol = biomas.first.cuadroIds.toList();
     for (final id in arbol) {
       final c = catalogo.obtener(id)!;
@@ -410,6 +411,17 @@ void main() {
     await tester.tap(find.text('Mis obras').last);
     await tester.pumpAndSettle();
 
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('rehacer-nido-de-rocanon')),
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    // Centrado, para que no quede debajo de la barra de navegación.
+    await Scrollable.ensureVisible(
+      tester.element(find.byKey(const Key('rehacer-nido-de-rocanon'))),
+      alignment: 0.5,
+    );
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('rehacer-nido-de-rocanon')));
     await tester.pumpAndSettle();
     expect(find.text('¿En qué dificultad la volvés a pintar?'), findsOneWidget);
@@ -448,6 +460,12 @@ void main() {
     await tester.pumpAndSettle();
     await tester.pageBack();
     await tester.pumpAndSettle();
+    // Vuelve a Mis obras: la rehecha, ahora la terminada más reciente, arriba.
+    await tester.scrollUntilVisible(
+      find.text('Rehecha · Fácil'),
+      -300,
+      scrollable: find.byType(Scrollable).last,
+    );
     expect(find.text('Rehecha · Fácil'), findsOneWidget);
   });
 }

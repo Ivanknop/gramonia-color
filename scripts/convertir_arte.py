@@ -11,7 +11,8 @@ conversor.
 
 Uso: python3 scripts/convertir_arte.py          (todo: cuadros, variantes, mapa y música)
      python3 scripts/convertir_arte.py <id> ... (solo esos cuadros, con sus variantes;
-                                                 "mapa", "musica" o "variantes" = las de todos)
+                                                 "mapa", "musica" o "variantes" = las de todos;
+                                                 --sin-variantes: solo los cuadros)
 """
 
 import json
@@ -56,6 +57,7 @@ def colores_de_obra(indice: int) -> int:
     return valor_del_nivel(nivel_de_obra(indice), COLORES_DEL_NIVEL_1)
 
 
+DIR_CUADROS = RAIZ / "assets" / "cuadros"
 DIR_VARIANTES = RAIZ / "assets" / "variantes"
 DIFICULTADES = RAIZ / "assets" / "dificultades.json"
 
@@ -90,9 +92,8 @@ def leer_dificultades() -> list[dict]:
     return json.loads(DIFICULTADES.read_text(encoding="utf-8"))["dificultades"]
 
 
-def argumentos(
-    p: dict, imagen: Path, id_: str, colores: int, regiones: int, ancho: int | None = None
-) -> list[str]:
+def argumentos(p: dict, imagen: Path, id_: str, colores: int, regiones: int) -> list[str]:
+    """Argumentos del conversor (sin --ancho: lo pone convertir_con_objetivo)."""
     return [
         str(imagen),
         "--id", id_,
@@ -100,13 +101,29 @@ def argumentos(
         "--categoria", p["categoria"],
         "--mensaje", p["mensaje"],
         "--colores", str(colores),
-        "--ancho", str(ancho or p.get("ancho") or ancho_para(regiones)),
         "--area-minima", str(p["area_minima"]),
         "--suavizado", str(p["suavizado"]),
         "--tolerancia", str(p["tolerancia"]),
         "--curvas", str(p["curvas"]),
         "--regiones", str(regiones),
     ]
+
+
+def regiones_de(svg: Path) -> int:
+    return svg.read_text(encoding="utf-8").count("<path ")
+
+
+def convertir_con_objetivo(argv: list[str], regiones: int, ancho: int, carpeta: Path, id_: str) -> None:
+    """
+    Convierte y, si la imagen tiene poco detalle (mucho fondo liso) y no llega
+    al 90 % de las regiones buscadas, reintenta con una grilla más fina.
+    """
+    for _ in range(4):
+        imagen_a_cuadro.main(argv + ["--ancho", str(ancho)])
+        if regiones_de(carpeta / f"{id_}.svg") >= 0.9 * regiones:
+            return
+        ancho = round(ancho * 1.35)
+        print(f"  {id_}: pocas regiones, otra vez con grilla de {ancho}")
 
 
 def convertir_variantes(p: dict) -> None:
@@ -117,11 +134,10 @@ def convertir_variantes(p: dict) -> None:
     """
     imagen = fuente(p)
     for d in leer_dificultades():
-        ancho = ancho_para(d["regiones"] * 2)
-        imagen_a_cuadro.main(
-            argumentos(p, imagen, id_variante(p["id"], d["id"]), d["colores"], d["regiones"], ancho)
-            + ["--carpeta", str(DIR_VARIANTES), "--sin-ilustracion"]
-        )
+        id_ = id_variante(p["id"], d["id"])
+        argv = argumentos(p, imagen, id_, d["colores"], d["regiones"])
+        argv += ["--carpeta", str(DIR_VARIANTES), "--sin-ilustracion"]
+        convertir_con_objetivo(argv, d["regiones"], ancho_para(d["regiones"] * 2), DIR_VARIANTES, id_)
 
 
 def convertir_mapa(catalogo: dict) -> None:
@@ -157,7 +173,8 @@ def convertir_musica() -> None:
 def main() -> int:
     catalogo = json.loads(CATALOGO.read_text(encoding="utf-8"))
     base = catalogo["por_defecto"]
-    pedidos = set(sys.argv[1:])
+    sin_variantes = "--sin-variantes" in sys.argv[1:]
+    pedidos = {a for a in sys.argv[1:] if a != "--sin-variantes"}
     if not pedidos or "mapa" in pedidos:
         convertir_mapa(catalogo)
     if not pedidos or "musica" in pedidos:
@@ -167,11 +184,16 @@ def main() -> int:
         p = {**base, **c}
         if not pedidos or c["id"] in pedidos:
             # En la historia, los colores salen del nivel de la obra (su lugar en el recorrido).
-            imagen_a_cuadro.main(
-                argumentos(p, fuente(p), p["id"], colores_de_obra(orden - 1), p["regiones"])
-                + ["--orden", str(orden)]
-            )
-        if todas_las_variantes or c["id"] in pedidos:
+            imagen = fuente(p)
+            argv = argumentos(p, imagen, p["id"], colores_de_obra(orden - 1), p["regiones"])
+            argv += ["--orden", str(orden)]
+            # Si la fuente ya es la ilustración del cuadro, no se reescribe
+            # (se volvería a comprimir con pérdida).
+            if imagen.parent.name == "cuadros":
+                argv.append("--sin-ilustracion")
+            ancho = p.get("ancho") or ancho_para(p["regiones"])
+            convertir_con_objetivo(argv, p["regiones"], ancho, DIR_CUADROS, p["id"])
+        if todas_las_variantes or (c["id"] in pedidos and not sin_variantes):
             convertir_variantes(p)
     print("Listo. Si hay cuadros nuevos, asignales una pieza en lib/datos/biomas.dart.")
     return 0

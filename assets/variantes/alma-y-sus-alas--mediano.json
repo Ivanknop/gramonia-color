@@ -1,0 +1,59 @@
+{
+  "id": "alma-y-sus-alas--mediano",
+  "titulo": "Alma y sus alas",
+  "categoria": "persona",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A611D9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B8C1C8"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#D374C9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#FFFFFE"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#777B84"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#6F0A9A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FAEEED"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FBFFFD"
+    }
+  ],
+  "mensajeMututu": "¡Las alas de Alma vuelven a brillar de violeta! Ahora sí, a volar sobre la Montaña Dragón."
+}

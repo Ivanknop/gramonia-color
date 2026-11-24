@@ -25,6 +25,7 @@ final biomas = <Bioma>[
       Pieza(id: 'hormiguero', cuadroId: 'hormiguero-del-arbol'),
       Pieza(id: 'copa', cuadroId: 'arbol-magico-de-noche'),
       Pieza(id: 'cumpleanos', cuadroId: 'cumple-del-rocanon'),
+      Pieza(id: 'rocanon', cuadroId: 'rocanon-en-la-copa'),
     ],
   ),
   Bioma(
@@ -39,6 +40,7 @@ final biomas = <Bioma>[
       // Pozo Sanador en el Bosque Mágico: (a confirmar) en el canon.
       const Pieza(id: 'pozo-sanador', cuadroId: 'pozo-sanador'),
       const Pieza(id: 'caminos', cuadroId: 'todos-los-caminos'),
+      ..._proximamente('bosque-magico', 1, desde: 5),
     ],
   ),
   Bioma(
@@ -48,7 +50,7 @@ final biomas = <Bioma>[
     color: 0xFFB0855A,
     piezas: [
       const Pieza(id: 'tienda', cuadroId: 'la-tienda'),
-      ..._proximamente('ciudad', 3, desde: 2),
+      ..._proximamente('ciudad', 4, desde: 2),
     ],
   ),
   Bioma(
@@ -58,8 +60,9 @@ final biomas = <Bioma>[
         'La gran ciudad de los animales: el correo de León, la tienda de Vaca y mucho queso.',
     color: 0xFFE0A13B,
     piezas: [
+      const Pieza(id: 'correo-de-leon', cuadroId: 'leon-y-kiribiki'),
       const Pieza(id: 'granero-de-cleo', cuadroId: 'cleo-quiere-dormir'),
-      ..._proximamente('reino-animal', 3, desde: 2),
+      ..._proximamente('reino-animal', 3, desde: 3),
     ],
   ),
   Bioma(
@@ -69,7 +72,9 @@ final biomas = <Bioma>[
     color: 0xFF7E57C2,
     piezas: [
       const Pieza(id: 'cumbre', cuadroId: 'montana-de-los-dragones'),
-      ..._proximamente('montana-dragon', 3, desde: 2),
+      // Alma en la Montaña Dragón: (a confirmar) en el canon.
+      const Pieza(id: 'alma', cuadroId: 'alma-y-sus-alas'),
+      ..._proximamente('montana-dragon', 3, desde: 3),
     ],
   ),
   Bioma(

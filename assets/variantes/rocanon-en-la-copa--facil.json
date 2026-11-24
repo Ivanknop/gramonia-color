@@ -1,0 +1,39 @@
+{
+  "id": "rocanon-en-la-copa--facil",
+  "titulo": "El Rocanón en la copa",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#293739"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#79BBDB"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#638D9E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2F5E73"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#556556"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#BED5C2"
+    }
+  ],
+  "mensajeMututu": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!"
+}

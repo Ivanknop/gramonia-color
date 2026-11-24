@@ -40,6 +40,14 @@
       "regiones": 100
     },
     {
+      "imagen": "rocanon_arbol.jpeg",
+      "id": "rocanon-en-la-copa",
+      "titulo": "El Rocanón en la copa",
+      "categoria": "paisaje",
+      "mensaje": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!",
+      "regiones": 105
+    },
+    {
       "imagen": "etapa1-abuelita.jpeg",
       "id": "casa-de-la-abuelita",
       "titulo": "La casa de la abuelita",
@@ -80,6 +88,14 @@
       "regiones": 160
     },
     {
+      "imagen": "kribiki_leon.jpeg",
+      "id": "leon-y-kiribiki",
+      "titulo": "León y Kiribiki",
+      "categoria": "animal",
+      "mensaje": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!",
+      "regiones": 170
+    },
+    {
       "imagen": "cleo.jpeg",
       "id": "cleo-quiere-dormir",
       "titulo": "Cleo quiere dormir",
@@ -94,6 +110,14 @@
       "categoria": "paisaje",
       "mensaje": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",
       "regiones": 220
+    },
+    {
+      "imagen": "alma.jpeg",
+      "id": "alma-y-sus-alas",
+      "titulo": "Alma y sus alas",
+      "categoria": "persona",
+      "mensaje": "¡Las alas de Alma vuelven a brillar de violeta! Ahora sí, a volar sobre la Montaña Dragón.",
+      "regiones": 230
     },
     {
       "imagen": "timoteo.jpeg",

@@ -7,169 +7,169 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#CA7F3D"
+      "hex": "#C87F3E"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#52322F"
+      "hex": "#52322D"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#F1CF9F"
+      "hex": "#F1CE9F"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#413F55"
+      "hex": "#403F54"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#3C2325"
+      "hex": "#8D4B2A"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#512C23"
+      "hex": "#3C2325"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#482B2A"
+      "hex": "#281A21"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#764631"
+      "hex": "#673E31"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#251821"
+      "hex": "#321A1C"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#2D1F28"
+      "hex": "#472B29"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#AF6534"
+      "hex": "#512B22"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#D6A06B"
+      "hex": "#723E28"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#683E31"
+      "hex": "#754631"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#8E4B2B"
+      "hex": "#AF6534"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#3A1F1F"
+      "hex": "#483134"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#5C2F20"
+      "hex": "#80482C"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#2E293A"
+      "hex": "#21141C"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#733E28"
+      "hex": "#A87956"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#22131B"
+      "hex": "#5C2F20"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#462724"
+      "hex": "#D6A06A"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#81482C"
+      "hex": "#2E2839"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#483134"
+      "hex": "#2D1F28"
     },
     {
       "numero": 23,
       "nombre": "Color 23",
-      "hex": "#301B1E"
+      "hex": "#735854"
     },
     {
       "numero": 24,
       "nombre": "Color 24",
-      "hex": "#A97857"
+      "hex": "#3A1F1F"
     },
     {
       "numero": 25,
       "nombre": "Color 25",
-      "hex": "#A05E34"
+      "hex": "#955935"
     },
     {
       "numero": 26,
       "nombre": "Color 26",
-      "hex": "#955936"
+      "hex": "#A05E34"
     },
     {
       "numero": 27,
       "nombre": "Color 27",
-      "hex": "#745854"
+      "hex": "#462824"
     },
     {
       "numero": 28,
       "nombre": "Color 28",
-      "hex": "#3C2D38"
+      "hex": "#29161B"
     },
     {
       "numero": 29,
       "nombre": "Color 29",
-      "hex": "#553E43"
+      "hex": "#44231E"
     },
     {
       "numero": 30,
       "nombre": "Color 30",
-      "hex": "#5E3528"
+      "hex": "#533F45"
     },
     {
       "numero": 31,
       "nombre": "Color 31",
-      "hex": "#43231F"
+      "hex": "#3C2D37"
     },
     {
       "numero": 32,
       "nombre": "Color 32",
-      "hex": "#64392A"
+      "hex": "#63392A"
     },
     {
       "numero": 33,
       "nombre": "Color 33",
-      "hex": "#2E171B"
+      "hex": "#5E3527"
     }
   ],
   "mensajeMututu": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz.",
-  "orden": 10
+  "orden": 12
 }

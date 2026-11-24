@@ -1,0 +1,39 @@
+{
+  "id": "leon-y-kiribiki--facil",
+  "titulo": "León y Kiribiki",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#8F6D41"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4E443F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#978454"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A89B61"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#D3BA74"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#686754"
+    }
+  ],
+  "mensajeMututu": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!"
+}

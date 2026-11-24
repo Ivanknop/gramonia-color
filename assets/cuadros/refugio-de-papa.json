@@ -7,12 +7,12 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#301C1D"
+      "hex": "#301C1C"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#522C22"
+      "hex": "#9A5F35"
     },
     {
       "numero": 3,
@@ -22,99 +22,99 @@
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#281617"
+      "hex": "#CE8C42"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#613223"
+      "hex": "#82472A"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#4A2921"
+      "hex": "#532A20"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#BC783A"
+      "hex": "#653423"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#321E1D"
+      "hex": "#311D1C"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#381E1B"
+      "hex": "#371E1A"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#8A5B38"
+      "hex": "#663E2B"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#E1A04A"
+      "hex": "#2C1A19"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#6E3F29"
+      "hex": "#3D201B"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#2D1A1A"
+      "hex": "#301E1D"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#402924"
+      "hex": "#281616"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#3F201C"
+      "hex": "#321E1D"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#8A4B2B"
+      "hex": "#442922"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#A86233"
+      "hex": "#563226"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#331B19"
+      "hex": "#301C1D"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#5E3D2D"
+      "hex": "#301C1A"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#79442A"
+      "hex": "#301A19"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#3B1F1B"
+      "hex": "#321B19"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#301A19"
+      "hex": "#2F1C1B"
     }
   ],
   "mensajeMututu": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas.",
-  "orden": 6
+  "orden": 7
 }

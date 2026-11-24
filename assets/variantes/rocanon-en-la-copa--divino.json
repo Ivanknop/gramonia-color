@@ -1,0 +1,259 @@
+{
+  "id": "rocanon-en-la-copa--divino",
+  "titulo": "El Rocanón en la copa",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#23432B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4D6836"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#1C4272"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#36342A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#295D80"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#826C47"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#327EB1"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#487FB1"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#84D3EC"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#DCEDE3"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#B1DCE4"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#9EC9D5"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#3B6A9C"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#DEBA71"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#13354F"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#223521"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#7B9287"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#70BEE2"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#66A3D5"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#423B2E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#53A0CC"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#266F9D"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#191F25"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#65B0D8"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#4C7298"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#FAF47B"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#B6E8EB"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#4D91C4"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#7BB4DE"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#669EBB"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#C49763"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#3B75A6"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#606D52"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#1D2A2E"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#81B1C7"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#47503A"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#87BEDC"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#354F46"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#645136"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#9A8B6A"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#658681"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#457D91"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#395E61"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#498CA8"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#5A4030"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#C3D2C0"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#3C695E"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#81C7E4"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#20363F"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#265066"
+    }
+  ],
+  "mensajeMututu": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!"
+}

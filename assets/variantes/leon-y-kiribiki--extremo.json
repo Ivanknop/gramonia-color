@@ -1,0 +1,129 @@
+{
+  "id": "leon-y-kiribiki--extremo",
+  "titulo": "León y Kiribiki",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C0A160"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5D3D28"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#977E50"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3E5B70"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#0D3D6E"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#D4AF5E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#969C6B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#DBBA69"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#9A6E3E"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A28550"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#5D654B"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#B28F50"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#7B5030"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#EDDAA1"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#80623C"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#758167"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#887047"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#A98B52"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#654E33"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#906D41"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#C29C4A"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#B0AB6E"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#7F6B47"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#312C2E"
+    }
+  ],
+  "mensajeMututu": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!"
+}

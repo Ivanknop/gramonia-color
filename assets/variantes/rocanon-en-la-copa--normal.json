@@ -1,0 +1,49 @@
+{
+  "id": "rocanon-en-la-copa--normal",
+  "titulo": "El Rocanón en la copa",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#7ABCDD"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#38392D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4889AE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#556658"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2E5D75"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C1D7C2"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#183444"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#7F938F"
+    }
+  ],
+  "mensajeMututu": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!"
+}

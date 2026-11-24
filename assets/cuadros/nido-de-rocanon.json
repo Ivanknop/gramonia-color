@@ -17,22 +17,22 @@
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#2C333A"
+      "hex": "#1A2D34"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#1A2E34"
+      "hex": "#758460"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#758460"
+      "hex": "#2C343A"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#67684E"
+      "hex": "#66684E"
     },
     {
       "numero": 7,
@@ -42,17 +42,17 @@
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#909E6E"
+      "hex": "#909D6E"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#354746"
+      "hex": "#AEC18D"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#AFC28E"
+      "hex": "#354745"
     }
   ],
   "mensajeMututu": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor.",

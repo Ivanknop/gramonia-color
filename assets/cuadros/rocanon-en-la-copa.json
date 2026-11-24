@@ -1,0 +1,85 @@
+{
+  "id": "rocanon-en-la-copa",
+  "titulo": "El Rocanón en la copa",
+  "categoria": "paisaje",
+  "dificultad": 4,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#2C372C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7FC4E1"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#656649"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#72B1D5"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#427DA3"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#463D2F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#306989"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#96917A"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#C7E4CA"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#183545"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#2C525B"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#4C91B7"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#6694A7"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#446563"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#B3C5BA"
+    }
+  ],
+  "mensajeMututu": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!",
+  "orden": 5
+}

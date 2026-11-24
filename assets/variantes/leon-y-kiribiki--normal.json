@@ -1,0 +1,49 @@
+{
+  "id": "leon-y-kiribiki--normal",
+  "titulo": "León y Kiribiki",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A78950"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7F5A37"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#8D6E44"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#D4BB75"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#525B57"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#AB9D62"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#34363F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#86805A"
+    }
+  ],
+  "mensajeMututu": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!"
+}

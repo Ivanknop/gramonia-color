@@ -7,114 +7,169 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#745B4E"
+      "hex": "#A07049"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#5D3F31"
+      "hex": "#6B5B53"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#896045"
+      "hex": "#624333"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#6A4A39"
+      "hex": "#3F2A22"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#3F2C25"
+      "hex": "#694733"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#58453D"
+      "hex": "#76513C"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#352621"
+      "hex": "#53372B"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#4D3429"
+      "hex": "#866D5E"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#533A2E"
+      "hex": "#C0986D"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#2F211D"
+      "hex": "#382B25"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#A37C5E"
+      "hex": "#32231E"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#C0976D"
+      "hex": "#7A5B4A"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#634738"
+      "hex": "#A37C5E"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#77513C"
+      "hex": "#6A4D3E"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#463630"
+      "hex": "#402E26"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#946E53"
+      "hex": "#8F6143"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#724B35"
+      "hex": "#362620"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#473127"
+      "hex": "#634A3D"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#372A26"
+      "hex": "#4D3529"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#452E25"
+      "hex": "#825E48"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#4E382F"
+      "hex": "#583D2F"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#5A3B2D"
+      "hex": "#413732"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#564942"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#5E3E2E"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#2C1F1B"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#4E3930"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#453128"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#724B35"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#543C30"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#4A3127"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#584238"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#462E24"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#49362E"
     }
   ],
   "mensajeMututu": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender.",
-  "orden": 9
+  "orden": 10
 }

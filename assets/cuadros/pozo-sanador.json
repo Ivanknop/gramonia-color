@@ -7,114 +7,114 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#497D5A"
+      "hex": "#527F53"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#252A1D"
+      "hex": "#443E29"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#757744"
+      "hex": "#B99C5D"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#BA9C5D"
+      "hex": "#262A1C"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#293523"
+      "hex": "#757744"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#745F3A"
+      "hex": "#293623"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#94B781"
+      "hex": "#70613C"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#947D4C"
+      "hex": "#95B781"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#445835"
+      "hex": "#555232"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#CAE2AE"
+      "hex": "#C9E2AE"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#443E2A"
+      "hex": "#445034"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#2F4A2C"
+      "hex": "#9D814F"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#53492E"
+      "hex": "#2C412B"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#99995A"
+      "hex": "#4E6E42"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#6D9964"
+      "hex": "#98D0AB"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#98D0AC"
+      "hex": "#6E9A65"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#4E6E41"
+      "hex": "#99985A"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#2C402B"
+      "hex": "#2F4B2C"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#595E39"
+      "hex": "#445E36"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#5B814C"
+      "hex": "#887849"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#78492E"
+      "hex": "#7D4C30"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#335732"
+      "hex": "#345732"
     }
   ],
   "mensajeMututu": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués.",
-  "orden": 7
+  "orden": 8
 }
