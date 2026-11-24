@@ -9,6 +9,7 @@ import '../../engine/motor.dart';
 import '../../estado/obras.dart';
 import '../comun.dart';
 import '../miniatura.dart';
+import '../selector_dificultad.dart';
 import '../timelapse.dart';
 import 'pintar.dart';
 
@@ -67,10 +68,11 @@ class _TarjetaObra extends StatelessWidget {
   Widget build(BuildContext context) {
     final catalogo = Dependencias.of(context).catalogo;
     // Las variantes del modo libre se leen recién al mostrarlas.
-    final enMemoria = catalogo.obtener(obra.cuadroId);
+    final dificultad = obra.progreso.dificultad;
+    final enMemoria = catalogo.obtenerDeObra(obra.cuadroId, dificultad: dificultad);
     if (enMemoria != null) return _Tarjeta(obra: obra, cuadro: enMemoria);
     return FutureBuilder<Cuadro?>(
-      future: catalogo.cuadroDeClave(obra.cuadroId),
+      future: catalogo.cuadroDeObra(obra.cuadroId, dificultad: dificultad),
       builder: (context, c) =>
           c.data == null ? const SizedBox.shrink() : _Tarjeta(obra: obra, cuadro: c.data!),
     );
@@ -84,8 +86,9 @@ class _Tarjeta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final libre = dificultadDe(obra.cuadroId);
     final dificultad = Dependencias.of(context).catalogo
-        .dificultad(dificultadDe(obra.cuadroId) ?? '');
+        .dificultad(libre ?? obra.progreso.dificultad ?? '');
     final pintadas = sanearPintadas(cuadro, obra.progreso.pintadas);
     final terminada = obra.progreso.terminado;
     final pct = porcentajeCompletado(cuadro, pintadas);
@@ -127,7 +130,9 @@ class _Tarjeta extends StatelessWidget {
                             ),
                             if (dificultad != null)
                               Text(
-                                Textos.etiquetaLibre(dificultad.nombre),
+                                libre != null
+                                    ? Textos.etiquetaLibre(dificultad.nombre)
+                                    : Textos.etiquetaRehecha(dificultad.nombre),
                                 style: const TextStyle(fontSize: 12, color: Color(0xFF8E7CC3)),
                               ),
                             const SizedBox(height: 4),
@@ -158,7 +163,8 @@ class _Tarjeta extends StatelessWidget {
                 ),
               ),
             ),
-            if (terminada) _Acciones(cuadroId: obra.cuadroId),
+            if (terminada)
+              _Acciones(cuadroId: obra.cuadroId, dificultad: libre ?? obra.progreso.dificultad),
           ],
         ),
       ),
@@ -168,14 +174,35 @@ class _Tarjeta extends StatelessWidget {
 
 /// Lo que se puede hacer con una obra terminada.
 class _Acciones extends StatelessWidget {
-  const _Acciones({required this.cuadroId});
+  const _Acciones({required this.cuadroId, this.dificultad});
+
+  /// Clave de la obra (cuadro de la historia o variante del modo libre).
   final String cuadroId;
+
+  /// Dificultad en que se pintó (null = la de la historia).
+  final String? dificultad;
+
+  /// Elige la dificultad, deja la obra en blanco y la abre para pintar.
+  Future<void> _rehacer(BuildContext context) async {
+    final dep = Dependencias.of(context);
+    final navegador = Navigator.of(context);
+    final d = await elegirDificultad(
+      context,
+      titulo: Textos.rehacerElegir,
+      aviso: Textos.rehacerAviso,
+      actual: dificultad,
+    );
+    if (d == null) return;
+    final clave = dep.progreso.rehacer(cuadroId, d.id);
+    await dep.catalogo.cuadroDeObra(clave, dificultad: d.id);
+    await navegador.push(MaterialPageRoute<void>(builder: (_) => Pintar(cuadroId: clave)));
+  }
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.fromLTRB(8, 0, 8, 4),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+    child: Wrap(
+      alignment: WrapAlignment.end,
       children: [
         TextButton.icon(
           style: TextButton.styleFrom(foregroundColor: Tema.morado),
@@ -183,6 +210,13 @@ class _Acciones extends StatelessWidget {
               .push(MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: cuadroId))),
           icon: const Icon(Icons.slow_motion_video, size: 18),
           label: const Text(Textos.verComoLoPinte),
+        ),
+        TextButton.icon(
+          key: Key('rehacer-$cuadroId'),
+          style: TextButton.styleFrom(foregroundColor: Tema.morado),
+          onPressed: () => _rehacer(context),
+          icon: const Icon(Icons.refresh, size: 18),
+          label: const Text(Textos.rehacer),
         ),
       ],
     ),

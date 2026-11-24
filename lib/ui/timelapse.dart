@@ -146,8 +146,9 @@ class PantallaTimelapse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dep = Dependencias.of(context);
-    final cuadro = dep.catalogo.obtener(cuadroId);
-    final orden = dep.progreso.de(cuadroId)?.pintadas ?? const [];
+    final progreso = dep.progreso.de(cuadroId);
+    final cuadro = dep.catalogo.obtenerDeObra(cuadroId, dificultad: progreso?.dificultad);
+    final orden = progreso?.pintadas ?? const [];
     return Scaffold(
       appBar: AppBar(title: Text(cuadro?.meta.titulo ?? '')),
       body: cuadro == null

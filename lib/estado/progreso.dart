@@ -9,16 +9,23 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../engine/dificultad.dart';
 import '../engine/genero.dart';
 import '../engine/plumas.dart';
 
 class ProgresoCuadro {
-  const ProgresoCuadro({this.pintadas = const [], this.actualizadoEn, this.completadoEn});
+  const ProgresoCuadro({
+    this.pintadas = const [],
+    this.actualizadoEn,
+    this.completadoEn,
+    this.dificultad,
+  });
 
   factory ProgresoCuadro.desdeJson(Map<String, dynamic> j) => ProgresoCuadro(
     pintadas: [for (final id in j['pintadas'] as List) id as String],
     actualizadoEn: j['actualizadoEn'] as int?,
     completadoEn: j['completadoEn'] as int?,
+    dificultad: j['dificultad'] as String?,
   );
 
   /// Ids de regiones pintadas, en el orden en que se pintaron.
@@ -30,12 +37,25 @@ class ProgresoCuadro {
   /// Momento (ms) en que se completó; null si no se terminó.
   final int? completadoEn;
 
+  /// Obra de la historia que se rehizo en otra dificultad: se pinta la
+  /// variante `<cuadro>--<dificultad>` (null = el cuadro de la historia).
+  final String? dificultad;
+
   bool get terminado => completadoEn != null;
+
+  ProgresoCuadro copiar({List<String>? pintadas, int? actualizadoEn, int? completadoEn}) =>
+      ProgresoCuadro(
+        pintadas: pintadas ?? this.pintadas,
+        actualizadoEn: actualizadoEn ?? this.actualizadoEn,
+        completadoEn: completadoEn ?? this.completadoEn,
+        dificultad: dificultad,
+      );
 
   Map<String, dynamic> aJson() => {
     'pintadas': pintadas,
-    if (actualizadoEn != null) 'actualizadoEn': actualizadoEn,
-    if (completadoEn != null) 'completadoEn': completadoEn,
+    'actualizadoEn': ?actualizadoEn,
+    'completadoEn': ?completadoEn,
+    'dificultad': ?dificultad,
   };
 }
 
@@ -72,7 +92,9 @@ class Progreso extends ChangeNotifier {
 
   /// Versión del formato guardado. v1 → v2: se agregan plumas e historia.
   /// v2 → v3: se agrega el género elegido (en un guardado viejo queda sin elegir).
-  static const version = 3;
+  /// v3 → v4: obras desbloqueadas aparte (rehacer una obra no la vuelve a tapar)
+  /// y dificultad de las obras rehechas. Las terminadas pasan a desbloqueadas.
+  static const version = 4;
 
   static Future<Progreso> cargar(AlmacenProgreso almacen, {int Function()? reloj}) async {
     final p = Progreso._(almacen, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
@@ -90,6 +112,12 @@ class Progreso extends ChangeNotifier {
         p._musicaSilenciada = (j['musicaSilenciada'] as bool?) ?? false;
         // Campo de v3.
         p._genero = Genero.values.asNameMap()[j['genero']];
+        // Campo de v4 (en un guardado viejo, las terminadas).
+        p._desbloqueadas.addAll([
+          for (final c in (j['desbloqueadas'] as List?) ?? const []) c as String,
+          for (final e in p._cuadros.entries)
+            if (e.value.terminado && dificultadDe(e.key) == null) e.key,
+        ]);
         p._capitulosVistos.addAll([
           for (final c in (j['capitulosVistos'] as List?) ?? []) c as String,
         ]);
@@ -110,13 +138,16 @@ class Progreso extends ChangeNotifier {
   final Set<String> _capitulosVistos = {};
   bool _musicaSilenciada = false;
   Genero? _genero;
+  final Set<String> _desbloqueadas = {};
 
   Map<String, ProgresoCuadro> get cuadros => Map.unmodifiable(_cuadros);
 
   ProgresoCuadro? de(String cuadroId) => _cuadros[cuadroId];
 
-  /// Ids de los cuadros terminados (para la progresión de biomas).
+  /// Ids de los cuadros terminados alguna vez (para la progresión de biomas):
+  /// los que están terminados y los desbloqueados que se están rehaciendo.
   Set<String> get completados => {
+    ..._desbloqueadas,
     for (final e in _cuadros.entries)
       if (e.value.terminado) e.key,
   };
@@ -131,13 +162,12 @@ class Progreso extends ChangeNotifier {
         if (!actual.pintadas.contains(id)) id,
     ];
     if (nuevas.isEmpty) return;
-    _cuadros[cuadroId] = ProgresoCuadro(
+    _cuadros[cuadroId] = actual.copiar(
       pintadas: [
         ...actual.pintadas,
         ...{...nuevas},
       ],
       actualizadoEn: _reloj(),
-      completadoEn: actual.completadoEn,
     );
     _cambio();
   }
@@ -149,17 +179,30 @@ class Progreso extends ChangeNotifier {
   bool marcarCompletado(String cuadroId) {
     final actual = _cuadros[cuadroId] ?? const ProgresoCuadro();
     if (actual.terminado) return false;
-    _cuadros[cuadroId] = ProgresoCuadro(
-      pintadas: actual.pintadas,
-      actualizadoEn: actual.actualizadoEn,
-      completadoEn: _reloj(),
-    );
+    _cuadros[cuadroId] = actual.copiar(completadoEn: _reloj());
+    if (dificultadDe(cuadroId) == null) _desbloqueadas.add(cuadroId);
     _cambio();
     return true;
   }
 
-  void reiniciarCuadro(String cuadroId) {
-    if (_cuadros.remove(cuadroId) != null) _cambio();
+  /// Rehacer una obra: la deja en blanco para pintarla de nuevo en la
+  /// dificultad [dificultadId]. Lo desbloqueado en la historia no se pierde.
+  /// Devuelve la clave con la que se pinta: la misma para una obra de la
+  /// historia; para una del modo libre, la de la variante nueva.
+  String rehacer(String clave, String dificultadId) {
+    final base = cuadroBase(clave);
+    final String nueva;
+    if (dificultadDe(clave) != null) {
+      _cuadros.remove(clave);
+      nueva = idVariante(base, dificultadId);
+      _cuadros.remove(nueva);
+    } else {
+      if (_cuadros[clave]?.terminado ?? false) _desbloqueadas.add(clave);
+      nueva = clave;
+      _cuadros[clave] = ProgresoCuadro(dificultad: dificultadId, actualizadoEn: _reloj());
+    }
+    _cambio();
+    return nueva;
   }
 
   void reiniciarTodo() {
@@ -169,6 +212,7 @@ class Progreso extends ChangeNotifier {
     _introVista = false;
     _capitulosVistos.clear();
     _genero = null;
+    _desbloqueadas.clear();
     _cambio();
   }
 
@@ -260,6 +304,7 @@ class Progreso extends ChangeNotifier {
       'capitulosVistos': _capitulosVistos.toList(),
       'musicaSilenciada': _musicaSilenciada,
       'genero': ?_genero?.name,
+      'desbloqueadas': _desbloqueadas.toList(),
     });
     // Se encadenan para que nunca una escritura vieja pise a una nueva.
     guardado = guardado.then((_) => _almacen.escribir(datos));

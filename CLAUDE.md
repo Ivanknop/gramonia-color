@@ -55,7 +55,8 @@ lib/datos/mapa.dart      Zonas de cada lugar sobre el mapa provisorio
 lib/datos/historia.dart  Historia narrada por Gobi (borrador editable)
 lib/datos/textos.dart    Textos nuevos de la UI, con variantes {chico|chica|neutro}
 lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos;
-                         v3: + género) y
+                         v3: + género; v4: + desbloqueadas y dificultad de las
+                         obras rehechas) y
                          "Mis obras"
 lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
 lib/ui/pantallas/        inicio (portada), genero, creditos, modo_libre, principal (pestañas: galería,

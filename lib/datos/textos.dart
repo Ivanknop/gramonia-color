@@ -56,4 +56,11 @@ abstract final class Textos {
   static const libreVacio =
       'Todavía no hay dibujos para el modo libre. Recuperá lugares en la historia y aparecen acá.';
   static String etiquetaLibre(String dificultad) => 'Modo libre · $dificultad';
+
+  // ---- Rehacer obra ----
+  static const rehacer = 'Rehacer';
+  static const rehacerElegir = '¿En qué dificultad la volvés a pintar?';
+  static const rehacerAviso =
+      'Se borra lo pintado y empezás de nuevo. Lo que destapaste en Gramonia queda destapado.';
+  static String etiquetaRehecha(String dificultad) => 'Rehecha · $dificultad';
 }

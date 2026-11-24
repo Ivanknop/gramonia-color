@@ -168,7 +168,8 @@ class _TarjetaObra extends StatelessWidget {
     final p = dep.progreso.de(cuadroId);
     final total = dep.catalogo.cantidadRegiones[cuadroId] ?? 0;
     final hechas = (p?.pintadas.length ?? 0).clamp(0, total);
-    final terminado = p?.terminado ?? false;
+    // Terminada alguna vez (una obra rehecha sigue contando como recuperada).
+    final terminado = dep.progreso.completados.contains(cuadroId);
     final Widget miniatura = dep.catalogo.tieneImagen(cuadroId)
         ? Image.asset(
             'assets/cuadros/$cuadroId.webp',

@@ -11,6 +11,7 @@ import 'comun.dart';
 Future<Dificultad?> elegirDificultad(
   BuildContext context, {
   required String titulo,
+  String? aviso,
   String? actual,
 }) {
   final dificultades = Dependencias.of(context).catalogo.dificultades;
@@ -36,6 +37,15 @@ Future<Dificultad?> elegirDificultad(
                 ),
               ),
             ),
+            if (aviso != null)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
+                child: Text(
+                  aviso,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 13, color: Tema.gris),
+                ),
+              ),
             Flexible(
               child: ListView(
                 shrinkWrap: true,

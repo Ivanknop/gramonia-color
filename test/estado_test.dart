@@ -22,13 +22,11 @@ void main() {
     expect(p.de('c1')!.actualizadoEn, 5);
   });
 
-  test('completar y reiniciar un cuadro', () async {
+  test('completar un cuadro', () async {
     final (p, _) = await nuevo();
     p.pintarRegion('c1', 'a');
     p.marcarCompletado('c1');
     expect(p.completados, {'c1'});
-    p.reiniciarCuadro('c1');
-    expect(p.de('c1'), isNull);
   });
 
   test('el progreso se guarda y se vuelve a cargar', () async {
@@ -37,7 +35,7 @@ void main() {
     p.marcarCompletado('c2');
     await p.guardado;
     final guardado = jsonDecode(almacen.datos!) as Map<String, dynamic>;
-    expect(guardado['version'], 3);
+    expect(guardado['version'], 4);
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.de('c2')!.pintadas, ['x']);
     expect(otra.completados, {'c2'});
@@ -113,6 +111,52 @@ void main() {
     expect(otra.genero, Genero.chica);
   });
 
+  test('migra un guardado v3: las terminadas quedan desbloqueadas', () async {
+    const v3 =
+        '{"version":3,"cuadros":{"c1":{"pintadas":["a"],"completadoEn":4},'
+        '"c2":{"pintadas":["b"]}},"genero":"chico"}';
+    final (p, _) = await nuevo(v3);
+    expect(p.completados, {'c1'});
+    expect(p.genero, Genero.chico);
+    p.rehacer('c1', 'facil');
+    expect(p.completados, {'c1'}); // rehacer no tapa lo ganado
+  });
+
+  test(
+    'rehacer una obra de la historia: en blanco, en otra dificultad y sin perder el desbloqueo',
+    () async {
+      final (p, almacen) = await nuevo();
+      p.pintarRegiones('c1', ['a', 'b']);
+      p.marcarCompletado('c1');
+      ahora = 77;
+      expect(p.rehacer('c1', 'dificil'), 'c1');
+      final rehecha = p.de('c1')!;
+      expect(rehecha.pintadas, isEmpty);
+      expect((rehecha.terminado, rehecha.dificultad), (false, 'dificil'));
+      expect(p.completados, {'c1'});
+      // Se puede volver a terminar, y rehacer otra vez en otra dificultad.
+      p.pintarRegion('c1', 'r9');
+      p.marcarCompletado('c1');
+      expect(p.de('c1')!.dificultad, 'dificil');
+      p.rehacer('c1', 'super-facil');
+      expect(p.de('c1')!.dificultad, 'super-facil');
+      await p.guardado;
+      final (otra, _) = await nuevo(almacen.datos);
+      expect(otra.de('c1')!.dificultad, 'super-facil');
+      expect(otra.completados, {'c1'});
+    },
+  );
+
+  test('rehacer una obra del modo libre pasa a la variante de la dificultad nueva', () async {
+    final (p, _) = await nuevo();
+    p.pintarRegion('c1--facil', 'a');
+    p.marcarCompletado('c1--facil');
+    expect(p.completados.contains('c1'), isFalse); // el modo libre no desbloquea
+    expect(p.rehacer('c1--facil', 'divino'), 'c1--divino');
+    expect(p.de('c1--facil'), isNull);
+    expect(p.de('c1--divino'), isNull);
+  });
+
   test('datos corruptos no impiden jugar', () async {
     final (p, _) = await nuevo('{esto no es json');
     expect(p.cuadros, isEmpty);
@@ -130,6 +174,15 @@ void main() {
       }, existentes);
       expect(obras.enProgreso.map((o) => o.cuadroId), ['b', 'a']);
       expect(obras.terminadas.map((o) => o.cuadroId), ['d', 'c']);
+    });
+
+    test('las variantes del modo libre y las obras rehechas en blanco también cuentan', () {
+      final obras = clasificarObras({
+        'a--facil': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 1),
+        'b': const ProgresoCuadro(dificultad: 'facil', actualizadoEn: 2),
+        'x--facil': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 3),
+      }, existentes);
+      expect(obras.enProgreso.map((o) => o.cuadroId), ['b', 'a--facil']);
     });
 
     test('ignora cuadros sin pintar y cuadros que ya no existen', () {

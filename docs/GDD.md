@@ -84,6 +84,12 @@ dificultad; la partida se guarda aparte (clave `<cuadro>--<dificultad>`), no da
 plumas ni destapa piezas, y aparece en Mis obras con su dificultad. Al terminar
 hay festejo y timelapse igual.
 
+**Rehacer** (Mis obras, en las terminadas): la obra queda en blanco y se
+vuelve a pintar en la dificultad que se elija (se puede cambiar cada vez). Lo
+desbloqueado no se pierde: las obras terminadas se guardan aparte
+(`desbloqueadas`), así que la pieza sigue destapada y el lugar siguiente
+abierto. Terminarla de nuevo festeja, pero no da plumas ni pieza.
+
 **Dificultades** (modo libre y "rehacer obra"): súper fácil, fácil, normal,
 mediano, difícil, muy difícil, extremo, imposible, insano y divino. Cada una
 tiene colores fijos y un objetivo de regiones, a mano en

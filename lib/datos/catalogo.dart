@@ -163,13 +163,23 @@ class Catalogo {
     }
   }
 
-  /// Cuadro de una clave de progreso: un cuadro de la historia o una variante
-  /// (que se lee si todavía no estaba en memoria).
-  Future<Cuadro?> cuadroDeClave(String clave) async {
-    final enMemoria = obtener(clave);
+  /// Id de la geometría de una obra: la clave misma, o la variante si es una
+  /// obra de la historia rehecha en otra [dificultad].
+  static String geometriaDeObra(String clave, String? dificultad) =>
+      dificultadDe(clave) == null && dificultad != null ? idVariante(clave, dificultad) : clave;
+
+  /// Cuadro de una obra ya en memoria (null si es una variante sin leer).
+  Cuadro? obtenerDeObra(String clave, {String? dificultad}) =>
+      obtener(geometriaDeObra(clave, dificultad));
+
+  /// Cuadro de una obra: un cuadro de la historia o una variante (que se lee
+  /// si todavía no estaba en memoria).
+  Future<Cuadro?> cuadroDeObra(String clave, {String? dificultad}) async {
+    final id = geometriaDeObra(clave, dificultad);
+    final enMemoria = obtener(id);
     if (enMemoria != null) return enMemoria;
-    final dificultad = dificultadDe(clave);
-    return dificultad == null ? null : cargarVariante(cuadroBase(clave), dificultad);
+    final d = dificultadDe(id);
+    return d == null ? null : cargarVariante(cuadroBase(id), d);
   }
 
   /// Cuadro listo para jugar (la geometría se arma una sola vez). Las

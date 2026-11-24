@@ -3,6 +3,7 @@
 /// pantalla de teléfono vertical.
 library;
 
+import 'package:colores_de_gramonia/datos/biomas.dart';
 import 'package:colores_de_gramonia/datos/catalogo.dart';
 import 'package:colores_de_gramonia/engine/genero.dart';
 import 'package:colores_de_gramonia/engine/motor.dart';
@@ -386,5 +387,63 @@ void main() {
     await tester.tap(find.text('Mis obras').last);
     await tester.pumpAndSettle();
     expect(find.text('Modo libre · Súper fácil'), findsOneWidget);
+  });
+
+  testWidgets('rehacer en Mis obras: otra dificultad, en blanco y sin perder el desbloqueo', (
+    tester,
+  ) async {
+    usarTelefono(tester);
+    final progreso = await progresoNuevo();
+    for (final id in ['nido-de-rocanon', 'hormiguero-del-arbol']) {
+      final c = catalogo.obtener(id)!;
+      progreso.pintarRegiones(id, [for (final r in c.regiones) r.id]);
+      progreso.marcarCompletado(id);
+    }
+    await tester.pumpWidget(App(catalogo: catalogo, progreso: progreso));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Pintar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Mis obras').last);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byKey(const Key('rehacer-nido-de-rocanon')));
+    await tester.pumpAndSettle();
+    expect(find.text('¿En qué dificultad la volvés a pintar?'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('dificultad-facil')));
+    await tester.pumpAndSettle();
+
+    // Se pinta la variante Fácil, en blanco; el Bosque sigue desbloqueado.
+    expect(find.text('El nido de Rocanon · Fácil'), findsOneWidget);
+    expect(find.text('0% con color'), findsOneWidget);
+    expect(find.byKey(const Key('color-6')), findsOneWidget);
+    expect(find.byKey(const Key('color-7')), findsNothing);
+    final obra = progreso.de('nido-de-rocanon')!;
+    expect((obra.terminado, obra.dificultad), (false, 'facil'));
+    expect(progreso.completados, containsAll(['nido-de-rocanon', 'hormiguero-del-arbol']));
+    expect(estadoBiomas(biomas, progreso.completados)[1].accesible, isTrue);
+
+    // Terminarla de nuevo: festejo, pero sin plumas extra ni pieza nueva.
+    final v = catalogo.obtener('nido-de-rocanon--facil')!;
+    final plumas = progreso.plumas;
+    final ultima = regionVisible(tester, v);
+    progreso.pintarRegiones('nido-de-rocanon', [
+      for (final r in v.regiones)
+        if (r.id != ultima.id) r.id,
+    ]);
+    await tester.pump();
+    await tester.tap(find.byKey(Key('color-${ultima.numero}')));
+    await tester.pump();
+    await tester.tapAt(enPantalla(tester, v, ultima.etiqueta));
+    await tester.pump();
+    expect(progreso.de('nido-de-rocanon')!.terminado, isTrue);
+    expect(find.byType(Festejo), findsOneWidget);
+    expect(progreso.plumas, plumas);
+    expect(find.textContaining('Destapaste'), findsNothing);
+    await tester.pump(const Duration(seconds: 4));
+    await tester.tap(find.byKey(const Key('saltear')));
+    await tester.pumpAndSettle();
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    expect(find.text('Rehecha · Fácil'), findsOneWidget);
   });
 }

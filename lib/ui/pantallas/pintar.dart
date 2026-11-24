@@ -86,13 +86,14 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     _musica = Dependencias.of(context).musica;
     unawaited(_musica?.empezar());
     WidgetsBinding.instance.addObserver(this);
-    _cuadro = catalogo.obtener(_clave);
+    // Obra rehecha: se pinta la variante de su dificultad.
+    final rehecha = Dependencias.of(context).progreso.de(_clave)?.dificultad;
+    _cuadro = catalogo.obtenerDeObra(_clave, dificultad: rehecha);
     _elegido = _cuadro?.paleta.first.numero;
-    final dificultad = dificultadDe(_clave);
-    if (_cuadro == null && dificultad != null) {
+    if (_cuadro == null && (rehecha != null || _libre)) {
       // Variante de dificultad todavía no leída.
       _cargandoCuadro = true;
-      catalogo.cargarVariante(cuadroBase(_clave), dificultad).then((c) {
+      catalogo.cuadroDeObra(_clave, dificultad: rehecha).then((c) {
         if (!mounted) return;
         setState(() {
           _cuadro = c;
@@ -184,7 +185,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
 
     if (estaCompleto(cuadro, despues)) {
       if (!progreso.marcarCompletado(_clave)) return;
-      if (_libre) {
+      // Modo libre u obra rehecha (ya desbloqueada): festejo, sin plumas ni piezas.
+      if (_libre || completadosAntes.contains(_clave)) {
         _festejar();
         return;
       }
@@ -286,7 +288,9 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
       builder: (context, _) {
         final pintadas = _pintadas(cuadro);
         final terminado = progreso.de(_clave)?.terminado ?? false;
-        final dificultad = Dependencias.of(context).catalogo.dificultad(dificultadDe(_clave) ?? '');
+        final obra = progreso.de(_clave);
+        final dificultad = Dependencias.of(context).catalogo
+            .dificultad(dificultadDe(_clave) ?? obra?.dificultad ?? '');
         final completos = {
           for (final c in cuadro.paleta)
             if (faltantesDeColor(cuadro, pintadas, c.numero) == 0) c.numero,
@@ -351,6 +355,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                   cuadro: cuadro,
                   clave: _clave,
                   libre: _libre,
+                  // Rehecha: la pieza ya estaba destapada.
+                  destapo: !_libre && _plumasGanadas > 0,
                   plumasGanadas: _plumasGanadas,
                 )
               else
@@ -543,6 +549,7 @@ class _PanelFinal extends StatelessWidget {
     required this.cuadro,
     required this.clave,
     required this.libre,
+    required this.destapo,
     required this.plumasGanadas,
   });
   final Cuadro cuadro;
@@ -550,11 +557,14 @@ class _PanelFinal extends StatelessWidget {
   /// Clave del progreso (cuadro de la historia o variante del modo libre).
   final String clave;
   final bool libre;
+
+  /// Esta vez se destapó una pieza (no al reabrir una terminada ni al rehacer).
+  final bool destapo;
   final int plumasGanadas;
 
   @override
   Widget build(BuildContext context) {
-    final destapa = libre ? null : piezaDeCuadro(biomas, clave);
+    final destapa = destapo ? piezaDeCuadro(biomas, clave) : null;
     return SafeArea(
       top: false,
       child: Container(

@@ -9,7 +9,7 @@ typedef Obra = ({String cuadroId, ProgresoCuadro progreso});
 
 /// Clasifica el progreso en obras en progreso (la más reciente primero) y
 /// terminadas (la terminada más recientemente primero). Ignora cuadros sin
-/// pintar y cuadros que ya no existen en el catálogo.
+/// pintar (salvo los rehechos) y cuadros que ya no existen en el catálogo.
 ({List<Obra> enProgreso, List<Obra> terminadas}) clasificarObras(
   Map<String, ProgresoCuadro> cuadros,
   Set<String> idsExistentes,
@@ -21,7 +21,8 @@ typedef Obra = ({String cuadroId, ProgresoCuadro progreso});
     final obra = (cuadroId: e.key, progreso: e.value);
     if (e.value.terminado) {
       terminadas.add(obra);
-    } else if (e.value.pintadas.isNotEmpty) {
+    } else if (e.value.pintadas.isNotEmpty || e.value.dificultad != null) {
+      // Las rehechas aparecen aunque todavía estén en blanco.
       enProgreso.add(obra);
     }
   }
