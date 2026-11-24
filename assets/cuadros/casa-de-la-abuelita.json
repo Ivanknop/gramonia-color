@@ -2,119 +2,174 @@
   "id": "casa-de-la-abuelita",
   "titulo": "La casa de la abuelita",
   "categoria": "paisaje",
-  "dificultad": 4,
+  "dificultad": 5,
   "paleta": [
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#B29F5E"
+      "hex": "#364A35"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#E4AC9D"
+      "hex": "#526339"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#584045"
+      "hex": "#F1AD9F"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#8CB2C4"
+      "hex": "#879655"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#848B52"
+      "hex": "#C08952"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#365A4D"
+      "hex": "#B39F5E"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#956749"
+      "hex": "#4D3B44"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#31413B"
+      "hex": "#94B5C5"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#52633A"
+      "hex": "#7C4F43"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#314B41"
+      "hex": "#345346"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#B08550"
+      "hex": "#624946"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#233339"
+      "hex": "#506C57"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#213F3D"
+      "hex": "#284944"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#EFD29A"
+      "hex": "#7FB5D9"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#506757"
+      "hex": "#D9AC9C"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#5F7E5B"
+      "hex": "#213E3D"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#726647"
+      "hex": "#F3BCA1"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#645244"
+      "hex": "#81814C"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#E5BB8C"
+      "hex": "#D8BC77"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#E9A393"
+      "hex": "#608B6C"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#B4AC97"
+      "hex": "#163135"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#B5B785"
+      "hex": "#BABC6F"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#8E664B"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#F4DBA2"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#A38250"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#386559"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#A06949"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#91AFB3"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#4A5042"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#E8C98C"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#627E56"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#B5AC99"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#746547"
     }
   ],
   "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea.",
-  "orden": 6
+  "orden": 10
 }

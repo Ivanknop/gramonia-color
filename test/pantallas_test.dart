@@ -109,7 +109,7 @@ void main() {
     expect(find.text('0 de 2 obras para llegar al nivel 2'), findsOneWidget);
     expect(find.text('Se desbloquea al recuperar el lugar anterior'), findsWidgets);
     // Una obra del Bosque (bloqueado) no se abre.
-    await tester.tap(find.text('La casa de la abuelita'));
+    await tester.tap(find.text('El hormiguero del árbol'));
     await tester.pumpAndSettle();
     expect(find.byType(Pintar), findsNothing);
     // Una del Árbol sí.

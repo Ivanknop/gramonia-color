@@ -16,28 +16,12 @@
       "regiones": 70
     },
     {
-      "imagen": "etapa3-hormigas.jpeg",
-      "id": "hormiguero-del-arbol",
-      "titulo": "El hormiguero del árbol",
-      "categoria": "paisaje",
-      "mensaje": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
-      "regiones": 90
-    },
-    {
       "imagen": "arbol_magico.jpeg",
       "id": "arbol-magico-de-noche",
       "titulo": "El Árbol Mágico de noche",
       "categoria": "paisaje",
       "mensaje": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!",
-      "regiones": 95
-    },
-    {
-      "imagen": "cumple_rocanon.jpeg",
-      "id": "cumple-del-rocanon",
-      "titulo": "El cumpleaños del Rocanón",
-      "categoria": "arte",
-      "mensaje": "¡La torta recuperó sus colores! Mututu se había llevado hasta las velitas. ¡Que los cumpla feliz!",
-      "regiones": 100
+      "regiones": 80
     },
     {
       "imagen": "rocanon_arbol.jpeg",
@@ -45,23 +29,23 @@
       "titulo": "El Rocanón en la copa",
       "categoria": "paisaje",
       "mensaje": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!",
-      "regiones": 105
+      "regiones": 90
     },
     {
-      "imagen": "etapa1-abuelita.jpeg",
-      "id": "casa-de-la-abuelita",
-      "titulo": "La casa de la abuelita",
+      "imagen": "etapa3-hormigas.jpeg",
+      "id": "hormiguero-del-arbol",
+      "titulo": "El hormiguero del árbol",
       "categoria": "paisaje",
-      "mensaje": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea.",
-      "regiones": 110
+      "mensaje": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
+      "regiones": 100
     },
     {
-      "imagen": "etapa6-papa.jpeg",
-      "id": "refugio-de-papa",
-      "titulo": "El refugio de papá",
+      "imagen": "cumple_rocanon.jpeg",
+      "id": "cumple-del-rocanon",
+      "titulo": "El cumpleaños del Rocanón",
       "categoria": "arte",
-      "mensaje": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas.",
-      "regiones": 130
+      "mensaje": "¡La torta recuperó sus colores! Mututu se había llevado hasta las velitas. ¡Que los cumpla feliz!",
+      "regiones": 110
     },
     {
       "imagen": "pozo_sanador.jpeg",
@@ -69,7 +53,7 @@
       "titulo": "El Pozo Sanador",
       "categoria": "paisaje",
       "mensaje": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués.",
-      "regiones": 140
+      "regiones": 130
     },
     {
       "imagen": "bosque_magico.jpeg",
@@ -80,20 +64,12 @@
       "regiones": 150
     },
     {
-      "imagen": "tienda.jpeg",
-      "id": "la-tienda",
-      "titulo": "La tienda",
-      "categoria": "arte",
-      "mensaje": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender.",
-      "regiones": 160
-    },
-    {
       "imagen": "kribiki_leon.jpeg",
       "id": "leon-y-kiribiki",
       "titulo": "León y Kiribiki",
       "categoria": "animal",
       "mensaje": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!",
-      "regiones": 170
+      "regiones": 160
     },
     {
       "imagen": "cleo.jpeg",
@@ -101,7 +77,31 @@
       "titulo": "Cleo quiere dormir",
       "categoria": "animal",
       "mensaje": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz.",
+      "regiones": 170
+    },
+    {
+      "imagen": "etapa1-abuelita.jpeg",
+      "id": "casa-de-la-abuelita",
+      "titulo": "La casa de la abuelita",
+      "categoria": "paisaje",
+      "mensaje": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea.",
       "regiones": 180
+    },
+    {
+      "imagen": "etapa6-papa.jpeg",
+      "id": "refugio-de-papa",
+      "titulo": "El refugio de papá",
+      "categoria": "arte",
+      "mensaje": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas.",
+      "regiones": 190
+    },
+    {
+      "imagen": "timoteo.jpeg",
+      "id": "timoteo-y-su-caperuza",
+      "titulo": "Timoteo y su caperuza",
+      "categoria": "animal",
+      "mensaje": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida.",
+      "regiones": 200
     },
     {
       "imagen": "etapa5-dragones.jpeg",
@@ -120,12 +120,12 @@
       "regiones": 230
     },
     {
-      "imagen": "timoteo.jpeg",
-      "id": "timoteo-y-su-caperuza",
-      "titulo": "Timoteo y su caperuza",
-      "categoria": "animal",
-      "mensaje": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida.",
-      "regiones": 250
+      "imagen": "tienda.jpeg",
+      "id": "la-tienda",
+      "titulo": "La tienda",
+      "categoria": "arte",
+      "mensaje": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender.",
+      "regiones": 260
     },
     {
       "imagen": "etapa4-tormenta.jpeg",

@@ -71,12 +71,12 @@ void main() {
     expect(biomas.take(9).map((b) => b.nombre), [
       'Árbol Mágico',
       'Bosque Mágico',
-      'La Ciudad',
       'Reino Animal',
-      'Montaña Dragón',
-      'Prado de las Hadas',
       'Tierra de las Caperucitas',
+      'Montaña Dragón',
       'Reino Helado',
+      'Prado de las Hadas',
+      'La Ciudad',
       'La Costa',
     ]);
     expect(biomas.skip(9).where((b) => b.tipo == TipoBioma.isla), hasLength(7));

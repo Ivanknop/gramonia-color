@@ -7,42 +7,42 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#3D5345"
+      "hex": "#3F362F"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#3F362F"
+      "hex": "#2C433E"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#2B3E3B"
+      "hex": "#6B563B"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#61563D"
+      "hex": "#526B50"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#656D4B"
+      "hex": "#524435"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#232E30"
+      "hex": "#798555"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#798555"
+      "hex": "#55563E"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#524435"
+      "hex": "#776F47"
     },
     {
       "numero": 9,
@@ -52,9 +52,34 @@
     {
       "numero": 10,
       "nombre": "Color 10",
+      "hex": "#20292C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3F5848"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#263132"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
       "hex": "#3D433A"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#2A3939"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#3B4D41"
     }
   ],
   "mensajeMututu": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
-  "orden": 2
+  "orden": 4
 }

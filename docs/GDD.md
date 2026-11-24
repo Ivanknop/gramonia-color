@@ -64,9 +64,9 @@ No hay derrota ni tiempo límite. El progreso se guarda en todo momento.
 Gramonia se recorre lugar por lugar, con **dificultad creciente**: cada lugar
 tiene más obras que el anterior y cada obra más regiones para pintar.
 
-1. Árbol Mágico (4 obras) → 2. Bosque Mágico (4) → 3. La Ciudad (4) →
-4. Reino Animal (4) → 5. Montaña Dragón (4) → 6. Prado de las Hadas (5) →
-7. Tierra de las Caperucitas (5) → 8. Reino Helado (6) → 9. La Costa (6) →
+1. Árbol Mágico (3 obras) → 2. Bosque Mágico (4) → 3. Reino Animal (4) →
+4. Tierra de las Caperucitas (5) → 5. Montaña Dragón (5) → 6. Reino Helado (5) →
+7. Prado de las Hadas (5) → 8. La Ciudad (6, linda con el Muelle) → 9. La Costa (6) →
 10–16. Las siete **Islas Arcoíris**, una por color (roja, naranja, amarilla,
 verde, azul, añil y morada), de 6 a 9 obras cada una.
 

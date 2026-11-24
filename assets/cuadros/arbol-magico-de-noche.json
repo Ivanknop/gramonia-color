@@ -7,79 +7,54 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#05143A"
+      "hex": "#1F508E"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#1F508F"
+      "hex": "#412C1D"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#502F15"
+      "hex": "#05143A"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#182549"
+      "hex": "#C5D3BB"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#4085C2"
+      "hex": "#192649"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#302A2A"
+      "hex": "#6B8998"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#7E5526"
+      "hex": "#61554A"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#EBE1A5"
+      "hex": "#02133E"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#425671"
+      "hex": "#071945"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#98C1D3"
-    },
-    {
-      "numero": 11,
-      "nombre": "Color 11",
-      "hex": "#02133E"
-    },
-    {
-      "numero": 12,
-      "nombre": "Color 12",
-      "hex": "#9A8C68"
-    },
-    {
-      "numero": 13,
-      "nombre": "Color 13",
-      "hex": "#071945"
-    },
-    {
-      "numero": 14,
-      "nombre": "Color 14",
-      "hex": "#03143F"
-    },
-    {
-      "numero": 15,
-      "nombre": "Color 15",
-      "hex": "#051439"
+      "hex": "#03143E"
     }
   ],
   "mensajeMututu": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!",
-  "orden": 3
+  "orden": 2
 }

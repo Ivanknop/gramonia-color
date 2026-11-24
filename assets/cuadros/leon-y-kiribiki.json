@@ -7,92 +7,92 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#BFA061"
+      "hex": "#DCBA68"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#B19051"
+      "hex": "#674F34"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#7F9E6D"
+      "hex": "#949C6C"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#D4AF5D"
+      "hex": "#405D6F"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#60644C"
+      "hex": "#BFA061"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#DCBA68"
+      "hex": "#B19051"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#674F34"
+      "hex": "#996D3E"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#947A4B"
+      "hex": "#7C5130"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#476676"
+      "hex": "#373E4C"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#EBD89D"
+      "hex": "#60644C"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#552E16"
+      "hex": "#82633D"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#0F3F70"
+      "hex": "#856E47"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#7C4A2A"
+      "hex": "#EBD89D"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#988153"
+      "hex": "#A68C55"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#956C3E"
+      "hex": "#758266"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#8A633A"
+      "hex": "#947A4B"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#7C5936"
+      "hex": "#A2834D"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#A68C55"
+      "hex": "#988153"
     },
     {
       "numero": 19,
@@ -102,74 +102,19 @@
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#87724A"
+      "hex": "#C3AD65"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#9B6E3F"
+      "hex": "#8F7044"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#395368"
-    },
-    {
-      "numero": 23,
-      "nombre": "Color 23",
-      "hex": "#0C2D4D"
-    },
-    {
-      "numero": 24,
-      "nombre": "Color 24",
-      "hex": "#8F7044"
-    },
-    {
-      "numero": 25,
-      "nombre": "Color 25",
-      "hex": "#A28048"
-    },
-    {
-      "numero": 26,
-      "nombre": "Color 26",
-      "hex": "#A18552"
-    },
-    {
-      "numero": 27,
-      "nombre": "Color 27",
-      "hex": "#5F3E28"
-    },
-    {
-      "numero": 28,
-      "nombre": "Color 28",
-      "hex": "#7A623F"
-    },
-    {
-      "numero": 29,
-      "nombre": "Color 29",
-      "hex": "#A89B6B"
-    },
-    {
-      "numero": 30,
-      "nombre": "Color 30",
-      "hex": "#B2AA6D"
-    },
-    {
-      "numero": 31,
-      "nombre": "Color 31",
-      "hex": "#826B44"
-    },
-    {
-      "numero": 32,
-      "nombre": "Color 32",
-      "hex": "#63836B"
-    },
-    {
-      "numero": 33,
-      "nombre": "Color 33",
-      "hex": "#858161"
+      "hex": "#312D31"
     }
   ],
   "mensajeMututu": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!",
-  "orden": 11
+  "orden": 8
 }

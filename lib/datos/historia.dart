@@ -73,40 +73,40 @@ const capitulos = <String, Escena>{
   'bosque-magico': Escena(
     'Las Hormiguitas ya ven sus senderos de colores. Juana, o quizás Raúl, te manda '
     'saludos (y un granito de azúcar). Todos los caminos conducen al Árbol… y '
-    'también a la Ciudad. ¡Vamos!',
+    'también al Reino Animal. ¡Vamos!',
     titulo: 'El Bosque Mágico',
   ),
   'ciudad': Escena(
     'La Ciudad brilla de nuevo: sus trenes, sus plazas y la carpeta de dibujos de '
-    'Tomás. Sofía dice que vio una sombra con plumas cruzando hacia el Reino Animal…',
+    'Tomás. Desde la estación ya se oyen las gaviotas del Muelle: ¡la Costa está al lado!',
     titulo: 'La Ciudad',
   ),
   'reino-animal': Escena(
     'En el Reino Animal, León vuelve a ver su queso bien amarillo (y Kiribiki '
-    'también, claro). Ahora hay que subir a la Montaña Dragón, la más alta '
-    'después del Árbol.',
+    'también, claro). Ahora vamos a la Tierra de las Caperucitas, que nos esperan '
+    'con sus caperuzas.',
     titulo: 'El Reino Animal',
   ),
   'montana-dragon': Escena(
     '¡Las gemas de la Montaña Dragón brillan otra vez! Alma, la dragona de escamas '
-    'violetas, vuela feliz a nuestro lado. Desde acá arriba ya se ve el Prado de '
-    'las Hadas.',
+    'violetas, vuela feliz a nuestro lado. Desde acá arriba ya se ve el Reino '
+    'Helado, blanquito de nieve.',
     titulo: 'La Montaña Dragón',
   ),
   'prado-de-las-hadas': Escena(
     'Las flores del Prado recuperaron sus colores y Anastasia ya puede ordenar sus '
-    'tréboles por color, olor y nivel de cosquillas. Las Caperucitas nos esperan.',
+    'tréboles por color, olor y nivel de cosquillas. Sigamos hacia la Ciudad.',
     titulo: 'El Prado de las Hadas',
   ),
   'tierra-de-las-caperucitas': Escena(
     '¡Caperuzas rojas, azules, a lunares y una que cambia de color cuando alguien '
     'dice "panqueque"! Caperucita Naranja Clarito Casi Mandarina te regaló un '
-    'retacito. Ahora, a abrigarse: vamos al Reino Helado.',
+    'retacito. Ahora, a subir a la Montaña Dragón, la más alta después del Árbol.',
     titulo: 'La Tierra de las Caperucitas',
   ),
   'reino-helado': Escena(
     'El Reino Helado vuelve a tener su helado de menta granizada… ¡bien verde! '
-    'Alma ya se pidió dos. Solo nos queda la Costa.',
+    'Alma ya se pidió dos. Para calentarnos, vamos al Prado de las Hadas.',
     titulo: 'El Reino Helado',
   ),
   'costa': Escena(

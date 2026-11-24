@@ -2,7 +2,7 @@
   "id": "rocanon-en-la-copa",
   "titulo": "El Rocanón en la copa",
   "categoria": "paisaje",
-  "dificultad": 4,
+  "dificultad": 3,
   "paleta": [
     {
       "numero": 1,
@@ -22,12 +22,12 @@
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#72B1D5"
+      "hex": "#427DA3"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#427DA3"
+      "hex": "#72B1D5"
     },
     {
       "numero": 6,
@@ -37,17 +37,17 @@
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#306989"
+      "hex": "#96917A"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#96917A"
+      "hex": "#C7E4CA"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#C7E4CA"
+      "hex": "#306989"
     },
     {
       "numero": 10,
@@ -67,19 +67,19 @@
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#6694A7"
+      "hex": "#B3C5BA"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#446563"
+      "hex": "#6694A7"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#B3C5BA"
+      "hex": "#446563"
     }
   ],
   "mensajeMututu": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!",
-  "orden": 5
+  "orden": 3
 }

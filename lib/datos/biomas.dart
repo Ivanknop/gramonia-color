@@ -22,9 +22,7 @@ final biomas = <Bioma>[
     color: 0xFF7FB8D9,
     piezas: const [
       Pieza(id: 'nido', cuadroId: 'nido-de-rocanon'),
-      Pieza(id: 'hormiguero', cuadroId: 'hormiguero-del-arbol'),
       Pieza(id: 'copa', cuadroId: 'arbol-magico-de-noche'),
-      Pieza(id: 'cumpleanos', cuadroId: 'cumple-del-rocanon'),
       Pieza(id: 'rocanon', cuadroId: 'rocanon-en-la-copa'),
     ],
   ),
@@ -35,22 +33,11 @@ final biomas = <Bioma>[
         'Rodea al Árbol y parece igual mires hacia donde mires. Lo cuidan las Hormiguitas.',
     color: 0xFF2E7D32,
     piezas: [
-      const Pieza(id: 'casa-de-la-abuelita', cuadroId: 'casa-de-la-abuelita'),
-      const Pieza(id: 'refugio', cuadroId: 'refugio-de-papa'),
+      const Pieza(id: 'hormiguero', cuadroId: 'hormiguero-del-arbol'),
+      const Pieza(id: 'cumpleanos', cuadroId: 'cumple-del-rocanon'),
       // Pozo Sanador en el Bosque Mágico: (a confirmar) en el canon.
       const Pieza(id: 'pozo-sanador', cuadroId: 'pozo-sanador'),
       const Pieza(id: 'caminos', cuadroId: 'todos-los-caminos'),
-      ..._proximamente('bosque-magico', 1, desde: 5),
-    ],
-  ),
-  Bioma(
-    id: 'ciudad',
-    nombre: 'La Ciudad',
-    descripcion: 'Edificios brillantes, trenes velocísimos y dos mil personas yendo y viniendo.',
-    color: 0xFFB0855A,
-    piezas: [
-      const Pieza(id: 'tienda', cuadroId: 'la-tienda'),
-      ..._proximamente('ciudad', 4, desde: 2),
     ],
   ),
   Bioma(
@@ -62,7 +49,20 @@ final biomas = <Bioma>[
     piezas: [
       const Pieza(id: 'correo-de-leon', cuadroId: 'leon-y-kiribiki'),
       const Pieza(id: 'granero-de-cleo', cuadroId: 'cleo-quiere-dormir'),
-      ..._proximamente('reino-animal', 3, desde: 3),
+      ..._proximamente('reino-animal', 2, desde: 3),
+    ],
+  ),
+  Bioma(
+    id: 'tierra-de-las-caperucitas',
+    nombre: 'Tierra de las Caperucitas',
+    descripcion:
+        'Caperuzas de todos los colores, a rayas, con lunares… y una que cambia con "panqueque".',
+    color: 0xFFE53935,
+    piezas: [
+      const Pieza(id: 'casa-de-la-abuelita', cuadroId: 'casa-de-la-abuelita'),
+      const Pieza(id: 'refugio', cuadroId: 'refugio-de-papa'),
+      const Pieza(id: 'timoteo', cuadroId: 'timoteo-y-su-caperuza'),
+      ..._proximamente('tierra-de-las-caperucitas', 2, desde: 4),
     ],
   ),
   Bioma(
@@ -78,6 +78,13 @@ final biomas = <Bioma>[
     ],
   ),
   Bioma(
+    id: 'reino-helado',
+    nombre: 'Reino Helado',
+    descripcion: 'Nieve, frío y el mejor helado de menta granizada de toda la isla.',
+    color: 0xFF81D4FA,
+    piezas: _proximamente('reino-helado', 5),
+  ),
+  Bioma(
     id: 'prado-de-las-hadas',
     nombre: 'Prado de las Hadas',
     descripcion: 'Flores, capullos y mariposas: acá las Hadas practican sus poderes.',
@@ -85,22 +92,14 @@ final biomas = <Bioma>[
     piezas: _proximamente('prado-de-las-hadas', 5),
   ),
   Bioma(
-    id: 'tierra-de-las-caperucitas',
-    nombre: 'Tierra de las Caperucitas',
-    descripcion:
-        'Caperuzas de todos los colores, a rayas, con lunares… y una que cambia con "panqueque".',
-    color: 0xFFE53935,
+    id: 'ciudad',
+    nombre: 'La Ciudad',
+    descripcion: 'Edificios brillantes, trenes velocísimos y dos mil personas yendo y viniendo.',
+    color: 0xFFB0855A,
     piezas: [
-      const Pieza(id: 'timoteo', cuadroId: 'timoteo-y-su-caperuza'),
-      ..._proximamente('tierra-de-las-caperucitas', 4, desde: 2),
+      const Pieza(id: 'tienda', cuadroId: 'la-tienda'),
+      ..._proximamente('ciudad', 5, desde: 2),
     ],
-  ),
-  Bioma(
-    id: 'reino-helado',
-    nombre: 'Reino Helado',
-    descripcion: 'Nieve, frío y el mejor helado de menta granizada de toda la isla.',
-    color: 0xFF81D4FA,
-    piezas: _proximamente('reino-helado', 6),
   ),
   Bioma(
     id: 'costa',
