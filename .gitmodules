@@ -1,0 +1,3 @@
+[submodule "canon"]
+	path = canon
+	url = git@github.com:Ivanknop/gramonia-canon.git

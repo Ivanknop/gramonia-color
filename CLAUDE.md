@@ -1,3 +1,4 @@
+@canon/CLAUDE.md
 # Gramonia Color
 
 Juego de **pintar por números** para **teléfonos Android**.
