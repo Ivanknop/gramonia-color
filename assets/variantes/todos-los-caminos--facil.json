@@ -1,0 +1,39 @@
+{
+  "id": "todos-los-caminos--facil",
+  "titulo": "Todos los caminos",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#867C60"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#515143"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B9B9AB"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#616454"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#726951"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#9F967D"
+    }
+  ],
+  "mensajeMututu": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!"
+}

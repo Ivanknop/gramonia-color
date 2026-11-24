@@ -1,0 +1,39 @@
+{
+  "id": "arbol-magico-de-noche--facil",
+  "titulo": "El Árbol Mágico de noche",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#04143D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#412D1F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#40536C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6D8894"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C2D1BC"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#192649"
+    }
+  ],
+  "mensajeMututu": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!"
+}

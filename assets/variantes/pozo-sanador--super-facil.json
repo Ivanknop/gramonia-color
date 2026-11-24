@@ -1,0 +1,29 @@
+{
+  "id": "pozo-sanador--super-facil",
+  "titulo": "El Pozo Sanador",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#6B7849"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#2C3E28"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#96B07C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#575032"
+    }
+  ],
+  "mensajeMututu": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués."
+}

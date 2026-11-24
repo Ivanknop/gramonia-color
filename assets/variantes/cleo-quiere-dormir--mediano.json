@@ -1,0 +1,59 @@
+{
+  "id": "cleo-quiere-dormir--mediano",
+  "titulo": "Cleo quiere dormir",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#583127"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7E462C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B97C4A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2A181E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#462A29"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#593D3C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#965D3C"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#E4B785"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#341F23"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#352934"
+    }
+  ],
+  "mensajeMututu": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz."
+}

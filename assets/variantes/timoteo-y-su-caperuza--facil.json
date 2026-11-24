@@ -1,0 +1,39 @@
+{
+  "id": "timoteo-y-su-caperuza--facil",
+  "titulo": "Timoteo y su caperuza",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#40492F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BFAA5E"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#95864E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#766B42"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#E2E2B8"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#715339"
+    }
+  ],
+  "mensajeMututu": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida."
+}

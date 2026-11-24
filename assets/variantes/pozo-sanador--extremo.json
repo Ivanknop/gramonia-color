@@ -1,0 +1,129 @@
+{
+  "id": "pozo-sanador--extremo",
+  "titulo": "El Pozo Sanador",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#BB9E5F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#497D5A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#423C29"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#424E34"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7DB88F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#24271A"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#283322"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#747643"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#2A3F29"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#725E3A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#CEE4AE"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#52482E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#30502E"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#B0B975"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#9E8150"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#585D39"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#5A814D"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#6E9A65"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#435C35"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#9CD4AF"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#887849"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#9A9B5B"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#4D6D41"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#79482D"
+    }
+  ],
+  "mensajeMututu": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués."
+}

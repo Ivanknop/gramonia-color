@@ -1,0 +1,175 @@
+{
+  "id": "timoteo-y-su-caperuza",
+  "titulo": "Timoteo y su caperuza",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#60692E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#CFB048"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FCF9DD"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#30412A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#DFF2E5"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B0A644"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#636A49"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#9A6B4E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D8AD75"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#5A5E37"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#484D2F"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5B4C37"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C79259"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#3B4B2E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#41432C"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#827947"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#7D5C44"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#4A5937"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#333127"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#9F7D51"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#878F50"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#ADAA71"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#8C4531"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#E9D27C"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#9E944E"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#7E824A"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#7B6B43"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#6B7843"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#343A29"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#B08D53"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#475433"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#4D6038"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#CBD4AD"
+    }
+  ],
+  "mensajeMututu": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida.",
+  "orden": 12
+}

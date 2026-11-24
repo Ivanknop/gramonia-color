@@ -7,114 +7,169 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#313A4B"
+      "hex": "#6F6C7E"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#38464F"
+      "hex": "#8C808F"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#595B6B"
+      "hex": "#634F4E"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#313140"
+      "hex": "#313A4B"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#8C808F"
+      "hex": "#4F5061"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#78707E"
+      "hex": "#473C46"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#433C47"
+      "hex": "#313343"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#634F4E"
+      "hex": "#313A41"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#646071"
+      "hex": "#232D36"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#464754"
+      "hex": "#282D3F"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#1B212E"
+      "hex": "#5D5C6D"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#383947"
+      "hex": "#38424D"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#313A41"
+      "hex": "#646071"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#1D2733"
+      "hex": "#C4A5A1"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#C4A5A1"
+      "hex": "#1C2330"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#242837"
+      "hex": "#1D2733"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#4F4D5A"
+      "hex": "#384850"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#262D3B"
+      "hex": "#444350"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#293742"
+      "hex": "#80737F"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#27313E"
+      "hex": "#191E2C"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#55505D"
+      "hex": "#464655"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
+      "hex": "#242837"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#293742"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#535B68"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#3D3C49"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#55505D"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#27313E"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#383543"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#393C4A"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#474B56"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#302F3E"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
       "hex": "#756262"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#4E4952"
     }
   ],
   "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",
-  "orden": 6
+  "orden": 11
 }

@@ -1,0 +1,49 @@
+{
+  "id": "todos-los-caminos--normal",
+  "titulo": "Todos los caminos",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#93815E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BBBAAB"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#585645"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#726950"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7A7863"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#454A40"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#606454"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A1987F"
+    }
+  ],
+  "mensajeMututu": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!"
+}

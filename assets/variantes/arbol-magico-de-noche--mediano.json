@@ -1,0 +1,59 @@
+{
+  "id": "arbol-magico-de-noche--mediano",
+  "titulo": "El Árbol Mágico de noche",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1F5090"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#402C1F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#05133A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C6D3BC"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#192649"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#6C8997"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#61554A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#061742"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#01123E"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#02133E"
+    }
+  ],
+  "mensajeMututu": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "cumple-del-rocanon--dificil",
+  "titulo": "El cumpleaños del Rocanón",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#384643"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#132E43"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4E6D52"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1C4348"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F0C87E"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#CD9461"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#205059"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#296976"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#C17251"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#7B7056"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#9EB786"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5B4441"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#984940"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#6C9271"
+    }
+  ],
+  "mensajeMututu": "¡La torta recuperó sus colores! Mututu se había llevado hasta las velitas. ¡Que los cumpla feliz!"
+}

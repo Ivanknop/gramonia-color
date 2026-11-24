@@ -1,0 +1,99 @@
+{
+  "id": "todos-los-caminos--muy-dificil",
+  "titulo": "Todos los caminos",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#907C58"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5E5744"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#CDC5B0"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#ABB1A8"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#404339"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#AD9873"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#988765"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#616658"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5D5F4E"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#80816F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#4A5046"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#969B90"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#525446"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#77735D"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#7C6B4E"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#6B6853"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#726950"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#7B7963"
+    }
+  ],
+  "mensajeMututu": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!"
+}

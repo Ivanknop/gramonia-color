@@ -1,0 +1,29 @@
+{
+  "id": "caperucita-pirata--super-facil",
+  "titulo": "La Caperucita pirata",
+  "categoria": "persona",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C1CFD4"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#535D6E"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3B2B2D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#829AA7"
+    }
+  ],
+  "mensajeMututu": "¡La Caperucita pirata recuperó su caperuza lila! Rumbo a las Islas Arcoíris, con loro y todo."
+}

@@ -1,0 +1,169 @@
+{
+  "id": "caperucita-pirata--imposible",
+  "titulo": "La Caperucita pirata",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3E2724"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#93B9D2"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4D4B58"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3C8096"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C7CACD"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B9D1D8"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#9FC4D5"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A58780"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D7CEC9"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1A6580"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#6994A3"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#E8E4DE"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#AFCED8"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#154F6B"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#191214"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#2C2120"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#66636E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#403539"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#664951"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#D5D6D3"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#926772"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#80A9C2"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#6F818B"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#2C2F37"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#795C66"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#29191B"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#3A6B82"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#4C3436"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#5B3A42"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#A6A8AA"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#ACC7D4"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#A8BDCA"
+    }
+  ],
+  "mensajeMututu": "¡La Caperucita pirata recuperó su caperuza lila! Rumbo a las Islas Arcoíris, con loro y todo."
+}

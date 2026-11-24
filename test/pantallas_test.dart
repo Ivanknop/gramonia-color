@@ -113,7 +113,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(Pintar), findsNothing);
     // Una del Árbol sí.
-    await tester.tap(find.text('El nido de Rocanon'));
+    await tester.tap(find.text('El nido del Rocanón'));
     await tester.pumpAndSettle();
     expect(find.byType(Pintar), findsOneWidget);
   });
@@ -208,9 +208,12 @@ void main() {
     tester,
   ) async {
     final progreso = await progresoNuevo();
-    final hormiguero = catalogo.obtener('hormiguero-del-arbol')!;
-    progreso.pintarRegiones(hormiguero.id, [for (final r in hormiguero.regiones) r.id]);
-    progreso.marcarCompletado(hormiguero.id);
+    // Las otras obras del Árbol, ya terminadas.
+    for (final id in ['hormiguero-del-arbol', 'arbol-magico-de-noche', 'cumple-del-rocanon']) {
+      final c = catalogo.obtener(id)!;
+      progreso.pintarRegiones(id, [for (final r in c.regiones) r.id]);
+      progreso.marcarCompletado(id);
+    }
 
     final nido = catalogo.obtener('nido-de-rocanon')!;
     await abrirPintar(tester, progreso, nido.id);
@@ -285,11 +288,11 @@ void main() {
     await tester.tap(find.text('Mapa de Gramonia'));
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
-      find.text('0 de 2 partes recuperadas'),
+      find.text('0 de 4 partes recuperadas'),
       300,
       scrollable: find.byType(Scrollable).last,
     );
-    expect(find.text('0 de 2 partes recuperadas'), findsOneWidget);
+    expect(find.text('0 de 4 partes recuperadas'), findsOneWidget);
   });
 
   testWidgets('créditos desde la portada y desde el menú', (tester) async {
@@ -340,15 +343,15 @@ void main() {
     await tester.tap(find.text('Modo libre'));
     await tester.pumpAndSettle();
     // Solo los del lugar desbloqueado (el Árbol Mágico).
-    expect(find.bySemanticsLabel('El nido de Rocanon'), findsOneWidget);
+    expect(find.bySemanticsLabel('El nido del Rocanón'), findsOneWidget);
     expect(find.bySemanticsLabel('La casa de la abuelita'), findsNothing);
 
-    await tester.tap(find.bySemanticsLabel('El nido de Rocanon'));
+    await tester.tap(find.bySemanticsLabel('El nido del Rocanón'));
     await tester.pumpAndSettle();
     expect(find.text('¿Qué tan difícil lo querés?'), findsOneWidget);
     await tester.tap(find.byKey(const Key('dificultad-super-facil')));
     await tester.pumpAndSettle();
-    expect(find.text('El nido de Rocanon · Súper fácil'), findsOneWidget);
+    expect(find.text('El nido del Rocanón · Súper fácil'), findsOneWidget);
     const clave = 'nido-de-rocanon--super-facil';
     final v = catalogo.obtener(clave)!;
     expect(v.paleta, hasLength(4));
@@ -394,7 +397,8 @@ void main() {
   ) async {
     usarTelefono(tester);
     final progreso = await progresoNuevo();
-    for (final id in ['nido-de-rocanon', 'hormiguero-del-arbol']) {
+    final arbol = biomas.first.cuadroIds.toList();
+    for (final id in arbol) {
       final c = catalogo.obtener(id)!;
       progreso.pintarRegiones(id, [for (final r in c.regiones) r.id]);
       progreso.marcarCompletado(id);
@@ -413,13 +417,13 @@ void main() {
     await tester.pumpAndSettle();
 
     // Se pinta la variante Fácil, en blanco; el Bosque sigue desbloqueado.
-    expect(find.text('El nido de Rocanon · Fácil'), findsOneWidget);
+    expect(find.text('El nido del Rocanón · Fácil'), findsOneWidget);
     expect(find.text('0% con color'), findsOneWidget);
     expect(find.byKey(const Key('color-6')), findsOneWidget);
     expect(find.byKey(const Key('color-7')), findsNothing);
     final obra = progreso.de('nido-de-rocanon')!;
     expect((obra.terminado, obra.dificultad), (false, 'facil'));
-    expect(progreso.completados, containsAll(['nido-de-rocanon', 'hormiguero-del-arbol']));
+    expect(progreso.completados, containsAll(arbol));
     expect(estadoBiomas(biomas, progreso.completados)[1].accesible, isTrue);
 
     // Terminarla de nuevo: festejo, pero sin plumas extra ni pieza nueva.

@@ -1,0 +1,29 @@
+{
+  "id": "cumple-del-rocanon--super-facil",
+  "titulo": "El cumpleaños del Rocanón",
+  "categoria": "arte",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1A3E4B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B0A774"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6E6F5C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5A4843"
+    }
+  ],
+  "mensajeMututu": "¡La torta recuperó sus colores! Mututu se había llevado hasta las velitas. ¡Que los cumpla feliz!"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "arbol-magico-de-noche",
+  "titulo": "El Árbol Mágico de noche",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1F508F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#05133A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#192649"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#512F15"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3F85C2"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#312A29"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#7F5625"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#ECE1A5"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#98C1D4"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#071741"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#44566E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#9A8C67"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#01123F"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#02133E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#051339"
+    }
+  ],
+  "mensajeMututu": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!",
+  "orden": 3
+}

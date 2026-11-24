@@ -1,0 +1,129 @@
+{
+  "id": "todos-los-caminos--extremo",
+  "titulo": "Todos los caminos",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#907C59"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3F4239"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#5C5E4E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A2AEA9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#5E5643"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#AD9268"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#80816F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#515345"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#8E876A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C3BFAD"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#494F45"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#62695B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#979B90"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#7C6C4E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#A2885F"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#6B634B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#D6CBB3"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#77735D"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#6B6C59"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#B3B4A7"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#B09F7D"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#606353"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#72694F"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#7B7963"
+    }
+  ],
+  "mensajeMututu": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!"
+}

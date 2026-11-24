@@ -1,0 +1,259 @@
+{
+  "id": "cleo-quiere-dormir--divino",
+  "titulo": "Cleo quiere dormir",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#D08843"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#58342C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2D1F28"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#473239"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#281A22"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#51322F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#663320"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#754532"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#B56835"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#ECC392"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#F8DDAF"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#413F54"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#351B1C"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#7E4327"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C6783A"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#553837"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#21141C"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#723E29"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#472A28"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#92532E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#502B22"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#3B2326"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#5C576A"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#684033"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#A97956"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#CB9E77"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#7F4A2F"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#42221E"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#482D2D"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#87563F"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#2F1A1E"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#3A1F1F"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#864A2C"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#29161B"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#A06237"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#53434D"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#332835"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#653B2D"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#9E582F"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#572E21"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#472722"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#3B2D38"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#924A29"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#412627"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#E5A560"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#A96333"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#252941"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#63392A"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#5C3224"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#955D3B"
+    }
+  ],
+  "mensajeMututu": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz."
+}

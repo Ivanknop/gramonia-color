@@ -8,7 +8,9 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from imagen_a_cuadro import (  # noqa: E402
+    elegir_etiqueta,
     etiquetar_regiones,
+    punto_en_poligonos,
     fusionar_chicas,
     quitar_colineales,
     simplificar_lazo,
@@ -72,3 +74,22 @@ class TestFusion(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestEtiquetas(unittest.TestCase):
+    def test_punto_en_poligonos_con_agujero(self):
+        afuera = [(0, 0), (10, 0), (10, 10), (0, 10)]
+        agujero = [(4, 4), (6, 4), (6, 6), (4, 6)]
+        self.assertTrue(punto_en_poligonos(2, 2, [afuera, agujero]))
+        self.assertFalse(punto_en_poligonos(5, 5, [afuera, agujero]))
+        self.assertFalse(punto_en_poligonos(11, 5, [afuera]))
+
+    def test_la_etiqueta_evita_lo_tapado_por_otra_region(self):
+        # Región 0: cuadrado 6x6; región 1 (encima) tapa su centro.
+        mascara = np.ones((6, 6), bool)
+        distancia = np.array([[min(y + 1, x + 1, 6 - y, 6 - x) for x in range(6)] for y in range(6)], float)
+        poligonos = [[[(0, 0), (6, 0), (6, 6), (0, 6)]], [[(2, 2), (4, 2), (4, 4), (2, 4)]]]
+        cajas = [(0, 0, 6, 6), (2, 2, 4, 4)]
+        y, x = elegir_etiqueta(distancia, mascara, 0, poligonos, cajas, escala=1)
+        self.assertFalse(2 <= x + 0.5 <= 4 and 2 <= y + 0.5 <= 4)
+

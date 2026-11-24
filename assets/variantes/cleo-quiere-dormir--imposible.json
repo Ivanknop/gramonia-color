@@ -1,0 +1,169 @@
+{
+  "id": "cleo-quiere-dormir--imposible",
+  "titulo": "Cleo quiere dormir",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#CB803F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#51322F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F2D0A1"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AF6534"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#413F54"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#321A1D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#472A28"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#623322"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#8C4A2B"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#7F472C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#673E31"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D8A16B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#502B22"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#281A22"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#2D1F28"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#2D283A"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#3A1F1F"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#754532"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#483034"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#543E43"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#21141C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#63392A"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#452724"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#573127"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#725754"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#A97956"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#945835"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#3B2830"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#9F5D33"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#723E29"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#42221E"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#29161B"
+    }
+  ],
+  "mensajeMututu": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz."
+}

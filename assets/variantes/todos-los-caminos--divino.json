@@ -1,0 +1,259 @@
+{
+  "id": "todos-los-caminos--divino",
+  "titulo": "Todos los caminos",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#514F40"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B39364"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4A5349"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#8D7755"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#43463B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A7895D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C3BFAD"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#95927B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#51584F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#CCC6B1"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#7D7457"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#3C3E36"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A4B0A9"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#575E51"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#6C6B50"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#A6916C"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#5F685E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#808475"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#DFCFB5"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#625E44"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#75796B"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#A69F86"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#BA9E75"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#474B40"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#6B6D61"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#ABB4AA"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#606353"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#9BA6A4"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#6B6048"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#685640"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#8C7F5F"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#72694F"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#A0ABA8"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#997F59"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#7D6E50"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#8F865E"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#525645"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#615F4F"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#7F795D"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#8E8876"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#BBB5A3"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#656A5A"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#5D5743"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#9C8760"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#6B654D"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#94A1A2"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#7B684C"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#707363"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#7F7D68"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#585645"
+    }
+  ],
+  "mensajeMututu": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!"
+}

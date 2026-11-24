@@ -1,0 +1,255 @@
+{
+  "id": "caperucita-pirata",
+  "titulo": "La Caperucita pirata",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3D2724"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BAD2D9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3B7F96"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#14506C"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C7C9CD"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F1E8DE"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#DBCFC8"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#6792A1"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#191214"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#4E505F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#2D2F37"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#17607B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A6C7D6"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#78A1B3"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#666370"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#B4877A"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2D2120"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#9FC4D5"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#206D87"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#996E7B"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#9ABED3"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#958889"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#91B6D2"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#B0CDD7"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#4B2E2F"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#4B4550"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#664951"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#B2D0D8"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#70818A"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#403539"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#84ADCA"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#76535D"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#D4D6D3"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#7F6C75"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#94BBD2"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#2B1B1B"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#D1CDCB"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#386F8C"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#DCDFDD"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#B8A79A"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#B4BCC2"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#4C393B"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#603C47"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#875A63"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#55383D"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#B1C7D2"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#426675"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#27161B"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#92AABC"
+    }
+  ],
+  "mensajeMututu": "¡La Caperucita pirata recuperó su caperuza lila! Rumbo a las Islas Arcoíris, con loro y todo.",
+  "orden": 16
+}

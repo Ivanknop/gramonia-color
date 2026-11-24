@@ -1,0 +1,49 @@
+{
+  "id": "timoteo-y-su-caperuza--normal",
+  "titulo": "Timoteo y su caperuza",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#465332"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C1AC5D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#363C2A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E4E5BB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#766A42"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#AE8C53"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#7D8149"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#705339"
+    }
+  ],
+  "mensajeMututu": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida."
+}

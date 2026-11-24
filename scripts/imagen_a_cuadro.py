@@ -431,6 +431,54 @@ def path_d(lazos: list[list[tuple[float, float]]], escala: float) -> str:
     return " ".join(partes)
 
 
+def punto_en_poligonos(x: float, y: float, poligonos: list[list[tuple[float, float]]]) -> bool:
+    """Regla par-impar (como fill-rule="evenodd" y como el motor del juego)."""
+    dentro = False
+    for pol in poligonos:
+        n = len(pol)
+        for i in range(n):
+            (x1, y1), (x2, y2) = pol[i], pol[(i + 1) % n]
+            if (y1 > y) != (y2 > y) and x < x1 + (y - y1) * (x2 - x1) / (y2 - y1):
+                dentro = not dentro
+    return dentro
+
+
+def caja_de(poligonos: list[list[tuple[float, float]]]) -> tuple[float, float, float, float]:
+    xs = [x for p in poligonos for x, _ in p]
+    ys = [y for p in poligonos for _, y in p]
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+def elegir_etiqueta(
+    distancia: np.ndarray,
+    mascara: np.ndarray,
+    k: int,
+    poligonos: list,
+    cajas: list,
+    escala: float,
+) -> tuple[int, int]:
+    """
+    Píxel para el número de la región `k`: el más alejado del borde cuyo centro
+    cae, en los polígonos ya simplificados, dentro de la región y no dentro de
+    otra dibujada encima (las de índice mayor). Al suavizar los bordes, el
+    píxel más alejado puede quedar afuera en regiones finitas.
+    """
+    ys, xs = np.nonzero(mascara)
+    for i in np.argsort(-distancia[ys, xs], kind="stable"):
+        y, x = int(ys[i]), int(xs[i])
+        px, py = round((x + 0.5) * escala, 1), round((y + 0.5) * escala, 1)
+        if not punto_en_poligonos(px, py, poligonos[k]):
+            continue
+        tapada = any(
+            c[0] <= px <= c[2] and c[1] <= py <= c[3] and punto_en_poligonos(px, py, poligonos[j])
+            for j, c in enumerate(cajas[k + 1 :], start=k + 1)
+        )
+        if not tapada:
+            return y, x
+    i = int(np.argmax(distancia[ys, xs]))
+    return int(ys[i]), int(xs[i])
+
+
 # --------------------------------------------------------------------------
 # Armado del cuadro
 # --------------------------------------------------------------------------
@@ -472,18 +520,27 @@ def convertir(args: argparse.Namespace) -> Path:
     numero_de = {c: n + 1 for n, c in enumerate(orden_colores)}
 
     simplificador = SimplificadorCompartido(nodos_topologicos(etiquetas), args.tolerancia, args.curvas)
+    orden = sorted(zip(ids.tolist(), areas.tolist()), key=lambda t: -t[1])
+    # Primero todos los contornos (simplificados): la etiqueta se elige mirando
+    # los polígonos finales, que es lo que usa el juego para los toques.
+    lazos_de = [[simplificador.lazo(l) for l in trazar_contornos(etiquetas == region)] for region, _ in orden]
+    # Con el mismo redondeo que el SVG (1 decimal), para decidir igual que el juego.
+    poligonos = [
+        [[(round(x * escala, 1), round(y * escala, 1)) for x, y in lazo] for lazo in lazos]
+        for lazos in lazos_de
+    ]
+    cajas = [caja_de(p) for p in poligonos]
     paths = []
-    for k, (region, _area) in enumerate(sorted(zip(ids.tolist(), areas.tolist()), key=lambda t: -t[1])):
+    for k, (region, _area) in enumerate(orden):
         mascara = etiquetas == region
-        lazos = [simplificador.lazo(l) for l in trazar_contornos(mascara)]
         distancia = ndimage.distance_transform_edt(np.pad(mascara, 1))[1:-1, 1:-1]
-        ey, ex = np.unravel_index(int(np.argmax(distancia)), distancia.shape)
+        ey, ex = elegir_etiqueta(distancia, mascara, k, poligonos, cajas, escala)
         etiqueta = f"{(ex + 0.5) * escala:.1f} {(ey + 0.5) * escala:.1f}"
         # Distancia al borde desde el centro del píxel (≈ radio libre del número).
         radio = max(0.5, float(distancia[ey, ex]) - 0.5) * escala
         paths.append(
             f'  <path id="r{k + 1}" data-numero="{numero_de[color_de[region]]}" '
-            f'data-etiqueta="{etiqueta}" data-radio="{radio:.1f}" d="{path_d(lazos, escala)}" />'
+            f'data-etiqueta="{etiqueta}" data-radio="{radio:.1f}" d="{path_d(lazos_de[k], escala)}" />'
         )
 
     carpeta = args.carpeta or DIR_CUADROS

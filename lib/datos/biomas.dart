@@ -23,6 +23,8 @@ final biomas = <Bioma>[
     piezas: const [
       Pieza(id: 'nido', cuadroId: 'nido-de-rocanon'),
       Pieza(id: 'hormiguero', cuadroId: 'hormiguero-del-arbol'),
+      Pieza(id: 'copa', cuadroId: 'arbol-magico-de-noche'),
+      Pieza(id: 'cumpleanos', cuadroId: 'cumple-del-rocanon'),
     ],
   ),
   Bioma(
@@ -34,7 +36,9 @@ final biomas = <Bioma>[
     piezas: [
       const Pieza(id: 'casa-de-la-abuelita', cuadroId: 'casa-de-la-abuelita'),
       const Pieza(id: 'refugio', cuadroId: 'refugio-de-papa'),
-      ..._proximamente('bosque-magico', 1, desde: 3),
+      // Pozo Sanador en el Bosque Mágico: (a confirmar) en el canon.
+      const Pieza(id: 'pozo-sanador', cuadroId: 'pozo-sanador'),
+      const Pieza(id: 'caminos', cuadroId: 'todos-los-caminos'),
     ],
   ),
   Bioma(
@@ -44,7 +48,7 @@ final biomas = <Bioma>[
     color: 0xFFB0855A,
     piezas: [
       const Pieza(id: 'tienda', cuadroId: 'la-tienda'),
-      ..._proximamente('ciudad', 2, desde: 2),
+      ..._proximamente('ciudad', 3, desde: 2),
     ],
   ),
   Bioma(
@@ -53,7 +57,10 @@ final biomas = <Bioma>[
     descripcion:
         'La gran ciudad de los animales: el correo de León, la tienda de Vaca y mucho queso.',
     color: 0xFFE0A13B,
-    piezas: _proximamente('reino-animal', 4),
+    piezas: [
+      const Pieza(id: 'granero-de-cleo', cuadroId: 'cleo-quiere-dormir'),
+      ..._proximamente('reino-animal', 3, desde: 2),
+    ],
   ),
   Bioma(
     id: 'montana-dragon',
@@ -78,7 +85,10 @@ final biomas = <Bioma>[
     descripcion:
         'Caperuzas de todos los colores, a rayas, con lunares… y una que cambia con "panqueque".',
     color: 0xFFE53935,
-    piezas: _proximamente('tierra-de-las-caperucitas', 5),
+    piezas: [
+      const Pieza(id: 'timoteo', cuadroId: 'timoteo-y-su-caperuza'),
+      ..._proximamente('tierra-de-las-caperucitas', 4, desde: 2),
+    ],
   ),
   Bioma(
     id: 'reino-helado',
@@ -96,7 +106,9 @@ final biomas = <Bioma>[
       const Pieza(id: 'puerto', cuadroId: 'puerto-en-la-tormenta'),
       const Pieza(id: 'muelle', cuadroId: 'barco-en-el-muelle'),
       const Pieza(id: 'horizonte', cuadroId: 'rumbo-a-la-isla'),
-      ..._proximamente('costa', 3, desde: 4),
+      // La Caperucita pirata: (a confirmar) en el canon.
+      const Pieza(id: 'caperucita-pirata', cuadroId: 'caperucita-pirata'),
+      ..._proximamente('costa', 2, desde: 5),
     ],
   ),
   for (final (i, (id, nombre, color)) in const [

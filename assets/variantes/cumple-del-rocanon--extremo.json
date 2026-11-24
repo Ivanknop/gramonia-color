@@ -1,0 +1,129 @@
+{
+  "id": "cumple-del-rocanon--extremo",
+  "titulo": "El cumpleaños del Rocanón",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#163743"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#286977"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#355448"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#39373D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1C4348"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F6DB90"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#797957"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#78B5A2"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#0F2443"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#EDB66C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#265155"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#4B644A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#5A4440"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#D6734C"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#4F7558"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#19505E"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#C3B96E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#B4946B"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#AD6F56"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#7E6657"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#E49558"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#963B37"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#9B5548"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#6C9270"
+    }
+  ],
+  "mensajeMututu": "¡La torta recuperó sus colores! Mututu se había llevado hasta las velitas. ¡Que los cumpla feliz!"
+}

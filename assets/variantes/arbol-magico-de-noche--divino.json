@@ -1,0 +1,259 @@
+{
+  "id": "arbol-magico-de-noche--divino",
+  "titulo": "El Árbol Mágico de noche",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#05133A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#301F15"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#02133E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2A4878"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1461B1"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#E6C661"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F6F8EE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1B2D5E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#00123F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#293F6D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#071946"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#14458B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#151E3D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#051339"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#192648"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#422511"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#203666"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#493421"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#B37E2F"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#3F6495"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#61B5EE"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#6C421C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#05143C"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#C0DCE6"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#3D86C5"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#7A9AAC"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#502A0D"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#479ADC"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#425C7F"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#777D7E"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#1E5293"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#956327"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#3676B4"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#FCF5A3"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#BEBB9A"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#6D5637"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#613612"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#8EC1E0"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#875018"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#2463A8"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#BC9D59"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#02123E"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#332E1B"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#424958"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#EEE29D"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#06133A"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#2B3454"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#05133C"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#01103E"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#13182F"
+    }
+  ],
+  "mensajeMututu": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!"
+}

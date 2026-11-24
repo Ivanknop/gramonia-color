@@ -1,0 +1,259 @@
+{
+  "id": "pozo-sanador--divino",
+  "titulo": "El Pozo Sanador",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#497D5A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1D331F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#416D46"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#322F22"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#333F2F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#575D2F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5C7D3A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#403523"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#60986F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#585E44"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#5D4D2F"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D2F2CA"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#CBD691"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#424E34"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C0A564"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#B69659"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#7ABC9A"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#A0DDBE"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#213F23"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#97CA9F"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#30512C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#695C39"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#C6B870"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#79944C"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#58845F"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#433F2A"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#52482E"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#887044"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#97A35E"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#264929"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#89804F"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#756D42"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#212317"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#7FB484"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#262B1D"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#7A603A"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#967E4E"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#A58451"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#95442B"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#748044"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#99BB7B"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#323527"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#426037"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#7BA469"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#9D9258"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#435834"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#335B36"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#334A2D"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#434531"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#596D3D"
+    }
+  ],
+  "mensajeMututu": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués."
+}

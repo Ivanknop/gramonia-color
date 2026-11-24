@@ -1,0 +1,79 @@
+{
+  "id": "pozo-sanador--dificil",
+  "titulo": "El Pozo Sanador",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#434A2F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#272E1F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#AB9C5C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#96B983"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#527F53"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4D6D41"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B5DCAE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#757644"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#947D4D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#665E3A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#6E9B66"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#2B402A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#30512F"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#67492E"
+    }
+  ],
+  "mensajeMututu": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "cleo-quiere-dormir--facil",
+  "titulo": "Cleo quiere dormir",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#301F26"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4F2E28"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#975E3C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#CC9867"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7E462C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#593D3C"
+    }
+  ],
+  "mensajeMututu": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz."
+}

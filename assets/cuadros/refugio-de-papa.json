@@ -12,74 +12,109 @@
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#9A5F35"
+      "hex": "#522C22"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#3B1F1B"
+      "hex": "#41231D"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#301D1D"
+      "hex": "#281617"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#522C22"
+      "hex": "#613223"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#41231D"
+      "hex": "#4A2921"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#82472B"
+      "hex": "#BC783A"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#663E2B"
+      "hex": "#321E1D"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#CF8C42"
+      "hex": "#381E1B"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#321D1C"
+      "hex": "#8A5B38"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#281617"
+      "hex": "#E1A04A"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#452922"
+      "hex": "#6E3F29"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#613223"
+      "hex": "#2D1A1A"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#2E1B1B"
+      "hex": "#402924"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
+      "hex": "#3F201C"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#8A4B2B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#A86233"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#331B19"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#5E3D2D"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#79442A"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#3B1F1B"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
       "hex": "#301A19"
     }
   ],
   "mensajeMututu": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas.",
-  "orden": 4
+  "orden": 6
 }

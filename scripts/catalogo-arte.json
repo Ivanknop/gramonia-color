@@ -10,7 +10,7 @@
     {
       "imagen": "etapa2-rocanon.jpeg",
       "id": "nido-de-rocanon",
-      "titulo": "El nido de Rocanon",
+      "titulo": "El nido del Rocanón",
       "categoria": "paisaje",
       "mensaje": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor.",
       "regiones": 70
@@ -22,6 +22,22 @@
       "categoria": "paisaje",
       "mensaje": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
       "regiones": 90
+    },
+    {
+      "imagen": "arbol_magico.jpeg",
+      "id": "arbol-magico-de-noche",
+      "titulo": "El Árbol Mágico de noche",
+      "categoria": "paisaje",
+      "mensaje": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!",
+      "regiones": 95
+    },
+    {
+      "imagen": "cumple_rocanon.jpeg",
+      "id": "cumple-del-rocanon",
+      "titulo": "El cumpleaños del Rocanón",
+      "categoria": "arte",
+      "mensaje": "¡La torta recuperó sus colores! Mututu se había llevado hasta las velitas. ¡Que los cumpla feliz!",
+      "regiones": 100
     },
     {
       "imagen": "etapa1-abuelita.jpeg",
@@ -40,6 +56,22 @@
       "regiones": 130
     },
     {
+      "imagen": "pozo_sanador.jpeg",
+      "id": "pozo-sanador",
+      "titulo": "El Pozo Sanador",
+      "categoria": "paisaje",
+      "mensaje": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués.",
+      "regiones": 140
+    },
+    {
+      "imagen": "bosque_magico.jpeg",
+      "id": "todos-los-caminos",
+      "titulo": "Todos los caminos",
+      "categoria": "paisaje",
+      "mensaje": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!",
+      "regiones": 150
+    },
+    {
       "imagen": "tienda.jpeg",
       "id": "la-tienda",
       "titulo": "La tienda",
@@ -48,12 +80,28 @@
       "regiones": 160
     },
     {
+      "imagen": "cleo.jpeg",
+      "id": "cleo-quiere-dormir",
+      "titulo": "Cleo quiere dormir",
+      "categoria": "animal",
+      "mensaje": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz.",
+      "regiones": 180
+    },
+    {
       "imagen": "etapa5-dragones.jpeg",
       "id": "montana-de-los-dragones",
       "titulo": "La montaña de los dragones",
       "categoria": "paisaje",
       "mensaje": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",
       "regiones": 220
+    },
+    {
+      "imagen": "timoteo.jpeg",
+      "id": "timoteo-y-su-caperuza",
+      "titulo": "Timoteo y su caperuza",
+      "categoria": "animal",
+      "mensaje": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida.",
+      "regiones": 250
     },
     {
       "imagen": "etapa4-tormenta.jpeg",
@@ -78,6 +126,14 @@
       "categoria": "paisaje",
       "mensaje": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?",
       "regiones": 360
+    },
+    {
+      "imagen": "caperucita_pirata.jpeg",
+      "id": "caperucita-pirata",
+      "titulo": "La Caperucita pirata",
+      "categoria": "persona",
+      "mensaje": "¡La Caperucita pirata recuperó su caperuza lila! Rumbo a las Islas Arcoíris, con loro y todo.",
+      "regiones": 380
     }
   ],
   "mapa": {

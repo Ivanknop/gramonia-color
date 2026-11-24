@@ -1,0 +1,99 @@
+{
+  "id": "timoteo-y-su-caperuza--muy-dificil",
+  "titulo": "Timoteo y su caperuza",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#D4AF5E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5F693C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#AFA85A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#767844"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#37412B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#404B2E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8A6A49"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#5A5436"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FCF9DD"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#E3F3E4"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#333427"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#9F884F"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#BC8F57"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#82894C"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#83503B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#4B5C36"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#465333"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#DBD599"
+    }
+  ],
+  "mensajeMututu": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida."
+}
