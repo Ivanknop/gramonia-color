@@ -63,6 +63,10 @@
     "preset": "jest-expo",
     "setupFiles": [
       "<rootDir>/jest.setup.js"
+    ],
+    "resolver": "<rootDir>/jest.resolver.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup-after-env.js"
     ]
   }
 }

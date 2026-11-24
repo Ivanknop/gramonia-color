@@ -1,11 +1,11 @@
 /**
- * Pantalla de pintar. Versión inicial: tocar para pintar, resaltado del color
- * elegido y un panel simple al completar. La animación de devolver el color,
- * el sonido, la vibración y el zoom/paneo llegan en las etapas siguientes.
+ * Pantalla de pintar: lienzo con zoom/paneo, paleta y avance; panel simple al
+ * completar. La animación de devolver el color, el sonido y la vibración
+ * llegan en las etapas siguientes.
  */
 import { Link, Stack, useLocalSearchParams } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { Lienzo } from '@/components/Lienzo';
 import { Paleta } from '@/components/Paleta';
@@ -76,23 +76,21 @@ export default function Pintar() {
   return (
     <View style={styles.pantalla}>
       <Stack.Screen options={{ title: cuadro.titulo }} />
-      <ScrollView contentContainerStyle={styles.contenido}>
-        <Text style={styles.avance}>{porcentajeCompletado(cuadro, pintadas)}% con color</Text>
-        <Lienzo cuadro={cuadro} pintadas={pintadas} numeroElegido={elegido} onToque={onToque} />
-        {terminado && (
-          <View style={styles.panelFinal}>
-            <Text style={styles.mensaje}>{cuadro.mensajeMututu}</Text>
-            {destapa && (
-              <Text style={styles.pieza}>Destapaste una pieza de {destapa.bioma.nombre}.</Text>
-            )}
-            <Link href="/mapa" asChild>
-              <Pressable style={styles.boton} accessibilityRole="button">
-                <Text style={styles.textoBoton}>Ver el mapa</Text>
-              </Pressable>
-            </Link>
-          </View>
-        )}
-      </ScrollView>
+      <Text style={styles.avance}>{porcentajeCompletado(cuadro, pintadas)}% con color</Text>
+      <Lienzo cuadro={cuadro} pintadas={pintadas} numeroElegido={elegido} onToque={onToque} />
+      {terminado && (
+        <View style={styles.panelFinal}>
+          <Text style={styles.mensaje}>{cuadro.mensajeMututu}</Text>
+          {destapa && (
+            <Text style={styles.pieza}>Destapaste una pieza de {destapa.bioma.nombre}.</Text>
+          )}
+          <Link href="/mapa" asChild>
+            <Pressable style={styles.boton} accessibilityRole="button">
+              <Text style={styles.textoBoton}>Ver el mapa</Text>
+            </Pressable>
+          </Link>
+        </View>
+      )}
       {!terminado && (
         <Paleta
           paleta={cuadro.paleta}
@@ -107,10 +105,9 @@ export default function Pintar() {
 
 const styles = StyleSheet.create({
   pantalla: { flex: 1, backgroundColor: '#FFFFFF' },
-  contenido: { padding: 12, gap: 12 },
   centro: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  avance: { fontSize: 14, color: '#777777', textAlign: 'center' },
-  panelFinal: { backgroundColor: '#FFF8EC', borderRadius: 12, padding: 16, gap: 10 },
+  avance: { fontSize: 14, color: '#777777', textAlign: 'center', paddingVertical: 6 },
+  panelFinal: { backgroundColor: '#FFF8EC', padding: 16, gap: 10 },
   mensaje: { fontSize: 16, color: '#3D2C5E', textAlign: 'center' },
   pieza: { fontSize: 15, fontWeight: '700', color: '#38761D', textAlign: 'center' },
   boton: {

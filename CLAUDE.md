@@ -84,6 +84,16 @@ npx expo-doctor           # diagnóstico de dependencias
 - Al tocar `src/data/cuadros/`, correr `npm run cuadros`; un test falla si el
   índice generado está desactualizado.
 - Cada cuadro destapa exactamente una pieza (lo validan los tests de datos).
+- Gestos del lienzo (`src/components/Lienzo.tsx`): pellizco y arrastre corren
+  como worklets en el hilo de UI y usan las cuentas de `src/engine/vista.ts`
+  (funciones con `'worklet'`). El tap usa `runOnJS: true`: solo convierte
+  coordenadas y llama al motor.
+- Valores compartidos de Reanimated: desde JS usar `.get()` / `.set()` (la regla
+  del React Compiler en ESLint rechaza `sv.value = …` fuera de worklets).
+- Tests con gestos: `jest.resolver.js` combina los resolvers de Reanimated y
+  React Native; `jest.setup-after-env.js` llama a `setUpTests()` (timers
+  falsos). Para tocar el lienzo: evento `layout` sobre `testID="lienzo"` y
+  `createGestureController('lienzo-toque')` de `react-native-gesture-handler/jest-utils`.
 - Antes de dar algo por terminado: `npm run verificar`.
 - El devcontainer trae además Flutter/Android SDK de un proyecto anterior; no
   se usan en este proyecto.

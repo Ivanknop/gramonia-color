@@ -2,18 +2,21 @@
  * Pruebas de las pantallas con el router de expo-router simulado.
  * Nota: en @testing-library/react-native 14, fireEvent es asíncrono (await).
  */
-import { fireEvent, renderRouter, screen } from 'expo-router/testing-library';
+import { act, fireEvent, renderRouter, screen } from 'expo-router/testing-library';
+import { createGestureController } from 'react-native-gesture-handler/jest-utils';
 
 import LayoutPestanas from '../../app/(tabs)/_layout';
 import Galeria from '../../app/(tabs)/galeria';
 import Mapa from '../../app/(tabs)/mapa';
 import MisObras from '../../app/(tabs)/mis-obras';
+import LayoutRaiz from '../../app/_layout';
 import Inicio from '../../app/index';
 import Pintar from '../../app/pintar/[id]';
 import { obtenerCuadro } from '@/data/cuadros';
 import { useProgreso } from '@/store/progreso';
 
 const RUTAS = {
+  _layout: LayoutRaiz,
   index: Inicio,
   '(tabs)/_layout': LayoutPestanas,
   '(tabs)/galeria': Galeria,
@@ -23,6 +26,26 @@ const RUTAS = {
 };
 
 beforeEach(() => useProgreso.getState().reiniciarTodo());
+
+/**
+ * Da al lienzo un tamaño de 300x300: como los cuadros miden 300x300, una
+ * coordenada de pantalla coincide con una del viewBox (zoom 1).
+ */
+async function prepararLienzo() {
+  await fireEvent(screen.getByTestId('lienzo'), 'layout', {
+    nativeEvent: { layout: { x: 0, y: 0, width: 300, height: 300 } },
+  });
+}
+
+/** Simula un toque (gesto de tap) en el lienzo. */
+async function tocarLienzo(x: number, y: number) {
+  await act(async () => {
+    const tap = createGestureController('lienzo-toque');
+    tap.begin({ x, y });
+    tap.activate({ x, y });
+    tap.end({ x, y });
+  });
+}
 
 test('inicio → galería muestra los cuadros', async () => {
   await renderRouter(RUTAS, { initialUrl: '/' });
@@ -37,9 +60,8 @@ test('un color equivocado no pinta', async () => {
   const cuadro = obtenerCuadro('pez-naranja')!;
   const ojo = cuadro.regiones.find((r) => r.id === 'ojo')!;
   await fireEvent.press(screen.getByLabelText(/^Color 1, /));
-  await fireEvent.press(screen.getByLabelText('Cuadro Pez naranja'), {
-    nativeEvent: { locationX: ojo.etiqueta.x, locationY: ojo.etiqueta.y },
-  });
+  await prepararLienzo();
+  await tocarLienzo(ojo.etiqueta.x, ojo.etiqueta.y);
   expect(useProgreso.getState().cuadros['pez-naranja']).toBeUndefined();
 });
 
@@ -48,15 +70,13 @@ test('pintar todo un cuadro muestra el mensaje y destapa la pieza del bioma', as
   await renderRouter(RUTAS, { initialUrl: '/pintar/pez-naranja' });
   expect(await screen.findByText('0% con color')).toBeTruthy();
 
+  await prepararLienzo();
+
   // Pinta región por región tocando su número, eligiendo antes su color.
-  // El Lienzo convierte coordenadas con la escala del layout; sin layout (en
-  // tests) la escala es 1, así que se tocan directamente coordenadas del viewBox.
   for (const r of cuadro.regiones) {
     const boton = screen.queryByLabelText(new RegExp(`^Color ${r.numero}, `));
     if (boton) await fireEvent.press(boton);
-    await fireEvent.press(screen.getByLabelText('Cuadro Pez naranja'), {
-      nativeEvent: { locationX: r.etiqueta.x, locationY: r.etiqueta.y },
-    });
+    await tocarLienzo(r.etiqueta.x, r.etiqueta.y);
   }
 
   expect(await screen.findByText(cuadro.mensajeMututu)).toBeTruthy();

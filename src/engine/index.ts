@@ -7,3 +7,4 @@ export * from './cuadro';
 export * from './pintura';
 export * from './color';
 export * from './progresion';
+export * from './vista';
