@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:colores_de_gramonia/engine/genero.dart';
 import 'package:colores_de_gramonia/estado/obras.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -36,7 +37,7 @@ void main() {
     p.marcarCompletado('c2');
     await p.guardado;
     final guardado = jsonDecode(almacen.datos!) as Map<String, dynamic>;
-    expect(guardado['version'], 2);
+    expect(guardado['version'], 3);
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.de('c2')!.pintadas, ['x']);
     expect(otra.completados, {'c2'});
@@ -90,6 +91,26 @@ void main() {
     final (p, _) = await nuevo(v1);
     expect(p.de('c1')!.pintadas, ['a']);
     expect((p.plumas, p.introVista), (0, false));
+  });
+
+  test('migra un guardado v2 (sin género): queda sin elegir y habla en neutro', () async {
+    const v2 =
+        '{"version":2,"cuadros":{"c1":{"pintadas":["a"],"completadoEn":4}},'
+        '"plumas":15,"introVista":true,"capitulosVistos":["arbol-magico"]}';
+    final (p, _) = await nuevo(v2);
+    expect((p.plumas, p.introVista), (15, true));
+    expect(p.completados, {'c1'});
+    expect(p.genero, isNull);
+    expect(p.texto('{Listo|Lista|Todo listo}'), 'Todo listo');
+  });
+
+  test('el género elegido se guarda y elige la variante de los textos', () async {
+    final (p, almacen) = await nuevo();
+    p.elegirGenero(Genero.chica);
+    expect(p.texto('¡{Bienvenido|Bienvenida|Qué alegría tenerte}!'), '¡Bienvenida!');
+    await p.guardado;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect(otra.genero, Genero.chica);
   });
 
   test('datos corruptos no impiden jugar', () async {

@@ -1,4 +1,5 @@
-/// Portada del juego. La primera vez muestra la introducción de Gobi; cada
+/// Portada del juego. La primera vez muestra la introducción de Gobi y pregunta
+/// cómo quiere que le hablen; cada
 /// día, al entrar, el Rocanón regala plumas.
 library;
 
@@ -6,6 +7,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../datos/historia.dart';
 import '../comun.dart';
+import 'genero.dart';
 import 'historia.dart';
 import 'principal.dart';
 
@@ -37,6 +39,11 @@ class _InicioState extends State<Inicio> {
         ),
       );
       progreso.marcarIntroVista();
+    }
+    // También para quien ya jugaba antes de que existiera la pregunta.
+    if (mounted && progreso.genero == null) {
+      await Navigator.of(context)
+          .push(MaterialPageRoute<void>(builder: (_) => const PantallaGenero()));
     }
     if (!mounted) return;
     final ganadas = progreso.reclamarRecompensaDiaria();

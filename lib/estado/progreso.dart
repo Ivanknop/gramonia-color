@@ -9,6 +9,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../engine/genero.dart';
 import '../engine/plumas.dart';
 
 class ProgresoCuadro {
@@ -70,7 +71,8 @@ class Progreso extends ChangeNotifier {
   Progreso._(this._almacen, this._reloj);
 
   /// Versión del formato guardado. v1 → v2: se agregan plumas e historia.
-  static const version = 2;
+  /// v2 → v3: se agrega el género elegido (en un guardado viejo queda sin elegir).
+  static const version = 3;
 
   static Future<Progreso> cargar(AlmacenProgreso almacen, {int Function()? reloj}) async {
     final p = Progreso._(almacen, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
@@ -86,6 +88,8 @@ class Progreso extends ChangeNotifier {
         p._ultimoDiaPlumas = j['ultimoDiaPlumas'] as String?;
         p._introVista = (j['introVista'] as bool?) ?? false;
         p._musicaSilenciada = (j['musicaSilenciada'] as bool?) ?? false;
+        // Campo de v3.
+        p._genero = Genero.values.asNameMap()[j['genero']];
         p._capitulosVistos.addAll([
           for (final c in (j['capitulosVistos'] as List?) ?? []) c as String,
         ]);
@@ -105,6 +109,7 @@ class Progreso extends ChangeNotifier {
   bool _introVista = false;
   final Set<String> _capitulosVistos = {};
   bool _musicaSilenciada = false;
+  Genero? _genero;
 
   Map<String, ProgresoCuadro> get cuadros => Map.unmodifiable(_cuadros);
 
@@ -163,6 +168,7 @@ class Progreso extends ChangeNotifier {
     _ultimoDiaPlumas = null;
     _introVista = false;
     _capitulosVistos.clear();
+    _genero = null;
     _cambio();
   }
 
@@ -213,6 +219,21 @@ class Progreso extends ChangeNotifier {
     if (_capitulosVistos.add(id)) _cambio();
   }
 
+  // ---- Género ------------------------------------------------------------
+
+  /// Cómo prefiere que le hablen quien juega (null = todavía no eligió).
+  Genero? get genero => _genero;
+
+  void elegirGenero(Genero genero) {
+    if (_genero == genero) return;
+    _genero = genero;
+    _cambio();
+  }
+
+  /// [texto] con las variantes `{chico|chica|neutro}` resueltas. Sin elección,
+  /// la neutra.
+  String texto(String texto) => conGenero(texto, _genero ?? Genero.neutro);
+
   // ---- Música -------------------------------------------------------------
 
   bool get musicaSilenciada => _musicaSilenciada;
@@ -238,6 +259,7 @@ class Progreso extends ChangeNotifier {
       'introVista': _introVista,
       'capitulosVistos': _capitulosVistos.toList(),
       'musicaSilenciada': _musicaSilenciada,
+      'genero': ?_genero?.name,
     });
     // Se encadenan para que nunca una escritura vieja pise a una nueva.
     guardado = guardado.then((_) => _almacen.escribir(datos));

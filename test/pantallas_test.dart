@@ -4,6 +4,7 @@
 library;
 
 import 'package:colores_de_gramonia/datos/catalogo.dart';
+import 'package:colores_de_gramonia/engine/genero.dart';
 import 'package:colores_de_gramonia/engine/motor.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:colores_de_gramonia/main.dart';
@@ -19,7 +20,10 @@ final Catalogo catalogo = catalogoDeDisco();
 
 Future<Progreso> progresoNuevo({bool introVista = true}) async {
   final p = await Progreso.cargar(AlmacenEnMemoria());
-  if (introVista) p.marcarIntroVista();
+  if (introVista) {
+    p.marcarIntroVista();
+    p.elegirGenero(Genero.neutro);
+  }
   return p;
 }
 
@@ -81,6 +85,10 @@ void main() {
     await tester.tap(find.text('Saltar'));
     await tester.pumpAndSettle();
     expect(progreso.introVista, isTrue);
+    // Gobi pregunta cómo hablarle.
+    await tester.tap(find.text('Chica'));
+    await tester.pumpAndSettle();
+    expect(progreso.genero, Genero.chica);
     expect(progreso.plumas, ReglasPlumas.porDia);
     expect(find.textContaining('plumas del Rocanón'), findsOneWidget);
     expect(find.text('La historia'), findsOneWidget);

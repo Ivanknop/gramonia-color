@@ -14,7 +14,9 @@ Diseño: [docs/GDD.md](docs/GDD.md). Formato de cuadros:
 
 Todo en **español**: comentarios, docs, nombres de dominio (cuadro, región,
 paleta, bioma, pieza…), textos de la UI y commits. La UI usa voseo rioplatense
-("Pintalos", "devolvéselos").
+("Pintalos", "devolvéselos"). Quien juega elige chico, chica o "prefiero no
+decir": los textos con género llevan `{chico|chica|neutro}` y se resuelven con
+`Progreso.texto` (`lib/engine/genero.dart`).
 
 ## Plataforma y stack
 
@@ -51,7 +53,9 @@ lib/datos/catalogo.dart  Carga assets/cuadros (AssetManifest) y arma cuadros
 lib/datos/biomas.dart    Lugares en orden (9 + 7 Islas Arcoíris), piezas y obras
 lib/datos/mapa.dart      Zonas de cada lugar sobre el mapa provisorio
 lib/datos/historia.dart  Historia narrada por Gobi (borrador editable)
-lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos) y
+lib/datos/textos.dart    Textos nuevos de la UI, con variantes {chico|chica|neutro}
+lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos;
+                         v3: + género) y
                          "Mis obras"
 lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
 lib/ui/pantallas/        inicio (portada), principal (pestañas: galería,
