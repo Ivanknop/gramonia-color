@@ -1,0 +1,59 @@
+{
+  "id": "montana-de-los-dragones--mediano",
+  "titulo": "La montaña de los dragones",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#313644"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1F2532"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3F4651"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#78707E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3E3B47"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#595B6B"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#27313D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#564E57"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#A89398"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#6D6169"
+    }
+  ],
+  "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar."
+}

@@ -1,0 +1,129 @@
+{
+  "id": "barco-en-el-muelle--extremo",
+  "titulo": "El barco en el muelle",
+  "categoria": "objeto",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#6C4739"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#81BAE2"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#402B2A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#9BC1DE"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#4B585B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F9D9A7"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5B4139"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#EBC2BA"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#523533"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#9E7152"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#845841"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#463534"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#CCC5CF"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#5C3C34"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#AF8C6D"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#F2CAB2"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#D5B194"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#725344"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#543B35"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#FCEDBB"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#534846"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#737D7B"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#CDC1CD"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A9AEAC"
+    }
+  ],
+  "mensajeMututu": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo."
+}

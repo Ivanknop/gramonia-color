@@ -1,0 +1,169 @@
+{
+  "id": "refugio-de-papa--imposible",
+  "titulo": "El refugio de papá",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#301C1D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#321E1D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A86233"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#8B5A38"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#6D3D29"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#371E1B"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#894A2B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#3D1F1B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#663423"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#BB773A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#45221C"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#78432A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#4E271E"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#5D3D2E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#41221D"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#5A2D21"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#241515"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#2F1B1B"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#D68C40"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#502F25"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#3E2A26"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#2B1818"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#321B19"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#43241E"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#4F2A21"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#ECB557"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#291616"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#3B221E"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#472922"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#5B3325"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#361C19"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#2C1A1A"
+    }
+  ],
+  "mensajeMututu": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas."
+}

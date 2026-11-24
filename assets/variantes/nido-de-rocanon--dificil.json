@@ -1,0 +1,79 @@
+{
+  "id": "nido-de-rocanon--dificil",
+  "titulo": "El nido de Rocanon",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1C2A32"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#8F8859"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#375851"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#234346"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#4B473F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#20373C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#56664F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C5BB79"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5D846A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#7DAB8A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3B6760"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#776B4C"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#2D3F42"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#374242"
+    }
+  ],
+  "mensajeMututu": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor."
+}

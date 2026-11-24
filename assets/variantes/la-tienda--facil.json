@@ -1,0 +1,39 @@
+{
+  "id": "la-tienda--facil",
+  "titulo": "La tienda",
+  "categoria": "arte",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3C2A24"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7E5D49"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#66493A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#4A372E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A37C5C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#573C2F"
+    }
+  ],
+  "mensajeMututu": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender."
+}

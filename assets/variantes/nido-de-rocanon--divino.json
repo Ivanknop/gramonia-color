@@ -1,0 +1,259 @@
+{
+  "id": "nido-de-rocanon--divino",
+  "titulo": "El nido de Rocanon",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#405740"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#ABA663"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2D3A47"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#336D6D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#565D49"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#5A4A3E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#1F3535"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#2C3037"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#14272E"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#576F54"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#202731"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#7BC9BD"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#7F7F52"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#2D3A3A"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#6D7D58"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#2E5756"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2D4B42"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#1B363F"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#C5C076"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#223D40"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#222E36"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#37393C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#4D8475"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#244A4D"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#436D61"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#DCDDA0"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#8F8956"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#6E8A65"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#413D3B"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#3A6159"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#679C86"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#2D4D55"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#4B463F"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#C9A96C"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#939D61"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#756B4B"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#234245"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#182D33"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#233741"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#686A4C"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#3E5858"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#83AC81"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#926B4C"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#2D4345"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#374644"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#414B44"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#374E49"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#AE8A5B"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#18222A"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#7F8D5E"
+    }
+  ],
+  "mensajeMututu": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor."
+}

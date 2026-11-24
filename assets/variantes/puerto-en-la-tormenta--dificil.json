@@ -1,0 +1,79 @@
+{
+  "id": "puerto-en-la-tormenta--dificil",
+  "titulo": "Puerto en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#263C45"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#182123"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#416168"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5E7E7F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1D2F34"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#1B2628"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#7BA3A2"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#304951"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#363D3C"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#312F2C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#4A514C"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#385259"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#516A6B"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#252D2F"
+    }
+  ],
+  "mensajeMututu": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas."
+}

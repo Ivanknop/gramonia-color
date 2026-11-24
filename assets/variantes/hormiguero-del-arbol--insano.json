@@ -1,0 +1,209 @@
+{
+  "id": "hormiguero-del-arbol--insano",
+  "titulo": "El hormiguero del árbol",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#6F7148"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5F6F4A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#98A263"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#928A53"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#355950"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2E3837"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#382E29"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#483A31"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#867248"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1D2F32"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#2B4137"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#4A4336"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#2D2F30"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#434D3D"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#68855B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#486D58"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#223736"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#47573C"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#3C4335"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#292728"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#17262C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#DCC47D"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#635C3F"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#373430"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#555D41"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#524335"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#54503B"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#2C3F41"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#3A3A34"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#795F3F"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#324D45"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#3A4740"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#465A4C"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#634E38"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#95C188"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#70543A"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#41342D"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#5B4634"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#2B4544"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#39413E"
+    }
+  ],
+  "mensajeMututu": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!"
+}

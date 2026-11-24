@@ -1,0 +1,39 @@
+{
+  "id": "nido-de-rocanon--facil",
+  "titulo": "El nido de Rocanon",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#243137"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#758460"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#274447"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#506453"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3F4843"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#9FB07E"
+    }
+  ],
+  "mensajeMututu": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "puerto-en-la-tormenta--normal",
+  "titulo": "Puerto en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#49666A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#2F3D41"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#182224"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6C9091"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2D2F2F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#304A52"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#1D2B2F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#415253"
+    }
+  ],
+  "mensajeMututu": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas."
+}

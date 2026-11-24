@@ -1,0 +1,169 @@
+{
+  "id": "la-tienda--imposible",
+  "titulo": "La tienda",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A17049"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#694734"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#784F38"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#876D5D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#6B5A52"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#624332"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#583D30"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#7B5B49"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#8F6143"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C29A6F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#704D3A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#302420"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#402C24"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#42342E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#35251F"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#533A2D"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#524641"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#51372B"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#A47D5E"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#6A4D3E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#3A2B25"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#493126"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#825E48"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#503C35"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#412E27"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#392821"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#2B1F1B"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#5E3E2F"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#4B3429"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#5D4539"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#4B362D"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#64493C"
+    }
+  ],
+  "mensajeMututu": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender."
+}

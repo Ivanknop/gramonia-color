@@ -1,0 +1,79 @@
+{
+  "id": "casa-de-la-abuelita--dificil",
+  "titulo": "La casa de la abuelita",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A88B52"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#253839"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E4AD9C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#4F6547"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2F4940"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#718555"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8BB2C4"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#4C4542"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#35594D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#866649"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#704C46"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#EAC990"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#DC9C7D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#B4B28E"
+    }
+  ],
+  "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea."
+}

@@ -40,4 +40,8 @@ abstract final class Textos {
   static const timelapse = 'Así lo pintaste';
   static const saltear = 'Saltear';
   static const verComoLoPinte = 'Ver cómo lo pinté';
+
+  // ---- Dificultades ----
+  static String detalleDificultad(int colores, int regiones) =>
+      '$colores colores · unas $regiones partes para pintar';
 }

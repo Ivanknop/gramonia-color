@@ -2,7 +2,8 @@
 ///
 /// Los metadatos y el texto del SVG se cargan al iniciar (son livianos); la
 /// geometría de cada cuadro se arma la primera vez que se pide y queda en
-/// memoria.
+/// memoria. Las variantes de dificultad (`assets/variantes/`) son muchas: se
+/// leen recién cuando se piden ([cargarVariante]).
 library;
 
 import 'dart:convert';
@@ -11,14 +12,24 @@ import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+import '../engine/dificultad.dart';
 import '../engine/motor.dart';
 
 /// Carga y decodifica una imagen de assets (null si no se puede).
 typedef CargadorImagen = Future<ui.Image?> Function(String asset);
 
+/// Lee un asset de texto.
+typedef LectorTexto = Future<String> Function(String asset);
+
 class Catalogo {
-  Catalogo._(this.metas, this._svgs, this._conImagen, this._cargarImagen)
-    : cantidadRegiones = {
+  Catalogo._(
+    this.metas,
+    this._svgs,
+    this._conImagen,
+    this._cargarImagen,
+    this.dificultades,
+    this._leer,
+  ) : cantidadRegiones = {
         for (final e in _svgs.entries) e.key: RegExp(r'<path\b').allMatches(e.value).length,
       };
 
@@ -30,6 +41,8 @@ class Catalogo {
     Iterable<({String json, String svg})> cuadros, {
     Set<String> conImagen = const {},
     CargadorImagen? cargarImagen,
+    List<Dificultad> dificultades = const [],
+    LectorTexto? leer,
   }) {
     final metas = <MetaCuadro>[];
     final svgs = <String, String>{};
@@ -42,10 +55,12 @@ class Catalogo {
       final porOrden = a.orden.compareTo(b.orden);
       return porOrden != 0 ? porOrden : a.id.compareTo(b.id);
     });
-    return Catalogo._(metas, svgs, conImagen, cargarImagen);
+    return Catalogo._(metas, svgs, conImagen, cargarImagen, dificultades, leer);
   }
 
   static const carpeta = 'assets/cuadros/';
+  static const carpetaVariantes = 'assets/variantes/';
+  static const tablaDificultades = 'assets/dificultades.json';
 
   /// Carga todos los cuadros declarados como assets.
   static Future<Catalogo> cargar(AssetBundle bundle) async {
@@ -66,6 +81,8 @@ class Catalogo {
       cuadros,
       conImagen: conImagen,
       cargarImagen: (asset) => cargarImagenDeBundle(bundle, asset),
+      dificultades: leerDificultades(await bundle.loadString(tablaDificultades)),
+      leer: bundle.loadString,
     );
   }
 
@@ -88,7 +105,12 @@ class Catalogo {
   /// Cantidad de regiones de cada cuadro (sin armar la geometría).
   final Map<String, int> cantidadRegiones;
 
+  /// Dificultades del modo libre, en orden (ver `lib/engine/dificultad.dart`).
+  final List<Dificultad> dificultades;
+  final LectorTexto? _leer;
+
   final Map<String, Cuadro> _cache = {};
+  final Map<String, MetaCuadro> _metasVariantes = {};
   final Set<String> _conImagen;
   final CargadorImagen? _cargarImagen;
   final Map<String, Future<ui.Image?>> _imagenes = {};
@@ -96,7 +118,9 @@ class Catalogo {
   bool tieneImagen(String id) => _conImagen.contains(id) && _cargarImagen != null;
 
   /// Ilustración del cuadro (se decodifica una sola vez). Null si no tiene.
+  /// Las variantes de dificultad usan la de su cuadro.
   Future<ui.Image?> imagen(String id) {
+    id = cuadroBase(id);
     if (!tieneImagen(id)) return Future.value();
     return _imagenes[id] ??= _cargarImagen!('$carpeta$id.webp');
   }
@@ -114,10 +138,33 @@ class Catalogo {
     for (final m in metas) {
       if (m.id == id) return m;
     }
-    return null;
+    return _metasVariantes[id];
   }
 
-  /// Cuadro listo para jugar (la geometría se arma una sola vez).
+  Dificultad? dificultad(String id) => dificultades.where((d) => d.id == id).firstOrNull;
+
+  /// Lee y arma la variante de [cuadroId] en la dificultad [dificultadId]
+  /// (queda en memoria: después la da [obtener] con su id de variante).
+  Future<Cuadro?> cargarVariante(String cuadroId, String dificultadId) async {
+    final id = idVariante(cuadroId, dificultadId);
+    final enCache = _cache[id];
+    if (enCache != null) return enCache;
+    final leer = _leer;
+    if (leer == null) return null;
+    try {
+      final json = await leer('$carpetaVariantes$id.json');
+      final svg = await leer('$carpetaVariantes$id.svg');
+      final m = MetaCuadro.desdeJson(jsonDecode(json) as Map<String, dynamic>);
+      _metasVariantes[id] = m;
+      return _cache[id] = construirCuadro(m, svg);
+    } on Object catch (e) {
+      debugPrint('No se pudo cargar la variante $id: $e');
+      return null;
+    }
+  }
+
+  /// Cuadro listo para jugar (la geometría se arma una sola vez). Las
+  /// variantes, solo después de [cargarVariante].
   Cuadro? obtener(String id) {
     final enCache = _cache[id];
     if (enCache != null) return enCache;

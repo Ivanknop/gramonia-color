@@ -1,0 +1,129 @@
+{
+  "id": "refugio-de-papa--extremo",
+  "titulo": "El refugio de papá",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#301D1D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#301C1D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#653D2B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#40221D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#81462A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#281616"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#371D1B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#4E271E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#321E1D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#8B5A38"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#613424"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#BB773A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A86233"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#502D23"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#3C1F1B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#E2A14C"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2C1A1A"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#432721"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#5A2D21"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#321B19"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#301C1C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#301A19"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#2F1C1C"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#301C1E"
+    }
+  ],
+  "mensajeMututu": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas."
+}

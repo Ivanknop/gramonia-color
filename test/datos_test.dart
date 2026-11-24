@@ -6,6 +6,7 @@ import 'dart:io';
 import 'package:colores_de_gramonia/datos/biomas.dart';
 import 'package:colores_de_gramonia/datos/historia.dart';
 import 'package:colores_de_gramonia/datos/mapa.dart';
+import 'package:colores_de_gramonia/engine/dificultad.dart';
 import 'package:colores_de_gramonia/engine/motor.dart';
 import 'package:colores_de_gramonia/engine/niveles.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -28,6 +29,31 @@ void main() {
       expect(cuadro.regiones.length, catalogo.cantidadRegiones[m.id]);
       for (final r in cuadro.regiones) {
         expect(regionEnPunto(cuadro, r.etiqueta)?.id, r.id, reason: 'región ${r.id}');
+      }
+    });
+  }
+
+  // Variantes de dificultad: colores exactos, regiones cerca del objetivo (las
+  // imágenes con poco detalle pueden quedar un poco cortas) y cada número
+  // sobre su región.
+  test('hay diez dificultades', () => expect(catalogo.dificultades, hasLength(10)));
+  for (final m in catalogo.metas) {
+    test('variantes de ${m.id}: colores y regiones de cada dificultad', () async {
+      for (final d in catalogo.dificultades) {
+        final v = await catalogo.cargarVariante(m.id, d.id);
+        final donde = '${m.id} en ${d.nombre}';
+        expect(v, isNotNull, reason: 'falta $donde: correr scripts/convertir_arte.py variantes');
+        expect(v!.paleta, hasLength(d.colores), reason: donde);
+        expect(
+          v.regiones.length,
+          inInclusiveRange((d.regiones * 0.8).ceil(), d.regiones),
+          reason: donde,
+        );
+        expect({for (final r in v.regiones) r.numero}, hasLength(d.colores), reason: donde);
+        for (final r in v.regiones) {
+          expect(regionEnPunto(v, r.etiqueta)?.id, r.id, reason: '$donde, región ${r.id}');
+        }
+        expect(catalogo.obtener(idVariante(m.id, d.id)), same(v));
       }
     });
   }

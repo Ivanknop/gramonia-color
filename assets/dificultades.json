@@ -1,0 +1,15 @@
+{
+  "_comentario": "Dificultades del modo libre y de \"rehacer obra\". Cada una tiene una cantidad fija de colores (exacta) y de regiones (objetivo: el conversor fusiona hasta llegar). Para ajustar: cambiar los números acá y correr `python3 scripts/convertir_arte.py variantes`. El orden es el de la pantalla.",
+  "dificultades": [
+    { "id": "super-facil", "nombre": "Súper fácil", "colores": 4, "regiones": 20 },
+    { "id": "facil", "nombre": "Fácil", "colores": 6, "regiones": 40 },
+    { "id": "normal", "nombre": "Normal", "colores": 8, "regiones": 70 },
+    { "id": "mediano", "nombre": "Mediano", "colores": 10, "regiones": 100 },
+    { "id": "dificil", "nombre": "Difícil", "colores": 14, "regiones": 150 },
+    { "id": "muy-dificil", "nombre": "Muy difícil", "colores": 18, "regiones": 220 },
+    { "id": "extremo", "nombre": "Extremo", "colores": 24, "regiones": 300 },
+    { "id": "imposible", "nombre": "Imposible", "colores": 32, "regiones": 400 },
+    { "id": "insano", "nombre": "Insano", "colores": 40, "regiones": 550 },
+    { "id": "divino", "nombre": "Divino", "colores": 50, "regiones": 700 }
+  ]
+}

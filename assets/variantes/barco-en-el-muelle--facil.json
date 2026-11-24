@@ -1,0 +1,39 @@
+{
+  "id": "barco-en-el-muelle--facil",
+  "titulo": "El barco en el muelle",
+  "categoria": "objeto",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4E3633"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#724D3D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E6D2BC"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B0C0D4"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#534947"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#999994"
+    }
+  ],
+  "mensajeMututu": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo."
+}

@@ -1,0 +1,169 @@
+{
+  "id": "puerto-en-la-tormenta--imposible",
+  "titulo": "Puerto en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#554E40"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6E9496"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#1B2325"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#263E48"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#48686F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#54797E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#1C2B2E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#2B3D44"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#88B1AE"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#333533"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#433930"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#39565F"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#314A53"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#2C2D2D"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#1F3339"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#3F5D65"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#253942"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#335057"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#252728"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#3E565B"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#152325"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#253135"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#172022"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#42636B"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#172629"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#1D2628"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#2A444C"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#384E53"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#678380"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#2F464D"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#5A6B66"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#161C1F"
+    }
+  ],
+  "mensajeMututu": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas."
+}

@@ -63,6 +63,9 @@ flutter:
   # + <id>.webp (ilustración que se revela al pintar). Mapa provisorio.
   assets:
     - assets/cuadros/
+    # Variantes de dificultad del modo libre (scripts/convertir_arte.py) y su tabla.
+    - assets/variantes/
+    - assets/dificultades.json
     - assets/mapa/
     # Música de fondo (AAC 80 kbps, comprimida desde arte/musica).
     - assets/musica/

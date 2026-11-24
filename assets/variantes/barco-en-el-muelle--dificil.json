@@ -1,0 +1,79 @@
+{
+  "id": "barco-en-el-muelle--dificil",
+  "titulo": "El barco en el muelle",
+  "categoria": "objeto",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FBDDB0"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#433030"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#80BAE2"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#7C5642"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#6C4739"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4F5051"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D2C7C8"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B3C0D4"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5B4139"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A67D5D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#523533"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#C0AD99"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#727C78"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#583C35"
+    }
+  ],
+  "mensajeMututu": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo."
+}

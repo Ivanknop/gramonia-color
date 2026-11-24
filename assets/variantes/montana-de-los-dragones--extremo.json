@@ -1,0 +1,129 @@
+{
+  "id": "montana-de-los-dragones--extremo",
+  "titulo": "La montaña de los dragones",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#39464F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5A5C6B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#313140"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#313A46"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#473C45"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#1B212E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8B808E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#454452"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#656172"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#64504F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#1D2733"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6F6D7E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C3A4A2"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#504E5C"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#262D3B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#3D3B49"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#484A57"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#242837"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#56515E"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#383947"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#81737E"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#293842"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#27313E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#766363"
+    }
+  ],
+  "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar."
+}

@@ -10,7 +10,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from convertir_arte import (  # noqa: E402
     COLORES_DEL_NIVEL_1,
     OBRAS_DEL_NIVEL_1,
+    RAIZ,
     colores_de_obra,
+    fuente,
+    id_variante,
+    leer_dificultades,
     nivel_de_obra,
     valor_del_nivel,
 )
@@ -25,6 +29,26 @@ class TestNiveles(unittest.TestCase):
     def test_nivel_y_colores_de_cada_obra(self):
         self.assertEqual([nivel_de_obra(i) for i in range(10)], [1, 1, 2, 2, 2, 3, 3, 3, 3, 4])
         self.assertEqual([colores_de_obra(i) for i in (0, 2, 5, 9, 15)], [10, 15, 22, 33, 49])
+
+
+class TestDificultades(unittest.TestCase):
+    def test_tabla(self):
+        tabla = leer_dificultades()
+        self.assertEqual(len(tabla), 10)
+        self.assertEqual(tabla[0]["id"], "super-facil")
+        self.assertEqual(tabla[-1]["id"], "divino")
+        for a, b in zip(tabla, tabla[1:]):
+            self.assertLess(a["colores"], b["colores"])
+            self.assertLess(a["regiones"], b["regiones"])
+
+    def test_id_variante(self):
+        self.assertEqual(id_variante("nido-de-rocanon", "facil"), "nido-de-rocanon--facil")
+
+    def test_sin_original_usa_la_ilustracion_del_cuadro(self):
+        c = {"imagen": "no-existe.jpeg", "id": "nido-de-rocanon"}
+        self.assertEqual(fuente(c), RAIZ / "assets" / "cuadros" / "nido-de-rocanon.webp")
+        with self.assertRaises(FileNotFoundError):
+            fuente({"imagen": "no-existe.jpeg", "id": "tampoco"})
 
 
 class TestColoresExactos(unittest.TestCase):

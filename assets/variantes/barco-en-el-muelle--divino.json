@@ -1,0 +1,259 @@
+{
+  "id": "barco-en-el-muelle--divino",
+  "titulo": "El barco en el muelle",
+  "categoria": "objeto",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#9E7152"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A3C3DD"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#614137"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F9D9A7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#4F3733"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#7DB9E3"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#CBC3D2"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#EFC8BF"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#583C35"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#515A5B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#82BCE5"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#45494E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#EBC2BA"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#8A5B42"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#BC8D66"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#5E3D34"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#F5CBA4"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#6D6860"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#3C2727"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#FCE6AE"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#725344"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#73493C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#4A3634"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#3F2D2C"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#6C4738"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#86BBDF"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#CDC1CD"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#4A322F"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#7E5641"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#68473A"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#B1A392"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#95BFDF"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#789295"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#674336"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#A18A75"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#462E2B"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#45555A"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#FDF5C7"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#54403C"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#DBB99F"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#5F473E"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#403537"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#CEA888"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#99C1DF"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#543B38"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#553732"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#A1B9C5"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#CDC7CD"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#513233"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#543A32"
+    }
+  ],
+  "mensajeMututu": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo."
+}

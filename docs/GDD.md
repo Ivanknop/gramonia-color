@@ -77,6 +77,12 @@ de 10 colores): 2/10, 3/15, 4/22, 6/33, 9/49… El nivel de una obra sale de su
 lugar en el recorrido; el conversor la genera con los colores de su nivel. La
 galería muestra el nivel actual y cuántas obras faltan para el siguiente.
 
+**Dificultades** (modo libre y "rehacer obra"): súper fácil, fácil, normal,
+mediano, difícil, muy difícil, extremo, imposible, insano y divino. Cada una
+tiene colores fijos y un objetivo de regiones, a mano en
+`assets/dificultades.json` (de 4 colores y 20 regiones a 50 y 700). El
+conversor genera una variante de cada cuadro por dificultad.
+
 - Un lugar se puede jugar cuando el anterior está recuperado en todo lo que
   tiene disponible. Las piezas **"próximamente"** (todavía sin obra) no traban.
 - Cada obra terminada colorea una parte del **mapa**; con el lugar completo se

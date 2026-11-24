@@ -1,0 +1,259 @@
+{
+  "id": "hormiguero-del-arbol--divino",
+  "titulo": "El hormiguero del árbol",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#355950"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#AEA461"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2E3837"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#382E29"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#47573C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#1D2F32"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#223736"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#2B4137"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#292728"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#555D41"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#54503B"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#434D3D"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#795F3F"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#3C4335"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#17262C"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#868952"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#8F7147"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#373430"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#5E6947"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#465A4C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#578565"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#60744C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#2C3F41"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#DCC47D"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#443A32"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#635C3F"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#3A4740"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#9C8A55"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#324D45"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#41342D"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#6F774C"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#524335"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#634E38"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#7D7249"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#95C188"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#4A4537"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#486D58"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#778551"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#2D3131"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#4B3B30"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#2B4544"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#393A37"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#5B4634"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#70543A"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#4A4035"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#6F6B45"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#3B392F"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#2C2D2E"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#819F66"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#39413E"
+    }
+  ],
+  "mensajeMututu": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!"
+}

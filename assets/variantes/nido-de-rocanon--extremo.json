@@ -1,0 +1,129 @@
+{
+  "id": "nido-de-rocanon--extremo",
+  "titulo": "El nido de Rocanon",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3B6760"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#57664F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#7F8659"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#19252D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#5D846A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#1E2D35"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#776A4C"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#BAA867"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#2C3037"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1F363B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#375851"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#53483F"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#2D3A41"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#223D40"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#9F8A59"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#7FBBA0"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#7D9D74"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#374A47"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#23464A"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#414440"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#D1CF8B"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#2D4C4C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#2D4345"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#37393C"
+    }
+  ],
+  "mensajeMututu": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor."
+}

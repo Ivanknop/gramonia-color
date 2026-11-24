@@ -1,0 +1,259 @@
+{
+  "id": "montana-de-los-dragones--divino",
+  "titulo": "La montaña de los dragones",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4C3B42"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#454452"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#313345"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#313941"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#827E8F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#515266"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#292D40"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#484A5D"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5D5A6A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#28373A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#6F6D7E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#323C4D"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A68F98"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#6D4F48"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#393D4E"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#1D2733"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#7A7282"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#24293A"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#1E2331"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#656375"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#5F5E70"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#816153"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#474B50"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#DFB9AC"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#313749"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#3D3B49"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#383543"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#29384A"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#181E2B"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#1A222E"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#222D38"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#50505C"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#93818D"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#393B45"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#3A4C51"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#27313E"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#545B68"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#252833"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#645E6D"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#5B5057"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#302E3C"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#56515E"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#4E4A56"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#6B6573"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#282D3A"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#31323E"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#38424E"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#39454F"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#887479"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#413D49"
+    }
+  ],
+  "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar."
+}

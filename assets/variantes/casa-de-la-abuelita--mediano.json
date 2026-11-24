@@ -1,0 +1,59 @@
+{
+  "id": "casa-de-la-abuelita--mediano",
+  "titulo": "La casa de la abuelita",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C29467"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#26393A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#325248"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#728556"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#E5AC9D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#506548"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5E4944"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#866649"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#A1B2A9"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#EAC891"
+    }
+  ],
+  "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea."
+}

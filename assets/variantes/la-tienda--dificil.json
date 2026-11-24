@@ -1,0 +1,79 @@
+{
+  "id": "la-tienda--dificil",
+  "titulo": "La tienda",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#33241F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4B352C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#735B4E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#754F39"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#5A3E31"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#946E53"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#3E2C24"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#896045"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#B38B66"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#58453D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#634638"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6A4A39"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#55392C"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#42322B"
+    }
+  ],
+  "mensajeMututu": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender."
+}

@@ -1,0 +1,169 @@
+{
+  "id": "rumbo-a-la-isla--imposible",
+  "titulo": "Rumbo a la isla",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4A382E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#816C7A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#413129"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#36353E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#201815"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#514D5D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#645E75"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#271D19"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#454351"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#DCA276"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#AD7C72"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#232328"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#81615F"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#494858"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#382A23"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#5C4844"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#615156"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#99706B"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#322620"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#433F4A"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#3E3E4B"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#1A1411"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#2B211C"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#3E2E26"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#514240"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#725E63"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#2F231E"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#615663"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#423633"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#342E2F"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#221B19"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#2F292A"
+    }
+  ],
+  "mensajeMututu": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?"
+}

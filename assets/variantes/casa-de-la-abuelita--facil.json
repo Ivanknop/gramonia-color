@@ -1,0 +1,39 @@
+{
+  "id": "casa-de-la-abuelita--facil",
+  "titulo": "La casa de la abuelita",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#2D4641"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#978B5D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6A6548"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E8B998"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A1B2A6"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#5D4944"
+    }
+  ],
+  "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea."
+}

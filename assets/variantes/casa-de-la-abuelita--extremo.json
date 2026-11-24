@@ -1,0 +1,129 @@
+{
+  "id": "casa-de-la-abuelita--extremo",
+  "titulo": "La casa de la abuelita",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B69F60"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#858C50"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#85B4D4"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F1AD9E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#573E43"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2F3F3A"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#203D3D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#365F54"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5E7E5B"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#4F6547"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#213136"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#97674A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#795246"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#B38552"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#4F5241"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#335246"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#D9AC9A"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#2E4940"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#EFD497"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#E6BE8A"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#736548"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#AAAD9C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#EDA39A"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#B1B88D"
+    }
+  ],
+  "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea."
+}

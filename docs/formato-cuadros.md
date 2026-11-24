@@ -85,3 +85,11 @@ Opciones útiles: `--ancho` (detalle de la grilla, por defecto 96 px),
 `--area-minima` (fusiona regiones chicas), `--tolerancia` (simplificación de
 bordes), `--suavizado`. Conviene revisar el resultado y renombrar los colores en el
 JSON ("Color 3" → "Verde musgo").
+
+## Variantes de dificultad
+
+Para el modo libre, cada cuadro tiene una variante por dificultad en
+`assets/variantes/<id>--<dificultad>.json` + `.svg`, con el mismo formato que
+un cuadro. No llevan `.webp`: usan la ilustración de `assets/cuadros/<id>.webp`.
+Se generan con `python3 scripts/convertir_arte.py variantes` a partir de la tabla
+`assets/dificultades.json` (colores exactos y un objetivo de regiones).

@@ -1,0 +1,49 @@
+{
+  "id": "la-tienda--normal",
+  "titulo": "La tienda",
+  "categoria": "arte",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#704C39"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7E5D49"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#583C2F"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#332521"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#432E26"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A37C5C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5D463B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#4A372E"
+    }
+  ],
+  "mensajeMututu": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender."
+}

@@ -61,6 +61,8 @@ lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
 lib/ui/pantallas/        inicio (portada), genero, creditos, principal (pestañas: galería,
                          mis obras, mapa), pintar, historia
 assets/cuadros/          <id>.json + <id>.svg + <id>.webp de cada cuadro
+assets/variantes/        <id>--<dificultad>.json/.svg (modo libre; usan la webp)
+assets/dificultades.json Tabla de dificultades (colores y regiones), a mano
 assets/mapa/             gramonia.webp (mapa provisorio, de arte/fondo-caminatas)
 assets/musica/           temas en AAC 80 kbps (de arte/musica/*.mp3)
 assets/sonidos/          efectos (festejo.m4a, sintetizado por script)
@@ -81,7 +83,8 @@ dart format lib test                 # formato (ancho 100, ver analysis_options.
 flutter build apk --release --target-platform android-arm64
                                      # → build/app/outputs/flutter-apk/app-release.apk
 flutter run                          # con un teléfono conectado por adb
-python3 scripts/convertir_arte.py [id...]   # arte/ → assets (cuadros, mapa, musica)
+python3 scripts/convertir_arte.py [id...]   # arte/ → assets (cuadros, variantes, mapa, musica)
+python3 scripts/convertir_arte.py variantes # solo las variantes de dificultad (~1,5 min)
 python3 scripts/generar_icono.py            # arte/icono.jpeg → ícono de la app (android/res)
 python3 scripts/generar_festejo.py          # sintetiza assets/sonidos/festejo.m4a
 python3 scripts/imagen_a_cuadro.py foto.jpg --id mi-cuadro --titulo "Mi cuadro"
@@ -106,6 +109,10 @@ el devcontainer la restaura desde `.devcontainer/android-keys/` si existe).
 - Si se cambia el formato de lo guardado, subir `Progreso.version` y migrar
   (hay test de migración desde v1).
 - Los cuadros de `arte/` se generan: no editar su SVG a mano; cambiar
-  `scripts/catalogo-arte.json` y volver a convertir.
+  `scripts/catalogo-arte.json` y volver a convertir. Si el original ya se borró
+  de `arte/`, el conversor usa `assets/cuadros/<id>.webp`.
+- Colores: en la historia los pone el nivel de la obra (`lib/engine/niveles.dart`);
+  en el modo libre, la dificultad (`assets/dificultades.json`). El conversor
+  los respeta exactos.
 - Antes de dar algo por terminado: `flutter analyze` sin issues y `flutter test`
   en verde (y los tests de Python si se tocó el conversor).

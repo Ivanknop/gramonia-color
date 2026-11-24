@@ -486,9 +486,10 @@ def convertir(args: argparse.Namespace) -> Path:
             f'data-etiqueta="{etiqueta}" data-radio="{radio:.1f}" d="{path_d(lazos, escala)}" />'
         )
 
-    DIR_CUADROS.mkdir(parents=True, exist_ok=True)
-    destino_svg = DIR_CUADROS / f"{args.id}.svg"
-    destino_json = DIR_CUADROS / f"{args.id}.json"
+    carpeta = args.carpeta or DIR_CUADROS
+    carpeta.mkdir(parents=True, exist_ok=True)
+    destino_svg = carpeta / f"{args.id}.svg"
+    destino_json = carpeta / f"{args.id}.json"
     vb = f"0 0 {ancho * escala:.0f} {alto * escala:.0f}"
     destino_svg.write_text(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" fill="#eeeeee" '
@@ -496,7 +497,8 @@ def convertir(args: argparse.Namespace) -> Path:
         encoding="utf-8",
     )
 
-    guardar_imagen(args.imagen, ancho, alto, DIR_CUADROS / f"{args.id}.webp")
+    if not args.sin_ilustracion:
+        guardar_imagen(args.imagen, ancho, alto, carpeta / f"{args.id}.webp")
 
     cantidad = len(paths)
     meta = {
@@ -535,13 +537,20 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--tolerancia", type=float, default=0.6, help="tolerancia de simplificación (px)")
     ap.add_argument("--curvas", type=int, default=2, help="pasadas de suavizado de bordes (0 = escalonado)")
     ap.add_argument("--orden", type=int, help="posición en la galería (menor primero)")
+    ap.add_argument("--carpeta", type=Path, help="dónde escribir (por defecto assets/cuadros)")
+    ap.add_argument(
+        "--sin-ilustracion",
+        action="store_true",
+        help="no escribir la ilustración (las variantes de dificultad usan la del cuadro)",
+    )
     ap.add_argument(
         "--mensaje",
         default="¡Los colores volvieron! Mututu tendrá que buscar otro cuadro para esconderse.",
         help="mensaje al completar",
     )
     args = ap.parse_args(argv)
-    if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", args.id):
+    # Las variantes de dificultad llevan el sufijo "--<dificultad>".
+    if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*(--[a-z0-9]+(-[a-z0-9]+)*)?", args.id):
         ap.error("--id debe ser minúsculas, números y guiones (ej: gato-en-la-ventana)")
     if not 2 <= args.colores <= 200:
         ap.error("--colores debe estar entre 2 y 200")

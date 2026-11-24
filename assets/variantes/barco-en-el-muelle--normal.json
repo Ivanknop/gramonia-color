@@ -1,0 +1,49 @@
+{
+  "id": "barco-en-el-muelle--normal",
+  "titulo": "El barco en el muelle",
+  "categoria": "objeto",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B0C2D8"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#563934"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#744E3E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F3D4B4"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#443131"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#544946"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B4957C"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#799BAD"
+    }
+  ],
+  "mensajeMututu": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo."
+}

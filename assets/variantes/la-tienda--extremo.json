@@ -1,0 +1,129 @@
+{
+  "id": "la-tienda--extremo",
+  "titulo": "La tienda",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4A3228"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#634638"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#5E3E2F"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#735B4E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A17049"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#784F38"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#825E48"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#2D211E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#58453D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#876D5D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#42342E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6A4A39"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#704D3A"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#C29A6F"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#35251F"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#4F372B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#583D30"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#8F6143"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#A47D5E"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#533A2D"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#392821"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#412E27"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#3E2C24"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#503C35"
+    }
+  ],
+  "mensajeMututu": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender."
+}

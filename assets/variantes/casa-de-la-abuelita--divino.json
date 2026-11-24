@@ -1,0 +1,259 @@
+{
+  "id": "casa-de-la-abuelita--divino",
+  "titulo": "La casa de la abuelita",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#516339"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B69F60"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#899543"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#EBA4A7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#D8BD72"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#213C37"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8CB4CF"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C69057"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#7DB4D9"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#855343"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#162F34"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#53856D"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#EFADAA"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#869864"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#F4BEA1"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#395240"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2D524B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#2F3E32"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#8D654C"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#203E42"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#6D5148"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#523842"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#4C5234"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#37655B"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#B9ADA2"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#F5DDA2"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#284844"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#35493D"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#684444"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#6E8556"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#A48151"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#4E4344"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#82824B"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#A16949"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#303F42"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#2D3238"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#BB8150"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#52514E"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#5B7653"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#365A4D"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#4E6C56"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#736548"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#B6BD76"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#F3AD92"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#ABB2A5"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#4C6155"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#9BAD96"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#E8CB8A"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#EEA38B"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#D9AC9A"
+    }
+  ],
+  "mensajeMututu": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea."
+}

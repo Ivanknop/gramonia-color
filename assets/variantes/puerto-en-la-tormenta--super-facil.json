@@ -1,0 +1,29 @@
+{
+  "id": "puerto-en-la-tormenta--super-facil",
+  "titulo": "Puerto en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#394E52"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1B272A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2E3638"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5A7B7D"
+    }
+  ],
+  "mensajeMututu": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas."
+}

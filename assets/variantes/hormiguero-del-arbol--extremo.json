@@ -1,0 +1,129 @@
+{
+  "id": "hormiguero-del-arbol--extremo",
+  "titulo": "El hormiguero del árbol",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3A312C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6F7148"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#355950"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#20272A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#546E51"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#252F31"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#2B4243"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#54573E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#283737"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#98A263"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#574434"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#4A4336"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#3B4D41"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#3A3A34"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#B9C382"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#867248"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#3B443A"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#63553C"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#465944"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#68855B"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#928A53"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#2B4137"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#755A3D"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#483A31"
+    }
+  ],
+  "mensajeMututu": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!"
+}

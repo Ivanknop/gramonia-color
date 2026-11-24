@@ -1,0 +1,39 @@
+{
+  "id": "hormiguero-del-arbol--facil",
+  "titulo": "El hormiguero del árbol",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#656D4B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#273636"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4F5541"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3F3630"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#484437"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8F9A62"
+    }
+  ],
+  "mensajeMututu": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!"
+}

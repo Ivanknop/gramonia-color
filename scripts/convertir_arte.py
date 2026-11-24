@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 """
 Convierte todas las imágenes de arte/ listadas en scripts/catalogo-arte.json
-en cuadros (assets/cuadros/<id>.svg + <id>.json).
+en cuadros (assets/cuadros/<id>.svg + <id>.json) y en sus variantes de
+dificultad (assets/variantes/<id>--<dificultad>.svg + .json, según
+assets/dificultades.json; usan la ilustración del cuadro).
 
-Uso: python3 scripts/convertir_arte.py          (todas, el mapa y la música)
-     python3 scripts/convertir_arte.py <id> ... (solo esas; "mapa" o "musica")
+Si el original ya no está en arte/ (se borra para liberar espacio), se usa la
+ilustración del cuadro (assets/cuadros/<id>.webp): alcanza para la grilla del
+conversor.
+
+Uso: python3 scripts/convertir_arte.py          (todo: cuadros, variantes, mapa y música)
+     python3 scripts/convertir_arte.py <id> ... (solo esos cuadros, con sus variantes;
+                                                 "mapa", "musica" o "variantes" = las de todos)
 """
 
 import json
@@ -49,13 +56,72 @@ def colores_de_obra(indice: int) -> int:
     return valor_del_nivel(nivel_de_obra(indice), COLORES_DEL_NIVEL_1)
 
 
+DIR_VARIANTES = RAIZ / "assets" / "variantes"
+DIFICULTADES = RAIZ / "assets" / "dificultades.json"
+
+
 def ancho_para(regiones: int) -> int:
     """Grilla de trabajo según la cantidad de regiones buscada (más regiones, más detalle)."""
     if regiones <= 120:
         return 120
     if regiones <= 250:
         return 170
-    return 220
+    if regiones <= 450:
+        return 220
+    return 260
+
+
+def fuente(c: dict) -> Path:
+    """Imagen de origen: el original de arte/ o, si ya se borró, la ilustración del cuadro."""
+    original = RAIZ / "arte" / c["imagen"]
+    if original.exists():
+        return original
+    ilustracion = RAIZ / "assets" / "cuadros" / f"{c['id']}.webp"
+    if ilustracion.exists():
+        return ilustracion
+    raise FileNotFoundError(f"No está {original} ni {ilustracion}")
+
+
+def id_variante(cuadro_id: str, dificultad_id: str) -> str:
+    return f"{cuadro_id}--{dificultad_id}"
+
+
+def leer_dificultades() -> list[dict]:
+    return json.loads(DIFICULTADES.read_text(encoding="utf-8"))["dificultades"]
+
+
+def argumentos(
+    p: dict, imagen: Path, id_: str, colores: int, regiones: int, ancho: int | None = None
+) -> list[str]:
+    return [
+        str(imagen),
+        "--id", id_,
+        "--titulo", p["titulo"],
+        "--categoria", p["categoria"],
+        "--mensaje", p["mensaje"],
+        "--colores", str(colores),
+        "--ancho", str(ancho or p.get("ancho") or ancho_para(regiones)),
+        "--area-minima", str(p["area_minima"]),
+        "--suavizado", str(p["suavizado"]),
+        "--tolerancia", str(p["tolerancia"]),
+        "--curvas", str(p["curvas"]),
+        "--regiones", str(regiones),
+    ]
+
+
+def convertir_variantes(p: dict) -> None:
+    """
+    Una variante por dificultad, con sus colores exactos y su objetivo de regiones.
+    Con pocos colores hay menos regiones naturales: la grilla es la de un objetivo
+    del doble, para que alcancen.
+    """
+    imagen = fuente(p)
+    for d in leer_dificultades():
+        ancho = ancho_para(d["regiones"] * 2)
+        imagen_a_cuadro.main(
+            argumentos(p, imagen, id_variante(p["id"], d["id"]), d["colores"], d["regiones"], ancho)
+            + ["--carpeta", str(DIR_VARIANTES), "--sin-ilustracion"]
+        )
 
 
 def convertir_mapa(catalogo: dict) -> None:
@@ -96,30 +162,17 @@ def main() -> int:
         convertir_mapa(catalogo)
     if not pedidos or "musica" in pedidos:
         convertir_musica()
+    todas_las_variantes = not pedidos or "variantes" in pedidos
     for orden, c in enumerate(catalogo["cuadros"], start=1):
-        if pedidos and c["id"] not in pedidos:
-            continue
         p = {**base, **c}
-        # En la historia, los colores salen del nivel de la obra (su lugar en el recorrido).
-        p["colores"] = colores_de_obra(orden - 1)
-        p.setdefault("ancho", ancho_para(p["regiones"]))
-        imagen_a_cuadro.main(
-            [
-                str(RAIZ / "arte" / p["imagen"]),
-                "--id", p["id"],
-                "--titulo", p["titulo"],
-                "--categoria", p["categoria"],
-                "--mensaje", p["mensaje"],
-                "--orden", str(orden),
-                "--colores", str(p["colores"]),
-                "--ancho", str(p["ancho"]),
-                "--area-minima", str(p["area_minima"]),
-                "--suavizado", str(p["suavizado"]),
-                "--tolerancia", str(p["tolerancia"]),
-                "--curvas", str(p["curvas"]),
-                "--regiones", str(p["regiones"]),
-            ]
-        )
+        if not pedidos or c["id"] in pedidos:
+            # En la historia, los colores salen del nivel de la obra (su lugar en el recorrido).
+            imagen_a_cuadro.main(
+                argumentos(p, fuente(p), p["id"], colores_de_obra(orden - 1), p["regiones"])
+                + ["--orden", str(orden)]
+            )
+        if todas_las_variantes or c["id"] in pedidos:
+            convertir_variantes(p)
     print("Listo. Si hay cuadros nuevos, asignales una pieza en lib/datos/biomas.dart.")
     return 0
 

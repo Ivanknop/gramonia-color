@@ -1,0 +1,39 @@
+{
+  "id": "rumbo-a-la-isla--facil",
+  "titulo": "Rumbo a la isla",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4E474F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#281F1C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#42332D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6F5C66"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A77D72"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#342E30"
+    }
+  ],
+  "mensajeMututu": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?"
+}

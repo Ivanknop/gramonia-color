@@ -1,0 +1,59 @@
+{
+  "id": "nido-de-rocanon--mediano",
+  "titulo": "El nido de Rocanon",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#395F58"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1C2A32"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#768561"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#223E42"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#68684D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2D3F43"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C3BA78"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#4A473F"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#7EA987"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#374242"
+    }
+  ],
+  "mensajeMututu": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor."
+}

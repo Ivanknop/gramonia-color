@@ -1,0 +1,39 @@
+{
+  "id": "montana-de-los-dragones--facil",
+  "titulo": "La montaña de los dragones",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#635E6A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#232C39"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#313644"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#4D4B55"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3E3B48"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8F818B"
+    }
+  ],
+  "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar."
+}
