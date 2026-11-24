@@ -57,17 +57,57 @@ CATEGORIAS = ["paisaje", "animal", "objeto", "persona", "arte"]
 
 
 def cuantizar(ruta: Path, ancho: int, colores: int, suavizado: int) -> tuple[np.ndarray, np.ndarray]:
-    """Devuelve (índices por píxel [alto, ancho], paleta RGB [n, 3])."""
+    """
+    Devuelve (índices por píxel [alto, ancho], paleta RGB [n, 3]) con exactamente
+    `colores` colores en uso (si la imagen tiene al menos esa cantidad).
+
+    El suavizado puede borrar colores poco usados: en ese caso se cuantiza con
+    más colores y se juntan los más parecidos hasta quedar en `colores`.
+    """
     img = Image.open(ruta).convert("RGB")
     escala = ancho / max(img.size)
     tam = (max(1, round(img.width * escala)), max(1, round(img.height * escala)))
     img = img.resize(tam, Image.Resampling.LANCZOS)
-    q = img.quantize(colors=colores, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
-    for _ in range(suavizado):
-        q = q.filter(ImageFilter.ModeFilter(3))
-    indices = np.array(q, dtype=np.int32)
-    paleta = np.array(q.getpalette()[: 3 * colores], dtype=np.int32).reshape(-1, 3)
-    return indices, paleta
+    pedidos = colores
+    while True:
+        q = img.quantize(colors=pedidos, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+        for _ in range(suavizado):
+            q = q.filter(ImageFilter.ModeFilter(3))
+        indices = np.array(q, dtype=np.int32)
+        paleta = np.array(q.getpalette()[: 3 * pedidos], dtype=np.int32).reshape(-1, 3)
+        if len(np.unique(indices)) >= colores or pedidos >= min(256, colores * 3):
+            break
+        pedidos += max(1, colores // 4)
+    return juntar_colores(indices, paleta, colores)
+
+
+def juntar_colores(indices: np.ndarray, paleta: np.ndarray, colores: int) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Deja solo los colores en uso, numerados desde 0, y junta los dos más parecidos
+    (el menos usado pasa al otro) mientras sobren colores.
+    """
+    forma = indices.shape
+    usados, indices = np.unique(indices, return_inverse=True)
+    indices = indices.reshape(-1)
+    paleta = paleta[usados].astype(np.int64)
+    cuentas = np.bincount(indices, minlength=len(usados)).astype(np.int64)
+    destino = np.arange(len(usados))
+    vivos = list(range(len(usados)))
+    while len(vivos) > colores:
+        mejor = None
+        for a_i, a in enumerate(vivos):
+            for b in vivos[a_i + 1 :]:
+                d = int(((paleta[a] - paleta[b]) ** 2).sum())
+                if mejor is None or d < mejor[0]:
+                    mejor = (d, a, b)
+        _, a, b = mejor
+        chico, grande = (a, b) if cuentas[a] < cuentas[b] else (b, a)
+        destino[destino == chico] = grande
+        cuentas[grande] += cuentas[chico]
+        vivos.remove(chico)
+    renumero = {c: n for n, c in enumerate(vivos)}
+    final = np.array([renumero[destino[i]] for i in range(len(usados))], dtype=np.int32)
+    return final[indices].reshape(forma), paleta[vivos].astype(np.int32)
 
 
 # --------------------------------------------------------------------------
@@ -117,10 +157,16 @@ def fusionar_chicas(
     mientras haya regiones menores a `area_minima` o, si se pide `objetivo`,
     mientras haya más regiones que ese objetivo.
 
+    Nunca se pierde un color: si la región es la última de su color, en vez de
+    desaparecer absorbe a su vecina (de un color que tenga otras regiones).
+
     Trabaja sobre el recuadro de cada región (no sobre la imagen entera), así
     que reducir miles de regiones a unas decenas tarda segundos.
     """
     import heapq
+    from collections import Counter
+
+    regiones_de_color = Counter(color_de.values())
 
     alto, ancho = etiquetas.shape
     ids, cuentas = np.unique(etiquetas, return_counts=True)
@@ -145,15 +191,27 @@ def fusionar_chicas(
         vecinos = vecinos_por_borde(sub, region)
         if not vecinos:  # la imagen entera es una sola región
             return
-        destino = max(vecinos, key=vecinos.get)
-        sub[sub == region] = destino
-        areas[destino] += area
-        del areas[region]
-        del color_de[region]
-        cd, cr = cajas[destino], cajas.pop(region)
-        cajas[destino] = [min(cd[0], cr[0]), max(cd[1], cr[1]), min(cd[2], cr[2]), max(cd[3], cr[3])]
+        if regiones_de_color[color_de[region]] > 1:
+            absorbida, destino = region, max(vecinos, key=vecinos.get)
+        else:
+            # Última región de su color: crece comiéndose a la vecina.
+            candidatas = [v for v in vecinos if regiones_de_color[color_de[v]] > 1]
+            if not candidatas:
+                continue  # todas las vecinas son únicas de su color: queda así
+            absorbida, destino = max(candidatas, key=vecinos.get), region
+        _absorber(etiquetas, areas, cajas, color_de, regiones_de_color, absorbida, destino)
         heapq.heappush(monticulo, (areas[destino], destino))
 
+
+def _absorber(etiquetas, areas, cajas, color_de, regiones_de_color, absorbida: int, destino: int) -> None:
+    """Pinta la región `absorbida` con la etiqueta `destino` y actualiza las tablas."""
+    ya0, ya1, xa0, xa1 = cajas[absorbida]
+    sub = etiquetas[ya0:ya1, xa0:xa1]
+    sub[sub == absorbida] = destino
+    areas[destino] += areas.pop(absorbida)
+    regiones_de_color[color_de.pop(absorbida)] -= 1
+    cd, cr = cajas[destino], cajas.pop(absorbida)
+    cajas[destino] = [min(cd[0], cr[0]), max(cd[1], cr[1]), min(cd[2], cr[2]), max(cd[3], cr[3])]
 
 # --------------------------------------------------------------------------
 # 6. Trazado de contornos
@@ -485,8 +543,8 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", args.id):
         ap.error("--id debe ser minúsculas, números y guiones (ej: gato-en-la-ventana)")
-    if not 2 <= args.colores <= 24:
-        ap.error("--colores debe estar entre 2 y 24")
+    if not 2 <= args.colores <= 200:
+        ap.error("--colores debe estar entre 2 y 200")
     convertir(args)
     return 0
 

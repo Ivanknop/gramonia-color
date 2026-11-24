@@ -7,47 +7,47 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#592F22"
+      "hex": "#301C1D"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#432620"
+      "hex": "#9A5F35"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#74432B"
+      "hex": "#3B1F1B"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#3B1F1B"
+      "hex": "#301D1D"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#301C1D"
+      "hex": "#522C22"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#301D1D"
+      "hex": "#41231D"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#9A5F35"
+      "hex": "#82472B"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#CF8C42"
+      "hex": "#663E2B"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#281617"
+      "hex": "#CF8C42"
     },
     {
       "numero": 10,
@@ -57,11 +57,26 @@
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#2E1B1B"
+      "hex": "#281617"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
+      "hex": "#452922"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#613223"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#2E1B1B"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
       "hex": "#301A19"
     }
   ],

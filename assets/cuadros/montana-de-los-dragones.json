@@ -7,12 +7,12 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#78707E"
+      "hex": "#313A4B"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#1F2532"
+      "hex": "#38464F"
     },
     {
       "numero": 3,
@@ -22,17 +22,17 @@
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#313644"
+      "hex": "#313140"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#38464F"
+      "hex": "#8C808F"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#262D3B"
+      "hex": "#78707E"
     },
     {
       "numero": 7,
@@ -42,37 +42,77 @@
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#5D4F55"
+      "hex": "#634F4E"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#4F4D5A"
+      "hex": "#646071"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#A89398"
+      "hex": "#464754"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#383947"
+      "hex": "#1B212E"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#464754"
+      "hex": "#383947"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#283540"
+      "hex": "#313A41"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#6D6169"
+      "hex": "#1D2733"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C4A5A1"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#242837"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#4F4D5A"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#262D3B"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#293742"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#27313E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#55505D"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#756262"
     }
   ],
   "mensajeMututu": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",

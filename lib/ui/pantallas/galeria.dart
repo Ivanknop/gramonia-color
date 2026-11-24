@@ -6,7 +6,9 @@ library;
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
+import '../../datos/textos.dart';
 import '../../engine/motor.dart';
+import '../../engine/niveles.dart';
 import '../comun.dart';
 import 'pintar.dart';
 
@@ -27,13 +29,59 @@ class Galeria extends StatelessWidget {
     return ListenableBuilder(
       listenable: dep.progreso,
       builder: (context, _) {
-        final estados = estadoBiomas(biomas, dep.progreso.completados);
+        final completados = dep.progreso.completados;
+        final estados = estadoBiomas(biomas, completados);
+        final hechas = cuadrosDelRecorrido(biomas).where(completados.contains).length;
         return ListView.builder(
           padding: const EdgeInsets.symmetric(vertical: 12),
-          itemCount: estados.length,
-          itemBuilder: (context, i) => _SeccionBioma(estado: estados[i]),
+          itemCount: estados.length + 1,
+          itemBuilder: (context, i) =>
+              i == 0 ? _Nivel(nivelActual(hechas)) : _SeccionBioma(estado: estados[i - 1]),
         );
       },
+    );
+  }
+}
+
+/// En qué nivel de la historia va quien juega y cuánto le falta para el siguiente.
+class _Nivel extends StatelessWidget {
+  const _Nivel(this.estado);
+  final EstadoNivel estado;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(color: Tema.morado, borderRadius: BorderRadius.circular(20)),
+            child: Text(
+              Textos.nivel(estado.nivel),
+              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  Textos.paraElNivel(estado.hechas, estado.necesarias, estado.nivel + 1),
+                  style: const TextStyle(fontSize: 13, color: Tema.gris),
+                ),
+                const SizedBox(height: 4),
+                LinearProgressIndicator(
+                  value: estado.hechas / estado.necesarias,
+                  color: Tema.morado,
+                  backgroundColor: const Color(0x223D2C5E),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

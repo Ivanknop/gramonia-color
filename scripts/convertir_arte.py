@@ -20,6 +20,34 @@ CATALOGO = RAIZ / "scripts" / "catalogo-arte.json"
 
 DIR_MAPA = RAIZ / "assets" / "mapa"
 
+# Niveles del modo historia (igual que lib/engine/niveles.dart, con los mismos
+# valores en los tests): valor(n) = valor(n-1) + valor(n-1) // 2.
+OBRAS_DEL_NIVEL_1 = 2
+COLORES_DEL_NIVEL_1 = 10
+
+
+def valor_del_nivel(n: int, inicial: int) -> int:
+    if n < 1:
+        raise ValueError("los niveles empiezan en 1")
+    valor = inicial
+    for _ in range(1, n):
+        valor += valor // 2
+    return valor
+
+
+def nivel_de_obra(indice: int) -> int:
+    """Nivel (desde 1) de la obra en la posición `indice` (desde 0) del recorrido."""
+    nivel, hasta = 1, valor_del_nivel(1, OBRAS_DEL_NIVEL_1)
+    while indice >= hasta:
+        nivel += 1
+        hasta += valor_del_nivel(nivel, OBRAS_DEL_NIVEL_1)
+    return nivel
+
+
+def colores_de_obra(indice: int) -> int:
+    """Colores de la obra en la posición `indice` del recorrido: los de su nivel."""
+    return valor_del_nivel(nivel_de_obra(indice), COLORES_DEL_NIVEL_1)
+
 
 def ancho_para(regiones: int) -> int:
     """Grilla de trabajo según la cantidad de regiones buscada (más regiones, más detalle)."""
@@ -72,6 +100,8 @@ def main() -> int:
         if pedidos and c["id"] not in pedidos:
             continue
         p = {**base, **c}
+        # En la historia, los colores salen del nivel de la obra (su lugar en el recorrido).
+        p["colores"] = colores_de_obra(orden - 1)
         p.setdefault("ancho", ancho_para(p["regiones"]))
         imagen_a_cuadro.main(
             [

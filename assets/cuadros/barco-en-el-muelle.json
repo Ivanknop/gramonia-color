@@ -7,57 +7,57 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#FBDDB0"
+      "hex": "#80BAE2"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#7C5642"
+      "hex": "#A67D5D"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#6C4739"
+      "hex": "#F9D0AA"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#80BAE2"
+      "hex": "#674538"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#4F5051"
+      "hex": "#402B2B"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#94C0E0"
+      "hex": "#845842"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#D2C1C8"
+      "hex": "#4B585B"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#5B4139"
+      "hex": "#523533"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#A67D5D"
+      "hex": "#94C0E0"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#523533"
+      "hex": "#E7C9BB"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#402B2B"
+      "hex": "#BCC5D6"
     },
     {
       "numero": 12,
@@ -72,17 +72,47 @@
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#583C35"
+      "hex": "#D2C1C8"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#727C78"
+      "hex": "#FCEAB6"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#D2C7C8"
+      "hex": "#5C3C35"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#70483A"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#543B35"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#727C78"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#5B4139"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#725343"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#534846"
     }
   ],
   "mensajeMututu": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo.",

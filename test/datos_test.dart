@@ -7,6 +7,7 @@ import 'package:colores_de_gramonia/datos/biomas.dart';
 import 'package:colores_de_gramonia/datos/historia.dart';
 import 'package:colores_de_gramonia/datos/mapa.dart';
 import 'package:colores_de_gramonia/engine/motor.dart';
+import 'package:colores_de_gramonia/engine/niveles.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'ayuda.dart';
@@ -71,6 +72,16 @@ void main() {
         expect(n, greaterThanOrEqualTo(anterior), reason: '$id ($n regiones)');
         anterior = n;
       }
+    }
+  });
+
+  test('niveles: cada obra de la historia tiene los colores de su nivel', () {
+    final recorrido = cuadrosDelRecorrido(biomas);
+    for (final (i, id) in recorrido.indexed) {
+      final meta = catalogo.meta(id)!;
+      // El conversor calcula el nivel con el orden del catálogo: tiene que ser el del recorrido.
+      expect(meta.orden, i + 1, reason: '$id está en otro orden en scripts/catalogo-arte.json');
+      expect(meta.paleta, hasLength(coloresDelNivel(nivelDeObra(i))), reason: id);
     }
   });
 

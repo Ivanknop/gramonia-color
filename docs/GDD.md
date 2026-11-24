@@ -65,6 +65,13 @@ tiene más obras que el anterior y cada obra más regiones para pintar.
 10–16. Las siete **Islas Arcoíris**, una por color (roja, naranja, amarilla,
 verde, azul, añil y morada), de 6 a 9 obras cada una.
 
+**Niveles** (`lib/engine/niveles.dart`): marcan el avance de la historia. Cada
+nivel pide una cantidad de obras para pasar al siguiente y fija los colores de
+sus obras, con la regla valor(n) = valor(n-1) + ⌊valor(n-1)/2⌋ (nivel 1: 2 obras
+de 10 colores): 2/10, 3/15, 4/22, 6/33, 9/49… El nivel de una obra sale de su
+lugar en el recorrido; el conversor la genera con los colores de su nivel. La
+galería muestra el nivel actual y cuántas obras faltan para el siguiente.
+
 - Un lugar se puede jugar cuando el anterior está recuperado en todo lo que
   tiene disponible. Las piezas **"próximamente"** (todavía sin obra) no traban.
 - Cada obra terminada colorea una parte del **mapa**; con el lugar completo se

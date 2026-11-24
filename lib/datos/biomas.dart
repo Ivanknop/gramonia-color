@@ -93,8 +93,8 @@ final biomas = <Bioma>[
     descripcion: 'Playas, muelles y SirenHadas que juntan caracolas. Más allá, el mar.',
     color: 0xFF1E88E5,
     piezas: [
-      const Pieza(id: 'muelle', cuadroId: 'barco-en-el-muelle'),
       const Pieza(id: 'puerto', cuadroId: 'puerto-en-la-tormenta'),
+      const Pieza(id: 'muelle', cuadroId: 'barco-en-el-muelle'),
       const Pieza(id: 'horizonte', cuadroId: 'rumbo-a-la-isla'),
       ..._proximamente('costa', 3, desde: 4),
     ],

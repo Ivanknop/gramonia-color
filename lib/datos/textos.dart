@@ -11,4 +11,9 @@ abstract final class Textos {
   static const generoChico = 'Chico';
   static const generoChica = 'Chica';
   static const generoNeutro = 'Prefiero no decir';
+
+  // ---- Niveles (modo historia) ----
+  static String nivel(int n) => 'Nivel $n';
+  static String paraElNivel(int hechas, int necesarias, int siguiente) =>
+      '$hechas de $necesarias obras para llegar al nivel $siguiente';
 }

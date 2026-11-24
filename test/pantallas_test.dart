@@ -102,6 +102,8 @@ void main() {
     await tester.tap(find.text('Pintar'));
     await tester.pumpAndSettle();
     expect(find.text('Árbol Mágico'), findsOneWidget);
+    expect(find.text('Nivel 1'), findsOneWidget);
+    expect(find.text('0 de 2 obras para llegar al nivel 2'), findsOneWidget);
     expect(find.text('Se desbloquea al recuperar el lugar anterior'), findsWidgets);
     // Una obra del Bosque (bloqueado) no se abre.
     await tester.tap(find.text('La casa de la abuelita'));

@@ -77,6 +77,9 @@ List<EstadoBioma> estadoBiomas(List<Bioma> biomas, Set<String> completados) {
   return estados;
 }
 
+/// Obras de la historia en el orden del recorrido (bioma por bioma).
+List<String> cuadrosDelRecorrido(List<Bioma> biomas) => [for (final b in biomas) ...b.cuadroIds];
+
 /// Qué pieza destapa un cuadro (o null si no destapa ninguna).
 ({Bioma bioma, Pieza pieza})? piezaDeCuadro(List<Bioma> biomas, String cuadroId) {
   for (final b in biomas) {
