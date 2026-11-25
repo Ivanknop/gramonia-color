@@ -7,7 +7,6 @@ const meta = MetaCuadro(
   titulo: 'Prueba',
   categoria: Categoria.arte,
   dificultad: 1,
-  mensajeMututu: '¡Listo!',
   paleta: [
     ColorPaleta(numero: 1, nombre: 'Uno', hex: '#FF0000'),
     ColorPaleta(numero: 2, nombre: 'Dos', hex: '#00FF00'),
@@ -109,7 +108,6 @@ void main() {
         titulo: meta.titulo,
         categoria: meta.categoria,
         dificultad: 1,
-        mensajeMututu: '',
         paleta: [
           ...meta.paleta,
           const ColorPaleta(numero: 3, nombre: 'Tres', hex: '#0000FF'),

@@ -1,0 +1,28 @@
+{
+  "id": "la-pluma-arcoiris--super-facil",
+  "titulo": "La pluma arcoíris",
+  "categoria": "arte",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FCADAE"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#2D3068"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#CC5193"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#909BA0"
+    }
+  ]
+}

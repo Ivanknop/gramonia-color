@@ -1,0 +1,58 @@
+{
+  "id": "el-oso-en-la-biblioteca--mediano",
+  "titulo": "El Oso en la biblioteca",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#2E1F16"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7A573F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#604937"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1F140E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#917259"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#563A29"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#A98D71"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#3E291D"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D2C0AA"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#4F301F"
+    }
+  ]
+}

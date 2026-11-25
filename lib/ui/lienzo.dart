@@ -184,7 +184,13 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
   void _alTransformar() {
     final area = _area;
     if (area == null || _ajustandoEnBuild) return;
-    final alejado = (_escala - _escalaCobertura(area)).abs() > 0.02;
+    // Fuera de la vista inicial: con otro zoom o corrida (la lupa puede mover
+    // la vista sin acercarla).
+    final inicial = _matrizCentrada(area, _escalaCobertura(area), area.center(Offset.zero));
+    final actual = _transformacion.value;
+    final alejado =
+        (_escala - _escalaCobertura(area)).abs() > 0.02 ||
+        (actual.getTranslation() - inicial.getTranslation()).length > 4;
     if (alejado != _alejado) setState(() => _alejado = alejado);
   }
 
@@ -214,6 +220,9 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
     final escala = math
         .min(area.width * 0.35 / ancho, area.height * 0.35 / alto)
         .clamp(_escalaCobertura(area), _maximo);
+    // Si no hace falta acercar (partes grandes), la vista no se mueve: la
+    // región ya se ve y queda señalada.
+    if (escala <= _escalaCobertura(area) * 1.02) return;
     final centro =
         _origenContenido(area) + Offset(region.etiqueta.x * _factor, region.etiqueta.y * _factor);
     _animarA(_matrizCentrada(area, escala, centro));
@@ -285,9 +294,10 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
                   ),
                 ),
               ),
+              // Abajo: arriba van los avisos (tutorial, lupa y bomba encendidas).
               if (_alejado)
                 Positioned(
-                  top: 8,
+                  bottom: 8,
                   right: 8,
                   child: FilledButton.tonal(
                     style: Tema.botonAqua,

@@ -1,0 +1,208 @@
+{
+  "id": "la-granja--insano",
+  "titulo": "La granja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4D4D38"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6F6F4F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4D3E32"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6F5E4B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#9A906D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B0D6EA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#525740"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#887C5E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#39352A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#BCDDED"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#C3BA97"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#BFA985"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#757A5B"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#424736"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#CCE5EC"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#AF9370"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#A6AA8B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#A5D0E8"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#93C5E4"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#594D3E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#302921"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#9B664D"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#9FCCE6"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#99C8E5"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#636B57"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#DEEFF2"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#636844"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#D5EBF1"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#7A6953"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#615843"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#3E3D2F"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#836E58"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#95C6E5"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#634133"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#858663"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#90A08F"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#5D6046"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#B6CFD6"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#8B8D6B"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#6D4F3E"
+    }
+  ]
+}

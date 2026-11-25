@@ -1,4 +1,4 @@
-# Gramonia Color — Documento de diseño (GDD corto)
+# Gramonia a Color — Documento de diseño (GDD corto)
 
 > Juego para teléfonos Android de pintar por números.
 
@@ -19,7 +19,7 @@ El guía es **Gobi, el Lobito Guardián**: el más chiquito de los Lobos, nacido
 un huevo carmesí con mariposas bordadas, que no tenía bioma para cuidar… hasta
 ahora. Gobi narra la historia: una introducción la primera vez que se juega
 (con una imagen inicial todavía no definida) y un capítulo cada vez que se
-recupera un lugar. El final llega en la Isla Negra, con un abrazo para Mututu
+completa un nivel. El final llega en la Isla Negra (nivel 8), con un abrazo para Mututu
 (Gobi es el coleccionista de abrazos).
 
 ## 1b. Portada
@@ -43,13 +43,21 @@ pantalla saltea la animación. Línea de tiempo en `lib/engine/intro.dart`.
 ## 1c. Tutorial (nivel 0)
 
 Un Árbol Mágico sencillo (por ahora, la ilustración de "El Árbol Mágico de
-noche"), con **5 colores y 20 partes**. Arriba del dibujo se muestra el paso
-que falta: elegir un color, tocar una parte, completar un color, apretar la
-lupa y apretar la bomba (en el tutorial no se gastan). Al terminarlo se pasa
-al **nivel 1** y se ganan **20 plumas**. Se juega una vez al empezar la historia
-y se puede **saltar** (se pasa igual al nivel 1; las 20 plumas quedan para la
-primera vez que se termine). Desde la galería se puede **volver a hacer**, ya
-sin premio. Pasos en `lib/engine/tutorial.dart`.
+noche"), con **5 colores y 20 partes**. Los pasos son **obligatorios y en
+orden**, y arriba del dibujo se muestra el que toca: elegir un color, pintar
+hasta completar uno, usar la lupa y tirar la bomba (en el tutorial no se
+gastan); después, terminar el dibujo. En cada paso solo responde lo que pide
+(lo demás se ve apagado). Al terminarlo se pasa al **nivel 1** y se ganan
+**20 plumas**. Se juega una vez al empezar la historia y se puede **saltar**
+(se pasa igual al nivel 1; las 20 plumas quedan para la primera vez que se
+termine: los premios son por cumplir las tareas). Desde la galería se puede
+**volver a hacer**, ya sin premio. Al llegar al nivel 1 (terminando o
+salteando) se regalan **3 lupas y 3 bombas**. Pasos en `lib/engine/tutorial.dart`.
+
+**Tutorial de la tienda**: al completar el nivel 1, el panel final dice "¡A la
+tienda!" y el juego se queda en la Tienda (las otras pestañas no responden):
+el Lobo regala **5 plumas** y pide comprar una **lupa**. Termina al comprarla;
+también se puede saltar.
 
 ## 2. Mecánica principal
 
@@ -65,10 +73,13 @@ sin premio. Pasos en `lib/engine/tutorial.dart`.
    - Número incorrecto: no pinta (vibración suave). Correcto: vibración leve.
 4. Al completar un color, la paleta lo marca con ✓ y se pasa al siguiente.
 5. **Zoom y paneo** con gestos. El cuadro arranca llenando toda la pantalla.
-6. **Lupa**: lleva la vista a la próxima región pendiente del color elegido
-   (cada toque, la siguiente) y la señala.
-7. **Bomba de color**: se arma con el botón y el próximo toque pinta todas las
-   regiones cercanas, cada una con su color, en una onda desde donde cae.
+6. **Lupa** (solo el ícono, con un globito de cuántas quedan): al tocarla se
+   enciende (brilla) y al tocarla de nuevo se apaga. Encendida, tocar un color
+   que todavía tenga partes sin pintar gasta una y lleva la vista a una de esas
+   partes, que se señala. Con un color completo no hace nada (no se gasta).
+7. **Bomba de color** (solo el ícono): se enciende y se apaga igual; encendida,
+   el próximo toque en el dibujo pinta todas las regiones cercanas, cada una
+   con su color, en una onda desde donde cae.
 8. Al terminar el cuadro: **festejo** (confeti arcoíris, cartel "¡Terminaste!",
    campanitas y tres vibraciones), mensaje, parte del mapa recuperada y plumas.
    Después, un **timelapse**: la repetición acelerada (2,5 a 6 s) de cómo se
@@ -91,7 +102,9 @@ No hay derrota ni tiempo límite. El progreso se guarda en todo momento.
   terminar el tutorial** por primera vez (valores
   en `lib/engine/plumas.dart`).
 - Se gastan en la **Tienda** (pestaña con ícono de tienda, la atiende el Lobo
-  de la tienda: "No explico mucho. Vendo."): **lupa 5 plumas, bomba 10**.
+  de la tienda: "No explico mucho. Vendo."): **lupa 5 plumas, bomba 10**. Cada
+  compra se confirma ("¿Comprás una lupa por 5 plumas?") y al hacerla aparece
+  un cartelito.
 - Usar la lupa o la bomba gasta una del inventario. Sin ninguna, se avisa que
   se consiguen en la Tienda.
 
@@ -105,12 +118,12 @@ lugar tiene más obras que el anterior y cada obra más regiones y colores.
 | 0 | Tutorial | 5 |
 | 1 | Árbol Mágico (3 obras) | 10 |
 | 2 | Bosque Mágico (4) | 15 |
-| 3 | Reino Animal (4) | 22 |
-| 4 | Tierra de las Caperucitas (5) y Prado de las Hadas (5) | 33 |
-| 5 | Montaña Dragón (5) y Reino Helado (5) | 49 |
-| 6 | La Ciudad (6, linda con el Muelle) y La Costa (6) | 73 |
-| 7 | Las siete **Islas Arcoíris** (roja, naranja, amarilla, verde, azul, añil y morada), de 6 a 9 obras | 109 |
-| 8 | Isla Negra (10) | 163 |
+| 3 | Reino Animal (5) | 22 |
+| 4 | Tierra de las Caperucitas (4) y Prado de las Hadas (3) | 33 |
+| 5 | Montaña Dragón (5) y Reino Helado (2) | 49 |
+| 6 | La Ciudad (4, linda con el Muelle) y La Costa (6) | 73 |
+| 7 | **Islas Arcoíris**: las siete islas (roja, naranja, amarilla, verde, celeste, azul y violeta), una obra por isla; en el mapa se colorean de a una | 109 |
+| 8 | Isla Negra (3) | 163 |
 
 **Niveles** (`lib/engine/niveles.dart`, nivel de cada lugar en
 `lib/datos/biomas.dart`): al llegar a un nivel se abren **todos sus lugares
@@ -127,8 +140,8 @@ revelado de lugares. Entran los cuadros que solo son del modo libre
 
 **Capítulos de nivel**: al completar cada nivel, Gobi cuenta qué se recuperó,
 cómo sigue la historia y avisa que hay que estar atentos por si vuelve
-Mututu (también al terminar el tutorial). Se cuentan de corrido con el
-capítulo del lugar, y quedan en "La historia".
+Mututu (también al terminar el tutorial). Gobi habla solo al completar un
+nivel (no hay capítulos por lugar), y los capítulos quedan en "La historia".
 
 **Tienda**: de fondo, la ilustración de la tienda; la atiende el Lobo de la
 tienda (dibujo del canon). Al elegir un dibujo se elige la
@@ -152,7 +165,7 @@ conversor genera una variante de cada cuadro por dificultad.
   recuperados en todo lo que tienen disponible. Las piezas **"próximamente"**
   (todavía sin obra) no traban.
 - Cada obra terminada colorea una parte del **mapa**; con el lugar completo se
-  colorea entero y Gobi cuenta su capítulo.
+  colorea entero. Al completar el nivel, Gobi cuenta su capítulo.
 - Las regiones por obra hoy van de 70 (Árbol) a ~340 (Costa).
 
 ## 4. Contenido
@@ -163,7 +176,9 @@ conversor genera una variante de cada cuadro por dificultad.
 - **Lugares (biomas)**: `lib/datos/biomas.dart`. Zonas del mapa provisorio:
   `lib/datos/mapa.dart` (sobre `fondo-caminatas`, que después volverá a ser obra).
 - **Historia**: `lib/datos/historia.dart`.
-- **Mensajes de Mututu**: uno por cuadro (campo `mensajeMututu`).
+- **Mensaje al terminar una obra**: uno al azar entre varios (`Textos.mensajesObra`),
+  según cuántas obras le faltan a su lugar ("¡Falta menos! Ya casi le devolvemos el
+  color al Árbol Mágico.").
 
 ## 5. Pantallas
 

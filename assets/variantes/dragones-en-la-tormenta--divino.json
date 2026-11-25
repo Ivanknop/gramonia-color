@@ -1,0 +1,258 @@
+{
+  "id": "dragones-en-la-tormenta--divino",
+  "titulo": "Dragones en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#212430"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#161923"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#282C3A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#191D28"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2A2F40"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#242633"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#192031"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#2C2C39"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#181E30"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1D202C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#242B3D"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#11121B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#191B26"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#262936"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#202738"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#4C5269"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#11141E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#1B1E29"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#171D2F"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#8A84A2"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#21293A"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#686883"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#383D51"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#44495F"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#181B26"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#2B3141"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#363A4B"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#323749"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#1F2535"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#1C1F2A"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#23212E"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#595A74"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#303546"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#0E1119"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#3F4358"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#151822"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#1F222E"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#242935"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#272C3C"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#2D3344"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#3A4155"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#1D1B26"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#13161F"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#171620"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#1E212D"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#141620"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#1C2130"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#191E2C"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#161A27"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#202636"
+    }
+  ]
+}

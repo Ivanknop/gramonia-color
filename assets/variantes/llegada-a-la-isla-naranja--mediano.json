@@ -1,0 +1,58 @@
+{
+  "id": "llegada-a-la-isla-naranja--mediano",
+  "titulo": "Llegada a la Isla Naranja",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#90D9E4"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#57504B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#8E5A51"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#D3B894"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#71846F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#E0F0DC"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#DCDDC8"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A5846D"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#C48B6B"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#84B4AD"
+    }
+  ]
+}

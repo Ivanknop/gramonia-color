@@ -17,7 +17,6 @@ La app encuentra sola todos los cuadros de esa carpeta.
     { "numero": 1, "nombre": "Crema", "hex": "#FFF2CC" },
     { "numero": 2, "nombre": "Madera", "hex": "#B45F06" }
   ],
-  "mensajeMututu": "¡Té caliente otra vez!",
   "orden": 0
 }
 ```
@@ -66,7 +65,7 @@ La app encuentra sola todos los cuadros de esa carpeta.
 ## Desde las ilustraciones de `arte/`
 
 Cada imagen de `arte/` tiene su entrada en `scripts/catalogo-arte.json` (id,
-título, categoría, mensaje de Mututu, **`regiones`** —la dificultad: cuántas
+título, categoría, **`regiones`** —la dificultad: cuántas
 regiones pintar— y `colores`).
 `python3 scripts/convertir_arte.py` las convierte todas
 (`python3 scripts/convertir_arte.py <id>` para una sola). Las imágenes muy oscuras o con mucho detalle quedan más

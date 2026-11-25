@@ -1,0 +1,119 @@
+{
+  "id": "el-oso-en-la-biblioteca",
+  "titulo": "El Oso en la biblioteca",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#251710"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7E5E47"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#9C775B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#866E57"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A98D71"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#764F38"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#3B2317"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#18110C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5E3B27"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#BEA58B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#2F1E15"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5D4230"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#655242"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#E5D9C8"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#3F2A1D"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#413226"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#624937"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#2B1C13"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#4F3A2B"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#503222"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#4D2C1C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#31241B"
+    }
+  ],
+  "orden": 11
+}

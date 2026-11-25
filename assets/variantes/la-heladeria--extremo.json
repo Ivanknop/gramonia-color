@@ -1,0 +1,128 @@
+{
+  "id": "la-heladeria--extremo",
+  "titulo": "La heladería",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#899189"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4D4238"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#857663"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2A211E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#AF9C83"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#977B60"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#42493B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#DADBD5"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#54594D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#765B4A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#626860"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#66726E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#3C2F29"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#63594A"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#393831"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#2C2F2A"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#B8BDB8"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#5F463E"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#ABAFA8"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#C8C2B7"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#9C9D95"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#6F776E"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#3D4037"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#79796D"
+    }
+  ]
+}

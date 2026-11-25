@@ -1,0 +1,128 @@
+{
+  "id": "la-gema-helada--extremo",
+  "titulo": "La Gema Helada",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#806E75"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5A424B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#423440"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#DFC4B0"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A48B86"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#E2BA8A"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#414156"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#BFA29A"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#99D2E7"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A97361"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#ECD6B5"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#838E9E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#7C5050"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#ABB3B6"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#BB8B74"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#5D6376"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#755F68"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#F0EFDD"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#C6D9DA"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#94716C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#CA9F78"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#8E6059"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#554B5C"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#595467"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "la-gema-helada--normal",
+  "titulo": "La Gema Helada",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C0977F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#493D4A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#5A5566"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E5CFB3"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#ABC3CB"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#80595A"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#91716E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#958D93"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "el-hada-madrina--extremo",
+  "titulo": "El Hada Madrina",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#836A77"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#30242A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#623D46"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3B303D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C0948C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#484A59"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#77494E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#61485A"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F0BAA2"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#AF766F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#FBE0B3"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#C88376"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#F0CFAA"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#E0A690"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#A07374"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#975B59"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#C6746E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#DC9784"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#9E6763"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#83585C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#D9B59D"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#433747"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#6F555E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#473D4A"
+    }
+  ]
+}

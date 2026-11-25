@@ -1,0 +1,168 @@
+{
+  "id": "dragones-en-la-tormenta--imposible",
+  "titulo": "Dragones en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#242633"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1B1E29"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2A2F40"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#181E30"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#10121A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#53566F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#181B26"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#202432"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#393F53"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#212839"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#151822"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#2B2C39"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#1E212D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#42475C"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#7A7693"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#35394A"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#192031"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#262B3A"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#22212E"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#1B1B26"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#202636"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#303546"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#11141E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#161620"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#13161F"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#1C202D"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#2C3243"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#161A25"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#242A39"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#1D202C"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#191E2C"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#181D2C"
+    }
+  ]
+}

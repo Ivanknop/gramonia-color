@@ -1,0 +1,168 @@
+{
+  "id": "las-haditas-practican--imposible",
+  "titulo": "Las haditas practican",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#AA9E61"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#EEDCA7"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FCF2E0"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#DCCC90"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F8EDDA"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#EDDFCA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#736740"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B8A779"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#DDCCB4"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F1E7D4"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#B28361"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#DABC81"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#897952"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#ABA082"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C79B72"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#674D32"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#D8C0A5"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#9D815E"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#C3BE97"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#C9A980"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#F7EAD4"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#9A9062"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#B79873"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#927050"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#8E6246"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#CDBF96"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#E5D9B5"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#8F8358"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#A9916A"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#C7B388"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#DED6B1"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#BBB184"
+    }
+  ]
+}

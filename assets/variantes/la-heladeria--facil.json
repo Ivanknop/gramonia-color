@@ -1,0 +1,38 @@
+{
+  "id": "la-heladeria--facil",
+  "titulo": "La heladería",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3A3831"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#61594B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#747265"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#959488"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C0C1BB"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#58443C"
+    }
+  ]
+}

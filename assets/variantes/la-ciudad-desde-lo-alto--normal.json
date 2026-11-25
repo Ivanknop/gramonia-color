@@ -1,0 +1,48 @@
+{
+  "id": "la-ciudad-desde-lo-alto--normal",
+  "titulo": "La Ciudad desde lo alto",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B5B67B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#8A9458"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3F523C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E1D5B9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#647447"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B29C75"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#72563D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#927955"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "id": "el-hada-madrina--divino",
+  "titulo": "El Hada Madrina",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B07B61"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#614872"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A0748A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6F5347"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3A363F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4B3738"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D18377"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#835746"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#4C3765"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#746C82"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#EFB49D"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#45302C"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D9A590"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#8E5B57"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#302F31"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#FBE9B9"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#25232B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#B07D8E"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#A1725E"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#E6A690"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#614841"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#F5D2AD"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#6A3E40"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#F0C0A6"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#BE8375"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#33303E"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#3B2529"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#495163"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#B29292"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#CE9686"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#DC9784"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#423056"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#916D71"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#D9B59D"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#FAD6AD"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#BD736B"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#AE6E66"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#6E4955"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#47444E"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#A05B5A"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#665675"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#7F4947"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#D07571"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#5A3C4D"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#EACCA8"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#906366"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#473D4A"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#775672"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#835A71"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#9E6763"
+    }
+  ]
+}

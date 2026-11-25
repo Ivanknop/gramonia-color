@@ -1,0 +1,168 @@
+{
+  "id": "la-pluma-arcoiris--imposible",
+  "titulo": "La pluma arcoíris",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FA9BAD"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#080A2B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6C3767"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FDECD3"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F176A5"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#CE6392"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FC92AE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#9D4E81"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#17868D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A76A94"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#158088"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#EFA4B2"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#CE08BC"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#CEB2AF"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#F98593"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#FCAECA"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#EC6D6D"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#113A58"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#3A8A94"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#0D6875"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#FDD7BA"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#D6BEB3"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#290D70"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#B5A9AD"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#5B1186"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#FCAB8A"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#406D82"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#0C0F67"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#C7557D"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#DA20A5"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#C48496"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#FB8F90"
+    }
+  ]
+}

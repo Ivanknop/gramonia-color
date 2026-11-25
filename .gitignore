@@ -41,3 +41,7 @@ __pycache__/
 
 # Capturas de pantalla (tool/capturas_test.dart)
 temp/
+
+# Originales del arte (imágenes, música, íconos): quedan solo en la máquina
+# local. El juego usa lo generado en assets/ (scripts/convertir_arte.py).
+arte/

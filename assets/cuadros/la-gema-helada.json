@@ -1,0 +1,254 @@
+{
+  "id": "la-gema-helada",
+  "titulo": "La Gema Helada",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#714E4E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3D4054"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C68957"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#383242"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#4A4B63"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#725E67"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#937476"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#54383E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#8BB2C9"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#BF9C80"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#A68D88"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#E7F3F3"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C8B2A3"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#C5C9C4"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#DABDAD"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#C5E7F0"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#806162"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#5C6589"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#A59D9F"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#A48177"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#D4A172"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#F6E8C4"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#5E6261"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#B1735D"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#E9D6C4"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#E0C8B2"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#938E94"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#7A6B80"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#EFD4A3"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#946E61"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#B28A79"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#9CDBEF"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#976157"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#624B4E"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#DCB186"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#826C67"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#C8A496"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#E4C08E"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#5D4245"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#5C4D61"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#748EA6"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#5B5567"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#524357"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#C28F85"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#93C5DC"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#8B5352"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#9E7265"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#B6A09C"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#817586"
+    }
+  ],
+  "orden": 26
+}

@@ -1,0 +1,38 @@
+{
+  "id": "la-plaza-de-juegos--facil",
+  "titulo": "La plaza de juegos",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#876950"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C4C687"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#838D63"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B88D76"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#AFAB87"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#DEE0C2"
+    }
+  ]
+}

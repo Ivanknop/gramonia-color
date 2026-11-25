@@ -1,5 +1,6 @@
 /// Portada del juego, con su intro: el mapa de Gramonia arranca a todo color y
-/// se va apagando hasta el blanco y negro (Mututu robando los colores); ya en
+/// se va apagando hasta el blanco y negro (Mututu robando los colores), menos
+/// los lugares de los niveles ya completos, que se quedan con su color; ya en
 /// gris aparece el título "Gramonia… Color" en lilas y, debajo, los dos modos:
 ///
 /// - "Modo historia": la primera vez cuenta la historia de Gobi, pregunta cómo
@@ -16,14 +17,17 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../datos/biomas.dart';
 import '../../datos/historia.dart';
 import '../../datos/textos.dart';
 import '../../engine/intro.dart';
 import '../../engine/motor.dart';
+import '../../engine/niveles.dart';
 import '../comun.dart';
 import 'creditos.dart';
 import 'perfil.dart';
 import 'historia.dart';
+import 'mapa.dart';
 import 'modo_libre.dart';
 import 'pintar.dart';
 import 'principal.dart';
@@ -117,6 +121,7 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final progreso = Dependencias.of(context).progreso;
     return Scaffold(
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
@@ -133,6 +138,12 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
                 ColorFiltered(
                   colorFilter: ColorFilter.matrix(matrizSaturacion(e.saturacion)),
                   child: Image.asset(imagenProvisoria, fit: BoxFit.cover),
+                ),
+                // Lo recuperado no pierde el color.
+                ListenableBuilder(
+                  listenable: progreso,
+                  builder: (context, _) =>
+                      MapaRecuperado(lugares: lugaresRecuperados(biomas, progreso.completados)),
                 ),
                 // Un velo suave para que se lean el título y los botones.
                 ColoredBox(color: Color.fromRGBO(255, 255, 255, 0.25 * (1 - e.saturacion))),
@@ -162,12 +173,30 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                TextButton.icon(
-                                  onPressed: () => _abrir(const Creditos()),
-                                  icon: const Icon(Icons.info_outline, size: 18),
-                                  label: const Text(Textos.creditos),
+                                // Solo texto, como un enlace (sin botón marcado).
+                                Semantics(
+                                  link: true,
+                                  child: GestureDetector(
+                                    key: const Key('enlace-creditos'),
+                                    behavior: HitTestBehavior.opaque,
+                                    onTap: () => _abrir(const Creditos()),
+                                    child: const Padding(
+                                      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6),
+                                      child: Text(
+                                        Textos.creditos,
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          color: Tema.morado,
+                                          decoration: TextDecoration.underline,
+                                          decorationColor: Tema.morado,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                                const SizedBox(width: 10),
+                                const Text('·', style: TextStyle(fontSize: 13, color: Tema.morado)),
+                                const SizedBox(width: 6),
                                 const Text(
                                   Textos.version,
                                   key: Key('version'),

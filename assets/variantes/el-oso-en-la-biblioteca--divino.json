@@ -1,0 +1,258 @@
+{
+  "id": "el-oso-en-la-biblioteca--divino",
+  "titulo": "El Oso en la biblioteca",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#63422D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#503221"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#21150F"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1A130E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#130D09"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3D2519"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#3F2A1D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#D8C6AE"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#312117"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A77F60"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#321E14"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#614836"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#BA9170"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#977F66"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#554131"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#302820"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#4D2B1B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#6F4831"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#281610"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#F5F0E5"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#573927"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#B5A28D"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#3A2115"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A18B74"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#251A13"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#755A44"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#2B1B13"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#623A25"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#3F2E23"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#957155"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#C8AA8B"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#815036"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#41342A"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#806852"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#8D6045"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#8D6B50"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#AC9075"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#5F5142"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#8D7760"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#805F46"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#4E3B2C"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#70523D"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#83705C"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#69523F"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#765038"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#A37355"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#4E3727"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#2E1B13"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#77604C"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#2C1E15"
+    }
+  ]
+}

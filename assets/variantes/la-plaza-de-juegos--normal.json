@@ -1,0 +1,48 @@
+{
+  "id": "la-plaza-de-juegos--normal",
+  "titulo": "La plaza de juegos",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C6C889"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#828D64"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#666244"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#95AA90"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#E0E1C4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C9AF7F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B98E76"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A46E5A"
+    }
+  ]
+}

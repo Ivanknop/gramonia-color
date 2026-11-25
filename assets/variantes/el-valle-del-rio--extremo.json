@@ -1,0 +1,128 @@
+{
+  "id": "el-valle-del-rio--extremo",
+  "titulo": "El valle del río",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C5B771"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3E4C37"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#BAB468"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#95985A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#45583F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#343F2F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#DEDCC4"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#535C3B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#B0A663"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#869765"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#7B7548"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#F4E5CC"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#868B54"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#79814E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#D7CD98"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#687A50"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#A2A45F"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#657047"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#8A8250"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#615F3C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#C1CA9B"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#A3985C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#ACB06E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#606943"
+    }
+  ]
+}

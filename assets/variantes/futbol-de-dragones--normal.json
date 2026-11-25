@@ -1,0 +1,48 @@
+{
+  "id": "futbol-de-dragones--normal",
+  "titulo": "Fútbol de dragones",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#D4BA99"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B89E7D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E5E1D7"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#737061"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#9C9476"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#BEB291"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D3CFC1"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#967B64"
+    }
+  ]
+}

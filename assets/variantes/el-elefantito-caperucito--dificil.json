@@ -1,0 +1,78 @@
+{
+  "id": "el-elefantito-caperucito--dificil",
+  "titulo": "El elefantito caperucito",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#355433"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#173121"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#845840"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E6E8C8"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7D8368"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3E2A21"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#546F4A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C8C57C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#8EA068"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#5E804F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#4B3D2F"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#B5A76B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A87F57"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#545A47"
+    }
+  ]
+}

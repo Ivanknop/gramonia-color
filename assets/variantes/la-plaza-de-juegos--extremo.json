@@ -1,0 +1,128 @@
+{
+  "id": "la-plaza-de-juegos--extremo",
+  "titulo": "La plaza de juegos",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#90634E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#67714B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#88AAB3"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B5BB79"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#604D39"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#DA8779"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#DFE5DE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C7CB8B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#7A845B"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A68D6C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#B9C985"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#9FA66C"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#8F9764"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#E2B686"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C79A8E"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#F3ECD5"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#EBDB9C"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#E3CB94"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#C9D9C1"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#A5B179"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#809274"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#B27661"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#DAA884"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#B7AD7C"
+    }
+  ]
+}

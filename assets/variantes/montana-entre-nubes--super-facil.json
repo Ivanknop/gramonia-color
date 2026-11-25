@@ -1,0 +1,28 @@
+{
+  "id": "montana-entre-nubes--super-facil",
+  "titulo": "La Montaña entre nubes",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#7D91A6"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B5C2CE"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#293B4E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#536A82"
+    }
+  ]
+}

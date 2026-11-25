@@ -1,0 +1,128 @@
+{
+  "id": "llegada-a-la-isla-naranja--extremo",
+  "titulo": "Llegada a la Isla Naranja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#555E54"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7DD3E7"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#543D3E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#CFAA84"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F5DEB1"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A66553"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5B8375"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A8E9EA"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#7B645D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#CBF2EC"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#C9DEDD"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#68BACE"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A4836D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#EBC899"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#894D47"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#9FBBA1"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#9FA57F"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#C49575"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#F8EFCD"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#C58060"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#838F6F"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#A2D9D8"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#857763"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#C6C7AE"
+    }
+  ]
+}

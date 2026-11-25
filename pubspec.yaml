@@ -71,6 +71,8 @@ flutter:
     - assets/personajes/
     # Música de fondo (AAC 80 kbps, comprimida desde arte/musica).
     - assets/musica/
+    # Íconos de lupa, bomba y tienda (de arte/, con scripts/convertir_arte.py iconos).
+    - assets/iconos/
     # Efectos de sonido (scripts/generar_festejo.py).
     - assets/sonidos/
 

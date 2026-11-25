@@ -567,7 +567,6 @@ def convertir(args: argparse.Namespace) -> Path:
             {"numero": numero_de[c], "nombre": f"Color {numero_de[c]}", "hex": a_hex(paleta[c])}
             for c in orden_colores
         ],
-        "mensajeMututu": args.mensaje,
     }
     if args.orden is not None:
         meta["orden"] = args.orden
@@ -599,11 +598,6 @@ def main(argv: list[str] | None = None) -> int:
         "--sin-ilustracion",
         action="store_true",
         help="no escribir la ilustración (las variantes de dificultad usan la del cuadro)",
-    )
-    ap.add_argument(
-        "--mensaje",
-        default="¡Los colores volvieron! Mututu tendrá que buscar otro cuadro para esconderse.",
-        help="mensaje al completar",
     )
     args = ap.parse_args(argv)
     # Las variantes de dificultad llevan el sufijo "--<dificultad>".

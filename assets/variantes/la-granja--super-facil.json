@@ -1,0 +1,28 @@
+{
+  "id": "la-granja--super-facil",
+  "titulo": "La granja",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#6D644C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B2D6E9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4E4436"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#958F6F"
+    }
+  ]
+}

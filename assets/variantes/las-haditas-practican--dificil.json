@@ -1,0 +1,78 @@
+{
+  "id": "las-haditas-practican--dificil",
+  "titulo": "Las haditas practican",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FAEFDC"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#826444"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#DCCA9E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C4B78F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F4E9D4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8D7F55"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C8A178"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A98360"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#E1D7B1"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#EDDEBC"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#B79F75"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D7BC90"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A29167"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#AA9E71"
+    }
+  ]
+}

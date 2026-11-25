@@ -1,0 +1,78 @@
+{
+  "id": "el-oso-en-la-biblioteca--dificil",
+  "titulo": "El Oso en la biblioteca",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#291A13"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5A3926"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#AB8E73"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1E130E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#604836"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#764F37"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D3C1AB"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#483528"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#7F5E47"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#876F58"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#9D795D"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#39251A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#462A1B"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#302118"
+    }
+  ]
+}

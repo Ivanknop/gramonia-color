@@ -1,5 +1,5 @@
 @canon/CLAUDE.md
-# Gramonia Color
+# Gramonia a Color
 
 Juego de **pintar por números** para **teléfonos Android**.
 Mututu le robó los colores a un montón de cuadros (paisajes, animales, objetos,
@@ -60,9 +60,11 @@ lib/datos/textos.dart    Textos nuevos de la UI, con variantes {chico|chica|neut
 lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos;
                          v3: + género; v4: + desbloqueadas y dificultad de las
                          obras rehechas; v5: + lupas y bombas; v6: + tutorial
-                         pasado y premiado; v7: + nombre) y
+                         pasado y premiado; v7: + nombre; v8: + regalo
+                         inicial y tutorial de la tienda) y
                          "Mis obras"
-lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura
+lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura,
+                         enlaces (abre el blog con un canal nativo de MainActivity)
 lib/ui/pantallas/        inicio (portada: modo historia / modo libre), perfil (nombre y género),
                          creditos, modo_libre, principal (pestañas: galería,
                          mis obras, mapa, tienda), pintar (también el tutorial),
@@ -75,7 +77,9 @@ assets/musica/           temas en AAC 80 kbps (de arte/musica/*.mp3)
 assets/sonidos/          efectos (festejo.m4a, sintetizado por script)
 assets/fuentes/          Luckiest Guy (del canon): títulos y logo
 assets/personajes/       dibujos de personajes copiados del canon (lobo.webp: la tienda)
-arte/                    Ilustraciones originales (fuente de los cuadros)
+assets/iconos/           lupa, bomba y tienda (de arte/lupa.png, bomba.png, carro.png)
+arte/                    Originales (imágenes, música, íconos): NO se versiona (.gitignore),
+                         queda solo en la máquina local; el juego usa assets/
 scripts/                 imagen_a_cuadro.py, convertir_arte.py,
                          catalogo-arte.json (títulos y parámetros de arte/)
 test/                    Tests del motor, estado, datos y pantallas
@@ -95,11 +99,14 @@ flutter run                          # con un teléfono conectado por adb
 python3 scripts/convertir_arte.py [id...]   # arte/ → assets (cuadros, variantes, mapa, musica)
 python3 scripts/convertir_arte.py variantes # solo las variantes de dificultad (~1,5 min)
 python3 scripts/convertir_arte.py tutorial  # solo el cuadro del tutorial
+python3 scripts/convertir_arte.py iconos    # solo los íconos (lupa, bomba, tienda)
 python3 scripts/generar_icono.py            # arte/icono.jpeg → ícono de la app (android/res)
 python3 scripts/generar_festejo.py          # sintetiza assets/sonidos/festejo.m4a
 python3 scripts/imagen_a_cuadro.py foto.jpg --id mi-cuadro --titulo "Mi cuadro"
 python3 -m unittest discover -s scripts -p "test_*.py"   # tests del conversor
 flutter test tool/capturas_test.dart # capturas de las pantallas → temp/capturas/ (ignorada)
+flutter test tool/gif_test.dart && python3 scripts/armar_gif.py
+                                     # GIF de la intro y del tutorial → temp/gif/ (< 15 MB)
 ```
 
 El usuario instala el APK directo en el teléfono (no usa tiendas ni Expo Go).
@@ -114,11 +121,11 @@ el devcontainer la restaura desde `.devcontainer/android-keys/` si existe).
   (porcentaje, piezas, biomas) se calcula con el motor.
 - Cada cuadro (menos el del tutorial) destapa exactamente una pieza (lo valida `test/datos_test.dart`,
   que también verifica que cada número caiga dentro de su región, que la
-  dificultad no baje en el recorrido y que cada lugar tenga zona y capítulo).
+  dificultad no baje en el recorrido y que cada lugar tenga zona en el mapa).
 - Niveles (`lib/engine/niveles.dart`): 0 = tutorial; del 1 al 8, grupos de
   lugares (`Bioma.nivel`). Los lugares de un nivel se abren juntos. Al
   completar cada nivel Gobi cuenta su capítulo (`capitulosDeNivel` en
-  `lib/datos/historia.dart`: qué se recuperó, cómo sigue y ojo con Mututu).
+  `lib/datos/historia.dart`: qué se recuperó, cómo sigue y, en general, ojo con Mututu).
 - Cuadros `solo_libre` en `scripts/catalogo-arte.json` (los `arte/libre<n>`):
   no son de la historia, van al final y solo se juegan en el modo libre. Los
   de la historia aparecen en el modo libre recién cuando se colorearon ahí.
@@ -128,8 +135,13 @@ el devcontainer la restaura desde `.devcontainer/android-keys/` si existe).
 - Plumas (`lib/engine/plumas.dart`): 5 por día, 3 por cuadro terminado de la
   historia, en el modo libre las de la dificultad (de 1 a 100, en
   `assets/dificultades.json`), 10 por nivel subido y 20 por el tutorial (una sola vez).
-  Lupas (5) y bombas (10) se compran en la pestaña Tienda; usarlas gasta una
-  del inventario (en el tutorial son gratis).
+  Lupas (5) y bombas (10) se compran en la pestaña Tienda (cada compra se
+  confirma); usarlas gasta una del inventario (en el tutorial son gratis). Al
+  llegar al nivel 1 se regalan 3 lupas y 3 bombas (`herramientasIniciales`).
+- Tutoriales (`lib/engine/tutorial.dart`): el de pintar tiene pasos obligatorios
+  y en orden (color → completar un color → lupa → bomba → terminar); al
+  completar el nivel 1, el de la tienda (5 plumas y comprar una lupa). Los dos
+  se pueden saltar; los premios son solo por cumplirlos.
 - Si se cambia el formato de lo guardado, subir `Progreso.version` y migrar
   (hay test de migración desde v1).
 - Los cuadros de `arte/` se generan: no editar su SVG a mano; cambiar

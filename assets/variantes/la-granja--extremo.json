@@ -1,0 +1,128 @@
+{
+  "id": "la-granja--extremo",
+  "titulo": "La granja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#7F7B5C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#353026"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C1B28E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#96C6E5"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#4D4D38"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A5916F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#9FCCE6"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B0D6EA"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#404333"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#8A8F72"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#5A5742"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#4D3E32"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#DAEDF2"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#6F6F4F"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#60654B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#BCDDED"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#CCE5EC"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#6F5E4B"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#A6AA8B"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#8F6A52"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#7A6953"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#644E3E"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#634133"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#AED0DE"
+    }
+  ]
+}

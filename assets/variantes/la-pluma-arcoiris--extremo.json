@@ -1,0 +1,128 @@
+{
+  "id": "la-pluma-arcoiris--extremo",
+  "titulo": "La pluma arcoíris",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#16838B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#0A0D4A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FA9BAD"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B2527F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F176A5"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FC92AE"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FDECD3"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#D515B0"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#CE6392"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#3E395F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#0D6875"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#EFA4B2"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#420F7B"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#CEB2AF"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#FCAECA"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#EC6D6D"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#A76A94"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#7F8795"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#FDD7BA"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#FA8B91"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#D6BEB3"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#406D82"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#B5A9AD"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#FCAB8A"
+    }
+  ]
+}

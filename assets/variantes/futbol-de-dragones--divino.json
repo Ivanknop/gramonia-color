@@ -1,0 +1,258 @@
+{
+  "id": "futbol-de-dragones--divino",
+  "titulo": "Fútbol de dragones",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C4B285"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#AFA476"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C4B3A1"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#988D6D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#E0C5A4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C2D4DA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#E5CBA8"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C9A682"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#EBE4D6"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#726F57"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#AC8266"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D1C3AE"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#837B60"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F5ECE0"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#D5DAD8"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#CAD6D8"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#858366"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#666C6A"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#D7B992"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#EADDCB"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#625C52"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#7A7359"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#D1B08D"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#8D8166"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#BE9A78"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#D0C294"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#8A8F7B"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#B0A48B"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#E3DCCF"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#945F4F"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#F2E9DD"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#DACEB4"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#999573"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#C7BE9B"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#DFC19C"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#A59F7A"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#AF9578"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#97826C"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#A29174"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#BDB491"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#787C6D"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#92735E"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#C5B995"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#D5BB9E"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#E6D3B8"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#A29976"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#BCAE8D"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#B4AE8C"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#BCA589"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#C3D0D2"
+    }
+  ]
+}

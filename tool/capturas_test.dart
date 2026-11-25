@@ -8,6 +8,7 @@ library;
 import 'dart:io';
 import 'dart:ui' as ui;
 
+import 'package:colores_de_gramonia/datos/biomas.dart';
 import 'package:colores_de_gramonia/datos/catalogo.dart';
 import 'package:colores_de_gramonia/engine/dificultad.dart';
 import 'package:colores_de_gramonia/engine/genero.dart';
@@ -165,6 +166,19 @@ void main() {
     await foto(t, '06-tutorial-tocar-parte');
   });
 
+  testWidgets('portada con los niveles 1 y 2 recuperados', (t) async {
+    cat = catalogo();
+    final p = await progreso();
+    for (final b in biomas.where((b) => b.nivel <= 2)) {
+      for (final id in b.cuadroIds) {
+        p.pintarRegiones(id, [for (final r in cat.obtener(id)!.regiones) r.id]);
+        p.marcarCompletado(id);
+      }
+    }
+    await abrirApp(t, p);
+    await foto(t, '01b-portada-niveles-recuperados');
+  });
+
   testWidgets('modo historia: galería, mis obras, mapa y tienda', (t) async {
     final p = await progreso();
     p.sumarPlumas(30);
@@ -223,8 +237,6 @@ void main() {
     await t.pump(const Duration(seconds: 2));
     await foto(t, '15-asi-lo-pintaste');
     await tocar(t, find.byKey(const Key('saltear')));
-    await foto(t, '16-capitulo-del-lugar');
-    await tocar(t, find.text('Siguiente'));
     await foto(t, '17-capitulo-del-nivel');
     await tocar(t, find.text('Siguiente'));
     await foto(t, '18-capitulo-del-nivel-mututu');

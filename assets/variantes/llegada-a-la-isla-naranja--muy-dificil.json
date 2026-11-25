@@ -1,0 +1,98 @@
+{
+  "id": "llegada-a-la-isla-naranja--muy-dificil",
+  "titulo": "Llegada a la Isla Naranja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#565F54"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A5E1E1"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#7DD3E7"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#CBF1EB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#CEAA85"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F8EECD"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#553E3F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#9FB091"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D9C7A3"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#5C8475"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#926658"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#8A4E48"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C58162"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#68BACE"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#848469"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#A5846D"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#C49575"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#DEDEC7"
+    }
+  ]
+}

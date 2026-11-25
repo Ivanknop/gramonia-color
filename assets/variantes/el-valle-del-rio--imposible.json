@@ -1,0 +1,168 @@
+{
+  "id": "el-valle-del-rio--imposible",
+  "titulo": "El valle del río",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C5B771"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#374B3A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#BAB468"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#DEDCC4"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#747445"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#95985A"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8E8C52"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B0A663"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F4E5CC"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#687A50"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#475C42"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#535C3B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#79814E"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#A2A45F"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#686940"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#A4B076"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#444C35"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#D7CD98"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#B3B167"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#2E3C2F"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#586846"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#869765"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#C1CA9B"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#7D8A56"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#A39D5D"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#3B412F"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#A3935C"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#657047"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#615F3C"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#43533C"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#81764A"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#8A8250"
+    }
+  ]
+}

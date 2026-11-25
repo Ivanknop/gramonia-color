@@ -1,0 +1,168 @@
+{
+  "id": "el-elefantito-caperucito--imposible",
+  "titulo": "El elefantito caperucito",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#66854E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3F5E34"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#7B7A68"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#32251F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#5E3C2E"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#203A23"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#DBC76D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F3F2D6"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#4A6D41"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#535146"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#B4C28B"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#123826"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D8DDB9"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#C5A664"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#7C4E3A"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#305938"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#4E7951"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#839D61"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#A37450"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#8B6046"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#A7A871"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#AD8A5C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#472C22"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#142D20"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#244A2D"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#97A370"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#353D2D"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#11221B"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#7F8B67"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#556247"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#3B4A33"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#657353"
+    }
+  ]
+}

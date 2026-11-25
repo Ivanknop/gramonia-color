@@ -60,9 +60,9 @@ final zonasMapa = <String, ZonaMapa>{
     'isla-naranja',
     'isla-amarilla',
     'isla-verde',
+    'isla-celeste',
     'isla-azul',
-    'isla-anil',
-    'isla-morada',
+    'isla-violeta',
   ].indexed)
     id: ZonaMapa(_elipse(110.0 + i * 92, 1290, 30, 22, lados: 24)),
   // Más allá de las Islas Arcoíris.

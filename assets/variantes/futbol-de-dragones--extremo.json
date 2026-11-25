@@ -1,0 +1,128 @@
+{
+  "id": "futbol-de-dragones--extremo",
+  "titulo": "Fútbol de dragones",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#E0C3A0"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#676559"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C5D3D6"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#7F7E67"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#8D8166"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A39776"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#919075"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B0A481"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D1B08D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#DEDCD2"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#EBE4D6"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#DACEB4"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C6BC99"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F3EBDF"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C2A685"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#E6CFB0"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#B9B08E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#BE9A78"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#D6BA98"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#8D6956"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#A28269"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#D1C2A2"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#AF9578"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#C4B293"
+    }
+  ]
+}

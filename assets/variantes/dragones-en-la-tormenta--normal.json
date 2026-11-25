@@ -1,0 +1,48 @@
+{
+  "id": "dragones-en-la-tormenta--normal",
+  "titulo": "Dragones en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#2F3445"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1E202D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#181A25"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#272B39"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#12141D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#212636"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#51546B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#181E2E"
+    }
+  ]
+}

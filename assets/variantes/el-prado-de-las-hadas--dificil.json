@@ -1,0 +1,78 @@
+{
+  "id": "el-prado-de-las-hadas--dificil",
+  "titulo": "El Prado de las Hadas",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#605949"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#EEE3D2"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B2A480"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#968E6B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#686752"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#AA9773"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#766A4F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C9BD9A"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#847C5B"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#D5CBAD"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#907F60"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#BBB291"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#7B795A"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#767154"
+    }
+  ]
+}

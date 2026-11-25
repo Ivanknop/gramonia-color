@@ -7,8 +7,8 @@
 /// - [introduccion]: se muestra la primera vez que se abre el juego (y se puede
 ///   volver a ver desde la portada). La imagen inicial todavía no está
 ///   definida: mientras tanto se usa el mapa de Gramonia en gris.
-/// - [capitulos]: uno por bioma, se muestra al completar todas sus obras (el de
-///   la Isla Negra es el final de la historia).
+/// - [capitulosDeNivel]: Gobi habla solo al completar cada nivel (el del nivel
+///   8, la Isla Negra, es el final de la historia).
 library;
 
 class Escena {
@@ -27,17 +27,17 @@ const imagenProvisoria = 'assets/mapa/gramonia.webp';
 const introduccion = <Escena>[
   Escena(
     'En Gramonia todo nace del Árbol Mágico: sus raíces son el suelo de la isla '
-    'y su copa es el mismísimo cielo. Y la memoria de Gramonia vive en sus cuadros: '
-    'pinturas de cada rincón, de cada ser y de cada historia.',
-    titulo: 'Gramonia Color',
+    'y su copa es el mismísimo cielo. Y la memoria de Gramonia vive en sus '
+    'habitantes y en cada rincón del mundo.',
+    titulo: 'Gramonia a Color',
   ),
   Escena(
-    'Pero una mañana los cuadros amanecieron en blanco y negro. Alguien se había '
+    'Pero una mañana todo amaneció en blanco y negro. Alguien se había '
     'llevado sus colores, uno por uno, rumbo al mar… Dicen que fue Mututu, el ser '
     'misterioso que vive más allá de las Islas Arcoíris, en la Isla Negra (buuuuu).',
   ),
   Escena(
-    'Y sin sus cuadros, Gramonia empezó a apagarse. El Bosque, la Ciudad, '
+    'Y Gramonia empezó a apagarse. El Bosque, la Ciudad, '
     'la Montaña Dragón… todo se fue poniendo gris.',
   ),
   Escena(
@@ -46,11 +46,7 @@ const introduccion = <Escena>[
     '¡hasta hoy! Voy a devolverle los colores a Gramonia. ¿Me ayudás?',
     titulo: 'Gobi, el Lobito Guardián',
   ),
-  Escena(
-    'Cada cuadro tiene números. Elegí un color de abajo y tocá las partes con ese '
-    'número: el color vuelve, con todas sus luces y sombras. Cuando terminás un '
-    'cuadro, un pedacito de Gramonia vuelve a brillar en el mapa.',
-  ),
+  Escena('Necesitamos devolver los colores a cada pedacito de Gramonia.'),
   Escena(
     'El Rocanón nos va a dar una mano desde allá arriba: cada día nos regala '
     'plumas, y más cuando terminás un cuadro. En la tienda las cambiás por lupas, '
@@ -62,128 +58,6 @@ const introduccion = <Escena>[
     'Primero te enseño a pintar con un dibujito del Árbol. ¡Vamos!',
   ),
 ];
-
-/// Capítulo que se cuenta al completar cada bioma (por id de bioma).
-const capitulos = <String, List<Escena>>{
-  'arbol-magico': [
-    Escena(
-      '¡El Árbol Mágico vuelve a tener sus hojas celestes y blancas! Desde la copa, '
-      'el Rocanón nos saluda con una pluma brillante. Ahora sigamos por el Bosque que '
-      'lo rodea… ojo, que ahí un árbol se parece demasiado a otro árbol.',
-      titulo: 'El Árbol Mágico',
-    ),
-  ],
-  'bosque-magico': [
-    Escena(
-      'Las Hormiguitas ya ven sus senderos de colores. Juana, o quizás Raúl, te manda '
-      'saludos (y un granito de azúcar). Todos los caminos conducen al Árbol… y '
-      'también al Reino Animal. ¡Vamos!',
-      titulo: 'El Bosque Mágico',
-    ),
-  ],
-  'ciudad': [
-    Escena(
-      'La Ciudad brilla de nuevo: sus trenes, sus plazas y la carpeta de dibujos de '
-      'Tomás. Desde la estación ya se oyen las gaviotas del Muelle: ¡la Costa está al lado!',
-      titulo: 'La Ciudad',
-    ),
-  ],
-  'reino-animal': [
-    Escena(
-      'En el Reino Animal, León vuelve a ver su queso bien amarillo (y Kiribiki '
-      'también, claro). Ahora nos esperan dos lugares: la Tierra de las Caperucitas '
-      'y el Prado de las Hadas.',
-      titulo: 'El Reino Animal',
-    ),
-  ],
-  'montana-dragon': [
-    Escena(
-      '¡Las gemas de la Montaña Dragón brillan otra vez! Alma, la dragona de escamas '
-      'violetas, vuela feliz a nuestro lado. Desde acá arriba ya se ve el Reino '
-      'Helado, blanquito de nieve.',
-      titulo: 'La Montaña Dragón',
-    ),
-  ],
-  'prado-de-las-hadas': [
-    Escena(
-      'Las flores del Prado recuperaron sus colores y Anastasia ya puede ordenar sus '
-      'tréboles por color, olor y nivel de cosquillas. Después, a la Montaña Dragón.',
-      titulo: 'El Prado de las Hadas',
-    ),
-  ],
-  'tierra-de-las-caperucitas': [
-    Escena(
-      '¡Caperuzas rojas, azules, a lunares y una que cambia de color cuando alguien '
-      'dice "panqueque"! Caperucita Naranja Clarito Casi Mandarina te regaló un '
-      'retacito. Ahora, a subir a la Montaña Dragón, la más alta después del Árbol.',
-      titulo: 'La Tierra de las Caperucitas',
-    ),
-  ],
-  'reino-helado': [
-    Escena(
-      'El Reino Helado vuelve a tener su helado de menta granizada… ¡bien verde! '
-      'Alma ya se pidió dos. Para calentarnos, bajamos a la Ciudad y a la Costa.',
-      titulo: 'El Reino Helado',
-    ),
-  ],
-  'costa': [
-    Escena(
-      'La Costa brilla y Loana, la SirenHada, señala el horizonte: los colores que '
-      'faltan se fueron por el mar, hacia las Islas Arcoíris. Una Caperucita pirata '
-      'de parche morado nos presta su barco. ¡A navegar!',
-      titulo: 'La Costa',
-    ),
-  ],
-  'isla-roja': [
-    Escena(
-      'La Isla Roja recuperó su rojo y los duendecitos rojos bailan en la playa.',
-      titulo: 'La Isla Roja',
-    ),
-  ],
-  'isla-naranja': [
-    Escena(
-      'La Isla Naranja vuelve a ser naranja, como un atardecer de verano. Los '
-      'duendecitos naranjas nos convidan jugo.',
-      titulo: 'La Isla Naranja',
-    ),
-  ],
-  'isla-amarilla': [
-    Escena(
-      'La Isla Amarilla brilla como el Rocanón al mediodía. Los duendecitos amarillos '
-      'nos cantan una canción.',
-      titulo: 'La Isla Amarilla',
-    ),
-  ],
-  'isla-verde': [
-    Escena(
-      'La Isla Verde volvió a ser verde, verde sapo educado. Los duendecitos verdes '
-      'nos regalan un trébol.',
-      titulo: 'La Isla Verde',
-    ),
-  ],
-  'isla-azul': [
-    Escena(
-      'La Isla Azul es otra vez azul charquito. Los duendecitos azules nos salpican '
-      'para saludar.',
-      titulo: 'La Isla Azul',
-    ),
-  ],
-  'isla-anil': [
-    Escena(
-      'La Isla Añil recuperó su color de noche clara. Los duendecitos añiles nos '
-      'avisan que el mar está cada vez más agitado.',
-      titulo: 'La Isla Añil',
-    ),
-  ],
-  'isla-morada': [
-    Escena(
-      'La Isla Morada es morada arándano otra vez. Los duendecitos morados señalan '
-      'un manchón negro en el horizonte: la Isla Negra. Ahí está Mututu.',
-      titulo: 'La Isla Morada',
-    ),
-  ],
-  'isla-negra': finalIslas,
-};
 
 /// Capítulo que cuenta Gobi al completar cada nivel (clave: el nivel
 /// completado; 0 = el tutorial): qué se recuperó, cómo sigue y que hay que
@@ -210,7 +84,7 @@ const capitulosDeNivel = <int, List<Escena>>{
   2: [
     Escena(
       '¡El Bosque Mágico recuperó todos sus verdes! Las Hormiguitas bailan tres '
-      'vueltas y un saltito: en hormigués, eso es "gracias". Ahora, al Reino Animal.',
+      'vueltas y un saltito: en hormigués, eso es "gracias".',
       titulo: '¡Nivel 3!',
     ),
     Escena(
@@ -224,10 +98,6 @@ const capitulosDeNivel = <int, List<Escena>>{
       'durmió como un tronco. Ahora nos esperan dos lugares: la Tierra de las '
       'Caperucitas y el Prado de las Hadas.',
       titulo: '¡Nivel 4!',
-    ),
-    Escena(
-      'León encontró una carta sin remitente, toda gris, con una sola palabra: '
-      '"MUTUTU". Mejor no bajemos la guardia.',
     ),
   ],
   4: [
@@ -274,7 +144,9 @@ const capitulosDeNivel = <int, List<Escena>>{
       'Vamos despacito, con la pluma del Rocanón y el corazón tranquilo.',
     ),
   ],
+  // El final: lo que pasó en la Isla Negra y el cierre de Gobi.
   8: [
+    ...finalIslas,
     Escena(
       '¡Gramonia tiene todos sus colores, {nombre}! Gracias por ayudarme a '
       'devolvérselos.',
@@ -282,7 +154,7 @@ const capitulosDeNivel = <int, List<Escena>>{
     ),
     Escena(
       'Pero Mututu es dormilón y a veces se despierta con ganas de colores. Si '
-      'algún día ves un cuadro gris, ya sabés qué hacer.',
+      'algún día ves un cuadro gris, ya sabés qué hacer. FIN (por ahora).',
     ),
   ],
 };
@@ -290,7 +162,7 @@ const capitulosDeNivel = <int, List<Escena>>{
 /// Id con el que se guarda que ya se contó el capítulo del nivel [n].
 String idCapituloDeNivel(int n) => 'nivel-$n';
 
-/// Final de la historia: se cuenta al completar la Isla Negra.
+/// Final de la historia: se cuenta al completar la Isla Negra (nivel 8).
 const finalIslas = <Escena>[
   Escena(
     'En la Isla Negra no había un monstruo, ni un extintor gigante, ni un pato. '
@@ -305,6 +177,6 @@ const finalIslas = <Escena>[
   ),
   Escena(
     'Desde ese día, Gramonia tiene todos sus colores… y la Isla Negra, un arcoíris '
-    'propio que le pintaron entre todos. Gracias por ayudarme. FIN (por ahora).',
+    'propio que le pintaron entre todos.',
   ),
 ];

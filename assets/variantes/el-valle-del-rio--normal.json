@@ -1,0 +1,48 @@
+{
+  "id": "el-valle-del-rio--normal",
+  "titulo": "El valle del río",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B6B26D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3B4836"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#DBD6B2"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#525C3E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7E7C4C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A69E5F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#647048"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#8B9259"
+    }
+  ]
+}

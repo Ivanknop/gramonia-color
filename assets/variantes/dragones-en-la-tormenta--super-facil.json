@@ -1,0 +1,28 @@
+{
+  "id": "dragones-en-la-tormenta--super-facil",
+  "titulo": "Dragones en la tormenta",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#242837"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1C202D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#151721"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3F4357"
+    }
+  ]
+}

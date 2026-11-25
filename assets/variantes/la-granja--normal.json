@@ -1,0 +1,48 @@
+{
+  "id": "la-granja--normal",
+  "titulo": "La granja",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A6A282"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#9DCBE6"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3F392D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#867F5F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#746B51"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4F503D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C7E1EB"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#6B5542"
+    }
+  ]
+}

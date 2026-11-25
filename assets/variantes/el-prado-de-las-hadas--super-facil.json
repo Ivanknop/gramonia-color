@@ -1,0 +1,28 @@
+{
+  "id": "el-prado-de-las-hadas--super-facil",
+  "titulo": "El Prado de las Hadas",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#837B5B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#D0C6AA"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6C6550"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A29672"
+    }
+  ]
+}

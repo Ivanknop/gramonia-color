@@ -1,0 +1,58 @@
+{
+  "id": "el-prado-de-las-hadas--mediano",
+  "titulo": "El Prado de las Hadas",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#8A7E5D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#716A51"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#625C4B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#797657"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#EBE0CD"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B3A582"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C2B797"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#D0C7AA"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#978F6B"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#AA9873"
+    }
+  ]
+}

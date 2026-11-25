@@ -5,6 +5,7 @@ export 'color.dart';
 export 'cuadro.dart';
 export 'etiquetas.dart';
 export 'geometria.dart';
+export 'mensajes.dart';
 export 'pintura.dart';
 export 'plumas.dart';
 export 'progresion.dart';

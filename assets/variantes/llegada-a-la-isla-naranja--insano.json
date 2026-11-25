@@ -1,0 +1,208 @@
+{
+  "id": "llegada-a-la-isla-naranja--insano",
+  "titulo": "Llegada a la Isla Naranja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#475F52"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B8654F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F7DBA3"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C2A887"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#635D56"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#67C5E7"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5D8D83"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#564747"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#DBAC82"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#85D8E6"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#7B645D"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#C9DEDD"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#75CDE8"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#533235"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#857763"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#9FBBA1"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#CDF7F1"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#838F6F"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#6AB0B4"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#854441"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#AFECEA"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#597865"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#F8F3D7"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A1E7E9"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#A2D9D8"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#EBC899"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#CF9570"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#F8E9C1"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#9FA57F"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#C6C7AE"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#A58772"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#B9957A"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#D27F5C"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#8C564D"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#C9ECE5"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#B78166"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#A47863"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#936557"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#F3E1BE"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#A59479"
+    }
+  ]
+}

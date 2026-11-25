@@ -1,0 +1,128 @@
+{
+  "id": "caracolas-en-la-playa--extremo",
+  "titulo": "Caracolas en la playa",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A6C0AF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#9F8D70"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F7DFB0"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C2D3D3"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#E0E0D3"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8B6B53"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#CDD9D4"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F8EFDF"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#EBCB97"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C1A57B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#F4DAAB"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#9CA289"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#F1D4A2"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#DEBC8B"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C3C9AE"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#DFD8C0"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#EEE7D5"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#F7E8CD"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#D3A97C"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#F7ECD8"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#DFC99D"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#EEE1CA"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#C9B88F"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#C9D5CF"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "la-plaza-de-juegos--dificil",
+  "titulo": "La plaza de juegos",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#646042"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#7B845B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E9E9D9"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B6B37A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#99B099"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#D4CA8F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B8C884"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#CE8F81"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#A68C6B"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#DEAF85"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#A16D58"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#87946C"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#92A486"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#D9DAB0"
+    }
+  ]
+}

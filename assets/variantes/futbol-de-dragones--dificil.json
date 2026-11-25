@@ -1,0 +1,78 @@
+{
+  "id": "futbol-de-dragones--dificil",
+  "titulo": "Fútbol de dragones",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#D8C2A0"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#DBDAD2"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#787966"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#BFB492"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#BAA584"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#EFE7DA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#948568"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A49877"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D3B592"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#6B6458"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#B69778"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#99715D"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D3D0C2"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#929176"
+    }
+  ]
+}

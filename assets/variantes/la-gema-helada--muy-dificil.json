@@ -1,0 +1,98 @@
+{
+  "id": "la-gema-helada--muy-dificil",
+  "titulo": "La Gema Helada",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#72565A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#563E47"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3B394B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AAB2B6"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C5A089"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#DFBE9D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#AED4E0"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#806E76"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#554C5D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#ECD5B4"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#BC8B73"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#EFEEDC"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A97361"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#A58B86"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#5C5D6F"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#848E9D"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#8B5B57"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#94716C"
+    }
+  ]
+}

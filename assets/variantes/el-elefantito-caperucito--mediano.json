@@ -1,0 +1,58 @@
+{
+  "id": "el-elefantito-caperucito--mediano",
+  "titulo": "El elefantito caperucito",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A2A36A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#173222"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#355433"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5A784E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#453428"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#845840"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#938160"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C7C47C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#E5E7C6"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#535A45"
+    }
+  ]
+}

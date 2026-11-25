@@ -1,4 +1,4 @@
-/// Gramonia Color: juego de pintar por números para Android.
+/// Gramonia a Color: juego de pintar por números para Android.
 library;
 
 import 'package:flutter/services.dart';
@@ -38,7 +38,7 @@ class App extends StatelessWidget {
       progreso: progreso,
       musica: musica,
       child: MaterialApp(
-        title: 'Gramonia Color',
+        title: 'Gramonia a Color',
         debugShowCheckedModeBanner: false,
         theme: Tema.datos,
         home: const Inicio(),

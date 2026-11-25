@@ -1,0 +1,168 @@
+{
+  "id": "la-ciudad-desde-lo-alto--imposible",
+  "titulo": "La Ciudad desde lo alto",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B5B668"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BDA787"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#CEB693"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B57957"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#96A15B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A79071"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F7EAD1"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#495B3D"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#3A4B37"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#6C6E3F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#EDDFC3"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#3C5643"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#6D7E49"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#845E44"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#556843"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#849254"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#93795D"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#6B402E"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#DAD3B6"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#595E3C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#7D7F4B"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#597550"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#724F39"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A2B273"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#758E5A"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#C2CDA0"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#363D2E"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#7E6E4D"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#BD9874"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#A7A267"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#94905B"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#C1B47F"
+    }
+  ]
+}

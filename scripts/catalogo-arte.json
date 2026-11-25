@@ -12,7 +12,6 @@
       "id": "nido-de-rocanon",
       "titulo": "El nido del Rocanón",
       "categoria": "paisaje",
-      "mensaje": "Los cristales del nido brillan otra vez. Mututu no pudo con tanto resplandor.",
       "regiones": 70,
       "nivel": 1
     },
@@ -21,7 +20,6 @@
       "id": "arbol-magico-de-noche",
       "titulo": "El Árbol Mágico de noche",
       "categoria": "paisaje",
-      "mensaje": "Las hojas del Árbol vuelven a brillar, y las plumas del Rocanón titilan otra vez en el cielo. ¡Buenas noches, Gramonia!",
       "regiones": 80,
       "nivel": 1
     },
@@ -30,7 +28,6 @@
       "id": "rocanon-en-la-copa",
       "titulo": "El Rocanón en la copa",
       "categoria": "paisaje",
-      "mensaje": "La copa del Árbol vuelve a brillar y el Rocanón cuida su nido bajo la luna. ¡Qué nochecita!",
       "regiones": 90,
       "nivel": 1
     },
@@ -39,7 +36,6 @@
       "id": "hormiguero-del-arbol",
       "titulo": "El hormiguero del árbol",
       "categoria": "paisaje",
-      "mensaje": "Las luces del hormiguero se encendieron de nuevo. ¡Las hormigas ya no tienen que caminar a oscuras!",
       "regiones": 100,
       "nivel": 2
     },
@@ -48,7 +44,6 @@
       "id": "cumple-del-rocanon",
       "titulo": "El cumpleaños del Rocanón",
       "categoria": "arte",
-      "mensaje": "¡La torta recuperó sus colores! Mututu se había llevado hasta las velitas. ¡Que los cumpla feliz!",
       "regiones": 110,
       "nivel": 2
     },
@@ -57,7 +52,6 @@
       "id": "pozo-sanador",
       "titulo": "El Pozo Sanador",
       "categoria": "paisaje",
-      "mensaje": "El agua del Pozo Sanador vuelve a brillar. Las hormigas bailan de contentas: así se dice \"gracias\" en hormigués.",
       "regiones": 130,
       "nivel": 2
     },
@@ -66,7 +60,6 @@
       "id": "todos-los-caminos",
       "titulo": "Todos los caminos",
       "categoria": "paisaje",
-      "mensaje": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!",
       "regiones": 150,
       "nivel": 2
     },
@@ -75,7 +68,6 @@
       "id": "leon-y-kiribiki",
       "titulo": "León y Kiribiki",
       "categoria": "animal",
-      "mensaje": "El queso volvió a ser amarillo. León lo comparte con Kiribiki, y Kiribiki le cocina una ensalada. ¡Ñam!",
       "regiones": 160,
       "nivel": 3
     },
@@ -84,7 +76,6 @@
       "id": "cleo-quiere-dormir",
       "titulo": "Cleo quiere dormir",
       "categoria": "animal",
-      "mensaje": "El granero recuperó sus colores. Ahora sí, Cleo puede contar ovejas tranquila. Una, dos, tres… zzz.",
       "regiones": 170,
       "nivel": 3
     },
@@ -93,8 +84,23 @@
       "id": "mercado-nocturno",
       "titulo": "El mercado nocturno",
       "categoria": "animal",
-      "mensaje": "Los farolitos del mercado se prendieron otra vez. Los animales vuelven a regatear… ¡y a probar de todo!",
       "regiones": 175,
+      "nivel": 3
+    },
+    {
+      "imagen": "oso.jpeg",
+      "id": "el-oso-en-la-biblioteca",
+      "titulo": "El Oso en la biblioteca",
+      "categoria": "animal",
+      "regiones": 176,
+      "nivel": 3
+    },
+    {
+      "imagen": "granja.jpeg",
+      "id": "la-granja",
+      "titulo": "La granja",
+      "categoria": "paisaje",
+      "regiones": 178,
       "nivel": 3
     },
     {
@@ -102,17 +108,7 @@
       "id": "casa-de-la-abuelita",
       "titulo": "La casa de la abuelita",
       "categoria": "paisaje",
-      "mensaje": "¡El atardecer vuelve a pintar el camino a lo de la abuelita! Mututu se había llevado hasta el humo de la chimenea.",
       "regiones": 180,
-      "nivel": 4
-    },
-    {
-      "imagen": "etapa6-papa.jpeg",
-      "id": "refugio-de-papa",
-      "titulo": "El refugio de papá",
-      "categoria": "arte",
-      "mensaje": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas.",
-      "regiones": 190,
       "nivel": 4
     },
     {
@@ -120,7 +116,6 @@
       "id": "timoteo-y-su-caperuza",
       "titulo": "Timoteo y su caperuza",
       "categoria": "animal",
-      "mensaje": "¡La caperuza de Timoteo volvió a ser verde oliva! Por un día es Caperucita, y está feliz de la vida.",
       "regiones": 200,
       "nivel": 4
     },
@@ -129,8 +124,39 @@
       "id": "ronda-de-caperucitas",
       "titulo": "La ronda de las Caperucitas",
       "categoria": "persona",
-      "mensaje": "¡Volvieron todas las caperuzas, de todos los colores! La ronda de cuentos puede seguir.",
       "regiones": 210,
+      "nivel": 4
+    },
+    {
+      "imagen": "elefantito.jpeg",
+      "id": "el-elefantito-caperucito",
+      "titulo": "El elefantito caperucito",
+      "categoria": "animal",
+      "regiones": 215,
+      "nivel": 4
+    },
+    {
+      "imagen": "prado_hadas.jpeg",
+      "id": "el-prado-de-las-hadas",
+      "titulo": "El Prado de las Hadas",
+      "categoria": "paisaje",
+      "regiones": 217,
+      "nivel": 4
+    },
+    {
+      "imagen": "hada_madrina.jpeg",
+      "id": "el-hada-madrina",
+      "titulo": "El Hada Madrina",
+      "categoria": "persona",
+      "regiones": 219,
+      "nivel": 4
+    },
+    {
+      "imagen": "haditas.jpeg",
+      "id": "las-haditas-practican",
+      "titulo": "Las haditas practican",
+      "categoria": "persona",
+      "regiones": 220,
       "nivel": 4
     },
     {
@@ -138,7 +164,6 @@
       "id": "montana-de-los-dragones",
       "titulo": "La montaña de los dragones",
       "categoria": "paisaje",
-      "mensaje": "Las gemas de la montaña vuelven a brillar. Hasta los dragones se asomaron a mirar.",
       "regiones": 220,
       "nivel": 5
     },
@@ -147,8 +172,47 @@
       "id": "alma-y-sus-alas",
       "titulo": "Alma y sus alas",
       "categoria": "persona",
-      "mensaje": "¡Las alas de Alma vuelven a brillar de violeta! Ahora sí, a volar sobre la Montaña Dragón.",
       "regiones": 230,
+      "nivel": 5
+    },
+    {
+      "imagen": "montana_dragon2.jpeg",
+      "id": "montana-entre-nubes",
+      "titulo": "La Montaña entre nubes",
+      "categoria": "paisaje",
+      "regiones": 240,
+      "nivel": 5
+    },
+    {
+      "imagen": "dragones_futbol.jpeg",
+      "id": "futbol-de-dragones",
+      "titulo": "Fútbol de dragones",
+      "categoria": "animal",
+      "regiones": 243,
+      "nivel": 5
+    },
+    {
+      "imagen": "dragones_tormenta.jpeg",
+      "id": "dragones-en-la-tormenta",
+      "titulo": "Dragones en la tormenta",
+      "categoria": "paisaje",
+      "regiones": 246,
+      "nivel": 5
+    },
+    {
+      "imagen": "heladeria.jpeg",
+      "id": "la-heladeria",
+      "titulo": "La heladería",
+      "categoria": "paisaje",
+      "regiones": 250,
+      "nivel": 5
+    },
+    {
+      "imagen": "mas_helados.jpeg",
+      "id": "la-gema-helada",
+      "titulo": "La Gema Helada",
+      "categoria": "paisaje",
+      "regiones": 255,
       "nivel": 5
     },
     {
@@ -156,8 +220,31 @@
       "id": "la-tienda",
       "titulo": "La tienda",
       "categoria": "arte",
-      "mensaje": "Frascos, mantas y cristales: la tienda vuelve a estar llena de colores para vender.",
       "regiones": 260,
+      "nivel": 6
+    },
+    {
+      "imagen": "plaza_juegos.jpeg",
+      "id": "la-plaza-de-juegos",
+      "titulo": "La plaza de juegos",
+      "categoria": "paisaje",
+      "regiones": 270,
+      "nivel": 6
+    },
+    {
+      "imagen": "ciudad.jpeg",
+      "id": "la-ciudad-desde-lo-alto",
+      "titulo": "La Ciudad desde lo alto",
+      "categoria": "paisaje",
+      "regiones": 280,
+      "nivel": 6
+    },
+    {
+      "imagen": "etapa6-papa.jpeg",
+      "id": "refugio-de-papa",
+      "titulo": "El refugio de papá",
+      "categoria": "arte",
+      "regiones": 290,
       "nivel": 6
     },
     {
@@ -165,7 +252,6 @@
       "id": "puerto-en-la-tormenta",
       "titulo": "Puerto en la tormenta",
       "categoria": "paisaje",
-      "mensaje": "La tormenta recuperó sus grises… y los faroles, su luz dorada. Mututu se escondió entre las olas.",
       "regiones": 300,
       "nivel": 6
     },
@@ -174,7 +260,6 @@
       "id": "barco-en-el-muelle",
       "titulo": "El barco en el muelle",
       "categoria": "objeto",
-      "mensaje": "¡El barco está listo para zarpar con todos sus colores! Mututu tendrá que nadar si quiere seguirlo.",
       "regiones": 330,
       "nivel": 6
     },
@@ -183,7 +268,6 @@
       "id": "rumbo-a-la-isla",
       "titulo": "Rumbo a la isla",
       "categoria": "paisaje",
-      "mensaje": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?",
       "regiones": 360,
       "nivel": 6
     },
@@ -192,7 +276,6 @@
       "id": "caperucita-pirata",
       "titulo": "La Caperucita pirata",
       "categoria": "persona",
-      "mensaje": "¡La Caperucita pirata recuperó su caperuza lila! Rumbo a las Islas Arcoíris, con loro y todo.",
       "regiones": 380,
       "nivel": 6
     },
@@ -201,26 +284,30 @@
       "id": "sirenhadas",
       "titulo": "Las SirenHadas",
       "categoria": "persona",
-      "mensaje": "Las SirenHadas juegan otra vez con su pelota de colores. ¡Hasta las estrellas de mar brillan!",
       "regiones": 390,
       "nivel": 6
+    },
+    {
+      "imagen": "playa_caracolas.jpeg",
+      "id": "caracolas-en-la-playa",
+      "titulo": "Caracolas en la playa",
+      "categoria": "paisaje",
+      "regiones": 395,
+      "nivel": 6
+    },
+    {
+      "imagen": "isla_naranja.jpeg",
+      "id": "llegada-a-la-isla-naranja",
+      "titulo": "Llegada a la Isla Naranja",
+      "categoria": "paisaje",
+      "regiones": 420,
+      "nivel": 7
     },
     {
       "imagen": "libre1.jpeg",
       "id": "amigo-del-bosque",
       "titulo": "Un amigo en el bosque",
       "categoria": "animal",
-      "mensaje": "¡Obra terminada! Quedó hermosa.",
-      "regiones": 100,
-      "colores": 10,
-      "solo_libre": true
-    },
-    {
-      "imagen": "libre2.jpeg",
-      "id": "montanas-entre-nubes",
-      "titulo": "Montañas entre nubes",
-      "categoria": "paisaje",
-      "mensaje": "¡Obra terminada! Quedó hermosa.",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -230,7 +317,6 @@
       "id": "caperucita-en-el-bosque",
       "titulo": "Caperucita en el bosque",
       "categoria": "arte",
-      "mensaje": "¡Obra terminada! Quedó hermosa.",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -240,7 +326,6 @@
       "id": "el-petirrojo",
       "titulo": "El petirrojo",
       "categoria": "animal",
-      "mensaje": "¡Obra terminada! Quedó hermosa.",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -250,7 +335,26 @@
       "id": "el-colibri",
       "titulo": "El colibrí",
       "categoria": "animal",
-      "mensaje": "¡Obra terminada! Quedó hermosa.",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre6.jpg",
+      "id": "la-pluma-arcoiris",
+      "titulo": "La pluma arcoíris",
+      "categoria": "arte",
+      "area_minima": 3,
+      "suavizado": 1,
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre8.jpeg",
+      "id": "el-valle-del-rio",
+      "titulo": "El valle del río",
+      "categoria": "paisaje",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -262,7 +366,6 @@
     "id": "tutorial-arbol-magico",
     "titulo": "El Árbol Mágico (tutorial)",
     "categoria": "paisaje",
-    "mensaje": "¡El Árbol Mágico recuperó sus colores! Ya sabés pintar.",
     "colores": 5,
     "regiones": 20
   },

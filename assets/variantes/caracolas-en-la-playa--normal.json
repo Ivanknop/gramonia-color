@@ -1,0 +1,48 @@
+{
+  "id": "caracolas-en-la-playa--normal",
+  "titulo": "Caracolas en la playa",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#E2C493"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#EAD7B3"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C8D5D2"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F5EBD7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#B7C1A7"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#997F64"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B5A684"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#EAE0C8"
+    }
+  ]
+}

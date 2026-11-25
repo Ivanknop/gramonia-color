@@ -1,0 +1,208 @@
+{
+  "id": "caracolas-en-la-playa--insano",
+  "titulo": "Caracolas en la playa",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C0D2D0"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F8E0B1"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B28D6B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C4D4D5"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#DCDFD3"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#9A795E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F9F0DF"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#D3A97C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#85A398"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#E9C995"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#F7E8CD"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#AECAB7"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C3C9AE"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#E3D5B2"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#7B5C48"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#D9BB8A"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#C1A57B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#EEE7D5"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#C9B88F"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#F7ECD8"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#F6DBAB"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#EBE1CE"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#9FB9A9"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#E5E1D2"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#F3DAAA"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#DFC99D"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#B2A07C"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#EFD2A1"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#F1E2C6"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#F2D5A3"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#A8C3B1"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#8C8C74"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#E3BE8C"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#EDCC99"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#F5DEB0"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#F8EEDD"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#CED9CD"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#DCDACE"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#C9D5CF"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#CDD9D8"
+    }
+  ]
+}

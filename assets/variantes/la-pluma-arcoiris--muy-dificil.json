@@ -1,0 +1,98 @@
+{
+  "id": "la-pluma-arcoiris--muy-dificil",
+  "titulo": "La pluma arcoíris",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#16838B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FA9BAD"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#0A0D4A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B3527F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#EF728D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#BB6793"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FC92AE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#E8AEB2"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#3F385F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FDECD3"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#BCB1AD"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#FA8B91"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D515B0"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#7F8795"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#296B7C"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#430F7C"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#FDD7BA"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#FCACAC"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "caracolas-en-la-playa--mediano",
+  "titulo": "Caracolas en la playa",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#EAD7B3"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C8D5D2"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B7C1A7"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#997F64"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#DEBD8C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B5A684"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#E5CA9A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#EAE0C8"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F3E7D1"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F8EEDC"
+    }
+  ]
+}

@@ -5,13 +5,14 @@ en cuadros (assets/cuadros/<id>.svg + <id>.json) y en sus variantes de
 dificultad (assets/variantes/<id>--<dificultad>.svg + .json, según
 assets/dificultades.json; usan la ilustración del cuadro).
 
-Si el original ya no está en arte/ (se borra para liberar espacio), se usa la
-ilustración del cuadro (assets/cuadros/<id>.webp): alcanza para la grilla del
-conversor.
+arte/ no se versiona (está en .gitignore): son los originales, que quedan solo
+en la máquina de quien dibuja. Si un original no está, se usa la ilustración
+del cuadro (assets/cuadros/<id>.webp), que alcanza para la grilla del
+conversor; el mapa, la música y los íconos se saltean (quedan los de assets/).
 
 Uso: python3 scripts/convertir_arte.py          (todo: cuadros, variantes, mapa y música)
      python3 scripts/convertir_arte.py <id> ... (solo esos cuadros, con sus variantes;
-                                                 "mapa", "musica" o "variantes" = las de todos;
+                                                 "mapa", "musica", "iconos" o "variantes" = las de todos;
                                                  --sin-variantes: solo los cuadros)
 """
 
@@ -93,7 +94,6 @@ def argumentos(p: dict, imagen: Path, id_: str, colores: int, regiones: int) -> 
         "--id", id_,
         "--titulo", p["titulo"],
         "--categoria", p["categoria"],
-        "--mensaje", p["mensaje"],
         "--colores", str(colores),
         "--area-minima", str(p["area_minima"]),
         "--suavizado", str(p["suavizado"]),
@@ -138,11 +138,38 @@ def convertir_mapa(catalogo: dict) -> None:
     """Mapa provisorio: la ilustración comprimida; la app la muestra en gris y la colorea."""
     from PIL import Image
 
+    fuente_mapa = RAIZ / "arte" / catalogo["mapa"]["imagen"]
+    if not fuente_mapa.exists():
+        print(f"Mapa: falta {fuente_mapa.name} en arte/ (queda el de assets/mapa)")
+        return
     DIR_MAPA.mkdir(parents=True, exist_ok=True)
-    img = Image.open(RAIZ / "arte" / catalogo["mapa"]["imagen"]).convert("RGB")
+    img = Image.open(fuente_mapa).convert("RGB")
     img.thumbnail((imagen_a_cuadro.LADO_MAXIMO_IMAGEN,) * 2)
     img.save(DIR_MAPA / "gramonia.webp", "WEBP", quality=80, method=6)
     print(f"Mapa → {DIR_MAPA / 'gramonia.webp'} ({img.width}x{img.height})")
+
+
+DIR_ICONOS = RAIZ / "assets" / "iconos"
+
+# Íconos de la app: arte/<origen>.png → assets/iconos/<destino>.png.
+ICONOS = {"lupa": "lupa", "bomba": "bomba", "carro": "tienda"}
+LADO_ICONO = 144  # px: unos 48 dp en una pantalla de densidad 3x.
+
+
+def convertir_iconos() -> None:
+    """Achica los íconos (PNG con transparencia) al tamaño en que se usan."""
+    from PIL import Image
+
+    DIR_ICONOS.mkdir(parents=True, exist_ok=True)
+    for origen, destino in ICONOS.items():
+        fuente_icono = RAIZ / "arte" / f"{origen}.png"
+        if not fuente_icono.exists():
+            print(f"Ícono: falta {fuente_icono.name} en arte/ (queda el de assets/iconos)")
+            continue
+        img = Image.open(fuente_icono).convert("RGBA")
+        img.thumbnail((LADO_ICONO, LADO_ICONO), Image.Resampling.LANCZOS)
+        img.save(DIR_ICONOS / f"{destino}.png", optimize=True)
+        print(f"Ícono → {DIR_ICONOS / destino}.png ({img.width}x{img.height})")
 
 
 DIR_MUSICA = RAIZ / "assets" / "musica"
@@ -186,6 +213,8 @@ def main() -> int:
         convertir_mapa(catalogo)
     if not pedidos or "musica" in pedidos:
         convertir_musica()
+    if not pedidos or "iconos" in pedidos:
+        convertir_iconos()
     if not pedidos or "tutorial" in pedidos:
         # El tutorial va primero en el catálogo (orden 0) y no tiene variantes.
         t = {**base, **catalogo["tutorial"]}

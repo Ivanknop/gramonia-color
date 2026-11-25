@@ -41,6 +41,7 @@ abstract final class Tema {
   static const aquaSuave = Color(0xFFD6F5EF);
 
   static const _relleno = EdgeInsets.symmetric(horizontal: 22, vertical: 12);
+
   /// La tipografía va explícita: el estilo del botón reemplaza al del tema.
   static const _textoBoton = TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.w700);
 
@@ -321,6 +322,115 @@ class BarraPortada extends StatelessWidget {
           label: const Text(Textos.portada),
         ),
       ],
+    ),
+  );
+}
+
+/// Íconos de las herramientas y de la tienda (de arte/, con
+/// `scripts/convertir_arte.py iconos`).
+const iconoLupa = 'assets/iconos/lupa.png';
+const iconoBomba = 'assets/iconos/bomba.png';
+const iconoTienda = 'assets/iconos/tienda.png';
+
+/// Herramienta de la pantalla de pintar (lupa o bomba): solo el ícono, en un
+/// círculo. Al tocarlo se enciende (brilla) y al tocarlo de nuevo se apaga.
+/// Un globito muestra cuántas quedan.
+class IconoHerramienta extends StatelessWidget {
+  const IconoHerramienta({
+    super.key,
+    required this.imagen,
+    required this.descripcion,
+    required this.encendida,
+    required this.alTocar,
+    this.cantidad,
+    this.habilitada = true,
+  });
+
+  final String imagen;
+
+  /// Para lectores de pantalla (el ícono no lleva texto).
+  final String descripcion;
+  final bool encendida;
+  final VoidCallback alTocar;
+
+  /// Cuántas quedan (null = no mostrar el globito).
+  final int? cantidad;
+
+  /// En el tutorial, las que no corresponden al paso se ven apagadas.
+  final bool habilitada;
+
+  static const _lado = 52.0;
+
+  @override
+  Widget build(BuildContext context) => Semantics(
+    button: true,
+    toggled: encendida,
+    enabled: habilitada,
+    label: cantidad == null ? descripcion : '$descripcion, quedan $cantidad',
+    excludeSemantics: true,
+    child: Opacity(
+      opacity: habilitada ? 1 : 0.35,
+      child: GestureDetector(
+        onTap: alTocar,
+        child: SizedBox(
+          width: _lado + 8,
+          height: _lado + 4,
+          child: Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
+            children: [
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: _lado,
+                height: _lado,
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: encendida ? const Color(0xFFFFF4C2) : Tema.aquaSuave,
+                  border: Border.all(
+                    color: encendida ? const Color(0xFFFFC83D) : Tema.aqua,
+                    width: encendida ? 3 : 1.5,
+                  ),
+                  boxShadow: [
+                    if (encendida) ...const [
+                      BoxShadow(color: Color(0xCCFFD54F), blurRadius: 18, spreadRadius: 4),
+                      BoxShadow(color: Color(0x88FFF59D), blurRadius: 30, spreadRadius: 8),
+                    ],
+                  ],
+                ),
+                child: AnimatedScale(
+                  scale: encendida ? 1.12 : 1,
+                  duration: const Duration(milliseconds: 200),
+                  child: Image.asset(imagen, cacheWidth: 144),
+                ),
+              ),
+              if (cantidad case final n?)
+                Positioned(
+                  right: 0,
+                  top: -2,
+                  child: Container(
+                    constraints: const BoxConstraints(minWidth: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                    decoration: BoxDecoration(
+                      color: n == 0 ? Tema.gris : Tema.lila,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white, width: 1.5),
+                    ),
+                    child: Text(
+                      '$n',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
     ),
   );
 }

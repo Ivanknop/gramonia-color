@@ -77,4 +77,19 @@ void main() {
     expect(nivelesQueSeCompletan(biomas, {'a1', 'a2', 'b1'}, {'a1', 'a2', 'b1', 'p1'}), [2]);
     expect(nivelesQueSeCompletan(biomas, {'a1'}, {'a1', 'b1'}), isEmpty);
   });
+
+  test('portada: se ven a color los lugares de los niveles completos (con obras)', () {
+    final conVacio = [
+      ...biomas,
+      lugar('vacio', 2, [null]),
+    ];
+    expect(lugaresRecuperados(conVacio, {'a1'}), isEmpty);
+    expect(lugaresRecuperados(conVacio, {'a1', 'a2'}).map((b) => b.id), ['arbol']);
+    // Un lugar sin obras no se colorea aunque su nivel esté completo.
+    expect(lugaresRecuperados(conVacio, {'a1', 'a2', 'b1', 'p1'}).map((b) => b.id), [
+      'arbol',
+      'bosque',
+      'prado',
+    ]);
+  });
 }

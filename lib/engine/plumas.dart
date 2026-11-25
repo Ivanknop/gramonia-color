@@ -47,3 +47,6 @@ bool tocaRecompensaDiaria(String? ultimoDia, DateTime ahora) => ultimoDia != dia
 
 /// ¿Alcanza el saldo para comprar [h]?
 bool puedeComprar(int saldo, Herramienta h) => saldo >= h.precio;
+
+/// Lupas y bombas que se regalan al llegar al nivel 1 (una sola vez).
+const herramientasIniciales = {Herramienta.lupa: 3, Herramienta.bomba: 3};

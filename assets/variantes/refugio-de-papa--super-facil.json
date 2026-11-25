@@ -12,18 +12,17 @@
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#4F2B22"
+      "hex": "#4F2B21"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#955C33"
+      "hex": "#945C33"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
       "hex": "#2B1919"
     }
-  ],
-  "mensajeMututu": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas."
+  ]
 }

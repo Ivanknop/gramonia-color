@@ -1,0 +1,38 @@
+{
+  "id": "el-elefantito-caperucito--facil",
+  "titulo": "El elefantito caperucito",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#2F3325"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A0A26A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#355434"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6D5944"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#777C56"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#D5D5A1"
+    }
+  ]
+}

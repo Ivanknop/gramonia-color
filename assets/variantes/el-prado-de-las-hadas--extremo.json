@@ -1,0 +1,128 @@
+{
+  "id": "el-prado-de-las-hadas--extremo",
+  "titulo": "El Prado de las Hadas",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#6F694B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F3E8D7"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#685C45"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#928A67"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#555349"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#AEA683"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C9B994"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#AD9A75"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#676651"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#CAC0A2"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#8A805E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D9CEAF"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#757054"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#837758"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#BAA984"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#E7DBC7"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#9F9974"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#977F62"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#7A785A"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#99916D"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#7C6A51"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#CFC7A8"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#84805C"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#BEB594"
+    }
+  ]
+}

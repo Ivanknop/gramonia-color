@@ -1,0 +1,128 @@
+{
+  "id": "el-oso-en-la-biblioteca--extremo",
+  "titulo": "El Oso en la biblioteca",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#876F58"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#9E785C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#24160F"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#17100C"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2F1E15"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4F2F1E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#A18B74"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#BFA68C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#3B2317"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#704E37"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#4E392A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5D3A26"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#3F2A1D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#31241C"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#E7DBCA"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#B39172"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#765D49"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#5C412F"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#403226"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#2A1A13"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#875F45"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#7C5037"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#655241"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#614836"
+    }
+  ]
+}

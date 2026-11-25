@@ -100,7 +100,10 @@ class Progreso extends ChangeNotifier {
   /// empezadas cuenta como pasado (salteado), con el premio pendiente.
   /// v6 → v7: nombre de quien juega (en un guardado viejo, sin nombre: se pide
   /// al entrar).
-  static const version = 7;
+  /// v7 → v8: regalo inicial (3 lupas y 3 bombas al llegar al nivel 1; un
+  /// guardado viejo con el tutorial pasado lo recibe al cargar) y tutorial de
+  /// la tienda (plumas regaladas y hecho o salteado).
+  static const version = 8;
 
   static Future<Progreso> cargar(AlmacenProgreso almacen, {int Function()? reloj}) async {
     final p = Progreso._(almacen, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
@@ -136,6 +139,12 @@ class Progreso extends ChangeNotifier {
         p._capitulosVistos.addAll([
           for (final c in (j['capitulosVistos'] as List?) ?? []) c as String,
         ]);
+        // Campos de v8.
+        p._regaloInicial = (j['regaloInicial'] as bool?) ?? false;
+        p._plumasTiendaDadas = (j['plumasTienda'] as bool?) ?? false;
+        p._tutorialTiendaHecho = (j['tutorialTienda'] as bool?) ?? false;
+        // Upgrade: quien ya estaba en el nivel 1 o más recibe el regalo ahora.
+        if (p._darRegaloInicial()) p._cambio();
       } on Object catch (e) {
         // Datos corruptos: se empieza de cero antes que no poder jugar.
         debugPrint('No se pudo leer el progreso guardado: $e');
@@ -158,6 +167,9 @@ class Progreso extends ChangeNotifier {
   bool _tutorialPasado = false;
   bool _tutorialPremiado = false;
   String? _nombre;
+  bool _regaloInicial = false;
+  bool _plumasTiendaDadas = false;
+  bool _tutorialTiendaHecho = false;
 
   Map<String, ProgresoCuadro> get cuadros => Map.unmodifiable(_cuadros);
 
@@ -236,6 +248,9 @@ class Progreso extends ChangeNotifier {
     _tutorialPasado = false;
     _tutorialPremiado = false;
     _nombre = null;
+    _regaloInicial = false;
+    _plumasTiendaDadas = false;
+    _tutorialTiendaHecho = false;
     _cambio();
   }
 
@@ -293,6 +308,41 @@ class Progreso extends ChangeNotifier {
   void saltarTutorial() {
     if (_tutorialPasado) return;
     _tutorialPasado = true;
+    _darRegaloInicial();
+    _cambio();
+  }
+
+  /// Ya se dieron las lupas y bombas del comienzo.
+  bool get regaloInicial => _regaloInicial;
+
+  /// Al llegar al nivel 1 (una sola vez): [herramientasIniciales]. Devuelve
+  /// si se dio ahora (sin guardar: lo guarda quien llama).
+  bool _darRegaloInicial() {
+    if (_regaloInicial || !_tutorialPasado) return false;
+    _regaloInicial = true;
+    for (final MapEntry(key: h, value: n) in herramientasIniciales.entries) {
+      _herramientas[h] = cantidad(h) + n;
+    }
+    return true;
+  }
+
+  /// El tutorial de la tienda ya se hizo o se salteó.
+  bool get tutorialTiendaHecho => _tutorialTiendaHecho;
+
+  /// Empieza el tutorial de la tienda: la primera vez regala las plumas para
+  /// la lupa. Devuelve las plumas regaladas.
+  int empezarTutorialTienda() {
+    if (_plumasTiendaDadas || _tutorialTiendaHecho) return 0;
+    _plumasTiendaDadas = true;
+    _plumas += plumasTutorialTienda;
+    _cambio();
+    return plumasTutorialTienda;
+  }
+
+  /// Termina (o saltea) el tutorial de la tienda.
+  void terminarTutorialTienda() {
+    if (_tutorialTiendaHecho) return;
+    _tutorialTiendaHecho = true;
     _cambio();
   }
 
@@ -303,6 +353,7 @@ class Progreso extends ChangeNotifier {
     _tutorialPasado = true;
     _tutorialPremiado = true;
     _plumas += ganadas;
+    _darRegaloInicial();
     _cambio();
     return ganadas;
   }
@@ -390,6 +441,9 @@ class Progreso extends ChangeNotifier {
       'tutorialPasado': _tutorialPasado,
       'tutorialPremiado': _tutorialPremiado,
       'nombre': ?_nombre,
+      'regaloInicial': _regaloInicial,
+      'plumasTienda': _plumasTiendaDadas,
+      'tutorialTienda': _tutorialTiendaHecho,
     });
     // Se encadenan para que nunca una escritura vieja pise a una nueva.
     guardado = guardado.then((_) => _almacen.escribir(datos));

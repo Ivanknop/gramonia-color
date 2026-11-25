@@ -241,6 +241,7 @@ class _Recursos {
         text: '$n',
         style: halo
             ? TextStyle(
+                fontFamily: 'Roboto', // la del sistema en Android
                 fontSize: fuente,
                 height: 1,
                 fontWeight: FontWeight.w600,
@@ -251,6 +252,7 @@ class _Recursos {
                   ..color = const Color(0xE6FFFFFF),
               )
             : TextStyle(
+                fontFamily: 'Roboto',
                 fontSize: fuente,
                 height: 1,
                 fontWeight: FontWeight.w600,

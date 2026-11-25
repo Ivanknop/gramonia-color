@@ -1,0 +1,28 @@
+{
+  "id": "la-gema-helada--super-facil",
+  "titulo": "La Gema Helada",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#534A59"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#AA9188"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C7C7BD"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#886564"
+    }
+  ]
+}

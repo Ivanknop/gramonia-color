@@ -1,0 +1,48 @@
+{
+  "id": "la-heladeria--normal",
+  "titulo": "La heladería",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#675447"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#97968A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3E4036"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C1C2BB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#666E67"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#322B27"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#837866"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#514A3F"
+    }
+  ]
+}

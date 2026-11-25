@@ -32,6 +32,7 @@ class Bioma {
     required this.piezas,
     this.nivel = 1,
     this.tipo = TipoBioma.region,
+    this.femenino = false,
   });
 
   final String id;
@@ -45,6 +46,19 @@ class Bioma {
   /// Nivel de la historia al que pertenece (desde 1; ver `niveles.dart`).
   final int nivel;
   final TipoBioma tipo;
+
+  /// El nombre va con "la" (la Montaña Dragón); si no, con "el". Los que ya
+  /// traen artículo ("La Ciudad") no lo necesitan.
+  final bool femenino;
+
+  /// Nombre con artículo en minúscula, para usar dentro de una frase:
+  /// "el Árbol Mágico", "la Montaña Dragón", "la Ciudad".
+  String get conArticulo {
+    for (final a in const ['El ', 'La ']) {
+      if (nombre.startsWith(a)) return '${a.toLowerCase()}${nombre.substring(a.length)}';
+    }
+    return '${femenino ? 'la' : 'el'} $nombre';
+  }
 
   Iterable<String> get cuadroIds => piezas.map((p) => p.cuadroId).whereType<String>();
 }

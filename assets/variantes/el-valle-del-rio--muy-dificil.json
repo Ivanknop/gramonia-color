@@ -1,0 +1,98 @@
+{
+  "id": "el-valle-del-rio--muy-dificil",
+  "titulo": "El valle del río",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#BFB56C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#45583F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A2975C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A9A461"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3F4D38"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#354031"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#E5D8B9"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#868B54"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5A5E3C"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C8CC9C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#F3E6CD"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6D764A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#8E975F"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#ACAF6D"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#82824F"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#606943"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#61754E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#7B7549"
+    }
+  ]
+}

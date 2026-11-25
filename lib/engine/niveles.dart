@@ -93,3 +93,13 @@ List<int> nivelesQueSeCompletan(List<Bioma> biomas, Set<String> antes, Set<Strin
       if (!previos.contains(n)) n,
   ];
 }
+
+/// Lugares que se ven a color en la portada: los de los niveles completos
+/// que tienen obras (los mismos que ya se colorearon en el mapa).
+List<Bioma> lugaresRecuperados(List<Bioma> biomas, Set<String> completados) {
+  final niveles = nivelesCompletos(biomas, completados).toSet();
+  return [
+    for (final b in biomas)
+      if (niveles.contains(b.nivel) && b.cuadroIds.isNotEmpty) b,
+  ];
+}

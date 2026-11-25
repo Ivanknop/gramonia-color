@@ -7,7 +7,7 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#301C1D"
+      "hex": "#301D1C"
     },
     {
       "numero": 2,
@@ -17,12 +17,12 @@
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#432620"
+      "hex": "#582F22"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#592F22"
+      "hex": "#432620"
     },
     {
       "numero": 5,
@@ -32,18 +32,17 @@
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#3B1F1B"
+      "hex": "#321D1C"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#2B1919"
+      "hex": "#3A1F1B"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#321D1C"
+      "hex": "#2B1919"
     }
-  ],
-  "mensajeMututu": "El fuego vuelve a calentar el refugio. Mututu no se animó a llevarse las brasas."
+  ]
 }

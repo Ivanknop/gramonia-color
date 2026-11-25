@@ -1,5 +1,8 @@
 /// Modo historia: pestañas Galería, Mis obras, Mapa y Tienda. En la barra de
 /// abajo, la primera opción (flecha atrás) vuelve a la portada.
+///
+/// Con el tutorial de la tienda pendiente (nivel 1 completo), se queda en la
+/// Tienda hasta comprar la lupa o saltearlo: las otras pestañas no responden.
 library;
 
 import 'package:material_ui/material_ui.dart';
@@ -34,7 +37,30 @@ class _PrincipalState extends State<Principal> {
   static const _titulos = ['Galería', 'Mis obras', 'Mapa de Gramonia', Textos.tienda];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(
+    listenable: Dependencias.of(context).progreso,
+    builder: (context, _) {
+      final tutorialTienda = tutorialTiendaPendiente(context);
+      if (tutorialTienda) {
+        _pestana = Principal.tienda;
+        // El Lobo regala las plumas para la lupa (una sola vez).
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) Dependencias.of(context).progreso.empezarTutorialTienda();
+        });
+      }
+      return PopScope(canPop: !tutorialTienda, child: _armar(context, tutorialTienda));
+    },
+  );
+
+  void _avisarTutorialTienda() {
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        const SnackBar(content: Text(Textos.tutorialTiendaPrimero), duration: Duration(seconds: 2)),
+      );
+  }
+
+  Widget _armar(BuildContext context, bool tutorialTienda) {
     return Scaffold(
       appBar: AppBar(
         // Se vuelve a la portada con la flecha de la barra de abajo.
@@ -80,14 +106,22 @@ class _PrincipalState extends State<Principal> {
       bottomNavigationBar: NavigationBar(
         // La 0 es "Portada": no es una pestaña, vuelve a la portada.
         selectedIndex: _pestana + 1,
-        onDestinationSelected: (i) =>
-            i == 0 ? volverAPortada(context) : setState(() => _pestana = i - 1),
+        onDestinationSelected: (i) {
+          if (tutorialTienda) {
+            if (i != Principal.tienda + 1) _avisarTutorialTienda();
+            return;
+          }
+          i == 0 ? volverAPortada(context) : setState(() => _pestana = i - 1);
+        },
         destinations: const [
           NavigationDestination(icon: Icon(Icons.arrow_back), label: Textos.portada),
           NavigationDestination(icon: Icon(Icons.photo_library_outlined), label: 'Galería'),
           NavigationDestination(icon: Icon(Icons.palette_outlined), label: 'Mis obras'),
           NavigationDestination(icon: Icon(Icons.map_outlined), label: 'Mapa'),
-          NavigationDestination(icon: Icon(Icons.storefront_outlined), label: Textos.tienda),
+          NavigationDestination(
+            icon: ImageIcon(AssetImage(iconoTienda), key: Key('icono-tienda')),
+            label: Textos.tienda,
+          ),
         ],
       ),
     );

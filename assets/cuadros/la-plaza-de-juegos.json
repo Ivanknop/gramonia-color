@@ -1,0 +1,374 @@
+{
+  "id": "la-plaza-de-juegos",
+  "titulo": "La plaza de juegos",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B3B96D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BCCF8C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E48278"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#BCC17B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7BA6C5"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#E5766E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8AB2CE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#CCDADB"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F2DA7A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#EFB57F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#A4825C"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6D7048"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#ECCAA2"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#E4E6E0"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C9CC84"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#8D7550"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#728371"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#B4C77A"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#75824B"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#533A2C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#9EA460"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#D894A5"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#81864D"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#9EA676"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#A6AE66"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#DAE3DD"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#644A38"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#C4D7A0"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#F3EFE3"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#D6B689"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#F4DC8C"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#5E6846"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#595B40"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#8F9958"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#F7F3E9"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#858663"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#7B9494"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#909C6E"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#DDDBC2"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#90A280"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#6F794C"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#A6B272"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#CEA693"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#A6B38F"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#7A5A43"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#917766"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#B4C98F"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#A96B57"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#B5B17A"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#62724F"
+    },
+    {
+      "numero": 51,
+      "nombre": "Color 51",
+      "hex": "#846950"
+    },
+    {
+      "numero": 52,
+      "nombre": "Color 52",
+      "hex": "#E4A97C"
+    },
+    {
+      "numero": 53,
+      "nombre": "Color 53",
+      "hex": "#A39560"
+    },
+    {
+      "numero": 54,
+      "nombre": "Color 54",
+      "hex": "#C4D1A3"
+    },
+    {
+      "numero": 55,
+      "nombre": "Color 55",
+      "hex": "#A58570"
+    },
+    {
+      "numero": 56,
+      "nombre": "Color 56",
+      "hex": "#935B4A"
+    },
+    {
+      "numero": 57,
+      "nombre": "Color 57",
+      "hex": "#90AEAF"
+    },
+    {
+      "numero": 58,
+      "nombre": "Color 58",
+      "hex": "#D7CA95"
+    },
+    {
+      "numero": 59,
+      "nombre": "Color 59",
+      "hex": "#BCA580"
+    },
+    {
+      "numero": 60,
+      "nombre": "Color 60",
+      "hex": "#8D9156"
+    },
+    {
+      "numero": 61,
+      "nombre": "Color 61",
+      "hex": "#BCBA82"
+    },
+    {
+      "numero": 62,
+      "nombre": "Color 62",
+      "hex": "#A9937F"
+    },
+    {
+      "numero": 63,
+      "nombre": "Color 63",
+      "hex": "#BD8D7E"
+    },
+    {
+      "numero": 64,
+      "nombre": "Color 64",
+      "hex": "#C07663"
+    },
+    {
+      "numero": 65,
+      "nombre": "Color 65",
+      "hex": "#F1E7BD"
+    },
+    {
+      "numero": 66,
+      "nombre": "Color 66",
+      "hex": "#EBCB7E"
+    },
+    {
+      "numero": 67,
+      "nombre": "Color 67",
+      "hex": "#8D9471"
+    },
+    {
+      "numero": 68,
+      "nombre": "Color 68",
+      "hex": "#D9946E"
+    },
+    {
+      "numero": 69,
+      "nombre": "Color 69",
+      "hex": "#B0B980"
+    },
+    {
+      "numero": 70,
+      "nombre": "Color 70",
+      "hex": "#BF9983"
+    },
+    {
+      "numero": 71,
+      "nombre": "Color 71",
+      "hex": "#715641"
+    },
+    {
+      "numero": 72,
+      "nombre": "Color 72",
+      "hex": "#C5C582"
+    },
+    {
+      "numero": 73,
+      "nombre": "Color 73",
+      "hex": "#849056"
+    }
+  ],
+  "orden": 28
+}

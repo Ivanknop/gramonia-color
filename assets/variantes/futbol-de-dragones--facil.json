@@ -1,0 +1,38 @@
+{
+  "id": "futbol-de-dragones--facil",
+  "titulo": "Fútbol de dragones",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C9B594"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#867864"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B79E7E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E3E0D7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#9B9577"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#D3CDBD"
+    }
+  ]
+}

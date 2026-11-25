@@ -1,0 +1,38 @@
+{
+  "id": "el-oso-en-la-biblioteca--facil",
+  "titulo": "El Oso en la biblioteca",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#281A13"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6E503C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#917158"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#523828"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#BCA58D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#42291C"
+    }
+  ]
+}

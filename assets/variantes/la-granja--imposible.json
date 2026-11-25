@@ -1,0 +1,168 @@
+{
+  "id": "la-granja--imposible",
+  "titulo": "La granja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C1B28E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4D4D38"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#9FCCE6"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B0D6EA"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#6F6F4F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#887C5E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#4D3E32"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#9A906D"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#DAEDF2"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#93C5E4"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#39352A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6F5E4B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#CCE5EC"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#BCDDED"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#AF9370"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#757A5B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#525740"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#97C7E5"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#7A6953"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#424736"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#858663"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#302921"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#8F6A52"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A6AA8B"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#63694F"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#5D6046"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#8E987F"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#634133"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#3E3D2F"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#644E3E"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#615843"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#AED0DE"
+    }
+  ]
+}

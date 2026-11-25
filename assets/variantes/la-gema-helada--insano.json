@@ -1,0 +1,208 @@
+{
+  "id": "la-gema-helada--insano",
+  "titulo": "La Gema Helada",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A38178"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B88F85"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#704F51"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E2BA8A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7E7083"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8BB2C8"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#41404B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#595467"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#C9B3A4"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#755F68"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#5D6489"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#84605D"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C6D9DA"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#BE8862"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#E8F4F3"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#ECD6B5"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#99D2E7"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#5D4042"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#DBBEAE"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#353243"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#B6A09C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#928E96"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#CA9F78"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#4F363C"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#996054"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#C9A497"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#F7EAC6"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#9F7266"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#E2C9B3"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#41425F"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#584353"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#5F4B57"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#5E6161"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#4A4B61"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#94716C"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#B2735D"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#826C67"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#A59494"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#88514F"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#738EA7"
+    }
+  ]
+}

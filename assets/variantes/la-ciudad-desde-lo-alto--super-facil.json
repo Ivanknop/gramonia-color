@@ -1,0 +1,28 @@
+{
+  "id": "la-ciudad-desde-lo-alto--super-facil",
+  "titulo": "La Ciudad desde lo alto",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#9D9766"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#CAC498"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#5B563E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#7C774E"
+    }
+  ]
+}

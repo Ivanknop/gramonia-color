@@ -1,0 +1,38 @@
+{
+  "id": "el-valle-del-rio--facil",
+  "titulo": "El valle del río",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#48543B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B4B06B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#98975C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#D9D4AE"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#667148"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#7F7C4D"
+    }
+  ]
+}

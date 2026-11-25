@@ -1,0 +1,78 @@
+{
+  "id": "la-heladeria--dificil",
+  "titulo": "La heladería",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#302A25"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3A3931"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#8E7960"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#626860"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#715648"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#899189"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D1CEC7"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B1B6B1"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#A69C8C"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#6B746E"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#504B3F"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#404639"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#5D5347"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#79796D"
+    }
+  ]
+}

@@ -5,6 +5,8 @@
 /// `lib/engine/genero.dart`). La neutra reformula: sin "o/a", "x" ni "e".
 library;
 
+import 'biomas.dart';
+
 abstract final class Textos {
   // ---- Perfil: nombre y género (después de la introducción) ----
   static const perfil = 'Mi perfil';
@@ -17,7 +19,7 @@ abstract final class Textos {
   static const generoNeutro = 'Prefiero no decir';
 
   // ---- Niveles (modo historia) ----
-  static String nivel(int n) => n == 0 ? 'Tutorial' : 'Nivel $n';
+  static String nivel(int n) => n == 0 ? 'Tutorial' : ['Nivel $n', ?nombresDeNivel[n]].join(' · ');
   static String paraElNivel(int hechas, int necesarias, int siguiente) =>
       '$hechas de $necesarias obras para llegar al nivel $siguiente';
   static String nivelCompleto(int n) => '¡Nivel $n completo! Pronto llegan más obras.';
@@ -27,14 +29,15 @@ abstract final class Textos {
   static const tutorial = 'Tutorial';
   static const tutorialSaltar = 'Saltar';
   static const tutorialElegirColor = 'Elegí un color de la paleta de abajo.';
-  static const tutorialTocarParte = 'Tocá una parte del dibujo que tenga ese número.';
   static const tutorialCompletarColor =
-      'Pintá todas las partes de ese número. Así completás un color.';
+      'Tocá las partes del dibujo que tienen ese número hasta pintarlas todas. '
+      'Así completás un color.';
   static const tutorialLupa =
-      '¿No encontrás una parte? Apretá la Lupa: te lleva a una que falta. '
-      'Acá es gratis.';
+      '¡Muy bien! ¿Y si no encontrás una parte? Tocá la lupa (se enciende) y '
+      'después un color: te muestra una parte que falta. Acá es gratis.';
   static const tutorialBomba =
-      'Ahora probá la Bomba: apretala y tocá el dibujo. Acá también es gratis.';
+      'Ahora la bomba de color: tocala y después tocá el dibujo. Pinta un montón '
+      'de partes de una vez. Acá también es gratis.';
   static const tutorialTerminar = '¡Muy bien! Terminá de pintar el Árbol.';
   static const tutorialListo = '¡Ya sabés pintar! Ahora empieza la historia.';
   static const tutorialRepaso = '¡Muy bien! Ya te acordás de todo.';
@@ -46,19 +49,44 @@ abstract final class Textos {
 
   // ---- Créditos ----
   static const creditos = 'Créditos';
+  static const creditosTitulo = 'Gramonia a Color';
   static const creditosIntro =
-      'Estas son las personas (y las ayudas mágicas) que hicieron Gramonia Color.';
+      'Estas son las personas (y las ayudas mágicas) que hicieron Gramonia a Color.';
 
   /// Quién hizo qué, en el orden en que se muestra.
   static const realizadores = <(String, String)>[
-    ('Cuentos de Gramonia', 'Iván y Regi (Regina Knopoff)'),
-    ('Idea y desarrollo', 'Iván'),
-    ('Dibujos', 'Hechos con Gemini, a partir de los cuentos'),
-    ('Música', 'Hecha con Gemini Lyria'),
-    ('Programación', 'Con ayuda de Claude'),
+    ('Guion y desarrollo', 'Iván y Regina Knopoff'),
+    ('Imágenes y Música', 'Gemini'),
+    ('Colaboración Código', 'Claude'),
   ];
-  static const creditosCuentos = 'Los cuentos se leen en cuentosdegramonia.substack.com';
+  static const creditosCuentosAntes = 'Los cuentos se leen en';
+  static const creditosCuentosEnlace = 'cuentosdegramonia.substack.com';
+  static const creditosSinNavegador = 'No pudimos abrir el navegador.';
   static const creditosGobi = '¡Gracias por devolverle los colores a Gramonia!';
+
+  // ---- Al terminar una obra de la historia (uno al azar) ----
+  // {lugar}: el lugar con artículo ("el Árbol Mágico"); {Lugar}: igual, con
+  // mayúscula; {n}: obras que le faltan. "a el" queda "al".
+  static const mensajesObra = (
+    faltan: [
+      '¡Falta menos! Ya casi le devolvemos el color a {lugar}.',
+      'Un cuadro menos. Quedan {n} para que {lugar} vuelva a brillar.',
+      '¡Muy bien! Cada cuadro le devuelve un poquito de color a {lugar}.',
+      'Mututu se va a quedar con las ganas: a {lugar} le faltan solo {n} cuadros.',
+      'Gobi mueve la cola: ¡quedan {n} cuadros de {lugar}!',
+    ],
+    faltaUna: [
+      '¡Falta uno solo! Ya casi le devolvemos todo el color a {lugar}.',
+      '¡Queda el último cuadro de {lugar}! Gobi ya prepara el festejo.',
+    ],
+    completo: [
+      '¡Listo! Le devolviste todos los colores a {lugar}.',
+      '¡{Lugar} brilla otra vez, con todos sus colores!',
+      '¡Lo lograste! Cada rincón de {lugar} tiene su color.',
+    ],
+  );
+  static String destapaste(String lugarConArticulo) =>
+      'Destapaste una parte de $lugarConArticulo.'.replaceAll('de el ', 'del ');
 
   // ---- Festejo ----
   static const festejo = '¡Terminaste!';
@@ -105,15 +133,27 @@ abstract final class Textos {
   static const lupaDetalle = 'Te lleva a una parte que falta pintar.';
   static const bombaDetalle = 'Pinta un montón de partes de una vez.';
   static String tenes(int n) => 'Tenés $n';
-  static String compraste(String que, int n) => '¡Listo! Ahora tenés $n ($que).';
+  static String compraste(String que, int n) => '¡Listo! Compraste una $que. Ahora tenés $n.';
+  static String confirmarCompra(String que, int precio) => '¿Comprás una $que por $precio plumas?';
+  static const compraSi = '¡Sí, comprar!';
+  static const compraNo = 'Mejor no';
+  static const tiendaFraseTutorial = 'Tomá. Regalo. Comprá una lupa.';
+  static String tutorialTienda(int plumas) =>
+      'El Lobo te regaló $plumas plumas. Comprá una lupa: te muestra dónde '
+      'faltan partes de un color.';
+  static const irALaTienda = '¡A la tienda!';
+  static const tutorialTiendaPrimero = 'Primero comprá la lupa (o tocá Saltar).';
   static const faltanPlumas = 'Te faltan plumas. Terminá cuadros para juntar más.';
   static const sinLupas = 'No te quedan lupas. Conseguí más en la Tienda.';
   static const sinBombas = 'No te quedan bombas. Conseguí más en la Tienda.';
+  static const lupaArmada = 'Tocá un color y la lupa te muestra una parte que falta.';
+  static const lupaColorCompleto = 'Ese color ya está completo. Tocá otro.';
+  static const bombaArmada = 'Tocá el dibujo donde quieras tirar la bomba de color.';
   static String subisteDeNivel(int n) => '¡Llegaste al nivel $n!';
 
   // ---- Portada ----
   static const tituloGramonia = 'Gramonia...';
-  static const tituloColor = 'Color';
+  static const tituloColor = 'a Color';
 
   /// Versión de la app (la misma que `version` en pubspec.yaml; lo verifica un test).
   static const version = 'v1.0.0';

@@ -1,0 +1,38 @@
+{
+  "id": "caracolas-en-la-playa--facil",
+  "titulo": "Caracolas en la playa",
+  "categoria": "paisaje",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#E1C393"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A89374"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#D7D5C1"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E9DFC6"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F4EAD6"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B7C1A7"
+    }
+  ]
+}

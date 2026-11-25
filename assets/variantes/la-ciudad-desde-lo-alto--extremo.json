@@ -1,0 +1,128 @@
+{
+  "id": "la-ciudad-desde-lo-alto--extremo",
+  "titulo": "La Ciudad desde lo alto",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#ACB46D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BDA787"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#CEB693"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#95995B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#6C7644"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#6F4834"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B57957"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#384433"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#576F4A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F7EAD1"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#495B3D"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#3C5643"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A7996C"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#EDDFC3"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#845E44"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#7D7F4B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#93795D"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#7D9056"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#595E3C"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#DAD3B6"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#C2CDA0"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#BD9874"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#7E6E4D"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#C1B47F"
+    }
+  ]
+}

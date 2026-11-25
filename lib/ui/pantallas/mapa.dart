@@ -3,6 +3,7 @@
 /// bioma completo, se colorea la zona entera. Debajo, la lista de lugares.
 library;
 
+import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
@@ -139,13 +140,7 @@ class PintorMapa extends CustomPainter {
     canvas.restore();
   }
 
-  static ui.Path _pathDe(ZonaMapa zona) {
-    final path = ui.Path()..fillType = ui.PathFillType.evenOdd;
-    for (final pol in zona.poligonos) {
-      path.addPolygon([for (final p in pol) Offset(p.x, p.y)], true);
-    }
-    return path;
-  }
+  static ui.Path _pathDe(ZonaMapa zona) => pathDeZona(zona);
 
   @override
   bool shouldRepaint(PintorMapa old) => old.imagen != imagen || old.estados != estados;
@@ -191,4 +186,93 @@ class _FilaBioma extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Contorno de una zona del mapa, en píxeles de la ilustración.
+ui.Path pathDeZona(ZonaMapa zona) {
+  final path = ui.Path()..fillType = ui.PathFillType.evenOdd;
+  for (final pol in zona.poligonos) {
+    path.addPolygon([for (final p in pol) Offset(p.x, p.y)], true);
+  }
+  return path;
+}
+
+/// Lleva las coordenadas de la ilustración del mapa a una caja de [tamano]
+/// donde se muestra con `BoxFit.cover` (centrada), como en la portada.
+Matrix4 transformacionCover(Size tamano) {
+  final escala = math.max(tamano.width / anchoMapa, tamano.height / altoMapa);
+  return Matrix4.identity()
+    ..translateByDouble(
+      (tamano.width - anchoMapa * escala) / 2,
+      (tamano.height - altoMapa * escala) / 2,
+      0,
+      1,
+    )
+    ..scaleByDouble(escala, escala, 1, 1);
+}
+
+/// Portada: el mapa a color, solo en los lugares ya recuperados (las islas,
+/// con su propio color, como en el mapa). Va encima del mapa que se apaga:
+/// esos lugares no pierden el color.
+class MapaRecuperado extends StatelessWidget {
+  const MapaRecuperado({super.key, required this.lugares});
+
+  final List<Bioma> lugares;
+
+  @override
+  Widget build(BuildContext context) {
+    final tierra = [
+      for (final b in lugares)
+        if (b.tipo != TipoBioma.isla && zonasMapa[b.id] != null) zonasMapa[b.id]!,
+    ];
+    final islas = [
+      for (final b in lugares)
+        if (b.tipo == TipoBioma.isla && zonasMapa[b.id] != null) (zonasMapa[b.id]!, b.color),
+    ];
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        if (tierra.isNotEmpty)
+          ClipPath(
+            key: const Key('portada-recuperada'),
+            clipper: _RecorteZonas(tierra),
+            child: Image.asset(assetMapa, fit: BoxFit.cover),
+          ),
+        if (islas.isNotEmpty) CustomPaint(painter: _PintorIslas(islas)),
+      ],
+    );
+  }
+}
+
+class _RecorteZonas extends CustomClipper<ui.Path> {
+  _RecorteZonas(this.zonas);
+  final List<ZonaMapa> zonas;
+
+  @override
+  ui.Path getClip(Size size) {
+    final path = ui.Path();
+    for (final z in zonas) {
+      path.addPath(pathDeZona(z), Offset.zero);
+    }
+    return path.transform(transformacionCover(size).storage);
+  }
+
+  @override
+  bool shouldReclip(_RecorteZonas old) => old.zonas.length != zonas.length;
+}
+
+class _PintorIslas extends CustomPainter {
+  _PintorIslas(this.islas);
+  final List<(ZonaMapa, int)> islas;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.transform(transformacionCover(size).storage);
+    for (final (zona, color) in islas) {
+      canvas.drawPath(pathDeZona(zona), Paint()..color = Color(color));
+    }
+  }
+
+  @override
+  bool shouldRepaint(_PintorIslas old) => old.islas.length != islas.length;
 }

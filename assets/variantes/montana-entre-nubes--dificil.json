@@ -1,0 +1,78 @@
+{
+  "id": "montana-entre-nubes--dificil",
+  "titulo": "La Montaña entre nubes",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1F2C3B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#29445D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#90B0C8"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6C8CA6"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#DCD8D7"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#405A73"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#6B7587"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B3B5BE"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#B6CBDB"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#8296AA"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#587088"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#9D9AA6"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#384B60"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#496A85"
+    }
+  ]
+}

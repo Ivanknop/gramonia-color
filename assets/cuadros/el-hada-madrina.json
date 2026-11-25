@@ -1,0 +1,174 @@
+{
+  "id": "el-hada-madrina",
+  "titulo": "El Hada Madrina",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#6E5675"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6F5348"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#AD6E65"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#60383B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3F282B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3B3740"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#2E2E34"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F1CCA8"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#DEA48F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F9E2B3"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#C78376"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#AF9192"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#746C81"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#975B5A"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#495062"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#A07272"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#EFB9A1"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#4C374E"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#D8B39D"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#CD9584"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#83585B"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#DB9585"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#90686B"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#604859"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#27212B"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#C5746E"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#9D6763"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#473D4C"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#B07C77"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#75494F"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#48444E"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#64414F"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#403142"
+    }
+  ],
+  "orden": 18
+}

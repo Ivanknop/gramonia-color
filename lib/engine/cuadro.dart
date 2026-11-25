@@ -32,7 +32,6 @@ class MetaCuadro {
     required this.categoria,
     required this.dificultad,
     required this.paleta,
-    required this.mensajeMututu,
     this.orden = 0,
   });
 
@@ -42,7 +41,6 @@ class MetaCuadro {
     categoria: Categoria.values.byName(j['categoria'] as String),
     dificultad: j['dificultad'] as int,
     paleta: [for (final c in j['paleta'] as List) ColorPaleta.desdeJson(c as Map<String, dynamic>)],
-    mensajeMututu: j['mensajeMututu'] as String,
     orden: (j['orden'] as int?) ?? 0,
   );
 
@@ -53,9 +51,6 @@ class MetaCuadro {
   /// 1 = muy fácil … 5 = muy difícil.
   final int dificultad;
   final List<ColorPaleta> paleta;
-
-  /// Frase que se muestra al devolverle los colores al cuadro.
-  final String mensajeMututu;
 
   /// Posición en la galería (menor primero).
   final int orden;

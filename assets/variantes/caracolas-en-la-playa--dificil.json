@@ -1,0 +1,78 @@
+{
+  "id": "caracolas-en-la-playa--dificil",
+  "titulo": "Caracolas en la playa",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F3D7A7"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C8D5D2"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#967D62"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#CAA87C"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A6C0AF"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F3E7D1"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#E0E0D3"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F8EEDC"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#E5CA9A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#DEBD8B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#E1D7BE"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#C6C19F"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#9CA289"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F3E0BD"
+    }
+  ]
+}

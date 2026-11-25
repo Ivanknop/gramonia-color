@@ -37,7 +37,7 @@ void main() {
     p.marcarCompletado('c2');
     await p.guardado;
     final guardado = jsonDecode(almacen.datos!) as Map<String, dynamic>;
-    expect(guardado['version'], 7);
+    expect(guardado['version'], 8);
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.de('c2')!.pintadas, ['x']);
     expect(otra.completados, {'c2'});
@@ -223,6 +223,44 @@ void main() {
     const v6 = '{"version":6,"cuadros":{},"genero":"chico","tutorialPasado":true}';
     final (p, _) = await nuevo(v6);
     expect((p.nombre, p.genero, p.perfilCompleto), (null, Genero.chico, false));
+  });
+
+  test('migra un guardado v7: con el tutorial pasado, recibe 3 lupas y 3 bombas una vez', () async {
+    const v7 = '{"version":7,"cuadros":{},"tutorialPasado":true,"lupa":1,"bomba":0}';
+    final (p, almacen) = await nuevo(v7);
+    expect((p.cantidad(Herramienta.lupa), p.cantidad(Herramienta.bomba)), (4, 3));
+    expect(p.regaloInicial, isTrue);
+    await p.guardado;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect((otra.cantidad(Herramienta.lupa), otra.cantidad(Herramienta.bomba)), (4, 3));
+    // Sin el tutorial pasado (todavía en el nivel 0), el regalo espera.
+    final (nueva, _) = await nuevo('{"version":7,"cuadros":{}}');
+    expect((nueva.regaloInicial, nueva.cantidad(Herramienta.lupa)), (false, 0));
+  });
+
+  test('regalo inicial: 3 lupas y 3 bombas al llegar al nivel 1, terminando o salteando', () async {
+    final (salta, _) = await nuevo();
+    expect(salta.cantidad(Herramienta.lupa), 0);
+    salta.saltarTutorial();
+    expect((salta.cantidad(Herramienta.lupa), salta.cantidad(Herramienta.bomba)), (3, 3));
+    salta.terminarTutorial(); // terminarlo después no lo da de nuevo
+    expect(salta.cantidad(Herramienta.lupa), 3);
+    final (termina, _) = await nuevo();
+    termina.terminarTutorial();
+    expect((termina.cantidad(Herramienta.lupa), termina.cantidad(Herramienta.bomba)), (3, 3));
+  });
+
+  test('tutorial de la tienda: regala las plumas una sola vez y se guarda hecho', () async {
+    final (p, almacen) = await nuevo();
+    expect(p.empezarTutorialTienda(), plumasTutorialTienda);
+    expect(p.empezarTutorialTienda(), 0);
+    expect(p.plumas, plumasTutorialTienda);
+    expect(p.tutorialTiendaHecho, isFalse);
+    p.terminarTutorialTienda();
+    await p.guardado;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect((otra.tutorialTiendaHecho, otra.plumas), (true, plumasTutorialTienda));
+    expect(otra.empezarTutorialTienda(), 0);
   });
 
   test('datos corruptos no impiden jugar', () async {

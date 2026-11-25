@@ -1,0 +1,38 @@
+{
+  "id": "el-hada-madrina--facil",
+  "titulo": "El Hada Madrina",
+  "categoria": "persona",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3F3542"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#744E55"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#906C70"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#BA7871"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#EBC5A6"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#CE988A"
+    }
+  ]
+}

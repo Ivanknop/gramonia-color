@@ -1,0 +1,128 @@
+{
+  "id": "las-haditas-practican--extremo",
+  "titulo": "Las haditas practican",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#8C7E55"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6D5A39"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#EEDCA7"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F8EDDA"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#DCCC90"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#EDDFCA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FCF2E0"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#AA9E61"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F4E9D4"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C1B286"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#DABC81"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#ABA082"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#B7A076"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#DDCCB4"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C79B72"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#C9BF96"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#B28361"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#C9A980"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#9D815E"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#8E6246"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#D8C0A5"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#E2D7B3"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#927050"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A29066"
+    }
+  ]
+}

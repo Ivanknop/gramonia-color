@@ -7,7 +7,6 @@ import 'package:material_ui/material_ui.dart';
 import '../../datos/biomas.dart';
 import '../../datos/historia.dart';
 import '../../engine/intro.dart';
-import '../../engine/motor.dart';
 import '../../engine/niveles.dart';
 import '../../datos/textos.dart';
 import '../comun.dart';
@@ -219,7 +218,6 @@ class IndiceHistoria extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final progreso = Dependencias.of(context).progreso;
-    final estados = estadoBiomas(biomas, progreso.completados);
     void abrir(List<Escena> escenas) => Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => PantallaHistoria(escenas: escenas, textoFinal: 'Listo'),
@@ -253,18 +251,8 @@ class IndiceHistoria extends StatelessWidget {
               ),
             ),
           ),
-          nivel(nivelTutorial),
-          for (final (i, e) in estados.indexed) ...[
-            if (capitulos[e.bioma.id] case final escenas?)
-              _Capitulo(
-                titulo: escenas.first.titulo ?? e.bioma.nombre,
-                abierto: e.completoDisponible && e.bioma.cuadroIds.isNotEmpty,
-                alTocar: () => abrir(escenas),
-              ),
-            // Al final de cada nivel, su capítulo.
-            if (i == estados.length - 1 || estados[i + 1].bioma.nivel != e.bioma.nivel)
-              nivel(e.bioma.nivel),
-          ],
+          // Un capítulo por nivel: Gobi habla al completar cada uno.
+          for (final n in {nivelTutorial, for (final b in biomas) b.nivel}) nivel(n),
         ],
       ),
     );
@@ -283,7 +271,7 @@ class _Capitulo extends StatelessWidget {
     child: ListTile(
       leading: Icon(abierto ? Icons.menu_book : Icons.lock_outline, color: Tema.morado),
       title: Text(abierto ? titulo : '???'),
-      subtitle: abierto ? null : const Text('Se cuenta al completar este lugar'),
+      subtitle: abierto ? null : const Text('Se cuenta al completar el nivel'),
       enabled: abierto,
       onTap: abierto ? alTocar : null,
     ),

@@ -1,0 +1,119 @@
+{
+  "id": "la-granja",
+  "titulo": "La granja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B6A887"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#454032"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#928162"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#797C5B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3A3228"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#979B7E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#605440"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#96C6E5"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#776953"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#B2D7EA"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#DBEDF1"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#9FCCE6"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#CBE6EF"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#A8D1E8"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#65664A"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#555B44"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#4C4939"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#765643"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#C1DBE3"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#6A6E50"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#896D56"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#50523D"
+    }
+  ],
+  "orden": 12
+}

@@ -1,0 +1,78 @@
+{
+  "id": "la-granja--dificil",
+  "titulo": "La granja",
+  "categoria": "paisaje",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4F503D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3E382C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B7A987"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#96C7E5"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#D3E9EF"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#938263"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B6DAEB"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A7CEE2"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#989D7F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#686B4D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#6D5D48"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#7A7D5C"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#816C54"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#6A4C3C"
+    }
+  ]
+}

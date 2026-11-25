@@ -1,11 +1,11 @@
-/// Biomas de Gramonia en orden de progresión (dificultad creciente: más obras
-/// y más regiones por obra), con su nivel de la historia (el nivel 0 es el
+/// Biomas de Gramonia en orden de progresión (dificultad creciente: más
+/// regiones por obra), con su nivel de la historia (el nivel 0 es el
 /// tutorial). Los lugares de un mismo nivel se abren juntos:
 ///
 /// 1. Árbol Mágico · 2. Bosque Mágico · 3. Reino Animal ·
 /// 4. Tierra de las Caperucitas y Prado de las Hadas ·
 /// 5. Montaña Dragón y Reino Helado · 6. La Ciudad y La Costa ·
-/// 7. Islas Arcoíris · 8. Isla Negra.
+/// 7. Islas Arcoíris (las siete islas, una obra por isla) · 8. Isla Negra.
 ///
 /// Cada pieza se destapa al completar su obra; las piezas sin `cuadroId` son
 /// "próximamente" (falta la obra) y no traban el avance. Un cuadro destapa
@@ -61,22 +61,24 @@ final biomas = <Bioma>[
       const Pieza(id: 'granero-de-cleo', cuadroId: 'cleo-quiere-dormir'),
       // Mercado nocturno en el Reino Animal: (a confirmar) en el canon.
       const Pieza(id: 'mercado-nocturno', cuadroId: 'mercado-nocturno'),
-      ..._proximamente('reino-animal', 1, desde: 4),
+      // El Oso, vecino del Reino Animal (canon: "León y el queso").
+      const Pieza(id: 'biblioteca', cuadroId: 'el-oso-en-la-biblioteca'),
+      const Pieza(id: 'granja', cuadroId: 'la-granja'),
     ],
   ),
   Bioma(
     id: 'tierra-de-las-caperucitas',
     nombre: 'Tierra de las Caperucitas',
+    femenino: true,
     descripcion:
         'Caperuzas de todos los colores, a rayas, con lunares… y una que cambia con "panqueque".',
     color: 0xFFE53935,
     nivel: 4,
     piezas: [
       const Pieza(id: 'casa-de-la-abuelita', cuadroId: 'casa-de-la-abuelita'),
-      const Pieza(id: 'refugio', cuadroId: 'refugio-de-papa'),
       const Pieza(id: 'timoteo', cuadroId: 'timoteo-y-su-caperuza'),
       const Pieza(id: 'ronda', cuadroId: 'ronda-de-caperucitas'),
-      ..._proximamente('tierra-de-las-caperucitas', 1, desde: 5),
+      const Pieza(id: 'elefantito', cuadroId: 'el-elefantito-caperucito'),
     ],
   ),
   Bioma(
@@ -85,11 +87,16 @@ final biomas = <Bioma>[
     descripcion: 'Flores, capullos y mariposas: acá las Hadas practican sus poderes.',
     color: 0xFFF48FB1,
     nivel: 4,
-    piezas: _proximamente('prado-de-las-hadas', 5),
+    piezas: [
+      const Pieza(id: 'prado', cuadroId: 'el-prado-de-las-hadas'),
+      const Pieza(id: 'hada-madrina', cuadroId: 'el-hada-madrina'),
+      const Pieza(id: 'haditas', cuadroId: 'las-haditas-practican'),
+    ],
   ),
   Bioma(
     id: 'montana-dragon',
     nombre: 'Montaña Dragón',
+    femenino: true,
     descripcion: 'La más alta de Gramonia después del Árbol: cuevas tibias, gemas y dragones.',
     color: 0xFF7E57C2,
     nivel: 5,
@@ -97,7 +104,9 @@ final biomas = <Bioma>[
       const Pieza(id: 'cumbre', cuadroId: 'montana-de-los-dragones'),
       // Alma vive en la Montaña Dragón ("Reino Dragón").
       const Pieza(id: 'alma', cuadroId: 'alma-y-sus-alas'),
-      ..._proximamente('montana-dragon', 3, desde: 3),
+      const Pieza(id: 'entre-nubes', cuadroId: 'montana-entre-nubes'),
+      const Pieza(id: 'futbol', cuadroId: 'futbol-de-dragones'),
+      const Pieza(id: 'tormenta', cuadroId: 'dragones-en-la-tormenta'),
     ],
   ),
   Bioma(
@@ -106,7 +115,10 @@ final biomas = <Bioma>[
     descripcion: 'Nieve, frío y el mejor helado de menta granizada de toda la isla.',
     color: 0xFF81D4FA,
     nivel: 5,
-    piezas: _proximamente('reino-helado', 5),
+    piezas: [
+      const Pieza(id: 'heladeria', cuadroId: 'la-heladeria'),
+      const Pieza(id: 'gema-helada', cuadroId: 'la-gema-helada'),
+    ],
   ),
   Bioma(
     id: 'ciudad',
@@ -116,7 +128,10 @@ final biomas = <Bioma>[
     nivel: 6,
     piezas: [
       const Pieza(id: 'tienda', cuadroId: 'la-tienda'),
-      ..._proximamente('ciudad', 5, desde: 2),
+      const Pieza(id: 'plaza-de-juegos', cuadroId: 'la-plaza-de-juegos'),
+      const Pieza(id: 'vista', cuadroId: 'la-ciudad-desde-lo-alto'),
+      // Papá vive en la Ciudad (canon).
+      const Pieza(id: 'refugio', cuadroId: 'refugio-de-papa'),
     ],
   ),
   Bioma(
@@ -132,18 +147,18 @@ final biomas = <Bioma>[
       // La Caperucita pirata: (a confirmar) en el canon.
       const Pieza(id: 'caperucita-pirata', cuadroId: 'caperucita-pirata'),
       const Pieza(id: 'sirenhadas', cuadroId: 'sirenhadas'),
-      ..._proximamente('costa', 1, desde: 6),
+      const Pieza(id: 'caracolas', cuadroId: 'caracolas-en-la-playa'),
     ],
   ),
-  for (final (i, (id, nombre, color)) in const [
+  for (final (id, nombre, color) in const [
     ('isla-roja', 'Isla Roja', 0xFFE53935),
     ('isla-naranja', 'Isla Naranja', 0xFFFB8C00),
     ('isla-amarilla', 'Isla Amarilla', 0xFFFDD835),
     ('isla-verde', 'Isla Verde', 0xFF43A047),
+    ('isla-celeste', 'Isla Celeste', 0xFF4FC3F7),
     ('isla-azul', 'Isla Azul', 0xFF1E88E5),
-    ('isla-anil', 'Isla Añil', 0xFF3949AB),
-    ('isla-morada', 'Isla Morada', 0xFF8E24AA),
-  ].indexed)
+    ('isla-violeta', 'Isla Violeta', 0xFF8E24AA),
+  ])
     Bioma(
       id: id,
       nombre: nombre,
@@ -151,16 +166,26 @@ final biomas = <Bioma>[
       color: color,
       nivel: 7,
       tipo: TipoBioma.isla,
-      // De 6 a 9 obras: la dificultad sigue creciendo isla por isla.
-      piezas: _proximamente(id, 6 + i ~/ 2),
+      femenino: true,
+      // Un solo nivel ("Islas Arcoíris") con una obra por isla: en el mapa
+      // se van coloreando de a una.
+      piezas: [Pieza(id: '$id-1', cuadroId: obrasDeIslas[id])],
     ),
   Bioma(
     id: 'isla-negra',
     nombre: 'Isla Negra',
+    femenino: true,
     descripcion: 'Lejos, más allá de las Islas Arcoíris. Ahí dormía Mututu.',
     color: 0xFF3A3442,
     nivel: 8,
     tipo: TipoBioma.isla,
-    piezas: _proximamente('isla-negra', 10),
+    // Tres obras, las más difíciles: el nivel 8 tiene la mayor cantidad de colores.
+    piezas: _proximamente('isla-negra', 3),
   ),
 ];
+
+/// La obra de cada isla (las que todavía no tienen, "próximamente").
+const obrasDeIslas = <String, String>{'isla-naranja': 'llegada-a-la-isla-naranja'};
+
+/// Nombre de los niveles que agrupan lugares bajo un mismo nombre.
+const nombresDeNivel = <int, String>{7: 'Islas Arcoíris'};

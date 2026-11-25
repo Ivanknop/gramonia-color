@@ -1,0 +1,59 @@
+{
+  "id": "la-pluma-arcoiris",
+  "titulo": "La pluma arcoíris",
+  "categoria": "arte",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#270E63"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#418C93"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#BB6793"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FB91A1"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#DEAAAD"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FCABAD"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#EF728D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#33526D"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FDE1C6"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C33497"
+    }
+  ],
+  "orden": 42
+}

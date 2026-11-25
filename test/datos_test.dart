@@ -76,7 +76,7 @@ void main() {
 
   test('cada cuadro destapa una pieza (menos el tutorial y los de solo modo libre)', () {
     final usados = {for (final b in biomas) ...b.cuadroIds};
-    expect(soloLibre, hasLength(5));
+    expect(soloLibre, hasLength(6));
     expect(catalogo.ids.difference(usados), {idTutorial, ...soloLibre});
   });
 
@@ -111,14 +111,17 @@ void main() {
     }
   });
 
-  test('dificultad creciente: más obras por lugar y más regiones por obra', () {
-    for (var i = 1; i < biomas.length; i++) {
-      expect(
-        biomas[i].piezas.length,
-        greaterThanOrEqualTo(biomas[i - 1].piezas.length),
-        reason: '${biomas[i].id} tiene menos obras que ${biomas[i - 1].id}',
-      );
-    }
+  test('dificultad creciente: más regiones por obra; una obra por isla', () {
+    // La cantidad de obras depende de cada lugar (el Reino Helado tiene una o
+    // dos; las islas, una cada una).
+    expect(
+      [
+        for (final b in biomas)
+          if (b.nivel == 7) b.piezas.length,
+      ],
+      List.filled(7, 1),
+      reason: 'Islas Arcoíris: una obra por isla',
+    );
     // Regiones: cada obra tiene al menos tantas como la anterior en el recorrido.
     var anterior = 0;
     for (final b in biomas) {
@@ -141,19 +144,11 @@ void main() {
     }
   });
 
-  test('cada nivel (del tutorial al 8) tiene su capítulo, que avisa por Mututu', () {
+  test('cada nivel (del tutorial al 8) tiene su capítulo', () {
     final niveles = {nivelTutorial, for (final b in biomas) b.nivel};
     expect(niveles, {for (var n = 0; n <= 8; n++) n});
     for (final n in niveles) {
-      final escenas = capitulosDeNivel[n];
-      expect(escenas, isNotNull, reason: 'capítulo del nivel $n');
-      if (n > nivelTutorial) {
-        expect(
-          escenas!.map((e) => e.texto.toLowerCase()).join(' '),
-          contains('mututu'),
-          reason: 'nivel $n',
-        );
-      }
+      expect(capitulosDeNivel[n], isNotEmpty, reason: 'capítulo del nivel $n');
     }
   });
 
@@ -163,10 +158,9 @@ void main() {
     expect(Textos.version, 'v$version');
   });
 
-  test('cada bioma tiene su zona en el mapa y su capítulo en la historia', () {
+  test('cada bioma tiene su zona en el mapa', () {
     for (final b in biomas) {
       expect(zonasMapa.containsKey(b.id), isTrue, reason: 'zona de ${b.id}');
-      expect(capitulos.containsKey(b.id), isTrue, reason: 'capítulo de ${b.id}');
       expect(manchasDeZona(zonasMapa[b.id]!, b.piezas.length), hasLength(b.piezas.length));
     }
     expect(introduccion, isNotEmpty);
