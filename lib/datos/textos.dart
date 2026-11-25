@@ -6,16 +6,43 @@
 library;
 
 abstract final class Textos {
-  // ---- Elección de género (después de la introducción) ----
-  static const generoPregunta = 'Antes de empezar: ¿cómo querés que te hable?';
+  // ---- Perfil: nombre y género (después de la introducción) ----
+  static const perfil = 'Mi perfil';
+  static const perfilNombre = '¿Cómo te llamás?';
+  static const perfilNombreAyuda = 'Tu nombre o un apodo';
+  static const perfilListo = 'Listo';
+  static const generoPregunta = '¿Cómo querés que te hable?';
   static const generoChico = 'Chico';
   static const generoChica = 'Chica';
   static const generoNeutro = 'Prefiero no decir';
 
   // ---- Niveles (modo historia) ----
-  static String nivel(int n) => 'Nivel $n';
+  static String nivel(int n) => n == 0 ? 'Tutorial' : 'Nivel $n';
   static String paraElNivel(int hechas, int necesarias, int siguiente) =>
       '$hechas de $necesarias obras para llegar al nivel $siguiente';
+  static String nivelCompleto(int n) => '¡Nivel $n completo! Pronto llegan más obras.';
+  static const bloqueadoPorNivel = 'Se desbloquea al terminar el nivel anterior';
+
+  // ---- Tutorial (nivel 0) ----
+  static const tutorial = 'Tutorial';
+  static const tutorialSaltar = 'Saltar';
+  static const tutorialElegirColor = 'Elegí un color de la paleta de abajo.';
+  static const tutorialTocarParte = 'Tocá una parte del dibujo que tenga ese número.';
+  static const tutorialCompletarColor =
+      'Pintá todas las partes de ese número. Así completás un color.';
+  static const tutorialLupa =
+      '¿No encontrás una parte? Apretá la Lupa: te lleva a una que falta. '
+      'Acá es gratis.';
+  static const tutorialBomba =
+      'Ahora probá la Bomba: apretala y tocá el dibujo. Acá también es gratis.';
+  static const tutorialTerminar = '¡Muy bien! Terminá de pintar el Árbol.';
+  static const tutorialListo = '¡Ya sabés pintar! Ahora empieza la historia.';
+  static const tutorialRepaso = '¡Muy bien! Ya te acordás de todo.';
+  static const tutorialSeguir = '¡A la historia!';
+  static const tutorialVolverAHacer = 'Volver a hacer';
+  static const tutorialHacer = 'Hacer el tutorial';
+  static const tutorialDetalle = 'Aprendé a pintar con un Árbol Mágico sencillito.';
+  static String tutorialPremio(int n) => 'La primera vez que lo terminás, ganás $n plumas.';
 
   // ---- Créditos ----
   static const creditos = 'Créditos';
@@ -39,9 +66,11 @@ abstract final class Textos {
   // ---- Timelapse ----
   static const timelapse = 'Así lo pintaste';
   static const saltear = 'Saltear';
+  static const repetir = 'Repetir';
   static const verComoLoPinte = 'Ver cómo lo pinté';
 
   // ---- Dificultades ----
+  static String plumasDificultad(int n) => '+$n';
   static String detalleDificultad(int colores, int regiones) =>
       '$colores colores · unas $regiones partes para pintar';
 
@@ -49,12 +78,13 @@ abstract final class Textos {
   static const modoLibre = 'Modo libre';
   static const libreIntro =
       'Acá no hay historia ni mapa: elegí un dibujo y pintalo como quieras, '
-      'tan fácil o tan difícil como te guste.';
+      'tan fácil o tan difícil como te guste. Los que colorees en la historia '
+      'también aparecen acá.';
   static const libreElegir = '¿Qué tan difícil lo querés?';
   static const libreTerminado = '¡Obra terminada! Quedó hermosa.';
   static const libreOtro = 'Elegir otro dibujo';
   static const libreVacio =
-      'Todavía no hay dibujos para el modo libre. Recuperá lugares en la historia y aparecen acá.';
+      'Todavía no hay dibujos para el modo libre. Coloreá dibujos en la historia y aparecen acá.';
   static String etiquetaLibre(String dificultad) => 'Modo libre · $dificultad';
 
   // ---- Rehacer obra ----
@@ -84,8 +114,12 @@ abstract final class Textos {
   // ---- Portada ----
   static const tituloGramonia = 'Gramonia...';
   static const tituloColor = 'Color';
+
+  /// Versión de la app (la misma que `version` en pubspec.yaml; lo verifica un test).
+  static const version = 'v1.0.0';
+  static const modoHistoria = 'Modo historia';
   static const empezar = '¡Empezar!';
-  static const continuar = 'Continuar pintando';
+  static const portada = 'Portada';
   static const galeria = 'Galería';
   static const mapa = 'Mapa de Gramonia';
   static const laHistoria = 'La historia';

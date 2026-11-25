@@ -1,0 +1,35 @@
+{
+  "id": "tutorial-arbol-magico",
+  "titulo": "El Árbol Mágico (tutorial)",
+  "categoria": "paisaje",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#04143D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#40536C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2D2934"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6D8994"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C2D1BC"
+    }
+  ],
+  "mensajeMututu": "¡El Árbol Mágico recuperó sus colores! Ya sabés pintar.",
+  "orden": 0
+}

@@ -29,6 +29,13 @@ void main() {
     }
   });
 
+  test('modo libre: las plumas crecen con la dificultad, de 1 a 100', () {
+    expect(tabla.map((d) => d.plumas), [1, 2, 4, 6, 10, 15, 25, 40, 60, 100]);
+    for (var i = 1; i < tabla.length; i++) {
+      expect(tabla[i].plumas, greaterThan(tabla[i - 1].plumas), reason: tabla[i].id);
+    }
+  });
+
   test('ids de variantes', () {
     final id = idVariante('nido-de-rocanon', 'muy-dificil');
     expect(id, 'nido-de-rocanon--muy-dificil');

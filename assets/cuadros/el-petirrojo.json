@@ -1,0 +1,60 @@
+{
+  "id": "el-petirrojo",
+  "titulo": "El petirrojo",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#C8BDB0"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A17F68"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#EADBCD"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AA9B8D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7B4937"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C9A487"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F3E8DC"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#DFCEBD"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FBF5EA"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#E0BFA4"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa.",
+  "orden": 26
+}

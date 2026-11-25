@@ -1,0 +1,59 @@
+{
+  "id": "ronda-de-caperucitas--mediano",
+  "titulo": "La ronda de las Caperucitas",
+  "categoria": "persona",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#646D46"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3E503C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#363632"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F5BF7B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A1704C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A68E56"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5C4838"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#BEAE6B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#98513F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#774E3C"
+    }
+  ],
+  "mensajeMututu": "¡Volvieron todas las caperuzas, de todos los colores! La ronda de cuentos puede seguir."
+}

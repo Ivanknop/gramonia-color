@@ -1,0 +1,129 @@
+{
+  "id": "el-petirrojo--extremo",
+  "titulo": "El petirrojo",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#482D25"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#CEC4B9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#8B7C6E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C6B9AC"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#EEE1D6"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FDFAF3"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#E2C3A8"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A69484"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#E4DAD0"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#D9D0C5"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#F4ECE3"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#CA7F55"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D99D71"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#BCB0A4"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#F3DCC3"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#9E5438"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#AEA193"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#FBF4E3"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#D3B093"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#E8D0BB"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#C09D83"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#F5E8D7"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#B4AA9D"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#A3826A"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

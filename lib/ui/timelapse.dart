@@ -1,5 +1,6 @@
 /// Timelapse: repite, acelerado, cómo se pintó un cuadro (cada región se
-/// expande desde su número, en el orden en que se pintó). Se puede saltear.
+/// expande desde su número, en el orden en que se pintó). Se puede repetir
+/// desde el principio o saltear.
 library;
 
 import 'dart:ui' as ui;
@@ -66,6 +67,14 @@ class _VistaTimelapseState extends State<VistaTimelapse> with SingleTickerProvid
     if (transcurrido >= Timelapse.duracion(_orden.length)) _terminar();
   }
 
+  /// Vuelve a empezar la repetición desde el cuadro en blanco.
+  void _repetir() {
+    if (_terminado) return;
+    _ticker.stop();
+    _reloj.value = Duration.zero;
+    _ticker.start();
+  }
+
   void _terminar() {
     if (_terminado) return;
     _terminado = true;
@@ -124,12 +133,23 @@ class _VistaTimelapseState extends State<VistaTimelapse> with SingleTickerProvid
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
-            child: TextButton.icon(
-              key: const Key('saltear'),
-              style: TextButton.styleFrom(foregroundColor: Tema.morado),
-              onPressed: _terminar,
-              icon: const Icon(Icons.skip_next),
-              label: const Text(Textos.saltear),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton.icon(
+                  key: const Key('repetir'),
+                  onPressed: _repetir,
+                  icon: const IconoEspiral(),
+                  label: const Text(Textos.repetir),
+                ),
+                const SizedBox(width: 16),
+                TextButton.icon(
+                  key: const Key('saltear'),
+                  onPressed: _terminar,
+                  icon: const Icon(Icons.skip_next),
+                  label: const Text(Textos.saltear),
+                ),
+              ],
             ),
           ),
         ],

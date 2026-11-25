@@ -7,27 +7,27 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#9F875F"
+      "hex": "#464A3F"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#8E7B58"
+      "hex": "#CCC4B0"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#A1ACA8"
+      "hex": "#968765"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#414339"
+      "hex": "#A9B0A7"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#5D5F4E"
+      "hex": "#525445"
     },
     {
       "numero": 6,
@@ -37,7 +37,7 @@
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#4A5045"
+      "hex": "#8E7B58"
     },
     {
       "numero": 8,
@@ -47,72 +47,37 @@
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#C1BEAD"
+      "hex": "#776B4F"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#76735D"
+      "hex": "#5E5744"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#8C866B"
+      "hex": "#76735D"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#D4CAB3"
+      "hex": "#626758"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#6B634B"
+      "hex": "#5D5F4E"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#626758"
+      "hex": "#95998C"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#95998C"
-    },
-    {
-      "numero": 16,
-      "nombre": "Color 16",
-      "hex": "#5E5A47"
-    },
-    {
-      "numero": 17,
-      "nombre": "Color 17",
-      "hex": "#5D533F"
-    },
-    {
-      "numero": 18,
-      "nombre": "Color 18",
-      "hex": "#796E52"
-    },
-    {
-      "numero": 19,
-      "nombre": "Color 19",
-      "hex": "#525445"
-    },
-    {
-      "numero": 20,
-      "nombre": "Color 20",
-      "hex": "#76674B"
-    },
-    {
-      "numero": 21,
-      "nombre": "Color 21",
-      "hex": "#6B6C59"
-    },
-    {
-      "numero": 22,
-      "nombre": "Color 22",
-      "hex": "#B0B3A6"
+      "hex": "#6B6853"
     }
   ],
   "mensajeMututu": "Todos los caminos conducen al Árbol Mágico… ¡y ahora todos tienen color!",

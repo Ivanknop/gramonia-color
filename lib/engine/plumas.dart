@@ -1,5 +1,6 @@
 /// Plumas del Rocanón: la moneda del juego. Se ganan al entrar cada día, al
-/// terminar un cuadro (en cualquier modo) y al subir de nivel en la historia;
+/// terminar un cuadro (en el modo libre, según la dificultad), al subir de nivel en la historia y
+/// al terminar el tutorial por primera vez;
 /// se gastan en la tienda, en lupas y bombas. Usar una herramienta gasta una
 /// del inventario.
 library;
@@ -8,11 +9,16 @@ abstract final class ReglasPlumas {
   /// Al entrar, una vez por día.
   static const porDia = 5;
 
-  /// Por cada cuadro terminado (historia, modo libre u obra rehecha).
+  /// Por cada cuadro terminado de la historia (también una obra rehecha). En el
+  /// modo libre, en cambio, las da la dificultad (`Dificultad.plumas`, de 1 en
+  /// Súper fácil a 100 en Divino).
   static const porObra = 3;
 
   /// Por cada nivel de la historia que se sube.
   static const porNivel = 10;
+
+  /// Al terminar el tutorial por primera vez (aunque antes se haya salteado).
+  static const porTutorial = 20;
 }
 
 /// Herramientas que se compran en la tienda.

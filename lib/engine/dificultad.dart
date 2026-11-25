@@ -1,6 +1,7 @@
 /// Dificultades del modo libre y de "rehacer obra". La tabla está a mano en
 /// `assets/dificultades.json` (la lee también el conversor): cada dificultad
-/// tiene una cantidad fija de colores y un objetivo de regiones.
+/// tiene una cantidad fija de colores, un objetivo de regiones y las plumas que
+/// da terminar un cuadro en el modo libre (crecen con la dificultad).
 ///
 /// Cada cuadro tiene una variante por dificultad, generada por el conversor:
 /// `assets/variantes/<cuadro>--<dificultad>.svg/.json`, que usa la ilustración
@@ -15,6 +16,7 @@ class Dificultad {
     required this.nombre,
     required this.colores,
     required this.regiones,
+    required this.plumas,
   });
 
   factory Dificultad.desdeJson(Map<String, dynamic> j) => Dificultad(
@@ -22,6 +24,7 @@ class Dificultad {
     nombre: j['nombre'] as String,
     colores: j['colores'] as int,
     regiones: j['regiones'] as int,
+    plumas: j['plumas'] as int,
   );
 
   final String id;
@@ -32,6 +35,9 @@ class Dificultad {
 
   /// Regiones a pintar (objetivo: el conversor fusiona hasta llegar).
   final int regiones;
+
+  /// Plumas por terminar un cuadro del modo libre en esta dificultad.
+  final int plumas;
 }
 
 /// Lee la tabla de `assets/dificultades.json`, en el orden de la pantalla.

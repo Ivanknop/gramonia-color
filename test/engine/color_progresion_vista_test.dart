@@ -41,6 +41,7 @@ void main() {
       nombre: 'Bosque',
       descripcion: '',
       color: 0,
+      nivel: 2,
       piezas: [
         Pieza(id: 'c', cuadroId: 'c3'),
         Pieza(id: 'd'),
@@ -51,6 +52,7 @@ void main() {
       nombre: 'Ciudad',
       descripcion: '',
       color: 0,
+      nivel: 3,
       piezas: [Pieza(id: 'e', cuadroId: 'c4')],
     );
     const todos = [arbol, bosque, ciudad];
@@ -73,16 +75,37 @@ void main() {
       expect(e[2].accesible, isTrue);
     });
 
+    test('los lugares de un mismo nivel se abren juntos y el siguiente espera a todos', () {
+      const prado = Bioma(
+        id: 'prado',
+        nombre: 'Prado',
+        descripcion: '',
+        color: 0,
+        nivel: 2,
+        piezas: [Pieza(id: 'p', cuadroId: 'c5')],
+      );
+      const conPrado = [arbol, bosque, prado, ciudad];
+      expect(estadoBiomas(conPrado, {'c1', 'c2'}).map((e) => e.accesible), [
+        true,
+        true,
+        true,
+        false,
+      ]);
+      expect(estadoBiomas(conPrado, {'c1', 'c2', 'c3'}).last.accesible, isFalse);
+      expect(estadoBiomas(conPrado, {'c1', 'c2', 'c3', 'c5'}).last.accesible, isTrue);
+    });
+
     test('biomasQueSeCompletan', () {
       expect(biomasQueSeCompletan(todos, {'c1'}, 'c2').map((b) => b.id), ['arbol']);
       expect(biomasQueSeCompletan(todos, {}, 'c1'), isEmpty);
       expect(biomasQueSeCompletan(todos, {'c1', 'c2'}, 'c3').map((b) => b.id), ['bosque']);
     });
 
-    test('modo libre: lugares desbloqueados y cuadros que no están en la historia', () {
-      const catalogo = ['c1', 'c2', 'c3', 'c4', 'suelto'];
-      expect(cuadrosLibres(todos, {}, catalogo), ['c1', 'c2', 'suelto']);
-      expect(cuadrosLibres(todos, {'c1', 'c2'}, catalogo), ['c1', 'c2', 'c3', 'suelto']);
+    test('modo libre: los coloreados en la historia y los que no son de la historia', () {
+      const catalogo = ['c1', 'c2', 'c3', 'c4', 'suelto', idTutorial];
+      expect(cuadrosLibres(todos, {}, catalogo), ['suelto']);
+      expect(cuadrosLibres(todos, {'c1'}, catalogo), ['c1', 'suelto']);
+      expect(cuadrosLibres(todos, {'c1', 'c2', 'c3'}, catalogo), ['c1', 'c2', 'c3', 'suelto']);
     });
 
     test('piezaDeCuadro', () {

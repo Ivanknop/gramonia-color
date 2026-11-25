@@ -1,0 +1,175 @@
+{
+  "id": "ronda-de-caperucitas",
+  "titulo": "La ronda de las Caperucitas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#968F4C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F0B072"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A6704C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#283E38"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F9CE84"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3B5442"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#32483B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#785640"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#727846"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#98473A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#36282A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5F6B44"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D2925E"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#7B8A57"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#583730"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#A7AD68"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#6F6940"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#BD744F"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#764438"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#D5B06E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#465946"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#5A5A3B"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#B28D58"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#50674D"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#3B322F"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#5E4D3C"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#485434"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#3C3F34"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#414A37"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#916547"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#5F4237"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#985A43"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#90754C"
+    }
+  ],
+  "mensajeMututu": "¡Volvieron todas las caperuzas, de todos los colores! La ronda de cuentos puede seguir.",
+  "orden": 14
+}

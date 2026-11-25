@@ -1,5 +1,6 @@
-"""Tests de los niveles del conversor (mismos valores que test/engine/niveles_test.dart)."""
+"""Tests del conversor: niveles (mismos valores que test/engine/niveles_test.dart), dificultades y colores."""
 
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -8,27 +9,37 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from convertir_arte import (  # noqa: E402
-    COLORES_DEL_NIVEL_1,
-    OBRAS_DEL_NIVEL_1,
+    CATALOGO,
     RAIZ,
-    colores_de_obra,
+    colores_del_nivel,
     fuente,
     id_variante,
     leer_dificultades,
-    nivel_de_obra,
-    valor_del_nivel,
 )
 from imagen_a_cuadro import etiquetar_regiones, fusionar_chicas, juntar_colores  # noqa: E402
 
 
 class TestNiveles(unittest.TestCase):
-    def test_primeros_niveles(self):
-        self.assertEqual([valor_del_nivel(n, OBRAS_DEL_NIVEL_1) for n in range(1, 6)], [2, 3, 4, 6, 9])
-        self.assertEqual([valor_del_nivel(n, COLORES_DEL_NIVEL_1) for n in range(1, 6)], [10, 15, 22, 33, 49])
+    def test_colores_de_cada_nivel(self):
+        self.assertEqual(
+            [colores_del_nivel(n) for n in range(1, 9)], [10, 15, 22, 33, 49, 73, 109, 163]
+        )
+        with self.assertRaises(ValueError):
+            colores_del_nivel(0)
 
-    def test_nivel_y_colores_de_cada_obra(self):
-        self.assertEqual([nivel_de_obra(i) for i in range(10)], [1, 1, 2, 2, 2, 3, 3, 3, 3, 4])
-        self.assertEqual([colores_de_obra(i) for i in (0, 2, 5, 9, 15)], [10, 15, 22, 33, 49])
+    def test_cada_obra_tiene_nivel_y_el_tutorial_sus_colores(self):
+        catalogo = json.loads(CATALOGO.read_text(encoding="utf-8"))
+        historia = [c for c in catalogo["cuadros"] if not c.get("solo_libre")]
+        libres = [c for c in catalogo["cuadros"] if c.get("solo_libre")]
+        niveles = [c["nivel"] for c in historia]
+        self.assertEqual(niveles, sorted(niveles))
+        # Los de solo modo libre van al final, sin nivel y con sus colores.
+        self.assertEqual(catalogo["cuadros"][len(historia):], libres)
+        for c in libres:
+            self.assertNotIn("nivel", c)
+            self.assertIn("colores", c)
+        self.assertEqual(catalogo["tutorial"]["colores"], 5)
+        self.assertEqual(catalogo["tutorial"]["regiones"], 20)
 
 
 class TestDificultades(unittest.TestCase):
@@ -49,6 +60,10 @@ class TestDificultades(unittest.TestCase):
         self.assertEqual(fuente(c), RAIZ / "assets" / "cuadros" / "nido-de-rocanon.webp")
         with self.assertRaises(FileNotFoundError):
             fuente({"imagen": "no-existe.jpeg", "id": "tampoco"})
+
+    def test_sin_original_puede_usar_la_ilustracion_de_otro_cuadro(self):
+        c = {"imagen": "no-existe.jpeg", "id": "tutorial-arbol-magico", "desde": "nido-de-rocanon"}
+        self.assertEqual(fuente(c), RAIZ / "assets" / "cuadros" / "nido-de-rocanon.webp")
 
 
 class TestColoresExactos(unittest.TestCase):

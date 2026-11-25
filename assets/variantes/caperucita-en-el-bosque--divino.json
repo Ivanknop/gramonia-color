@@ -1,0 +1,259 @@
+{
+  "id": "caperucita-en-el-bosque--divino",
+  "titulo": "Caperucita en el bosque",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#04262C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#40827F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#030101"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#184C4F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#0C0201"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8F3B0B"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D1C979"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C66F1B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F7EEAE"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#0C393D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#150302"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5A1606"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#99CCA0"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#FBF9DB"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#997F43"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#2F595B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#220402"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#EDE09F"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#5C2309"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#CB8F3C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#440F05"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#6E1B07"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#A24B0F"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#7C2507"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#340F05"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#183C41"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#69552F"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#9FAC73"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#271208"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#270A04"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#160A06"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#BE4F0E"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#713711"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#6F2C0A"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#914C15"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#3A0703"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#9A2207"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#678A76"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#421C0A"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#2E3A31"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#432612"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#486A5F"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#172321"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#0D1515"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#152D2E"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#5D2B0D"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#3F1607"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#6D431D"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#E8C672"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#2E4B49"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

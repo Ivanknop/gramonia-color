@@ -1,0 +1,120 @@
+{
+  "id": "mercado-nocturno",
+  "titulo": "El mercado nocturno",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#B88655"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#523631"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3D6564"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#638572"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2B3F40"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#E0A560"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#6D4839"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#2A4B4D"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#3A4A3D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#8B553B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#322D33"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#3D5446"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#EFC172"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#5C6143"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#9E6846"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#606F4C"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#544C41"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#856548"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#B96E43"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#894634"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#8FAE86"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#919873"
+    }
+  ],
+  "mensajeMututu": "Los farolitos del mercado se prendieron otra vez. Los animales vuelven a regatear… ¡y a probar de todo!",
+  "orden": 10
+}

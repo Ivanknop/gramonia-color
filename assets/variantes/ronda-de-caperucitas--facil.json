@@ -1,0 +1,39 @@
+{
+  "id": "ronda-de-caperucitas--facil",
+  "titulo": "La ronda de las Caperucitas",
+  "categoria": "persona",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3A4437"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#666C45"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#D7B572"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A06F4B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#724D3B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A48C56"
+    }
+  ],
+  "mensajeMututu": "¡Volvieron todas las caperuzas, de todos los colores! La ronda de cuentos puede seguir."
+}

@@ -8,6 +8,12 @@ import '../../datos/textos.dart';
 import '../../engine/motor.dart';
 import '../comun.dart';
 
+/// La obra de la tienda, de fondo.
+const fondoTienda = 'assets/cuadros/la-tienda.webp';
+
+/// El Lobo de la tienda (del canon: `canon/assets/personajes/lobo.webp`).
+const imagenLobo = 'assets/personajes/lobo.webp';
+
 class Tienda extends StatelessWidget {
   const Tienda({super.key});
 
@@ -16,69 +22,91 @@ class Tienda extends StatelessWidget {
     final progreso = Dependencias.of(context).progreso;
     return ListenableBuilder(
       listenable: progreso,
-      builder: (context, _) => ListView(
-        padding: const EdgeInsets.all(16),
+      builder: (context, _) => Stack(
+        fit: StackFit.expand,
         children: [
-          const Row(
+          // De fondo, la tienda (la obra), con un velo para que se lea todo.
+          Image.asset(fondoTienda, fit: BoxFit.cover, cacheWidth: 720),
+          const ColoredBox(color: Color(0x99FFF8EC)),
+          ListView(
+            padding: const EdgeInsets.all(16),
             children: [
-              CircleAvatar(
-                radius: 28,
-                backgroundColor: Tema.morado,
-                foregroundColor: Colors.white,
-                child: Icon(Icons.storefront, size: 30),
-              ),
-              SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      Textos.tiendaLobo,
-                      style: TextStyle(fontWeight: FontWeight.w800, color: Tema.morado),
-                    ),
-                    Text(
-                      '«${Textos.tiendaFrase}»',
-                      style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Card(
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              child: Row(
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const Expanded(
-                    child: Text(Textos.tiendaPlumas, style: TextStyle(fontWeight: FontWeight.w700)),
+                  Image.asset(
+                    imagenLobo,
+                    key: const Key('lobo-tienda'),
+                    width: 150,
+                    height: 150,
+                    cacheWidth: 400,
                   ),
-                  const IconoPluma(tamano: 22),
-                  const SizedBox(width: 6),
-                  Text(
-                    '${progreso.plumas}',
-                    key: const Key('saldo-tienda'),
-                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 40),
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(18),
+                        border: Border.all(color: Tema.celeste, width: 2),
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            Textos.tiendaLobo,
+                            style: TextStyle(fontWeight: FontWeight.w800, color: Tema.morado),
+                          ),
+                          Text(
+                            '«${Textos.tiendaFrase}»',
+                            style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          // Sin const: se reconstruyen cuando cambian las plumas o el inventario.
-          _Articulo(
-            herramienta: Herramienta.lupa,
-            icono: Icons.search,
-            nombre: Textos.lupa,
-            detalle: Textos.lupaDetalle,
-          ),
-          _Articulo(
-            herramienta: Herramienta.bomba,
-            icono: Icons.auto_awesome,
-            nombre: Textos.bomba,
-            detalle: Textos.bombaDetalle,
+              const SizedBox(height: 16),
+              Card(
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        child: Text(
+                          Textos.tiendaPlumas,
+                          style: TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      const IconoPluma(tamano: 22),
+                      const SizedBox(width: 6),
+                      Text(
+                        '${progreso.plumas}',
+                        key: const Key('saldo-tienda'),
+                        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8),
+              // Sin const: se reconstruyen cuando cambian las plumas o el inventario.
+              _Articulo(
+                herramienta: Herramienta.lupa,
+                icono: Icons.search,
+                nombre: Textos.lupa,
+                detalle: Textos.lupaDetalle,
+              ),
+              _Articulo(
+                herramienta: Herramienta.bomba,
+                icono: Icons.auto_awesome,
+                nombre: Textos.bomba,
+                detalle: Textos.bombaDetalle,
+              ),
+            ],
           ),
         ],
       ),
@@ -156,8 +184,8 @@ class _Articulo extends StatelessWidget {
             FilledButton(
               key: Key('comprar-${herramienta.name}'),
               style: FilledButton.styleFrom(
-                backgroundColor: alcanza ? Tema.morado : Tema.gris,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                backgroundColor: alcanza ? null : Tema.gris,
+                padding: const EdgeInsets.symmetric(horizontal: 14),
               ),
               onPressed: comprar,
               child: Row(

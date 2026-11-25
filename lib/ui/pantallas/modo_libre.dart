@@ -26,7 +26,8 @@ class ModoLibre extends StatelessWidget {
       dep.catalogo.metas.map((m) => m.id),
     );
     return Scaffold(
-      appBar: AppBar(title: const Text(Textos.modoLibre)),
+      appBar: AppBar(automaticallyImplyLeading: false, title: const Text(Textos.modoLibre)),
+      bottomNavigationBar: const BarraPortada(),
       body: ids.isEmpty
           ? const Center(
               child: Padding(
@@ -68,7 +69,12 @@ class ModoLibre extends StatelessWidget {
 Future<void> pintarLibre(BuildContext context, String cuadroId, {String? actual}) async {
   final catalogo = Dependencias.of(context).catalogo;
   final navegador = Navigator.of(context);
-  final d = await elegirDificultad(context, titulo: Textos.libreElegir, actual: actual);
+  final d = await elegirDificultad(
+    context,
+    titulo: Textos.libreElegir,
+    actual: actual,
+    conPlumas: true,
+  );
   if (d == null) return;
   await catalogo.cargarVariante(cuadroId, d.id);
   await navegador.push(

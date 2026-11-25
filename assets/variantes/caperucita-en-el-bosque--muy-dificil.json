@@ -1,0 +1,99 @@
+{
+  "id": "caperucita-en-el-bosque--muy-dificil",
+  "titulo": "Caperucita en el bosque",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F1E3A6"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#080201"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4C766C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1D0402"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#A04910"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#0F292B"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#A7B97F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#AF7C36"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#255051"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1B3B3B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3D0C04"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5C1F09"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#6F431C"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#8D2507"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#6F2408"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#1D110B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#411708"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#43230F"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

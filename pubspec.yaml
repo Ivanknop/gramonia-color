@@ -67,6 +67,8 @@ flutter:
     - assets/variantes/
     - assets/dificultades.json
     - assets/mapa/
+    # Personajes del canon (canon/assets/personajes), copiados para no depender del submódulo.
+    - assets/personajes/
     # Música de fondo (AAC 80 kbps, comprimida desde arte/musica).
     - assets/musica/
     # Efectos de sonido (scripts/generar_festejo.py).

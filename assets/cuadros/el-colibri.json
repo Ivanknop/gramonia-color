@@ -1,0 +1,60 @@
+{
+  "id": "el-colibri",
+  "titulo": "El colibrí",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1C181A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#79748E"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2F212C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#532449"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#241824"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#39173C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#553A57"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1E191C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#1E171E"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#16131A"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa.",
+  "orden": 27
+}

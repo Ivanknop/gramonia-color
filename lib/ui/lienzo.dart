@@ -289,7 +289,11 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
                 Positioned(
                   top: 8,
                   right: 8,
-                  child: FilledButton.tonal(onPressed: encuadrar, child: const Text('Encuadrar')),
+                  child: FilledButton.tonal(
+                    style: Tema.botonAqua,
+                    onPressed: encuadrar,
+                    child: const Text('Encuadrar'),
+                  ),
                 ),
             ],
           );

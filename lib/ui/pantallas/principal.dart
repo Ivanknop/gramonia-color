@@ -1,4 +1,5 @@
-/// Pestañas: Galería, Mis obras, Mapa y Tienda.
+/// Modo historia: pestañas Galería, Mis obras, Mapa y Tienda. En la barra de
+/// abajo, la primera opción (flecha atrás) vuelve a la portada.
 library;
 
 import 'package:material_ui/material_ui.dart';
@@ -7,8 +8,10 @@ import '../../datos/textos.dart';
 import '../comun.dart';
 import 'creditos.dart';
 import 'galeria.dart';
+import 'historia.dart';
 import 'mapa.dart';
 import 'mis_obras.dart';
+import 'perfil.dart';
 import 'tienda.dart';
 
 class Principal extends StatefulWidget {
@@ -34,6 +37,8 @@ class _PrincipalState extends State<Principal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // Se vuelve a la portada con la flecha de la barra de abajo.
+        automaticallyImplyLeading: false,
         title: Text(_titulos[_pestana]),
         actions: [
           const ContadorPlumas(),
@@ -41,6 +46,18 @@ class _PrincipalState extends State<Principal> {
             key: const Key('menu'),
             onSelected: (accion) => accion(),
             itemBuilder: (context) => [
+              PopupMenuItem(
+                value: () => Navigator.of(
+                  context,
+                ).push(MaterialPageRoute<void>(builder: (_) => const PantallaPerfil(editar: true))),
+                child: const Text(Textos.perfil),
+              ),
+              PopupMenuItem(
+                value: () =>
+                    Navigator.of(context)
+                        .push(MaterialPageRoute<void>(builder: (_) => const IndiceHistoria())),
+                child: const Text(Textos.laHistoria),
+              ),
               PopupMenuItem(
                 value: () =>
                     Navigator.of(context)
@@ -61,9 +78,12 @@ class _PrincipalState extends State<Principal> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: _pestana,
-        onDestinationSelected: (i) => setState(() => _pestana = i),
+        // La 0 es "Portada": no es una pestaña, vuelve a la portada.
+        selectedIndex: _pestana + 1,
+        onDestinationSelected: (i) =>
+            i == 0 ? volverAPortada(context) : setState(() => _pestana = i - 1),
         destinations: const [
+          NavigationDestination(icon: Icon(Icons.arrow_back), label: Textos.portada),
           NavigationDestination(icon: Icon(Icons.photo_library_outlined), label: 'Galería'),
           NavigationDestination(icon: Icon(Icons.palette_outlined), label: 'Mis obras'),
           NavigationDestination(icon: Icon(Icons.map_outlined), label: 'Mapa'),

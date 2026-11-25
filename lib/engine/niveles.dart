@@ -1,18 +1,21 @@
-/// Niveles del modo historia: marcan el avance de la historia.
+/// Niveles del modo historia: cada nivel es un grupo de lugares de Gramonia.
 ///
-/// Cada nivel pide una cantidad de obras para pasar al siguiente, y las obras
-/// de ese nivel tienen una cantidad fija de colores. Las dos cifras siguen la
-/// misma regla: valor(n) = valor(n-1) + ⌊valor(n-1) / 2⌋, con el nivel 1 en
-/// 2 obras y 10 colores (2/10, 3/15, 4/22, 6/33, 9/49…).
+/// - Nivel 0: el tutorial (se pasa al terminarlo o al saltearlo).
+/// - Del 1 en adelante: los lugares que tengan ese [Bioma.nivel]. Al llegar a
+///   un nivel se abren todos sus lugares juntos; se pasa al siguiente al
+///   terminar todas sus obras disponibles.
 ///
-/// El nivel de cada obra sale de su lugar en el recorrido (las obras 1 y 2
-/// son del nivel 1, de la 3 a la 5 del nivel 2, etc.); el conversor
-/// (scripts/convertir_arte.py) genera cada obra con los colores de su nivel.
+/// Las obras de cada nivel tienen una cantidad fija de colores, que sigue la
+/// regla valor(n) = valor(n-1) + ⌊valor(n-1) / 2⌋ con el nivel 1 en 10 colores
+/// (10, 15, 22, 33, 49, 73…). El conversor (scripts/convertir_arte.py) genera
+/// cada obra con los colores de su nivel (campo `nivel` de catalogo-arte.json).
 library;
+
+import 'progresion.dart';
 
 /// Valor de la regla en el nivel [n] (desde 1), arrancando en [inicial].
 int valorDelNivel(int n, int inicial) {
-  if (n < 1) throw ArgumentError.value(n, 'n', 'los niveles empiezan en 1');
+  if (n < 1) throw ArgumentError.value(n, 'n', 'los niveles con obras empiezan en 1');
   var valor = inicial;
   for (var i = 1; i < n; i++) {
     valor += valor ~/ 2;
@@ -20,42 +23,73 @@ int valorDelNivel(int n, int inicial) {
   return valor;
 }
 
-const obrasDelNivel1 = 2;
+const nivelTutorial = 0;
 const coloresDelNivel1 = 10;
-
-/// Obras a completar en el nivel [n] para pasar al siguiente.
-int obrasDelNivel(int n) => valorDelNivel(n, obrasDelNivel1);
 
 /// Colores de cada obra del nivel [n].
 int coloresDelNivel(int n) => valorDelNivel(n, coloresDelNivel1);
 
-/// Nivel (desde 1) de la obra que está en la posición [indice] (desde 0)
-/// del recorrido de la historia.
-int nivelDeObra(int indice) {
-  if (indice < 0) throw ArgumentError.value(indice, 'indice');
-  var nivel = 1;
-  var hasta = obrasDelNivel(1);
-  while (indice >= hasta) {
-    nivel++;
-    hasta += obrasDelNivel(nivel);
-  }
-  return nivel;
-}
+/// Lugares del nivel [n], en el orden del recorrido.
+List<Bioma> lugaresDelNivel(List<Bioma> biomas, int n) => [
+  for (final b in biomas)
+    if (b.nivel == n) b,
+];
 
-/// Cuántos niveles se suben al pasar de [antes] a [despues] obras de la
-/// historia completadas.
-int nivelesSubidos(int antes, int despues) => nivelActual(despues).nivel - nivelActual(antes).nivel;
+/// Nivel del lugar que destapa [cuadroId] (null si no es de la historia).
+int? nivelDeObra(List<Bioma> biomas, String cuadroId) =>
+    piezaDeCuadro(biomas, cuadroId)?.bioma.nivel;
 
 /// En qué nivel va quien juega: [hechas] de las [necesarias] obras del nivel.
 typedef EstadoNivel = ({int nivel, int hechas, int necesarias});
 
-/// Nivel actual según cuántas obras de la historia se completaron.
-EstadoNivel nivelActual(int obrasCompletadas) {
-  var nivel = 1;
-  var restantes = obrasCompletadas;
-  while (restantes >= obrasDelNivel(nivel)) {
-    restantes -= obrasDelNivel(nivel);
-    nivel++;
+/// Nivel actual: 0 hasta pasar el tutorial; después, el primer nivel que
+/// tenga obras sin terminar. Si no queda ninguna, el último nivel con obras
+/// (completo: hechas == necesarias).
+EstadoNivel nivelActual(
+  List<Bioma> biomas,
+  Set<String> completados, {
+  required bool tutorialPasado,
+}) {
+  if (!tutorialPasado) return (nivel: nivelTutorial, hechas: 0, necesarias: 1);
+  final niveles = {for (final b in biomas) b.nivel}.toList()..sort();
+  EstadoNivel? ultimoConObras;
+  for (final n in niveles) {
+    final obras = [for (final b in lugaresDelNivel(biomas, n)) ...b.cuadroIds];
+    if (obras.isEmpty) continue;
+    final hechas = obras.where(completados.contains).length;
+    final estado = (nivel: n, hechas: hechas, necesarias: obras.length);
+    if (hechas < obras.length) return estado;
+    ultimoConObras = estado;
   }
-  return (nivel: nivel, hechas: restantes, necesarias: obrasDelNivel(nivel));
+  return ultimoConObras ?? (nivel: 1, hechas: 0, necesarias: 0);
+}
+
+/// Cuántos niveles se suben al pasar de [antes] a [despues] obras completadas
+/// (con el tutorial ya pasado).
+int nivelesSubidos(List<Bioma> biomas, Set<String> antes, Set<String> despues) =>
+    nivelActual(biomas, despues, tutorialPasado: true).nivel -
+    nivelActual(biomas, antes, tutorialPasado: true).nivel;
+
+/// Niveles (desde 1) completos: todas sus obras disponibles terminadas, en
+/// orden y cortando en el primero que falte. Los niveles sin obras todavía no
+/// cuentan (ni se completan ni traban).
+List<int> nivelesCompletos(List<Bioma> biomas, Set<String> completados) {
+  final niveles = {for (final b in biomas) b.nivel}.toList()..sort();
+  final completos = <int>[];
+  for (final n in niveles) {
+    final obras = [for (final b in lugaresDelNivel(biomas, n)) ...b.cuadroIds];
+    if (obras.isEmpty) continue;
+    if (!obras.every(completados.contains)) break;
+    completos.add(n);
+  }
+  return completos;
+}
+
+/// Niveles que pasan a estar completos al pasar de [antes] a [despues].
+List<int> nivelesQueSeCompletan(List<Bioma> biomas, Set<String> antes, Set<String> despues) {
+  final previos = nivelesCompletos(biomas, antes).toSet();
+  return [
+    for (final n in nivelesCompletos(biomas, despues))
+      if (!previos.contains(n)) n,
+  ];
 }

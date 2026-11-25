@@ -1,0 +1,39 @@
+{
+  "id": "sirenhadas--facil",
+  "titulo": "Las SirenHadas",
+  "categoria": "persona",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#ADB9B2"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F0AD8D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#727587"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#BC7477"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F6D4A1"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#CC9593"
+    }
+  ],
+  "mensajeMututu": "Las SirenHadas juegan otra vez con su pelota de colores. ¡Hasta las estrellas de mar brillan!"
+}

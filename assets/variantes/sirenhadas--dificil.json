@@ -1,0 +1,79 @@
+{
+  "id": "sirenhadas--dificil",
+  "titulo": "Las SirenHadas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#6B90A1"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#CECEBC"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#5D5D68"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E49489"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F9C88F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#9B8FB7"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F5B58A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#9BC5BB"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F7E8BC"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F0A78E"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#AF5E6A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#B67B7E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#A7A9A7"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#C19190"
+    }
+  ],
+  "mensajeMututu": "Las SirenHadas juegan otra vez con su pelota de colores. ¡Hasta las estrellas de mar brillan!"
+}

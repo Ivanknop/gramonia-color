@@ -1,9 +1,12 @@
 /// Colores del juego y acceso al catálogo y al progreso desde los widgets.
 library;
 
+import 'dart:math' as math;
+
 import 'package:material_ui/material_ui.dart';
 
 import '../datos/catalogo.dart';
+import '../datos/textos.dart';
 import '../estado/musica.dart';
 import '../estado/progreso.dart';
 
@@ -23,10 +26,137 @@ abstract final class Tema {
   /// Tipografía del canon para títulos y logo (un solo peso: sin negrita).
   static const fuenteTitulos = 'LuckiestGuy';
 
-  static ThemeData get datos => ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: morado),
-    scaffoldBackgroundColor: crema,
+  // ---- Botones: redondos, en lilas, celestes y verde agua ----
+
+  /// Botón principal (relleno): lila con texto blanco.
+  static const lila = Color(0xFF8A5CB5);
+  static const lilaSuave = Color(0xFFE9DDF7);
+
+  /// Botón secundario (con borde): celeste.
+  static const celeste = Color(0xFF6CC4EE);
+  static const celesteSuave = Color(0xFFE0F4FD);
+
+  /// Herramientas y botones de texto: verde agua.
+  static const aqua = Color(0xFF3FC9B4);
+  static const aquaSuave = Color(0xFFD6F5EF);
+
+  static const _relleno = EdgeInsets.symmetric(horizontal: 22, vertical: 12);
+  /// La tipografía va explícita: el estilo del botón reemplaza al del tema.
+  static const _textoBoton = TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.w700);
+
+  /// Verde agua (herramientas, "Encuadrar"): se usa con `FilledButton.tonal`.
+  static ButtonStyle get botonAqua => FilledButton.styleFrom(
+    backgroundColor: aquaSuave,
+    foregroundColor: morado,
+    shape: const StadiumBorder(),
+    side: const BorderSide(color: aqua, width: 2),
   );
+
+  static ThemeData get datos => ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: lila, primary: lila),
+    scaffoldBackgroundColor: crema,
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        backgroundColor: lila,
+        foregroundColor: Colors.white,
+        shape: const StadiumBorder(),
+        padding: _relleno,
+        textStyle: _textoBoton,
+        elevation: 0,
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        backgroundColor: celesteSuave,
+        foregroundColor: morado,
+        side: const BorderSide(color: celeste, width: 2),
+        shape: const StadiumBorder(),
+        padding: _relleno,
+        textStyle: _textoBoton,
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: aquaSuave,
+        foregroundColor: morado,
+        shape: const StadiumBorder(),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        textStyle: _textoBoton,
+      ),
+    ),
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(
+        backgroundColor: aquaSuave,
+        foregroundColor: morado,
+        shape: const CircleBorder(),
+      ),
+    ),
+    navigationBarTheme: const NavigationBarThemeData(
+      indicatorColor: lilaSuave,
+      indicatorShape: StadiumBorder(),
+    ),
+  );
+}
+
+/// Flecha en espiral (para "Repetir" y "Rehacer": volver a empezar).
+class IconoEspiral extends StatelessWidget {
+  const IconoEspiral({super.key, this.tamano = 20, this.color});
+  final double tamano;
+
+  /// Por defecto, el color de los íconos del botón donde está.
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = this.color ?? IconTheme.of(context).color ?? Tema.morado;
+    return CustomPaint(size: Size.square(tamano), painter: _PintorEspiral(color));
+  }
+}
+
+class _PintorEspiral extends CustomPainter {
+  _PintorEspiral(this.color);
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final c = size.center(Offset.zero);
+    final r = size.shortestSide / 2;
+    // Espiral de Arquímedes: de adentro hacia afuera, una vuelta y media larga.
+    const vueltas = 1.75;
+    const pasos = 60;
+    final camino = Path();
+    Offset punto(double t) {
+      final ang = -math.pi / 2 + t * vueltas * 2 * math.pi;
+      final radio = r * (0.12 + 0.68 * t);
+      return c + Offset(math.cos(ang), math.sin(ang)) * radio;
+    }
+
+    for (var i = 0; i <= pasos; i++) {
+      final p = punto(i / pasos);
+      i == 0 ? camino.moveTo(p.dx, p.dy) : camino.lineTo(p.dx, p.dy);
+    }
+    final trazo = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = r * 0.17
+      ..strokeCap = StrokeCap.round;
+    canvas.drawPath(camino, trazo);
+    // Punta de flecha al final, en la dirección del trazo.
+    final fin = punto(1);
+    final antes = punto(0.97);
+    final dir = (fin - antes) / (fin - antes).distance;
+    final normal = Offset(-dir.dy, dir.dx);
+    final largo = r * 0.42;
+    final punta = Path()
+      ..moveTo(fin.dx + dir.dx * largo * 0.6, fin.dy + dir.dy * largo * 0.6)
+      ..lineTo(fin.dx + normal.dx * largo * 0.55, fin.dy + normal.dy * largo * 0.55)
+      ..lineTo(fin.dx - normal.dx * largo * 0.55, fin.dy - normal.dy * largo * 0.55)
+      ..close();
+    canvas.drawPath(punta, Paint()..color = color);
+  }
+
+  @override
+  bool shouldRepaint(_PintorEspiral old) => old.color != color;
 }
 
 /// Catálogo, progreso y música disponibles para toda la app.
@@ -171,21 +301,26 @@ class ContadorPlumas extends StatelessWidget {
   }
 }
 
-/// Avatar provisorio de Gobi (hasta tener su ilustración): un círculo carmesí,
-/// como el huevo del que nació, con una huellita.
-class AvatarGobi extends StatelessWidget {
-  const AvatarGobi({super.key, this.tamano = 56});
-  final double tamano;
+/// Vuelve a la portada (la primera pantalla), cerrando todo lo de arriba.
+void volverAPortada(BuildContext context) => Navigator.of(context).popUntil((ruta) => ruta.isFirst);
+
+/// Barra de abajo con la flecha que vuelve a la portada (para las pantallas
+/// que no tienen pestañas, como el modo libre).
+class BarraPortada extends StatelessWidget {
+  const BarraPortada({super.key});
 
   @override
-  Widget build(BuildContext context) => Container(
-    width: tamano,
-    height: tamano,
-    decoration: BoxDecoration(
-      color: const Color(0xFFB71C1C),
-      shape: BoxShape.circle,
-      border: Border.all(color: const Color(0xFF2E7D32), width: 3),
+  Widget build(BuildContext context) => BottomAppBar(
+    height: 64,
+    child: Row(
+      children: [
+        TextButton.icon(
+          key: const Key('volver-a-portada'),
+          onPressed: () => volverAPortada(context),
+          icon: const Icon(Icons.arrow_back),
+          label: const Text(Textos.portada),
+        ),
+      ],
     ),
-    child: Icon(Icons.pets, color: Colors.white, size: tamano * 0.55),
   );
 }

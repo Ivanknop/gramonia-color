@@ -1,0 +1,49 @@
+{
+  "id": "el-petirrojo--normal",
+  "titulo": "El petirrojo",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#CABEB2"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#EADCCD"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A27F68"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F8F0E4"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#AB9C8E"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#774533"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#E1C9B3"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#CAA68A"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

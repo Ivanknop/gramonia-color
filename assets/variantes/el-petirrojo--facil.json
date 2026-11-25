@@ -1,0 +1,39 @@
+{
+  "id": "el-petirrojo--facil",
+  "titulo": "El petirrojo",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#D4C2B1"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#AA9B8D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#8E6450"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#EADBCD"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F8EFE4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C9A487"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

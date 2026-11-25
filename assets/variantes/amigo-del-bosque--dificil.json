@@ -1,0 +1,79 @@
+{
+  "id": "amigo-del-bosque--dificil",
+  "titulo": "Un amigo en el bosque",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1C2529"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#E7EAEB"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#CDD4D3"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#4B6257"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#394741"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#61756C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#2A3938"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#AFBCB7"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#6F867E"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A3B2AC"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#97A6A2"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#899E96"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#7E938D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#BDC7C4"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

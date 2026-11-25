@@ -1,47 +1,80 @@
 import 'package:colores_de_gramonia/engine/niveles.dart';
+import 'package:colores_de_gramonia/engine/progresion.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('primeros niveles (obras / colores): 2/10, 3/15, 4/22, 6/33, 9/49', () {
-    expect([for (var n = 1; n <= 5; n++) obrasDelNivel(n)], [2, 3, 4, 6, 9]);
-    expect([for (var n = 1; n <= 5; n++) coloresDelNivel(n)], [10, 15, 22, 33, 49]);
-  });
-
-  test('cada valor es el anterior más la mitad (redondeada para abajo)', () {
+  test('colores de cada nivel (×1,5): 10, 15, 22, 33, 49, 73, 109, 163', () {
+    expect([for (var n = 1; n <= 8; n++) coloresDelNivel(n)], [10, 15, 22, 33, 49, 73, 109, 163]);
     for (var n = 2; n <= 12; n++) {
       final previo = coloresDelNivel(n - 1);
       expect(coloresDelNivel(n), previo + previo ~/ 2);
     }
   });
 
-  test('los niveles empiezan en 1', () {
-    expect(() => obrasDelNivel(0), throwsArgumentError);
+  test('las obras empiezan en el nivel 1 (el 0 es el tutorial)', () {
+    expect(() => coloresDelNivel(nivelTutorial), throwsArgumentError);
   });
 
-  test('nivel de cada obra según su lugar en el recorrido', () {
-    // Nivel 1: obras 0-1; nivel 2: 2-4; nivel 3: 5-8; nivel 4: 9-14; nivel 5: 15-23.
-    expect(
-      [for (var i = 0; i < 16; i++) nivelDeObra(i)],
-      [
-        1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, //
-      ],
-    );
-    expect(nivelDeObra(23), 5);
-    expect(nivelDeObra(24), 6);
+  Bioma lugar(String id, int nivel, List<String?> obras) => Bioma(
+    id: id,
+    nombre: id,
+    descripcion: '',
+    color: 0,
+    nivel: nivel,
+    piezas: [for (final (i, c) in obras.indexed) Pieza(id: '$id-$i', cuadroId: c)],
+  );
+
+  final biomas = [
+    lugar('arbol', 1, ['a1', 'a2']),
+    lugar('bosque', 2, ['b1']),
+    lugar('prado', 2, ['p1', null]),
+    lugar('islas', 3, [null, null]),
+  ];
+
+  test('lugares y nivel de cada obra', () {
+    expect(lugaresDelNivel(biomas, 2).map((b) => b.id), ['bosque', 'prado']);
+    expect(nivelDeObra(biomas, 'p1'), 2);
+    expect(nivelDeObra(biomas, 'suelta'), isNull);
+  });
+
+  test('nivel 0 hasta pasar el tutorial', () {
+    expect(nivelActual(biomas, {}, tutorialPasado: false).nivel, 0);
+    expect(nivelActual(biomas, {}, tutorialPasado: true), (nivel: 1, hechas: 0, necesarias: 2));
+  });
+
+  test('el nivel cuenta las obras de todos sus lugares', () {
+    expect(nivelActual(biomas, {'a1', 'a2'}, tutorialPasado: true), (
+      nivel: 2,
+      hechas: 0,
+      necesarias: 2,
+    ));
+    expect(nivelActual(biomas, {'a1', 'a2', 'p1'}, tutorialPasado: true), (
+      nivel: 2,
+      hechas: 1,
+      necesarias: 2,
+    ));
+  });
+
+  test('sin obras pendientes queda en el último nivel con obras, completo', () {
+    expect(nivelActual(biomas, {'a1', 'a2', 'b1', 'p1'}, tutorialPasado: true), (
+      nivel: 2,
+      hechas: 2,
+      necesarias: 2,
+    ));
   });
 
   test('niveles subidos al completar obras', () {
-    expect(nivelesSubidos(0, 1), 0);
-    expect(nivelesSubidos(1, 2), 1); // 2 obras: del nivel 1 al 2
-    expect(nivelesSubidos(4, 5), 1); // 5 obras: del nivel 2 al 3
-    expect(nivelesSubidos(5, 6), 0);
+    expect(nivelesSubidos(biomas, {}, {'a1'}), 0);
+    expect(nivelesSubidos(biomas, {'a1'}, {'a1', 'a2'}), 1);
+    expect(nivelesSubidos(biomas, {'a1', 'a2', 'b1'}, {'a1', 'a2', 'b1', 'p1'}), 0);
   });
 
-  test('nivel actual según las obras completadas', () {
-    expect(nivelActual(0), (nivel: 1, hechas: 0, necesarias: 2));
-    expect(nivelActual(1), (nivel: 1, hechas: 1, necesarias: 2));
-    expect(nivelActual(2), (nivel: 2, hechas: 0, necesarias: 3));
-    expect(nivelActual(6), (nivel: 3, hechas: 1, necesarias: 4));
-    expect(nivelActual(9), (nivel: 4, hechas: 0, necesarias: 6));
+  test('niveles completos: en orden, sin contar los que no tienen obras', () {
+    expect(nivelesCompletos(biomas, {}), isEmpty);
+    expect(nivelesCompletos(biomas, {'a1', 'a2'}), [1]);
+    expect(nivelesCompletos(biomas, {'b1', 'p1'}), isEmpty); // falta el nivel 1
+    expect(nivelesCompletos(biomas, {'a1', 'a2', 'b1', 'p1'}), [1, 2]);
+    expect(nivelesQueSeCompletan(biomas, {'a1', 'a2', 'b1'}, {'a1', 'a2', 'b1', 'p1'}), [2]);
+    expect(nivelesQueSeCompletan(biomas, {'a1'}, {'a1', 'b1'}), isEmpty);
   });
 }

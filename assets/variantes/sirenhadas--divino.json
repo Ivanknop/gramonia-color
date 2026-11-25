@@ -1,0 +1,259 @@
+{
+  "id": "sirenhadas--divino",
+  "titulo": "Las SirenHadas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FAB58D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C38E71"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#598F9B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AC5160"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#958CC3"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F7F6E7"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FDCC84"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F0B27A"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#4C7283"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#DE8D92"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#71A9AE"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#86C3BC"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#CDC3B0"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#6E5362"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#96ABB8"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#AEBFB3"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#9E93C5"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#BF8EA4"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#E79A79"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#4B5155"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#C8A8B9"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#F6B6A4"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#D3E0D0"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#9A8DA2"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#4B3E4B"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#E29A9D"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#FAC280"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#F0A77D"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#786366"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#FDDD90"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#BB9AB9"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#99AB9F"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#7A98A6"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#D1A885"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#F0A79E"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#808AA6"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#E78E77"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#CCD4C2"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#B1CEC0"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#FBF1BD"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#EEE1C2"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#C36A71"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#9A6C75"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#F7D09D"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#A4797D"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#F8C49B"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#B97C7D"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#F5BA7D"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#77777D"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#D47C7E"
+    }
+  ],
+  "mensajeMututu": "Las SirenHadas juegan otra vez con su pelota de colores. ¡Hasta las estrellas de mar brillan!"
+}

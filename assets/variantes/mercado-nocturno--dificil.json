@@ -1,0 +1,79 @@
+{
+  "id": "mercado-nocturno--dificil",
+  "titulo": "El mercado nocturno",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#2E3639"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B88754"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E9B56A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5C6848"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3A4F42"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2A4B4E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#524038"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#618573"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#AD6B44"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#866548"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3C6565"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6C4738"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#8A4E37"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#94A67E"
+    }
+  ],
+  "mensajeMututu": "Los farolitos del mercado se prendieron otra vez. Los animales vuelven a regatear… ¡y a probar de todo!"
+}

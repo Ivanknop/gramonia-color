@@ -6,8 +6,20 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
 import '../../datos/historia.dart';
+import '../../engine/intro.dart';
 import '../../engine/motor.dart';
+import '../../engine/niveles.dart';
+import '../../datos/textos.dart';
 import '../comun.dart';
+
+/// Cómo cambian los colores del dibujo a lo largo de las escenas.
+enum ColoresDeEscenas {
+  /// De todos los colores a blanco y negro (la introducción: Mututu se los lleva).
+  seApagan,
+
+  /// De blanco y negro a todos los colores (los capítulos: se recuperan).
+  seEncienden,
+}
 
 /// Muestra una serie de escenas, una por página. Al terminar (o saltear)
 /// llama a [alTerminar] (por defecto, vuelve atrás).
@@ -17,11 +29,20 @@ class PantallaHistoria extends StatefulWidget {
     required this.escenas,
     this.textoFinal = '¡Vamos!',
     this.alTerminar,
+    this.colores = ColoresDeEscenas.seEncienden,
   });
 
   final List<Escena> escenas;
   final String textoFinal;
   final VoidCallback? alTerminar;
+  final ColoresDeEscenas colores;
+
+  /// Saturación del dibujo en la página [pagina] (puede ser fraccionaria,
+  /// mientras se desliza) de [total].
+  static double saturacion(ColoresDeEscenas colores, double pagina, int total) {
+    final avance = total <= 1 ? 1.0 : (pagina / (total - 1)).clamp(0.0, 1.0);
+    return colores == ColoresDeEscenas.seApagan ? 1 - avance : avance;
+  }
 
   @override
   State<PantallaHistoria> createState() => _PantallaHistoriaState();
@@ -56,16 +77,28 @@ class _PantallaHistoriaState extends State<PantallaHistoria> {
           children: [
             Align(
               alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: _terminar,
-                child: const Text('Saltar', style: TextStyle(color: Colors.white70)),
-              ),
+              child: TextButton(onPressed: _terminar, child: const Text('Saltar')),
             ),
             Expanded(
               child: PageView(
                 controller: _paginas,
                 onPageChanged: (i) => setState(() => _actual = i),
-                children: [for (final e in widget.escenas) _VistaEscena(escena: e)],
+                children: [
+                  for (final e in widget.escenas)
+                    AnimatedBuilder(
+                      animation: _paginas,
+                      builder: (context, _) => _VistaEscena(
+                        escena: e,
+                        saturacion: PantallaHistoria.saturacion(
+                          widget.colores,
+                          _paginas.hasClients && _paginas.position.haveDimensions
+                              ? _paginas.page ?? 0
+                              : _actual.toDouble(),
+                          widget.escenas.length,
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
             Padding(
@@ -84,7 +117,6 @@ class _PantallaHistoriaState extends State<PantallaHistoria> {
                     ),
                   const Spacer(),
                   FilledButton(
-                    style: FilledButton.styleFrom(backgroundColor: const Color(0xFFE8A33D)),
                     onPressed: ultima
                         ? _terminar
                         : () => _paginas.nextPage(
@@ -104,12 +136,15 @@ class _PantallaHistoriaState extends State<PantallaHistoria> {
 }
 
 class _VistaEscena extends StatelessWidget {
-  const _VistaEscena({required this.escena});
+  const _VistaEscena({required this.escena, required this.saturacion});
   final Escena escena;
+
+  /// 1 = todos los colores; 0 = blanco y negro.
+  final double saturacion;
 
   @override
   Widget build(BuildContext context) {
-    final provisoria = escena.imagen == null;
+    final progreso = Dependencias.of(context).progreso;
     final imagen = Image.asset(
       escena.imagen ?? imagenProvisoria,
       fit: BoxFit.cover,
@@ -123,18 +158,10 @@ class _VistaEscena extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              // Imagen inicial todavía no definida: el mapa de Gramonia en gris.
-              child: provisoria
-                  ? ColorFiltered(
-                      colorFilter: const ColorFilter.matrix(<double>[
-                        0.2126, 0.7152, 0.0722, 0, 0, //
-                        0.2126, 0.7152, 0.0722, 0, 0,
-                        0.2126, 0.7152, 0.0722, 0, 0,
-                        0, 0, 0, 1, 0,
-                      ]),
-                      child: imagen,
-                    )
-                  : imagen,
+              child: ColorFiltered(
+                colorFilter: ColorFilter.matrix(matrizSaturacion(saturacion)),
+                child: imagen,
+              ),
             ),
           ),
         ),
@@ -143,8 +170,6 @@ class _VistaEscena extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const AvatarGobi(),
-              const SizedBox(width: 12),
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(14),
@@ -156,9 +181,9 @@ class _VistaEscena extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (escena.titulo != null) ...[
+                      if (escena.titulo case final titulo?) ...[
                         Text(
-                          escena.titulo!,
+                          progreso.texto(titulo),
                           style: const TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.w800,
@@ -168,7 +193,7 @@ class _VistaEscena extends StatelessWidget {
                         const SizedBox(height: 6),
                       ],
                       Text(
-                        escena.texto,
+                        progreso.texto(escena.texto),
                         style: const TextStyle(
                           fontSize: 15,
                           height: 1.35,
@@ -200,19 +225,46 @@ class IndiceHistoria extends StatelessWidget {
         builder: (_) => PantallaHistoria(escenas: escenas, textoFinal: 'Listo'),
       ),
     );
+    Widget nivel(int n) {
+      final escenas = capitulosDeNivel[n];
+      if (escenas == null) return const SizedBox.shrink();
+      return _Capitulo(
+        titulo: progreso.texto(escenas.first.titulo ?? Textos.nivel(n + 1)),
+        abierto: progreso.capitulosVistos.contains(idCapituloDeNivel(n)),
+        alTocar: () => abrir(escenas),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(title: const Text('La historia')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _Capitulo(titulo: 'Introducción', abierto: true, alTocar: () => abrir(introduccion)),
-          for (final e in estados)
-            if (capitulos[e.bioma.id] case final escena?)
-              _Capitulo(
-                titulo: escena.titulo ?? e.bioma.nombre,
-                abierto: e.completoDisponible && e.bioma.cuadroIds.isNotEmpty,
-                alTocar: () => abrir([escena]),
+          _Capitulo(
+            titulo: 'Introducción',
+            abierto: true,
+            alTocar: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => const PantallaHistoria(
+                  escenas: introduccion,
+                  textoFinal: 'Listo',
+                  colores: ColoresDeEscenas.seApagan,
+                ),
               ),
+            ),
+          ),
+          nivel(nivelTutorial),
+          for (final (i, e) in estados.indexed) ...[
+            if (capitulos[e.bioma.id] case final escenas?)
+              _Capitulo(
+                titulo: escenas.first.titulo ?? e.bioma.nombre,
+                abierto: e.completoDisponible && e.bioma.cuadroIds.isNotEmpty,
+                alTocar: () => abrir(escenas),
+              ),
+            // Al final de cada nivel, su capítulo.
+            if (i == estados.length - 1 || estados[i + 1].bioma.nivel != e.bioma.nivel)
+              nivel(e.bioma.nivel),
+          ],
         ],
       ),
     );

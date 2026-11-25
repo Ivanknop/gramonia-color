@@ -1,0 +1,129 @@
+{
+  "id": "ronda-de-caperucitas--extremo",
+  "titulo": "La ronda de las Caperucitas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#898E52"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#566848"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#593A32"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#323D35"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#754C3B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C6915D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#382B2B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F4B374"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FAD085"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#6E693F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3A5342"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#45563E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#374839"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#A9AF69"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#926448"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#BF744D"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#97473A"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#A7714D"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#58593A"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#717946"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#D9B26F"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#5C4B3C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#975943"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#90754B"
+    }
+  ],
+  "mensajeMututu": "¡Volvieron todas las caperuzas, de todos los colores! La ronda de cuentos puede seguir."
+}

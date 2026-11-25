@@ -1,0 +1,60 @@
+{
+  "id": "caperucita-en-el-bosque",
+  "titulo": "Caperucita en el bosque",
+  "categoria": "arte",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#234848"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#854618"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#461A0A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#190503"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#E4E0A6"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#6F2409"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#A5A76E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#132B2C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#747451"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#21160F"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa.",
+  "orden": 25
+}

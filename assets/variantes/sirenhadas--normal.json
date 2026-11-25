@@ -1,0 +1,49 @@
+{
+  "id": "sirenhadas--normal",
+  "titulo": "Las SirenHadas",
+  "categoria": "persona",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F1AE8C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#8490AD"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#CBBEB0"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B36E74"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F7D6A4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#90B5B3"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5F5E68"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#D1928C"
+    }
+  ],
+  "mensajeMututu": "Las SirenHadas juegan otra vez con su pelota de colores. ¡Hasta las estrellas de mar brillan!"
+}

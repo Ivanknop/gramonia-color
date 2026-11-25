@@ -1,0 +1,129 @@
+{
+  "id": "sirenhadas--extremo",
+  "titulo": "Las SirenHadas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#9A90C4"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#E79478"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#544854"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FBC782"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#6B90A1"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#85AAAD"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#AD5E6A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F3B67C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F9F4D3"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#9BC5BB"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#D0DACA"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#CDC3B0"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#CCA89F"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#E09498"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#F0A78E"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#F8B699"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#4C7283"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#776D72"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#9A8DA2"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#F5DFA9"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#C09191"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#A4797D"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#C77C7E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#F8CA9C"
+    }
+  ],
+  "mensajeMututu": "Las SirenHadas juegan otra vez con su pelota de colores. ¡Hasta las estrellas de mar brillan!"
+}

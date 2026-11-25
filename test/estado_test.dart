@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:colores_de_gramonia/engine/genero.dart';
 import 'package:colores_de_gramonia/engine/plumas.dart';
+import 'package:colores_de_gramonia/engine/tutorial.dart';
 import 'package:colores_de_gramonia/estado/obras.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -36,7 +37,7 @@ void main() {
     p.marcarCompletado('c2');
     await p.guardado;
     final guardado = jsonDecode(almacen.datos!) as Map<String, dynamic>;
-    expect(guardado['version'], 5);
+    expect(guardado['version'], 7);
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.de('c2')!.pintadas, ['x']);
     expect(otra.completados, {'c2'});
@@ -174,6 +175,56 @@ void main() {
     expect(p.completados, {'c1'});
   });
 
+  test('migra un guardado v5: con obras empezadas, el tutorial cuenta como salteado', () async {
+    const v5 = '{"version":5,"cuadros":{"c1":{"pintadas":["a"],"actualizadoEn":3}},"plumas":2}';
+    final (p, _) = await nuevo(v5);
+    expect((p.tutorialPasado, p.tutorialPremiado), (true, false));
+    final (sinObras, _) = await nuevo('{"version":5,"cuadros":{}}');
+    expect(sinObras.tutorialPasado, isFalse);
+  });
+
+  test('tutorial: saltearlo deja el premio pendiente; se cobra una sola vez', () async {
+    final (p, almacen) = await nuevo();
+    p.saltarTutorial();
+    expect((p.tutorialPasado, p.tutorialPremiado, p.plumas), (true, false, 0));
+    expect(p.terminarTutorial(), ReglasPlumas.porTutorial);
+    expect(p.plumas, 20);
+    p.pintarRegion(idTutorial, 'r1');
+    p.marcarCompletado(idTutorial);
+    expect(p.completados.contains(idTutorial), isTrue);
+    p.reiniciarTutorial();
+    expect(p.de(idTutorial), isNull);
+    expect(p.completados.contains(idTutorial), isFalse);
+    expect(p.terminarTutorial(), 0);
+    expect(p.plumas, 20);
+    await p.guardado;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect((otra.tutorialPasado, otra.tutorialPremiado), (true, true));
+  });
+
+  test('nombre: se guarda limpio y se usa en los textos', () async {
+    final (p, almacen) = await nuevo();
+    expect(p.perfilCompleto, isFalse);
+    p.cambiarNombre('   ');
+    expect(p.nombre, isNull); // vacío no se guarda
+    p.cambiarNombre('  Regi   Knopoff ');
+    p.elegirGenero(Genero.chica);
+    expect((p.nombre, p.perfilCompleto), ('Regi Knopoff', true));
+    expect(
+      p.texto('¡Hola, {nombre}! Estás {atento|atenta|alerta}.'),
+      '¡Hola, Regi Knopoff! Estás atenta.',
+    );
+    await p.guardado;
+    final (otra, _) = await nuevo(almacen.datos);
+    expect(otra.nombre, 'Regi Knopoff');
+  });
+
+  test('migra un guardado v6: sin nombre, el perfil queda incompleto', () async {
+    const v6 = '{"version":6,"cuadros":{},"genero":"chico","tutorialPasado":true}';
+    final (p, _) = await nuevo(v6);
+    expect((p.nombre, p.genero, p.perfilCompleto), (null, Genero.chico, false));
+  });
+
   test('datos corruptos no impiden jugar', () async {
     final (p, _) = await nuevo('{esto no es json');
     expect(p.cuadros, isEmpty);
@@ -202,16 +253,14 @@ void main() {
       expect(obras.enProgreso.map((o) => o.cuadroId), ['b', 'a--facil']);
     });
 
-    test('obraParaContinuar: la empezada más reciente, o ninguna', () {
-      expect(
-        obraParaContinuar({
-          'a': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 1),
-          'b': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 5),
-          'c': const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 9, completadoEn: 9),
-        }, existentes),
-        'b',
+    test('el tutorial no aparece en Mis obras', () {
+      final obras = clasificarObras(
+        {
+          idTutorial: const ProgresoCuadro(pintadas: ['r1'], actualizadoEn: 1, completadoEn: 2),
+        },
+        {...existentes, idTutorial},
       );
-      expect(obraParaContinuar({}, existentes), isNull);
+      expect(obras.terminadas, isEmpty);
     });
 
     test('ignora cuadros sin pintar y cuadros que ya no existen', () {

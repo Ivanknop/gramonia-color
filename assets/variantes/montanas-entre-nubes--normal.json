@@ -1,0 +1,49 @@
+{
+  "id": "montanas-entre-nubes--normal",
+  "titulo": "Montañas entre nubes",
+  "categoria": "paisaje",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#31485F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A1B2C2"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C8D1D8"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#617287"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#202C3C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#6B8BA5"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8F97A7"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#45627C"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

@@ -7,12 +7,14 @@ import '../datos/textos.dart';
 import '../engine/dificultad.dart';
 import 'comun.dart';
 
-/// Muestra las dificultades y devuelve la elegida (null si se cierra).
+/// Muestra las dificultades y devuelve la elegida (null si se cierra). Con
+/// [conPlumas] (modo libre), cada una muestra las plumas que da terminarla.
 Future<Dificultad?> elegirDificultad(
   BuildContext context, {
   required String titulo,
   String? aviso,
   String? actual,
+  bool conPlumas = false,
 }) {
   final dificultades = Dependencias.of(context).catalogo.dificultades;
   return showModalBottomSheet<Dificultad>(
@@ -62,7 +64,25 @@ Future<Dificultad?> elegirDificultad(
                       ),
                       title: Text(d.nombre, style: const TextStyle(fontWeight: FontWeight.w700)),
                       subtitle: Text(Textos.detalleDificultad(d.colores, d.regiones)),
-                      trailing: d.id == actual ? const Icon(Icons.check) : null,
+                      trailing: d.id == actual
+                          ? const Icon(Icons.check)
+                          : conPlumas
+                          ? Row(
+                              key: Key('plumas-${d.id}'),
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  Textos.plumasDificultad(d.plumas),
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    color: Color(0xFF8A5A1E),
+                                  ),
+                                ),
+                                const SizedBox(width: 4),
+                                const IconoPluma(tamano: 18),
+                              ],
+                            )
+                          : null,
                       onTap: () => Navigator.of(context).pop(d),
                     ),
                 ],

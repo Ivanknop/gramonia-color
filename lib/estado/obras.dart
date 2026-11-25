@@ -3,18 +3,15 @@
 library;
 
 import '../engine/dificultad.dart';
+import '../engine/tutorial.dart';
 import 'progreso.dart';
 
 typedef Obra = ({String cuadroId, ProgresoCuadro progreso});
 
-/// Obra para "Continuar pintando": la empezada más recientemente (null si no
-/// hay ninguna a medio pintar).
-String? obraParaContinuar(Map<String, ProgresoCuadro> cuadros, Set<String> idsExistentes) =>
-    clasificarObras(cuadros, idsExistentes).enProgreso.firstOrNull?.cuadroId;
-
 /// Clasifica el progreso en obras en progreso (la más reciente primero) y
 /// terminadas (la terminada más recientemente primero). Ignora cuadros sin
-/// pintar (salvo los rehechos) y cuadros que ya no existen en el catálogo.
+/// pintar (salvo los rehechos), cuadros que ya no existen en el catálogo y el
+/// tutorial (se hace desde la galería).
 ({List<Obra> enProgreso, List<Obra> terminadas}) clasificarObras(
   Map<String, ProgresoCuadro> cuadros,
   Set<String> idsExistentes,
@@ -22,7 +19,7 @@ String? obraParaContinuar(Map<String, ProgresoCuadro> cuadros, Set<String> idsEx
   final enProgreso = <Obra>[];
   final terminadas = <Obra>[];
   for (final e in cuadros.entries) {
-    if (!idsExistentes.contains(cuadroBase(e.key))) continue;
+    if (e.key == idTutorial || !idsExistentes.contains(cuadroBase(e.key))) continue;
     final obra = (cuadroId: e.key, progreso: e.value);
     if (e.value.terminado) {
       terminadas.add(obra);

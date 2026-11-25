@@ -1,0 +1,129 @@
+{
+  "id": "el-colibri--extremo",
+  "titulo": "El colibrí",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1C1819"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1D181C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#1F1820"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1D191A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3F2039"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#321D30"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#945B90"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#4D2145"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#4A5859"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#2D1C27"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#89ABBE"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#3B3643"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#221C23"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#5F365F"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#632458"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#261726"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#887890"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#823A75"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#16121B"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#1A181B"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#3F1449"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#1C1818"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#1C191B"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#1C1919"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

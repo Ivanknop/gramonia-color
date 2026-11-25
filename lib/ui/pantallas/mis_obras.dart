@@ -205,7 +205,6 @@ class _Acciones extends StatelessWidget {
       alignment: WrapAlignment.end,
       children: [
         TextButton.icon(
-          style: TextButton.styleFrom(foregroundColor: Tema.morado),
           onPressed: () => Navigator.of(context)
               .push(MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: cuadroId))),
           icon: const Icon(Icons.slow_motion_video, size: 18),
@@ -213,9 +212,8 @@ class _Acciones extends StatelessWidget {
         ),
         TextButton.icon(
           key: Key('rehacer-$cuadroId'),
-          style: TextButton.styleFrom(foregroundColor: Tema.morado),
           onPressed: () => _rehacer(context),
-          icon: const Icon(Icons.refresh, size: 18),
+          icon: const IconoEspiral(tamano: 18),
           label: const Text(Textos.rehacer),
         ),
       ],
@@ -245,11 +243,7 @@ class _Vacio extends StatelessWidget {
             style: TextStyle(fontSize: 15, color: Color(0xFF666666)),
           ),
           const SizedBox(height: 20),
-          FilledButton(
-            style: FilledButton.styleFrom(backgroundColor: Tema.morado),
-            onPressed: onIrAGaleria,
-            child: const Text('Ir a la Galería'),
-          ),
+          FilledButton(onPressed: onIrAGaleria, child: const Text('Ir a la Galería')),
         ],
       ),
     ),

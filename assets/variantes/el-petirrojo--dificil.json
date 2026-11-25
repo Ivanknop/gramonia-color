@@ -1,0 +1,79 @@
+{
+  "id": "el-petirrojo--dificil",
+  "titulo": "El petirrojo",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#744230"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#AB9D8E"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C6B8AB"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F5EADD"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#8C7D6F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FCF7EB"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#CEC4B9"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B8805F"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#E4DAD0"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#E2C2A7"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#CC9C78"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#E1D0C0"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#F0DFCD"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#C8AE99"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "el-colibri--normal",
+  "titulo": "El colibrí",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1C181A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1D181C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2E1F2C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#7B768F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#522349"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#563957"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#2D1730"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#16121B"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

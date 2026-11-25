@@ -9,4 +9,5 @@ export 'pintura.dart';
 export 'plumas.dart';
 export 'progresion.dart';
 export 'svg.dart';
+export 'tutorial.dart';
 export 'vista.dart';

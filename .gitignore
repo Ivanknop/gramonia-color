@@ -38,3 +38,6 @@ __pycache__/
 
 # Claude Code (config local)
 .claude/settings.local.json
+
+# Capturas de pantalla (tool/capturas_test.dart)
+temp/

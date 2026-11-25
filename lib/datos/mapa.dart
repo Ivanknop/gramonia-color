@@ -65,6 +65,8 @@ final zonasMapa = <String, ZonaMapa>{
     'isla-morada',
   ].indexed)
     id: ZonaMapa(_elipse(110.0 + i * 92, 1290, 30, 22, lados: 24)),
+  // Más allá de las Islas Arcoíris.
+  'isla-negra': ZonaMapa(_elipse(386, 1345, 38, 22, lados: 24)),
 };
 
 /// Puntos donde se van "manchando" de color las piezas de una zona: se

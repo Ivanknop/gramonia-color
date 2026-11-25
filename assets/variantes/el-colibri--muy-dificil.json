@@ -1,0 +1,99 @@
+{
+  "id": "el-colibri--muy-dificil",
+  "titulo": "El colibrí",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1C1819"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3E1F38"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2F1D2B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#8890A7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1D181C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#1F1820"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#1D191A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#3C3642"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#221C23"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#58234E"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#6D5873"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6F3769"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#331638"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#16121B"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#1A181B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#1C1818"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#1C191B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#1C1919"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

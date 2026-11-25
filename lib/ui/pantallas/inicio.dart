@@ -1,11 +1,14 @@
 /// Portada del juego, con su intro: el mapa de Gramonia arranca a todo color y
 /// se va apagando hasta el blanco y negro (Mututu robando los colores); ya en
-/// gris aparece el título "Gramonia… Color" en lilas y, debajo, el botón:
+/// gris aparece el título "Gramonia… Color" en lilas y, debajo, los dos modos:
 ///
-/// - Primera vez: "¡Empezar!" cuenta la historia de Gobi, pregunta cómo hablarle
-///   a quien juega y abre la galería.
-/// - Con progreso: "Continuar pintando" abre la obra empezada más recientemente
-///   (o la galería, si no hay ninguna a medio pintar).
+/// - "Modo historia": la primera vez cuenta la historia de Gobi, pregunta cómo
+///   hablarle a quien juega y arranca el tutorial (nivel 0, se puede saltear);
+///   después abre las pestañas (galería, mis obras, mapa y tienda).
+/// - "Modo libre": los dibujos para pintar sin historia.
+///
+/// Abajo, el link a los créditos. Desde los dos modos, la flecha de la barra de
+/// abajo vuelve acá.
 ///
 /// Tocar la pantalla durante la animación la saltea. Cada día, al entrar, el
 /// Rocanón regala plumas.
@@ -16,10 +19,10 @@ import 'package:material_ui/material_ui.dart';
 import '../../datos/historia.dart';
 import '../../datos/textos.dart';
 import '../../engine/intro.dart';
-import '../../estado/obras.dart';
+import '../../engine/motor.dart';
 import '../comun.dart';
 import 'creditos.dart';
-import 'genero.dart';
+import 'perfil.dart';
 import 'historia.dart';
 import 'modo_libre.dart';
 import 'pintar.dart';
@@ -78,35 +81,42 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
   Future<void> _abrir(Widget pantalla) =>
       Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => pantalla));
 
-  /// También para quien ya jugaba antes de que existiera la pregunta.
-  Future<void> _preguntarGenero() async {
-    if (Dependencias.of(context).progreso.genero == null) await _abrir(const PantallaGenero());
+  /// Nombre y género. También para quien ya jugaba antes de que existiera la pregunta.
+  Future<void> _preguntarPerfil() async {
+    if (!Dependencias.of(context).progreso.perfilCompleto) await _abrir(const PantallaPerfil());
   }
 
-  Future<void> _empezar() async {
+  Future<void> _modoHistoria() async {
     final progreso = Dependencias.of(context).progreso;
-    await _abrir(const PantallaHistoria(escenas: introduccion, textoFinal: Textos.empezar));
-    progreso.marcarIntroVista();
+    if (!progreso.introVista) {
+      await _abrir(
+        const PantallaHistoria(
+          escenas: introduccion,
+          textoFinal: Textos.empezar,
+          colores: ColoresDeEscenas.seApagan,
+        ),
+      );
+      progreso.marcarIntroVista();
+      if (!mounted) return;
+    }
+    await _preguntarPerfil();
     if (!mounted) return;
-    await _preguntarGenero();
-    if (!mounted) return;
-    await _abrir(const Principal(pestanaInicial: Principal.galeria));
+    // El tutorial, al terminarlo o saltearlo, sigue a la galería.
+    await _abrir(
+      progreso.tutorialPasado
+          ? const Principal(pestanaInicial: Principal.galeria)
+          : const Pintar(cuadroId: idTutorial),
+    );
   }
 
-  Future<void> _continuar() async {
-    final dep = Dependencias.of(context);
-    await _preguntarGenero();
+  Future<void> _modoLibre() async {
+    await _preguntarPerfil();
     if (!mounted) return;
-    final obra = obraParaContinuar(dep.progreso.cuadros, dep.catalogo.ids);
-    await _abrir(
-      obra == null ? const Principal(pestanaInicial: Principal.galeria) : Pintar(cuadroId: obra),
-    );
+    await _abrir(const ModoLibre());
   }
 
   @override
   Widget build(BuildContext context) {
-    final progreso = Dependencias.of(context).progreso;
-    final primeraVez = !progreso.introVista && progreso.cuadros.isEmpty;
     return Scaffold(
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
@@ -134,17 +144,40 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
                       child: Stack(
                         children: [
                           const Positioned(top: 12, right: 16, child: ContadorPlumas()),
+                          // Para corregir el nombre o cómo hablarle.
                           Positioned(
-                            top: 0,
-                            left: 4,
-                            child: TextButton.icon(
-                              style: TextButton.styleFrom(
-                                foregroundColor: Tema.morado,
-                                backgroundColor: const Color(0xCCFFFFFF),
-                              ),
-                              onPressed: () => _abrir(const Creditos()),
-                              icon: const Icon(Icons.info_outline, size: 18),
-                              label: const Text(Textos.creditos),
+                            top: 6,
+                            left: 12,
+                            child: IconButton(
+                              key: const Key('editar-perfil'),
+                              tooltip: Textos.perfil,
+                              icon: const Icon(Icons.person_outline),
+                              onPressed: () => _abrir(const PantallaPerfil(editar: true)),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 12,
+                            left: 0,
+                            right: 0,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                TextButton.icon(
+                                  onPressed: () => _abrir(const Creditos()),
+                                  icon: const Icon(Icons.info_outline, size: 18),
+                                  label: const Text(Textos.creditos),
+                                ),
+                                const SizedBox(width: 10),
+                                const Text(
+                                  Textos.version,
+                                  key: Key('version'),
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w700,
+                                    color: Tema.morado,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -177,40 +210,18 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
                           ignoring: !listos,
                           child: Opacity(
                             opacity: e.botones,
-                            child: primeraVez
-                                ? _Boton(texto: Textos.empezar, principal: true, alTocar: _empezar)
-                                : Column(
-                                    children: [
-                                      _Boton(
-                                        texto: Textos.continuar,
-                                        principal: true,
-                                        alTocar: _continuar,
-                                      ),
-                                      const SizedBox(height: 12),
-                                      _Boton(
-                                        texto: Textos.galeria,
-                                        alTocar: () => _abrir(
-                                          const Principal(pestanaInicial: Principal.galeria),
-                                        ),
-                                      ),
-                                      const SizedBox(height: 10),
-                                      _Boton(
-                                        texto: Textos.modoLibre,
-                                        alTocar: () => _abrir(const ModoLibre()),
-                                      ),
-                                      const SizedBox(height: 10),
-                                      _Boton(
-                                        texto: Textos.mapa,
-                                        alTocar: () =>
-                                            _abrir(const Principal(pestanaInicial: Principal.mapa)),
-                                      ),
-                                      const SizedBox(height: 10),
-                                      _Boton(
-                                        texto: Textos.laHistoria,
-                                        alTocar: () => _abrir(const IndiceHistoria()),
-                                      ),
-                                    ],
-                                  ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                _Boton(
+                                  texto: Textos.modoHistoria,
+                                  principal: true,
+                                  alTocar: _modoHistoria,
+                                ),
+                                const SizedBox(width: 10),
+                                _Boton(texto: Textos.modoLibre, alTocar: _modoLibre),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -234,23 +245,18 @@ class _Boton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final contenido = Text(texto, style: const TextStyle(fontSize: 18));
+    final contenido = Text(texto, style: const TextStyle(fontSize: 15));
     const relleno = EdgeInsets.symmetric(vertical: 14);
     return SizedBox(
-      width: 250,
+      width: 150,
       child: principal
           ? FilledButton(
-              style: FilledButton.styleFrom(backgroundColor: Tema.morado, padding: relleno),
+              style: FilledButton.styleFrom(padding: relleno),
               onPressed: alTocar,
               child: contenido,
             )
           : OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Tema.morado,
-                backgroundColor: const Color(0xE6FFFFFF),
-                side: const BorderSide(color: Tema.morado, width: 2),
-                padding: relleno,
-              ),
+              style: OutlinedButton.styleFrom(padding: relleno),
               onPressed: alTocar,
               child: contenido,
             ),

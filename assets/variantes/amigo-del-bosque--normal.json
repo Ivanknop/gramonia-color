@@ -1,0 +1,49 @@
+{
+  "id": "amigo-del-bosque--normal",
+  "titulo": "Un amigo en el bosque",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#DADFDF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1D2529"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B7C2BE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#32403D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#849992"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4C6357"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#697F76"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#9DACA7"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

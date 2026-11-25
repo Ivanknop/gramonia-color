@@ -12,6 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../engine/dificultad.dart';
 import '../engine/genero.dart';
 import '../engine/plumas.dart';
+import '../engine/tutorial.dart';
 
 class ProgresoCuadro {
   const ProgresoCuadro({
@@ -95,7 +96,11 @@ class Progreso extends ChangeNotifier {
   /// v3 → v4: obras desbloqueadas aparte (rehacer una obra no la vuelve a tapar)
   /// y dificultad de las obras rehechas. Las terminadas pasan a desbloqueadas.
   /// v4 → v5: lupas y bombas compradas (en un guardado viejo, ninguna).
-  static const version = 5;
+  /// v5 → v6: tutorial pasado y premiado. En un guardado viejo con obras
+  /// empezadas cuenta como pasado (salteado), con el premio pendiente.
+  /// v6 → v7: nombre de quien juega (en un guardado viejo, sin nombre: se pide
+  /// al entrar).
+  static const version = 7;
 
   static Future<Progreso> cargar(AlmacenProgreso almacen, {int Function()? reloj}) async {
     final p = Progreso._(almacen, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
@@ -123,6 +128,11 @@ class Progreso extends ChangeNotifier {
           for (final e in p._cuadros.entries)
             if (e.value.terminado && dificultadDe(e.key) == null) e.key,
         ]);
+        // Campo de v7.
+        p._nombre = j['nombre'] as String?;
+        // Campos de v6.
+        p._tutorialPasado = (j['tutorialPasado'] as bool?) ?? p._cuadros.isNotEmpty;
+        p._tutorialPremiado = (j['tutorialPremiado'] as bool?) ?? false;
         p._capitulosVistos.addAll([
           for (final c in (j['capitulosVistos'] as List?) ?? []) c as String,
         ]);
@@ -145,6 +155,9 @@ class Progreso extends ChangeNotifier {
   Genero? _genero;
   final Set<String> _desbloqueadas = {};
   final Map<Herramienta, int> _herramientas = {};
+  bool _tutorialPasado = false;
+  bool _tutorialPremiado = false;
+  String? _nombre;
 
   Map<String, ProgresoCuadro> get cuadros => Map.unmodifiable(_cuadros);
 
@@ -186,7 +199,7 @@ class Progreso extends ChangeNotifier {
     final actual = _cuadros[cuadroId] ?? const ProgresoCuadro();
     if (actual.terminado) return false;
     _cuadros[cuadroId] = actual.copiar(completadoEn: _reloj());
-    if (dificultadDe(cuadroId) == null) _desbloqueadas.add(cuadroId);
+    if (dificultadDe(cuadroId) == null && cuadroId != idTutorial) _desbloqueadas.add(cuadroId);
     _cambio();
     return true;
   }
@@ -220,6 +233,9 @@ class Progreso extends ChangeNotifier {
     _genero = null;
     _desbloqueadas.clear();
     _herramientas.clear();
+    _tutorialPasado = false;
+    _tutorialPremiado = false;
+    _nombre = null;
     _cambio();
   }
 
@@ -265,6 +281,37 @@ class Progreso extends ChangeNotifier {
     return ReglasPlumas.porDia;
   }
 
+  // ---- Tutorial -------------------------------------------------------------
+
+  /// Ya se terminó o se salteó el tutorial (quien juega está del nivel 1 en adelante).
+  bool get tutorialPasado => _tutorialPasado;
+
+  /// Ya se dieron las plumas del tutorial.
+  bool get tutorialPremiado => _tutorialPremiado;
+
+  /// Saltear el tutorial: se pasa al nivel 1; el premio queda pendiente.
+  void saltarTutorial() {
+    if (_tutorialPasado) return;
+    _tutorialPasado = true;
+    _cambio();
+  }
+
+  /// Terminar el tutorial: pasa al nivel 1 y, la primera vez, da las plumas.
+  /// Devuelve las plumas ganadas.
+  int terminarTutorial() {
+    final ganadas = _tutorialPremiado ? 0 : ReglasPlumas.porTutorial;
+    _tutorialPasado = true;
+    _tutorialPremiado = true;
+    _plumas += ganadas;
+    _cambio();
+    return ganadas;
+  }
+
+  /// Volver a hacer el tutorial: se borra lo pintado (el nivel no se pierde).
+  void reiniciarTutorial() {
+    if (_cuadros.remove(idTutorial) != null) _cambio();
+  }
+
   // ---- Historia -----------------------------------------------------------
 
   bool get introVista => _introVista;
@@ -282,7 +329,21 @@ class Progreso extends ChangeNotifier {
     if (_capitulosVistos.add(id)) _cambio();
   }
 
-  // ---- Género ------------------------------------------------------------
+  // ---- Perfil: nombre y género ---------------------------------------------
+
+  /// Nombre de quien juega (null = todavía no lo dijo).
+  String? get nombre => _nombre;
+
+  /// Ya dijo cómo se llama y cómo quiere que le hablen.
+  bool get perfilCompleto => _nombre != null && _genero != null;
+
+  /// Guarda el nombre (sin espacios de más; uno vacío no se guarda).
+  void cambiarNombre(String nombre) {
+    final limpio = nombre.trim().replaceAll(RegExp(r'\s+'), ' ');
+    if (limpio.isEmpty || limpio == _nombre) return;
+    _nombre = limpio;
+    _cambio();
+  }
 
   /// Cómo prefiere que le hablen quien juega (null = todavía no eligió).
   Genero? get genero => _genero;
@@ -293,9 +354,10 @@ class Progreso extends ChangeNotifier {
     _cambio();
   }
 
-  /// [texto] con las variantes `{chico|chica|neutro}` resueltas. Sin elección,
-  /// la neutra.
-  String texto(String texto) => conGenero(texto, _genero ?? Genero.neutro);
+  /// [texto] con las variantes `{chico|chica|neutro}` resueltas (sin elección,
+  /// la neutra) y `{nombre}` cambiado por el nombre de quien juega.
+  String texto(String texto) =>
+      conGenero(texto, _genero ?? Genero.neutro).replaceAll('{nombre}', _nombre ?? '');
 
   // ---- Música -------------------------------------------------------------
 
@@ -325,6 +387,9 @@ class Progreso extends ChangeNotifier {
       'genero': ?_genero?.name,
       'desbloqueadas': _desbloqueadas.toList(),
       for (final h in Herramienta.values) h.name: cantidad(h),
+      'tutorialPasado': _tutorialPasado,
+      'tutorialPremiado': _tutorialPremiado,
+      'nombre': ?_nombre,
     });
     // Se encadenan para que nunca una escritura vieja pise a una nueva.
     guardado = guardado.then((_) => _almacen.escribir(datos));

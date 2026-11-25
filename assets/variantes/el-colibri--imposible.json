@@ -1,0 +1,169 @@
+{
+  "id": "el-colibri--imposible",
+  "titulo": "El colibrí",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1D1919"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#201920"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#1D191A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#945B90"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1D181C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4A5859"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#2D1C27"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#3D1F31"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#4D2145"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1C1819"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#321D30"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#89ABBE"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#261726"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#41203F"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#632458"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#1E191D"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#823A75"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#2E383F"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#887890"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#5F365F"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#1D191D"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#483547"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#120D1D"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#3F1449"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#1A161A"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#1A181B"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#241C27"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#1C1919"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#1C191B"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#201B1E"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#201523"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#1C1818"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

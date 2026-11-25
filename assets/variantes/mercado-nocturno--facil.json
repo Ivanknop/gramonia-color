@@ -1,0 +1,39 @@
+{
+  "id": "mercado-nocturno--facil",
+  "titulo": "El mercado nocturno",
+  "categoria": "animal",
+  "dificultad": 2,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#324341"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6A4839"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4F6757"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B9A973"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#976946"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8E8464"
+    }
+  ],
+  "mensajeMututu": "Los farolitos del mercado se prendieron otra vez. Los animales vuelven a regatear… ¡y a probar de todo!"
+}

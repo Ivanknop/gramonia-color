@@ -1,0 +1,29 @@
+{
+  "id": "amigo-del-bosque--super-facil",
+  "titulo": "Un amigo en el bosque",
+  "categoria": "animal",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#293534"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#91A39D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C8D0CE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5B7268"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

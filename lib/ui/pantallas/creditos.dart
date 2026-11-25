@@ -16,7 +16,6 @@ class Creditos extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
-          const Center(child: AvatarGobi(tamano: 64)),
           const SizedBox(height: 12),
           const Text(
             'Gramonia Color',

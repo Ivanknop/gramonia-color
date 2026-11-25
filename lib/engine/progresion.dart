@@ -1,11 +1,16 @@
-/// Progresión: Gramonia se recorre bioma por bioma, con dificultad creciente
-/// (más obras y más regiones por obra). Cada obra terminada destapa una pieza
-/// de su bioma; con todas las piezas destapadas, el bioma queda completo.
+/// Progresión: Gramonia se recorre nivel por nivel, con dificultad creciente
+/// (más obras, más regiones y más colores por obra). Cada nivel agrupa uno o
+/// más lugares (ver `niveles.dart`). Cada obra terminada destapa una pieza de
+/// su bioma; con todas las piezas destapadas, el bioma queda completo.
 ///
-/// Un bioma se puede jugar cuando el anterior está completo en todo lo que
-/// tiene disponible: las piezas "próximamente" (sin obra asignada todavía) no
-/// traban el avance.
+/// Los lugares de un nivel se abren todos juntos, cuando los de los niveles
+/// anteriores están completos en todo lo que tienen disponible: las piezas
+/// "próximamente" (sin obra asignada todavía) no traban el avance.
 library;
+
+import 'dart:math' as math;
+
+import 'tutorial.dart';
 
 enum TipoBioma { region, isla }
 
@@ -25,6 +30,7 @@ class Bioma {
     required this.descripcion,
     required this.color,
     required this.piezas,
+    this.nivel = 1,
     this.tipo = TipoBioma.region,
   });
 
@@ -35,6 +41,9 @@ class Bioma {
   /// Color representativo (ARGB): fichas, islas del mapa, etc.
   final int color;
   final List<Pieza> piezas;
+
+  /// Nivel de la historia al que pertenece (desde 1; ver `niveles.dart`).
+  final int nivel;
   final TipoBioma tipo;
 
   Iterable<String> get cuadroIds => piezas.map((p) => p.cuadroId).whereType<String>();
@@ -48,7 +57,7 @@ class EstadoBioma {
   /// Ids de piezas destapadas.
   final Set<String> reveladas;
 
-  /// Se puede jugar (el anterior está completo en lo disponible).
+  /// Se puede jugar (los niveles anteriores están completos en lo disponible).
   final bool accesible;
 
   int get total => bioma.piezas.length;
@@ -61,37 +70,47 @@ class EstadoBioma {
       bioma.piezas.every((p) => p.cuadroId == null || reveladas.contains(p.id));
 }
 
-/// Estado de todos los biomas, en orden de progresión.
+/// Estado de todos los biomas, en orden de progresión. Un bioma es accesible
+/// si todos los de niveles anteriores están completos en lo disponible.
 List<EstadoBioma> estadoBiomas(List<Bioma> biomas, Set<String> completados) {
-  final estados = <EstadoBioma>[];
-  var anteriorListo = true;
-  for (final b in biomas) {
-    final reveladas = {
-      for (final p in b.piezas)
-        if (p.cuadroId != null && completados.contains(p.cuadroId)) p.id,
-    };
-    final e = EstadoBioma(bioma: b, reveladas: reveladas, accesible: anteriorListo);
-    estados.add(e);
-    anteriorListo = anteriorListo && e.completoDisponible;
-  }
-  return estados;
+  final estados = [
+    for (final b in biomas)
+      EstadoBioma(
+        bioma: b,
+        reveladas: {
+          for (final p in b.piezas)
+            if (p.cuadroId != null && completados.contains(p.cuadroId)) p.id,
+        },
+        accesible: false,
+      ),
+  ];
+  final pendientes = [
+    for (final e in estados)
+      if (!e.completoDisponible) e.bioma.nivel,
+  ];
+  // Se abre hasta el primer nivel con algo sin terminar (todo, si no queda nada).
+  final tope = pendientes.isEmpty ? null : pendientes.reduce(math.min);
+  return [
+    for (final e in estados)
+      EstadoBioma(
+        bioma: e.bioma,
+        reveladas: e.reveladas,
+        accesible: tope == null || e.bioma.nivel <= tope,
+      ),
+  ];
 }
 
 /// Obras de la historia en el orden del recorrido (bioma por bioma).
 List<String> cuadrosDelRecorrido(List<Bioma> biomas) => [for (final b in biomas) ...b.cuadroIds];
 
-/// Cuadros del modo libre, en el orden de [todos]: los de lugares ya
-/// desbloqueados en la historia y los que no están en la historia.
+/// Cuadros del modo libre, en el orden de [todos]: los que no son de la
+/// historia (solo modo libre) y los de la historia que ya se colorearon ahí
+/// (menos el tutorial, que se juega desde la historia).
 List<String> cuadrosLibres(List<Bioma> biomas, Set<String> completados, Iterable<String> todos) {
-  final enLaHistoria = <String>{};
-  final desbloqueados = <String>{};
-  for (final e in estadoBiomas(biomas, completados)) {
-    enLaHistoria.addAll(e.bioma.cuadroIds);
-    if (e.accesible) desbloqueados.addAll(e.bioma.cuadroIds);
-  }
+  final enLaHistoria = {for (final b in biomas) ...b.cuadroIds};
   return [
     for (final id in todos)
-      if (desbloqueados.contains(id) || !enLaHistoria.contains(id)) id,
+      if (id != idTutorial && (completados.contains(id) || !enLaHistoria.contains(id))) id,
   ];
 }
 

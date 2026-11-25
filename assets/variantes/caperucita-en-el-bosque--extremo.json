@@ -1,0 +1,129 @@
+{
+  "id": "caperucita-en-el-bosque--extremo",
+  "titulo": "Caperucita en el bosque",
+  "categoria": "arte",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#080101"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4E786D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F9F3C5"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#04262C"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#183A3B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#1C0402"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5B1E09"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#ABBC80"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#904310"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C97F2C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#EBD48A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#997F43"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#3C0B04"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#270E06"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#6E2408"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#B04D0F"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2E5352"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#184C4F"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#3F1607"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#12100D"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#6E421C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#8C2407"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#42210F"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#162928"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

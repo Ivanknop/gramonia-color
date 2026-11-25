@@ -1,0 +1,169 @@
+{
+  "id": "el-petirrojo--imposible",
+  "titulo": "El petirrojo",
+  "categoria": "animal",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FDFAF3"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#361C15"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#EEE1D6"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#CA7F55"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#D9D0C5"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F4ECE3"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5A3E34"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#AEA193"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#E2D7CC"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#D99D71"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#BCB0A4"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#E2BD9E"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#9F9385"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F3DCC3"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#D0C7BC"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#867466"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#FBF4E3"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#CBC0B4"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#B4AA9D"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#C1B8AD"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#908375"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#D3B093"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#F5E8D7"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#C09D83"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#E2C8B2"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#A14227"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#CABAAB"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#E6DDD4"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#E8D0BB"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#A3826A"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#9C654A"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#AD9683"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

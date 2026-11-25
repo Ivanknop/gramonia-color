@@ -1,0 +1,79 @@
+{
+  "id": "ronda-de-caperucitas--dificil",
+  "titulo": "La ronda de las Caperucitas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#353531"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F6C17C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#888D52"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5A4737"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#44523C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#707143"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#354B3D"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#566848"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#B3724D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C4905C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#98513E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#906C49"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#764D3C"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#C0AF6C"
+    }
+  ],
+  "mensajeMututu": "¡Volvieron todas las caperuzas, de todos los colores! La ronda de cuentos puede seguir."
+}

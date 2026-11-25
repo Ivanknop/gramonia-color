@@ -6,8 +6,13 @@
 /// - Bomba: se arma con el botón y el próximo toque pinta todas las regiones
 ///   cercanas, cada una con su color correcto.
 /// - Al terminar: festejo (confeti, sonido y vibración), plumas por la obra y,
-///   si se completa un bioma, plumas extra y el capítulo de la historia que
-///   cuenta Gobi (después del festejo y del timelapse, que se puede saltear).
+///   si se completa un nivel, plumas extra; si se completa un bioma, el
+///   capítulo de la historia que cuenta Gobi (después del festejo y del
+///   timelapse, que se puede saltear).
+/// - Tutorial (nivel 0): arranca sin color elegido y muestra arriba el paso que
+///   falta (elegir color, tocar una parte, completar un color, lupa, bomba);
+///   la lupa y la bomba no se gastan. Al terminarlo se pasa al nivel 1 y, la
+///   primera vez, se ganan las plumas del tutorial. "Saltar" sigue a la galería.
 /// - Música: un tema al azar en cada dibujo, con botones para cambiarla y
 ///   silenciarla; se pausa si la app pasa a segundo plano.
 library;
@@ -60,6 +65,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
 
   /// Modo libre: sin historia, piezas, plumas ni capítulos.
   bool get _libre => dificultadDe(_clave) != null;
+
+  /// Tutorial: pasos guiados, herramientas gratis y premio propio.
+  bool get _tutorial => _clave == idTutorial;
+
+  /// Pasos del tutorial ya hechos.
+  final Set<PasoTutorial> _pasos = {};
   int? _elegido;
   bool _bombaArmada = false;
   String? _destacada;
@@ -81,8 +92,22 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   /// Repetición acelerada de cómo se pintó (después del festejo).
   bool _repitiendo = false;
 
-  /// Capítulos de la historia que se cuentan después del festejo y el timelapse.
-  final List<Bioma> _capitulosPendientes = [];
+  /// Capítulos de la historia que se cuentan después del festejo y el
+  /// timelapse: ids (de bioma o `nivel-<n>`) con sus escenas, en orden.
+  final List<(String, List<Escena>)> _capitulosPendientes = [];
+
+  /// Suma los capítulos de los lugares y niveles que se completaron.
+  void _sumarCapitulos({List<Bioma> lugares = const [], List<int> niveles = const []}) {
+    for (final b in lugares) {
+      if (capitulos[b.id] case final escenas?) _capitulosPendientes.add((b.id, escenas));
+    }
+    for (final n in niveles) {
+      if (capitulosDeNivel[n] case final escenas?) {
+        _capitulosPendientes.add((idCapituloDeNivel(n), escenas));
+      }
+    }
+  }
+
   Musica? _musica;
 
   @override
@@ -96,7 +121,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     // Obra rehecha: se pinta la variante de su dificultad.
     final rehecha = Dependencias.of(context).progreso.de(_clave)?.dificultad;
     _cuadro = catalogo.obtenerDeObra(_clave, dificultad: rehecha);
-    _elegido = _cuadro?.paleta.first.numero;
+    // En el tutorial, elegir el color es el primer paso.
+    _elegido = _tutorial ? null : _cuadro?.paleta.first.numero;
     if (_cuadro == null && (rehecha != null || _libre)) {
       // Variante de dificultad todavía no leída.
       _cargandoCuadro = true;
@@ -161,6 +187,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     switch (r) {
       case Correcto():
         HapticFeedback.selectionClick();
+        _marcarPaso(PasoTutorial.tocarParte);
         _registrar(cuadro, pintadas, [r.regionId]);
       case Incorrecto():
         HapticFeedback.lightImpact();
@@ -175,11 +202,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     final alcanzadas = regionesDeBomba(cuadro, pintadas, p, radio);
     setState(() => _bombaArmada = false);
     if (alcanzadas.isEmpty) return;
-    if (!progreso.usar(Herramienta.bomba)) {
+    if (!_tutorial && !progreso.usar(Herramienta.bomba)) {
       _avisar(Textos.sinBombas);
       return;
     }
     HapticFeedback.heavyImpact();
+    _marcarPaso(PasoTutorial.bomba);
     _registrar(cuadro, pintadas, [for (final r in alcanzadas) r.id]);
   }
 
@@ -190,27 +218,51 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     progreso.pintarRegiones(_clave, nuevas);
     final despues = {...antes, ...nuevas};
 
+    // Algún color quedó completo con esta pintada (también con la bomba).
+    if (cuadro.paleta.any(
+      (c) =>
+          faltantesDeColor(cuadro, antes, c.numero) > 0 &&
+          faltantesDeColor(cuadro, despues, c.numero) == 0,
+    )) {
+      _marcarPaso(PasoTutorial.completarColor);
+    }
+
     if (estaCompleto(cuadro, despues)) {
       if (!progreso.marcarCompletado(_clave)) return;
-      // Plumas en cualquier modo; los niveles, solo con obras nuevas de la historia.
-      final recorrido = cuadrosDelRecorrido(biomas);
-      int enHistoria(Set<String> ids) => recorrido.where(ids.contains).length;
-      final subidos = nivelesSubidos(
-        enHistoria(completadosAntes),
-        enHistoria(progreso.completados),
-      );
-      final ganadas = plumasPorTerminar(nivelesSubidos: subidos);
-      progreso.sumarPlumas(ganadas);
       _festejar();
+      if (_tutorial) {
+        final yaPasado = progreso.tutorialPasado;
+        final ganadas = progreso.terminarTutorial();
+        setState(() {
+          _plumasGanadas = ganadas;
+          _nivelNuevo = yaPasado ? null : 1;
+        });
+        // La primera vez, Gobi cuenta que empieza la historia.
+        if (!yaPasado) _sumarCapitulos(niveles: const [nivelTutorial]);
+        return;
+      }
+      // Plumas en cualquier modo; los niveles, solo con obras nuevas de la historia.
+      final subidos = nivelesSubidos(biomas, completadosAntes, progreso.completados);
+      // En el modo libre, las plumas dependen de la dificultad elegida.
+      final libre = _libre
+          ? Dependencias.of(context).catalogo.dificultad(dificultadDe(_clave)!)
+          : null;
+      final ganadas = libre?.plumas ?? plumasPorTerminar(nivelesSubidos: subidos);
+      progreso.sumarPlumas(ganadas);
       // Modo libre u obra rehecha (ya desbloqueada): sin pieza ni capítulo.
       final nueva = !_libre && !completadosAntes.contains(_clave);
       setState(() {
         _plumasGanadas = ganadas;
-        _nivelNuevo = subidos > 0 ? nivelActual(enHistoria(progreso.completados)).nivel : null;
+        _nivelNuevo = subidos > 0
+            ? nivelActual(biomas, progreso.completados, tutorialPasado: true).nivel
+            : null;
         _destapo = nueva;
       });
       if (nueva) {
-        _capitulosPendientes.addAll(biomasQueSeCompletan(biomas, completadosAntes, _clave));
+        _sumarCapitulos(
+          lugares: biomasQueSeCompletan(biomas, completadosAntes, _clave),
+          niveles: nivelesQueSeCompletan(biomas, completadosAntes, progreso.completados),
+        );
       }
       return;
     }
@@ -244,19 +296,17 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   void _alTerminarTimelapse() {
     if (!mounted) return;
     setState(() => _repitiendo = false);
-    for (final b in _capitulosPendientes) {
-      _contarCapitulo(b);
+    // Gobi cuenta, de una, los capítulos que todavía no se contaron.
+    final progreso = Dependencias.of(context).progreso;
+    final escenas = <Escena>[
+      for (final (id, deCapitulo) in _capitulosPendientes)
+        if (!progreso.capitulosVistos.contains(id)) ...deCapitulo,
+    ];
+    for (final (id, _) in _capitulosPendientes) {
+      progreso.marcarCapituloVisto(id);
     }
     _capitulosPendientes.clear();
-  }
-
-  void _contarCapitulo(Bioma bioma) {
-    final escena = capitulos[bioma.id];
-    final progreso = Dependencias.of(context).progreso;
-    if (escena == null || progreso.capitulosVistos.contains(bioma.id)) return;
-    progreso.marcarCapituloVisto(bioma.id);
-    final escenas = [escena, if (bioma.id == 'isla-morada') ...finalIslas];
-    // Después del festejo, Gobi cuenta el capítulo.
+    if (escenas.isEmpty) return;
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => PantallaHistoria(escenas: escenas, textoFinal: 'Seguir'),
@@ -264,14 +314,42 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     );
   }
 
+  void _marcarPaso(PasoTutorial paso) {
+    if (_tutorial && !_pasos.contains(paso)) setState(() => _pasos.add(paso));
+  }
+
+  /// "Saltar" el tutorial: la primera vez sigue a la galería (nivel 1, con el
+  /// premio pendiente); si ya se había pasado, solo vuelve.
+  void _saltarTutorial() {
+    final progreso = Dependencias.of(context).progreso;
+    if (progreso.tutorialPasado) {
+      Navigator.of(context).maybePop();
+      return;
+    }
+    progreso.saltarTutorial();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(builder: (_) => const Principal(pestanaInicial: Principal.galeria)),
+    );
+  }
+
+  String _textoDelPaso(PasoTutorial paso) => switch (paso) {
+    PasoTutorial.elegirColor => Textos.tutorialElegirColor,
+    PasoTutorial.tocarParte => Textos.tutorialTocarParte,
+    PasoTutorial.completarColor => Textos.tutorialCompletarColor,
+    PasoTutorial.lupa => Textos.tutorialLupa,
+    PasoTutorial.bomba => Textos.tutorialBomba,
+    PasoTutorial.terminar => Textos.tutorialTerminar,
+  };
+
   void _usarLupa(Cuadro cuadro) {
     final progreso = Dependencias.of(context).progreso;
     final lista = pendientesParaLupa(cuadro, _pintadas(cuadro), _elegido);
     if (lista.isEmpty) return;
-    if (!progreso.usar(Herramienta.lupa)) {
+    if (!_tutorial && !progreso.usar(Herramienta.lupa)) {
       _avisar(Textos.sinLupas);
       return;
     }
+    _marcarPaso(PasoTutorial.lupa);
     final region = lista[_indiceLupa % lista.length];
     _indiceLupa++;
     _lienzo.currentState?.enfocar(region);
@@ -322,6 +400,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
               style: const TextStyle(fontSize: 18),
             ),
             actions: [
+              if (_tutorial && !terminado)
+                TextButton(
+                  key: const Key('saltar-tutorial'),
+                  onPressed: _saltarTutorial,
+                  child: const Text(Textos.tutorialSaltar),
+                ),
               if (_musica case final musica?) _BotonesMusica(musica: musica),
               const ContadorPlumas(),
               const SizedBox(width: 12),
@@ -361,6 +445,13 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                         right: 12,
                         top: 8,
                         child: _Aviso('Tocá el cuadro donde quieras tirar la bomba de color'),
+                      )
+                    else if (_tutorial && !terminado && !_festejando)
+                      Positioned(
+                        left: 12,
+                        right: 12,
+                        top: 8,
+                        child: _Aviso(_textoDelPaso(pasoActual(_pasos))),
                       ),
                   ],
                 ),
@@ -370,6 +461,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                   cuadro: cuadro,
                   clave: _clave,
                   libre: _libre,
+                  tutorial: _tutorial,
                   destapo: _destapo,
                   nivelNuevo: _nivelNuevo,
                   plumasGanadas: _plumasGanadas,
@@ -387,7 +479,9 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                         bombas: progreso.cantidad(Herramienta.bomba),
                         alUsarLupa: () => _usarLupa(cuadro),
                         alArmarBomba: () {
-                          if (!_bombaArmada && progreso.cantidad(Herramienta.bomba) == 0) {
+                          if (!_tutorial &&
+                              !_bombaArmada &&
+                              progreso.cantidad(Herramienta.bomba) == 0) {
                             _avisar(Textos.sinBombas);
                             return;
                           }
@@ -399,6 +493,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                         elegido: _elegido,
                         completos: completos,
                         onElegir: (n) => setState(() {
+                          _pasos.add(PasoTutorial.elegirColor);
                           _elegido = n;
                           _bombaArmada = false;
                           _indiceLupa = 0;
@@ -550,10 +645,13 @@ class _Herramienta extends StatelessWidget {
   @override
   Widget build(BuildContext context) => FilledButton.tonalIcon(
     key: clave,
-    style: FilledButton.styleFrom(
-      backgroundColor: activa ? const Color(0xFFE8A33D) : null,
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      visualDensity: VisualDensity.compact,
+    style: Tema.botonAqua.merge(
+      FilledButton.styleFrom(
+        // Armada (la bomba): verde agua lleno.
+        backgroundColor: activa ? Tema.aqua : null,
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+        visualDensity: VisualDensity.compact,
+      ),
     ),
     onPressed: alTocar,
     icon: Icon(icono, size: 18),
@@ -575,6 +673,7 @@ class _PanelFinal extends StatelessWidget {
     required this.cuadro,
     required this.clave,
     required this.libre,
+    required this.tutorial,
     required this.destapo,
     required this.nivelNuevo,
     required this.plumasGanadas,
@@ -584,6 +683,7 @@ class _PanelFinal extends StatelessWidget {
   /// Clave del progreso (cuadro de la historia o variante del modo libre).
   final String clave;
   final bool libre;
+  final bool tutorial;
 
   /// Esta vez se destapó una pieza (no al reabrir una terminada ni al rehacer).
   final bool destapo;
@@ -603,7 +703,11 @@ class _PanelFinal extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              libre ? Textos.libreTerminado : cuadro.meta.mensajeMututu,
+              tutorial
+                  ? (nivelNuevo == null ? Textos.tutorialRepaso : Textos.tutorialListo)
+                  : libre
+                  ? Textos.libreTerminado
+                  : cuadro.meta.mensajeMututu,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 16, color: Tema.morado),
             ),
@@ -652,21 +756,28 @@ class _PanelFinal extends StatelessWidget {
               spacing: 8,
               children: [
                 OutlinedButton(
-                  style: OutlinedButton.styleFrom(foregroundColor: Tema.morado),
                   onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: clave)),
                   ),
                   child: const Text(Textos.verComoLoPinte),
                 ),
-                if (libre)
+                if (tutorial)
                   FilledButton(
-                    style: FilledButton.styleFrom(backgroundColor: Tema.morado),
+                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const Principal(pestanaInicial: Principal.galeria),
+                      ),
+                      (ruta) => ruta.isFirst,
+                    ),
+                    child: const Text(Textos.tutorialSeguir),
+                  )
+                else if (libre)
+                  FilledButton(
                     onPressed: () => Navigator.of(context).maybePop(),
                     child: const Text(Textos.libreOtro),
                   )
                 else
                   FilledButton(
-                    style: FilledButton.styleFrom(backgroundColor: Tema.morado),
                     // Vuelve a las pestañas (sobre la portada) mostrando el mapa.
                     onPressed: () => Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute<void>(

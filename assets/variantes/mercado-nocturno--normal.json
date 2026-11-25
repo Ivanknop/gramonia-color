@@ -1,0 +1,49 @@
+{
+  "id": "mercado-nocturno--normal",
+  "titulo": "El mercado nocturno",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4E6756"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BCAB73"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#996846"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#534139"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#334D47"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2E363A"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#7C4B38"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#8D8563"
+    }
+  ],
+  "mensajeMututu": "Los farolitos del mercado se prendieron otra vez. Los animales vuelven a regatear… ¡y a probar de todo!"
+}

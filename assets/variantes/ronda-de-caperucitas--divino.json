@@ -1,0 +1,259 @@
+{
+  "id": "ronda-de-caperucitas--divino",
+  "titulo": "La ronda de las Caperucitas",
+  "categoria": "persona",
+  "dificultad": 5,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#283D37"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#55342F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2F473B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F2AB73"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#445946"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3A5342"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#575931"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#536242"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F9C67C"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#98984F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3E482F"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#B68F5A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#3B302E"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F5BA74"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#74773B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#958A48"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#342628"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#516C53"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#B3764D"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#A65A42"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#B6B367"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#5F6F49"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#7A8B5A"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#544038"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#CB734E"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#634032"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#FBD98E"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#DAA766"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#99AA6B"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#A7714D"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#87473A"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#D6945F"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#A64739"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#885943"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#926448"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#936E4C"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#77503D"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#6F7A50"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#734337"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#644B3D"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#775842"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#D9BE77"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#6E6D3E"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#465435"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#8D7C4A"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#585943"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#3D493E"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#534B3B"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#3C3C33"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#6E6441"
+    }
+  ],
+  "mensajeMututu": "¡Volvieron todas las caperuzas, de todos los colores! La ronda de cuentos puede seguir."
+}

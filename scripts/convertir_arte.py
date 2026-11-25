@@ -29,32 +29,23 @@ CATALOGO = RAIZ / "scripts" / "catalogo-arte.json"
 DIR_MAPA = RAIZ / "assets" / "mapa"
 
 # Niveles del modo historia (igual que lib/engine/niveles.dart, con los mismos
-# valores en los tests): valor(n) = valor(n-1) + valor(n-1) // 2.
-OBRAS_DEL_NIVEL_1 = 2
+# valores en los tests): colores(n) = colores(n-1) + colores(n-1) // 2, con el
+# nivel 1 en 10. El nivel de cada obra va en catalogo-arte.json.
 COLORES_DEL_NIVEL_1 = 10
 
 
 def valor_del_nivel(n: int, inicial: int) -> int:
     if n < 1:
-        raise ValueError("los niveles empiezan en 1")
+        raise ValueError("los niveles con obras empiezan en 1")
     valor = inicial
     for _ in range(1, n):
         valor += valor // 2
     return valor
 
 
-def nivel_de_obra(indice: int) -> int:
-    """Nivel (desde 1) de la obra en la posición `indice` (desde 0) del recorrido."""
-    nivel, hasta = 1, valor_del_nivel(1, OBRAS_DEL_NIVEL_1)
-    while indice >= hasta:
-        nivel += 1
-        hasta += valor_del_nivel(nivel, OBRAS_DEL_NIVEL_1)
-    return nivel
-
-
-def colores_de_obra(indice: int) -> int:
-    """Colores de la obra en la posición `indice` del recorrido: los de su nivel."""
-    return valor_del_nivel(nivel_de_obra(indice), COLORES_DEL_NIVEL_1)
+def colores_del_nivel(nivel: int) -> int:
+    """Colores de cada obra del nivel `nivel`."""
+    return valor_del_nivel(nivel, COLORES_DEL_NIVEL_1)
 
 
 DIR_CUADROS = RAIZ / "assets" / "cuadros"
@@ -74,11 +65,14 @@ def ancho_para(regiones: int) -> int:
 
 
 def fuente(c: dict) -> Path:
-    """Imagen de origen: el original de arte/ o, si ya se borró, la ilustración del cuadro."""
+    """
+    Imagen de origen: el original de arte/ o, si ya se borró, la ilustración
+    del cuadro (o la del cuadro `desde`, si la toma prestada, como el tutorial).
+    """
     original = RAIZ / "arte" / c["imagen"]
     if original.exists():
         return original
-    ilustracion = RAIZ / "assets" / "cuadros" / f"{c['id']}.webp"
+    ilustracion = RAIZ / "assets" / "cuadros" / f"{c.get('desde', c['id'])}.webp"
     if ilustracion.exists():
         return ilustracion
     raise FileNotFoundError(f"No está {original} ni {ilustracion}")
@@ -170,6 +164,19 @@ def convertir_musica() -> None:
         print(f"Música → {destino} ({destino.stat().st_size // 1024} KB)")
 
 
+def convertir_cuadro(p: dict, colores: int, orden: int) -> None:
+    """Un cuadro de la historia (o el tutorial) con sus colores exactos."""
+    imagen = fuente(p)
+    argv = argumentos(p, imagen, p["id"], colores, p["regiones"])
+    argv += ["--orden", str(orden)]
+    # Si la fuente ya es la ilustración del cuadro, no se reescribe
+    # (se volvería a comprimir con pérdida).
+    if imagen == DIR_CUADROS / f"{p['id']}.webp":
+        argv.append("--sin-ilustracion")
+    ancho = p.get("ancho") or ancho_para(p["regiones"])
+    convertir_con_objetivo(argv, p["regiones"], ancho, DIR_CUADROS, p["id"])
+
+
 def main() -> int:
     catalogo = json.loads(CATALOGO.read_text(encoding="utf-8"))
     base = catalogo["por_defecto"]
@@ -179,20 +186,18 @@ def main() -> int:
         convertir_mapa(catalogo)
     if not pedidos or "musica" in pedidos:
         convertir_musica()
+    if not pedidos or "tutorial" in pedidos:
+        # El tutorial va primero en el catálogo (orden 0) y no tiene variantes.
+        t = {**base, **catalogo["tutorial"]}
+        convertir_cuadro(t, t["colores"], 0)
     todas_las_variantes = not pedidos or "variantes" in pedidos
     for orden, c in enumerate(catalogo["cuadros"], start=1):
         p = {**base, **c}
         if not pedidos or c["id"] in pedidos:
-            # En la historia, los colores salen del nivel de la obra (su lugar en el recorrido).
-            imagen = fuente(p)
-            argv = argumentos(p, imagen, p["id"], colores_de_obra(orden - 1), p["regiones"])
-            argv += ["--orden", str(orden)]
-            # Si la fuente ya es la ilustración del cuadro, no se reescribe
-            # (se volvería a comprimir con pérdida).
-            if imagen.parent.name == "cuadros":
-                argv.append("--sin-ilustracion")
-            ancho = p.get("ancho") or ancho_para(p["regiones"])
-            convertir_con_objetivo(argv, p["regiones"], ancho, DIR_CUADROS, p["id"])
+            # En la historia, los colores salen del nivel de la obra; los de
+            # solo modo libre traen los suyos (se juegan en las variantes).
+            colores = p["colores"] if p.get("solo_libre") else colores_del_nivel(p["nivel"])
+            convertir_cuadro(p, colores, orden)
         if todas_las_variantes or (c["id"] in pedidos and not sin_variantes):
             convertir_variantes(p)
     print("Listo. Si hay cuadros nuevos, asignales una pieza en lib/datos/biomas.dart.")

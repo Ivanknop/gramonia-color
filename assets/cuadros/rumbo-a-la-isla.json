@@ -7,249 +7,369 @@
     {
       "numero": 1,
       "nombre": "Color 1",
-      "hex": "#4C392F"
+      "hex": "#7E6D81"
     },
     {
       "numero": 2,
       "nombre": "Color 2",
-      "hex": "#22232A"
+      "hex": "#424354"
     },
     {
       "numero": 3,
       "nombre": "Color 3",
-      "hex": "#382A23"
+      "hex": "#211815"
     },
     {
       "numero": 4,
       "nombre": "Color 4",
-      "hex": "#1B1411"
+      "hex": "#594F5A"
     },
     {
       "numero": 5,
       "nombre": "Color 5",
-      "hex": "#201815"
+      "hex": "#1E1512"
     },
     {
       "numero": 6,
       "nombre": "Color 6",
-      "hex": "#3E3E4A"
+      "hex": "#B97E69"
     },
     {
       "numero": 7,
       "nombre": "Color 7",
-      "hex": "#7E6D81"
+      "hex": "#3D3D46"
     },
     {
       "numero": 8,
       "nombre": "Color 8",
-      "hex": "#646078"
+      "hex": "#24252C"
     },
     {
       "numero": 9,
       "nombre": "Color 9",
-      "hex": "#3D2D25"
+      "hex": "#3D2E26"
     },
     {
       "numero": 10,
       "nombre": "Color 10",
-      "hex": "#271D19"
+      "hex": "#433129"
     },
     {
       "numero": 11,
       "nombre": "Color 11",
-      "hex": "#2A211D"
+      "hex": "#E9B380"
     },
     {
       "numero": 12,
       "nombre": "Color 12",
-      "hex": "#5B4743"
+      "hex": "#A07167"
     },
     {
       "numero": 13,
       "nombre": "Color 13",
-      "hex": "#514B54"
+      "hex": "#43342B"
     },
     {
       "numero": 14,
       "nombre": "Color 14",
-      "hex": "#715958"
+      "hex": "#241B17"
     },
     {
       "numero": 15,
       "nombre": "Color 15",
-      "hex": "#474553"
+      "hex": "#47434D"
     },
     {
       "numero": 16,
       "nombre": "Color 16",
-      "hex": "#B97E69"
+      "hex": "#514B54"
     },
     {
       "numero": 17,
       "nombre": "Color 17",
-      "hex": "#E9B380"
+      "hex": "#513F36"
     },
     {
       "numero": 18,
       "nombre": "Color 18",
-      "hex": "#34333B"
+      "hex": "#CB8E6B"
     },
     {
       "numero": 19,
       "nombre": "Color 19",
-      "hex": "#4A4A5B"
+      "hex": "#715958"
     },
     {
       "numero": 20,
       "nombre": "Color 20",
-      "hex": "#A07167"
+      "hex": "#615D75"
     },
     {
       "numero": 21,
       "nombre": "Color 21",
-      "hex": "#504F63"
+      "hex": "#4D392F"
     },
     {
       "numero": 22,
       "nombre": "Color 22",
-      "hex": "#423129"
+      "hex": "#34333B"
     },
     {
       "numero": 23,
       "nombre": "Color 23",
-      "hex": "#2E221C"
+      "hex": "#373740"
     },
     {
       "numero": 24,
       "nombre": "Color 24",
-      "hex": "#594F5A"
+      "hex": "#2E241D"
     },
     {
       "numero": 25,
       "nombre": "Color 25",
-      "hex": "#CB8E6B"
+      "hex": "#846B73"
     },
     {
       "numero": 26,
       "nombre": "Color 26",
-      "hex": "#373740"
+      "hex": "#68565B"
     },
     {
       "numero": 27,
       "nombre": "Color 27",
-      "hex": "#655151"
+      "hex": "#86625D"
     },
     {
       "numero": 28,
       "nombre": "Color 28",
-      "hex": "#86625D"
+      "hex": "#50464B"
     },
     {
       "numero": 29,
       "nombre": "Color 29",
-      "hex": "#72626F"
+      "hex": "#666179"
     },
     {
       "numero": 30,
       "nombre": "Color 30",
-      "hex": "#2F2520"
+      "hex": "#202126"
     },
     {
       "numero": 31,
       "nombre": "Color 31",
-      "hex": "#322F32"
+      "hex": "#5A443A"
     },
     {
       "numero": 32,
       "nombre": "Color 32",
-      "hex": "#846B73"
+      "hex": "#2E2F36"
     },
     {
       "numero": 33,
       "nombre": "Color 33",
-      "hex": "#43342B"
+      "hex": "#18120F"
     },
     {
       "numero": 34,
       "nombre": "Color 34",
-      "hex": "#42404E"
+      "hex": "#504F63"
     },
     {
       "numero": 35,
       "nombre": "Color 35",
-      "hex": "#605662"
+      "hex": "#72626F"
     },
     {
       "numero": 36,
       "nombre": "Color 36",
-      "hex": "#463E40"
+      "hex": "#5C4A49"
     },
     {
       "numero": 37,
       "nombre": "Color 37",
-      "hex": "#504341"
+      "hex": "#655151"
     },
     {
       "numero": 38,
       "nombre": "Color 38",
-      "hex": "#916E6E"
+      "hex": "#342924"
     },
     {
       "numero": 39,
       "nombre": "Color 39",
-      "hex": "#332620"
+      "hex": "#494756"
     },
     {
       "numero": 40,
       "nombre": "Color 40",
-      "hex": "#9E7A7A"
+      "hex": "#382B25"
     },
     {
       "numero": 41,
       "nombre": "Color 41",
-      "hex": "#7A5F60"
+      "hex": "#47362E"
     },
     {
       "numero": 42,
       "nombre": "Color 42",
-      "hex": "#454350"
+      "hex": "#916E6E"
     },
     {
       "numero": 43,
       "nombre": "Color 43",
-      "hex": "#3E3029"
+      "hex": "#291F1B"
     },
     {
       "numero": 44,
       "nombre": "Color 44",
-      "hex": "#47362E"
+      "hex": "#403028"
     },
     {
       "numero": 45,
       "nombre": "Color 45",
-      "hex": "#615A6D"
+      "hex": "#9E7A7A"
     },
     {
       "numero": 46,
       "nombre": "Color 46",
-      "hex": "#251C18"
+      "hex": "#7A5F60"
     },
     {
       "numero": 47,
       "nombre": "Color 47",
-      "hex": "#2F2A2A"
+      "hex": "#4A4B5F"
     },
     {
       "numero": 48,
       "nombre": "Color 48",
-      "hex": "#221B18"
+      "hex": "#312520"
     },
     {
       "numero": 49,
       "nombre": "Color 49",
+      "hex": "#2A2A30"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#2F2521"
+    },
+    {
+      "numero": 51,
+      "nombre": "Color 51",
+      "hex": "#585669"
+    },
+    {
+      "numero": 52,
+      "nombre": "Color 52",
+      "hex": "#3E3029"
+    },
+    {
+      "numero": 53,
+      "nombre": "Color 53",
+      "hex": "#332620"
+    },
+    {
+      "numero": 54,
+      "nombre": "Color 54",
+      "hex": "#251C18"
+    },
+    {
+      "numero": 55,
+      "nombre": "Color 55",
+      "hex": "#372922"
+    },
+    {
+      "numero": 56,
+      "nombre": "Color 56",
+      "hex": "#3C2C24"
+    },
+    {
+      "numero": 57,
+      "nombre": "Color 57",
+      "hex": "#42404E"
+    },
+    {
+      "numero": 58,
+      "nombre": "Color 58",
+      "hex": "#281D19"
+    },
+    {
+      "numero": 59,
+      "nombre": "Color 59",
+      "hex": "#1E1814"
+    },
+    {
+      "numero": 60,
+      "nombre": "Color 60",
+      "hex": "#2A201B"
+    },
+    {
+      "numero": 61,
+      "nombre": "Color 61",
+      "hex": "#362F2E"
+    },
+    {
+      "numero": 62,
+      "nombre": "Color 62",
+      "hex": "#3E3F4E"
+    },
+    {
+      "numero": 63,
+      "nombre": "Color 63",
+      "hex": "#49382F"
+    },
+    {
+      "numero": 64,
+      "nombre": "Color 64",
+      "hex": "#2C211C"
+    },
+    {
+      "numero": 65,
+      "nombre": "Color 65",
+      "hex": "#463E40"
+    },
+    {
+      "numero": 66,
+      "nombre": "Color 66",
+      "hex": "#2A221F"
+    },
+    {
+      "numero": 67,
+      "nombre": "Color 67",
       "hex": "#3F383A"
+    },
+    {
+      "numero": 68,
+      "nombre": "Color 68",
+      "hex": "#2E221C"
+    },
+    {
+      "numero": 69,
+      "nombre": "Color 69",
+      "hex": "#382B22"
+    },
+    {
+      "numero": 70,
+      "nombre": "Color 70",
+      "hex": "#201B19"
+    },
+    {
+      "numero": 71,
+      "nombre": "Color 71",
+      "hex": "#615A6D"
+    },
+    {
+      "numero": 72,
+      "nombre": "Color 72",
+      "hex": "#474553"
+    },
+    {
+      "numero": 73,
+      "nombre": "Color 73",
+      "hex": "#261C18"
     }
   ],
   "mensajeMututu": "La isla del horizonte recuperó su luz. ¿Será ahí donde Mututu esconde los colores?",
-  "orden": 18
+  "orden": 20
 }

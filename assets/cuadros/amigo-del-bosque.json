@@ -1,0 +1,60 @@
+{
+  "id": "amigo-del-bosque",
+  "titulo": "Un amigo en el bosque",
+  "categoria": "animal",
+  "dificultad": 3,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#D9DEDE"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B7C2BE"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#4D6358"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#698078"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1D262A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#859993"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#2C3A39"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#3A4841"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#97A6A2"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A3B2AC"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa.",
+  "orden": 23
+}

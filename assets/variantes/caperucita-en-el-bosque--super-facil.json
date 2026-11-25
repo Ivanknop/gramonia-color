@@ -1,0 +1,29 @@
+{
+  "id": "caperucita-en-el-bosque--super-facil",
+  "titulo": "Caperucita en el bosque",
+  "categoria": "arte",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#5B1F09"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1A1311"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#544730"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#9D9C6E"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

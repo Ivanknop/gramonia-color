@@ -1,0 +1,29 @@
+{
+  "id": "el-colibri--super-facil",
+  "titulo": "El colibrí",
+  "categoria": "animal",
+  "dificultad": 1,
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1A161A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#41223B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#261826"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#675773"
+    }
+  ],
+  "mensajeMututu": "¡Obra terminada! Quedó hermosa."
+}

@@ -1,6 +1,6 @@
-/// Galería: las obras agrupadas por lugar de Gramonia, en el orden del juego.
-/// Los lugares todavía bloqueados se muestran con candado; las piezas sin obra,
-/// como "próximamente".
+/// Galería: el tutorial (nivel 0) y las obras agrupadas por nivel y por lugar
+/// de Gramonia, en el orden del juego. Los lugares todavía bloqueados se
+/// muestran con candado; las piezas sin obra, como "próximamente".
 library;
 
 import 'package:material_ui/material_ui.dart';
@@ -31,14 +31,100 @@ class Galeria extends StatelessWidget {
       builder: (context, _) {
         final completados = dep.progreso.completados;
         final estados = estadoBiomas(biomas, completados);
-        final hechas = cuadrosDelRecorrido(biomas).where(completados.contains).length;
-        return ListView.builder(
+        final nivel = nivelActual(biomas, completados, tutorialPasado: dep.progreso.tutorialPasado);
+        return ListView(
           padding: const EdgeInsets.symmetric(vertical: 12),
-          itemCount: estados.length + 1,
-          itemBuilder: (context, i) =>
-              i == 0 ? _Nivel(nivelActual(hechas)) : _SeccionBioma(estado: estados[i - 1]),
+          children: [
+            _Nivel(nivel),
+            const _TituloNivel(nivelTutorial),
+            const _SeccionTutorial(),
+            for (final (i, e) in estados.indexed) ...[
+              if (i == 0 || estados[i - 1].bioma.nivel != e.bioma.nivel)
+                _TituloNivel(e.bioma.nivel),
+              _SeccionBioma(estado: e),
+            ],
+          ],
         );
       },
+    );
+  }
+}
+
+/// Encabezado de cada nivel de la galería.
+class _TituloNivel extends StatelessWidget {
+  const _TituloNivel(this.nivel);
+  final int nivel;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+    child: Text(
+      nivel == nivelTutorial ? 'Nivel 0 · ${Textos.tutorial}' : Textos.nivel(nivel),
+      style: const TextStyle(
+        fontSize: 13,
+        letterSpacing: 1,
+        fontWeight: FontWeight.w800,
+        color: Tema.gris,
+      ),
+    ),
+  );
+}
+
+/// El tutorial: se puede volver a hacer (sin premio, si ya se dio).
+class _SeccionTutorial extends StatelessWidget {
+  const _SeccionTutorial();
+
+  @override
+  Widget build(BuildContext context) {
+    final dep = Dependencias.of(context);
+    final progreso = dep.progreso;
+    final terminado = progreso.de(idTutorial)?.terminado ?? false;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 18),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: dep.catalogo.tieneImagen(idTutorial)
+                ? Image.asset(
+                    'assets/cuadros/$idTutorial.webp',
+                    fit: BoxFit.cover,
+                    cacheWidth: 160,
+                    width: 64,
+                    height: 82,
+                  )
+                : const ColoredBox(
+                    color: Color(0xFFDDDDDD),
+                    child: SizedBox(width: 64, height: 82),
+                  ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(Textos.tutorialDetalle, style: TextStyle(color: Tema.morado)),
+                if (!progreso.tutorialPremiado)
+                  Text(
+                    Textos.tutorialPremio(ReglasPlumas.porTutorial),
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF8A5A1E)),
+                  ),
+                const SizedBox(height: 4),
+                OutlinedButton(
+                  key: const Key('tutorial'),
+                  onPressed: () {
+                    if (terminado) progreso.reiniciarTutorial();
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(builder: (_) => const Pintar(cuadroId: idTutorial)),
+                    );
+                  },
+                  child: Text(terminado ? Textos.tutorialVolverAHacer : Textos.tutorialHacer),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -68,12 +154,14 @@ class _Nivel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  Textos.paraElNivel(estado.hechas, estado.necesarias, estado.nivel + 1),
+                  estado.hechas >= estado.necesarias
+                      ? Textos.nivelCompleto(estado.nivel)
+                      : Textos.paraElNivel(estado.hechas, estado.necesarias, estado.nivel + 1),
                   style: const TextStyle(fontSize: 13, color: Tema.gris),
                 ),
                 const SizedBox(height: 4),
                 LinearProgressIndicator(
-                  value: estado.hechas / estado.necesarias,
+                  value: estado.necesarias == 0 ? 1 : estado.hechas / estado.necesarias,
                   color: Tema.morado,
                   backgroundColor: const Color(0x223D2C5E),
                 ),
@@ -128,7 +216,7 @@ class _SeccionBioma extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.fromLTRB(16, 2, 16, 0),
               child: Text(
-                'Se desbloquea al recuperar el lugar anterior',
+                Textos.bloqueadoPorNivel,
                 style: TextStyle(fontSize: 13, color: Tema.gris),
               ),
             ),
