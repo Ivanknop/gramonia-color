@@ -152,7 +152,7 @@ abstract final class Textos {
   static const tituloColor = 'a Color';
 
   /// Versión de la app (la misma que `version` en pubspec.yaml; lo verifica un test).
-  static const version = 'v1.0.0';
+  static const version = 'v1.1.0';
   static const modoHistoria = 'Modo historia';
   static const empezar = '¡Empezar!';
   static const portada = 'Portada';
