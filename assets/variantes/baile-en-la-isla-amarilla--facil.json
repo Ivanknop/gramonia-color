@@ -1,0 +1,36 @@
+{
+  "id": "baile-en-la-isla-amarilla--facil",
+  "titulo": "Baile en la Isla Amarilla",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#574235"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A0896E"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#946E4E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#BAA077"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#72645C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#DCC084"
+    }
+  ]
+}

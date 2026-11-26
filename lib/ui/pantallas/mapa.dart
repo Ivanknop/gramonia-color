@@ -1,8 +1,3 @@
-/// Mapa de Gramonia (provisorio): la ilustración en gris que se va coloreando.
-/// Cada obra terminada colorea una mancha de la zona de su bioma; con el
-/// bioma completo, se colorea la zona entera. Debajo, la lista de lugares.
-library;
-
 import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
@@ -11,6 +6,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
 import '../../datos/mapa.dart';
+import '../../datos/textos.dart';
 import '../../engine/motor.dart';
 import '../comun.dart';
 
@@ -50,7 +46,6 @@ class Mapa extends StatelessWidget {
   }
 }
 
-/// Dibuja el mapa en gris y colorea las partes recuperadas.
 class PintorMapa extends CustomPainter {
   PintorMapa({required this.imagen, required this.estados});
 
@@ -156,13 +151,15 @@ class _FilaBioma extends StatelessWidget {
     final conObra = b.cuadroIds.length;
     final String detalle;
     if (!estado.accesible) {
-      detalle = 'Bloqueado: primero recuperá el lugar anterior';
+      detalle = Textos.lugarBloqueado;
     } else if (estado.completo) {
       detalle = b.descripcion;
     } else {
-      detalle =
-          '${estado.reveladas.length} de ${estado.total} partes recuperadas'
-          '${conObra < estado.total ? ' (${estado.total - conObra} próximamente)' : ''}';
+      detalle = Textos.partesRecuperadas(
+        estado.reveladas.length,
+        estado.total,
+        proximamente: estado.total - conObra,
+      );
     }
     return Card(
       color: Colors.white,
@@ -188,7 +185,6 @@ class _FilaBioma extends StatelessWidget {
   }
 }
 
-/// Contorno de una zona del mapa, en píxeles de la ilustración.
 ui.Path pathDeZona(ZonaMapa zona) {
   final path = ui.Path()..fillType = ui.PathFillType.evenOdd;
   for (final pol in zona.poligonos) {

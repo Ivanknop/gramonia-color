@@ -31,10 +31,8 @@ void main() {
     lugar('islas', 3, [null, null]),
   ];
 
-  test('lugares y nivel de cada obra', () {
+  test('lugares de cada nivel', () {
     expect(lugaresDelNivel(biomas, 2).map((b) => b.id), ['bosque', 'prado']);
-    expect(nivelDeObra(biomas, 'p1'), 2);
-    expect(nivelDeObra(biomas, 'suelta'), isNull);
   });
 
   test('nivel 0 hasta pasar el tutorial', () {

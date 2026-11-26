@@ -1,0 +1,256 @@
+{
+  "id": "lobitos-de-la-isla-roja--divino",
+  "titulo": "Los lobitos de la Isla Roja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#56A7BC"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C0664D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#893A35"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#DE8157"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F1C47B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4292AF"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#DCAE74"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C2D9C9"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D06F53"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#88CCD3"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#FBD58A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#FCEEBC"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#DB7A58"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#5D2B28"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#74756F"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#623830"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#FBC880"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#89B3AE"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#397D9B"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#B35846"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#E4905C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#FDF4C1"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#81563F"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#FEF9D2"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#A04A3E"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#BE9468"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#5CB0C3"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#EBBB78"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#A06E4B"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#FDECB0"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#FBE7A6"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#CF7954"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#306788"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#A55444"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#FBE099"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#E6AF71"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#89493B"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#92563F"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#714636"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#6FB2BD"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#CC6951"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#9E6346"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#776252"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#65493C"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#C2AF86"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#F6D997"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#74533F"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#A57A55"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#6398A6"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#524A46"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "la-casita-del-valle--facil",
+  "titulo": "La casita del valle",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3B733D"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4EBDE7"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#82D3D5"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E8FAFD"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#6AC0B3"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B0E2C7"
+    }
+  ]
+}

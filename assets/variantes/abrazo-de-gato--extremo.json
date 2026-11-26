@@ -1,0 +1,126 @@
+{
+  "id": "abrazo-de-gato--extremo",
+  "titulo": "Abrazo de gato",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#9A9FB3"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#626796"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#8285AF"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#342F33"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#B78E65"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8087A1"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D2BB7E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#7073A2"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#6D7597"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#6B699A"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#F4EA92"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#868DB1"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#727BA2"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#B3B3B0"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#7E7BA4"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#5F5A82"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#E6CD8E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#9892A2"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#8E8FAD"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#C6A47B"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#787AA2"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#917B7F"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#A8A5A8"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#796A84"
+    }
+  ]
+}

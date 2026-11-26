@@ -1,0 +1,26 @@
+{
+  "id": "minas-de-la-isla-naranja--super-facil",
+  "titulo": "Las minas de la Isla Naranja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#894926"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#403631"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AD8C5F"
+    }
+  ]
+}

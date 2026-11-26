@@ -1,0 +1,36 @@
+{
+  "id": "sirenhadas-de-la-isla-violeta--facil",
+  "titulo": "Las SirenHadas de la Isla Violeta",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#11102B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3E2C4F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#1A1335"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6D5679"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2D2045"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2A1540"
+    }
+  ]
+}

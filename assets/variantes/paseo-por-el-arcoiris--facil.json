@@ -1,0 +1,36 @@
+{
+  "id": "paseo-por-el-arcoiris--facil",
+  "titulo": "Paseo por el arcoíris",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#150C6F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#2B177F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#362183"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5C3B89"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#8F657A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4C2B8B"
+    }
+  ]
+}

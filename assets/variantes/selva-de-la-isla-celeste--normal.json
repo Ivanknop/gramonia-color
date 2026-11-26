@@ -1,0 +1,46 @@
+{
+  "id": "selva-de-la-isla-celeste--normal",
+  "titulo": "La selva de la Isla Celeste",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#7E7DA1"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3E7AA7"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#2A5B91"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C2B3B3"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#5EAAC5"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#223263"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#304679"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#595E8E"
+    }
+  ]
+}

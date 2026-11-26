@@ -1,0 +1,36 @@
+{
+  "id": "otono-en-la-montana--facil",
+  "titulo": "Otoño en la montaña",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#ACCCC7"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#80422B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#BC653C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#998573"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#B7D5D0"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#ABBEB1"
+    }
+  ]
+}

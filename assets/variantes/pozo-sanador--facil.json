@@ -1,8 +1,6 @@
 {
   "id": "pozo-sanador--facil",
   "titulo": "El Pozo Sanador",
-  "categoria": "paisaje",
-  "dificultad": 2,
   "paleta": [
     {
       "numero": 1,

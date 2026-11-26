@@ -1,17 +1,6 @@
-/// Dibuja un cuadro con CustomPainter.
-///
-/// Con ilustración (cuadros de arte/):
-///  - lo que falta pintar es blanco con contornos negros y su número, como un
-///    libro para colorear (blanco y negro puro, sin grises);
-///  - cada región pintada se rellena con la ilustración a color (luces,
-///    sombras y brillos originales, no un color plano);
-///  - al pintar, el color se expande desde donde se tocó hasta llenar la
-///    región ([animaciones], que avanzan con [reloj]);
-///  - las regiones pendientes del color elegido se marcan con un tinte suave.
-/// Sin ilustración: colores planos y grises.
-///
-/// Se dibuja en coordenadas del viewBox escaladas por [factor]; el zoom de
-/// InteractiveViewer transforma el dibujo vectorial, así que se ve nítido.
+/// Con ilustración, lo que falta pintar es blanco con contorno negro (libro para colorear) y cada
+/// región pintada se rellena con la ilustración a color: sus luces y sombras, no un color plano.
+/// Sin ilustración, colores planos y grises.
 library;
 
 import 'dart:ui' as ui;
@@ -28,14 +17,10 @@ const _bordePlano = Color(0xB3404040);
 const _colorNumero = Color(0xFF222222);
 const _destacado = Color(0xFFFFB300);
 
-/// Relleno en curso de una región: el color crece desde [origen].
 class RellenoAnimado {
   const RellenoAnimado({required this.origen, required this.inicio, required this.duracion});
 
-  /// Punto (viewBox) desde donde se expande el color.
   final Punto origen;
-
-  /// Momento de inicio, medido en el [PintorCuadro.reloj].
   final Duration inicio;
   final Duration duracion;
 }
@@ -56,25 +41,15 @@ class PintorCuadro extends CustomPainter {
 
   final Cuadro cuadro;
   final Set<String> pintadas;
-
-  /// Puntos de pantalla por unidad del viewBox.
   final double factor;
-
-  /// Ilustración original (null = colores planos).
   final ui.Image? imagen;
   final int? numeroElegido;
   final bool mostrarNumeros;
 
   /// Ancho del contorno en unidades del viewBox (~300 de lado mayor).
   final double anchoBorde;
-
-  /// Región señalada por la lupa (se dibuja con un anillo).
   final String? regionDestacada;
-
-  /// Regiones pintadas cuyo color todavía se está expandiendo.
   final Map<String, RellenoAnimado> animaciones;
-
-  /// Tiempo de las animaciones; cada tic vuelve a dibujar.
   final ValueListenable<Duration>? reloj;
 
   @override
@@ -216,7 +191,6 @@ class PintorCuadro extends CustomPainter {
       old.mostrarNumeros != mostrarNumeros;
 }
 
-/// Paths y colores de cada cuadro, armados una sola vez.
 class _Recursos {
   _Recursos(Cuadro c)
     : paths = [for (final r in c.regiones) _pathDe(r.comandos)],

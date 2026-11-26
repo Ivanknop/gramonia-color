@@ -1,11 +1,6 @@
-/// Modelos de cuadro y su construcción a partir del JSON de metadatos y el SVG.
-library;
-
 import 'etiquetas.dart';
 import 'geometria.dart';
 import 'svg.dart';
-
-enum Categoria { paisaje, animal, objeto, persona, arte }
 
 /// Un color de la paleta. El número es el que ve el jugador.
 class ColorPaleta {
@@ -24,39 +19,22 @@ class ColorPaleta {
   final String hex;
 }
 
-/// Metadatos de un cuadro (archivo `<id>.json`).
 class MetaCuadro {
-  const MetaCuadro({
-    required this.id,
-    required this.titulo,
-    required this.categoria,
-    required this.dificultad,
-    required this.paleta,
-    this.orden = 0,
-  });
+  const MetaCuadro({required this.id, required this.titulo, required this.paleta, this.orden = 0});
 
   factory MetaCuadro.desdeJson(Map<String, dynamic> j) => MetaCuadro(
     id: j['id'] as String,
     titulo: j['titulo'] as String,
-    categoria: Categoria.values.byName(j['categoria'] as String),
-    dificultad: j['dificultad'] as int,
     paleta: [for (final c in j['paleta'] as List) ColorPaleta.desdeJson(c as Map<String, dynamic>)],
     orden: (j['orden'] as int?) ?? 0,
   );
 
   final String id;
   final String titulo;
-  final Categoria categoria;
-
-  /// 1 = muy fácil … 5 = muy difícil.
-  final int dificultad;
   final List<ColorPaleta> paleta;
-
-  /// Posición en la galería (menor primero).
   final int orden;
 }
 
-/// Una región pintable, lista para el motor y para dibujarse.
 class Region {
   const Region({
     required this.id,
@@ -69,8 +47,6 @@ class Region {
   });
 
   final String id;
-
-  /// Número de la paleta que corresponde a esta región.
   final int numero;
 
   /// Comandos de dibujo con las curvas reales (para el Path de Flutter).
@@ -87,7 +63,6 @@ class Region {
   final double radioEtiqueta;
 }
 
-/// Un cuadro completo: metadatos + geometría.
 class Cuadro {
   const Cuadro({
     required this.meta,
@@ -102,7 +77,6 @@ class Cuadro {
 
   /// En orden de dibujo: las últimas quedan arriba.
   final List<Region> regiones;
-
   String get id => meta.id;
   List<ColorPaleta> get paleta => meta.paleta;
 }

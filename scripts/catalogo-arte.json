@@ -11,7 +11,6 @@
       "imagen": "etapa2-rocanon.jpeg",
       "id": "nido-de-rocanon",
       "titulo": "El nido del Rocanón",
-      "categoria": "paisaje",
       "regiones": 70,
       "nivel": 1
     },
@@ -19,7 +18,6 @@
       "imagen": "arbol_magico.jpeg",
       "id": "arbol-magico-de-noche",
       "titulo": "El Árbol Mágico de noche",
-      "categoria": "paisaje",
       "regiones": 80,
       "nivel": 1
     },
@@ -27,7 +25,6 @@
       "imagen": "rocanon_arbol.jpeg",
       "id": "rocanon-en-la-copa",
       "titulo": "El Rocanón en la copa",
-      "categoria": "paisaje",
       "regiones": 90,
       "nivel": 1
     },
@@ -35,7 +32,6 @@
       "imagen": "etapa3-hormigas.jpeg",
       "id": "hormiguero-del-arbol",
       "titulo": "El hormiguero del árbol",
-      "categoria": "paisaje",
       "regiones": 100,
       "nivel": 2
     },
@@ -43,7 +39,6 @@
       "imagen": "cumple_rocanon.jpeg",
       "id": "cumple-del-rocanon",
       "titulo": "El cumpleaños del Rocanón",
-      "categoria": "arte",
       "regiones": 110,
       "nivel": 2
     },
@@ -51,7 +46,6 @@
       "imagen": "pozo_sanador.jpeg",
       "id": "pozo-sanador",
       "titulo": "El Pozo Sanador",
-      "categoria": "paisaje",
       "regiones": 130,
       "nivel": 2
     },
@@ -59,7 +53,6 @@
       "imagen": "bosque_magico.jpeg",
       "id": "todos-los-caminos",
       "titulo": "Todos los caminos",
-      "categoria": "paisaje",
       "regiones": 150,
       "nivel": 2
     },
@@ -67,7 +60,6 @@
       "imagen": "kribiki_leon.jpeg",
       "id": "leon-y-kiribiki",
       "titulo": "León y Kiribiki",
-      "categoria": "animal",
       "regiones": 160,
       "nivel": 3
     },
@@ -75,7 +67,6 @@
       "imagen": "cleo.jpeg",
       "id": "cleo-quiere-dormir",
       "titulo": "Cleo quiere dormir",
-      "categoria": "animal",
       "regiones": 170,
       "nivel": 3
     },
@@ -83,7 +74,6 @@
       "imagen": "mercado_nocturno.jpeg",
       "id": "mercado-nocturno",
       "titulo": "El mercado nocturno",
-      "categoria": "animal",
       "regiones": 175,
       "nivel": 3
     },
@@ -91,7 +81,6 @@
       "imagen": "oso.jpeg",
       "id": "el-oso-en-la-biblioteca",
       "titulo": "El Oso en la biblioteca",
-      "categoria": "animal",
       "regiones": 176,
       "nivel": 3
     },
@@ -99,7 +88,6 @@
       "imagen": "granja.jpeg",
       "id": "la-granja",
       "titulo": "La granja",
-      "categoria": "paisaje",
       "regiones": 178,
       "nivel": 3
     },
@@ -107,7 +95,6 @@
       "imagen": "etapa1-abuelita.jpeg",
       "id": "casa-de-la-abuelita",
       "titulo": "La casa de la abuelita",
-      "categoria": "paisaje",
       "regiones": 180,
       "nivel": 4
     },
@@ -115,7 +102,6 @@
       "imagen": "timoteo.jpeg",
       "id": "timoteo-y-su-caperuza",
       "titulo": "Timoteo y su caperuza",
-      "categoria": "animal",
       "regiones": 200,
       "nivel": 4
     },
@@ -123,7 +109,6 @@
       "imagen": "caperucitas.jpeg",
       "id": "ronda-de-caperucitas",
       "titulo": "La ronda de las Caperucitas",
-      "categoria": "persona",
       "regiones": 210,
       "nivel": 4
     },
@@ -131,7 +116,6 @@
       "imagen": "elefantito.jpeg",
       "id": "el-elefantito-caperucito",
       "titulo": "El elefantito caperucito",
-      "categoria": "animal",
       "regiones": 215,
       "nivel": 4
     },
@@ -139,7 +123,6 @@
       "imagen": "prado_hadas.jpeg",
       "id": "el-prado-de-las-hadas",
       "titulo": "El Prado de las Hadas",
-      "categoria": "paisaje",
       "regiones": 217,
       "nivel": 4
     },
@@ -147,7 +130,6 @@
       "imagen": "hada_madrina.jpeg",
       "id": "el-hada-madrina",
       "titulo": "El Hada Madrina",
-      "categoria": "persona",
       "regiones": 219,
       "nivel": 4
     },
@@ -155,7 +137,6 @@
       "imagen": "haditas.jpeg",
       "id": "las-haditas-practican",
       "titulo": "Las haditas practican",
-      "categoria": "persona",
       "regiones": 220,
       "nivel": 4
     },
@@ -163,7 +144,6 @@
       "imagen": "etapa5-dragones.jpeg",
       "id": "montana-de-los-dragones",
       "titulo": "La montaña de los dragones",
-      "categoria": "paisaje",
       "regiones": 220,
       "nivel": 5
     },
@@ -171,7 +151,6 @@
       "imagen": "alma.jpeg",
       "id": "alma-y-sus-alas",
       "titulo": "Alma y sus alas",
-      "categoria": "persona",
       "regiones": 230,
       "nivel": 5
     },
@@ -179,7 +158,6 @@
       "imagen": "montana_dragon2.jpeg",
       "id": "montana-entre-nubes",
       "titulo": "La Montaña entre nubes",
-      "categoria": "paisaje",
       "regiones": 240,
       "nivel": 5
     },
@@ -187,7 +165,6 @@
       "imagen": "dragones_futbol.jpeg",
       "id": "futbol-de-dragones",
       "titulo": "Fútbol de dragones",
-      "categoria": "animal",
       "regiones": 243,
       "nivel": 5
     },
@@ -195,7 +172,6 @@
       "imagen": "dragones_tormenta.jpeg",
       "id": "dragones-en-la-tormenta",
       "titulo": "Dragones en la tormenta",
-      "categoria": "paisaje",
       "regiones": 246,
       "nivel": 5
     },
@@ -203,7 +179,6 @@
       "imagen": "heladeria.jpeg",
       "id": "la-heladeria",
       "titulo": "La heladería",
-      "categoria": "paisaje",
       "regiones": 250,
       "nivel": 5
     },
@@ -211,7 +186,6 @@
       "imagen": "mas_helados.jpeg",
       "id": "la-gema-helada",
       "titulo": "La Gema Helada",
-      "categoria": "paisaje",
       "regiones": 255,
       "nivel": 5
     },
@@ -219,7 +193,6 @@
       "imagen": "tienda.jpeg",
       "id": "la-tienda",
       "titulo": "La tienda",
-      "categoria": "arte",
       "regiones": 260,
       "nivel": 6
     },
@@ -227,7 +200,6 @@
       "imagen": "plaza_juegos.jpeg",
       "id": "la-plaza-de-juegos",
       "titulo": "La plaza de juegos",
-      "categoria": "paisaje",
       "regiones": 270,
       "nivel": 6
     },
@@ -235,7 +207,6 @@
       "imagen": "ciudad.jpeg",
       "id": "la-ciudad-desde-lo-alto",
       "titulo": "La Ciudad desde lo alto",
-      "categoria": "paisaje",
       "regiones": 280,
       "nivel": 6
     },
@@ -243,7 +214,6 @@
       "imagen": "etapa6-papa.jpeg",
       "id": "refugio-de-papa",
       "titulo": "El refugio de papá",
-      "categoria": "arte",
       "regiones": 290,
       "nivel": 6
     },
@@ -251,7 +221,6 @@
       "imagen": "etapa4-tormenta.jpeg",
       "id": "puerto-en-la-tormenta",
       "titulo": "Puerto en la tormenta",
-      "categoria": "paisaje",
       "regiones": 300,
       "nivel": 6
     },
@@ -259,7 +228,6 @@
       "imagen": "etapa7-barco.jpeg",
       "id": "barco-en-el-muelle",
       "titulo": "El barco en el muelle",
-      "categoria": "objeto",
       "regiones": 330,
       "nivel": 6
     },
@@ -267,7 +235,6 @@
       "imagen": "final.jpeg",
       "id": "rumbo-a-la-isla",
       "titulo": "Rumbo a la isla",
-      "categoria": "paisaje",
       "regiones": 360,
       "nivel": 6
     },
@@ -275,7 +242,6 @@
       "imagen": "caperucita_pirata.jpeg",
       "id": "caperucita-pirata",
       "titulo": "La Caperucita pirata",
-      "categoria": "persona",
       "regiones": 380,
       "nivel": 6
     },
@@ -283,7 +249,6 @@
       "imagen": "sirenhadas.jpeg",
       "id": "sirenhadas",
       "titulo": "Las SirenHadas",
-      "categoria": "persona",
       "regiones": 390,
       "nivel": 6
     },
@@ -291,23 +256,62 @@
       "imagen": "playa_caracolas.jpeg",
       "id": "caracolas-en-la-playa",
       "titulo": "Caracolas en la playa",
-      "categoria": "paisaje",
       "regiones": 395,
       "nivel": 6
     },
     {
-      "imagen": "isla_naranja.jpeg",
-      "id": "llegada-a-la-isla-naranja",
-      "titulo": "Llegada a la Isla Naranja",
-      "categoria": "paisaje",
+      "imagen": "isla_roja.jpeg",
+      "id": "lobitos-de-la-isla-roja",
+      "titulo": "Los lobitos de la Isla Roja",
+      "regiones": 410,
+      "nivel": 7
+    },
+    {
+      "imagen": "isla_naranja2.jpeg",
+      "id": "minas-de-la-isla-naranja",
+      "titulo": "Las minas de la Isla Naranja",
       "regiones": 420,
+      "nivel": 7
+    },
+    {
+      "imagen": "isla_amarilla.jpeg",
+      "id": "baile-en-la-isla-amarilla",
+      "titulo": "Baile en la Isla Amarilla",
+      "regiones": 430,
+      "nivel": 7
+    },
+    {
+      "imagen": "isla_verde.jpeg",
+      "id": "desierto-de-la-isla-verde",
+      "titulo": "El desierto de la Isla Verde",
+      "regiones": 435,
+      "nivel": 7
+    },
+    {
+      "imagen": "isla_celeste.jpeg",
+      "id": "selva-de-la-isla-celeste",
+      "titulo": "La selva de la Isla Celeste",
+      "regiones": 440,
+      "nivel": 7
+    },
+    {
+      "imagen": "isla_azul.jpeg",
+      "id": "llegada-a-la-isla-azul",
+      "titulo": "Llegada a la Isla Azul",
+      "regiones": 445,
+      "nivel": 7
+    },
+    {
+      "imagen": "isla_violeta.jpeg",
+      "id": "sirenhadas-de-la-isla-violeta",
+      "titulo": "Las SirenHadas de la Isla Violeta",
+      "regiones": 450,
       "nivel": 7
     },
     {
       "imagen": "libre1.jpeg",
       "id": "amigo-del-bosque",
       "titulo": "Un amigo en el bosque",
-      "categoria": "animal",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -316,7 +320,6 @@
       "imagen": "libre3.jpeg",
       "id": "caperucita-en-el-bosque",
       "titulo": "Caperucita en el bosque",
-      "categoria": "arte",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -325,7 +328,6 @@
       "imagen": "libre4.jpeg",
       "id": "el-petirrojo",
       "titulo": "El petirrojo",
-      "categoria": "animal",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -334,7 +336,6 @@
       "imagen": "libre5.jpeg",
       "id": "el-colibri",
       "titulo": "El colibrí",
-      "categoria": "animal",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -343,9 +344,16 @@
       "imagen": "libre6.jpg",
       "id": "la-pluma-arcoiris",
       "titulo": "La pluma arcoíris",
-      "categoria": "arte",
       "area_minima": 3,
       "suavizado": 1,
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre7.jpg",
+      "id": "el-lobo-del-bosque",
+      "titulo": "El Lobo del bosque",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -354,7 +362,70 @@
       "imagen": "libre8.jpeg",
       "id": "el-valle-del-rio",
       "titulo": "El valle del río",
-      "categoria": "paisaje",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre9.jpeg",
+      "id": "otono-en-la-montana",
+      "titulo": "Otoño en la montaña",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre10.jpeg",
+      "id": "el-camino-a-la-granja",
+      "titulo": "El camino a la granja",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre11.jpeg",
+      "id": "paseo-por-el-arcoiris",
+      "titulo": "Paseo por el arcoíris",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre12.jpeg",
+      "id": "la-casita-del-valle",
+      "titulo": "La casita del valle",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre13.jpeg",
+      "id": "abrazo-de-gato",
+      "titulo": "Abrazo de gato",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre14.jpeg",
+      "id": "el-conejito-del-corazon",
+      "titulo": "El conejito del corazón",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre15.jpeg",
+      "id": "el-unicornio",
+      "titulo": "El unicornio",
+      "regiones": 100,
+      "colores": 10,
+      "solo_libre": true
+    },
+    {
+      "imagen": "libre16.jpeg",
+      "id": "el-zorrito-feliz",
+      "titulo": "El zorrito feliz",
       "regiones": 100,
       "colores": 10,
       "solo_libre": true
@@ -365,7 +436,6 @@
     "desde": "arbol-magico-de-noche",
     "id": "tutorial-arbol-magico",
     "titulo": "El Árbol Mágico (tutorial)",
-    "categoria": "paisaje",
     "colores": 5,
     "regiones": 20
   },

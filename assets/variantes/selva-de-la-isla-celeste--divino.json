@@ -1,0 +1,256 @@
+{
+  "id": "selva-de-la-isla-celeste--divino",
+  "titulo": "La selva de la Isla Celeste",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#7183BA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#459BC1"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#193671"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3380B1"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#343757"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#414362"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#215F9E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#22436E"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#3070A2"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#6BCEDD"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#5C5C71"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5FC3D5"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#2C5284"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#4762A5"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#4EB4CF"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#DFBCAC"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2F4476"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#876094"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#66B5CB"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#D2D8D6"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#17224C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#D5A1A8"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#9FA3B6"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#5C61A7"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#B17FA4"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#6B5E85"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#205190"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#9A97A0"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#B4B8C2"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#4A7293"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#465384"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#F9E9C4"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#B3A4A8"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#305C8B"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#316696"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#938198"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#498AB1"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#224587"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#1D2D5D"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#4980A7"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#8284A1"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#1A4282"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#233768"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#719AB9"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#584471"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#70819B"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#4E74AD"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#6D729E"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#436286"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#296098"
+    }
+  ]
+}

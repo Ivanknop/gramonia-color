@@ -1,0 +1,76 @@
+{
+  "id": "el-conejito-del-corazon--dificil",
+  "titulo": "El conejito del corazón",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F3DBA8"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F2DBA9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F3DBAB"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F3DCAA"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F3E3C9"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F2DCAA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F2DBAA"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#E2B19B"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F2DBAB"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F3DCAB"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#EFDCAE"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#F2DBA8"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#F3DCA9"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F0DBAA"
+    }
+  ]
+}

@@ -1,8 +1,6 @@
 {
   "id": "barco-en-el-muelle--normal",
   "titulo": "El barco en el muelle",
-  "categoria": "objeto",
-  "dificultad": 3,
   "paleta": [
     {
       "numero": 1,

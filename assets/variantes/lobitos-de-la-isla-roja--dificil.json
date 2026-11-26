@@ -1,0 +1,76 @@
+{
+  "id": "lobitos-de-la-isla-roja--dificil",
+  "titulo": "Los lobitos de la Isla Roja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#664035"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6AAFBB"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#DCB179"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#D57A55"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#FDF2C1"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FBD993"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C6694F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#5395AA"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#9C5642"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#9F6C4C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#CCCFA9"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#8F4239"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#556F78"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#D19161"
+    }
+  ]
+}

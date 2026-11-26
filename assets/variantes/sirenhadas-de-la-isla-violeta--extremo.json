@@ -1,0 +1,126 @@
+{
+  "id": "sirenhadas-de-la-isla-violeta--extremo",
+  "titulo": "Las SirenHadas de la Isla Violeta",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#121429"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#1A0E30"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#968AAA"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3F3C60"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1F2248"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2C2B4F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#0F1029"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1A1B49"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#121535"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#2C1F39"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3E1F50"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#221338"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#3F2D54"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#0D0820"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#291440"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#1B1D38"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#743F5D"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#775F83"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#0E0D24"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#522255"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#331749"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#652D56"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#191635"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#2F204D"
+    }
+  ]
+}

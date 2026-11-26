@@ -1,8 +1,3 @@
-/// Perfil de quien juega: cómo se llama y cómo quiere que le hablen (chico,
-/// chica o "prefiero no decir"). Se pide una vez, después de la introducción
-/// (o al entrar, si falta algo), y se puede volver a editar desde el menú.
-library;
-
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/textos.dart';

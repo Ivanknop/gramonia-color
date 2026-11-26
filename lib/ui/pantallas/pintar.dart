@@ -1,23 +1,5 @@
-/// Pantalla de pintar: lienzo grande con zoom, paleta, lupa y bomba.
-///
-/// - Arranca con el color 1 elegido.
-/// - Lupa y bomba: íconos que se encienden (brillan) al tocarlos y se apagan
-///   al tocarlos de nuevo. Con la lupa encendida, tocar un color que no esté
-///   completo gasta una y lleva la vista a una parte que falta de ese color.
-///   Con la bomba encendida, el próximo toque en el dibujo pinta todas las
-///   regiones cercanas, cada una con su color correcto.
-/// - Al terminar: festejo (confeti, sonido y vibración), plumas por la obra y,
-///   si se completa un nivel, plumas extra y el capítulo de la historia que
-///   cuenta Gobi (después del festejo y del
-///   timelapse, que se puede saltear).
-/// - Tutorial (nivel 0): arranca sin color elegido y muestra arriba el paso que
-///   toca (elegir color, completar un color, lupa, bomba, terminar). Los pasos
-///   son obligatorios y en orden: lo que no corresponde no responde (ver
-///   `accionPermitida`). La lupa y la bomba no se gastan. Al terminarlo se pasa
-///   al nivel 1 y, la primera vez, se ganan las plumas del tutorial. "Saltar"
-///   sigue a la galería, sin premio.
-/// - Música: un tema al azar en cada dibujo, con botones para cambiarla y
-///   silenciarla; se pausa si la app pasa a segundo plano.
+/// En el tutorial, los pasos son obligatorios y en orden: lo que no corresponde al paso no
+/// responde, y la lupa y la bomba no se gastan.
 library;
 
 import 'dart:async';
@@ -63,17 +45,13 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   ui.Image? _imagen;
   bool _cargandoImagen = true;
   bool _cargandoCuadro = false;
-
-  /// Clave del progreso (ver [Pintar.cuadroId]).
   String get _clave => widget.cuadroId;
 
   /// Modo libre: sin historia, piezas, plumas ni capítulos.
   bool get _libre => dificultadDe(_clave) != null;
 
-  /// Tutorial: pasos guiados, herramientas gratis y premio propio.
   bool get _tutorial => _clave == idTutorial;
 
-  /// Pasos del tutorial ya hechos.
   Set<PasoTutorial> _pasos = {};
   int? _elegido;
   bool _bombaArmada = false;
@@ -82,13 +60,8 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   int _indiceLupa = 0;
   Timer? _apagarDestacada;
 
-  /// Plumas ganadas al terminar (para el panel final).
   int _plumasGanadas = 0;
-
-  /// Nivel al que se llegó al terminar (null si no se subió).
   int? _nivelNuevo;
-
-  /// Al terminar se destapó una pieza (obra nueva de la historia).
   bool _destapo = false;
 
   /// Mensaje del panel final (historia): uno al azar, elegido una sola vez.
@@ -105,18 +78,12 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     );
   }
 
-  /// Confeti en pantalla (al terminar el cuadro).
   bool _festejando = false;
-
-  /// Repetición acelerada de cómo se pintó (después del festejo).
   bool _repitiendo = false;
 
-  /// Capítulos de la historia que se cuentan después del festejo y el
-  /// timelapse: ids (de bioma o `nivel-<n>`) con sus escenas, en orden.
+  /// Se cuentan después del festejo y el timelapse.
   final List<(String, List<Escena>)> _capitulosPendientes = [];
 
-  /// Suma los capítulos de los niveles que se completaron (Gobi habla solo
-  /// al completar un nivel).
   void _sumarCapitulos(List<int> niveles) {
     for (final n in niveles) {
       if (capitulosDeNivel[n] case final escenas?) {
@@ -127,10 +94,13 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
 
   Musica? _musica;
 
+  bool _iniciado = false;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (_cuadro != null) return;
+    if (_iniciado) return;
+    _iniciado = true;
     final catalogo = Dependencias.of(context).catalogo;
     _musica = Dependencias.of(context).musica;
     unawaited(_musica?.empezar());
@@ -141,7 +111,6 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     // En el tutorial, elegir el color es el primer paso.
     _elegido = _tutorial ? null : _cuadro?.paleta.first.numero;
     if (_cuadro == null && (rehecha != null || _libre)) {
-      // Variante de dificultad todavía no leída.
       _cargandoCuadro = true;
       catalogo.cuadroDeObra(_clave, dificultad: rehecha).then((c) {
         if (!mounted) return;
@@ -185,14 +154,6 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   Set<String> _pintadas(Cuadro c) =>
       sanearPintadas(c, Dependencias.of(context).progreso.de(_clave)?.pintadas ?? const []);
 
-  void _avisar(String texto) {
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(texto), duration: const Duration(seconds: 2)));
-  }
-
-  /// ¿Se puede hacer [accion]? Fuera del tutorial, siempre; en el tutorial,
-  /// solo lo que pide el paso actual.
   bool _permitido(AccionPintar accion) => !_tutorial || accionPermitida(pasoActual(_pasos), accion);
 
   void _alTocar(Punto p, double tolerancia) {
@@ -223,7 +184,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     setState(() => _bombaArmada = false);
     if (alcanzadas.isEmpty) return;
     if (!_tutorial && !progreso.usar(Herramienta.bomba)) {
-      _avisar(Textos.sinBombas);
+      avisar(context, Textos.sinBombas);
       return;
     }
     HapticFeedback.heavyImpact();
@@ -263,10 +224,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
       }
       // Plumas en cualquier modo; los niveles, solo con obras nuevas de la historia.
       final subidos = nivelesSubidos(biomas, completadosAntes, progreso.completados);
-      // En el modo libre, las plumas dependen de la dificultad elegida.
-      final libre = _libre
-          ? Dependencias.of(context).catalogo.dificultad(dificultadDe(_clave)!)
-          : null;
+      final libre = Dependencias.of(context).catalogo.dificultadDeObra(_clave);
       final ganadas = libre?.plumas ?? plumasPorTerminar(nivelesSubidos: subidos);
       progreso.sumarPlumas(ganadas);
       // Modo libre u obra rehecha (ya desbloqueada): sin pieza ni capítulo.
@@ -324,11 +282,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     }
     _capitulosPendientes.clear();
     if (escenas.isEmpty) return;
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => PantallaHistoria(escenas: escenas, textoFinal: 'Seguir'),
-      ),
-    );
+    abrir<void>(context, PantallaHistoria(escenas: escenas, textoFinal: Textos.seguir));
   }
 
   void _marcarPaso(PasoTutorial paso) {
@@ -357,31 +311,18 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     PasoTutorial.terminar => Textos.tutorialTerminar,
   };
 
-  /// Tocar el ícono de la lupa: la enciende (si quedan) o la apaga.
-  void _alternarLupa() {
-    if (!_permitido(AccionPintar.lupa)) return;
-    final progreso = Dependencias.of(context).progreso;
-    if (!_lupaArmada && !_tutorial && progreso.cantidad(Herramienta.lupa) == 0) {
-      _avisar(Textos.sinLupas);
+  /// La enciende (si quedan) o la apaga. Solo una puede estar encendida.
+  void _alternar(Herramienta h) {
+    final esLupa = h == Herramienta.lupa;
+    if (!_permitido(esLupa ? AccionPintar.lupa : AccionPintar.bomba)) return;
+    final encendida = esLupa ? _lupaArmada : _bombaArmada;
+    if (!encendida && !_tutorial && Dependencias.of(context).progreso.cantidad(h) == 0) {
+      avisar(context, esLupa ? Textos.sinLupas : Textos.sinBombas);
       return;
     }
     setState(() {
-      _lupaArmada = !_lupaArmada;
-      _bombaArmada = false;
-    });
-  }
-
-  /// Tocar el ícono de la bomba: la enciende (si quedan) o la apaga.
-  void _alternarBomba() {
-    if (!_permitido(AccionPintar.bomba)) return;
-    final progreso = Dependencias.of(context).progreso;
-    if (!_bombaArmada && !_tutorial && progreso.cantidad(Herramienta.bomba) == 0) {
-      _avisar(Textos.sinBombas);
-      return;
-    }
-    setState(() {
-      _bombaArmada = !_bombaArmada;
-      _lupaArmada = false;
+      _lupaArmada = esLupa && !encendida;
+      _bombaArmada = !esLupa && !encendida;
     });
   }
 
@@ -391,7 +332,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     if (_lupaArmada) {
       // La lupa solo sirve con colores que todavía tienen partes sin pintar.
       if (faltantesDeColor(cuadro, _pintadas(cuadro), numero) == 0) {
-        _avisar(Textos.lupaColorCompleto);
+        avisar(context, Textos.lupaColorCompleto);
         return;
       }
       setState(() {
@@ -409,14 +350,13 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     });
   }
 
-  /// Gasta una lupa y lleva la vista a una parte que falta del color elegido.
   void _usarLupa(Cuadro cuadro) {
     final progreso = Dependencias.of(context).progreso;
     final lista = pendientesParaLupa(cuadro, _pintadas(cuadro), _elegido);
     if (lista.isEmpty) return;
     if (!_tutorial && !progreso.usar(Herramienta.lupa)) {
       setState(() => _lupaArmada = false);
-      _avisar(Textos.sinLupas);
+      avisar(context, Textos.sinLupas);
       return;
     }
     setState(() => _lupaArmada = false);
@@ -443,7 +383,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
     if (cuadro == null) {
       return Scaffold(
         appBar: AppBar(),
-        body: const Center(child: Text('No encontramos ese cuadro.')),
+        body: const Center(child: Text(Textos.cuadroNoEncontrado)),
       );
     }
     final progreso = Dependencias.of(context).progreso;
@@ -451,10 +391,10 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
       listenable: progreso,
       builder: (context, _) {
         final pintadas = _pintadas(cuadro);
-        final terminado = progreso.de(_clave)?.terminado ?? false;
         final obra = progreso.de(_clave);
+        final terminado = obra?.terminado ?? false;
         final dificultad = Dependencias.of(context).catalogo
-            .dificultad(dificultadDe(_clave) ?? obra?.dificultad ?? '');
+            .dificultadDeObra(_clave, rehecha: obra?.dificultad);
         final completos = {
           for (final c in cuadro.paleta)
             if (faltantesDeColor(cuadro, pintadas, c.numero) == 0) c.numero,
@@ -552,8 +492,7 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
                         bombas: _tutorial ? null : progreso.cantidad(Herramienta.bomba),
                         lupaHabilitada: _permitido(AccionPintar.lupa),
                         bombaHabilitada: _permitido(AccionPintar.bomba),
-                        alTocarLupa: _alternarLupa,
-                        alTocarBomba: _alternarBomba,
+                        alTocar: _alternar,
                       ),
                       Opacity(
                         opacity: _permitido(AccionPintar.elegirColor) ? 1 : 0.4,
@@ -575,7 +514,6 @@ class _PintarState extends State<Pintar> with WidgetsBindingObserver {
   }
 }
 
-/// "Cambiar música" y "Silenciar" / "Activar sonido".
 class _BotonesMusica extends StatelessWidget {
   const _BotonesMusica({required this.musica});
   final Musica musica;
@@ -588,26 +526,19 @@ class _BotonesMusica extends StatelessWidget {
       children: [
         IconButton(
           key: const Key('cambiar-musica'),
-          tooltip: 'Cambiar música',
+          tooltip: Textos.cambiarMusica,
           icon: const Icon(Icons.queue_music),
           onPressed: () {
             unawaited(musica.cambiar());
             final tema = musica.actual;
             if (tema != null && !musica.silenciada) {
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(
-                  SnackBar(
-                    content: Text('Sonando: ${nombreDeTema(tema)}'),
-                    duration: const Duration(seconds: 2),
-                  ),
-                );
+              avisar(context, Textos.sonando(nombreDeTema(tema)));
             }
           },
         ),
         IconButton(
           key: const Key('silenciar'),
-          tooltip: musica.silenciada ? 'Activar sonido' : 'Silenciar',
+          tooltip: musica.silenciada ? Textos.activarSonido : Textos.silenciar,
           icon: Icon(musica.silenciada ? Icons.volume_off : Icons.volume_up),
           onPressed: () => unawaited(musica.alternarSilencio()),
         ),
@@ -621,17 +552,17 @@ class _Aviso extends StatelessWidget {
   final String texto;
 
   @override
-  Widget build(BuildContext context) => IgnorePointer(child: _cartel());
-
-  Widget _cartel() => Material(
-    color: const Color(0xEE3D2C5E),
-    borderRadius: BorderRadius.circular(12),
-    child: Padding(
-      padding: const EdgeInsets.all(10),
-      child: Text(
-        texto,
-        textAlign: TextAlign.center,
-        style: const TextStyle(color: Colors.white),
+  Widget build(BuildContext context) => IgnorePointer(
+    child: Material(
+      color: Tema.fondoAviso,
+      borderRadius: BorderRadius.circular(12),
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Text(
+          texto,
+          textAlign: TextAlign.center,
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
     ),
   );
@@ -646,8 +577,7 @@ class _BarraHerramientas extends StatelessWidget {
     required this.bombas,
     required this.lupaHabilitada,
     required this.bombaHabilitada,
-    required this.alTocarLupa,
-    required this.alTocarBomba,
+    required this.alTocar,
   });
 
   final int porcentaje;
@@ -658,7 +588,7 @@ class _BarraHerramientas extends StatelessWidget {
 
   /// En el tutorial, solo se puede tocar la del paso actual.
   final bool lupaHabilitada, bombaHabilitada;
-  final VoidCallback alTocarLupa, alTocarBomba;
+  final ValueChanged<Herramienta> alTocar;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -667,27 +597,25 @@ class _BarraHerramientas extends StatelessWidget {
       children: [
         IconoHerramienta(
           key: const Key('lupa'),
-          imagen: iconoLupa,
-          descripcion: Textos.lupa,
+          herramienta: Herramienta.lupa,
           cantidad: lupas,
           encendida: lupaArmada,
           habilitada: lupaHabilitada,
-          alTocar: alTocarLupa,
+          alTocar: () => alTocar(Herramienta.lupa),
         ),
         const SizedBox(width: 14),
         IconoHerramienta(
           key: const Key('bomba'),
-          imagen: iconoBomba,
-          descripcion: Textos.bomba,
+          herramienta: Herramienta.bomba,
           cantidad: bombas,
           encendida: bombaArmada,
           habilitada: bombaHabilitada,
-          alTocar: alTocarBomba,
+          alTocar: () => alTocar(Herramienta.bomba),
         ),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
-            '$porcentaje% con color',
+            Textos.conColor(porcentaje),
             textAlign: TextAlign.right,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(fontSize: 13, color: Tema.gris, fontWeight: FontWeight.w600),
@@ -709,10 +637,7 @@ class _PanelFinal extends StatelessWidget {
     required this.plumasGanadas,
   });
 
-  /// Mensaje de la obra de la historia (al azar, según lo que falta del lugar).
   final String mensaje;
-
-  /// Clave del progreso (cuadro de la historia o variante del modo libre).
   final String clave;
   final bool libre;
   final bool tutorial;
@@ -775,8 +700,8 @@ class _PanelFinal extends StatelessWidget {
                   const IconoPluma(tamano: 18),
                   Flexible(
                     child: Text(
-                      ' +$plumasGanadas plumas del Rocanón',
-                      style: const TextStyle(fontWeight: FontWeight.w700, color: Color(0xFF8A5A1E)),
+                      Textos.plumasGanadas(plumasGanadas),
+                      style: const TextStyle(fontWeight: FontWeight.w700, color: Tema.marronPluma),
                     ),
                   ),
                 ],
@@ -788,19 +713,12 @@ class _PanelFinal extends StatelessWidget {
               spacing: 8,
               children: [
                 OutlinedButton(
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: clave)),
-                  ),
+                  onPressed: () => abrir<void>(context, PantallaTimelapse(cuadroId: clave)),
                   child: const Text(Textos.verComoLoPinte),
                 ),
                 if (tutorial)
                   FilledButton(
-                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute<void>(
-                        builder: (_) => const Principal(pestanaInicial: Principal.galeria),
-                      ),
-                      (ruta) => ruta.isFirst,
-                    ),
+                    onPressed: () => Principal.volver(context, pestana: Principal.galeria),
                     child: const Text(Textos.tutorialSeguir),
                   )
                 else if (libre)
@@ -810,16 +728,10 @@ class _PanelFinal extends StatelessWidget {
                   )
                 else
                   FilledButton(
-                    // Vuelve a las pestañas (sobre la portada) mostrando el mapa
-                    // (o la tienda, si toca su tutorial: Principal la elige sola).
-                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute<void>(
-                        builder: (_) => const Principal(pestanaInicial: Principal.mapa),
-                      ),
-                      (ruta) => ruta.isFirst,
-                    ),
+                    // Si toca el tutorial de la tienda, Principal abre la Tienda.
+                    onPressed: () => Principal.volver(context, pestana: Principal.mapa),
                     child: Text(
-                      tutorialTiendaPendiente(context) ? Textos.irALaTienda : 'Ver el mapa',
+                      tutorialTiendaPendiente(context) ? Textos.irALaTienda : Textos.verElMapa,
                     ),
                   ),
               ],

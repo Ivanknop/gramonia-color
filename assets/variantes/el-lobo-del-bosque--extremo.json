@@ -1,0 +1,126 @@
+{
+  "id": "el-lobo-del-bosque--extremo",
+  "titulo": "El Lobo del bosque",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#050101"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#943F11"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F7EBB2"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#0F2724"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#FCFBDA"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3B0A05"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#836C39"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1B0604"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#486A60"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#D0C471"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#5B1107"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#160202"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#DFDFA4"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#BA6824"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#8F9D68"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#711F0A"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#C9A95E"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#1E110C"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#5D240E"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#951F07"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#3B4E42"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#2F3930"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#3F140A"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#422012"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "el-conejito-del-corazon--extremo",
+  "titulo": "El conejito del corazón",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F2DBAA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F2DBA9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F3DCAA"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F3DBAB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F2DCAA"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F3E5D8"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F2B2AE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F2DBAB"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#C7CFA5"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F3DCAB"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#D96269"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#F3DBAA"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#F3DBA8"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F3E4D5"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#F4DCAA"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#F0DBAA"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#F4DFB5"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#EFDCAE"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#F4E8D8"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#F3DBB4"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#F2D4AD"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#F2DBA8"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#F2DCA9"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#F4DBAB"
+    }
+  ]
+}

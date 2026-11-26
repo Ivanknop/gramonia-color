@@ -1,8 +1,6 @@
-/// Paleta de colores numerados. Los colores terminados se muestran con ✓.
-library;
-
 import 'package:material_ui/material_ui.dart';
 
+import '../datos/textos.dart';
 import '../engine/motor.dart';
 
 class Paleta extends StatelessWidget {
@@ -16,8 +14,6 @@ class Paleta extends StatelessWidget {
 
   final List<ColorPaleta> paleta;
   final int? elegido;
-
-  /// Números de color que ya no tienen regiones pendientes.
   final Set<int> completos;
   final ValueChanged<int> onElegir;
 
@@ -37,7 +33,7 @@ class Paleta extends StatelessWidget {
           return Semantics(
             button: true,
             selected: esElegido,
-            label: 'Color ${c.numero}, ${c.nombre}${completo ? ', completo' : ''}',
+            label: Textos.colorDePaleta(c.numero, c.nombre, completo: completo),
             excludeSemantics: true,
             child: GestureDetector(
               key: Key('color-${c.numero}'),

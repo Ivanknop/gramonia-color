@@ -1,0 +1,166 @@
+{
+  "id": "el-lobo-del-bosque--imposible",
+  "titulo": "El Lobo del bosque",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FCFBDA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#803C14"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#113A3F"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5B1107"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F7EBB2"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#080101"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#A7410F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#486A60"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D0C471"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#020101"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#836C39"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#EDE4AC"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#0F2724"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#0F0101"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C9A95E"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#330905"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#BA6824"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#1C0202"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#711F0A"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#D1DA9B"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#240704"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#430A06"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#94AB71"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#951F07"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#3F140A"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#4D3921"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#5D240E"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#1E110C"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#898E5F"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#130605"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#3B4E42"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#422012"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "el-conejito-del-corazon",
+  "titulo": "El conejito del corazón",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F2DBAA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F3DCAA"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F2DBA9"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F3DBAB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F3E3C8"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#E4B59D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F0DBAB"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#EFDCB0"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F3DBAA"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F3DCA9"
+    }
+  ],
+  "orden": 56
+}

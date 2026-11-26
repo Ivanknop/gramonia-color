@@ -1,16 +1,5 @@
-/// Biomas de Gramonia en orden de progresión (dificultad creciente: más
-/// regiones por obra), con su nivel de la historia (el nivel 0 es el
-/// tutorial). Los lugares de un mismo nivel se abren juntos:
-///
-/// 1. Árbol Mágico · 2. Bosque Mágico · 3. Reino Animal ·
-/// 4. Tierra de las Caperucitas y Prado de las Hadas ·
-/// 5. Montaña Dragón y Reino Helado · 6. La Ciudad y La Costa ·
-/// 7. Islas Arcoíris (las siete islas, una obra por isla) · 8. Isla Negra.
-///
-/// Cada pieza se destapa al completar su obra; las piezas sin `cuadroId` son
-/// "próximamente" (falta la obra) y no traban el avance. Un cuadro destapa
-/// como máximo una pieza (test/datos_test.dart). Las obras de cada bioma van
-/// de menos a más regiones.
+/// Lugares de Gramonia en el orden del recorrido, con su nivel. Las piezas sin `cuadroId` son
+/// "próximamente".
 library;
 
 import '../engine/progresion.dart';
@@ -185,7 +174,14 @@ final biomas = <Bioma>[
 ];
 
 /// La obra de cada isla (las que todavía no tienen, "próximamente").
-const obrasDeIslas = <String, String>{'isla-naranja': 'llegada-a-la-isla-naranja'};
+const obrasDeIslas = <String, String>{
+  'isla-roja': 'lobitos-de-la-isla-roja',
+  'isla-naranja': 'minas-de-la-isla-naranja',
+  'isla-amarilla': 'baile-en-la-isla-amarilla',
+  'isla-verde': 'desierto-de-la-isla-verde',
+  'isla-celeste': 'selva-de-la-isla-celeste',
+  'isla-azul': 'llegada-a-la-isla-azul',
+  'isla-violeta': 'sirenhadas-de-la-isla-violeta',
+};
 
-/// Nombre de los niveles que agrupan lugares bajo un mismo nombre.
 const nombresDeNivel = <int, String>{7: 'Islas Arcoíris'};

@@ -1,0 +1,166 @@
+{
+  "id": "paseo-por-el-arcoiris--imposible",
+  "titulo": "Paseo por el arcoíris",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#100A6A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6D498A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#5B3C8D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2E1A83"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#53378E"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C4A166"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#352083"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#42278F"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#24137A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#492E8C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#150D6D"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#1D1274"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#2B1683"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#25117E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#422A83"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#27157F"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#825083"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#2B197E"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#190D73"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#3A2488"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#341B85"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#513883"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#11096E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#100B69"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#704189"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#14096F"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#361E88"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#231574"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#382087"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#905E77"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#332075"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#642E8D"
+    }
+  ]
+}

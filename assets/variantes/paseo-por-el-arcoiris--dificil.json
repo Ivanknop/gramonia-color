@@ -1,0 +1,76 @@
+{
+  "id": "paseo-por-el-arcoiris--dificil",
+  "titulo": "Paseo por el arcoíris",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#26147C"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#11096C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#422989"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#523889"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#382188"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#784D86"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#321A84"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1D1075"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#2C1881"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#130C6C"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#AA806F"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#663F8B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#572E8D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#34207C"
+    }
+  ]
+}

@@ -1,7 +1,5 @@
-/// Progreso del jugador, guardado en el teléfono entre sesiones.
-///
-/// Solo se guarda lo mínimo (regiones pintadas y fechas). Lo derivado
-/// —porcentajes, piezas, biomas— se calcula con el motor.
+/// Progreso guardado en el teléfono: solo lo mínimo (regiones pintadas y fechas). Lo derivado se
+/// calcula con el motor.
 library;
 
 import 'dart:convert';
@@ -34,14 +32,11 @@ class ProgresoCuadro {
 
   /// Momento (ms) de la última región pintada (para ordenar "Mis obras").
   final int? actualizadoEn;
-
-  /// Momento (ms) en que se completó; null si no se terminó.
   final int? completadoEn;
 
   /// Obra de la historia que se rehizo en otra dificultad: se pinta la
   /// variante `<cuadro>--<dificultad>` (null = el cuadro de la historia).
   final String? dificultad;
-
   bool get terminado => completadoEn != null;
 
   ProgresoCuadro copiar({List<String>? pintadas, int? actualizadoEn, int? completadoEn}) =>
@@ -60,7 +55,6 @@ class ProgresoCuadro {
   };
 }
 
-/// Dónde se guarda el progreso (en tests se reemplaza por uno en memoria).
 abstract class AlmacenProgreso {
   Future<String?> leer();
   Future<void> escribir(String datos);
@@ -91,19 +85,8 @@ class AlmacenEnMemoria implements AlmacenProgreso {
 class Progreso extends ChangeNotifier {
   Progreso._(this._almacen, this._reloj);
 
-  /// Versión del formato guardado. v1 → v2: se agregan plumas e historia.
-  /// v2 → v3: se agrega el género elegido (en un guardado viejo queda sin elegir).
-  /// v3 → v4: obras desbloqueadas aparte (rehacer una obra no la vuelve a tapar)
-  /// y dificultad de las obras rehechas. Las terminadas pasan a desbloqueadas.
-  /// v4 → v5: lupas y bombas compradas (en un guardado viejo, ninguna).
-  /// v5 → v6: tutorial pasado y premiado. En un guardado viejo con obras
-  /// empezadas cuenta como pasado (salteado), con el premio pendiente.
-  /// v6 → v7: nombre de quien juega (en un guardado viejo, sin nombre: se pide
-  /// al entrar).
-  /// v7 → v8: regalo inicial (3 lupas y 3 bombas al llegar al nivel 1; un
-  /// guardado viejo con el tutorial pasado lo recibe al cargar) y tutorial de
-  /// la tienda (plumas regaladas y hecho o salteado).
-  static const version = 8;
+  /// Al cambiar lo guardado: subirla, migrar en [cargar] y sumar el test de migración.
+  static const version = 9;
 
   static Future<Progreso> cargar(AlmacenProgreso almacen, {int Function()? reloj}) async {
     final p = Progreso._(almacen, reloj ?? () => DateTime.now().millisecondsSinceEpoch);
@@ -143,6 +126,12 @@ class Progreso extends ChangeNotifier {
         p._regaloInicial = (j['regaloInicial'] as bool?) ?? false;
         p._plumasTiendaDadas = (j['plumasTienda'] as bool?) ?? false;
         p._tutorialTiendaHecho = (j['tutorialTienda'] as bool?) ?? false;
+        // v9: sin las variantes de las dificultades retiradas.
+        p._cuadros.removeWhere(
+          (id, c) =>
+              dificultadesRetiradas.contains(dificultadDe(id)) ||
+              dificultadesRetiradas.contains(c.dificultad),
+        );
         // Upgrade: quien ya estaba en el nivel 1 o más recibe el regalo ahora.
         if (p._darRegaloInicial()) p._cambio();
       } on Object catch (e) {
@@ -183,9 +172,6 @@ class Progreso extends ChangeNotifier {
       if (e.value.terminado) e.key,
   };
 
-  // ---- Pintura ----------------------------------------------------------
-
-  /// Registra regiones pintadas (una o varias, por ejemplo con la bomba).
   void pintarRegiones(String cuadroId, Iterable<String> regionIds) {
     final actual = _cuadros[cuadroId] ?? const ProgresoCuadro();
     final nuevas = [
@@ -203,7 +189,6 @@ class Progreso extends ChangeNotifier {
     _cambio();
   }
 
-  /// Registra una región pintada. Idempotente.
   void pintarRegion(String cuadroId, String regionId) => pintarRegiones(cuadroId, [regionId]);
 
   /// Marca la obra como terminada. Devuelve false si ya lo estaba.
@@ -236,26 +221,6 @@ class Progreso extends ChangeNotifier {
     return nueva;
   }
 
-  void reiniciarTodo() {
-    _cuadros.clear();
-    _plumas = 0;
-    _ultimoDiaPlumas = null;
-    _introVista = false;
-    _capitulosVistos.clear();
-    _genero = null;
-    _desbloqueadas.clear();
-    _herramientas.clear();
-    _tutorialPasado = false;
-    _tutorialPremiado = false;
-    _nombre = null;
-    _regaloInicial = false;
-    _plumasTiendaDadas = false;
-    _tutorialTiendaHecho = false;
-    _cambio();
-  }
-
-  // ---- Plumas del Rocanón -----------------------------------------------
-
   int get plumas => _plumas;
 
   void sumarPlumas(int cantidad) {
@@ -264,9 +229,6 @@ class Progreso extends ChangeNotifier {
     _cambio();
   }
 
-  // ---- Tienda ---------------------------------------------------------------
-
-  /// Lupas o bombas que tiene quien juega.
   int cantidad(Herramienta h) => _herramientas[h] ?? 0;
 
   /// Compra una herramienta con plumas. Devuelve false si no alcanzan.
@@ -296,12 +258,7 @@ class Progreso extends ChangeNotifier {
     return ReglasPlumas.porDia;
   }
 
-  // ---- Tutorial -------------------------------------------------------------
-
-  /// Ya se terminó o se salteó el tutorial (quien juega está del nivel 1 en adelante).
   bool get tutorialPasado => _tutorialPasado;
-
-  /// Ya se dieron las plumas del tutorial.
   bool get tutorialPremiado => _tutorialPremiado;
 
   /// Saltear el tutorial: se pasa al nivel 1; el premio queda pendiente.
@@ -312,7 +269,6 @@ class Progreso extends ChangeNotifier {
     _cambio();
   }
 
-  /// Ya se dieron las lupas y bombas del comienzo.
   bool get regaloInicial => _regaloInicial;
 
   /// Al llegar al nivel 1 (una sola vez): [herramientasIniciales]. Devuelve
@@ -326,7 +282,6 @@ class Progreso extends ChangeNotifier {
     return true;
   }
 
-  /// El tutorial de la tienda ya se hizo o se salteó.
   bool get tutorialTiendaHecho => _tutorialTiendaHecho;
 
   /// Empieza el tutorial de la tienda: la primera vez regala las plumas para
@@ -339,7 +294,6 @@ class Progreso extends ChangeNotifier {
     return plumasTutorialTienda;
   }
 
-  /// Termina (o saltea) el tutorial de la tienda.
   void terminarTutorialTienda() {
     if (_tutorialTiendaHecho) return;
     _tutorialTiendaHecho = true;
@@ -363,8 +317,6 @@ class Progreso extends ChangeNotifier {
     if (_cuadros.remove(idTutorial) != null) _cambio();
   }
 
-  // ---- Historia -----------------------------------------------------------
-
   bool get introVista => _introVista;
 
   void marcarIntroVista() {
@@ -373,19 +325,13 @@ class Progreso extends ChangeNotifier {
     _cambio();
   }
 
-  /// Capítulos de la historia ya mostrados (uno por bioma completado).
   Set<String> get capitulosVistos => Set.unmodifiable(_capitulosVistos);
 
   void marcarCapituloVisto(String id) {
     if (_capitulosVistos.add(id)) _cambio();
   }
 
-  // ---- Perfil: nombre y género ---------------------------------------------
-
-  /// Nombre de quien juega (null = todavía no lo dijo).
   String? get nombre => _nombre;
-
-  /// Ya dijo cómo se llama y cómo quiere que le hablen.
   bool get perfilCompleto => _nombre != null && _genero != null;
 
   /// Guarda el nombre (sin espacios de más; uno vacío no se guarda).
@@ -396,7 +342,6 @@ class Progreso extends ChangeNotifier {
     _cambio();
   }
 
-  /// Cómo prefiere que le hablen quien juega (null = todavía no eligió).
   Genero? get genero => _genero;
 
   void elegirGenero(Genero genero) {
@@ -410,8 +355,6 @@ class Progreso extends ChangeNotifier {
   String texto(String texto) =>
       conGenero(texto, _genero ?? Genero.neutro).replaceAll('{nombre}', _nombre ?? '');
 
-  // ---- Música -------------------------------------------------------------
-
   bool get musicaSilenciada => _musicaSilenciada;
 
   void silenciarMusica(bool silenciada) {
@@ -419,8 +362,6 @@ class Progreso extends ChangeNotifier {
     _musicaSilenciada = silenciada;
     _cambio();
   }
-
-  // ---- Guardado -----------------------------------------------------------
 
   /// Escritura en curso (los tests la esperan).
   Future<void> guardado = Future.value();

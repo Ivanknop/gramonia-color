@@ -1,0 +1,36 @@
+{
+  "id": "el-lobo-del-bosque--facil",
+  "titulo": "El Lobo del bosque",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#170C0A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#71200A"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E9E5AE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#675133"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#42150B"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A8A165"
+    }
+  ]
+}

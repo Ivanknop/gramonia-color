@@ -52,12 +52,5 @@ void main() {
       estadoTutorialTienda(hecho: true, nivelesCompletos: const [1, 2]),
       EstadoTutorialTienda.hecho,
     );
-    // Regala justo lo que cuesta la lupa.
-    expect(plumasTutorialTienda, Herramienta.lupa.precio);
-  });
-
-  test('premios: 20 plumas por el tutorial y 3 lupas y 3 bombas al empezar', () {
-    expect(ReglasPlumas.porTutorial, 20);
-    expect(herramientasIniciales, {Herramienta.lupa: 3, Herramienta.bomba: 3});
   });
 }

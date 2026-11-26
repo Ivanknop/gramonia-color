@@ -43,7 +43,6 @@ Future<ui.Image?> decodificar(String asset) async {
 
 final imagenes = <String, ui.Image?>{};
 
-/// Catálogo de disco, con las ilustraciones de verdad.
 Catalogo catalogo() {
   final jsons = Directory('assets/cuadros')
       .listSync()

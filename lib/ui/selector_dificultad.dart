@@ -1,14 +1,9 @@
-/// Hoja para elegir la dificultad (modo libre y "rehacer obra").
-library;
-
 import 'package:material_ui/material_ui.dart';
 
 import '../datos/textos.dart';
 import '../engine/dificultad.dart';
 import 'comun.dart';
 
-/// Muestra las dificultades y devuelve la elegida (null si se cierra). Con
-/// [conPlumas] (modo libre), cada una muestra las plumas que da terminarla.
 Future<Dificultad?> elegirDificultad(
   BuildContext context, {
   required String titulo,
@@ -75,7 +70,7 @@ Future<Dificultad?> elegirDificultad(
                                   Textos.plumasDificultad(d.plumas),
                                   style: const TextStyle(
                                     fontWeight: FontWeight.w800,
-                                    color: Color(0xFF8A5A1E),
+                                    color: Tema.marronPluma,
                                   ),
                                 ),
                                 const SizedBox(width: 4),

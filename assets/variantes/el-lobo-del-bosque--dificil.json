@@ -1,0 +1,76 @@
+{
+  "id": "el-lobo-del-bosque--dificil",
+  "titulo": "El Lobo del bosque",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#0E0101"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FAF3C7"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3F130A"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1C0704"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#923F12"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#CBB467"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#DDDDA1"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#5C1B0A"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#405C51"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#9D692F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#171D19"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#8E9B68"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#2F3930"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#831F09"
+    }
+  ]
+}

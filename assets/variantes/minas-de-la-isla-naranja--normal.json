@@ -1,0 +1,46 @@
+{
+  "id": "minas-de-la-isla-naranja--normal",
+  "titulo": "Las minas de la Isla Naranja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#724229"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#9F4F21"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#46261B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#354245"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C6A978"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#987149"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FDFDFC"
+    }
+  ]
+}

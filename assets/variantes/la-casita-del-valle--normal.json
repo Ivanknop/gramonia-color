@@ -1,0 +1,46 @@
+{
+  "id": "la-casita-del-valle--normal",
+  "titulo": "La casita del valle",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4EBDE7"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5D9D4F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#82D9F4"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E9FAFD"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#18482C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#B0E2C6"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#81CCB3"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#6AC0B3"
+    }
+  ]
+}

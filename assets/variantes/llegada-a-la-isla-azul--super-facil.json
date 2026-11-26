@@ -1,0 +1,26 @@
+{
+  "id": "llegada-a-la-isla-azul--super-facil",
+  "titulo": "Llegada a la Isla Azul",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#788186"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#555064"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#D1CEBA"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#79C2D3"
+    }
+  ]
+}

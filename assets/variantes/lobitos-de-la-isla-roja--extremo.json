@@ -1,0 +1,126 @@
+{
+  "id": "lobitos-de-la-isla-roja--extremo",
+  "titulo": "Los lobitos de la Isla Roja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#DD7E58"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#E9B575"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#5395AB"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#60322C"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#FBCF85"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C76950"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#AC5645"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#5AACC0"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FDEDB6"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A06C4B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#7CB2B6"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#A5D2CE"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#FBE4A0"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#556F79"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#FDF7CA"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#8A563F"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#724D3B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#893A35"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#CF7954"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#944A3C"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#D19262"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#CFAF7D"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#5D4A41"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#F3CF89"
+    }
+  ]
+}

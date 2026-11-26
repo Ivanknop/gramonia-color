@@ -1,0 +1,126 @@
+{
+  "id": "la-casita-del-valle--extremo",
+  "titulo": "La casita del valle",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#89BD43"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#4DBCE8"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#59C1EA"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#98E4F7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#082D20"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#69CBF0"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F4FEFE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#BAEDF9"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#266137"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#50BEE9"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#8ADEF6"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6DA040"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#47935E"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#78AF3F"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#7BD6F4"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#D7F5FC"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#F1FBFC"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#E3F9FC"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#68C0C8"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#91CC79"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#71CCEB"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#BDDEAC"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#A5DDB1"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#4DBCE3"
+    }
+  ]
+}

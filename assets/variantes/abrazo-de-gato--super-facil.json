@@ -1,0 +1,26 @@
+{
+  "id": "abrazo-de-gato--super-facil",
+  "titulo": "Abrazo de gato",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#79799A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#8F8C9F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#BFB499"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#5C5879"
+    }
+  ]
+}

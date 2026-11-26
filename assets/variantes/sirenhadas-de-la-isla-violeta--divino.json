@@ -1,0 +1,256 @@
+{
+  "id": "sirenhadas-de-la-isla-violeta--divino",
+  "titulo": "Las SirenHadas de la Isla Violeta",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#0C102B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#190C30"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#312B47"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#1A1B49"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#3E1F5A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#5B5B88"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#8C7B9F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#22162F"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#5D3E5F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#19162B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#9F98B5"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#191E3B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#1C0F35"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#0B0D23"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#09071B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#2F1646"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2C1F39"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#100925"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#202039"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#532D58"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#89405C"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#291440"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#111334"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#3E2C49"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#131429"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#482056"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#111027"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#322C59"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#404066"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#1C2246"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#3D1F45"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#272A4D"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#1B143D"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#402E5E"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#212349"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#3D3658"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#5A2355"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#121736"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#91617E"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#221039"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#762C54"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#23153F"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#191B36"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#190F29"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#191841"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#111227"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#110C25"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#36174D"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#2C244C"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#321C4D"
+    }
+  ]
+}

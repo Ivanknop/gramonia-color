@@ -1,13 +1,5 @@
-/// Geometría de paths SVG para el motor de pintar por números.
-///
-/// Lee el atributo `d` de un `<path>` y produce dos cosas:
-///  - polígonos aplanados (curvas convertidas en rectas), para detectar toques
-///    y ubicar los números;
-///  - la lista de comandos absolutos, para construir el `Path` de dibujo con
-///    las curvas reales (nítido a cualquier zoom).
-///
-/// Comandos soportados: M L H V C S Q T Z (absolutos y relativos). El arco (A)
-/// se aproxima con una recta al punto final: conviene evitarlo en los cuadros.
+/// Paths SVG: polígonos aplanados para detectar toques y comandos absolutos para dibujar las curvas
+/// reales. El arco (A) se aproxima con una recta al punto final: conviene evitarlo.
 library;
 
 import 'dart:math' as math;
@@ -16,6 +8,9 @@ class Punto {
   const Punto(this.x, this.y);
   final double x;
   final double y;
+
+  double distanciaA(Punto otro) =>
+      math.sqrt((x - otro.x) * (x - otro.x) + (y - otro.y) * (y - otro.y));
 
   @override
   bool operator ==(Object other) => other is Punto && other.x == x && other.y == y;
@@ -27,7 +22,6 @@ class Punto {
   String toString() => 'Punto($x, $y)';
 }
 
-/// Un polígono cerrado como lista de puntos.
 typedef Poligono = List<Punto>;
 
 class Caja {
@@ -53,7 +47,6 @@ class Caja {
   int get hashCode => Object.hash(minX, minY, maxX, maxY);
 }
 
-/// Comando de dibujo absoluto (para construir el Path de Flutter).
 sealed class Comando {
   const Comando();
 }
@@ -109,9 +102,7 @@ const _cantParams = {
 
 final _reToken = RegExp(r'([MmLlHhVvCcSsQqTtAaZz])|(-?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?)');
 
-/// Lee el `d` de un path SVG.
 PathLeido leerPath(String d) {
-  // Tokenizar en comandos con sus números.
   final tokens = <(String, List<double>)>[];
   for (final m in _reToken.allMatches(d)) {
     if (m.group(1) != null) {
@@ -251,7 +242,6 @@ PathLeido leerPath(String d) {
   return PathLeido(poligonos, comandos);
 }
 
-/// Aplana el `d` de un path SVG en polígonos (uno por subpath).
 List<Poligono> aplanarPath(String d) => leerPath(d).poligonos;
 
 /// ¿El punto está dentro de los polígonos? Regla par-impar (evenodd): un
@@ -269,7 +259,6 @@ bool puntoEnPoligonos(Punto p, List<Poligono> poligonos) {
   return dentro;
 }
 
-/// Distancia del punto al borde más cercano de los polígonos.
 double distanciaABorde(Punto p, List<Poligono> poligonos) {
   var minimo = double.infinity;
   for (final pol in poligonos) {

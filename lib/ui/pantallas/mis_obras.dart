@@ -1,6 +1,3 @@
-/// Mis obras: cuadros empezados (para retomarlos) y terminados (colección).
-library;
-
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/textos.dart';
@@ -32,11 +29,11 @@ class MisObras extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             if (obras.enProgreso.isNotEmpty) ...[
-              _Seccion('En progreso (${obras.enProgreso.length})'),
+              _Seccion(Textos.enProgreso(obras.enProgreso.length)),
               for (final o in obras.enProgreso) _TarjetaObra(obra: o),
             ],
             if (obras.terminadas.isNotEmpty) ...[
-              _Seccion('Terminadas (${obras.terminadas.length})'),
+              _Seccion(Textos.terminadas(obras.terminadas.length)),
               for (final o in obras.terminadas) _TarjetaObra(obra: o),
             ],
           ],
@@ -88,13 +85,13 @@ class _Tarjeta extends StatelessWidget {
   Widget build(BuildContext context) {
     final libre = dificultadDe(obra.cuadroId);
     final dificultad = Dependencias.of(context).catalogo
-        .dificultad(libre ?? obra.progreso.dificultad ?? '');
+        .dificultadDeObra(obra.cuadroId, rehecha: obra.progreso.dificultad);
     final pintadas = sanearPintadas(cuadro, obra.progreso.pintadas);
     final terminada = obra.progreso.terminado;
     final pct = porcentajeCompletado(cuadro, pintadas);
     final detalle = terminada
-        ? 'Terminada el ${fechaCorta(obra.progreso.completadoEn)}'
-        : 'Última pincelada: ${fechaCorta(obra.progreso.actualizadoEn)}';
+        ? Textos.terminadaEl(fechaCorta(obra.progreso.completadoEn))
+        : Textos.ultimaPincelada(fechaCorta(obra.progreso.actualizadoEn));
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
@@ -108,8 +105,7 @@ class _Tarjeta extends StatelessWidget {
               label: '${cuadro.meta.titulo}, ${terminada ? 'terminada' : '$pct%'}',
               excludeSemantics: true,
               child: InkWell(
-                onTap: () => Navigator.of(context)
-                    .push(MaterialPageRoute<void>(builder: (_) => Pintar(cuadroId: obra.cuadroId))),
+                onTap: () => abrir<void>(context, Pintar(cuadroId: obra.cuadroId)),
                 child: Padding(
                   padding: const EdgeInsets.all(12),
                   child: Row(
@@ -133,7 +129,7 @@ class _Tarjeta extends StatelessWidget {
                                 libre != null
                                     ? Textos.etiquetaLibre(dificultad.nombre)
                                     : Textos.etiquetaRehecha(dificultad.nombre),
-                                style: const TextStyle(fontSize: 12, color: Color(0xFF8E7CC3)),
+                                style: const TextStyle(fontSize: 12, color: Tema.lilaApagado),
                               ),
                             const SizedBox(height: 4),
                             Text(detalle, style: const TextStyle(fontSize: 13, color: Tema.gris)),
@@ -143,7 +139,7 @@ class _Tarjeta extends StatelessWidget {
                                 value: pct / 100,
                                 minHeight: 6,
                                 borderRadius: BorderRadius.circular(3),
-                                color: const Color(0xFF8E7CC3),
+                                color: Tema.lilaApagado,
                                 backgroundColor: const Color(0xFFEEEEEE),
                               ),
                             ],
@@ -152,7 +148,7 @@ class _Tarjeta extends StatelessWidget {
                       ),
                       const SizedBox(width: 12),
                       Text(
-                        terminada ? '¡Con color!' : '$pct%',
+                        terminada ? Textos.obraConColor : '$pct%',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           color: terminada ? Tema.verde : const Color(0xFF999999),
@@ -172,17 +168,14 @@ class _Tarjeta extends StatelessWidget {
   }
 }
 
-/// Lo que se puede hacer con una obra terminada.
 class _Acciones extends StatelessWidget {
   const _Acciones({required this.cuadroId, this.dificultad});
 
-  /// Clave de la obra (cuadro de la historia o variante del modo libre).
   final String cuadroId;
 
   /// Dificultad en que se pintó (null = la de la historia).
   final String? dificultad;
 
-  /// Elige la dificultad, deja la obra en blanco y la abre para pintar.
   Future<void> _rehacer(BuildContext context) async {
     final dep = Dependencias.of(context);
     final navegador = Navigator.of(context);
@@ -205,8 +198,7 @@ class _Acciones extends StatelessWidget {
       alignment: WrapAlignment.end,
       children: [
         TextButton.icon(
-          onPressed: () => Navigator.of(context)
-              .push(MaterialPageRoute<void>(builder: (_) => PantallaTimelapse(cuadroId: cuadroId))),
+          onPressed: () => abrir<void>(context, PantallaTimelapse(cuadroId: cuadroId)),
           icon: const Icon(Icons.slow_motion_video, size: 18),
           label: const Text(Textos.verComoLoPinte),
         ),
@@ -233,17 +225,17 @@ class _Vacio extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           const Text(
-            'Todavía no hay obras',
+            Textos.sinObras,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Tema.morado),
           ),
           const SizedBox(height: 12),
           const Text(
-            'Elegí un cuadro en la Galería y empezá a devolverle sus colores.',
+            Textos.sinObrasDetalle,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 15, color: Color(0xFF666666)),
           ),
           const SizedBox(height: 20),
-          FilledButton(onPressed: onIrAGaleria, child: const Text('Ir a la Galería')),
+          FilledButton(onPressed: onIrAGaleria, child: const Text(Textos.irALaGaleria)),
         ],
       ),
     ),

@@ -1,8 +1,3 @@
-/// Galería: el tutorial (nivel 0) y las obras agrupadas por nivel y por lugar
-/// de Gramonia, en el orden del juego. Los lugares todavía bloqueados se
-/// muestran con candado; las piezas sin obra, como "próximamente".
-library;
-
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
@@ -12,7 +7,6 @@ import '../../engine/niveles.dart';
 import '../comun.dart';
 import 'pintar.dart';
 
-/// Blanco y negro, para las miniaturas de obras sin terminar.
 const _blancoYNegro = ColorFilter.matrix(<double>[
   0.2126, 0.7152, 0.0722, 0, 20, //
   0.2126, 0.7152, 0.0722, 0, 20,
@@ -50,7 +44,6 @@ class Galeria extends StatelessWidget {
   }
 }
 
-/// Encabezado de cada nivel de la galería.
 class _TituloNivel extends StatelessWidget {
   const _TituloNivel(this.nivel);
   final int nivel;
@@ -59,7 +52,7 @@ class _TituloNivel extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
     child: Text(
-      nivel == nivelTutorial ? 'Nivel 0 · ${Textos.tutorial}' : Textos.nivel(nivel),
+      Textos.tituloNivel(nivel),
       style: const TextStyle(
         fontSize: 13,
         letterSpacing: 1,
@@ -70,14 +63,12 @@ class _TituloNivel extends StatelessWidget {
   );
 }
 
-/// El tutorial: se puede volver a hacer (sin premio, si ya se dio).
 class _SeccionTutorial extends StatelessWidget {
   const _SeccionTutorial();
 
   @override
   Widget build(BuildContext context) {
-    final dep = Dependencias.of(context);
-    final progreso = dep.progreso;
+    final progreso = Dependencias.of(context).progreso;
     final terminado = progreso.de(idTutorial)?.terminado ?? false;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 18),
@@ -85,18 +76,7 @@ class _SeccionTutorial extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: dep.catalogo.tieneImagen(idTutorial)
-                ? Image.asset(
-                    'assets/cuadros/$idTutorial.webp',
-                    fit: BoxFit.cover,
-                    cacheWidth: 160,
-                    width: 64,
-                    height: 82,
-                  )
-                : const ColoredBox(
-                    color: Color(0xFFDDDDDD),
-                    child: SizedBox(width: 64, height: 82),
-                  ),
+            child: const IlustracionCuadro(idTutorial, ancho: 64, alto: 82, cacheWidth: 160),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -107,16 +87,14 @@ class _SeccionTutorial extends StatelessWidget {
                 if (!progreso.tutorialPremiado)
                   Text(
                     Textos.tutorialPremio(ReglasPlumas.porTutorial),
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF8A5A1E)),
+                    style: const TextStyle(fontSize: 12, color: Tema.marronPluma),
                   ),
                 const SizedBox(height: 4),
                 OutlinedButton(
                   key: const Key('tutorial'),
                   onPressed: () {
                     if (terminado) progreso.reiniciarTutorial();
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => const Pintar(cuadroId: idTutorial)),
-                    );
+                    abrir<void>(context, const Pintar(cuadroId: idTutorial));
                   },
                   child: Text(terminado ? Textos.tutorialVolverAHacer : Textos.tutorialHacer),
                 ),
@@ -129,7 +107,6 @@ class _SeccionTutorial extends StatelessWidget {
   }
 }
 
-/// En qué nivel de la historia va quien juega y cuánto le falta para el siguiente.
 class _Nivel extends StatelessWidget {
   const _Nivel(this.estado);
   final EstadoNivel estado;
@@ -258,15 +235,7 @@ class _TarjetaObra extends StatelessWidget {
     final hechas = (p?.pintadas.length ?? 0).clamp(0, total);
     // Terminada alguna vez (una obra rehecha sigue contando como recuperada).
     final terminado = dep.progreso.completados.contains(cuadroId);
-    final Widget miniatura = dep.catalogo.tieneImagen(cuadroId)
-        ? Image.asset(
-            'assets/cuadros/$cuadroId.webp',
-            fit: BoxFit.cover,
-            cacheWidth: 240,
-            width: 108,
-            height: 140,
-          )
-        : const ColoredBox(color: Color(0xFFDDDDDD), child: SizedBox(width: 108, height: 140));
+    final miniatura = IlustracionCuadro(cuadroId, ancho: 108, alto: 140, cacheWidth: 240);
 
     return Semantics(
       button: true,
@@ -277,11 +246,7 @@ class _TarjetaObra extends StatelessWidget {
       child: Opacity(
         opacity: habilitada ? 1 : 0.5,
         child: GestureDetector(
-          onTap: habilitada
-              ? () =>
-                    Navigator.of(context)
-                        .push(MaterialPageRoute<void>(builder: (_) => Pintar(cuadroId: cuadroId)))
-              : null,
+          onTap: habilitada ? () => abrir<void>(context, Pintar(cuadroId: cuadroId)) : null,
           child: SizedBox(
             width: 108,
             child: Column(
@@ -351,7 +316,7 @@ class _Proximamente extends StatelessWidget {
         child: const Icon(Icons.hourglass_empty, color: Color(0xFFB0A48A)),
       ),
       const SizedBox(height: 4),
-      const Text('Próximamente', style: TextStyle(fontSize: 12, color: Tema.gris)),
+      const Text(Textos.proximamente, style: TextStyle(fontSize: 12, color: Tema.gris)),
     ],
   );
 }

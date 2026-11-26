@@ -1,0 +1,57 @@
+{
+  "id": "el-unicornio",
+  "titulo": "El unicornio",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#B18D77"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A8615A"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C7C1B4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F5E7DC"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FEFEFF"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FEFEFD"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FEFFFE"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FCFEFE"
+    }
+  ],
+  "orden": 57
+}

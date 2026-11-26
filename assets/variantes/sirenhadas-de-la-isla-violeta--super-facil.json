@@ -1,0 +1,26 @@
+{
+  "id": "sirenhadas-de-la-isla-violeta--super-facil",
+  "titulo": "Las SirenHadas de la Isla Violeta",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#2D2045"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#11102B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#564265"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#23143B"
+    }
+  ]
+}

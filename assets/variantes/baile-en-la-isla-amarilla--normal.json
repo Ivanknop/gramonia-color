@@ -1,0 +1,46 @@
+{
+  "id": "baile-en-la-isla-amarilla--normal",
+  "titulo": "Baile en la Isla Amarilla",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#8D877E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B38D60"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#DFC386"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#624B3C"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#46332A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#946E4E"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#71635B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#BFA376"
+    }
+  ]
+}

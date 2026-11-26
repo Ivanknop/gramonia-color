@@ -1,0 +1,126 @@
+{
+  "id": "minas-de-la-isla-naranja--extremo",
+  "titulo": "Las minas de la Isla Naranja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#8F5832"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FFFFFE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#532919"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F39B36"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#08526B"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#754227"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#CC742C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#0D3B50"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#BA5A1D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#6C371F"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#56443B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#36201A"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#998E6E"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#A9B3A2"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#573324"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#72513D"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#F2D6A1"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#9C3C13"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#964B21"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#686F62"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#FDFDFC"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#FFFEFE"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "el-zorrito-feliz",
+  "titulo": "El zorrito feliz",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FDF8EA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FCF9EA"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F2C9A2"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FCF8E8"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#916066"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C79C8A"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F9EFD6"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FEFDEF"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FDF8EB"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FEF8EA"
+    }
+  ],
+  "orden": 58
+}

@@ -1,7 +1,3 @@
-/// Créditos: quién hizo el juego. Se abre desde la portada y desde el menú.
-/// De fondo, el mapa de Gramonia con sus colores, tenue.
-library;
-
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/textos.dart';
@@ -27,7 +23,6 @@ class Creditos extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // El mapa coloreado, tenue.
           const Opacity(
             key: Key('fondo-creditos'),
             opacity: 0.28,
@@ -80,7 +75,6 @@ class Creditos extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 14, color: Tema.morado),
                     ),
-                    // Enlace al blog de los cuentos: solo texto subrayado.
                     Semantics(
                       link: true,
                       child: GestureDetector(

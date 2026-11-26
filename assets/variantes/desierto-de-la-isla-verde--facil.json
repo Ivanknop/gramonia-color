@@ -1,0 +1,36 @@
+{
+  "id": "desierto-de-la-isla-verde--facil",
+  "titulo": "El desierto de la Isla Verde",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#5D5547"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#DDC7B0"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#C8AE97"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AD8F6D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F3E7CF"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#847D6A"
+    }
+  ]
+}

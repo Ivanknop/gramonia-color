@@ -1,0 +1,76 @@
+{
+  "id": "el-camino-a-la-granja--dificil",
+  "titulo": "El camino a la granja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A9D9D9"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BDD28F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#D1EFEF"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B7C982"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#768E59"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#98B081"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#0A0B09"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A9DBDA"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#C8BA6F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#51392F"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#C3D38A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#5B774C"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D3DBA6"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#A9D7D3"
+    }
+  ]
+}

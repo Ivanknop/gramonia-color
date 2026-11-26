@@ -1,0 +1,36 @@
+{
+  "id": "el-camino-a-la-granja--facil",
+  "titulo": "El camino a la granja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A9D9D9"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#585D43"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A3B67E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C3D698"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#C8EBEB"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A7D7D7"
+    }
+  ]
+}

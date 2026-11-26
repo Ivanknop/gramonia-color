@@ -1,0 +1,126 @@
+{
+  "id": "selva-de-la-isla-celeste--extremo",
+  "titulo": "La selva de la Isla Celeste",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3F446F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3178A9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#1E437E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#6F7AA5"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#233667"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#9C9DAC"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#66C9D9"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#5AB4CD"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#316191"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1A2855"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#8284A1"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#C4A2A8"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#25609B"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#795F8C"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#A2809E"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#E7E1CD"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#CABAB7"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#456296"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#275189"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#5C9ABD"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#4985AC"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#4C73A0"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#5C5F8C"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#465384"
+    }
+  ]
+}

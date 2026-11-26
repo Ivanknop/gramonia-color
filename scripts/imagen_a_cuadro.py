@@ -29,7 +29,7 @@ Limitaciones conocidas:
 
 Uso:
   python3 scripts/imagen_a_cuadro.py foto.jpg --id mi-cuadro --titulo "Mi cuadro" \\
-      --categoria paisaje --colores 8
+      --colores 8
 Requiere: Pillow, numpy, scipy (incluidos en el devcontainer).
 """
 
@@ -48,7 +48,6 @@ from scipy import ndimage
 RAIZ = Path(__file__).resolve().parent.parent
 DIR_CUADROS = RAIZ / "assets" / "cuadros"
 LADO_VIEWBOX = 300  # lado mayor del viewBox, igual que los cuadros hechos a mano
-CATEGORIAS = ["paisaje", "animal", "objeto", "persona", "arte"]
 
 
 # --------------------------------------------------------------------------
@@ -561,8 +560,6 @@ def convertir(args: argparse.Namespace) -> Path:
     meta = {
         "id": args.id,
         "titulo": args.titulo,
-        "categoria": args.categoria,
-        "dificultad": int(min(5, max(1, round(cantidad / 40) + 1))),
         "paleta": [
             {"numero": numero_de[c], "nombre": f"Color {numero_de[c]}", "hex": a_hex(paleta[c])}
             for c in orden_colores
@@ -580,7 +577,6 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("imagen", type=Path)
     ap.add_argument("--id", required=True, help="id del cuadro (minúsculas y guiones)")
     ap.add_argument("--titulo", required=True)
-    ap.add_argument("--categoria", choices=CATEGORIAS, default="arte")
     ap.add_argument("--colores", type=int, default=8, help="cantidad de colores de la paleta")
     ap.add_argument("--ancho", type=int, default=96, help="lado mayor de la grilla de trabajo (px)")
     ap.add_argument("--area-minima", type=int, default=12, help="área mínima de una región (px de la grilla)")

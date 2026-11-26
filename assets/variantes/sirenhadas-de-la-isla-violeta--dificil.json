@@ -1,0 +1,76 @@
+{
+  "id": "sirenhadas-de-la-isla-violeta--dificil",
+  "titulo": "Las SirenHadas de la Isla Violeta",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#0E0B24"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#867497"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#11132E"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2C2B4F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#5A3D5F"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#2E1645"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#1D1F49"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1A0E30"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#482052"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#221338"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#2D2043"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#522D55"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#1B1D38"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#191635"
+    }
+  ]
+}

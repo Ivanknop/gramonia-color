@@ -1,0 +1,46 @@
+{
+  "id": "el-unicornio--normal",
+  "titulo": "El unicornio",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FDFEFE"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#DED3C7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#FEFEFD"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FFFFFE"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FEFFFE"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#AD7768"
+    }
+  ]
+}

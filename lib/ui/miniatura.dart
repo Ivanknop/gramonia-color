@@ -1,7 +1,3 @@
-/// Vista chica de un cuadro tal como lo dejó el jugador (sin números): lo
-/// pintado a color y el resto en blanco y negro.
-library;
-
 import 'dart:ui' as ui;
 
 import 'package:material_ui/material_ui.dart';
@@ -15,8 +11,6 @@ class Miniatura extends StatelessWidget {
 
   final Cuadro cuadro;
   final Set<String> pintadas;
-
-  /// Lado mayor en puntos.
   final double tamano;
 
   @override

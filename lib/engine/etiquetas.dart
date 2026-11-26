@@ -1,12 +1,5 @@
-/// Ubicación automática de los números dentro de cada región.
-///
-/// Las regiones se dibujan en orden y pueden superponerse (las últimas tapan a
-/// las primeras). El número se busca en la parte VISIBLE de la región: el punto
-/// más alejado de cualquier borde (versión simple del "polo de
-/// inaccesibilidad"), con una grilla gruesa y refinamientos.
-///
-/// Los cuadros generados por el conversor traen la etiqueta precalculada; esto
-/// se usa para los cuadros hechos a mano.
+/// Dónde va el número de cada región: el punto de su parte visible más alejado de los bordes (las
+/// regiones de encima la tapan). Los cuadros del conversor ya lo traen calculado.
 library;
 
 import 'geometria.dart';
@@ -20,7 +13,6 @@ class FormaRegion {
 const _celdas = 24;
 const _refinamientos = 3;
 
-/// Calcula la etiqueta de la región `indice` considerando las que están encima.
 /// Devuelve null si la región queda totalmente tapada.
 ({Punto punto, double radio})? calcularEtiqueta(List<FormaRegion> formas, int indice) {
   final propia = formas[indice];

@@ -1,7 +1,3 @@
-/// "Mis obras": cuadros empezados o terminados por el jugador (de la historia
-/// y del modo libre, cuya clave es la de la variante de dificultad).
-library;
-
 import '../engine/dificultad.dart';
 import '../engine/tutorial.dart';
 import 'progreso.dart';

@@ -1,7 +1,3 @@
-/// Tamaños para la vista del lienzo: tamaño de los números y zoom máximo.
-/// (El zoom y el desplazamiento en sí los maneja InteractiveViewer.)
-library;
-
 import 'dart:math' as math;
 
 import 'geometria.dart';
@@ -14,8 +10,6 @@ double tamanoNumero(double radioEtiqueta) => (radioEtiqueta * 1.1).clamp(1.2, 18
 /// Zoom máximo: el suficiente para que el número más chico se lea (al menos
 /// [tamanoLegible] puntos) y la región más chica se pueda tocar con el dedo
 /// (radio de al menos [radioTocable] puntos). Entre 4x y 16x.
-///
-/// [factor] = puntos de pantalla por unidad del viewBox con el cuadro ajustado.
 double escalaMaxima(
   Iterable<double> radios,
   double factor, {
@@ -31,18 +25,13 @@ double escalaMaxima(
 
 /// Radio que tiene que alcanzar un círculo que crece desde [origen] para
 /// cubrir toda la caja de una región (distancia a la esquina más lejana).
-double radioParaCubrir(Caja caja, Punto origen) {
-  double d(double x, double y) =>
-      math.sqrt((x - origen.x) * (x - origen.x) + (y - origen.y) * (y - origen.y));
-  return [
-    d(caja.minX, caja.minY),
-    d(caja.maxX, caja.minY),
-    d(caja.minX, caja.maxY),
-    d(caja.maxX, caja.maxY),
-  ].reduce(math.max);
-}
+double radioParaCubrir(Caja caja, Punto origen) => [
+  Punto(caja.minX, caja.minY),
+  Punto(caja.maxX, caja.minY),
+  Punto(caja.minX, caja.maxY),
+  Punto(caja.maxX, caja.maxY),
+].map(origen.distanciaA).reduce(math.max);
 
-/// Avance (0 a 1) de una animación que empieza en [inicio] y dura [duracion],
 /// con salida suave (ease-out): arranca rápido y frena al llenar.
 double avanceAnimacion(Duration ahora, Duration inicio, Duration duracion) {
   if (ahora <= inicio) return 0;

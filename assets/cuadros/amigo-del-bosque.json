@@ -1,8 +1,6 @@
 {
   "id": "amigo-del-bosque",
   "titulo": "Un amigo en el bosque",
-  "categoria": "animal",
-  "dificultad": 3,
   "paleta": [
     {
       "numero": 1,

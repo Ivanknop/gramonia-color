@@ -1,0 +1,166 @@
+{
+  "id": "selva-de-la-isla-celeste--imposible",
+  "titulo": "La selva de la Isla Celeste",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4D446A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#193671"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#459BC1"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#66C9D9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#7182AB"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#9C9DAC"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#5AB4CD"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#2C375F"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#3380B1"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#4985AC"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#C4A2A8"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#CABAB7"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#E7E1CD"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#795F8C"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#719AB9"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#2C5284"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#2F4476"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#456296"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#8284A1"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#A2809E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#316191"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#25609B"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#205190"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#3070A2"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#4C73A0"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#6D729E"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#1A4282"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#22447B"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#17224C"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#1D2D5D"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#5C5F8C"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#465384"
+    }
+  ]
+}

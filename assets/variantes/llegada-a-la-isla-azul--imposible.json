@@ -1,0 +1,166 @@
+{
+  "id": "llegada-a-la-isla-azul--imposible",
+  "titulo": "Llegada a la Isla Azul",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#5F424B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#B7A795"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F3DEB7"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3489AB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1E598C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#C1F0ED"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#9CE5EA"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#51A8BE"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#645F63"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#B17C6B"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#EAC89E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D6A987"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C3DDDE"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#7BD2E8"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#928A84"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#69CBE9"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#5AC1E9"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#2F436A"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#94D5DE"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#F6EFCF"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#2C749A"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#5A8C9E"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#BDC7C5"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#8B605E"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#7F464C"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#445876"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#907570"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#83BCC3"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#B8927E"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#697276"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#8CA5A1"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#353049"
+    }
+  ]
+}

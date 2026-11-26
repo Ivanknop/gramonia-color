@@ -56,12 +56,12 @@ lib/datos/biomas.dart    Lugares en orden (9 + 7 Islas Arcoíris + Isla Negra), 
                          su nivel (1 a 8), piezas y obras
 lib/datos/mapa.dart      Zonas de cada lugar sobre el mapa provisorio
 lib/datos/historia.dart  Historia narrada por Gobi (borrador editable)
-lib/datos/textos.dart    Textos nuevos de la UI, con variantes {chico|chica|neutro}
+lib/datos/textos.dart    Textos de la UI, con variantes {chico|chica|neutro}
 lib/estado/              Progreso persistido (v2: + plumas, intro, capítulos;
                          v3: + género; v4: + desbloqueadas y dificultad de las
                          obras rehechas; v5: + lupas y bombas; v6: + tutorial
                          pasado y premiado; v7: + nombre; v8: + regalo
-                         inicial y tutorial de la tienda) y
+                         inicial y tutorial de la tienda; v9: siete dificultades) y
                          "Mis obras"
 lib/ui/                  Pintor del cuadro, lienzo con zoom, paleta, miniatura,
                          enlaces (abre el blog con un canal nativo de MainActivity)

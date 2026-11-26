@@ -6,41 +6,26 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   final tabla = leerDificultades(File('assets/dificultades.json').readAsStringSync());
 
-  test('la tabla tiene las diez dificultades en orden', () {
-    expect(tabla.map((d) => d.nombre), [
-      'Súper fácil',
-      'Fácil',
-      'Normal',
-      'Mediano',
-      'Difícil',
-      'Muy difícil',
-      'Extremo',
-      'Imposible',
-      'Insano',
-      'Divino',
-    ]);
-  });
-
-  test('cada dificultad tiene más colores y más regiones que la anterior', () {
+  test('cada dificultad pide más colores y regiones, y da más plumas que la anterior', () {
+    expect(tabla, isNotEmpty);
     for (var i = 1; i < tabla.length; i++) {
-      expect(tabla[i].colores, greaterThan(tabla[i - 1].colores), reason: tabla[i].id);
-      expect(tabla[i].regiones, greaterThan(tabla[i - 1].regiones), reason: tabla[i].id);
-      expect(tabla[i].regiones, greaterThanOrEqualTo(tabla[i].colores), reason: tabla[i].id);
+      final (antes, d) = (tabla[i - 1], tabla[i]);
+      expect(d.colores, greaterThan(antes.colores), reason: d.id);
+      expect(d.regiones, greaterThan(antes.regiones), reason: d.id);
+      expect(d.plumas, greaterThan(antes.plumas), reason: d.id);
+      expect(d.regiones, greaterThanOrEqualTo(d.colores), reason: d.id);
     }
   });
 
-  test('modo libre: las plumas crecen con la dificultad, de 1 a 100', () {
-    expect(tabla.map((d) => d.plumas), [1, 2, 4, 6, 10, 15, 25, 40, 60, 100]);
-    for (var i = 1; i < tabla.length; i++) {
-      expect(tabla[i].plumas, greaterThan(tabla[i - 1].plumas), reason: tabla[i].id);
-    }
+  test('ninguna dificultad usa el id de una retirada', () {
+    expect(tabla.map((d) => d.id).toSet().intersection(dificultadesRetiradas), isEmpty);
   });
 
   test('ids de variantes', () {
-    final id = idVariante('nido-de-rocanon', 'muy-dificil');
-    expect(id, 'nido-de-rocanon--muy-dificil');
+    final id = idVariante('nido-de-rocanon', 'facil');
+    expect(id, 'nido-de-rocanon--facil');
     expect(cuadroBase(id), 'nido-de-rocanon');
-    expect(dificultadDe(id), 'muy-dificil');
+    expect(dificultadDe(id), 'facil');
     expect(cuadroBase('nido-de-rocanon'), 'nido-de-rocanon');
     expect(dificultadDe('nido-de-rocanon'), isNull);
   });

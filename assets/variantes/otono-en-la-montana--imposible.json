@@ -1,0 +1,166 @@
+{
+  "id": "otono-en-la-montana--imposible",
+  "titulo": "Otoño en la montaña",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#ABCCC6"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#CB5C30"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#D76A37"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C4E0DB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#894B2E"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#948C7C"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#9B998A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#ACCCC7"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#B0CFCA"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#AECDC7"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#763E2A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#A9CAC4"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#81472D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#BBBCA4"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#7E432D"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#B8D5D0"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#908575"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#A6CAC3"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#8D7D6D"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#AACAC5"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#9D684A"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#A4C7C0"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#713A28"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#79402B"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#ACCEC8"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#5F3121"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#AC866C"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#AB4F33"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#AD6540"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#A8CCC6"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#ACCBC5"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#BAAC89"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "paseo-por-el-arcoiris",
+  "titulo": "Paseo por el arcoíris",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#4C2B8B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#362183"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#26147C"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2F1983"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#11096C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#5C3B89"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#764B86"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1D1075"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#A67C6F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#130C6C"
+    }
+  ],
+  "orden": 53
+}

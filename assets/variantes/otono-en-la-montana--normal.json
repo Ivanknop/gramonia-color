@@ -1,0 +1,46 @@
+{
+  "id": "otono-en-la-montana--normal",
+  "titulo": "Otoño en la montaña",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#ACCCC7"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BC653C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#998572"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A9CAC4"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#703B28"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#8E492F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#B7D5D0"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#AEAF9A"
+    }
+  ]
+}

@@ -1,14 +1,11 @@
-/// Colores: el cuadro "robado por Mututu" se ve en grises claros que conservan
-/// algo de la luminosidad original, para que se lea la forma sin tapar los
-/// números.
+/// Lo que todavía no se pintó se ve en grises claros que conservan algo de la luminosidad original:
+/// se lee la forma sin tapar los números.
 library;
 
 import 'dart:math' as math;
 
-/// Convierte "#RRGGBB" a 0xFFRRGGBB (ARGB opaco).
 int argbDeHex(String hex) => 0xFF000000 | int.parse(hex.substring(1), radix: 16);
 
-/// Luminancia relativa (0 = negro, 1 = blanco), según WCAG.
 double luminancia(String hex) {
   final n = int.parse(hex.substring(1), radix: 16);
   double canal(int v) {

@@ -1,0 +1,256 @@
+{
+  "id": "paseo-por-el-arcoiris--divino",
+  "titulo": "Paseo por el arcoíris",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#100A6A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6D498B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#352083"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#2E1A83"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#301A85"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#61418D"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#22107A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#B78E68"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#160D6D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#493084"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#120B6C"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#492D92"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#5B3C8D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#0F0A6A"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#54398D"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#3B2588"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#422A83"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#26177A"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#27167F"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#825978"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#9D6476"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#513590"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#25117E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#2B1483"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#391F89"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#815083"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#160C71"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#513883"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#1E1374"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#11096E"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#402590"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#1C1074"
+    },
+    {
+      "numero": 33,
+      "nombre": "Color 33",
+      "hex": "#231574"
+    },
+    {
+      "numero": 34,
+      "nombre": "Color 34",
+      "hex": "#2B187F"
+    },
+    {
+      "numero": 35,
+      "nombre": "Color 35",
+      "hex": "#442A8F"
+    },
+    {
+      "numero": 36,
+      "nombre": "Color 36",
+      "hex": "#14096F"
+    },
+    {
+      "numero": 37,
+      "nombre": "Color 37",
+      "hex": "#D2B566"
+    },
+    {
+      "numero": 38,
+      "nombre": "Color 38",
+      "hex": "#351E86"
+    },
+    {
+      "numero": 39,
+      "nombre": "Color 39",
+      "hex": "#27137F"
+    },
+    {
+      "numero": 40,
+      "nombre": "Color 40",
+      "hex": "#392188"
+    },
+    {
+      "numero": 41,
+      "nombre": "Color 41",
+      "hex": "#1B0E74"
+    },
+    {
+      "numero": 42,
+      "nombre": "Color 42",
+      "hex": "#2C1883"
+    },
+    {
+      "numero": 43,
+      "nombre": "Color 43",
+      "hex": "#4D3090"
+    },
+    {
+      "numero": 44,
+      "nombre": "Color 44",
+      "hex": "#2A197A"
+    },
+    {
+      "numero": 45,
+      "nombre": "Color 45",
+      "hex": "#371B85"
+    },
+    {
+      "numero": 46,
+      "nombre": "Color 46",
+      "hex": "#100967"
+    },
+    {
+      "numero": 47,
+      "nombre": "Color 47",
+      "hex": "#332075"
+    },
+    {
+      "numero": 48,
+      "nombre": "Color 48",
+      "hex": "#804185"
+    },
+    {
+      "numero": 49,
+      "nombre": "Color 49",
+      "hex": "#732C8C"
+    },
+    {
+      "numero": 50,
+      "nombre": "Color 50",
+      "hex": "#100B68"
+    }
+  ]
+}

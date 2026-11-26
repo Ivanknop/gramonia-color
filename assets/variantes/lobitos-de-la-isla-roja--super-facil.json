@@ -1,0 +1,26 @@
+{
+  "id": "lobitos-de-la-isla-roja--super-facil",
+  "titulo": "Los lobitos de la Isla Roja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A36F5A"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#E6DBA9"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#81483B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#9AA190"
+    }
+  ]
+}

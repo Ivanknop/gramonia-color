@@ -1,7 +1,3 @@
-/// Pantallas de la historia narrada por Gobi: escenas (introducción o
-/// capítulos) y el índice para volver a leerlas.
-library;
-
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
@@ -11,7 +7,6 @@ import '../../engine/niveles.dart';
 import '../../datos/textos.dart';
 import '../comun.dart';
 
-/// Cómo cambian los colores del dibujo a lo largo de las escenas.
 enum ColoresDeEscenas {
   /// De todos los colores a blanco y negro (la introducción: Mututu se los lleva).
   seApagan,
@@ -26,7 +21,7 @@ class PantallaHistoria extends StatefulWidget {
   const PantallaHistoria({
     super.key,
     required this.escenas,
-    this.textoFinal = '¡Vamos!',
+    this.textoFinal = Textos.vamos,
     this.alTerminar,
     this.colores = ColoresDeEscenas.seEncienden,
   });
@@ -76,7 +71,7 @@ class _PantallaHistoriaState extends State<PantallaHistoria> {
           children: [
             Align(
               alignment: Alignment.centerRight,
-              child: TextButton(onPressed: _terminar, child: const Text('Saltar')),
+              child: TextButton(onPressed: _terminar, child: const Text(Textos.saltar)),
             ),
             Expanded(
               child: PageView(
@@ -122,7 +117,7 @@ class _PantallaHistoriaState extends State<PantallaHistoria> {
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeOut,
                           ),
-                    child: Text(ultima ? widget.textoFinal : 'Siguiente'),
+                    child: Text(ultima ? widget.textoFinal : Textos.siguiente),
                   ),
                 ],
               ),
@@ -211,47 +206,41 @@ class _VistaEscena extends StatelessWidget {
   }
 }
 
-/// Índice de la historia: la introducción y los capítulos ya desbloqueados.
 class IndiceHistoria extends StatelessWidget {
   const IndiceHistoria({super.key});
 
   @override
   Widget build(BuildContext context) {
     final progreso = Dependencias.of(context).progreso;
-    void abrir(List<Escena> escenas) => Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => PantallaHistoria(escenas: escenas, textoFinal: 'Listo'),
-      ),
-    );
+    void leer(List<Escena> escenas) =>
+        abrir<void>(context, PantallaHistoria(escenas: escenas, textoFinal: Textos.listo));
     Widget nivel(int n) {
       final escenas = capitulosDeNivel[n];
       if (escenas == null) return const SizedBox.shrink();
       return _Capitulo(
         titulo: progreso.texto(escenas.first.titulo ?? Textos.nivel(n + 1)),
         abierto: progreso.capitulosVistos.contains(idCapituloDeNivel(n)),
-        alTocar: () => abrir(escenas),
+        alTocar: () => leer(escenas),
       );
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('La historia')),
+      appBar: AppBar(title: const Text(Textos.laHistoria)),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           _Capitulo(
-            titulo: 'Introducción',
+            titulo: Textos.introduccion,
             abierto: true,
-            alTocar: () => Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (_) => const PantallaHistoria(
-                  escenas: introduccion,
-                  textoFinal: 'Listo',
-                  colores: ColoresDeEscenas.seApagan,
-                ),
+            alTocar: () => abrir<void>(
+              context,
+              const PantallaHistoria(
+                escenas: introduccion,
+                textoFinal: Textos.listo,
+                colores: ColoresDeEscenas.seApagan,
               ),
             ),
           ),
-          // Un capítulo por nivel: Gobi habla al completar cada uno.
           for (final n in {nivelTutorial, for (final b in biomas) b.nivel}) nivel(n),
         ],
       ),
@@ -271,7 +260,7 @@ class _Capitulo extends StatelessWidget {
     child: ListTile(
       leading: Icon(abierto ? Icons.menu_book : Icons.lock_outline, color: Tema.morado),
       title: Text(abierto ? titulo : '???'),
-      subtitle: abierto ? null : const Text('Se cuenta al completar el nivel'),
+      subtitle: abierto ? null : const Text(Textos.capituloCerrado),
       enabled: abierto,
       onTap: abierto ? alTocar : null,
     ),

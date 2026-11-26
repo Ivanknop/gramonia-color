@@ -1,9 +1,5 @@
-/// Catálogo de cuadros: lee `assets/cuadros/<id>.json` + `<id>.svg`.
-///
-/// Los metadatos y el texto del SVG se cargan al iniciar (son livianos); la
-/// geometría de cada cuadro se arma la primera vez que se pide y queda en
-/// memoria. Las variantes de dificultad (`assets/variantes/`) son muchas: se
-/// leen recién cuando se piden ([cargarVariante]).
+/// Catálogo de cuadros. La geometría se arma la primera vez que se pide; las variantes
+/// (assets/variantes/, que son muchas) se leen recién cuando se piden.
 library;
 
 import 'dart:convert';
@@ -15,10 +11,8 @@ import 'package:flutter/services.dart';
 import '../engine/dificultad.dart';
 import '../engine/motor.dart';
 
-/// Carga y decodifica una imagen de assets (null si no se puede).
 typedef CargadorImagen = Future<ui.Image?> Function(String asset);
 
-/// Lee un asset de texto.
 typedef LectorTexto = Future<String> Function(String asset);
 
 class Catalogo {
@@ -33,8 +27,6 @@ class Catalogo {
         for (final e in _svgs.entries) e.key: RegExp(r'<path\b').allMatches(e.value).length,
       };
 
-  /// Arma el catálogo a partir de pares (json, svg) ya leídos.
-  ///
   /// [conImagen]: ids que tienen ilustración (`<id>.webp`); [cargarImagen] la
   /// decodifica (sin cargador, los cuadros se dibujan con colores planos).
   factory Catalogo.desdeTextos(
@@ -62,7 +54,9 @@ class Catalogo {
   static const carpetaVariantes = 'assets/variantes/';
   static const tablaDificultades = 'assets/dificultades.json';
 
-  /// Carga todos los cuadros declarados como assets.
+  /// Las variantes usan la ilustración de su cuadro.
+  static String ilustracion(String id) => '$carpeta${cuadroBase(id)}.webp';
+
   static Future<Catalogo> cargar(AssetBundle bundle) async {
     final manifiesto = await AssetManifest.loadFromAssetBundle(bundle);
     final assets = manifiesto.listAssets().where((a) => a.startsWith(carpeta)).toList();
@@ -86,7 +80,6 @@ class Catalogo {
     );
   }
 
-  /// Decodifica una imagen de un AssetBundle (null si falla).
   static Future<ui.Image?> cargarImagenDeBundle(AssetBundle bundle, String asset) async {
     try {
       final datos = await bundle.load(asset);
@@ -104,11 +97,8 @@ class Catalogo {
 
   /// Cantidad de regiones de cada cuadro (sin armar la geometría).
   final Map<String, int> cantidadRegiones;
-
-  /// Dificultades del modo libre, en orden (ver `lib/engine/dificultad.dart`).
   final List<Dificultad> dificultades;
   final LectorTexto? _leer;
-
   final Map<String, Cuadro> _cache = {};
   final Map<String, MetaCuadro> _metasVariantes = {};
   final Set<String> _conImagen;
@@ -118,14 +108,12 @@ class Catalogo {
   bool tieneImagen(String id) => _conImagen.contains(id) && _cargarImagen != null;
 
   /// Ilustración del cuadro (se decodifica una sola vez). Null si no tiene.
-  /// Las variantes de dificultad usan la de su cuadro.
   Future<ui.Image?> imagen(String id) {
     id = cuadroBase(id);
     if (!tieneImagen(id)) return Future.value();
-    return _imagenes[id] ??= _cargarImagen!('$carpeta$id.webp');
+    return _imagenes[id] ??= _cargarImagen!(ilustracion(id));
   }
 
-  /// Imagen cualquiera de los assets (por ejemplo, el mapa), también en caché.
   Future<ui.Image?> imagenAsset(String asset) {
     final cargar = _cargarImagen;
     if (cargar == null) return Future.value();
@@ -142,6 +130,10 @@ class Catalogo {
   }
 
   Dificultad? dificultad(String id) => dificultades.where((d) => d.id == id).firstOrNull;
+
+  /// La de la variante del modo libre o la de la obra de la historia [rehecha] en otra.
+  Dificultad? dificultadDeObra(String clave, {String? rehecha}) =>
+      dificultad(dificultadDe(clave) ?? rehecha ?? '');
 
   /// Lee y arma la variante de [cuadroId] en la dificultad [dificultadId]
   /// (queda en memoria: después la da [obtener] con su id de variante).
@@ -172,8 +164,6 @@ class Catalogo {
   Cuadro? obtenerDeObra(String clave, {String? dificultad}) =>
       obtener(geometriaDeObra(clave, dificultad));
 
-  /// Cuadro de una obra: un cuadro de la historia o una variante (que se lee
-  /// si todavía no estaba en memoria).
   Future<Cuadro?> cuadroDeObra(String clave, {String? dificultad}) async {
     final id = geometriaDeObra(clave, dificultad);
     final enMemoria = obtener(id);

@@ -11,8 +11,6 @@ La app encuentra sola todos los cuadros de esa carpeta.
 {
   "id": "taza-de-te",
   "titulo": "Taza de té",
-  "categoria": "objeto",
-  "dificultad": 2,
   "paleta": [
     { "numero": 1, "nombre": "Crema", "hex": "#FFF2CC" },
     { "numero": 2, "nombre": "Madera", "hex": "#B45F06" }
@@ -22,7 +20,6 @@ La app encuentra sola todos los cuadros de esa carpeta.
 ```
 
 - `id` debe coincidir con el nombre de los archivos.
-- `categoria`: `paisaje`, `animal`, `objeto`, `persona` o `arte`.
 - `hex` en formato `#RRGGBB`. Todos los colores de la paleta deben usarse.
 - `orden` (opcional) ordena la galería (menor primero; empate → por id).
 
@@ -65,7 +62,7 @@ La app encuentra sola todos los cuadros de esa carpeta.
 ## Desde las ilustraciones de `arte/`
 
 Cada imagen de `arte/` tiene su entrada en `scripts/catalogo-arte.json` (id,
-título, categoría, **`regiones`** —la dificultad: cuántas
+título, **`regiones`** —la dificultad: cuántas
 regiones pintar— y `colores`).
 `python3 scripts/convertir_arte.py` las convierte todas
 (`python3 scripts/convertir_arte.py <id>` para una sola). Las imágenes muy oscuras o con mucho detalle quedan más
@@ -77,7 +74,7 @@ genera las que puede (avisa la cantidad real).
 
 ```bash
 python3 scripts/imagen_a_cuadro.py foto.jpg --id gato-en-la-ventana --titulo "Gato en la ventana" \
-  --categoria animal --colores 10
+  --colores 10
 ```
 
 Opciones útiles: `--ancho` (detalle de la grilla, por defecto 96 px),

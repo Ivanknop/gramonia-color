@@ -1,9 +1,5 @@
-/// Mapa provisorio de Gramonia (assets/mapa/gramonia.webp, 768x1376 px):
-/// dónde queda cada bioma sobre la ilustración. Empieza todo en gris y cada
-/// obra terminada colorea una parte de la zona de su bioma.
-///
-/// Las zonas son aproximadas, dibujadas a mano sobre el mapa actual. Cuando
-/// haya un mapa definitivo se reemplazan (y fondo-caminatas vuelve a ser obra).
+/// Mapa provisorio (assets/mapa/gramonia.webp): la zona de cada bioma, aproximada y dibujada a
+/// mano. Con un mapa definitivo se reemplazan, y fondo-caminatas vuelve a ser obra.
 library;
 
 import 'dart:math' as math;
@@ -34,7 +30,6 @@ List<Punto> _pol(List<(double, double)> p) => [for (final (x, y) in p) Punto(x, 
 
 final _arbol = _elipse(385, 560, 150, 200);
 
-/// Zona de cada bioma (por id). Las Islas Arcoíris son circulitos en el mar.
 final zonasMapa = <String, ZonaMapa>{
   'arbol-magico': ZonaMapa(_arbol),
   'bosque-magico': ZonaMapa(_elipse(340, 720, 255, 200), agujeros: [_arbol]),
@@ -92,23 +87,17 @@ List<Punto> _calcularManchas(ZonaMapa zona, int cantidad) {
     }
   }
   if (candidatos.isEmpty) return [for (var i = 0; i < cantidad; i++) zona.contorno.first];
-  // Primero, el candidato más cercano al centro de la caja.
   final centro = Punto((caja.minX + caja.maxX) / 2, (caja.minY + caja.maxY) / 2);
-  double d2(Punto a, Punto b) => (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
-  final elegidos = [candidatos.reduce((a, b) => d2(a, centro) <= d2(b, centro) ? a : b)];
+  final elegidos = [
+    candidatos.reduce((a, b) => a.distanciaA(centro) <= b.distanciaA(centro) ? a : b),
+  ];
+  double alMasCercano(Punto p) => elegidos.map(p.distanciaA).reduce(math.min);
   while (elegidos.length < cantidad) {
-    elegidos.add(
-      candidatos.reduce((a, b) {
-        final da = elegidos.map((e) => d2(a, e)).reduce(math.min);
-        final db = elegidos.map((e) => d2(b, e)).reduce(math.min);
-        return da >= db ? a : b;
-      }),
-    );
+    elegidos.add(candidatos.reduce((a, b) => alMasCercano(a) >= alMasCercano(b) ? a : b));
   }
   return elegidos;
 }
 
-/// Radio de cada mancha para que [cantidad] manchas cubran la zona.
 double radioDeMancha(ZonaMapa zona, int cantidad) {
   final c = cajaDe([zona.contorno]);
   final area = (c.maxX - c.minX) * (c.maxY - c.minY) * 0.7; // aproximada

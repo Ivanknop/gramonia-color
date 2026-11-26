@@ -1,11 +1,6 @@
-/// Dificultades del modo libre y de "rehacer obra". La tabla está a mano en
-/// `assets/dificultades.json` (la lee también el conversor): cada dificultad
-/// tiene una cantidad fija de colores, un objetivo de regiones y las plumas que
-/// da terminar un cuadro en el modo libre (crecen con la dificultad).
-///
-/// Cada cuadro tiene una variante por dificultad, generada por el conversor:
-/// `assets/variantes/<cuadro>--<dificultad>.svg/.json`, que usa la ilustración
-/// del cuadro. El id de la variante es también la clave de su progreso.
+/// Dificultades del modo libre y de "rehacer obra" (a mano en assets/dificultades.json). Cada
+/// cuadro tiene una variante por dificultad, `<cuadro>--<dificultad>`, cuyo id es también la clave
+/// de su progreso.
 library;
 
 import 'dart:convert';
@@ -35,12 +30,9 @@ class Dificultad {
 
   /// Regiones a pintar (objetivo: el conversor fusiona hasta llegar).
   final int regiones;
-
-  /// Plumas por terminar un cuadro del modo libre en esta dificultad.
   final int plumas;
 }
 
-/// Lee la tabla de `assets/dificultades.json`, en el orden de la pantalla.
 List<Dificultad> leerDificultades(String texto) {
   final j = jsonDecode(texto) as Map<String, dynamic>;
   return [
@@ -48,9 +40,12 @@ List<Dificultad> leerDificultades(String texto) {
   ];
 }
 
+/// Dificultades que ya no están en la tabla (se pasó de diez a siete). Al
+/// cargar un guardado viejo se descarta lo pintado en ellas (ver `Progreso`).
+const dificultadesRetiradas = {'mediano', 'muy-dificil', 'insano'};
+
 const separadorVariante = '--';
 
-/// Id de la variante de [cuadroId] en la dificultad [dificultadId].
 String idVariante(String cuadroId, String dificultadId) =>
     '$cuadroId$separadorVariante$dificultadId';
 

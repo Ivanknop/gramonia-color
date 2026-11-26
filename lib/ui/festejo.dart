@@ -1,7 +1,3 @@
-/// Festejo al terminar un cuadro: confeti de colores y un cartel que rebota.
-/// No intercepta toques. Avisa con [alTerminar] cuando termina.
-library;
-
 import 'package:material_ui/material_ui.dart';
 
 import '../datos/textos.dart';
@@ -93,7 +89,7 @@ class _PintorConfeti extends CustomPainter {
       final e = Confeti.en(p, t);
       if (!e.visible) continue;
       final lado = p.tamano * size.width;
-      pincel.color = Color(Confeti.colores[p.color]);
+      pincel.color = Color(Confeti.colores[p.indiceColor]);
       canvas
         ..save()
         ..translate(e.x * size.width, e.y * size.height)

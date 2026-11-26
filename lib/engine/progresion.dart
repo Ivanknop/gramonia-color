@@ -1,11 +1,5 @@
-/// Progresión: Gramonia se recorre nivel por nivel, con dificultad creciente
-/// (más obras, más regiones y más colores por obra). Cada nivel agrupa uno o
-/// más lugares (ver `niveles.dart`). Cada obra terminada destapa una pieza de
-/// su bioma; con todas las piezas destapadas, el bioma queda completo.
-///
-/// Los lugares de un nivel se abren todos juntos, cuando los de los niveles
-/// anteriores están completos en todo lo que tienen disponible: las piezas
-/// "próximamente" (sin obra asignada todavía) no traban el avance.
+/// Cada obra terminada destapa una pieza de su bioma. Las piezas sin obra ("próximamente") no
+/// traban el avance.
 library;
 
 import 'dart:math' as math;
@@ -18,8 +12,6 @@ enum TipoBioma { region, isla }
 class Pieza {
   const Pieza({required this.id, this.cuadroId});
   final String id;
-
-  /// Obra que hay que completar para destaparla.
   final String? cuadroId;
 }
 
@@ -42,8 +34,6 @@ class Bioma {
   /// Color representativo (ARGB): fichas, islas del mapa, etc.
   final int color;
   final List<Pieza> piezas;
-
-  /// Nivel de la historia al que pertenece (desde 1; ver `niveles.dart`).
   final int nivel;
   final TipoBioma tipo;
 
@@ -51,8 +41,6 @@ class Bioma {
   /// traen artículo ("La Ciudad") no lo necesitan.
   final bool femenino;
 
-  /// Nombre con artículo en minúscula, para usar dentro de una frase:
-  /// "el Árbol Mágico", "la Montaña Dragón", "la Ciudad".
   String get conArticulo {
     for (final a in const ['El ', 'La ']) {
       if (nombre.startsWith(a)) return '${a.toLowerCase()}${nombre.substring(a.length)}';
@@ -67,13 +55,8 @@ class EstadoBioma {
   const EstadoBioma({required this.bioma, required this.reveladas, required this.accesible});
 
   final Bioma bioma;
-
-  /// Ids de piezas destapadas.
   final Set<String> reveladas;
-
-  /// Se puede jugar (los niveles anteriores están completos en lo disponible).
   final bool accesible;
-
   int get total => bioma.piezas.length;
 
   /// Todas las piezas destapadas (requiere que todas tengan obra).
@@ -84,8 +67,6 @@ class EstadoBioma {
       bioma.piezas.every((p) => p.cuadroId == null || reveladas.contains(p.id));
 }
 
-/// Estado de todos los biomas, en orden de progresión. Un bioma es accesible
-/// si todos los de niveles anteriores están completos en lo disponible.
 List<EstadoBioma> estadoBiomas(List<Bioma> biomas, Set<String> completados) {
   final estados = [
     for (final b in biomas)
@@ -114,9 +95,6 @@ List<EstadoBioma> estadoBiomas(List<Bioma> biomas, Set<String> completados) {
   ];
 }
 
-/// Obras de la historia en el orden del recorrido (bioma por bioma).
-List<String> cuadrosDelRecorrido(List<Bioma> biomas) => [for (final b in biomas) ...b.cuadroIds];
-
 /// Cuadros del modo libre, en el orden de [todos]: los que no son de la
 /// historia (solo modo libre) y los de la historia que ya se colorearon ahí
 /// (menos el tutorial, que se juega desde la historia).
@@ -128,7 +106,6 @@ List<String> cuadrosLibres(List<Bioma> biomas, Set<String> completados, Iterable
   ];
 }
 
-/// Qué pieza destapa un cuadro (o null si no destapa ninguna).
 ({Bioma bioma, Pieza pieza})? piezaDeCuadro(List<Bioma> biomas, String cuadroId) {
   for (final b in biomas) {
     for (final p in b.piezas) {
@@ -138,22 +115,6 @@ List<String> cuadrosLibres(List<Bioma> biomas, Set<String> completados, Iterable
   return null;
 }
 
-/// Biomas que pasan a estar completos (todas sus obras disponibles
-/// terminadas) al sumar [cuadroId] a los completados.
-List<Bioma> biomasQueSeCompletan(List<Bioma> biomas, Set<String> antes, String cuadroId) {
-  final previos = estadoBiomas(biomas, antes);
-  final nuevos = estadoBiomas(biomas, {...antes, cuadroId});
-  return [
-    for (var i = 0; i < biomas.length; i++)
-      if (!previos[i].completoDisponible &&
-          nuevos[i].completoDisponible &&
-          biomas[i].cuadroIds.isNotEmpty)
-        biomas[i],
-  ];
-}
-
-/// Revisa que los datos de biomas sean consistentes. Devuelve los problemas
-/// encontrados (vacío si está todo bien). Lo usan los tests de datos.
 List<String> validarBiomas(List<Bioma> biomas, Iterable<String> cuadroIds) {
   final problemas = <String>[];
   final existentes = cuadroIds.toSet();

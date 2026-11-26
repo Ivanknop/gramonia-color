@@ -1,0 +1,166 @@
+{
+  "id": "el-zorrito-feliz--imposible",
+  "titulo": "El zorrito feliz",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FDF8EA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FBF9EA"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FED188"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FCF8E9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#FCF8EA"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F19E7F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F6B7A8"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FEFADA"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FEFDF1"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#5D384D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#FAF3DD"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#FCF7E9"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#BEA99F"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#FDF9EB"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#FCE095"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#FCF9EA"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#F9C49F"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#FDF8E9"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#FDC4A6"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#A7676B"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#74525E"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#FDF8EB"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#FBF8EA"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#F9E9C8"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#B08880"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#4B2840"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#FCF8EB"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#FCF9E9"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#E1C9A9"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#FCF9EB"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#FEF8EA"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#FBF8E9"
+    }
+  ]
+}

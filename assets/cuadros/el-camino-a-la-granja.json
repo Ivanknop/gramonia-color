@@ -1,0 +1,57 @@
+{
+  "id": "el-camino-a-la-granja",
+  "titulo": "El camino a la granja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A9D9D9"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BBC57F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6C8456"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#CEEEEE"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#392F25"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#96AE82"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#A9DADA"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A9D8D9"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#BDD6A7"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A8D9D9"
+    }
+  ],
+  "orden": 52
+}

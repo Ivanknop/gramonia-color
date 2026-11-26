@@ -1,0 +1,76 @@
+{
+  "id": "selva-de-la-isla-celeste--dificil",
+  "titulo": "La selva de la Isla Celeste",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#3D7AA7"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#203060"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6D79A5"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#AF9EA9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#404470"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#5FBED2"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#1F447F"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#D7CBBF"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#91819F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#2C6196"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#465B8E"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#6B5F8D"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#5D99BB"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#28528A"
+    }
+  ]
+}

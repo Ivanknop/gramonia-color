@@ -1,0 +1,26 @@
+{
+  "id": "el-camino-a-la-granja--super-facil",
+  "titulo": "El camino a la granja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A7D7D7"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A3B67E"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#585D43"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#B7DBC7"
+    }
+  ]
+}

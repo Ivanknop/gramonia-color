@@ -5,8 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 const meta = MetaCuadro(
   id: 'prueba',
   titulo: 'Prueba',
-  categoria: Categoria.arte,
-  dificultad: 1,
   paleta: [
     ColorPaleta(numero: 1, nombre: 'Uno', hex: '#FF0000'),
     ColorPaleta(numero: 2, nombre: 'Dos', hex: '#00FF00'),
@@ -33,27 +31,18 @@ void main() {
 
   group('intentarPintar', () {
     test('color correcto', () {
-      final r = intentarPintar(cuadro, {}, const Punto(20, 20), 2);
-      expect(r, isA<Correcto>());
-      r as Correcto;
-      expect((r.regionId, r.cuadroCompleto, r.colorCompleto), ('cuadrado', false, false));
+      final r = intentarPintar(cuadro, {}, const Punto(20, 20), 2) as Correcto;
+      expect(r.regionId, 'cuadrado');
     });
 
-    test('color incorrecto informa el número esperado', () {
+    test('color incorrecto', () {
       final r = intentarPintar(cuadro, {}, const Punto(20, 20), 1) as Incorrecto;
-      expect((r.regionId, r.numeroEsperado), ('cuadrado', 2));
+      expect(r.regionId, 'cuadrado');
     });
 
     test('región ya pintada y toque fuera', () {
       expect(intentarPintar(cuadro, {'cuadrado'}, const Punto(20, 20), 2), isA<YaPintada>());
       expect(intentarPintar(cuadro, {}, const Punto(-5, 0), 1), isA<Fuera>());
-    });
-
-    test('avisa cuando se completa un color y cuando se completa el cuadro', () {
-      final r1 = intentarPintar(cuadro, {'cuadrado'}, const Punto(70, 70), 2) as Correcto;
-      expect((r1.colorCompleto, r1.cuadroCompleto), (true, false));
-      final r2 = intentarPintar(cuadro, {'cuadrado', 'otro'}, const Punto(50, 50), 1) as Correcto;
-      expect((r2.colorCompleto, r2.cuadroCompleto), (true, true));
     });
   });
 
@@ -106,8 +95,6 @@ void main() {
       final conTres = MetaCuadro(
         id: meta.id,
         titulo: meta.titulo,
-        categoria: meta.categoria,
-        dificultad: 1,
         paleta: [
           ...meta.paleta,
           const ColorPaleta(numero: 3, nombre: 'Tres', hex: '#0000FF'),

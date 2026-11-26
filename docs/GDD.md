@@ -96,8 +96,7 @@ No hay derrota ni tiempo límite. El progreso se guarda en todo momento.
 
 - Se ganan: **5 por día** al entrar, **3 por cuadro** terminado de la historia
   (también una obra rehecha), en el **modo libre según la dificultad** (Súper
-  fácil 1, Fácil 2, Normal 4, Mediano 6, Difícil 10, Muy difícil 15, Extremo 25,
-  Imposible 40, Insano 60, Divino 100; campo `plumas` de
+  fácil 1, Fácil 2, Normal 4, Difícil 10, Extremo 25, Imposible 40, Insano 100; campo `plumas` de
   `assets/dificultades.json`, que se ve al elegir la dificultad), **10 por nivel** que se sube en la historia y **20 al
   terminar el tutorial** por primera vez (valores
   en `lib/engine/plumas.dart`).
@@ -156,7 +155,8 @@ desbloqueado no se pierde: las obras terminadas se guardan aparte
 abierto. Terminarla de nuevo festeja, pero no da plumas ni pieza.
 
 **Dificultades** (modo libre y "rehacer obra"): súper fácil, fácil, normal,
-mediano, difícil, muy difícil, extremo, imposible, insano y divino. Cada una
+difícil, extremo, imposible e insano (eran diez: se sacaron mediano, muy difícil
+e insano, y divino pasó a llamarse insano, con id `divino`; para achicar el APK). Cada una
 tiene colores fijos y un objetivo de regiones, a mano en
 `assets/dificultades.json` (de 4 colores y 20 regiones a 50 y 700). El
 conversor genera una variante de cada cuadro por dificultad.

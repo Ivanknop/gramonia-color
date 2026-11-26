@@ -1,0 +1,76 @@
+{
+  "id": "desierto-de-la-isla-verde--dificil",
+  "titulo": "El desierto de la Isla Verde",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#D3AB75"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#A98861"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#D8C5BC"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#494138"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#BAAAA5"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#EEDAB7"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#FBF8EC"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#5A5D53"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#7A644C"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#E6CBA4"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#868575"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#B5997F"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#81735D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#D6BAA1"
+    }
+  ]
+}

@@ -93,7 +93,6 @@ def argumentos(p: dict, imagen: Path, id_: str, colores: int, regiones: int) -> 
         str(imagen),
         "--id", id_,
         "--titulo", p["titulo"],
-        "--categoria", p["categoria"],
         "--colores", str(colores),
         "--area-minima", str(p["area_minima"]),
         "--suavizado", str(p["suavizado"]),

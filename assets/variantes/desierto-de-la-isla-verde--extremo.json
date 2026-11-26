@@ -1,0 +1,126 @@
+{
+  "id": "desierto-de-la-isla-verde--extremo",
+  "titulo": "El desierto de la Isla Verde",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#AA8961"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#604D3D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#E9D6BE"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#B1A7AB"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#DDB982"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D0BABD"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#D4AB74"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#D6C4B9"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#3D352D"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#5A5D53"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#BF9A6B"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#888D81"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#444A46"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#765F48"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#C4AEA4"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#E5C699"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#AA9A96"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#F4DEAF"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#FAF2D8"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#E6CFB1"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#806A51"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#83755E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#877E6B"
+    }
+  ]
+}

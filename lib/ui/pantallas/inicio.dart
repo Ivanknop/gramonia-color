@@ -1,18 +1,5 @@
-/// Portada del juego, con su intro: el mapa de Gramonia arranca a todo color y
-/// se va apagando hasta el blanco y negro (Mututu robando los colores), menos
-/// los lugares de los niveles ya completos, que se quedan con su color; ya en
-/// gris aparece el título "Gramonia… Color" en lilas y, debajo, los dos modos:
-///
-/// - "Modo historia": la primera vez cuenta la historia de Gobi, pregunta cómo
-///   hablarle a quien juega y arranca el tutorial (nivel 0, se puede saltear);
-///   después abre las pestañas (galería, mis obras, mapa y tienda).
-/// - "Modo libre": los dibujos para pintar sin historia.
-///
-/// Abajo, el link a los créditos. Desde los dos modos, la flecha de la barra de
-/// abajo vuelve acá.
-///
-/// Tocar la pantalla durante la animación la saltea. Cada día, al entrar, el
-/// Rocanón regala plumas.
+/// Portada: el mapa se apaga (Mututu se lleva los colores) menos los lugares ya recuperados, y
+/// aparece el título con los dos modos. Tocar la pantalla saltea la animación.
 library;
 
 import 'package:material_ui/material_ui.dart';
@@ -77,13 +64,11 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
     );
   }
 
-  /// Tocar durante la animación la saltea.
   void _saltear() {
     if (_animacion.isAnimating) _animacion.value = 1;
   }
 
-  Future<void> _abrir(Widget pantalla) =>
-      Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => pantalla));
+  Future<void> _abrir(Widget pantalla) => abrir<void>(context, pantalla);
 
   /// Nombre y género. También para quien ya jugaba antes de que existiera la pregunta.
   Future<void> _preguntarPerfil() async {
@@ -139,7 +124,6 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
                   colorFilter: ColorFilter.matrix(matrizSaturacion(e.saturacion)),
                   child: Image.asset(imagenProvisoria, fit: BoxFit.cover),
                 ),
-                // Lo recuperado no pierde el color.
                 ListenableBuilder(
                   listenable: progreso,
                   builder: (context, _) =>
@@ -155,7 +139,6 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
                       child: Stack(
                         children: [
                           const Positioned(top: 12, right: 16, child: ContadorPlumas()),
-                          // Para corregir el nombre o cómo hablarle.
                           Positioned(
                             top: 6,
                             left: 12,
@@ -173,7 +156,6 @@ class _InicioState extends State<Inicio> with SingleTickerProviderStateMixin {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                // Solo texto, como un enlace (sin botón marcado).
                                 Semantics(
                                   link: true,
                                   child: GestureDetector(

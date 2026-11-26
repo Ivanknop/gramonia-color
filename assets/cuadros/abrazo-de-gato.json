@@ -1,0 +1,57 @@
+{
+  "id": "abrazo-de-gato",
+  "titulo": "Abrazo de gato",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#8288A8"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6F769D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6C6993"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#EADA8F"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#4B465D"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A8A09F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#7D7CAA"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#877B82"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#BFB49A"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#9B8F97"
+    }
+  ],
+  "orden": 55
+}

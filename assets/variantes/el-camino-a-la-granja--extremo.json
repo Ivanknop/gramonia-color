@@ -1,0 +1,126 @@
+{
+  "id": "el-camino-a-la-granja--extremo",
+  "titulo": "El camino a la granja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A9D8D9"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#BDD28F"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#010201"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#A9C482"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#709753"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#E7F7F6"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#A1AE84"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#CABD6C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#BDE7EA"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#A7D8D8"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#BDD290"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#95A87D"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#7A8760"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#BFD38D"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#5D794B"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#BDD38F"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#D8DCAC"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#462C26"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#A9DBDA"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#A9D9DA"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#AFD6C3"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#A9D9D9"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#9DBA85"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#C3CE86"
+    }
+  ]
+}

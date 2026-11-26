@@ -1,0 +1,126 @@
+{
+  "id": "llegada-a-la-isla-azul--extremo",
+  "titulo": "Llegada a la Isla Azul",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#70444B"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#307FA3"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#72CFE9"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C7A88E"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1E598C"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#645F63"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F3DEB7"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#55B4D4"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#9CE5EA"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#C1F0ED"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#928A84"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#94D5DE"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#EAC89E"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#88B1B2"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#C3DDDE"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#B17C6B"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#F6EFCF"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#445876"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#323A5A"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#8B605E"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#BDC7C5"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#907570"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#B8927E"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#617F8A"
+    }
+  ]
+}

@@ -30,7 +30,6 @@ const carpetaGif = 'temp/gif';
 /// Paso del reloj simulado entre cuadro y cuadro (10 cuadros por segundo).
 const paso = Duration(milliseconds: 100);
 
-/// Junta los cuadros de una secuencia.
 class Grabador {
   Grabador(this.nombre) {
     final dir = Directory('$carpetaGif/$nombre');
@@ -68,7 +67,6 @@ class Grabador {
     }
   }
 
-  /// Un cuadro quieto que dura [espera] (para leer un texto).
   Future<void> esperar(WidgetTester t, Duration espera) async {
     await t.pump(paso);
     await cuadro(t, ms: espera.inMilliseconds);

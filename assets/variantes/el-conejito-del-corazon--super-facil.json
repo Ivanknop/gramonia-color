@@ -1,0 +1,26 @@
+{
+  "id": "el-conejito-del-corazon--super-facil",
+  "titulo": "El conejito del corazón",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F2DBAA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F3DEB5"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#E4B59D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F0DBAB"
+    }
+  ]
+}

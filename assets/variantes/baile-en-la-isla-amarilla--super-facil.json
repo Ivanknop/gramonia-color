@@ -1,0 +1,26 @@
+{
+  "id": "baile-en-la-isla-amarilla--super-facil",
+  "titulo": "Baile en la Isla Amarilla",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A0896E"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#574235"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#CBB07D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#836955"
+    }
+  ]
+}

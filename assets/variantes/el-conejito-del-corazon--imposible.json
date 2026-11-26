@@ -1,0 +1,166 @@
+{
+  "id": "el-conejito-del-corazon--imposible",
+  "titulo": "El conejito del corazón",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#F4DBAB"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#F4CDB0"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F3DCAA"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F3DBAB"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F2DCAA"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#F2DBAA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F3E5D8"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F2DBA9"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#F5DEAB"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#F2B2AE"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#F2DBAB"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D96269"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#DBD4AC"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#F3DBAA"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#F3DCAB"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#F2E5D8"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#B2CB9D"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#F3DBB4"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#F4E5D9"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#F5DBAA"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#F3E4D5"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#F4E8D8"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#F3DBA8"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#F1DAAB"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#F0DBAA"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#F6E0B9"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#F2DCA9"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#F3E5D4"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#F1DFBB"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#F2DBA8"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#F4DCAA"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#EFDCAE"
+    }
+  ]
+}

@@ -1,8 +1,3 @@
-/// Timelapse: repite, acelerado, cómo se pintó un cuadro (cada región se
-/// expande desde su número, en el orden en que se pintó). Se puede repetir
-/// desde el principio o saltear.
-library;
-
 import 'dart:ui' as ui;
 
 import 'package:flutter/scheduler.dart';
@@ -24,12 +19,8 @@ class VistaTimelapse extends StatefulWidget {
   });
 
   final Cuadro cuadro;
-
-  /// Ids de las regiones en el orden en que se pintaron.
   final List<String> orden;
   final ui.Image? imagen;
-
-  /// Al terminar la repetición o al saltearla.
   final VoidCallback alTerminar;
 
   @override
@@ -67,7 +58,6 @@ class _VistaTimelapseState extends State<VistaTimelapse> with SingleTickerProvid
     if (transcurrido >= Timelapse.duracion(_orden.length)) _terminar();
   }
 
-  /// Vuelve a empezar la repetición desde el cuadro en blanco.
   void _repetir() {
     if (_terminado) return;
     _ticker.stop();
@@ -158,7 +148,6 @@ class _VistaTimelapseState extends State<VistaTimelapse> with SingleTickerProvid
   }
 }
 
-/// El timelapse en una pantalla propia (desde "Mis obras" o el panel final).
 class PantallaTimelapse extends StatelessWidget {
   const PantallaTimelapse({super.key, required this.cuadroId});
   final String cuadroId;
@@ -181,7 +170,6 @@ class PantallaTimelapse extends StatelessWidget {
                       cuadro: cuadro,
                       orden: orden,
                       imagen: imagen.data,
-                      // Al terminar (o saltear), vuelve a donde estaba.
                       alTerminar: () => Navigator.of(context).maybePop(),
                     ),
             ),

@@ -1,0 +1,26 @@
+{
+  "id": "el-unicornio--super-facil",
+  "titulo": "El unicornio",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#C9AA9D"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FCFEFE"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "minas-de-la-isla-naranja--dificil",
+  "titulo": "Las minas de la Isla Naranja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#714129"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A55927"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#0D475D"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#997148"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FFFFFE"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#45251A"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#F1B567"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#573D30"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FDFFFF"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#9FA18A"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#99441A"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#FDFDFC"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#FEFEFE"
+    }
+  ]
+}

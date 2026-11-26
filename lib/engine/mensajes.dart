@@ -1,8 +1,3 @@
-/// Mensaje del panel final al terminar una obra de la historia: uno al azar
-/// entre varios, según cuántas obras le faltan a su lugar (los textos están
-/// en `Textos.mensajesObra`).
-library;
-
 import 'dart:math' as math;
 
 import 'progresion.dart';
@@ -11,7 +6,6 @@ import 'progresion.dart';
 /// `{Lugar}` (igual, en mayúscula) y `{n}` (obras que faltan).
 typedef MensajesDeObra = ({List<String> faltan, List<String> faltaUna, List<String> completo});
 
-/// Obras disponibles del [lugar] que todavía no se terminaron.
 int obrasQueFaltan(Bioma lugar, Set<String> completados) =>
     lugar.cuadroIds.where((id) => !completados.contains(id)).length;
 

@@ -1,14 +1,11 @@
-/// Textos visibles del juego (los nuevos viven acá, no sueltos en los widgets).
-///
-/// Los que dependen del género de quien juega llevan tres variantes
-/// `{chico|chica|neutro}`; se resuelven con `Progreso.texto` (ver
-/// `lib/engine/genero.dart`). La neutra reformula: sin "o/a", "x" ni "e".
+/// Textos visibles del juego. Los que tienen género llevan `{chico|chica|neutro}` y se resuelven
+/// con `Progreso.texto`.
 library;
 
 import 'biomas.dart';
 
 abstract final class Textos {
-  // ---- Perfil: nombre y género (después de la introducción) ----
+  // Perfil: nombre y género (después de la introducción)
   static const perfil = 'Mi perfil';
   static const perfilNombre = '¿Cómo te llamás?';
   static const perfilNombreAyuda = 'Tu nombre o un apodo';
@@ -18,16 +15,17 @@ abstract final class Textos {
   static const generoChica = 'Chica';
   static const generoNeutro = 'Prefiero no decir';
 
-  // ---- Niveles (modo historia) ----
-  static String nivel(int n) => n == 0 ? 'Tutorial' : ['Nivel $n', ?nombresDeNivel[n]].join(' · ');
+  // Niveles (modo historia)
+  static String nivel(int n) => n == 0 ? tutorial : ['Nivel $n', ?nombresDeNivel[n]].join(' · ');
+  static String tituloNivel(int n) => n == 0 ? 'Nivel 0 · $tutorial' : nivel(n);
   static String paraElNivel(int hechas, int necesarias, int siguiente) =>
       '$hechas de $necesarias obras para llegar al nivel $siguiente';
   static String nivelCompleto(int n) => '¡Nivel $n completo! Pronto llegan más obras.';
   static const bloqueadoPorNivel = 'Se desbloquea al terminar el nivel anterior';
 
-  // ---- Tutorial (nivel 0) ----
+  // Tutorial (nivel 0)
   static const tutorial = 'Tutorial';
-  static const tutorialSaltar = 'Saltar';
+  static const tutorialSaltar = saltar;
   static const tutorialElegirColor = 'Elegí un color de la paleta de abajo.';
   static const tutorialCompletarColor =
       'Tocá las partes del dibujo que tienen ese número hasta pintarlas todas. '
@@ -47,13 +45,12 @@ abstract final class Textos {
   static const tutorialDetalle = 'Aprendé a pintar con un Árbol Mágico sencillito.';
   static String tutorialPremio(int n) => 'La primera vez que lo terminás, ganás $n plumas.';
 
-  // ---- Créditos ----
+  // Créditos
   static const creditos = 'Créditos';
   static const creditosTitulo = 'Gramonia a Color';
   static const creditosIntro =
       'Estas son las personas (y las ayudas mágicas) que hicieron Gramonia a Color.';
 
-  /// Quién hizo qué, en el orden en que se muestra.
   static const realizadores = <(String, String)>[
     ('Guion y desarrollo', 'Iván y Regina Knopoff'),
     ('Imágenes y Música', 'Gemini'),
@@ -64,7 +61,7 @@ abstract final class Textos {
   static const creditosSinNavegador = 'No pudimos abrir el navegador.';
   static const creditosGobi = '¡Gracias por devolverle los colores a Gramonia!';
 
-  // ---- Al terminar una obra de la historia (uno al azar) ----
+  // Al terminar una obra de la historia (uno al azar)
   // {lugar}: el lugar con artículo ("el Árbol Mágico"); {Lugar}: igual, con
   // mayúscula; {n}: obras que le faltan. "a el" queda "al".
   static const mensajesObra = (
@@ -88,21 +85,21 @@ abstract final class Textos {
   static String destapaste(String lugarConArticulo) =>
       'Destapaste una parte de $lugarConArticulo.'.replaceAll('de el ', 'del ');
 
-  // ---- Festejo ----
+  // Festejo
   static const festejo = '¡Terminaste!';
 
-  // ---- Timelapse ----
+  // Timelapse
   static const timelapse = 'Así lo pintaste';
   static const saltear = 'Saltear';
   static const repetir = 'Repetir';
   static const verComoLoPinte = 'Ver cómo lo pinté';
 
-  // ---- Dificultades ----
+  // Dificultades
   static String plumasDificultad(int n) => '+$n';
   static String detalleDificultad(int colores, int regiones) =>
       '$colores colores · unas $regiones partes para pintar';
 
-  // ---- Modo libre ----
+  // Modo libre
   static const modoLibre = 'Modo libre';
   static const libreIntro =
       'Acá no hay historia ni mapa: elegí un dibujo y pintalo como quieras, '
@@ -115,18 +112,17 @@ abstract final class Textos {
       'Todavía no hay dibujos para el modo libre. Coloreá dibujos en la historia y aparecen acá.';
   static String etiquetaLibre(String dificultad) => 'Modo libre · $dificultad';
 
-  // ---- Rehacer obra ----
+  // Rehacer obra
   static const rehacer = 'Rehacer';
   static const rehacerElegir = '¿En qué dificultad la volvés a pintar?';
   static const rehacerAviso =
       'Se borra lo pintado y empezás de nuevo. Lo que destapaste en Gramonia queda destapado.';
   static String etiquetaRehecha(String dificultad) => 'Rehecha · $dificultad';
 
-  // ---- Tienda y herramientas ----
+  // Tienda y herramientas
   static const tienda = 'Tienda';
   static const tiendaLobo = 'El Lobo de la tienda';
   static const tiendaFrase = 'No explico mucho. Vendo.';
-  static const tiendaComprar = 'Comprar';
   static const tiendaPlumas = 'Tus plumas';
   static const lupa = 'Lupa';
   static const bomba = 'Bomba de color';
@@ -151,7 +147,7 @@ abstract final class Textos {
   static const bombaArmada = 'Tocá el dibujo donde quieras tirar la bomba de color.';
   static String subisteDeNivel(int n) => '¡Llegaste al nivel $n!';
 
-  // ---- Portada ----
+  // Portada
   static const tituloGramonia = 'Gramonia...';
   static const tituloColor = 'a Color';
 
@@ -161,7 +157,50 @@ abstract final class Textos {
   static const empezar = '¡Empezar!';
   static const portada = 'Portada';
   static const galeria = 'Galería';
+  static const misObras = 'Mis obras';
   static const mapa = 'Mapa de Gramonia';
+  static const mapaCorto = 'Mapa';
   static const laHistoria = 'La historia';
+
+  // Comunes
+  static const saltar = 'Saltar';
+  static const siguiente = 'Siguiente';
+  static const seguir = 'Seguir';
+  static const listo = 'Listo';
+  static const vamos = '¡Vamos!';
+  static const encuadrar = 'Encuadrar';
+  static const proximamente = 'Próximamente';
+  static String colorDePaleta(int numero, String nombre, {required bool completo}) =>
+      'Color $numero, $nombre${completo ? ', completo' : ''}';
+
+  // Historia
+  static const introduccion = 'Introducción';
+  static const capituloCerrado = 'Se cuenta al completar el nivel';
+
+  // Mapa
+  static const lugarBloqueado = 'Bloqueado: primero recuperá el lugar anterior';
+  static String partesRecuperadas(int hechas, int total, {required int proximamente}) =>
+      '$hechas de $total partes recuperadas'
+      '${proximamente > 0 ? ' ($proximamente próximamente)' : ''}';
+
+  // Mis obras
+  static String enProgreso(int n) => 'En progreso ($n)';
+  static String terminadas(int n) => 'Terminadas ($n)';
+  static String terminadaEl(String fecha) => 'Terminada el $fecha';
+  static String ultimaPincelada(String fecha) => 'Última pincelada: $fecha';
+  static const obraConColor = '¡Con color!';
+  static const sinObras = 'Todavía no hay obras';
+  static const sinObrasDetalle = 'Elegí un cuadro en la Galería y empezá a devolverle sus colores.';
+  static const irALaGaleria = 'Ir a la Galería';
+
+  // Pintar
+  static String conColor(int porcentaje) => '$porcentaje% con color';
+  static String plumasGanadas(int n) => ' +$n plumas del Rocanón';
+  static const verElMapa = 'Ver el mapa';
+  static const cuadroNoEncontrado = 'No encontramos ese cuadro.';
+  static const cambiarMusica = 'Cambiar música';
+  static const silenciar = 'Silenciar';
+  static const activarSonido = 'Activar sonido';
+  static String sonando(String tema) => 'Sonando: $tema';
   static String plumasDelDia(int n) => 'Gobi te trae $n plumas del Rocanón. ¡Buen día!';
 }

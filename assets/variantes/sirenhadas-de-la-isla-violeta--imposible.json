@@ -1,0 +1,166 @@
+{
+  "id": "sirenhadas-de-la-isla-violeta--imposible",
+  "titulo": "Las SirenHadas de la Isla Violeta",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#968AAA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#0C102B"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#3F3C60"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#291440"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#2C1F39"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#3E1F50"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#19162B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#111027"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#743F5D"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#1A1B49"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#3F2D54"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#121535"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#775F83"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#1F2248"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#322C51"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#1D1F3A"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#190C30"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#221039"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#522255"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#1A163F"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#331749"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#100925"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#1A0F30"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#652D56"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#272A4D"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#09071B"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#121429"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#0B0D23"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#221637"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#110C25"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#191B36"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#2F204D"
+    }
+  ]
+}

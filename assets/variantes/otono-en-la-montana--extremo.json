@@ -1,0 +1,126 @@
+{
+  "id": "otono-en-la-montana--extremo",
+  "titulo": "Otoño en la montaña",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#A8CAC4"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#948C7C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#783F2B"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#ACCCC7"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#8F8272"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#CB5C30"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#D76A37"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C4E0DB"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#894B2E"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#683625"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#AACCC6"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#A66644"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#B0CFCA"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#7E432D"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#AECDC7"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#81472D"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#B0C1B2"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#B8D5D0"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#AACAC5"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#ACCEC8"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#ABA38A"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#AC866C"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#AB4F33"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#ACCBC5"
+    }
+  ]
+}

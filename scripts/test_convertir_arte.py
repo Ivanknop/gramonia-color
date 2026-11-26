@@ -1,4 +1,4 @@
-"""Tests del conversor: niveles (mismos valores que test/engine/niveles_test.dart), dificultades y colores."""
+"""Tests del conversor. Los datos generados los valida test/datos_test.dart."""
 
 import json
 import sys
@@ -14,7 +14,6 @@ from convertir_arte import (  # noqa: E402
     colores_del_nivel,
     fuente,
     id_variante,
-    leer_dificultades,
 )
 from imagen_a_cuadro import etiquetar_regiones, fusionar_chicas, juntar_colores  # noqa: E402
 
@@ -27,7 +26,7 @@ class TestNiveles(unittest.TestCase):
         with self.assertRaises(ValueError):
             colores_del_nivel(0)
 
-    def test_cada_obra_tiene_nivel_y_el_tutorial_sus_colores(self):
+    def test_las_obras_van_por_nivel_y_las_de_solo_modo_libre_al_final(self):
         catalogo = json.loads(CATALOGO.read_text(encoding="utf-8"))
         historia = [c for c in catalogo["cuadros"] if not c.get("solo_libre")]
         libres = [c for c in catalogo["cuadros"] if c.get("solo_libre")]
@@ -38,20 +37,9 @@ class TestNiveles(unittest.TestCase):
         for c in libres:
             self.assertNotIn("nivel", c)
             self.assertIn("colores", c)
-        self.assertEqual(catalogo["tutorial"]["colores"], 5)
-        self.assertEqual(catalogo["tutorial"]["regiones"], 20)
 
 
-class TestDificultades(unittest.TestCase):
-    def test_tabla(self):
-        tabla = leer_dificultades()
-        self.assertEqual(len(tabla), 10)
-        self.assertEqual(tabla[0]["id"], "super-facil")
-        self.assertEqual(tabla[-1]["id"], "divino")
-        for a, b in zip(tabla, tabla[1:]):
-            self.assertLess(a["colores"], b["colores"])
-            self.assertLess(a["regiones"], b["regiones"])
-
+class TestVariantes(unittest.TestCase):
     def test_id_variante(self):
         self.assertEqual(id_variante("nido-de-rocanon", "facil"), "nido-de-rocanon--facil")
 

@@ -1,0 +1,126 @@
+{
+  "id": "el-zorrito-feliz--extremo",
+  "titulo": "El zorrito feliz",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FDF8EA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FBF9EA"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FDCB96"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FCF8E9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#EDC6A4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#FCF8EA"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F4AB94"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#543047"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FBF5E4"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FAE5B0"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#FEFDF1"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#FDF8E9"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#8E5D65"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#B79890"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#FDF9EB"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#FCF9EA"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#FDF8EB"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#FBF8EA"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#FCF8EB"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#FCF9E9"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#FCF9EB"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#FEFADA"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#FEF8EA"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#FBF8E9"
+    }
+  ]
+}

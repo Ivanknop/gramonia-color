@@ -1,0 +1,26 @@
+{
+  "id": "selva-de-la-isla-celeste--super-facil",
+  "titulo": "La selva de la Isla Celeste",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#5D7BA4"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#2B3E71"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#90ACB9"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#425D90"
+    }
+  ]
+}

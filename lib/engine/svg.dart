@@ -1,13 +1,4 @@
-/// Lector mínimo del formato SVG de los cuadros (ver docs/formato-cuadros.md).
-///
-/// ```xml
-/// <svg viewBox="0 0 ANCHO ALTO">
-///   <path id="cielo" data-numero="1" d="..." />
-///   <path id="r7" data-numero="2" data-etiqueta="230 50" data-radio="3.1" d="..." />
-/// </svg>
-/// ```
-///
-/// Solo se leen los `<path>`; no es un parser XML general.
+/// Lector mínimo del SVG de los cuadros (docs/formato-cuadros.md): solo lee los `<path>`.
 library;
 
 import 'geometria.dart';
@@ -24,8 +15,6 @@ class PathCrudo {
   final String id;
   final int numero;
   final String d;
-
-  /// Posición del número fijada a mano o por el conversor (opcional).
   final Punto? etiqueta;
 
   /// Espacio libre alrededor de la etiqueta (opcional, lo escribe el conversor).

@@ -1,8 +1,6 @@
 {
   "id": "la-tienda",
   "titulo": "La tienda",
-  "categoria": "arte",
-  "dificultad": 5,
   "paleta": [
     {
       "numero": 1,

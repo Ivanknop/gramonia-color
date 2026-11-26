@@ -1,0 +1,76 @@
+{
+  "id": "llegada-a-la-isla-azul--dificil",
+  "titulo": "Llegada a la Isla Azul",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#314A6F"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#6F444C"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#307FA3"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#C1E7E6"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#F4E7C4"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#70CDE9"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#C6A88E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#97DDE4"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#6FB1C0"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#B58774"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#785F61"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#918079"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#D3C7B1"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#637E87"
+    }
+  ]
+}

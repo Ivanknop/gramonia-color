@@ -1,12 +1,10 @@
-/// Modo libre: pintar dibujos sin la historia de Mututu ni el revelado de
-/// lugares. Entran los cuadros de lugares desbloqueados en la historia y los
-/// que no son de la historia. Cada uno se pinta en la dificultad que se elija.
+/// Modo libre: los cuadros que no son de la historia y los ya coloreados en ella, en la dificultad
+/// que se elija.
 library;
 
 import 'package:material_ui/material_ui.dart';
 
 import '../../datos/biomas.dart';
-import '../../datos/catalogo.dart';
 import '../../datos/textos.dart';
 import '../../engine/dificultad.dart';
 import '../../engine/motor.dart';
@@ -65,7 +63,6 @@ class ModoLibre extends StatelessWidget {
   }
 }
 
-/// Elige la dificultad y abre la variante para pintar.
 Future<void> pintarLibre(BuildContext context, String cuadroId, {String? actual}) async {
   final catalogo = Dependencias.of(context).catalogo;
   final navegador = Navigator.of(context);
@@ -88,8 +85,7 @@ class _Tarjeta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final catalogo = Dependencias.of(context).catalogo;
-    final meta = catalogo.meta(cuadroId)!;
+    final meta = Dependencias.of(context).catalogo.meta(cuadroId)!;
     return Semantics(
       button: true,
       label: meta.titulo,
@@ -102,14 +98,12 @@ class _Tarjeta extends StatelessWidget {
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: catalogo.tieneImagen(cuadroId)
-                    ? Image.asset(
-                        '${Catalogo.carpeta}$cuadroId.webp',
-                        fit: BoxFit.cover,
-                        cacheWidth: 360,
-                        width: double.infinity,
-                      )
-                    : const ColoredBox(color: Color(0xFFDDDDDD), child: SizedBox.expand()),
+                child: IlustracionCuadro(
+                  cuadroId,
+                  ancho: double.infinity,
+                  alto: double.infinity,
+                  cacheWidth: 360,
+                ),
               ),
             ),
             const SizedBox(height: 6),

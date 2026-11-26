@@ -1,0 +1,26 @@
+{
+  "id": "el-zorrito-feliz--super-facil",
+  "titulo": "El zorrito feliz",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FDF9EB"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#AC7E78"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F5DCBC"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FCF8E8"
+    }
+  ]
+}

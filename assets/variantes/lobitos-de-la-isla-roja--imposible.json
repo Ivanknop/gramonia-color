@@ -1,0 +1,166 @@
+{
+  "id": "lobitos-de-la-isla-roja--imposible",
+  "titulo": "Los lobitos de la Isla Roja",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#DD7E58"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#5AACC0"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#FDEDB6"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F1C47B"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#AC5645"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#4292AF"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#724D3B"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FBCF85"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#CE6D52"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FDF7CA"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#756C61"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#893A35"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#C0664D"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#8A563F"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#E9B575"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#347392"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#7CB2B6"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#E4905C"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#C2D9C9"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#FBE4A0"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#88CCD3"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#623830"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#5D2B28"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#944A3C"
+    },
+    {
+      "numero": 25,
+      "nombre": "Color 25",
+      "hex": "#F6D997"
+    },
+    {
+      "numero": 26,
+      "nombre": "Color 26",
+      "hex": "#CF7954"
+    },
+    {
+      "numero": 27,
+      "nombre": "Color 27",
+      "hex": "#A37450"
+    },
+    {
+      "numero": 28,
+      "nombre": "Color 28",
+      "hex": "#CFAF7D"
+    },
+    {
+      "numero": 29,
+      "nombre": "Color 29",
+      "hex": "#BE9468"
+    },
+    {
+      "numero": 30,
+      "nombre": "Color 30",
+      "hex": "#5D4A41"
+    },
+    {
+      "numero": 31,
+      "nombre": "Color 31",
+      "hex": "#9E6346"
+    },
+    {
+      "numero": 32,
+      "nombre": "Color 32",
+      "hex": "#6398A6"
+    }
+  ]
+}

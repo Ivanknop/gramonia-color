@@ -1,0 +1,76 @@
+{
+  "id": "el-zorrito-feliz--dificil",
+  "titulo": "El zorrito feliz",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FDF8EA"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FCF9EA"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#F6C99D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#FCF8E9"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#774C59"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#D19F8F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#F9E7BB"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#FCF5E5"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#FFFDF1"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#FDF9EB"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#FEF8EA"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#FCF9E9"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#FEFAD7"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#FBF8E9"
+    }
+  ]
+}

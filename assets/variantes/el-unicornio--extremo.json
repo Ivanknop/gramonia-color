@@ -1,0 +1,126 @@
+{
+  "id": "el-unicornio--extremo",
+  "titulo": "El unicornio",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#FFFFFF"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#FEFEFE"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6C877F"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#F09262"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#BD6B5A"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#A28A85"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#EEDAC9"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#C94E47"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#CD9275"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#E56C54"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#EEE7E3"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#D5B7A6"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#B0BDAB"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#D7CDC3"
+    },
+    {
+      "numero": 15,
+      "nombre": "Color 15",
+      "hex": "#A3A697"
+    },
+    {
+      "numero": 16,
+      "nombre": "Color 16",
+      "hex": "#786B6C"
+    },
+    {
+      "numero": 17,
+      "nombre": "Color 17",
+      "hex": "#F1B98B"
+    },
+    {
+      "numero": 18,
+      "nombre": "Color 18",
+      "hex": "#FEFEFD"
+    },
+    {
+      "numero": 19,
+      "nombre": "Color 19",
+      "hex": "#73494D"
+    },
+    {
+      "numero": 20,
+      "nombre": "Color 20",
+      "hex": "#DC7E61"
+    },
+    {
+      "numero": 21,
+      "nombre": "Color 21",
+      "hex": "#DEDAD5"
+    },
+    {
+      "numero": 22,
+      "nombre": "Color 22",
+      "hex": "#F4F1EE"
+    },
+    {
+      "numero": 23,
+      "nombre": "Color 23",
+      "hex": "#FBFAF8"
+    },
+    {
+      "numero": 24,
+      "nombre": "Color 24",
+      "hex": "#FDFDFD"
+    }
+  ]
+}

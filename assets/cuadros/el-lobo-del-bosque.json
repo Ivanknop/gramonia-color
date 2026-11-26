@@ -1,0 +1,57 @@
+{
+  "id": "el-lobo-del-bosque",
+  "titulo": "El Lobo del bosque",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#E9E5AE"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#110202"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#A8A165"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#3A4D43"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#955624"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#5E1D0B"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#210A06"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#1A201C"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#832209"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#42150B"
+    }
+  ],
+  "orden": 48
+}

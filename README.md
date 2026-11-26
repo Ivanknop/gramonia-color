@@ -17,7 +17,7 @@ vuelve a brillar en el mapa.
   cada uno pide más colores que el anterior. Al completar un nivel, Gobi cuenta
   cómo sigue la historia. La primera vez hay un tutorial cortito.
 - **Modo libre**: dibujos para pintar sin historia, en la dificultad que
-  quieras, de Súper fácil a Divino.
+  quieras, de Súper fácil a Insano.
 - **Plumas del Rocanón**: se ganan cada día, al terminar dibujos y al subir de
   nivel. En la tienda se cambian por **lupas**, que te muestran una parte que
   falta, y **bombas de color**, que pintan un montón de partes de una vez.

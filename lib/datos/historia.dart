@@ -1,20 +1,10 @@
-/// Historia principal, narrada por Gobi, el Lobito Guardián.
-///
-/// BORRADOR para revisar: está armada con el material de los cuentos
-/// (docs/Cuentos.pdf y docs/Universo Gramonia.pdf). Se puede editar libremente
-/// el texto sin tocar la lógica.
-///
-/// - [introduccion]: se muestra la primera vez que se abre el juego (y se puede
-///   volver a ver desde la portada). La imagen inicial todavía no está
-///   definida: mientras tanto se usa el mapa de Gramonia en gris.
-/// - [capitulosDeNivel]: Gobi habla solo al completar cada nivel (el del nivel
-///   8, la Isla Negra, es el final de la historia).
+/// Historia narrada por Gobi, el Lobito Guardián. Es un BORRADOR: el texto se puede editar sin
+/// tocar la lógica.
 library;
 
 class Escena {
   const Escena(this.texto, {this.imagen, this.titulo});
 
-  /// Lo que dice Gobi (o el narrador).
   final String texto;
 
   /// Asset de la ilustración de la escena (null = imagen provisoria).
@@ -159,7 +149,6 @@ const capitulosDeNivel = <int, List<Escena>>{
   ],
 };
 
-/// Id con el que se guarda que ya se contó el capítulo del nivel [n].
 String idCapituloDeNivel(int n) => 'nivel-$n';
 
 /// Final de la historia: se cuenta al completar la Isla Negra (nivel 8).

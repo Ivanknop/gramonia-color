@@ -1,8 +1,5 @@
-/// Modo historia: pestañas Galería, Mis obras, Mapa y Tienda. En la barra de
-/// abajo, la primera opción (flecha atrás) vuelve a la portada.
-///
-/// Con el tutorial de la tienda pendiente (nivel 1 completo), se queda en la
-/// Tienda hasta comprar la lupa o saltearlo: las otras pestañas no responden.
+/// Modo historia: pestañas Galería, Mis obras, Mapa y Tienda. Con el tutorial de la tienda
+/// pendiente, las otras pestañas no responden.
 library;
 
 import 'package:material_ui/material_ui.dart';
@@ -24,8 +21,14 @@ class Principal extends StatefulWidget {
   static const misObras = 1;
   static const mapa = 2;
   static const tienda = 3;
-
   final int pestanaInicial;
+
+  /// Cierra todo hasta la portada y abre las pestañas en [pestana].
+  static void volver(BuildContext context, {required int pestana}) => Navigator.of(context)
+      .pushAndRemoveUntil(
+        MaterialPageRoute<void>(builder: (_) => Principal(pestanaInicial: pestana)),
+        (ruta) => ruta.isFirst,
+      );
 
   @override
   State<Principal> createState() => _PrincipalState();
@@ -34,7 +37,7 @@ class Principal extends StatefulWidget {
 class _PrincipalState extends State<Principal> {
   late int _pestana = widget.pestanaInicial;
 
-  static const _titulos = ['Galería', 'Mis obras', 'Mapa de Gramonia', Textos.tienda];
+  static const _titulos = [Textos.galeria, Textos.misObras, Textos.mapa, Textos.tienda];
 
   @override
   Widget build(BuildContext context) => ListenableBuilder(
@@ -52,14 +55,6 @@ class _PrincipalState extends State<Principal> {
     },
   );
 
-  void _avisarTutorialTienda() {
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        const SnackBar(content: Text(Textos.tutorialTiendaPrimero), duration: Duration(seconds: 2)),
-      );
-  }
-
   Widget _armar(BuildContext context, bool tutorialTienda) {
     return Scaffold(
       appBar: AppBar(
@@ -72,24 +67,12 @@ class _PrincipalState extends State<Principal> {
             key: const Key('menu'),
             onSelected: (accion) => accion(),
             itemBuilder: (context) => [
-              PopupMenuItem(
-                value: () => Navigator.of(
-                  context,
-                ).push(MaterialPageRoute<void>(builder: (_) => const PantallaPerfil(editar: true))),
-                child: const Text(Textos.perfil),
-              ),
-              PopupMenuItem(
-                value: () =>
-                    Navigator.of(context)
-                        .push(MaterialPageRoute<void>(builder: (_) => const IndiceHistoria())),
-                child: const Text(Textos.laHistoria),
-              ),
-              PopupMenuItem(
-                value: () =>
-                    Navigator.of(context)
-                        .push(MaterialPageRoute<void>(builder: (_) => const Creditos())),
-                child: const Text(Textos.creditos),
-              ),
+              for (final (texto, pantalla) in const [
+                (Textos.perfil, PantallaPerfil(editar: true)),
+                (Textos.laHistoria, IndiceHistoria()),
+                (Textos.creditos, Creditos()),
+              ])
+                PopupMenuItem(value: () => abrir<void>(context, pantalla), child: Text(texto)),
             ],
           ),
         ],
@@ -108,16 +91,16 @@ class _PrincipalState extends State<Principal> {
         selectedIndex: _pestana + 1,
         onDestinationSelected: (i) {
           if (tutorialTienda) {
-            if (i != Principal.tienda + 1) _avisarTutorialTienda();
+            if (i != Principal.tienda + 1) avisar(context, Textos.tutorialTiendaPrimero);
             return;
           }
           i == 0 ? volverAPortada(context) : setState(() => _pestana = i - 1);
         },
         destinations: const [
           NavigationDestination(icon: Icon(Icons.arrow_back), label: Textos.portada),
-          NavigationDestination(icon: Icon(Icons.photo_library_outlined), label: 'Galería'),
-          NavigationDestination(icon: Icon(Icons.palette_outlined), label: 'Mis obras'),
-          NavigationDestination(icon: Icon(Icons.map_outlined), label: 'Mapa'),
+          NavigationDestination(icon: Icon(Icons.photo_library_outlined), label: Textos.galeria),
+          NavigationDestination(icon: Icon(Icons.palette_outlined), label: Textos.misObras),
+          NavigationDestination(icon: Icon(Icons.map_outlined), label: Textos.mapaCorto),
           NavigationDestination(
             icon: ImageIcon(AssetImage(iconoTienda), key: Key('icono-tienda')),
             label: Textos.tienda,

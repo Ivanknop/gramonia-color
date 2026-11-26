@@ -1,14 +1,5 @@
-/// Lienzo con zoom y paneo (InteractiveViewer): pellizcar para acercar,
-/// arrastrar para mover y tocar para pintar.
-///
-/// - Arranca en "cobertura": el cuadro llena todo el espacio disponible (más
-///   grande para el dedo); se puede alejar hasta verlo entero.
-/// - El toque se convierte a coordenadas del viewBox y va con una tolerancia
-///   de ~[toleranciaDedo] puntos de pantalla, para que el motor perdone un
-///   dedo que cae un poco al costado de una región chica.
-/// - [LienzoState.enfocar] acerca la vista a una región (lo usa la lupa).
-/// - Cuando aparecen regiones nuevas en [Lienzo.pintadas], su color se expande
-///   desde el último toque (con la bomba, en onda desde donde cayó).
+/// Lienzo con zoom y paneo. Arranca con el cuadro llenando el espacio, más grande para el dedo. Las
+/// regiones nuevas se pintan expandiendo el color desde el último toque.
 library;
 
 import 'dart:math' as math;
@@ -17,14 +8,13 @@ import 'dart:ui' as ui;
 import 'package:flutter/scheduler.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../datos/textos.dart';
 import '../engine/motor.dart';
 import 'comun.dart';
 import 'pintor_cuadro.dart';
 
-/// Tolerancia del toque, en puntos de pantalla.
 const toleranciaDedo = 14.0;
 
-/// Cuánto tarda el color en llenar una región.
 const duracionRelleno = Duration(milliseconds: 650);
 
 /// Demora máxima de la onda de la bomba (las regiones más lejanas, al final).
@@ -51,7 +41,6 @@ class Lienzo extends StatefulWidget {
   final ui.Image? imagen;
   final String? regionDestacada;
 
-  /// Toque en coordenadas del viewBox y tolerancia (en las mismas unidades).
   final void Function(Punto punto, double tolerancia) onToque;
 
   @override
@@ -119,7 +108,7 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
     final esOnda = regiones.length > 1 && toque != null;
     final alcance = esOnda
         ? regiones
-              .map((r) => _distancia(r.etiqueta, toque))
+              .map((r) => r.etiqueta.distanciaA(toque))
               .reduce(math.max)
               .clamp(1e-6, double.infinity)
         : 1.0;
@@ -134,7 +123,7 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
         origen = r.etiqueta;
       }
       final demora = esOnda
-          ? demoraOndaBomba * (_distancia(r.etiqueta, toque) / alcance)
+          ? demoraOndaBomba * (r.etiqueta.distanciaA(toque) / alcance)
           : Duration.zero;
       _animaciones[r.id] = RellenoAnimado(
         origen: origen,
@@ -143,9 +132,6 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
       );
     }
   }
-
-  static double _distancia(Punto a, Punto b) =>
-      math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 
   static bool _cerca(Region r, Punto p) {
     final c = r.caja;
@@ -202,14 +188,12 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
     _animacion.forward(from: 0);
   }
 
-  /// Vuelve a la vista inicial (cuadro llenando el área).
   void encuadrar() {
     final area = _area;
     if (area == null) return;
     _animarA(_matrizCentrada(area, _escalaCobertura(area), area.center(Offset.zero)));
   }
 
-  /// Acerca la vista para mostrar bien una región (lupa).
   void enfocar(Region region) {
     final area = _area;
     if (area == null) return;
@@ -228,7 +212,6 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
     _animarA(_matrizCentrada(area, escala, centro));
   }
 
-  /// Esquina superior izquierda del cuadro dentro del hijo del InteractiveViewer.
   Offset _origenContenido(Size area) => Offset(
     (area.width - widget.cuadro.ancho * _factor) / 2,
     (area.height - widget.cuadro.alto * _factor) / 2,
@@ -302,7 +285,7 @@ class LienzoState extends State<Lienzo> with TickerProviderStateMixin {
                   child: FilledButton.tonal(
                     style: Tema.botonAqua,
                     onPressed: encuadrar,
-                    child: const Text('Encuadrar'),
+                    child: const Text(Textos.encuadrar),
                   ),
                 ),
             ],

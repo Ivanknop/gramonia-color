@@ -1,0 +1,46 @@
+{
+  "id": "sirenhadas-de-la-isla-violeta--normal",
+  "titulo": "Las SirenHadas de la Isla Violeta",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#1C1E40"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#3E2B50"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6E5779"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#0E0C24"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#1A1232"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#28143F"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#11132E"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#3A204A"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "abrazo-de-gato--dificil",
+  "titulo": "Abrazo de gato",
+  "paleta": [
+    {
+      "numero": 1,
+      "nombre": "Color 1",
+      "hex": "#626796"
+    },
+    {
+      "numero": 2,
+      "nombre": "Color 2",
+      "hex": "#999EB3"
+    },
+    {
+      "numero": 3,
+      "nombre": "Color 3",
+      "hex": "#6F769D"
+    },
+    {
+      "numero": 4,
+      "nombre": "Color 4",
+      "hex": "#8489B0"
+    },
+    {
+      "numero": 5,
+      "nombre": "Color 5",
+      "hex": "#ECDC90"
+    },
+    {
+      "numero": 6,
+      "nombre": "Color 6",
+      "hex": "#49445B"
+    },
+    {
+      "numero": 7,
+      "nombre": "Color 7",
+      "hex": "#787BA2"
+    },
+    {
+      "numero": 8,
+      "nombre": "Color 8",
+      "hex": "#A78F82"
+    },
+    {
+      "numero": 9,
+      "nombre": "Color 9",
+      "hex": "#B8A38F"
+    },
+    {
+      "numero": 10,
+      "nombre": "Color 10",
+      "hex": "#8087A0"
+    },
+    {
+      "numero": 11,
+      "nombre": "Color 11",
+      "hex": "#8D8FAD"
+    },
+    {
+      "numero": 12,
+      "nombre": "Color 12",
+      "hex": "#C1B698"
+    },
+    {
+      "numero": 13,
+      "nombre": "Color 13",
+      "hex": "#887B90"
+    },
+    {
+      "numero": 14,
+      "nombre": "Color 14",
+      "hex": "#736A8E"
+    }
+  ]
+}

@@ -6,7 +6,10 @@ void main() {
 
   test('con la misma semilla, el mismo confeti', () {
     final otra = Confeti.lanzar(semilla: 3);
-    expect(otra.map((p) => (p.vx, p.vy, p.color)), papelitos.map((p) => (p.vx, p.vy, p.color)));
+    expect(
+      otra.map((p) => (p.vx, p.vy, p.indiceColor)),
+      papelitos.map((p) => (p.vx, p.vy, p.indiceColor)),
+    );
   });
 
   test('salen de las esquinas de abajo hacia arriba y hacia el centro', () {

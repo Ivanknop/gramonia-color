@@ -7,6 +7,8 @@ import 'package:colores_de_gramonia/estado/obras.dart';
 import 'package:colores_de_gramonia/estado/progreso.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'ayuda.dart';
+
 void main() {
   var ahora = 1000;
   Future<(Progreso, AlmacenEnMemoria)> nuevo([String? datos]) async {
@@ -37,7 +39,7 @@ void main() {
     p.marcarCompletado('c2');
     await p.guardado;
     final guardado = jsonDecode(almacen.datos!) as Map<String, dynamic>;
-    expect(guardado['version'], 8);
+    expect(guardado['version'], Progreso.version);
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.de('c2')!.pintadas, ['x']);
     expect(otra.completados, {'c2'});
@@ -71,9 +73,9 @@ void main() {
 
   test('tienda: comprar con plumas y usar del inventario', () async {
     final (p, almacen) = await nuevo();
-    p.sumarPlumas(14);
+    p.sumarPlumas(Herramienta.bomba.precio + Herramienta.lupa.precio - 1);
     expect(p.comprar(Herramienta.bomba), isTrue);
-    expect(p.comprar(Herramienta.bomba), isFalse); // quedan 4
+    expect(p.comprar(Herramienta.bomba), isFalse);
     expect(p.comprar(Herramienta.lupa), isFalse);
     p.sumarPlumas(1);
     expect(p.comprar(Herramienta.lupa), isTrue);
@@ -95,24 +97,6 @@ void main() {
     expect(otra.capitulosVistos, {'arbol-magico'});
   });
 
-  test('migra un guardado v1 (sin plumas ni historia)', () async {
-    const v1 = '{"version":1,"cuadros":{"c1":{"pintadas":["a"],"actualizadoEn":3}}}';
-    final (p, _) = await nuevo(v1);
-    expect(p.de('c1')!.pintadas, ['a']);
-    expect((p.plumas, p.introVista), (0, false));
-  });
-
-  test('migra un guardado v2 (sin género): queda sin elegir y habla en neutro', () async {
-    const v2 =
-        '{"version":2,"cuadros":{"c1":{"pintadas":["a"],"completadoEn":4}},'
-        '"plumas":15,"introVista":true,"capitulosVistos":["arbol-magico"]}';
-    final (p, _) = await nuevo(v2);
-    expect((p.plumas, p.introVista), (15, true));
-    expect(p.completados, {'c1'});
-    expect(p.genero, isNull);
-    expect(p.texto('{Listo|Lista|Todo listo}'), 'Todo listo');
-  });
-
   test('el género elegido se guarda y elige la variante de los textos', () async {
     final (p, almacen) = await nuevo();
     p.elegirGenero(Genero.chica);
@@ -120,17 +104,6 @@ void main() {
     await p.guardado;
     final (otra, _) = await nuevo(almacen.datos);
     expect(otra.genero, Genero.chica);
-  });
-
-  test('migra un guardado v3: las terminadas quedan desbloqueadas', () async {
-    const v3 =
-        '{"version":3,"cuadros":{"c1":{"pintadas":["a"],"completadoEn":4},'
-        '"c2":{"pintadas":["b"]}},"genero":"chico"}';
-    final (p, _) = await nuevo(v3);
-    expect(p.completados, {'c1'});
-    expect(p.genero, Genero.chico);
-    p.rehacer('c1', 'facil');
-    expect(p.completados, {'c1'}); // rehacer no tapa lo ganado
   });
 
   test(
@@ -168,27 +141,12 @@ void main() {
     expect(p.de('c1--divino'), isNull);
   });
 
-  test('migra un guardado v4: sin lupas ni bombas, con sus plumas', () async {
-    const v4 = '{"version":4,"cuadros":{},"plumas":40,"desbloqueadas":["c1"]}';
-    final (p, _) = await nuevo(v4);
-    expect((p.plumas, p.cantidad(Herramienta.lupa), p.cantidad(Herramienta.bomba)), (40, 0, 0));
-    expect(p.completados, {'c1'});
-  });
-
-  test('migra un guardado v5: con obras empezadas, el tutorial cuenta como salteado', () async {
-    const v5 = '{"version":5,"cuadros":{"c1":{"pintadas":["a"],"actualizadoEn":3}},"plumas":2}';
-    final (p, _) = await nuevo(v5);
-    expect((p.tutorialPasado, p.tutorialPremiado), (true, false));
-    final (sinObras, _) = await nuevo('{"version":5,"cuadros":{}}');
-    expect(sinObras.tutorialPasado, isFalse);
-  });
-
   test('tutorial: saltearlo deja el premio pendiente; se cobra una sola vez', () async {
     final (p, almacen) = await nuevo();
     p.saltarTutorial();
     expect((p.tutorialPasado, p.tutorialPremiado, p.plumas), (true, false, 0));
     expect(p.terminarTutorial(), ReglasPlumas.porTutorial);
-    expect(p.plumas, 20);
+    expect(p.plumas, ReglasPlumas.porTutorial);
     p.pintarRegion(idTutorial, 'r1');
     p.marcarCompletado(idTutorial);
     expect(p.completados.contains(idTutorial), isTrue);
@@ -196,7 +154,7 @@ void main() {
     expect(p.de(idTutorial), isNull);
     expect(p.completados.contains(idTutorial), isFalse);
     expect(p.terminarTutorial(), 0);
-    expect(p.plumas, 20);
+    expect(p.plumas, ReglasPlumas.porTutorial);
     await p.guardado;
     final (otra, _) = await nuevo(almacen.datos);
     expect((otra.tutorialPasado, otra.tutorialPremiado), (true, true));
@@ -219,35 +177,16 @@ void main() {
     expect(otra.nombre, 'Regi Knopoff');
   });
 
-  test('migra un guardado v6: sin nombre, el perfil queda incompleto', () async {
-    const v6 = '{"version":6,"cuadros":{},"genero":"chico","tutorialPasado":true}';
-    final (p, _) = await nuevo(v6);
-    expect((p.nombre, p.genero, p.perfilCompleto), (null, Genero.chico, false));
-  });
-
-  test('migra un guardado v7: con el tutorial pasado, recibe 3 lupas y 3 bombas una vez', () async {
-    const v7 = '{"version":7,"cuadros":{},"tutorialPasado":true,"lupa":1,"bomba":0}';
-    final (p, almacen) = await nuevo(v7);
-    expect((p.cantidad(Herramienta.lupa), p.cantidad(Herramienta.bomba)), (4, 3));
-    expect(p.regaloInicial, isTrue);
-    await p.guardado;
-    final (otra, _) = await nuevo(almacen.datos);
-    expect((otra.cantidad(Herramienta.lupa), otra.cantidad(Herramienta.bomba)), (4, 3));
-    // Sin el tutorial pasado (todavía en el nivel 0), el regalo espera.
-    final (nueva, _) = await nuevo('{"version":7,"cuadros":{}}');
-    expect((nueva.regaloInicial, nueva.cantidad(Herramienta.lupa)), (false, 0));
-  });
-
-  test('regalo inicial: 3 lupas y 3 bombas al llegar al nivel 1, terminando o salteando', () async {
+  test('regalo inicial: al llegar al nivel 1, terminando o salteando, una sola vez', () async {
     final (salta, _) = await nuevo();
-    expect(salta.cantidad(Herramienta.lupa), 0);
+    expect(inventario(salta), {Herramienta.lupa: 0, Herramienta.bomba: 0});
     salta.saltarTutorial();
-    expect((salta.cantidad(Herramienta.lupa), salta.cantidad(Herramienta.bomba)), (3, 3));
-    salta.terminarTutorial(); // terminarlo después no lo da de nuevo
-    expect(salta.cantidad(Herramienta.lupa), 3);
+    expect(inventario(salta), herramientasIniciales);
+    salta.terminarTutorial();
+    expect(inventario(salta), herramientasIniciales);
     final (termina, _) = await nuevo();
     termina.terminarTutorial();
-    expect((termina.cantidad(Herramienta.lupa), termina.cantidad(Herramienta.bomba)), (3, 3));
+    expect(inventario(termina), herramientasIniciales);
   });
 
   test('tutorial de la tienda: regala las plumas una sola vez y se guarda hecho', () async {
@@ -263,9 +202,87 @@ void main() {
     expect(otra.empezarTutorialTienda(), 0);
   });
 
-  test('datos corruptos no impiden jugar', () async {
-    final (p, _) = await nuevo('{esto no es json');
-    expect(p.cuadros, isEmpty);
+  group('migra un guardado viejo', () {
+    test('v1 (sin plumas ni historia)', () async {
+      const v1 = '{"version":1,"cuadros":{"c1":{"pintadas":["a"],"actualizadoEn":3}}}';
+      final (p, _) = await nuevo(v1);
+      expect(p.de('c1')!.pintadas, ['a']);
+      expect((p.plumas, p.introVista), (0, false));
+    });
+
+    test('v2 (sin género): queda sin elegir y habla en neutro', () async {
+      const v2 =
+          '{"version":2,"cuadros":{"c1":{"pintadas":["a"],"completadoEn":4}},'
+          '"plumas":15,"introVista":true,"capitulosVistos":["arbol-magico"]}';
+      final (p, _) = await nuevo(v2);
+      expect((p.plumas, p.introVista), (15, true));
+      expect(p.completados, {'c1'});
+      expect(p.genero, isNull);
+      expect(p.texto('{Listo|Lista|Todo listo}'), 'Todo listo');
+    });
+
+    test('v3: las terminadas quedan desbloqueadas', () async {
+      const v3 =
+          '{"version":3,"cuadros":{"c1":{"pintadas":["a"],"completadoEn":4},'
+          '"c2":{"pintadas":["b"]}},"genero":"chico"}';
+      final (p, _) = await nuevo(v3);
+      expect(p.completados, {'c1'});
+      expect(p.genero, Genero.chico);
+      p.rehacer('c1', 'facil');
+      expect(p.completados, {'c1'}); // rehacer no tapa lo ganado
+    });
+
+    test('v4: sin lupas ni bombas, con sus plumas', () async {
+      const v4 = '{"version":4,"cuadros":{},"plumas":40,"desbloqueadas":["c1"]}';
+      final (p, _) = await nuevo(v4);
+      expect((p.plumas, p.cantidad(Herramienta.lupa), p.cantidad(Herramienta.bomba)), (40, 0, 0));
+      expect(p.completados, {'c1'});
+    });
+
+    test('v5: con obras empezadas, el tutorial cuenta como salteado', () async {
+      const v5 = '{"version":5,"cuadros":{"c1":{"pintadas":["a"],"actualizadoEn":3}},"plumas":2}';
+      final (p, _) = await nuevo(v5);
+      expect((p.tutorialPasado, p.tutorialPremiado), (true, false));
+      final (sinObras, _) = await nuevo('{"version":5,"cuadros":{}}');
+      expect(sinObras.tutorialPasado, isFalse);
+    });
+
+    test('v6: sin nombre, el perfil queda incompleto', () async {
+      const v6 = '{"version":6,"cuadros":{},"genero":"chico","tutorialPasado":true}';
+      final (p, _) = await nuevo(v6);
+      expect((p.nombre, p.genero, p.perfilCompleto), (null, Genero.chico, false));
+    });
+
+    test('v7: con el tutorial pasado recibe el regalo inicial, una sola vez', () async {
+      const v7 = '{"version":7,"cuadros":{},"tutorialPasado":true,"lupa":1,"bomba":0}';
+      final (p, almacen) = await nuevo(v7);
+      final conRegalo = {
+        Herramienta.lupa: 1 + herramientasIniciales[Herramienta.lupa]!,
+        Herramienta.bomba: herramientasIniciales[Herramienta.bomba]!,
+      };
+      expect(inventario(p), conRegalo);
+      expect(p.regaloInicial, isTrue);
+      await p.guardado;
+      final (otra, _) = await nuevo(almacen.datos);
+      expect(inventario(otra), conRegalo);
+      final (sinTutorial, _) = await nuevo('{"version":7,"cuadros":{}}');
+      expect((sinTutorial.regaloInicial, sinTutorial.cantidad(Herramienta.lupa)), (false, 0));
+    });
+
+    test('v8: se descarta lo de las dificultades retiradas', () async {
+      const v8 =
+          '{"version":8,"tutorialPasado":true,"desbloqueadas":["c1"],"cuadros":{'
+          '"c2--mediano":{"pintadas":["r1"]},"c3--insano":{"pintadas":["r2"]},'
+          '"c4--facil":{"pintadas":["r3"]},"c1":{"pintadas":[],"dificultad":"muy-dificil"}}}';
+      final (p, _) = await nuevo(v8);
+      expect(p.cuadros.keys, ['c4--facil']);
+      expect(p.completados, contains('c1'));
+    });
+
+    test('datos corruptos no impiden jugar', () async {
+      final (p, _) = await nuevo('{esto no es json');
+      expect(p.cuadros, isEmpty);
+    });
   });
 
   group('clasificarObras', () {

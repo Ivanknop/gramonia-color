@@ -1,9 +1,5 @@
-/// Música de fondo mientras se pinta: un tema al azar en cada dibujo; al
-/// terminar, sigue otro distinto. Se puede cambiar de tema y silenciar (el
-/// silencio se recuerda entre sesiones, en el progreso).
-///
-/// La lógica no depende del reproductor real ([Reproductor]); en la app se usa
-/// audioplayers y en los tests uno de mentira.
+/// Música de fondo mientras se pinta: un tema al azar en cada dibujo y otro al terminar. El
+/// silencio se guarda en el progreso.
 library;
 
 import 'dart:async';
@@ -14,19 +10,15 @@ import 'package:flutter/foundation.dart';
 
 import 'progreso.dart';
 
-/// Lo mínimo que necesita la música de un reproductor.
 abstract class Reproductor {
-  /// Reproduce un asset (ruta completa, por ejemplo `assets/musica/x.m4a`).
   Future<void> reproducir(String asset);
   Future<void> pausar();
   Future<void> reanudar();
   Future<void> detener();
 
-  /// Avisa cuando termina el tema que estaba sonando.
   Stream<void> get alTerminar;
 }
 
-/// Reproductor real (audioplayers: usa el reproductor nativo de Android).
 class ReproductorAudioplayers implements Reproductor {
   /// [volumen]: la música de fondo va a volumen medio; los efectos, más fuerte.
   ReproductorAudioplayers({this.volumen = 0.6}) {
@@ -57,7 +49,6 @@ class ReproductorAudioplayers implements Reproductor {
   Stream<void> get alTerminar => _player.onPlayerComplete;
 }
 
-/// Elige un tema al azar, distinto de [excepto] si hay más de uno.
 String elegirTema(List<String> temas, String? excepto, math.Random azar) {
   final opciones = temas.length > 1 ? temas.where((t) => t != excepto).toList() : temas;
   return opciones[azar.nextInt(opciones.length)];
@@ -87,7 +78,6 @@ class Musica extends ChangeNotifier {
     });
   }
 
-  /// Assets de los temas (por ejemplo `assets/musica/x.m4a`).
   final List<String> temas;
   final Reproductor reproductor;
   final Progreso progreso;
@@ -97,12 +87,10 @@ class Musica extends ChangeNotifier {
   final math.Random _azar;
   StreamSubscription<void>? _suscripcion;
 
-  /// Tema elegido (suene o esté silenciado).
   String? actual;
 
   /// Hay un dibujo abierto (la música "debería" estar sonando).
   bool _activa = false;
-
   bool get silenciada => progreso.musicaSilenciada;
 
   Future<void> _tocar(String tema) async {
@@ -111,20 +99,17 @@ class Musica extends ChangeNotifier {
     if (!silenciada) await reproductor.reproducir(tema);
   }
 
-  /// Al abrir un dibujo: un tema al azar.
   Future<void> empezar() async {
     if (temas.isEmpty) return;
     _activa = true;
     await _tocar(elegirTema(temas, actual, _azar));
   }
 
-  /// Botón "Cambiar música": otro tema al azar.
   Future<void> cambiar() async {
     if (temas.isEmpty) return;
     await _tocar(elegirTema(temas, actual, _azar));
   }
 
-  /// Botón "Silenciar" / "Activar sonido".
   Future<void> alternarSilencio() async {
     progreso.silenciarMusica(!silenciada);
     notifyListeners();
@@ -142,13 +127,11 @@ class Musica extends ChangeNotifier {
 
   static const sonidoFestejo = 'assets/sonidos/festejo.m4a';
 
-  /// Al salir del dibujo.
   Future<void> detener() async {
     _activa = false;
     await reproductor.detener();
   }
 
-  /// La app pasó a segundo plano / volvió.
   Future<void> pausarPorSegundoPlano() async {
     if (_activa && !silenciada) await reproductor.pausar();
   }
@@ -162,28 +145,4 @@ class Musica extends ChangeNotifier {
     unawaited(_suscripcion?.cancel());
     super.dispose();
   }
-}
-
-/// Reproductor que no suena: para tests (registra lo que se le pidió).
-class ReproductorDePrueba implements Reproductor {
-  final llamadas = <String>[];
-  final _fin = StreamController<void>.broadcast();
-
-  /// Simula que terminó el tema.
-  void terminar() => _fin.add(null);
-
-  @override
-  Future<void> reproducir(String asset) async => llamadas.add('reproducir $asset');
-
-  @override
-  Future<void> pausar() async => llamadas.add('pausar');
-
-  @override
-  Future<void> reanudar() async => llamadas.add('reanudar');
-
-  @override
-  Future<void> detener() async => llamadas.add('detener');
-
-  @override
-  Stream<void> get alTerminar => _fin.stream;
 }

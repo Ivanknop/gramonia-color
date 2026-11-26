@@ -1,12 +1,10 @@
-/// Colores del juego y acceso al catálogo y al progreso desde los widgets.
-library;
-
 import 'dart:math' as math;
 
 import 'package:material_ui/material_ui.dart';
 
 import '../datos/catalogo.dart';
 import '../datos/textos.dart';
+import '../engine/plumas.dart';
 import '../estado/musica.dart';
 import '../estado/progreso.dart';
 
@@ -16,6 +14,11 @@ abstract final class Tema {
   static const fondoLienzo = Color(0xFFF4F1EA);
   static const verde = Color(0xFF38761D);
   static const gris = Color(0xFF777777);
+  static const marronPluma = Color(0xFF8A5A1E);
+  static const dorado = Color(0xFFFFC83D);
+  static const lilaApagado = Color(0xFF8E7CC3);
+  static const sinImagen = Color(0xFFDDDDDD);
+  static const fondoAviso = Color(0xEE3D2C5E);
 
   /// Lilas del título "Gramonia… Color" (degradado de arriba hacia abajo) y
   /// su contorno oscuro, para que se lea sobre el mapa en gris.
@@ -26,17 +29,11 @@ abstract final class Tema {
   /// Tipografía del canon para títulos y logo (un solo peso: sin negrita).
   static const fuenteTitulos = 'LuckiestGuy';
 
-  // ---- Botones: redondos, en lilas, celestes y verde agua ----
-
-  /// Botón principal (relleno): lila con texto blanco.
+  // Botones redondos: relleno = lila, con borde = celeste, de texto e íconos = verde agua.
   static const lila = Color(0xFF8A5CB5);
   static const lilaSuave = Color(0xFFE9DDF7);
-
-  /// Botón secundario (con borde): celeste.
   static const celeste = Color(0xFF6CC4EE);
   static const celesteSuave = Color(0xFFE0F4FD);
-
-  /// Herramientas y botones de texto: verde agua.
   static const aqua = Color(0xFF3FC9B4);
   static const aquaSuave = Color(0xFFD6F5EF);
 
@@ -99,12 +96,9 @@ abstract final class Tema {
   );
 }
 
-/// Flecha en espiral (para "Repetir" y "Rehacer": volver a empezar).
 class IconoEspiral extends StatelessWidget {
   const IconoEspiral({super.key, this.tamano = 20, this.color});
   final double tamano;
-
-  /// Por defecto, el color de los íconos del botón donde está.
   final Color? color;
 
   @override
@@ -160,7 +154,6 @@ class _PintorEspiral extends CustomPainter {
   bool shouldRepaint(_PintorEspiral old) => old.color != color;
 }
 
-/// Catálogo, progreso y música disponibles para toda la app.
 class Dependencias extends InheritedWidget {
   const Dependencias({
     super.key,
@@ -172,8 +165,6 @@ class Dependencias extends InheritedWidget {
 
   final Catalogo catalogo;
   final Progreso progreso;
-
-  /// Música de fondo (null = sin música, por ejemplo en algunos tests).
   final Musica? musica;
 
   static Dependencias of(BuildContext context) =>
@@ -184,8 +175,6 @@ class Dependencias extends InheritedWidget {
       catalogo != old.catalogo || progreso != old.progreso || musica != old.musica;
 }
 
-/// Título con la tipografía del canon, relleno con el degradado de lilas y
-/// contorno oscuro.
 class TituloLila extends StatelessWidget {
   const TituloLila(this.texto, {super.key, this.tamano = 48});
   final String texto;
@@ -220,7 +209,6 @@ class TituloLila extends StatelessWidget {
   }
 }
 
-/// Formato de fecha corto (dd/mm/aaaa) sin depender de paquetes de i18n.
 String fechaCorta(int? ms) {
   if (ms == null) return '';
   final f = DateTime.fromMillisecondsSinceEpoch(ms);
@@ -257,7 +245,7 @@ class _PintorPluma extends CustomPainter {
       Offset(w * 0.08, h * 0.98),
       Offset(w * 0.80, h * 0.16),
       Paint()
-        ..color = const Color(0xFF8A5A1E)
+        ..color = Tema.marronPluma
         ..strokeWidth = w * 0.07
         ..strokeCap = StrokeCap.round,
     );
@@ -267,7 +255,6 @@ class _PintorPluma extends CustomPainter {
   bool shouldRepaint(_PintorPluma old) => old.color != color;
 }
 
-/// Saldo de plumas (se actualiza solo).
 class ContadorPlumas extends StatelessWidget {
   const ContadorPlumas({super.key});
 
@@ -292,7 +279,7 @@ class ContadorPlumas extends StatelessWidget {
               const SizedBox(width: 4),
               Text(
                 '${progreso.plumas}',
-                style: const TextStyle(fontWeight: FontWeight.w800, color: Color(0xFF8A5A1E)),
+                style: const TextStyle(fontWeight: FontWeight.w800, color: Tema.marronPluma),
               ),
             ],
           ),
@@ -302,11 +289,15 @@ class ContadorPlumas extends StatelessWidget {
   }
 }
 
-/// Vuelve a la portada (la primera pantalla), cerrando todo lo de arriba.
+Future<T?> abrir<T>(BuildContext context, Widget pantalla) =>
+    Navigator.of(context).push(MaterialPageRoute<T>(builder: (_) => pantalla));
+
+void avisar(BuildContext context, String texto) => ScaffoldMessenger.of(context)
+  ..hideCurrentSnackBar()
+  ..showSnackBar(SnackBar(content: Text(texto), duration: const Duration(seconds: 2)));
+
 void volverAPortada(BuildContext context) => Navigator.of(context).popUntil((ruta) => ruta.isFirst);
 
-/// Barra de abajo con la flecha que vuelve a la portada (para las pantallas
-/// que no tienen pestañas, como el modo libre).
 class BarraPortada extends StatelessWidget {
   const BarraPortada({super.key});
 
@@ -326,39 +317,69 @@ class BarraPortada extends StatelessWidget {
   );
 }
 
-/// Íconos de las herramientas y de la tienda (de arte/, con
-/// `scripts/convertir_arte.py iconos`).
-const iconoLupa = 'assets/iconos/lupa.png';
-const iconoBomba = 'assets/iconos/bomba.png';
 const iconoTienda = 'assets/iconos/tienda.png';
 
-/// Herramienta de la pantalla de pintar (lupa o bomba): solo el ícono, en un
-/// círculo. Al tocarlo se enciende (brilla) y al tocarlo de nuevo se apaga.
-/// Un globito muestra cuántas quedan.
+extension HerramientaEnPantalla on Herramienta {
+  String get icono => 'assets/iconos/$name.png';
+
+  String get nombre => switch (this) {
+    Herramienta.lupa => Textos.lupa,
+    Herramienta.bomba => Textos.bomba,
+  };
+
+  String get detalle => switch (this) {
+    Herramienta.lupa => Textos.lupaDetalle,
+    Herramienta.bomba => Textos.bombaDetalle,
+  };
+}
+
+class IlustracionCuadro extends StatelessWidget {
+  const IlustracionCuadro(
+    this.cuadroId, {
+    super.key,
+    this.ancho,
+    this.alto,
+    required this.cacheWidth,
+  });
+
+  final String cuadroId;
+  final double? ancho, alto;
+  final int cacheWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    final catalogo = Dependencias.of(context).catalogo;
+    if (!catalogo.tieneImagen(cuadroId)) {
+      return ColoredBox(
+        color: Tema.sinImagen,
+        child: SizedBox(width: ancho, height: alto),
+      );
+    }
+    return Image.asset(
+      Catalogo.ilustracion(cuadroId),
+      fit: BoxFit.cover,
+      cacheWidth: cacheWidth,
+      width: ancho,
+      height: alto,
+    );
+  }
+}
+
 class IconoHerramienta extends StatelessWidget {
   const IconoHerramienta({
     super.key,
-    required this.imagen,
-    required this.descripcion,
+    required this.herramienta,
     required this.encendida,
     required this.alTocar,
     this.cantidad,
     this.habilitada = true,
   });
 
-  final String imagen;
-
-  /// Para lectores de pantalla (el ícono no lleva texto).
-  final String descripcion;
+  final Herramienta herramienta;
   final bool encendida;
   final VoidCallback alTocar;
-
-  /// Cuántas quedan (null = no mostrar el globito).
   final int? cantidad;
-
-  /// En el tutorial, las que no corresponden al paso se ven apagadas.
   final bool habilitada;
-
   static const _lado = 52.0;
 
   @override
@@ -366,7 +387,7 @@ class IconoHerramienta extends StatelessWidget {
     button: true,
     toggled: encendida,
     enabled: habilitada,
-    label: cantidad == null ? descripcion : '$descripcion, quedan $cantidad',
+    label: cantidad == null ? herramienta.nombre : '${herramienta.nombre}, quedan $cantidad',
     excludeSemantics: true,
     child: Opacity(
       opacity: habilitada ? 1 : 0.35,
@@ -388,7 +409,7 @@ class IconoHerramienta extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: encendida ? const Color(0xFFFFF4C2) : Tema.aquaSuave,
                   border: Border.all(
-                    color: encendida ? const Color(0xFFFFC83D) : Tema.aqua,
+                    color: encendida ? Tema.dorado : Tema.aqua,
                     width: encendida ? 3 : 1.5,
                   ),
                   boxShadow: [
@@ -401,7 +422,7 @@ class IconoHerramienta extends StatelessWidget {
                 child: AnimatedScale(
                   scale: encendida ? 1.12 : 1,
                   duration: const Duration(milliseconds: 200),
-                  child: Image.asset(imagen, cacheWidth: 144),
+                  child: Image.asset(herramienta.icono, cacheWidth: 144),
                 ),
               ),
               if (cantidad case final n?)
